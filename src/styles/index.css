@@ -6,13 +6,16 @@
 @import 'tailwindcss/utilities';
 
 /* ベーススタイルのインポート */
-@import 'main.css';
-@import 'layout.css';
-@import 'animations.css';
+@import './main.css';
+@import './layout.css';
+@import './animations.css';
+@import './animations-2025.css'; /* 2025年トレンドのアニメーション */
+@import './modern-ui.css'; /* 2025年トレンドのモダンUIコンポーネント */
 
 /* コンポーネントスタイルのインポート */
 @import './components/cards.css';
 @import './components/forms.css';
 @import './components/dark-mode.css'; /* ダークモード用のスタイル */
 
-/* 必要に応じて他のコンポーネントスタイルを追加 */ 
+/* 必要に応じて他のコンポーネントスタイルを追加 */
+@import './sns-display.css'; /* SNS実績表示用のスタイル */ 

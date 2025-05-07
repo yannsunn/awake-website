@@ -457,4 +457,612 @@
 /* ダークモード切替アニメーション */
 .theme-transition {
   transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+/* animations.css - 基本アニメーションのスタイル */
+
+/* 透明度フェードイン */
+.fade-in {
+  opacity: 0;
+  transition: opacity 0.6s ease-in-out;
+}
+
+.fade-in.animate {
+  opacity: 1;
+}
+
+/* 上からフェードイン */
+.fade-down {
+  opacity: 0;
+  transform: translateY(-30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.fade-down.animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* 下からフェードイン */
+.fade-up {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.fade-up.animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* 左からフェードイン */
+.fade-right {
+  opacity: 0;
+  transform: translateX(-30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.fade-right.animate {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* 右からフェードイン */
+.fade-left {
+  opacity: 0;
+  transform: translateX(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.fade-left.animate {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* ズームイン */
+.zoom-in {
+  opacity: 0;
+  transform: scale(0.9);
+  transition: opacity 0.6s ease, transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.zoom-in.animate {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* ズームアウト */
+.zoom-out {
+  opacity: 0;
+  transform: scale(1.1);
+  transition: opacity 0.6s ease, transform 0.6s ease-out;
+}
+
+.zoom-out.animate {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* 回転イン */
+.rotate-in {
+  opacity: 0;
+  transform: rotate(-10deg) scale(0.9);
+  transition: opacity 0.6s ease, transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.rotate-in.animate {
+  opacity: 1;
+  transform: rotate(0) scale(1);
+}
+
+/* ぼかしイン */
+.blur-in {
+  opacity: 0;
+  filter: blur(10px);
+  transition: opacity 0.6s ease, filter 0.6s ease;
+}
+
+.blur-in.animate {
+  opacity: 1;
+  filter: blur(0);
+}
+
+/* クリップパス アニメーション（上から） */
+.clip-up {
+  opacity: 0;
+  clip-path: inset(100% 0 0 0);
+  transition: opacity 0.6s ease, clip-path 0.6s ease;
+}
+
+.clip-up.animate {
+  opacity: 1;
+  clip-path: inset(0);
+}
+
+/* クリップパス アニメーション（下から） */
+.clip-down {
+  opacity: 0;
+  clip-path: inset(0 0 100% 0);
+  transition: opacity 0.6s ease, clip-path 0.6s ease;
+}
+
+.clip-down.animate {
+  opacity: 1;
+  clip-path: inset(0);
+}
+
+/* クリップパス アニメーション（左から） */
+.clip-right {
+  opacity: 0;
+  clip-path: inset(0 100% 0 0);
+  transition: opacity 0.6s ease, clip-path 0.6s ease;
+}
+
+.clip-right.animate {
+  opacity: 1;
+  clip-path: inset(0);
+}
+
+/* クリップパス アニメーション（右から） */
+.clip-left {
+  opacity: 0;
+  clip-path: inset(0 0 0 100%);
+  transition: opacity 0.6s ease, clip-path 0.6s ease;
+}
+
+.clip-left.animate {
+  opacity: 1;
+  clip-path: inset(0);
+}
+
+/* クリップパス アニメーション（円） */
+.clip-circle {
+  opacity: 0;
+  clip-path: circle(0% at center);
+  transition: opacity 0.6s ease, clip-path 0.8s ease;
+}
+
+.clip-circle.animate {
+  opacity: 1;
+  clip-path: circle(100% at center);
+}
+
+/* スケールイン */
+.scale-in {
+  opacity: 0;
+  transform: scale(0);
+  transition: opacity 0.6s ease, transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.scale-in.animate {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* スタッガードアニメーション（子要素を順番に表示） */
+.stagger-animation > * {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.stagger-animation.animate > *:nth-child(1) {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.1s;
+}
+
+.stagger-animation.animate > *:nth-child(2) {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.2s;
+}
+
+.stagger-animation.animate > *:nth-child(3) {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.3s;
+}
+
+.stagger-animation.animate > *:nth-child(4) {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.4s;
+}
+
+.stagger-animation.animate > *:nth-child(5) {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.5s;
+}
+
+.stagger-animation.animate > *:nth-child(6) {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.6s;
+}
+
+.stagger-animation.animate > *:nth-child(7) {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.7s;
+}
+
+.stagger-animation.animate > *:nth-child(8) {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.8s;
+}
+
+.stagger-animation.animate > *:nth-child(9) {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.9s;
+}
+
+.stagger-animation.animate > *:nth-child(10) {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 1.0s;
+}
+
+/* テキストリビールアニメーション */
+.text-reveal {
+  overflow: hidden;
+}
+
+.text-reveal .char {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.text-reveal.animate .char {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* パルスアニメーション */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.pulse {
+  animation: pulse 2s infinite;
+}
+
+/* フロートアニメーション */
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.float {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* シェイクアニメーション */
+@keyframes shake {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  10%, 30%, 50%, 70%, 90% {
+    transform: translateX(-5px);
+  }
+  20%, 40%, 60%, 80% {
+    transform: translateX(5px);
+  }
+}
+
+.shake {
+  animation: shake 0.8s ease-in-out;
+}
+
+/* ジグザグアニメーション */
+@keyframes zigzag {
+  0% {
+    transform: translateX(0) translateY(0);
+  }
+  25% {
+    transform: translateX(10px) translateY(-10px);
+  }
+  50% {
+    transform: translateX(20px) translateY(0);
+  }
+  75% {
+    transform: translateX(10px) translateY(10px);
+  }
+  100% {
+    transform: translateX(0) translateY(0);
+  }
+}
+
+.zigzag {
+  animation: zigzag 5s ease-in-out infinite;
+}
+
+/* バウンスアニメーション */
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-20px);
+  }
+  60% {
+    transform: translateY(-10px);
+  }
+}
+
+.bounce {
+  animation: bounce 2s infinite;
+}
+
+/* スピンアニメーション */
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.spin {
+  animation: spin 10s linear infinite;
+}
+
+/* スライドイン右から */
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.slide-in-right {
+  animation: slideInRight 0.5s forwards;
+}
+
+/* スライドイン左から */
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.slide-in-left {
+  animation: slideInLeft 0.5s forwards;
+}
+
+/* ノーマルのトランジション（トリガークラスと組み合わせて使用） */
+.transition-normal {
+  transition: all 0.3s ease;
+}
+
+/* 遅いトランジション */
+.transition-slow {
+  transition: all 0.6s ease;
+}
+
+/* 速いトランジション */
+.transition-fast {
+  transition: all 0.1s ease;
+}
+
+/* マウスホバー時に上に動く */
+.hover-up {
+  transition: transform 0.3s ease;
+}
+
+.hover-up:hover {
+  transform: translateY(-10px);
+}
+
+/* マウスホバー時に拡大 */
+.hover-scale {
+  transition: transform 0.3s ease;
+}
+
+.hover-scale:hover {
+  transform: scale(1.05);
+}
+
+/* アニメーション用デバウンス */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* カーソルフォロワー */
+.cursor-follower {
+  position: fixed;
+  width: 30px;
+  height: 30px;
+  background-color: rgba(67, 97, 238, 0.3);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  transition: width 0.3s ease, height 0.3s ease, background-color 0.3s ease;
+}
+
+.cursor-follower.hover {
+  width: 50px;
+  height: 50px;
+  background-color: rgba(67, 97, 238, 0.2);
+}
+
+/* プログレスバー */
+.progress-line {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  width: 0;
+  background: linear-gradient(to right, var(--primary-color), var(--accent-color));
+  z-index: 9999;
+  transition: width 0.1s ease;
+}
+
+/* リップルエフェクト */
+.ripple-effect {
+  position: absolute;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.6);
+  transform: scale(0);
+  animation: ripple 0.6s linear;
+  z-index: 1;
+}
+
+@keyframes ripple {
+  to {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+
+/* スクロールスナップ（必要に応じて） */
+.scroll-snap-container {
+  scroll-behavior: smooth;
+}
+
+.scroll-indicators {
+  position: fixed;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 100;
+}
+
+.scroll-indicator {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.scroll-indicator.active {
+  background-color: var(--primary-color);
+  transform: scale(1.3);
+}
+
+/* カウントアップアニメーション */
+.count-up {
+  transition: color 0.3s ease;
+}
+
+.count-completed {
+  color: var(--primary-color);
+}
+
+/* SNS実績表示アニメーション用 */
+.sns-fade-up {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.sns-fade-up.animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.sns-fade-left {
+  opacity: 0;
+  transform: translateX(40px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.sns-fade-left.animate {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.sns-fade-right {
+  opacity: 0;
+  transform: translateX(-40px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.sns-fade-right.animate {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* SNSスタッガーアニメーション */
+.sns-stagger > * {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.sns-stagger.animate > *:nth-child(1) {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.1s;
+}
+
+.sns-stagger.animate > *:nth-child(2) {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.3s;
+}
+
+.sns-stagger.animate > *:nth-child(3) {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.5s;
+}
+
+.sns-stagger.animate > *:nth-child(4) {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.7s;
+}
+
+.sns-stagger.animate > *:nth-child(5) {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.9s;
+}
+
+.sns-stagger.animate > *:nth-child(6) {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 1.1s;
 } 

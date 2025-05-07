@@ -7,8 +7,16 @@ import * as ui from './ui.js';
 import { initAllAnimations } from './animations';
 import { initPerformanceOptimizations } from './performance';
 
+// パフォーマンス最適化スクリプトのインポート
+import './performance.js';
+
+// 2025年トレンドのアニメーションスクリプトをインポート
+import { initAllAnimations2025 } from './animations-2025.js';
+
 // ページの読み込み完了時に実行する処理
 document.addEventListener('DOMContentLoaded', () => {
+  console.log('📱 Awake Website initialized');
+  
   // アニメーション初期化
   initAllAnimations();
   
@@ -23,6 +31,9 @@ document.addEventListener('DOMContentLoaded', () => {
   
   // フォームバリデーション初期化
   initFormValidation();
+  
+  // 2025年トレンドのアニメーションを初期化
+  initAllAnimations2025();
 });
 
 // フォームバリデーション
@@ -157,5 +168,74 @@ function lazyLoadImages() {
     
     // 初回実行
     lazyLoad();
+  }
+}
+
+// ハンバーガーメニューの動作
+function initNavigation() {
+  const menuToggle = document.querySelector('.menu-toggle');
+  const mobileMenu = document.querySelector('.mobile-menu');
+  
+  if (menuToggle && mobileMenu) {
+    menuToggle.addEventListener('click', () => {
+      menuToggle.classList.toggle('active');
+      mobileMenu.classList.toggle('active');
+      document.body.classList.toggle('menu-open');
+    });
+  }
+}
+
+// ダークモード切り替え
+function initDarkMode() {
+  const darkModeToggle = document.querySelector('.dark-mode-toggle');
+  
+  if (darkModeToggle) {
+    // システム設定の確認
+    const prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    
+    // ローカルストレージから以前の設定を取得
+    const savedMode = localStorage.getItem('darkMode');
+    const isDarkMode = savedMode ? savedMode === 'true' : prefersDarkMode;
+    
+    // 初期状態の設定
+    if (isDarkMode) {
+      document.documentElement.classList.add('dark-mode');
+      darkModeToggle.classList.add('active');
+    }
+    
+    // クリックイベント
+    darkModeToggle.addEventListener('click', () => {
+      document.documentElement.classList.toggle('dark-mode');
+      darkModeToggle.classList.toggle('active');
+      
+      // 状態を保存
+      const currentDarkMode = document.documentElement.classList.contains('dark-mode');
+      localStorage.setItem('darkMode', currentDarkMode);
+    });
+  }
+}
+
+// スクロールトップボタン
+function initScrollToTopButton() {
+  const scrollButton = document.querySelector('.scroll-to-top');
+  
+  if (scrollButton) {
+    // スクロール位置に応じてボタンの表示/非表示
+    window.addEventListener('scroll', () => {
+      if (window.pageYOffset > 300) {
+        scrollButton.classList.add('visible');
+      } else {
+        scrollButton.classList.remove('visible');
+      }
+    });
+    
+    // クリックイベント - スムーススクロール
+    scrollButton.addEventListener('click', (e) => {
+      e.preventDefault();
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
   }
 } 

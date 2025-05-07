@@ -1,0 +1,644 @@
+/* 2025年トレンドを取り入れたモダンなUIコンポーネント */
+
+/* ----- 基本設定 ----- */
+:root {
+  /* カラーパレットの更新 - より現代的な色 */
+  --primary-color: #4361EE;       /* 鮮やかなブルー */
+  --secondary-color: #2B2D42;     /* ダークな色味 */
+  --accent-color: #F72585;        /* ビビッドなピンク - 注目を集める */
+  --light-color: #F8F9FA;         /* よりクリーンな白 */
+  --dark-color: #0F1123;          /* 深みのあるダーク */
+  --success-color: #10B981;       /* モダンな緑 */
+  --warning-color: #FBBF24;       /* 警告色 */
+  --info-color: #60A5FA;          /* 情報色 */
+  --text-color: #374151;          /* 読みやすいグレー */
+  
+  /* 新しい色の追加 */
+  --gradient-start: #4361EE;      /* グラデーション開始色 */
+  --gradient-end: #7209B7;        /* グラデーション終了色 */
+  --surface-color: #FFFFFF;       /* 表面色 */
+  --surface-color-alt: #F9FAFB;   /* 代替表面色 */
+  --border-color: #E5E7EB;        /* 境界線色 */
+  
+  /* スペーシング基準 */
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+  --spacing-2xl: 48px;
+  --spacing-3xl: 64px;
+  
+  /* モダンなボーダーラジウス */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --radius-2xl: 24px;
+  --radius-pill: 9999px;
+  
+  /* 新しいシャドウ */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  --shadow-inner: inset 0 2px 4px 0 rgba(0, 0, 0, 0.06);
+  --shadow-glow: 0 0 15px rgba(67, 97, 238, 0.5);
+
+  /* トランジション基準 */
+  --transition-fast: 0.15s ease;
+  --transition-normal: 0.3s ease;
+  --transition-slow: 0.5s cubic-bezier(0.65, 0, 0.35, 1);
+  --transition-bounce: 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+/* ----- タイポグラフィ強化 ----- */
+body {
+  font-family: 'Inter', 'Helvetica Neue', sans-serif;
+  line-height: 1.7;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  line-height: 1.3;
+  letter-spacing: -0.02em;
+}
+
+h1 {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+}
+
+h2 {
+  font-size: clamp(2rem, 4vw, 3rem);
+}
+
+h3 {
+  font-size: clamp(1.5rem, 3vw, 2.25rem);
+}
+
+p {
+  margin-bottom: 1.5em;
+}
+
+/* ----- モダンなグラスモーフィズム UI ----- */
+.glass-card {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px) saturate(180%);
+  -webkit-backdrop-filter: blur(12px) saturate(180%);
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: var(--shadow-lg);
+  padding: var(--spacing-xl);
+  transition: all var(--transition-normal);
+}
+
+.glass-card:hover {
+  box-shadow: var(--shadow-xl);
+  transform: translateY(-4px);
+}
+
+.glass-card.dark {
+  background: rgba(15, 17, 35, 0.8);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* ----- ニューモーフィズム要素 ----- */
+.neumorphic {
+  background: var(--surface-color);
+  border-radius: var(--radius-lg);
+  box-shadow: 8px 8px 16px rgba(0, 0, 0, 0.1),
+              -8px -8px 16px rgba(255, 255, 255, 0.8);
+  padding: var(--spacing-xl);
+  transition: all var(--transition-normal);
+}
+
+.neumorphic:hover {
+  box-shadow: 12px 12px 20px rgba(0, 0, 0, 0.12),
+              -12px -12px 20px rgba(255, 255, 255, 0.9);
+}
+
+.neumorphic-button {
+  display: inline-block;
+  padding: var(--spacing-md) var(--spacing-xl);
+  border-radius: var(--radius-pill);
+  background: var(--surface-color);
+  box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.1),
+              -3px -3px 6px rgba(255, 255, 255, 0.8);
+  border: none;
+  font-weight: 600;
+  color: var(--secondary-color);
+  cursor: pointer;
+  transition: all var(--transition-normal);
+}
+
+.neumorphic-button:hover {
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.15),
+              -4px -4px 8px rgba(255, 255, 255, 0.9);
+}
+
+.neumorphic-button:active {
+  box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.15),
+              inset -2px -2px 5px rgba(255, 255, 255, 0.8);
+}
+
+/* ----- 最新のグラデーション効果 ----- */
+.gradient-text {
+  background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
+.gradient-border {
+  position: relative;
+  border-radius: var(--radius-lg);
+}
+
+.gradient-border::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+  border-radius: calc(var(--radius-lg) + 2px);
+  z-index: -1;
+}
+
+.gradient-button {
+  display: inline-block;
+  padding: var(--spacing-md) var(--spacing-xl);
+  color: white;
+  font-weight: 600;
+  border-radius: var(--radius-pill);
+  background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+  border: none;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all var(--transition-normal);
+}
+
+.gradient-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, var(--gradient-end), var(--gradient-start));
+  z-index: -1;
+  opacity: 0;
+  transition: opacity var(--transition-normal);
+}
+
+.gradient-button:hover::before {
+  opacity: 1;
+}
+
+.gradient-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(67, 97, 238, 0.3);
+}
+
+/* ----- 立体カードデザイン ----- */
+.stacked-card {
+  position: relative;
+  background: var(--surface-color);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  padding: var(--spacing-xl);
+  transition: all var(--transition-normal);
+  z-index: 1;
+}
+
+.stacked-card::before,
+.stacked-card::after {
+  content: '';
+  position: absolute;
+  border-radius: var(--radius-lg);
+  z-index: -1;
+  transition: all var(--transition-normal);
+}
+
+.stacked-card::before {
+  top: 10px;
+  left: 10px;
+  right: -10px;
+  bottom: -10px;
+  background: var(--accent-color);
+  opacity: 0.3;
+}
+
+.stacked-card::after {
+  top: 5px;
+  left: 5px;
+  right: -5px;
+  bottom: -5px;
+  background: var(--primary-color);
+  opacity: 0.2;
+}
+
+.stacked-card:hover {
+  transform: translateY(-5px);
+}
+
+.stacked-card:hover::before {
+  transform: translateX(-5px) translateY(5px);
+}
+
+.stacked-card:hover::after {
+  transform: translateX(-3px) translateY(3px);
+}
+
+/* ----- アニメーション付きボタン ----- */
+.pulse-button {
+  position: relative;
+  display: inline-block;
+  padding: var(--spacing-md) var(--spacing-xl);
+  background-color: var(--accent-color);
+  color: white;
+  font-weight: 700;
+  border-radius: var(--radius-pill);
+  box-shadow: 0 4px 10px rgba(247, 37, 133, 0.3);
+  overflow: hidden;
+  transition: all var(--transition-normal);
+}
+
+.pulse-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 15px rgba(247, 37, 133, 0.4);
+}
+
+.pulse-button::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 120%;
+  height: 120%;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  transition: transform 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.pulse-button:hover::after {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+/* ----- 3Dアバターカード ----- */
+.avatar-card {
+  position: relative;
+  perspective: 1000px;
+  width: 280px;
+  height: 380px;
+}
+
+.avatar-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s cubic-bezier(0.19, 1, 0.22, 1);
+  transform-style: preserve-3d;
+}
+
+.avatar-card:hover .avatar-card-inner {
+  transform: rotateY(5deg) rotateX(5deg);
+}
+
+.avatar-card-front,
+.avatar-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+.avatar-card-front {
+  background: var(--surface-color);
+  box-shadow: var(--shadow-lg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: var(--spacing-xl);
+}
+
+.avatar-image {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid white;
+  box-shadow: var(--shadow-md);
+  margin-bottom: var(--spacing-lg);
+}
+
+.avatar-name {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: var(--spacing-xs);
+}
+
+.avatar-role {
+  color: var(--accent-color);
+  font-weight: 600;
+  margin-bottom: var(--spacing-lg);
+}
+
+.avatar-stats {
+  display: flex;
+  gap: var(--spacing-lg);
+  margin-top: auto;
+}
+
+.avatar-stat {
+  text-align: center;
+}
+
+.avatar-stat-value {
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: var(--primary-color);
+}
+
+.avatar-stat-label {
+  font-size: 0.8rem;
+  color: var(--text-color);
+}
+
+/* ----- スマートフォーム要素 ----- */
+.smart-form-group {
+  position: relative;
+  margin-bottom: var(--spacing-xl);
+}
+
+.smart-form-group label {
+  position: absolute;
+  left: var(--spacing-md);
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1rem;
+  color: #9CA3AF;
+  pointer-events: none;
+  transition: all var(--transition-normal);
+}
+
+.smart-form-group input,
+.smart-form-group textarea {
+  width: 100%;
+  padding: var(--spacing-md);
+  font-size: 1rem;
+  background-color: var(--surface-color);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-normal);
+}
+
+.smart-form-group textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.smart-form-group input:focus,
+.smart-form-group textarea:focus,
+.smart-form-group input:not(:placeholder-shown),
+.smart-form-group textarea:not(:placeholder-shown) {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.15);
+  outline: none;
+}
+
+.smart-form-group input:focus + label,
+.smart-form-group textarea:focus + label,
+.smart-form-group input:not(:placeholder-shown) + label,
+.smart-form-group textarea:not(:placeholder-shown) + label {
+  top: 0;
+  left: var(--spacing-md);
+  transform: translateY(-50%);
+  font-size: 0.8rem;
+  background-color: white;
+  padding: 0 var(--spacing-xs);
+  color: var(--primary-color);
+}
+
+/* ----- モダンなカード強調 ----- */
+.highlight-stack {
+  position: relative;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.card-stack {
+  position: relative;
+  background: var(--surface-color);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-xl);
+  box-shadow: var(--shadow-lg);
+  z-index: 3;
+  transition: all var(--transition-normal);
+}
+
+.card-stack-bg {
+  position: absolute;
+  top: -10px;
+  left: 10px;
+  right: -10px;
+  bottom: 10px;
+  background-color: rgba(67, 97, 238, 0.1);
+  border-radius: var(--radius-lg);
+  z-index: 1;
+  transition: all var(--transition-bounce);
+}
+
+.card-stack-bg2 {
+  position: absolute;
+  top: -18px;
+  left: 18px;
+  right: -18px;
+  bottom: 18px;
+  background-color: rgba(247, 37, 133, 0.1);
+  border-radius: var(--radius-lg);
+  z-index: 0;
+  transition: all var(--transition-bounce);
+}
+
+.highlight-stack:hover .card-stack {
+  transform: translateY(-5px);
+}
+
+.highlight-stack:hover .card-stack-bg {
+  transform: translateX(-5px) translateY(5px);
+}
+
+.highlight-stack:hover .card-stack-bg2 {
+  transform: translateX(-8px) translateY(8px);
+}
+
+/* ----- インタラクティブなアニメーションボタン ----- */
+.icon-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--surface-color);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: none;
+  box-shadow: var(--shadow-md);
+  cursor: pointer;
+  transition: all var(--transition-normal);
+  position: relative;
+  overflow: hidden;
+}
+
+.icon-button i {
+  font-size: 1.5rem;
+  color: var(--primary-color);
+  transition: all var(--transition-normal);
+}
+
+.icon-button::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: var(--primary-color);
+  transform: scale(0);
+  transition: transform var(--transition-normal);
+}
+
+.icon-button:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-lg);
+}
+
+.icon-button:hover::before {
+  transform: scale(1);
+}
+
+.icon-button:hover i {
+  color: white;
+  position: relative;
+  z-index: 1;
+}
+
+/* ----- 付箋要素 ----- */
+.tag {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  padding: var(--spacing-xs) var(--spacing-md);
+  border-radius: var(--radius-pill);
+  font-size: 0.85rem;
+  font-weight: 600;
+  background-color: rgba(67, 97, 238, 0.1);
+  color: var(--primary-color);
+}
+
+.tag i {
+  font-size: 0.9rem;
+}
+
+.tag.success {
+  background-color: rgba(16, 185, 129, 0.1);
+  color: var(--success-color);
+}
+
+.tag.warning {
+  background-color: rgba(251, 191, 36, 0.1);
+  color: var(--warning-color);
+}
+
+.tag.info {
+  background-color: rgba(96, 165, 250, 0.1);
+  color: var(--info-color);
+}
+
+.tag.accent {
+  background-color: rgba(247, 37, 133, 0.1);
+  color: var(--accent-color);
+}
+
+/* ----- スキューセクション ----- */
+.skewed-section {
+  position: relative;
+  padding: var(--spacing-3xl) 0;
+  margin: var(--spacing-3xl) 0;
+  transform: skewY(-3deg);
+  background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+  color: white;
+}
+
+.skewed-section > * {
+  transform: skewY(3deg);
+}
+
+.skewed-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  opacity: 0.6;
+}
+
+/* ----- レスポンシブ対応 ----- */
+@media (max-width: 992px) {
+  .glass-card, .neumorphic, .stacked-card {
+    padding: var(--spacing-lg);
+  }
+  
+  .avatar-card {
+    width: 240px;
+    height: 340px;
+  }
+}
+
+@media (max-width: 768px) {
+  :root {
+    --spacing-xl: 24px;
+    --spacing-2xl: 36px;
+    --spacing-3xl: 48px;
+  }
+  
+  .skewed-section {
+    transform: skewY(-2deg);
+    padding: var(--spacing-2xl) 0;
+  }
+  
+  .skewed-section > * {
+    transform: skewY(2deg);
+  }
+  
+  .neumorphic, .glass-card, .stacked-card {
+    padding: var(--spacing-md);
+  }
+}
+
+@media (max-width: 576px) {
+  :root {
+    --spacing-lg: 20px;
+    --spacing-xl: 24px;
+    --spacing-2xl: 32px;
+  }
+  
+  .avatar-card {
+    width: 100%;
+    height: auto;
+    min-height: 320px;
+  }
+} 

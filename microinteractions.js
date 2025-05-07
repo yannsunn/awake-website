@@ -484,4 +484,326 @@ function addUrgencyElements() {
         updateCountdown();
         setInterval(updateCountdown, 1000);
     }
-} 
+}
+
+// ボタンリップルエフェクト
+function initButtonRipples() {
+    // リップルエフェクト対象のボタン要素
+    const buttons = document.querySelectorAll('.btn, .btn-white, .btn-float, .share-btn, .case-study-cta');
+    
+    if (buttons.length === 0) return;
+    
+    buttons.forEach(button => {
+        button.addEventListener('click', function(e) {
+            // 既存のリップルエフェクトをクリア
+            const existingRipples = this.querySelectorAll('.ripple');
+            existingRipples.forEach(ripple => ripple.remove());
+            
+            // クリック位置を取得
+            const rect = this.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            
+            // リップル要素の作成
+            const ripple = document.createElement('span');
+            ripple.className = 'ripple-effect';
+            
+            // リップルサイズの計算（ボタンの対角線長）
+            const diameter = Math.max(rect.width, rect.height);
+            const radius = diameter / 2;
+            
+            // スタイル設定
+            ripple.style.width = ripple.style.height = `${diameter}px`;
+            ripple.style.left = `${x - radius}px`;
+            ripple.style.top = `${y - radius}px`;
+            
+            // DOM追加
+            this.appendChild(ripple);
+            
+            // 一定時間後に削除
+            setTimeout(() => {
+                ripple.remove();
+            }, 600); // アニメーション時間に合わせる
+        });
+    });
+}
+
+// ホバーエフェクト
+function initHoverEffects() {
+    // SNSカード要素
+    const cards = document.querySelectorAll('.sns-achievement-card, .sns-metric-card');
+    
+    if (cards.length === 0) return;
+    
+    cards.forEach(card => {
+        // マウスムーブ時の影の動的な変更
+        card.addEventListener('mousemove', function(e) {
+            const rect = this.getBoundingClientRect();
+            
+            // マウス位置を正規化（-1〜1の範囲）
+            const xPos = (e.clientX - rect.left) / rect.width - 0.5;
+            const yPos = (e.clientY - rect.top) / rect.height - 0.5;
+            
+            // 影の位置をマウスの反対側に
+            const shadowX = xPos * -20;
+            const shadowY = yPos * -20;
+            
+            // 影のスタイル更新
+            this.style.boxShadow = `
+                ${shadowX}px ${shadowY}px 20px rgba(0, 0, 0, 0.1),
+                0 10px 30px rgba(0, 0, 0, 0.08)
+            `;
+        });
+        
+        // マウス離脱時のリセット
+        card.addEventListener('mouseleave', function() {
+            this.style.boxShadow = '';
+        });
+    });
+    
+    // SNSタグのホバーエフェクト強化
+    const tags = document.querySelectorAll('.sns-tag');
+    
+    if (tags.length > 0) {
+        tags.forEach(tag => {
+            tag.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-3px) scale(1.05)';
+            });
+            
+            tag.addEventListener('mouseleave', function() {
+                this.style.transform = '';
+            });
+        });
+    }
+}
+
+// カーソルフォロワー
+function initCursorFollower() {
+    // ページ内で要素が存在するか確認
+    const cursorFollower = document.querySelector('.cursor-follower');
+    
+    // 要素がなければ作成
+    if (!cursorFollower) {
+        const follower = document.createElement('div');
+        follower.className = 'cursor-follower';
+        document.body.appendChild(follower);
+        
+        // 初期スタイル設定
+        const style = follower.style;
+        style.position = 'fixed';
+        style.width = '30px';
+        style.height = '30px';
+        style.borderRadius = '50%';
+        style.backgroundColor = 'rgba(67, 97, 238, 0.2)';
+        style.pointerEvents = 'none';
+        style.zIndex = '9999';
+        style.transform = 'translate(-50%, -50%)';
+        style.transition = 'width 0.2s ease, height 0.2s ease, background-color 0.2s ease, transform 0.05s ease';
+        style.opacity = '0';
+        
+        // 少し遅延させて表示
+        setTimeout(() => {
+            style.opacity = '1';
+        }, 500);
+        
+        // マウス追従
+        document.addEventListener('mousemove', e => {
+            style.left = `${e.clientX}px`;
+            style.top = `${e.clientY}px`;
+        });
+        
+        // ホバー要素の検出とエフェクト
+        const hoverElements = document.querySelectorAll('a, button, .sns-card-badge, .sns-tag, .sns-metric-card, .sns-achievement-card');
+        
+        hoverElements.forEach(element => {
+            element.addEventListener('mouseenter', () => {
+                follower.classList.add('hover');
+                style.width = '50px';
+                style.height = '50px';
+                style.backgroundColor = 'rgba(67, 97, 238, 0.1)';
+                style.mixBlendMode = 'difference';
+            });
+            
+            element.addEventListener('mouseleave', () => {
+                follower.classList.remove('hover');
+                style.width = '30px';
+                style.height = '30px';
+                style.backgroundColor = 'rgba(67, 97, 238, 0.2)';
+                style.mixBlendMode = 'normal';
+            });
+        });
+    }
+}
+
+// 視差効果（パララックス）
+function initParallaxEffect() {
+    // パララックス対象要素
+    const parallaxElements = document.querySelectorAll('.sns-achievement-card .sns-card-image, .case-study-image');
+    
+    if (parallaxElements.length === 0) return;
+    
+    // 視差効果の更新関数
+    function updateParallax() {
+        const scrollTop = window.pageYOffset;
+        
+        parallaxElements.forEach(element => {
+            const rect = element.getBoundingClientRect();
+            const centerY = rect.top + rect.height / 2;
+            const viewportCenter = window.innerHeight / 2;
+            const distanceFromCenter = centerY - viewportCenter;
+            
+            // 視界内にある場合のみ計算
+            if (rect.top < window.innerHeight && rect.bottom > 0) {
+                // 視差効果の強さ（値を小さくすると効果が強くなる）
+                const speed = 0.05;
+                
+                // 要素内の画像を移動
+                const img = element.querySelector('img');
+                if (img) {
+                    // 移動量の計算
+                    const translateY = distanceFromCenter * speed;
+                    
+                    // 移動を適用
+                    img.style.transform = `translateY(${translateY}px)`;
+                }
+            }
+        });
+    }
+    
+    // スクロールイベントハンドラ（最適化済み）
+    let ticking = false;
+    window.addEventListener('scroll', () => {
+        if (!ticking) {
+            window.requestAnimationFrame(() => {
+                updateParallax();
+                ticking = false;
+            });
+            ticking = true;
+        }
+    }, { passive: true });
+    
+    // 初期状態の設定
+    updateParallax();
+}
+
+// タイピングエフェクト
+function initTypingEffect() {
+    const typingElements = document.querySelectorAll('[data-typing]');
+    
+    if (typingElements.length === 0) return;
+    
+    typingElements.forEach(element => {
+        const text = element.getAttribute('data-typing');
+        const speed = parseInt(element.getAttribute('data-typing-speed') || '100', 10);
+        const delay = parseInt(element.getAttribute('data-typing-delay') || '0', 10);
+        
+        // 元のテキストを保存
+        element.setAttribute('data-original-text', element.textContent);
+        // 表示前に空にする
+        element.textContent = '';
+        
+        // Intersection Observerの設定
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    // 遅延後にタイピング開始
+                    setTimeout(() => {
+                        let i = 0;
+                        
+                        // タイピング処理
+                        const typeCharacter = () => {
+                            if (i < text.length) {
+                                element.textContent += text.charAt(i);
+                                i++;
+                                setTimeout(typeCharacter, speed);
+                            } else {
+                                // タイピング完了時のクラス追加
+                                element.classList.add('typing-completed');
+                            }
+                        };
+                        
+                        // タイピング開始
+                        typeCharacter();
+                    }, delay);
+                    
+                    // 一度実行したら監視を解除
+                    observer.unobserve(element);
+                }
+            });
+        }, { threshold: 0.5 });
+        
+        // 監視開始
+        observer.observe(element);
+    });
+}
+
+// クリック波及効果（ボタン以外の領域）
+function initClickWaveEffects() {
+    const waveElements = document.querySelectorAll('.wave-effect');
+    
+    if (waveElements.length === 0) return;
+    
+    waveElements.forEach(element => {
+        element.addEventListener('click', function(e) {
+            const rect = this.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            
+            const circle = document.createElement('span');
+            circle.className = 'click-wave';
+            
+            // スタイル設定
+            const style = circle.style;
+            style.position = 'absolute';
+            style.backgroundColor = 'rgba(255, 255, 255, 0.4)';
+            style.borderRadius = '50%';
+            style.pointerEvents = 'none';
+            style.width = '0';
+            style.height = '0';
+            style.left = x + 'px';
+            style.top = y + 'px';
+            style.animation = 'click-wave 0.6s ease-out';
+            
+            // 要素が相対位置を持つことを確認
+            if (getComputedStyle(this).position === 'static') {
+                this.style.position = 'relative';
+            }
+            
+            // オーバーフローを隠す
+            this.style.overflow = 'hidden';
+            
+            // 波紋要素を追加
+            this.appendChild(circle);
+            
+            // アニメーション後に削除
+            setTimeout(() => {
+                circle.remove();
+            }, 600);
+        });
+    });
+    
+    // 波紋アニメーションをスタイルに追加
+    if (!document.querySelector('#wave-animation-style')) {
+        const style = document.createElement('style');
+        style.id = 'wave-animation-style';
+        style.textContent = `
+            @keyframes click-wave {
+                to {
+                    transform: scale(20);
+                    opacity: 0;
+                }
+            }
+        `;
+        document.head.appendChild(style);
+    }
+}
+
+// モジュールとしてエクスポート
+export {
+    initButtonRipples,
+    initHoverEffects,
+    initCursorFollower,
+    initParallaxEffect,
+    initTypingEffect,
+    initClickWaveEffects
+}; 

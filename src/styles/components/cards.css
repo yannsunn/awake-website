@@ -3,137 +3,224 @@
 /* ベースカードスタイル */
 .card {
     background-color: #fff;
-    border-radius: var(--border-radius);
-    box-shadow: var(--box-shadow);
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
     overflow: hidden;
-    transition: var(--transition);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     height: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
 .card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
-.card-img {
+.card-image {
     width: 100%;
-    height: 220px;
-    object-fit: cover;
+    height: 200px;
+    overflow: hidden;
+    position: relative;
 }
 
-.card-body {
+.card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.card:hover .card-image img {
+    transform: scale(1.05);
+}
+
+.card-content {
     padding: 25px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
 }
 
 .card-title {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
+    font-weight: 700;
     margin-bottom: 15px;
     color: var(--secondary-color);
 }
 
 .card-text {
+    font-size: 0.95rem;
+    line-height: 1.6;
     color: var(--text-color);
     margin-bottom: 20px;
+    flex-grow: 1;
 }
 
 .card-footer {
-    padding: 15px 25px;
-    border-top: 1px solid #f1f1f1;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-top: auto;
+    padding-top: 15px;
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
 }
 
-/* サービスカード */
-.service-card {
+.card-link {
+    display: inline-flex;
+    align-items: center;
+    color: var(--primary-color);
+    font-weight: 600;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+}
+
+.card-link i {
+    margin-left: 5px;
+    transition: transform 0.3s ease;
+}
+
+.card-link:hover {
+    color: var(--accent-color);
+}
+
+.card-link:hover i {
+    transform: translateX(4px);
+}
+
+.card-meta {
+    display: flex;
+    align-items: center;
+    font-size: 0.85rem;
+    color: #888;
+}
+
+.card-meta i {
+    margin-right: 5px;
+}
+
+.card-meta-item {
+    display: flex;
+    align-items: center;
+    margin-right: 15px;
+}
+
+.card-meta-item:last-child {
+    margin-right: 0;
+}
+
+/* バリエーション: ハイライトカード */
+.card-highlight {
+    border-top: 4px solid var(--primary-color);
+}
+
+/* バリエーション: グラデーションカード */
+.card-gradient {
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    color: white;
+}
+
+.card-gradient .card-title,
+.card-gradient .card-text {
+    color: white;
+}
+
+.card-gradient .card-link {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.card-gradient .card-link:hover {
+    color: white;
+}
+
+.card-gradient .card-footer {
+    border-top-color: rgba(255, 255, 255, 0.1);
+}
+
+.card-gradient .card-meta {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+/* バリエーション: 透明カード */
+.card-transparent {
+    background-color: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+/* バリエーション: 枠線カード */
+.card-outline {
+    box-shadow: none;
+    border: 2px solid rgba(0, 0, 0, 0.1);
+}
+
+.card-outline:hover {
+    border-color: var(--primary-color);
+}
+
+/* バリエーション: 水平カード */
+.card-horizontal {
+    flex-direction: row;
+    align-items: stretch;
+}
+
+.card-horizontal .card-image {
+    width: 35%;
+    height: auto;
+}
+
+.card-horizontal .card-content {
+    width: 65%;
+}
+
+/* バリエーション: テスティモニアルカード */
+.card-testimonial {
     text-align: center;
-    padding: 40px 30px;
-    background-color: #fff;
-    border-radius: var(--border-radius);
-    box-shadow: var(--box-shadow);
-    transition: var(--transition);
-    position: relative;
-    z-index: 1;
+    padding: 30px;
+}
+
+.card-testimonial .client-image {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin: 0 auto 20px;
     overflow: hidden;
 }
 
-.service-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
-}
-
-.service-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
+.card-testimonial .client-image img {
     width: 100%;
-    height: 0;
-    background-color: var(--primary-color);
-    opacity: 0.05;
-    transition: var(--transition);
-    z-index: -1;
-}
-
-.service-card:hover::before {
     height: 100%;
+    object-fit: cover;
 }
 
-.service-icon {
-    width: 80px;
-    height: 80px;
-    margin: 0 auto 25px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: var(--light-color);
-    border-radius: 50%;
-    color: var(--primary-color);
-    font-size: 2rem;
-    transition: var(--transition);
-}
-
-.service-card:hover .service-icon {
-    background-color: var(--primary-color);
-    color: white;
-    transform: rotateY(360deg);
-}
-
-.service-title {
-    font-size: 1.5rem;
-    margin-bottom: 15px;
-    color: var(--secondary-color);
-}
-
-/* テスティモニアルカード */
-.testimonial-card {
-    background-color: #fff;
-    border-radius: var(--border-radius);
-    box-shadow: var(--box-shadow);
-    padding: 30px;
-    position: relative;
-}
-
-.testimonial-content {
-    margin-bottom: 20px;
+.card-testimonial .testimonial-text {
     font-style: italic;
+    margin-bottom: 20px;
     position: relative;
-    z-index: 1;
 }
 
-.testimonial-content::before {
+.card-testimonial .testimonial-text::before,
+.card-testimonial .testimonial-text::after {
     content: '"';
+    font-size: 1.5rem;
+    color: var(--primary-color);
     position: absolute;
-    top: -20px;
-    left: -10px;
-    font-size: 5rem;
-    color: rgba(52, 152, 219, 0.1);
-    z-index: -1;
 }
 
-.testimonial-user {
-    display: flex;
-    align-items: center;
+.card-testimonial .testimonial-text::before {
+    left: -10px;
+    top: -5px;
+}
+
+.card-testimonial .testimonial-text::after {
+    right: -10px;
+    bottom: -15px;
+}
+
+.card-testimonial .client-name {
+    font-weight: 700;
+    color: var(--secondary-color);
 }
 
 .testimonial-avatar {
