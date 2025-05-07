@@ -3,32 +3,26 @@
  */
 
 // モジュールのインポート
-import * as animations from './animations.js';
 import * as ui from './ui.js';
+import { initAllAnimations } from './animations';
+import { initPerformanceOptimizations } from './performance';
 
 // ページの読み込み完了時に実行する処理
 document.addEventListener('DOMContentLoaded', () => {
   // アニメーション初期化
-  animations.initScrollAnimations();
-  animations.initRippleEffect();
-  animations.initCounterAnimations();
-  animations.initTypingAnimation();
-  animations.initSmoothScroll();
+  initAllAnimations();
   
-  // UI機能初期化
-  ui.initMobileMenu();
-  ui.initScrollEffects();
+  // UI関連の初期化
+  ui.initMobileNavigation();
+  ui.initSmoothScroll();
   ui.initScrollSpy();
-  ui.initTabs();
-  ui.initAccordion();
-  ui.initStickySidebar();
-  ui.initLightbox();
+  ui.initTooltips();
+  
+  // パフォーマンス最適化
+  initPerformanceOptimizations();
   
   // フォームバリデーション初期化
   initFormValidation();
-  
-  // パフォーマンス最適化
-  lazyLoadImages();
 });
 
 // フォームバリデーション
@@ -36,129 +30,72 @@ function initFormValidation() {
   const forms = document.querySelectorAll('form.validate');
   
   forms.forEach(form => {
-    form.addEventListener('submit', e => {
-      let isValid = true;
-      
-      // 必須フィールドの検証
-      const requiredFields = form.querySelectorAll('[required]');
-      requiredFields.forEach(field => {
-        if (!field.value.trim()) {
-          isValid = false;
-          field.classList.add('error');
-          
-          // エラーメッセージの表示
-          let errorMsg = field.nextElementSibling;
-          if (!errorMsg || !errorMsg.classList.contains('form-error')) {
-            errorMsg = document.createElement('div');
-            errorMsg.classList.add('form-error');
-            errorMsg.textContent = '入力が必要です';
-            field.parentNode.insertBefore(errorMsg, field.nextSibling);
-          }
-        } else {
-          field.classList.remove('error');
-          
-          // エラーメッセージの削除
-          const errorMsg = field.nextElementSibling;
-          if (errorMsg && errorMsg.classList.contains('form-error')) {
-            errorMsg.remove();
-          }
-        }
-      });
-      
-      // メールアドレスの検証
-      const emailFields = form.querySelectorAll('input[type="email"]');
-      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-      
-      emailFields.forEach(field => {
-        if (field.value.trim() && !emailRegex.test(field.value)) {
-          isValid = false;
-          field.classList.add('error');
-          
-          // エラーメッセージの表示
-          let errorMsg = field.nextElementSibling;
-          if (!errorMsg || !errorMsg.classList.contains('form-error')) {
-            errorMsg = document.createElement('div');
-            errorMsg.classList.add('form-error');
-            errorMsg.textContent = 'メールアドレスの形式が正しくありません';
-            field.parentNode.insertBefore(errorMsg, field.nextSibling);
-          } else {
-            errorMsg.textContent = 'メールアドレスの形式が正しくありません';
-          }
-        }
-      });
-      
-      // バリデーションが失敗した場合、送信をキャンセル
-      if (!isValid) {
+    form.addEventListener('submit', function(e) {
+      if (!validateForm(this)) {
         e.preventDefault();
-        return false;
-      }
-      
-      // AJAX送信の処理（オプション）
-      if (form.getAttribute('data-ajax') === 'true') {
-        e.preventDefault();
-        
-        const formData = new FormData(form);
-        const submitButton = form.querySelector('[type="submit"]');
-        
-        // 送信ボタンの状態を変更
-        if (submitButton) {
-          submitButton.disabled = true;
-          submitButton.textContent = '送信中...';
-        }
-        
-        // API送信処理
-        fetch(form.action, {
-          method: form.method,
-          body: formData
-        })
-        .then(response => response.json())
-        .then(data => {
-          // 成功メッセージの表示
-          const successMsg = document.createElement('div');
-          successMsg.classList.add('form-success');
-          successMsg.textContent = '送信が完了しました';
-          form.parentNode.insertBefore(successMsg, form.nextSibling);
-          
-          // フォームのリセット
-          form.reset();
-          
-          // 3秒後にメッセージを非表示
-          setTimeout(() => {
-            successMsg.remove();
-          }, 3000);
-        })
-        .catch(error => {
-          console.error('送信エラー:', error);
-          
-          // エラーメッセージの表示
-          const errorMsg = document.createElement('div');
-          errorMsg.classList.add('form-error');
-          errorMsg.textContent = '送信中にエラーが発生しました。後ほど再度お試しください。';
-          form.parentNode.insertBefore(errorMsg, form.nextSibling);
-        })
-        .finally(() => {
-          // 送信ボタンの状態を元に戻す
-          if (submitButton) {
-            submitButton.disabled = false;
-            submitButton.textContent = '送信';
-          }
-        });
       }
     });
     
-    // フィールドの入力時にエラー表示をクリア
-    const formFields = form.querySelectorAll('input, textarea, select');
-    formFields.forEach(field => {
-      field.addEventListener('input', () => {
-        field.classList.remove('error');
-        
-        const errorMsg = field.nextElementSibling;
-        if (errorMsg && errorMsg.classList.contains('form-error')) {
-          errorMsg.remove();
-        }
+    const inputs = form.querySelectorAll('input, textarea, select');
+    inputs.forEach(input => {
+      input.addEventListener('blur', function() {
+        validateField(this);
       });
     });
   });
+}
+
+function validateForm(form) {
+  let isValid = true;
+  const inputs = form.querySelectorAll('input, textarea, select');
+  
+  inputs.forEach(input => {
+    if (!validateField(input)) {
+      isValid = false;
+    }
+  });
+  
+  return isValid;
+}
+
+function validateField(field) {
+  if (field.hasAttribute('required') && !field.value.trim()) {
+    setFieldError(field, '入力してください');
+    return false;
+  }
+  
+  if (field.type === 'email' && field.value) {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(field.value)) {
+      setFieldError(field, '有効なメールアドレスを入力してください');
+      return false;
+    }
+  }
+  
+  clearFieldError(field);
+  return true;
+}
+
+function setFieldError(field, message) {
+  field.classList.add('error');
+  
+  let errorElement = field.nextElementSibling;
+  if (!errorElement || !errorElement.classList.contains('error-message')) {
+    errorElement = document.createElement('span');
+    errorElement.classList.add('error-message');
+    field.parentNode.insertBefore(errorElement, field.nextSibling);
+  }
+  
+  errorElement.textContent = message;
+}
+
+function clearFieldError(field) {
+  field.classList.remove('error');
+  
+  const errorElement = field.nextElementSibling;
+  if (errorElement && errorElement.classList.contains('error-message')) {
+    errorElement.textContent = '';
+  }
 }
 
 // 画像の遅延読み込み
