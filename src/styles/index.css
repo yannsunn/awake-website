@@ -1,0 +1,18 @@
+/* index.css - メインスタイルインポートファイル */
+
+/* TailwindCSSのインポート */
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+/* ベーススタイルのインポート */
+@import 'main.css';
+@import 'layout.css';
+@import 'animations.css';
+
+/* コンポーネントスタイルのインポート */
+@import './components/cards.css';
+@import './components/forms.css';
+@import './components/dark-mode.css'; /* ダークモード用のスタイル */
+
+/* 必要に応じて他のコンポーネントスタイルを追加 */ 

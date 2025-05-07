@@ -1,0 +1,126 @@
+/* main.css - 基本スタイル定義 */
+
+:root {
+    --primary-color: #1E88E5;
+    --secondary-color: #1F2937;
+    --accent-color: #FF7E1D;
+    --light-color: #F8FAFC;
+    --dark-color: #111827;
+    --success-color: #22C55E;
+    --text-color: #374151;
+    --border-radius: 8px;
+    --box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    --transition: all 0.3s ease;
+    --cta-hover: #F97316;
+    --highlight-color: #FEF3C7;
+}
+
+/* リセットとベーススタイル */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: #f9f9f9;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* 共通セクションスタイル */
+section {
+    padding: 100px 0;
+}
+
+section h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: var(--secondary-color);
+    position: relative;
+    padding-bottom: 15px;
+}
+
+section h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background-color: var(--primary-color);
+}
+
+/* ボタンスタイル */
+.btn {
+    display: inline-block;
+    padding: 14px 30px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: var(--transition);
+    text-align: center;
+    border: 2px solid transparent;
+}
+
+.btn-primary {
+    background-color: var(--accent-color);
+    box-shadow: 0 4px 6px rgba(255, 126, 29, 0.25), 0 2px 4px rgba(255, 126, 29, 0.1);
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: var(--cta-hover);
+    transform: translateY(-5px);
+    box-shadow: 0 7px 14px rgba(255, 126, 29, 0.25), 0 5px 5px rgba(255, 126, 29, 0.1);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: white;
+    border: 2px solid white;
+}
+
+.btn-secondary:hover {
+    background-color: white;
+    color: var(--secondary-color);
+    transform: translateY(-5px);
+}
+
+/* メディアクエリ */
+@media (max-width: 992px) {
+    section h2 {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    section {
+        padding: 60px 0;
+    }
+    
+    .container {
+        padding: 0 15px;
+    }
+}
+
+@media (max-width: 576px) {
+    section h2 {
+        font-size: 1.8rem;
+    }
+} 

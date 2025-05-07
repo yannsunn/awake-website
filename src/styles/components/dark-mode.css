@@ -1,0 +1,119 @@
+/* dark-mode.css - ダークモード用スタイル */
+
+/* ダークモード基本設定 */
+.dark-mode {
+  --bg-primary: #121212;
+  --bg-secondary: #1e1e1e;
+  --text-primary: #e0e0e0;
+  --text-secondary: #a0a0a0;
+  --accent-color: #4f96f0;
+  --border-color: #333333;
+  --card-bg: #252525;
+  --input-bg: #2a2a2a;
+}
+
+/* ダークモード時のベーススタイル */
+.dark-mode body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+/* ヘッダー */
+.dark-mode .header {
+  background-color: rgba(18, 18, 18, 0.9);
+  border-bottom: 1px solid var(--border-color);
+}
+
+/* ナビゲーション */
+.dark-mode .nav-link {
+  color: var(--text-primary);
+}
+
+.dark-mode .nav-link:hover,
+.dark-mode .nav-link.active {
+  color: var(--accent-color);
+}
+
+/* ボタン */
+.dark-mode .btn-primary {
+  background-color: var(--accent-color);
+  color: var(--text-primary);
+}
+
+.dark-mode .btn-secondary {
+  background-color: transparent;
+  border: 1px solid var(--accent-color);
+  color: var(--accent-color);
+}
+
+.dark-mode .btn-primary:hover,
+.dark-mode .btn-secondary:hover {
+  filter: brightness(1.1);
+}
+
+/* カード */
+.dark-mode .card {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+}
+
+/* 入力フォーム */
+.dark-mode input,
+.dark-mode textarea,
+.dark-mode select {
+  background-color: var(--input-bg);
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+}
+
+.dark-mode input::placeholder,
+.dark-mode textarea::placeholder {
+  color: var(--text-secondary);
+}
+
+/* セクション背景 */
+.dark-mode .bg-alternate {
+  background-color: var(--bg-secondary);
+}
+
+/* フッター */
+.dark-mode footer {
+  background-color: var(--bg-secondary);
+  border-top: 1px solid var(--border-color);
+}
+
+/* アニメーション調整 */
+.dark-mode .animate-fade-in {
+  animation-delay: 0.1s; /* ダークモード切替時のアニメーション調整 */
+}
+
+/* トグルボタン */
+.theme-toggle {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.dark-mode .theme-toggle {
+  background-color: var(--card-bg);
+}
+
+/* アイコンのトランジション */
+.theme-toggle svg {
+  transition: transform 0.5s ease, opacity 0.3s ease;
+}
+
+.dark-mode .sun-icon {
+  opacity: 1;
+  transform: rotate(0deg);
+}
+
+.dark-mode .moon-icon {
+  opacity: 0;
+  transform: rotate(90deg);
+  position: absolute;
+} 
