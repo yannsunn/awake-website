@@ -1,11 +1,13 @@
 [build]
-  publish = "./dist"
-  command = "echo 'Skipping build step'"
+  publish = "dist"
+  command = "echo 'Static site, no build needed'"
+
+[build.environment]
+  NODE_VERSION = "16"
+  PYTHON_VERSION = "3.8"
 
 [dev]
-  command = "npm run dev"
-  port = 3000
-  framework = "vite"
+  framework = "#static"
 
 # SPAルーティング（シンプル化）
 [[redirects]]
@@ -34,12 +36,12 @@
     Referrer-Policy = "strict-origin-when-cross-origin"
     Content-Security-Policy = """
       default-src 'self';
-      script-src 'self' 'unsafe-inline' https://unpkg.com https://cdnjs.cloudflare.com;
+      script-src 'self' 'unsafe-inline' 'unsafe-eval' https://unpkg.com https://cdnjs.cloudflare.com;
       style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com https://unpkg.com;
-      img-src 'self' data: https://cdnjs.cloudflare.com;
+      img-src 'self' data: https://*.cloudflare.com https://*.githubusercontent.com;
       font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com data:;
       connect-src 'self' https://fonts.googleapis.com https://cdnjs.cloudflare.com https://unpkg.com;
-      worker-src 'self';
+      worker-src 'self' blob:;
       frame-src 'self';
       media-src 'self';
       object-src 'none';
@@ -47,24 +49,6 @@
 
 # 静的アセットのキャッシュ設定
 [[headers]]
-  for = "/**/*.css"
+  for = "/**/*.{css,js,svg,jpg,jpeg,png,gif,ico,woff,woff2}"
   [headers.values]
-    Cache-Control = "public, max-age=31536000"
-
-[[headers]]
-  for = "/**/*.js"
-  [headers.values]
-    Cache-Control = "public, max-age=31536000"
-
-# 静的アセット全般のキャッシュ設定
-[[headers]]
-  for = "/assets/*"
-  [headers.values]
-    Cache-Control = "public, max-age=31536000, immutable"
-
-# キャッシュ設定（ビルドされたJS/CSS）
-[[headers]]
-  for = "/*.svg"
-  [headers.values]
-    Content-Type = "image/svg+xml"
-    Cache-Control = "public, max-age=31536000" 
+    Cache-Control = "public, max-age=31536000, immutable" 
