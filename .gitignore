@@ -15,7 +15,6 @@ Thumbs.db
 node_modules/
 
 # ビルド結果
-dist/
 build/
 
 # ローカル環境ファイル
