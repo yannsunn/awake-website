@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>保険事業部門 - 株式会社Example</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <meta name="description" content="お客様のニーズに合わせた最適な保険プランをご提案。生命保険、損害保険、医療保険など、幅広い保険商品の中からベストな選択をサポートします。">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="/" class="logo">Example Corp</a>
+            <ul>
+                <li><a href="/services/ec.html">ネット通販</a></li>
+                <li><a href="/services/ai.html">AI事業</a></li>
+                <li><a href="/services/insurance.html" class="active">保険</a></li>
+                <li><a href="/services/furniture.html">家具</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h1>保険事業部門</h1>
+            <p>あなたの大切な人生を守るベストな選択を</p>
+        </section>
+
+        <section class="services">
+            <h2>取扱保険商品</h2>
+            <div class="service-grid">
+                <div class="service-card">
+                    <h3>生命保険</h3>
+                    <p>終身保険、定期保険、医療保険など、ライフステージに合わせた保障を提供します。</p>
+                </div>
+                <div class="service-card">
+                    <h3>損害保険</h3>
+                    <p>自動車保険、火災保険、賠償責任保険など、様々なリスクに対応する保険をご用意。</p>
+                </div>
+                <div class="service-card">
+                    <h3>医療保険</h3>
+                    <p>入院、手術、通院など、医療費の負担を軽減する充実した保障プランをご提案。</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="features">
+            <h2>選ばれる理由</h2>
+            <div class="feature-grid">
+                <div class="feature-item">
+                    <h3>豊富な商品ラインナップ</h3>
+                    <p>大手保険会社の商品を幅広く取り扱い、比較検討が可能です。</p>
+                </div>
+                <div class="feature-item">
+                    <h3>専門スタッフによる相談</h3>
+                    <p>経験豊富なファイナンシャルプランナーが丁寧にアドバイス。</p>
+                </div>
+                <div class="feature-item">
+                    <h3>アフターフォロー</h3>
+                    <p>契約後も定期的な見直しと保障の調整をサポートします。</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="contact">
+            <h2>無料相談予約</h2>
+            <p>保険に関する相談は、以下のフォームより予約を承っております。</p>
+            <form action="/submit" method="POST">
+                <div class="form-group">
+                    <label for="name">お名前</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">メールアドレス</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">電話番号</label>
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
+                <div class="form-group">
+                    <label for="preferred_date">希望日時</label>
+                    <input type="datetime-local" id="preferred_date" name="preferred_date" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">ご相談内容</label>
+                    <textarea id="message" name="message" required></textarea>
+                </div>
+                <button type="submit">予約する</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>会社情報</h4>
+                <ul>
+                    <li><a href="/about">会社概要</a></li>
+                    <li><a href="/news">ニュース</a></li>
+                    <li><a href="/careers">採用情報</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>サービス</h4>
+                <ul>
+                    <li><a href="/services/ec.html">ネット通販</a></li>
+                    <li><a href="/services/ai.html">AI事業</a></li>
+                    <li><a href="/services/insurance.html">保険</a></li>
+                    <li><a href="/services/furniture.html">家具</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>お問い合わせ</h4>
+                <ul>
+                    <li><a href="/contact">お問い合わせフォーム</a></li>
+                    <li><a href="/faq">よくある質問</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Example Corp. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html> 

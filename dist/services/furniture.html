@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>家具事業部門 - 株式会社Example</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <meta name="description" content="デザイン性と機能性を兼ね備えた高品質な家具を提供。オフィス家具から住宅用家具まで、幅広い製品ラインナップでお客様の空間づくりをサポートします。">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="/" class="logo">Example Corp</a>
+            <ul>
+                <li><a href="/services/ec.html">ネット通販</a></li>
+                <li><a href="/services/ai.html">AI事業</a></li>
+                <li><a href="/services/insurance.html">保険</a></li>
+                <li><a href="/services/furniture.html" class="active">家具</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h1>家具事業部門</h1>
+            <p>快適な空間づくりのパートナー</p>
+        </section>
+
+        <section class="products">
+            <h2>製品カテゴリー</h2>
+            <div class="product-grid">
+                <div class="product-card">
+                    <h3>オフィス家具</h3>
+                    <p>デスク、チェア、収納家具など、働く空間を快適にする製品を提供。</p>
+                    <ul>
+                        <li>オフィスチェア</li>
+                        <li>ワークデスク</li>
+                        <li>収納キャビネット</li>
+                        <li>会議テーブル</li>
+                    </ul>
+                </div>
+                <div class="product-card">
+                    <h3>リビング家具</h3>
+                    <p>ソファ、テーブル、収納家具など、暮らしを豊かにする製品を提供。</p>
+                    <ul>
+                        <li>ソファ</li>
+                        <li>ダイニングセット</li>
+                        <li>テレビボード</li>
+                        <li>本棚・シェルフ</li>
+                    </ul>
+                </div>
+                <div class="product-card">
+                    <h3>寝室家具</h3>
+                    <p>ベッド、マットレス、ナイトテーブルなど、快適な睡眠をサポート。</p>
+                    <ul>
+                        <li>ベッドフレーム</li>
+                        <li>マットレス</li>
+                        <li>ドレッサー</li>
+                        <li>クローゼット</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="features">
+            <h2>特徴</h2>
+            <div class="feature-grid">
+                <div class="feature-item">
+                    <h3>品質へのこだわり</h3>
+                    <p>厳選された素材と熟練の職人による製造で、長く使える製品を提供。</p>
+                </div>
+                <div class="feature-item">
+                    <h3>デザイン性</h3>
+                    <p>機能性と美しさを両立した、時代に合わせたデザインを追求。</p>
+                </div>
+                <div class="feature-item">
+                    <h3>カスタマイズ対応</h3>
+                    <p>お客様のニーズに合わせた特注品の製作にも対応いたします。</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="showroom">
+            <h2>ショールーム</h2>
+            <p>実際に製品を見て、触れて、体験していただけるショールームを全国に展開しています。</p>
+            <div class="showroom-locations">
+                <div class="location">
+                    <h3>東京ショールーム</h3>
+                    <p>東京都渋谷区○○ X-X-X</p>
+                    <p>営業時間: 10:00-19:00</p>
+                    <p>定休日: 水曜日</p>
+                </div>
+                <div class="location">
+                    <h3>大阪ショールーム</h3>
+                    <p>大阪市中央区○○ X-X-X</p>
+                    <p>営業時間: 10:00-19:00</p>
+                    <p>定休日: 水曜日</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="contact">
+            <h2>お問い合わせ</h2>
+            <p>製品に関するご質問やご相談は、以下のフォームよりお気軽にお問い合わせください。</p>
+            <form action="/submit" method="POST">
+                <div class="form-group">
+                    <label for="name">お名前</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">メールアドレス</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">電話番号</label>
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
+                <div class="form-group">
+                    <label for="inquiry_type">お問い合わせ種別</label>
+                    <select id="inquiry_type" name="inquiry_type" required>
+                        <option value="">選択してください</option>
+                        <option value="product">製品について</option>
+                        <option value="showroom">ショールーム見学</option>
+                        <option value="custom">特注品相談</option>
+                        <option value="other">その他</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="message">お問い合わせ内容</label>
+                    <textarea id="message" name="message" required></textarea>
+                </div>
+                <button type="submit">送信する</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>会社情報</h4>
+                <ul>
+                    <li><a href="/about">会社概要</a></li>
+                    <li><a href="/news">ニュース</a></li>
+                    <li><a href="/careers">採用情報</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>サービス</h4>
+                <ul>
+                    <li><a href="/services/ec.html">ネット通販</a></li>
+                    <li><a href="/services/ai.html">AI事業</a></li>
+                    <li><a href="/services/insurance.html">保険</a></li>
+                    <li><a href="/services/furniture.html">家具</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>お問い合わせ</h4>
+                <ul>
+                    <li><a href="/contact">お問い合わせフォーム</a></li>
+                    <li><a href="/faq">よくある質問</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Example Corp. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html> 
