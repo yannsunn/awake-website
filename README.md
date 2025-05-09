@@ -1,4 +1,6 @@
-# 株式会社Awake公式ウェブサイト
+# 株式会社Awake ウェブサイト
+
+モダンでパフォーマンスの高いウェブサイトのソースコード
 
 ## プロジェクト概要
 
@@ -6,100 +8,13 @@
 
 ## 技術スタック
 
-- React.js - UIコンポーネント構築
-- Vite - 高速な開発環境とビルドツール
-- TailwindCSS - ユーティリティファーストのスタイリング
-- Lucide React - アイコンライブラリ
-- CSS Modules - コンポーネントスコープのスタイリング
+- React
+- Vite
+- TailwindCSS
+- JavaScript ES6+
+- CSS3 / SCSS
 
-## プロジェクト構造
-
-```
-awake-website/
-├── public/             # 静的ファイル
-├── src/                # ソースコード
-│   ├── assets/         # 画像、フォントなどの静的リソース
-│   ├── components/     # Reactコンポーネント
-│   ├── js/             # JavaScriptユーティリティ
-│   │   └── animations-2025.js # 2025年トレンドのアニメーション制御
-│   └── styles/         # CSSスタイルシート
-│       ├── components/ # コンポーネント固有のスタイル
-│       ├── animations-2025.css # 2025年トレンドのアニメーション
-│       ├── modern-ui.css # 2025年トレンドのUIコンポーネント 
-│       └── index.css   # メインスタイルエントリーポイント
-├── index.html          # メインHTML
-└── package.json        # 依存関係と設定
-```
-
-## 最適化内容
-
-### コンポーネント分割
-
-以前の単一の大きなコンポーネントファイル（AwakeWebsite.jsx）を複数の小さなコンポーネントに分割しました：
-
-- Header.jsx - ヘッダーとナビゲーション
-- Hero.jsx - ヒーローセクション
-- About.jsx - 会社概要セクション
-- Services.jsx - サービス内容セクション
-- Contact.jsx - お問い合わせセクション
-- Footer.jsx - フッターセクション
-
-### UI/UX最適化
-
-1. **ダークモード機能**
-   - ThemeToggle.jsxコンポーネントの追加
-   - dark-mode.cssスタイルシート
-   - システム設定に基づく自動テーマ切り替え
-
-2. **アニメーション強化**
-   - スクロールアニメーション
-   - スタガーアニメーション（要素が順番に表示）
-   - ホバーエフェクト
-   - パララックス効果
-
-3. **インタラクティブな要素**
-   - ScrollToTopButtonコンポーネント
-   - フォームバリデーション
-   - タブインターフェース
-
-4. **モダンなUIコンポーネント（2025年トレンド）**
-   - グラスモーフィズムUI
-   - ニューモーフィズム要素
-   - グラデーション効果
-   - 立体カードデザイン
-   - 3Dアバターカード
-   - スマートフォーム要素
-
-5. **最新のアニメーション（2025年トレンド）**
-   - スクロールトリガーアニメーション（フェード、ズーム、回転）
-   - スタッガーアニメーション（連続して起動）
-   - テキストリビールとタイピングエフェクト
-   - 高度なホバーエフェクト（立体、回転、マグネット効果）
-   - パララックススクロール
-   - クリック波紋エフェクト
-   - モーフィングシェイプとグリッチエフェクト
-   - 3Dフリップカード
-   - カウントアップアニメーション
-
-### パフォーマンス最適化
-
-1. **画像の最適化**
-   - 遅延読み込み実装
-   - WebP対応検出と最適化
-   - 適切なサイズと圧縮
-
-2. **Core Web Vitals対応**
-   - LCP（Largest Contentful Paint）の最適化
-   - CLS（Cumulative Layout Shift）の防止
-   - FID（First Input Delay）の改善
-
-3. **リソース最適化**
-   - クリティカルCSSの抽出
-   - リソース優先順位の設定
-   - 非同期読み込み
-   - リソースヒント（プリフェッチ、プリコネクト）の追加
-
-## インストールと実行
+## 開発環境のセットアップ
 
 ```bash
 # 依存関係のインストール
@@ -108,20 +23,90 @@ npm install
 # 開発サーバーの起動
 npm run dev
 
-# ビルド
+# 本番用ビルド
 npm run build
 
 # ビルドのプレビュー
 npm run preview
 ```
 
-## ブラウザサポート
+## プロジェクト構造
 
-- Chrome（最新2バージョン）
-- Firefox（最新2バージョン）
-- Safari（最新2バージョン）
-- Edge（最新2バージョン）
+```
+/
+├── public/               # 静的アセット
+│   └── assets/
+│       ├── images/       # 画像ファイル
+│       └── ...
+├── src/                  # ソースコード
+│   ├── components/       # Reactコンポーネント
+│   ├── js/               # JavaScriptファイル
+│   │   └── core/         # コアモジュール
+│   ├── pages/            # ページコンポーネント
+│   ├── styles/           # CSSファイル
+│   │   ├── animations/   # アニメーション関連
+│   │   ├── base/         # ベーススタイル
+│   │   ├── components/   # コンポーネントスタイル
+│   │   ├── layouts/      # レイアウトスタイル
+│   │   └── main/         # メインスタイル
+│   └── index.jsx         # エントリーポイント
+├── .github/              # GitHub設定
+│   └── workflows/        # GitHub Actions
+├── netlify.toml          # Netlify設定
+├── vercel.json           # Vercel設定
+├── vite.config.js        # Vite設定
+├── tailwind.config.js    # Tailwind設定
+└── package.json          # npm設定
+```
+
+## デプロイ方法
+
+### Netlify
+
+1. Netlifyアカウントを作成し、新しいサイトを追加
+2. GitHubリポジトリと連携
+3. 以下の設定を行う:
+   - ビルドコマンド: `npm run build`
+   - 公開ディレクトリ: `dist`
+
+または、GitHub Actions経由でデプロイする場合は、以下の環境変数を設定:
+- `NETLIFY_AUTH_TOKEN`: Netlify個人アクセストークン
+- `NETLIFY_SITE_ID`: デプロイ先のNetlifyサイトID
+
+### Vercel
+
+1. Vercelアカウントを作成し、新しいプロジェクトを追加
+2. GitHubリポジトリと連携
+3. フレームワークプリセットとして「Vite」を選択
+
+設定はすべて`vercel.json`ファイルに含まれています。
+
+## パフォーマンス最適化
+
+- 画像の遅延読み込み
+- CSSとJSの最小化
+- モジュール分割によるコード最適化
+- コンポーネントの条件付きレンダリング
+- アニメーションの最適化
+
+## ブランチ戦略
+
+- `main`: 本番環境用の安定版コード
+- `develop`: 開発環境用のコード
+- `feature/*`: 新機能開発用
+- `bugfix/*`: バグ修正用
+
+## コントリビューション
+
+1. フォークしてブランチを作成
+2. 変更をコミット
+3. プルリクエストを送信
 
 ## ライセンス
 
-Copyright © 2025 株式会社Awake. All rights reserved. 
+MIT
+
+## 連絡先
+
+株式会社Awake
+contact@awakeinc.co.jp 

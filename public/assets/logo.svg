@@ -1,0 +1,6 @@
+<svg width="200" height="50" viewBox="0 0 200 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M10 40L25 10L40 40H10Z" fill="#4361EE"/>
+  <path d="M30 40L45 10L60 40H30Z" fill="#4CC9F0"/>
+  <path d="M50 40L65 10L80 40H50Z" fill="#F72585"/>
+  <text x="90" y="30" font-family="Arial, sans-serif" font-weight="700" font-size="20" fill="#3F3D56">Awake</text>
+</svg>

@@ -1,4 +1,4 @@
-// animations.js - アニメーション関連の機能
+// page-animations.js - ページアニメーション関連の機能
 
 /**
  * スクロールアニメーションの初期化
@@ -11,9 +11,15 @@ export function initScrollAnimations() {
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                entry.target.classList.add('animated');
+                const element = entry.target;
+                const delay = element.dataset.delay || 0;
+                
+                setTimeout(() => {
+                    element.classList.add('animated');
+                }, delay);
+                
                 // 一度表示されたら監視を解除
-                observer.unobserve(entry.target);
+                observer.unobserve(element);
             }
         });
     }, {

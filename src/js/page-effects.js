@@ -1,9 +1,9 @@
-// animations.js - サイト全体のアニメーション機能
+// page-effects.js - サイト全体のアニメーション機能
 
 /**
  * サイト全体のアニメーション機能を初期化
  */
-export function initPageAnimations() {
+export function initPageEffects() {
     // スクロールアニメーションの初期化
     initScrollEffects();
     
