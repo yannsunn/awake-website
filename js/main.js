@@ -25,6 +25,11 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
+    // ホイールイベントにパッシブリスナーを設定
+    document.addEventListener('wheel', function() {
+        // 何もしない - パッシブリスナーのデモンストレーション
+    }, { passive: true });
+
     // Header scroll effect
     const header = document.querySelector('.header');
     let lastScroll = 0;
@@ -39,7 +44,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         
         lastScroll = currentScroll;
-    });
+    }, { passive: true });
 
     // Scroll to top button
     const scrollTopButton = document.querySelector('.scroll-top');
@@ -51,7 +56,7 @@ document.addEventListener('DOMContentLoaded', function() {
             } else {
                 scrollTopButton.classList.remove('visible');
             }
-        });
+        }, { passive: true });
 
         scrollTopButton.addEventListener('click', () => {
             window.scrollTo({
