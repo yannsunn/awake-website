@@ -2,28 +2,31 @@
 document.addEventListener('DOMContentLoaded', function() {
     const contactForm = document.getElementById('contact-form');
     if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
+        contactForm.addEventListener('submit', async (e) => {
             e.preventDefault();
             
-            // Get form data
-            const formData = {
-                name: document.getElementById('name').value,
-                email: document.getElementById('email').value,
-                message: document.getElementById('message').value
-            };
-
-            // Simple form validation
-            if (!formData.name || !formData.email || !formData.message) {
-                alert('全ての項目を入力してください。');
-                return;
-            }
-
-            // Here you would typically send the data to a server
-            console.log('送信されたデータ:', formData);
-            alert('お問い合わせありがとうございます。\n内容を確認次第、ご連絡させていただきます。');
+            const formData = new FormData(contactForm);
+            const data = Object.fromEntries(formData.entries());
             
-            // Clear form
-            contactForm.reset();
+            try {
+                const response = await fetch('/api/contact', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(data)
+                });
+                
+                if (response.ok) {
+                    alert('お問い合わせを受け付けました。担当者より連絡させていただきます。');
+                    contactForm.reset();
+                } else {
+                    throw new Error('送信に失敗しました');
+                }
+            } catch (error) {
+                alert('エラーが発生しました。時間をおいて再度お試しください。');
+                console.error('Form submission error:', error);
+            }
         });
     }
 
@@ -47,19 +50,38 @@ document.addEventListener('DOMContentLoaded', function() {
 
     window.addEventListener('scroll', () => {
         const currentScroll = window.pageYOffset;
-
-        if (currentScroll <= 0) {
-            header.classList.remove('scroll-up');
-            return;
+        
+        if (currentScroll > lastScroll && currentScroll > 100) {
+            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
         }
-
-        if (currentScroll > lastScroll && !header.classList.contains('scroll-down')) {
-            header.classList.remove('scroll-up');
-            header.classList.add('scroll-down');
-        } else if (currentScroll < lastScroll && header.classList.contains('scroll-down')) {
-            header.classList.remove('scroll-down');
-            header.classList.add('scroll-up');
-        }
+        
         lastScroll = currentScroll;
+    });
+
+    // Scroll to top button
+    const scrollTopButton = document.querySelector('.scroll-top');
+
+    window.addEventListener('scroll', () => {
+        if (window.pageYOffset > 300) {
+            scrollTopButton.classList.add('visible');
+        } else {
+            scrollTopButton.classList.remove('visible');
+        }
+    });
+
+    scrollTopButton.addEventListener('click', () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+
+    // Animation initialization (AOS)
+    AOS.init({
+        duration: 800,
+        once: true,
+        offset: 100
     });
 }); 

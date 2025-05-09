@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="120" height="40" viewBox="0 0 120 40" xmlns="http://www.w3.org/2000/svg">
+    <style>
+        .text { font-family: Arial, sans-serif; font-weight: bold; }
+        .light { fill: #1E88E5; }
+        .dark { fill: #333; }
+    </style>
+    <text x="10" y="28" class="text light">Awake</text>
+    <text x="70" y="28" class="text dark">Inc.</text>
+</svg> 
