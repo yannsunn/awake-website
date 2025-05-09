@@ -60,14 +60,15 @@ export const initCounterAnimation = () => {
   const startCounting = (counter) => {
     const target = parseInt(counter.dataset.target);
     const duration = parseInt(counter.dataset.duration) || 2000;
-    const start = 0;
-    const increment = target / (duration / 16);
+    const start = parseInt(counter.textContent) || 0;
+    const increment = (target - start) / (duration / 16);
     let current = start;
     
     const updateCounter = () => {
       current += increment;
+      counter.textContent = Math.round(current);
+      
       if (current < target) {
-        counter.textContent = Math.ceil(current);
         requestAnimationFrame(updateCounter);
       } else {
         counter.textContent = target;
@@ -77,10 +78,6 @@ export const initCounterAnimation = () => {
     updateCounter();
   };
   
-  const observerOptions = {
-    threshold: 0.5
-  };
-  
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
@@ -88,63 +85,44 @@ export const initCounterAnimation = () => {
         observer.unobserve(entry.target);
       }
     });
-  }, observerOptions);
-  
-  counters.forEach((counter) => {
-    observer.observe(counter);
   });
+  
+  counters.forEach((counter) => observer.observe(counter));
 };
 
 // タイピングアニメーション
-function initTypingAnimation() {
-  const typingElements = document.querySelectorAll('.typing-text');
+export const initTypingAnimation = () => {
+  const typingElements = document.querySelectorAll('.typing-animation');
   
   typingElements.forEach((element) => {
-    const text = element.getAttribute('data-text');
-    const speed = element.getAttribute('data-speed') || 100;
-    
+    const text = element.textContent;
+    const speed = parseInt(element.dataset.speed) || 100;
     element.textContent = '';
+    
     let i = 0;
-    
-    const observer = new IntersectionObserver(
-      (entries) => {
-        if (entries[0].isIntersecting) {
-          const typingInterval = setInterval(() => {
-            if (i < text.length) {
-              element.textContent += text.charAt(i);
-              i++;
-            } else {
-              clearInterval(typingInterval);
-            }
-          }, speed);
-          
-          observer.unobserve(element);
-        }
-      },
-      {
-        threshold: 0.5
+    const type = () => {
+      if (i < text.length) {
+        element.textContent += text.charAt(i);
+        i++;
+        setTimeout(type, speed);
       }
-    );
+    };
     
-    observer.observe(element);
+    type();
   });
-}
+};
 
 // パララックス効果
 export const initParallaxEffect = () => {
   const parallaxElements = document.querySelectorAll('.parallax');
   
-  const updateParallax = () => {
+  window.addEventListener('scroll', () => {
     parallaxElements.forEach((element) => {
-      const scrollPosition = window.pageYOffset;
       const speed = element.dataset.speed || 0.5;
-      const offset = scrollPosition * speed;
-      
-      element.style.transform = `translateY(${offset}px)`;
+      const yPos = -(window.pageYOffset * speed);
+      element.style.transform = `translateY(${yPos}px)`;
     });
-  };
-  
-  window.addEventListener('scroll', updateParallax);
+  });
 };
 
 // ホバーエフェクト
@@ -153,40 +131,30 @@ export const initHoverEffects = () => {
   
   hoverElements.forEach((element) => {
     element.addEventListener('mouseenter', () => {
-      element.classList.add('hovered');
+      element.classList.add('hover-active');
     });
     
     element.addEventListener('mouseleave', () => {
-      element.classList.remove('hovered');
+      element.classList.remove('hover-active');
     });
   });
 };
 
-// スムーズスクロール
+// スムーススクロール
 export const initSmoothScroll = () => {
-  const navLinks = document.querySelectorAll('a[href^="#"]');
+  const scrollLinks = document.querySelectorAll('a[href^="#"]');
   
-  navLinks.forEach((link) => {
+  scrollLinks.forEach((link) => {
     link.addEventListener('click', (e) => {
       e.preventDefault();
-      
       const targetId = link.getAttribute('href');
-      if (targetId === '#') return;
-      
       const targetElement = document.querySelector(targetId);
-      if (!targetElement) return;
       
-      const targetPosition = targetElement.offsetTop - 80; // ヘッダーの高さ分オフセット
-      
-      window.scrollTo({
-        top: targetPosition,
-        behavior: 'smooth'
-      });
-      
-      // モバイルメニューが開いている場合は閉じる
-      const mobileMenu = document.querySelector('.mobile-menu');
-      if (mobileMenu && mobileMenu.classList.contains('open')) {
-        mobileMenu.classList.remove('open');
+      if (targetElement) {
+        targetElement.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        });
       }
     });
   });
@@ -194,13 +162,20 @@ export const initSmoothScroll = () => {
 
 // カードフリップアニメーション
 export const initCardFlip = () => {
-  const flipCards = document.querySelectorAll('.flip-card');
+  const cards = document.querySelectorAll('.card-flip');
   
-  flipCards.forEach((card) => {
+  cards.forEach((card) => {
     card.addEventListener('click', () => {
-      card.classList.toggle('flipped');
+      card.classList.toggle('is-flipped');
     });
   });
+};
+
+// 全アニメーションの初期化
+export const initAllAnimations = () => {
+  initScrollAnimations();
+  initCounterAnimation();
+  initParallaxEffect();
 };
 
 // ページ読み込み時に全てのアニメーションを初期化

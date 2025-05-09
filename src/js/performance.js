@@ -197,4 +197,88 @@ if (document.readyState === 'complete') {
     window.addEventListener('load', initPerformanceOptimizations);
 }
 
-export { initPerformanceOptimizations }; 
+export { initPerformanceOptimizations };
+
+// 画像の遅延読み込み
+export const initLazyLoading = () => {
+  const images = document.querySelectorAll('img[data-src]');
+  const imageOptions = {
+    threshold: 0.1,
+    rootMargin: '50px'
+  };
+  
+  const imageObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        const img = entry.target;
+        img.src = img.dataset.src;
+        img.classList.add('loaded');
+        observer.unobserve(img);
+      }
+    });
+  }, imageOptions);
+  
+  images.forEach((img) => imageObserver.observe(img));
+};
+
+// クリティカルリソースの最適化
+export const initPerformanceOptimizations = () => {
+  // 非クリティカルなCSSの遅延読み込み
+  const loadDeferredStyles = () => {
+    const deferredStyles = document.querySelectorAll('link[rel="preload"][as="style"]');
+    deferredStyles.forEach((style) => {
+      style.rel = 'stylesheet';
+    });
+  };
+  
+  // 非クリティカルなJavaScriptの遅延読み込み
+  const loadDeferredScripts = () => {
+    const deferredScripts = document.querySelectorAll('script[data-defer]');
+    deferredScripts.forEach((script) => {
+      const newScript = document.createElement('script');
+      Array.from(script.attributes).forEach((attr) => {
+        if (attr.name !== 'data-defer') {
+          newScript.setAttribute(attr.name, attr.value);
+        }
+      });
+      newScript.textContent = script.textContent;
+      script.parentNode.replaceChild(newScript, script);
+    });
+  };
+  
+  // FontAwesomeの最適化
+  const optimizeFontAwesome = () => {
+    const icons = document.querySelectorAll('.fa, .fab, .far, .fas');
+    const uniqueIcons = new Set();
+    
+    icons.forEach((icon) => {
+      Array.from(icon.classList).forEach((className) => {
+        if (className.startsWith('fa-')) {
+          uniqueIcons.add(className);
+        }
+      });
+    });
+    
+    // 使用されているアイコンのみをロード
+    const script = document.createElement('script');
+    script.src = `https://kit.fontawesome.com/your-kit-code.js`;
+    script.dataset.autoAddCss = 'false';
+    script.dataset.searchPseudoElements = 'true';
+    script.dataset.observeMutations = 'true';
+    script.dataset.icons = Array.from(uniqueIcons).join(',');
+    document.head.appendChild(script);
+  };
+  
+  // 実行
+  if (document.readyState === 'complete') {
+    loadDeferredStyles();
+    loadDeferredScripts();
+    optimizeFontAwesome();
+  } else {
+    window.addEventListener('load', () => {
+      loadDeferredStyles();
+      loadDeferredScripts();
+      optimizeFontAwesome();
+    });
+  }
+}; 

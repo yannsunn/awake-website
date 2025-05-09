@@ -1,0 +1,84 @@
+/* colors.css - カラースキーム設定 */
+
+:root {
+  /* プライマリカラー */
+  --color-primary: #1E88E5;
+  --color-primary-light: #64B5F6;
+  --color-primary-dark: #1565C0;
+
+  /* セカンダリカラー */
+  --color-secondary: #26A69A;
+  --color-secondary-light: #4DB6AC;
+  --color-secondary-dark: #00897B;
+
+  /* アクセントカラー */
+  --color-accent: #FF4081;
+  --color-accent-light: #FF80AB;
+  --color-accent-dark: #F50057;
+
+  /* グレースケール */
+  --color-gray-50: #F9FAFB;
+  --color-gray-100: #F3F4F6;
+  --color-gray-200: #E5E7EB;
+  --color-gray-300: #D1D5DB;
+  --color-gray-400: #9CA3AF;
+  --color-gray-500: #6B7280;
+  --color-gray-600: #4B5563;
+  --color-gray-700: #374151;
+  --color-gray-800: #1F2937;
+  --color-gray-900: #111827;
+
+  /* ステータスカラー */
+  --color-success: #4CAF50;
+  --color-warning: #FFC107;
+  --color-error: #F44336;
+  --color-info: #2196F3;
+
+  /* テキストカラー */
+  --color-text-primary: var(--color-gray-900);
+  --color-text-secondary: var(--color-gray-600);
+  --color-text-disabled: var(--color-gray-400);
+
+  /* 背景色 */
+  --color-background: #FFFFFF;
+  --color-background-light: var(--color-gray-50);
+  --color-background-dark: var(--color-gray-100);
+}
+
+/* ダークモード */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-background: var(--color-gray-900);
+    --color-background-light: var(--color-gray-800);
+    --color-background-dark: var(--color-gray-700);
+
+    --color-text-primary: var(--color-gray-50);
+    --color-text-secondary: var(--color-gray-300);
+    --color-text-disabled: var(--color-gray-500);
+  }
+}
+
+/* ユーティリティクラス */
+.text-primary {
+  color: var(--color-primary);
+}
+
+.text-secondary {
+  color: var(--color-secondary);
+}
+
+.text-accent {
+  color: var(--color-accent);
+}
+
+.bg-primary {
+  background-color: var(--color-primary);
+}
+
+.bg-secondary {
+  background-color: var(--color-secondary);
+}
+
+.bg-accent {
+  background-color: var(--color-accent);
+} 

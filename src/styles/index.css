@@ -5,17 +5,36 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
-/* ベーススタイルのインポート */
-@import './main.css';
-@import './layout.css';
-@import './animations.css';
-@import './animations-2025.css'; /* 2025年トレンドのアニメーション */
-@import './modern-ui.css'; /* 2025年トレンドのモダンUIコンポーネント */
+/* ベーススタイル */
+@import './base/variables.css';
+@import './base/reset.css';
+@import './base/typography.css';
 
-/* コンポーネントスタイルのインポート */
-@import './components/cards.css';
+/* レイアウト */
+@import './layouts/grid.css';
+@import './layouts/responsive.css';
+@import './layouts/footer.css';
+
+/* コンポーネント */
+@import './components/buttons.css';
 @import './components/forms.css';
-@import './components/dark-mode.css'; /* ダークモード用のスタイル */
+@import './components/dark-mode.css';
+@import './components/sns-display.css';
+
+/* アニメーション */
+@import './animations/transitions.css';
 
 /* 必要に応じて他のコンポーネントスタイルを追加 */
-@import './sns-display.css'; /* SNS実績表示用のスタイル */ 
+
+/* メインスタイルシート */
+
+/* ベース設定 */
+@import "./base/variables.css";
+@import "./base/reset.css";
+@import "./base/typography.css";
+
+/* レイアウト */
+@import "./layouts/footer.css";
+
+/* アニメーション */
+@import "./animations/transitions.css"; 
