@@ -1,6 +1,6 @@
 [build]
-  publish = "dist"
-  command = ""  # UI設定の上書きを防ぐため明示的に指定
+  publish = "./dist"
+  command = "echo 'Skipping build step'"
 
 [dev]
   command = "npm run dev"
