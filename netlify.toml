@@ -3,19 +3,34 @@
   command = "echo 'Static site, no build needed'"
 
 [build.environment]
-  NODE_VERSION = "16"
-  PYTHON_VERSION = "3.8"
+  NODE_VERSION = "16.20.2"
+  SKIP_RUBY = "true"
+  SKIP_GO = "true"
+  SKIP_PHP = "true"
+  SKIP_PYTHON = "true"
 
 [dev]
   framework = "#static"
 
-# SPAルーティング（シンプル化）
+# SSL/TLS設定
+[[headers]]
+  for = "/*"
+  [headers.values]
+    Strict-Transport-Security = "max-age=31536000; includeSubDomains; preload"
+
+# 強制HTTPS化
+[[redirects]]
+  from = "http://*"
+  to = "https://:splat"
+  status = 301
+  force = true
+
+# その他のリダイレクト設定
 [[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200
 
-# 成功ページリダイレクト
 [[redirects]]
   from = "/success"
   to = "/thanks.html"
