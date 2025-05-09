@@ -1,18 +1,30 @@
 [build]
   publish = "."
+  command = ""  # UI設定の上書きを防ぐため明示的に指定
 
 [dev]
   command = "npm run dev"
   port = 3000
   framework = "vite"
 
-# リダイレクト設定
+# SPAルーティング（シンプル化）
 [[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200
 
-# ヘッダー設定
+# 成功ページリダイレクト
+[[redirects]]
+  from = "/success"
+  to = "/thanks.html"
+  status = 302
+
+[[redirects]]
+  from = "/thanks"
+  to = "/thanks.html"
+  status = 200
+
+# セキュリティヘッダー設定
 [[headers]]
   for = "/*"
   [headers.values]
@@ -20,9 +32,20 @@
     X-XSS-Protection = "1; mode=block"
     X-Content-Type-Options = "nosniff"
     Referrer-Policy = "strict-origin-when-cross-origin"
-    Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline' https://unpkg.com https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com https://unpkg.com; img-src 'self' data:; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; connect-src 'self';"
+    Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline' https://unpkg.com https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; img-src 'self' data:; font-src 'self' https://fonts.gstatic.com; connect-src 'self';"
 
-# キャッシュ設定（静的アセット）
+# 静的アセットのキャッシュ設定
+[[headers]]
+  for = "/**/*.css"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000"
+
+[[headers]]
+  for = "/**/*.js"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000"
+
+# 静的アセット全般のキャッシュ設定
 [[headers]]
   for = "/assets/*"
   [headers.values]
@@ -33,14 +56,4 @@
   for = "/*.svg"
   [headers.values]
     Content-Type = "image/svg+xml"
-    Cache-Control = "public, max-age=31536000"
-
-[[headers]]
-  for = "/*.css"
-  [headers.values]
-    Cache-Control = "public, max-age=31536000"
-
-[[headers]]
-  for = "/*.js"
-  [headers.values]
     Cache-Control = "public, max-age=31536000" 
