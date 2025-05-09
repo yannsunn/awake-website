@@ -111,4 +111,27 @@ MIT
 ## 連絡先
 
 株式会社Awake
-contact@awakeinc.co.jp 
+contact@awakeinc.co.jp
+
+## Netlifyフォームのテスト方法
+
+ローカル環境でNetlifyフォームの動作をテストするには以下の手順を実行してください：
+
+1. Netlify CLIをインストールします
+```bash
+npm install -g netlify-cli
+```
+
+2. ローカルサーバーを起動します
+```bash
+netlify dev
+```
+
+3. ブラウザで `http://localhost:8888` にアクセスしてください
+
+**注意**: ローカル環境では実際にフォームデータが送信されず、コンソールに出力されます。実際の送信テストはデプロイ環境で行ってください。
+
+## ダークモード対応
+
+サイトはダークモードに対応しています。ユーザーのシステム設定に応じて自動的に切り替わります。
+カスタマイズは `css/style.css` の `@media (prefers-color-scheme: dark)` セクションで行えます。 

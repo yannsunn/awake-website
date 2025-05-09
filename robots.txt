@@ -1,8 +1,10 @@
 User-agent: *
 Allow: /
-Disallow: /admin/
-Disallow: /private/
-Disallow: /temp/
-Disallow: /cgi-bin/
 
+# サイトマップURL
 Sitemap: https://awakeinc.co.jp/sitemap.xml
+
+# 一時ファイルをクロールしない
+User-agent: *
+Disallow: /temp/
+Disallow: /.git/

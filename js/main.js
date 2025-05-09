@@ -11,8 +11,8 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Smooth scroll for navigation links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    // Smooth scroll for navigation links - ヘッダー内のリンクに制限
+    document.querySelectorAll('.header a[href^="#"], a.cta-button[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
             e.preventDefault();
             const target = document.querySelector(this.getAttribute('href'));
@@ -25,26 +25,34 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // ホイールイベントにパッシブリスナーを設定
-    document.addEventListener('wheel', function() {
-        // 何もしない - パッシブリスナーのデモンストレーション
-    }, { passive: true });
-
     // Header scroll effect
     const header = document.querySelector('.header');
     let lastScroll = 0;
 
-    window.addEventListener('scroll', () => {
+    // スクロール位置に応じたヘッダースタイル変更関数
+    const updateHeaderClass = () => {
         const currentScroll = window.pageYOffset;
         
-        if (currentScroll > lastScroll && currentScroll > 100) {
+        if (currentScroll > 100) {
             header.classList.add('scrolled');
         } else {
             header.classList.remove('scrolled');
         }
         
+        // 上スクロールでヘッダーを表示（オプション）
+        if (currentScroll < lastScroll) {
+            header.style.transform = 'translateY(0)';
+        } else if (currentScroll > lastScroll && currentScroll > 200) {
+            header.style.transform = 'translateY(-100%)';
+        }
+        
         lastScroll = currentScroll;
-    }, { passive: true });
+    };
+
+    // 初期ロード時にもチェック（リロード時のスクロール位置保持対応）
+    updateHeaderClass();
+
+    window.addEventListener('scroll', updateHeaderClass, { passive: true });
 
     // Scroll to top button
     const scrollTopButton = document.querySelector('.scroll-top');
@@ -72,6 +80,11 @@ document.addEventListener('DOMContentLoaded', function() {
             duration: 800,
             once: true,
             offset: 100
+        });
+        
+        // 画像ロード後にAOSリフレッシュ（アニメーションズレ防止）
+        window.addEventListener('load', function() {
+            AOS.refresh();
         });
     }
 }); 

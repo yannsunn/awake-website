@@ -15,6 +15,10 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-padding-top: 80px; /* ヘッダーの高さ分のスクロールパディング */
+}
+
 body {
     font-family: 'Noto Sans JP', 'Helvetica Neue', Arial, sans-serif;
     line-height: 1.6;
@@ -37,7 +41,7 @@ body {
     width: 100%;
     top: 0;
     z-index: 100;
-    transition: all var(--transition-speed);
+    transition: all var(--transition-speed), transform 0.4s ease;
 }
 
 .header.scrolled {
@@ -113,9 +117,10 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: url('assets/images/pattern.svg') repeat;
+    background: url('../assets/images/pattern.svg') repeat;
     opacity: 0.1;
     animation: moveBackground 20s linear infinite;
+    will-change: background-position; /* GPU最適化 */
 }
 
 .hero h2 {
@@ -145,6 +150,11 @@ body {
 
 .cta-button:hover {
     transform: translateY(-2px);
+}
+
+.cta-button:focus {
+    outline: 3px solid rgba(30, 136, 229, 0.5);
+    outline-offset: 2px;
 }
 
 /* Services section */
@@ -185,10 +195,14 @@ body {
     box-shadow: 0 10px 30px rgba(0,0,0,0.05);
     transition: transform var(--transition-speed);
     text-align: center;
+    cursor: pointer; /* iOS Safariでタップ後に変形が戻らない問題対策 */
 }
 
-.service-card:hover {
-    transform: translateY(-10px);
+/* ホバーアニメーションをPC環境のみに適用 */
+@media (hover: hover) {
+    .service-card:hover {
+        transform: translateY(-10px);
+    }
 }
 
 .service-card i {
@@ -247,6 +261,11 @@ body {
 
 .scroll-top:hover {
     background-color: var(--accent-color);
+}
+
+.scroll-top:focus {
+    outline: 3px solid rgba(30, 136, 229, 0.5);
+    outline-offset: 2px;
 }
 
 /* Contact section */
@@ -345,6 +364,11 @@ body {
     background-color: var(--accent-color);
 }
 
+.submit-btn:focus {
+    outline: 3px solid rgba(30, 136, 229, 0.5);
+    outline-offset: 2px;
+}
+
 /* Footer */
 .footer {
     background: #333;
@@ -411,6 +435,77 @@ body {
     font-size: 14px;
 }
 
+/* Legal pages (terms, privacy policy) */
+.legal-page {
+    padding: 120px 0;
+    min-height: 70vh;
+}
+
+.legal-title {
+    margin-bottom: 30px;
+    font-size: 32px;
+}
+
+.legal-section {
+    margin-bottom: 40px;
+}
+
+.legal-heading {
+    margin-bottom: 15px;
+    font-size: 24px;
+}
+
+.legal-list {
+    margin-left: 20px;
+    margin-top: 10px;
+}
+
+.legal-date {
+    margin-top: 30px;
+    color: #666;
+    font-style: italic;
+}
+
+/* Thanks page */
+.thanks-section {
+    padding: 180px 0 100px;
+    min-height: calc(100vh - 300px); /* フッターを除いた高さ */
+    display: flex;
+    align-items: center;
+}
+
+.thanks-content {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 60px 30px;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+.thanks-content h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    color: var(--primary-color);
+}
+
+.thanks-content p {
+    font-size: 18px;
+    margin-bottom: 15px;
+    color: #666;
+}
+
+.thanks-content .cta-button {
+    margin-top: 30px;
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.thanks-content .cta-button:hover {
+    background-color: var(--accent-color);
+}
+
 /* Responsive design */
 @media (max-width: 768px) {
     .header .container {
@@ -464,5 +559,69 @@ body {
 
     .contact-form {
         padding: 0 15px;
+    }
+
+    .thanks-section {
+        padding: 140px 0 60px;
+    }
+
+    .thanks-content {
+        padding: 40px 20px;
+    }
+
+    .thanks-content h2 {
+        font-size: 26px;
+    }
+
+    .thanks-content p {
+        font-size: 16px;
+    }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --text-color: #f0f0f0;
+        --background-color: #121212;
+    }
+    
+    body {
+        background-color: #121212;
+        color: #f0f0f0;
+    }
+    
+    .header {
+        background: rgba(18, 18, 18, 0.95);
+    }
+    
+    .header.scrolled {
+        background: rgba(18, 18, 18, 0.98);
+    }
+    
+    .header h1 a, .header nav a {
+        color: #f0f0f0;
+    }
+    
+    .service-card, .thanks-content {
+        background: #1e1e1e;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    }
+    
+    .service-card h3 {
+        color: #f0f0f0;
+    }
+    
+    .service-card p, .thanks-content p {
+        color: #b0b0b0;
+    }
+    
+    .contact-section {
+        background-color: #121212;
+    }
+    
+    .form-group input, .form-group textarea {
+        background-color: #1e1e1e;
+        border-color: #333;
+        color: #f0f0f0;
     }
 } 
