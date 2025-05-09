@@ -1,6 +1,8 @@
-# 株式会社Awake ウェブサイト
+# My Website
 
-モダンでパフォーマンスの高いウェブサイトのソースコード
+[![Netlify Status](https://api.netlify.com/api/v1/badges/a6db04dd-b6c9-4b3a-bc87-db5599c6fa25/deploy-status)](https://app.netlify.com/sites/awakeinc/deploys)
+
+Modern website built with Next.js and TailwindCSS.
 
 ## プロジェクト概要
 
