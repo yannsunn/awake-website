@@ -12,14 +12,14 @@
     <meta property="og:description" content="株式会社Awakeは、ネット通販、AI事業、保険紹介で、お客様のビジネスの成長をサポートします。">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://awakeinc.co.jp">
-    <meta property="og:image" content="/assets/images/ogp.jpg">
+    <meta property="og:image" content="assets/images/ogp.jpg">
     <meta property="og:site_name" content="株式会社Awake">
     
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="株式会社Awake - ビジネスの新たな可能性を開く">
     <meta property="twitter:description" content="株式会社Awakeは、ネット通販、AI事業、保険紹介で、お客様のビジネスの成長をサポートします。">
-    <meta property="twitter:image" content="/assets/images/ogp.jpg">
+    <meta property="twitter:image" content="assets/images/ogp.jpg">
     
     <title>Awake Inc.</title>
     
@@ -39,11 +39,11 @@
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     
     <!-- ファビコン -->
-    <link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
-    <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
-    <link rel="manifest" href="/assets/site.webmanifest">
+    <link rel="icon" type="image/x-icon" href="assets/favicon.svg">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon.svg">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon.svg">
+    <link rel="manifest" href="assets/site.webmanifest">
     
     <!-- フォント -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -68,6 +68,19 @@
         <div class="loading-spinner"></div>
     </div>
     
+    <!-- ヘッダー -->
+    <header class="header">
+        <div class="container">
+            <h1><a href="/">Awake Inc.</a></h1>
+            <nav>
+                <ul>
+                    <li><a href="#services">事業内容</a></li>
+                    <li><a href="#contact">お問い合わせ</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
     <!-- メインコンテンツ -->
     <div id="root">
         <!-- ヒーローセクション -->
@@ -80,7 +93,7 @@
         </section>
 
         <!-- サービスセクション -->
-        <section class="services">
+        <section id="services" class="services">
             <div class="container">
                 <h2>事業内容</h2>
                 <div class="service-grid">
@@ -137,7 +150,7 @@
                     <label class="checkbox-container">
                         <input type="checkbox" id="privacy" name="privacy" required>
                         <span class="checkmark"></span>
-                        <a href="/privacy-policy" target="_blank">プライバシーポリシー</a>に同意する
+                        <a href="privacy-policy.html" target="_blank">プライバシーポリシー</a>に同意する
                     </label>
                 </div>
                 <button type="submit" class="submit-btn">送信する</button>
@@ -150,13 +163,13 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-logo">
-                    <img src="/assets/images/logo-white.png" alt="Awake Logo" width="120" height="40">
+                    <img src="assets/logo.svg" alt="Awake Logo" width="120" height="40">
                 </div>
                 <div class="footer-links">
                     <ul>
-                        <li><a href="/privacy-policy">プライバシーポリシー</a></li>
-                        <li><a href="/terms">利用規約</a></li>
-                        <li><a href="/sitemap">サイトマップ</a></li>
+                        <li><a href="privacy-policy.html">プライバシーポリシー</a></li>
+                        <li><a href="terms.html">利用規約</a></li>
+                        <li><a href="sitemap.xml">サイトマップ</a></li>
                     </ul>
                 </div>
                 <div class="footer-social">

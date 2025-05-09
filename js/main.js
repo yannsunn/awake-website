@@ -2,31 +2,12 @@
 document.addEventListener('DOMContentLoaded', function() {
     const contactForm = document.getElementById('contact-form');
     if (contactForm) {
-        contactForm.addEventListener('submit', async (e) => {
-            e.preventDefault();
-            
-            const formData = new FormData(contactForm);
-            const data = Object.fromEntries(formData.entries());
-            
-            try {
-                const response = await fetch('/api/contact', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify(data)
-                });
-                
-                if (response.ok) {
-                    alert('お問い合わせを受け付けました。担当者より連絡させていただきます。');
-                    contactForm.reset();
-                } else {
-                    throw new Error('送信に失敗しました');
-                }
-            } catch (error) {
-                alert('エラーが発生しました。時間をおいて再度お試しください。');
-                console.error('Form submission error:', error);
-            }
+        contactForm.addEventListener('submit', function(e) {
+            // Netlifyが自動的に処理するので、ここでは特別な処理は不要
+            // 確認用のメッセージを表示
+            setTimeout(function() {
+                alert('お問い合わせを受け付けました。担当者より連絡させていただきます。');
+            }, 1000);
         });
     }
 
@@ -63,25 +44,29 @@ document.addEventListener('DOMContentLoaded', function() {
     // Scroll to top button
     const scrollTopButton = document.querySelector('.scroll-top');
 
-    window.addEventListener('scroll', () => {
-        if (window.pageYOffset > 300) {
-            scrollTopButton.classList.add('visible');
-        } else {
-            scrollTopButton.classList.remove('visible');
-        }
-    });
-
-    scrollTopButton.addEventListener('click', () => {
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
+    if (scrollTopButton) {
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                scrollTopButton.classList.add('visible');
+            } else {
+                scrollTopButton.classList.remove('visible');
+            }
         });
-    });
+
+        scrollTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    }
 
     // Animation initialization (AOS)
-    AOS.init({
-        duration: 800,
-        once: true,
-        offset: 100
-    });
+    if (typeof AOS !== 'undefined') {
+        AOS.init({
+            duration: 800,
+            once: true,
+            offset: 100
+        });
+    }
 }); 
