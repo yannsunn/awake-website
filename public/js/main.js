@@ -1,5 +1,6 @@
 // モジュールのインポート
 import performanceOptimizer from './performance-optimizer.js';
+import browserSupport from './browser-support.js';
 
 // メイン処理
 (function() {
@@ -234,14 +235,9 @@ import performanceOptimizer from './performance-optimizer.js';
 
     // 実行
     document.addEventListener('DOMContentLoaded', () => {
-        // ブラウザサポートチェック
-        if (typeof browserSupport !== 'undefined') {
-            // browserSupport.checkSupport の代わりに browserSupport.init を使用
-            if (typeof browserSupport.init === 'function') {
-                browserSupport.init();
-            }
-        }
-
+        // ブラウザサポートの初期化
+        browserSupport.init();
+        
         // パフォーマンス最適化の初期化
         performanceOptimizer.init();
 

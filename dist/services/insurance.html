@@ -3,124 +3,151 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>保険事業部門 - 株式会社Example</title>
+    <meta name="description" content="株式会社Awakeの保険紹介サービスです。お客様のニーズに合わせた最適な保険プランをご提案いたします。">
+    <meta name="keywords" content="保険, 生命保険, 損害保険, 医療保険, 保険相談">
+    <meta name="author" content="株式会社Awake">
+    <link rel="canonical" href="https://awakeinc.co.jp/services/insurance">
+    
+    <!-- OGP設定 -->
+    <meta property="og:title" content="保険紹介サービス | 株式会社Awake">
+    <meta property="og:description" content="株式会社Awakeの保険紹介サービスです。お客様のニーズに合わせた最適な保険プランをご提案いたします。">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://awakeinc.co.jp/services/insurance">
+    <meta property="og:image" content="../assets/images/ogp.jpg">
+    <meta property="og:site_name" content="株式会社Awake">
+    
+    <title>保険紹介サービス | 株式会社Awake</title>
+    
+    <!-- CSS -->
     <link rel="stylesheet" href="../css/style.css">
-    <meta name="description" content="お客様のニーズに合わせた最適な保険プランをご提案。生命保険、損害保険、医療保険など、幅広い保険商品の中からベストな選択をサポートします。">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    
+    <!-- ファビコン -->
+    <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+    <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+    <link rel="manifest" href="../assets/site.webmanifest">
+    
+    <!-- フォント -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <nav>
-            <a href="/" class="logo">Example Corp</a>
-            <ul>
-                <li><a href="/services/ec.html">ネット通販</a></li>
-                <li><a href="/services/ai.html">AI事業</a></li>
-                <li><a href="/services/insurance.html" class="active">保険</a></li>
-                <li><a href="/services/furniture.html">家具</a></li>
-            </ul>
-        </nav>
+    <!-- ヘッダー -->
+    <header class="header">
+        <div class="container">
+            <h1><a href="/">Awake Inc.</a></h1>
+            <nav>
+                <ul>
+                    <li><a href="/">ホーム</a></li>
+                    <li><a href="/services/ec.html">ネット通販</a></li>
+                    <li><a href="/services/ai.html">AI事業</a></li>
+                    <li><a href="/services/insurance.html" class="active">保険紹介</a></li>
+                    <li><a href="/services/furniture.html">家具販売</a></li>
+                    <li><a href="/#contact">お問い合わせ</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
-    <main>
-        <section class="hero">
-            <h1>保険事業部門</h1>
-            <p>あなたの大切な人生を守るベストな選択を</p>
+    <!-- メインコンテンツ -->
+    <main class="service-detail">
+        <section class="hero service-hero">
+            <div class="container">
+                <h2>保険紹介サービス</h2>
+                <p>お客様のニーズに合わせた最適な保険プランをご提案いたします。</p>
+            </div>
         </section>
 
-        <section class="services">
-            <h2>取扱保険商品</h2>
-            <div class="service-grid">
-                <div class="service-card">
-                    <h3>生命保険</h3>
-                    <p>終身保険、定期保険、医療保険など、ライフステージに合わせた保障を提供します。</p>
+        <section class="service-content">
+            <div class="container">
+                <div class="service-features">
+                    <h3>取扱保険商品</h3>
+                    <div class="feature-grid">
+                        <div class="feature-card" data-aos="fade-up">
+                            <i class="fas fa-user-shield"></i>
+                            <h4>生命保険</h4>
+                            <p>終身保険、定期保険、医療保険など、ライフステージに合わせた保障を提供します。</p>
+                        </div>
+                        <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
+                            <i class="fas fa-car"></i>
+                            <h4>損害保険</h4>
+                            <p>自動車保険、火災保険、賠償責任保険など、様々なリスクに対応する保険をご用意。</p>
+                        </div>
+                        <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
+                            <i class="fas fa-hospital"></i>
+                            <h4>医療保険</h4>
+                            <p>入院、手術、通院など、医療費の負担を軽減する充実した保障プランをご提案。</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="service-card">
-                    <h3>損害保険</h3>
-                    <p>自動車保険、火災保険、賠償責任保険など、様々なリスクに対応する保険をご用意。</p>
-                </div>
-                <div class="service-card">
-                    <h3>医療保険</h3>
-                    <p>入院、手術、通院など、医療費の負担を軽減する充実した保障プランをご提案。</p>
+
+                <div class="service-process">
+                    <h3>選ばれる理由</h3>
+                    <ol class="process-list">
+                        <li data-aos="fade-right">
+                            <span class="process-number">1</span>
+                            <h4>豊富な商品ラインナップ</h4>
+                            <p>大手保険会社の商品を幅広く取り扱い、比較検討が可能です。</p>
+                        </li>
+                        <li data-aos="fade-right" data-aos-delay="100">
+                            <span class="process-number">2</span>
+                            <h4>専門スタッフによる相談</h4>
+                            <p>経験豊富なファイナンシャルプランナーが丁寧にアドバイスします。</p>
+                        </li>
+                        <li data-aos="fade-right" data-aos-delay="200">
+                            <span class="process-number">3</span>
+                            <h4>個別のニーズ分析</h4>
+                            <p>お客様の状況やライフプランを詳しくヒアリングし、最適なプランを提案します。</p>
+                        </li>
+                        <li data-aos="fade-right" data-aos-delay="300">
+                            <span class="process-number">4</span>
+                            <h4>アフターフォロー</h4>
+                            <p>契約後も定期的な見直しと保障の調整をサポートします。</p>
+                        </li>
+                    </ol>
                 </div>
             </div>
         </section>
 
-        <section class="features">
-            <h2>選ばれる理由</h2>
-            <div class="feature-grid">
-                <div class="feature-item">
-                    <h3>豊富な商品ラインナップ</h3>
-                    <p>大手保険会社の商品を幅広く取り扱い、比較検討が可能です。</p>
-                </div>
-                <div class="feature-item">
-                    <h3>専門スタッフによる相談</h3>
-                    <p>経験豊富なファイナンシャルプランナーが丁寧にアドバイス。</p>
-                </div>
-                <div class="feature-item">
-                    <h3>アフターフォロー</h3>
-                    <p>契約後も定期的な見直しと保障の調整をサポートします。</p>
-                </div>
+        <section class="cta-section">
+            <div class="container">
+                <h3>無料相談予約</h3>
+                <p>保険に関する無料相談を承っております。専門スタッフがお客様に最適なプランをご提案いたします。</p>
+                <a href="/#contact" class="cta-button">お問い合わせ</a>
             </div>
-        </section>
-
-        <section class="contact">
-            <h2>無料相談予約</h2>
-            <p>保険に関する相談は、以下のフォームより予約を承っております。</p>
-            <form action="/submit" method="POST">
-                <div class="form-group">
-                    <label for="name">お名前</label>
-                    <input type="text" id="name" name="name" required>
-                </div>
-                <div class="form-group">
-                    <label for="email">メールアドレス</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-                <div class="form-group">
-                    <label for="phone">電話番号</label>
-                    <input type="tel" id="phone" name="phone" required>
-                </div>
-                <div class="form-group">
-                    <label for="preferred_date">希望日時</label>
-                    <input type="datetime-local" id="preferred_date" name="preferred_date" required>
-                </div>
-                <div class="form-group">
-                    <label for="message">ご相談内容</label>
-                    <textarea id="message" name="message" required></textarea>
-                </div>
-                <button type="submit">予約する</button>
-            </form>
         </section>
     </main>
 
-    <footer>
-        <div class="footer-content">
-            <div class="footer-section">
-                <h4>会社情報</h4>
-                <ul>
-                    <li><a href="/about">会社概要</a></li>
-                    <li><a href="/news">ニュース</a></li>
-                    <li><a href="/careers">採用情報</a></li>
-                </ul>
+    <!-- フッター -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="../assets/logo.svg" alt="" width="120" height="40" loading="lazy">
+                </div>
+                <div class="footer-links">
+                    <ul>
+                        <li><a href="/privacy-policy.html">プライバシーポリシー</a></li>
+                        <li><a href="/terms.html">利用規約</a></li>
+                        <li><a href="/sitemap.xml">サイトマップ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-social">
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                </div>
             </div>
-            <div class="footer-section">
-                <h4>サービス</h4>
-                <ul>
-                    <li><a href="/services/ec.html">ネット通販</a></li>
-                    <li><a href="/services/ai.html">AI事業</a></li>
-                    <li><a href="/services/insurance.html">保険</a></li>
-                    <li><a href="/services/furniture.html">家具</a></li>
-                </ul>
+            <div class="footer-bottom">
+                <p>&copy; 2024 株式会社Awake All Rights Reserved.</p>
             </div>
-            <div class="footer-section">
-                <h4>お問い合わせ</h4>
-                <ul>
-                    <li><a href="/contact">お問い合わせフォーム</a></li>
-                    <li><a href="/faq">よくある質問</a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2024 Example Corp. All rights reserved.</p>
         </div>
     </footer>
+
+    <!-- JavaScript -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js" defer></script>
+    <script src="../js/main.js" defer></script>
 </body>
 </html> 

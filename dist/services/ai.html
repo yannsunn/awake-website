@@ -3,98 +3,151 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI事業部門 - 株式会社Example</title>
+    <meta name="description" content="株式会社AwakeのAI事業部門です。最新のAI技術を活用し、業務効率化や自動化のソリューションを提供します。">
+    <meta name="keywords" content="AI, 人工知能, 機械学習, 業務効率化, 自動化">
+    <meta name="author" content="株式会社Awake">
+    <link rel="canonical" href="https://awakeinc.co.jp/services/ai">
+    
+    <!-- OGP設定 -->
+    <meta property="og:title" content="AI事業 | 株式会社Awake">
+    <meta property="og:description" content="株式会社AwakeのAI事業部門です。最新のAI技術を活用し、業務効率化や自動化のソリューションを提供します。">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://awakeinc.co.jp/services/ai">
+    <meta property="og:image" content="../assets/images/ogp.jpg">
+    <meta property="og:site_name" content="株式会社Awake">
+    
+    <title>AI事業 | 株式会社Awake</title>
+    
+    <!-- CSS -->
     <link rel="stylesheet" href="../css/style.css">
-    <meta name="description" content="最先端のAI技術を活用したソリューションを提供しています。機械学習、自然言語処理、画像認識など、幅広い分野でAIの実装をサポートします。">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    
+    <!-- ファビコン -->
+    <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+    <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+    <link rel="manifest" href="../assets/site.webmanifest">
+    
+    <!-- フォント -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <nav>
-            <a href="/" class="logo">Example Corp</a>
-            <ul>
-                <li><a href="/services/ec.html">ネット通販</a></li>
-                <li><a href="/services/ai.html" class="active">AI事業</a></li>
-                <li><a href="/services/insurance.html">保険</a></li>
-                <li><a href="/services/furniture.html">家具</a></li>
-            </ul>
-        </nav>
+    <!-- ヘッダー -->
+    <header class="header">
+        <div class="container">
+            <h1><a href="/">Awake Inc.</a></h1>
+            <nav>
+                <ul>
+                    <li><a href="/">ホーム</a></li>
+                    <li><a href="/services/ec.html">ネット通販</a></li>
+                    <li><a href="/services/ai.html" class="active">AI事業</a></li>
+                    <li><a href="/services/insurance.html">保険紹介</a></li>
+                    <li><a href="/services/furniture.html">家具販売</a></li>
+                    <li><a href="/#contact">お問い合わせ</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
-    <main>
-        <section class="hero">
-            <h1>AI事業部門</h1>
-            <p>最先端技術で、ビジネスの未来を創造する</p>
+    <!-- メインコンテンツ -->
+    <main class="service-detail">
+        <section class="hero service-hero">
+            <div class="container">
+                <h2>AI事業</h2>
+                <p>最新のAI技術を活用し、業務効率化や自動化のソリューションを提供します。</p>
+            </div>
         </section>
 
-        <section class="services">
-            <h2>提供サービス</h2>
-            <div class="service-grid">
-                <div class="service-card">
-                    <h3>機械学習ソリューション</h3>
-                    <p>データ分析から予測モデルの構築まで、包括的なML支援を提供します。</p>
+        <section class="service-content">
+            <div class="container">
+                <div class="service-features">
+                    <h3>提供サービス</h3>
+                    <div class="feature-grid">
+                        <div class="feature-card" data-aos="fade-up">
+                            <i class="fas fa-brain"></i>
+                            <h4>機械学習ソリューション</h4>
+                            <p>データ分析から予測モデルの構築まで、包括的なML支援を提供します。</p>
+                        </div>
+                        <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
+                            <i class="fas fa-comment-dots"></i>
+                            <h4>自然言語処理</h4>
+                            <p>テキスト分析、感情分析、文書要約など、言語処理の実装をサポートします。</p>
+                        </div>
+                        <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
+                            <i class="fas fa-camera"></i>
+                            <h4>画像認識システム</h4>
+                            <p>物体検出、画像分類など、視覚AIの導入を支援します。</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="service-card">
-                    <h3>自然言語処理</h3>
-                    <p>テキスト分析、感情分析、文書要約など、言語処理の実装をサポートします。</p>
-                </div>
-                <div class="service-card">
-                    <h3>画像認識システム</h3>
-                    <p>物体検出、顔認識、画像分類など、視覚AIの導入を支援します。</p>
+
+                <div class="service-process">
+                    <h3>導入の流れ</h3>
+                    <ol class="process-list">
+                        <li data-aos="fade-right">
+                            <span class="process-number">1</span>
+                            <h4>要件分析とデータ評価</h4>
+                            <p>ビジネス課題とデータ状況を詳しく分析し、最適なAIソリューションを提案します。</p>
+                        </li>
+                        <li data-aos="fade-right" data-aos-delay="100">
+                            <span class="process-number">2</span>
+                            <h4>モデル開発と検証</h4>
+                            <p>要件に基づいて、適切なAIモデルを開発し、精度と性能を検証します。</p>
+                        </li>
+                        <li data-aos="fade-right" data-aos-delay="200">
+                            <span class="process-number">3</span>
+                            <h4>システム統合とデプロイ</h4>
+                            <p>開発したAIモデルを既存システムに統合し、本番環境にデプロイします。</p>
+                        </li>
+                        <li data-aos="fade-right" data-aos-delay="300">
+                            <span class="process-number">4</span>
+                            <h4>継続的改善と保守</h4>
+                            <p>定期的なモデルの更新とパフォーマンス評価を行い、継続的な改善を行います。</p>
+                        </li>
+                    </ol>
                 </div>
             </div>
         </section>
 
-        <section class="contact">
-            <h2>お問い合わせ</h2>
-            <p>AI事業に関するご相談は、以下のフォームよりお気軽にお問い合わせください。</p>
-            <form action="/submit" method="POST">
-                <div class="form-group">
-                    <label for="name">お名前</label>
-                    <input type="text" id="name" name="name" required>
-                </div>
-                <div class="form-group">
-                    <label for="email">メールアドレス</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-                <div class="form-group">
-                    <label for="message">お問い合わせ内容</label>
-                    <textarea id="message" name="message" required></textarea>
-                </div>
-                <button type="submit">送信する</button>
-            </form>
+        <section class="cta-section">
+            <div class="container">
+                <h3>お気軽にご相談ください</h3>
+                <p>AI導入についてのご質問や具体的な課題解決については、専門スタッフが丁寧にご説明いたします。</p>
+                <a href="/#contact" class="cta-button">お問い合わせ</a>
+            </div>
         </section>
     </main>
 
-    <footer>
-        <div class="footer-content">
-            <div class="footer-section">
-                <h4>会社情報</h4>
-                <ul>
-                    <li><a href="/about">会社概要</a></li>
-                    <li><a href="/news">ニュース</a></li>
-                    <li><a href="/careers">採用情報</a></li>
-                </ul>
+    <!-- フッター -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="../assets/logo.svg" alt="" width="120" height="40" loading="lazy">
+                </div>
+                <div class="footer-links">
+                    <ul>
+                        <li><a href="/privacy-policy.html">プライバシーポリシー</a></li>
+                        <li><a href="/terms.html">利用規約</a></li>
+                        <li><a href="/sitemap.xml">サイトマップ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-social">
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                </div>
             </div>
-            <div class="footer-section">
-                <h4>サービス</h4>
-                <ul>
-                    <li><a href="/services/ec.html">ネット通販</a></li>
-                    <li><a href="/services/ai.html">AI事業</a></li>
-                    <li><a href="/services/insurance.html">保険</a></li>
-                    <li><a href="/services/furniture.html">家具</a></li>
-                </ul>
+            <div class="footer-bottom">
+                <p>&copy; 2024 株式会社Awake All Rights Reserved.</p>
             </div>
-            <div class="footer-section">
-                <h4>お問い合わせ</h4>
-                <ul>
-                    <li><a href="/contact">お問い合わせフォーム</a></li>
-                    <li><a href="/faq">よくある質問</a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2024 Example Corp. All rights reserved.</p>
         </div>
     </footer>
+
+    <!-- JavaScript -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js" defer></script>
+    <script src="../js/main.js" defer></script>
 </body>
 </html> 
