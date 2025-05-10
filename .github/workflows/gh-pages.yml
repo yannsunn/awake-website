@@ -14,6 +14,10 @@ permissions:
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    
     steps:
       - name: Checkout 🛎️
         uses: actions/checkout@v3
@@ -25,10 +29,15 @@ jobs:
       
       - name: Create .nojekyll file
         run: touch public/.nojekyll
-          
-      - name: Deploy 🚀
-        uses: JamesIves/github-pages-deploy-action@v4
+      
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v3
+      
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v2
         with:
-          folder: public # publicディレクトリをデプロイ
-          branch: gh-pages # デプロイ先のブランチ
-          clean: true # デプロイ前にgh-pagesブランチをクリーンアップ 
+          path: './public'
+      
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v2 
