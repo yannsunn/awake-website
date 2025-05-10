@@ -11,85 +11,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
     
     <!-- Styles -->
-    <link rel="stylesheet" href="/css/reset.css">
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="stylesheet" href="/assets/css/pages/service-web.css">
     
     <title>HP・LP制作サービス | 株式会社Awake</title>
-    <style>
-        .service-content {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 2rem;
-        }
-        .service-section {
-            margin-bottom: 3rem;
-        }
-        .service-section h3 {
-            font-size: 2.4rem;
-            font-weight: 700;
-            margin-bottom: 1.5rem;
-            color: var(--color-primary);
-        }
-        .service-section p {
-            margin-bottom: 1.5rem;
-            line-height: 1.8;
-        }
-        .service-image {
-            width: 100%;
-            border-radius: 8px;
-            margin-bottom: 2rem;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-        .cta-button {
-            display: inline-block;
-            background-color: var(--color-primary);
-            color: white;
-            padding: 1.2rem 3rem;
-            border-radius: 4px;
-            font-weight: 700;
-            text-align: center;
-            transition: background-color 0.3s;
-            margin-top: 1rem;
-        }
-        .cta-button:hover {
-            background-color: var(--color-primary-dark);
-        }
-        .service-features {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin: 3rem 0;
-        }
-        .feature-card {
-            padding: 2rem;
-            background-color: var(--color-background-alt);
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-        .feature-card h4 {
-            font-size: 1.8rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            color: var(--color-primary);
-        }
-        .price-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 2rem 0;
-        }
-        .price-table th, .price-table td {
-            padding: 1.2rem;
-            border: 1px solid #e2e8f0;
-            text-align: left;
-        }
-        .price-table th {
-            background-color: var(--color-background-alt);
-            font-weight: 700;
-        }
-        .price-table tr:nth-child(even) {
-            background-color: #f8fafc;
-        }
-    </style>
 </head>
 <body>
     <header class="header">
@@ -109,10 +34,10 @@
     </header>
 
     <main>
-        <section class="page-header" style="margin-top: var(--header-height); padding: 5rem 0; background-color: var(--color-background-alt);">
-            <div class="page-header__inner" style="max-width: var(--max-width); margin: 0 auto; padding: 0 var(--spacing-md); text-align: center;">
-                <h2 style="font-size: 3.6rem; font-weight: 700;">HP・LP制作サービス</h2>
-                <p style="font-size: 1.8rem; color: var(--color-text-light); margin-top: 1rem;">1-2週間でのコーポレートサイト作成</p>
+        <section class="page-header">
+            <div class="page-header__inner">
+                <h2 class="page-header__title">HP・LP制作サービス</h2>
+                <p class="page-header__subtitle">1-2週間でのコーポレートサイト作成</p>
             </div>
         </section>
 
@@ -197,8 +122,12 @@
                 
                 <p><strong>6. 納品・公開</strong><br>
                 最終確認後、サイトを公開します。サーバーへのアップロードやドメイン設定なども対応いたします。</p>
-                
-                <a href="/#contact" class="cta-button">お問い合わせ</a>
+            </div>
+
+            <div class="service-section">
+                <h3>お問い合わせ</h3>
+                <p>HP・LP制作についてのご相談やお見積りは、下記お問い合わせフォームよりお気軽にご連絡ください。</p>
+                <a href="/#contact" class="cta-button">お問い合わせフォームへ</a>
             </div>
         </section>
     </main>
@@ -216,8 +145,8 @@
                 </p>
                 <div class="footer__links">
                     <ul>
-                        <li><a href="/privacy-policy.html">プライバシーポリシー</a></li>
-                        <li><a href="/terms.html">利用規約</a></li>
+                        <li><a href="/legal/privacy-policy/">プライバシーポリシー</a></li>
+                        <li><a href="/legal/terms/">利用規約</a></li>
                     </ul>
                 </div>
             </div>

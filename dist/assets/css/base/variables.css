@@ -1,0 +1,15 @@
+:root {
+    --color-primary: #2C5282;
+    --color-primary-dark: #1A365D;
+    --color-text: #333333;
+    --color-text-light: #666666;
+    --color-background: #FFFFFF;
+    --color-background-alt: #F7FAFC;
+    --max-width: 1200px;
+    --header-height: 80px;
+    --spacing-xs: 0.8rem;
+    --spacing-sm: 1.6rem;
+    --spacing-md: 2.4rem;
+    --spacing-lg: 4.8rem;
+    --spacing-xl: 8rem;
+} 

@@ -11,111 +11,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
     
     <!-- Styles -->
-    <link rel="stylesheet" href="/css/reset.css">
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="stylesheet" href="/assets/css/pages/service-video.css">
     
     <title>動画編集サービス | 株式会社Awake</title>
-    <style>
-        .service-content {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 2rem;
-        }
-        .service-section {
-            margin-bottom: 3rem;
-        }
-        .service-section h3 {
-            font-size: 2.4rem;
-            font-weight: 700;
-            margin-bottom: 1.5rem;
-            color: var(--color-primary);
-        }
-        .service-section p {
-            margin-bottom: 1.5rem;
-            line-height: 1.8;
-        }
-        .service-image {
-            width: 100%;
-            border-radius: 8px;
-            margin-bottom: 2rem;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-        .cta-button {
-            display: inline-block;
-            background-color: var(--color-primary);
-            color: white;
-            padding: 1.2rem 3rem;
-            border-radius: 4px;
-            font-weight: 700;
-            text-align: center;
-            transition: background-color 0.3s;
-            margin-top: 1rem;
-        }
-        .cta-button:hover {
-            background-color: var(--color-primary-dark);
-        }
-        .service-features {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin: 3rem 0;
-        }
-        .feature-card {
-            padding: 2rem;
-            background-color: var(--color-background-alt);
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-        .feature-card h4 {
-            font-size: 1.8rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            color: var(--color-primary);
-        }
-        .price-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 2rem 0;
-        }
-        .price-table th, .price-table td {
-            padding: 1.2rem;
-            border: 1px solid #e2e8f0;
-            text-align: left;
-        }
-        .price-table th {
-            background-color: var(--color-background-alt);
-            font-weight: 700;
-        }
-        .price-table tr:nth-child(even) {
-            background-color: #f8fafc;
-        }
-        .steps-list {
-            counter-reset: steps-counter;
-            list-style-type: none;
-            padding-left: 0;
-        }
-        .steps-list li {
-            position: relative;
-            padding-left: 4rem;
-            margin-bottom: 2rem;
-        }
-        .steps-list li::before {
-            counter-increment: steps-counter;
-            content: counter(steps-counter);
-            position: absolute;
-            left: 0;
-            top: 0;
-            width: 3rem;
-            height: 3rem;
-            background-color: var(--color-primary);
-            color: white;
-            font-weight: 700;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-    </style>
 </head>
 <body>
     <header class="header">
@@ -135,10 +34,10 @@
     </header>
 
     <main>
-        <section class="page-header" style="margin-top: var(--header-height); padding: 5rem 0; background-color: var(--color-background-alt);">
-            <div class="page-header__inner" style="max-width: var(--max-width); margin: 0 auto; padding: 0 var(--spacing-md); text-align: center;">
-                <h2 style="font-size: 3.6rem; font-weight: 700;">動画編集サービス</h2>
-                <p style="font-size: 1.8rem; color: var(--color-text-light); margin-top: 1rem;">AIによる顔出しなしのSNS運用支援</p>
+        <section class="page-header">
+            <div class="page-header__inner">
+                <h2 class="page-header__title">動画編集サービス</h2>
+                <p class="page-header__subtitle">AIによる顔出しなしのSNS運用支援</p>
             </div>
         </section>
 
@@ -251,8 +150,8 @@
                 </p>
                 <div class="footer__links">
                     <ul>
-                        <li><a href="/privacy-policy.html">プライバシーポリシー</a></li>
-                        <li><a href="/terms.html">利用規約</a></li>
+                        <li><a href="/legal/privacy-policy/">プライバシーポリシー</a></li>
+                        <li><a href="/legal/terms/">利用規約</a></li>
                     </ul>
                 </div>
             </div>
