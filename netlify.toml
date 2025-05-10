@@ -1,40 +1,6 @@
 [build]
-  publish = "public"
-  command = "# no build command"
+  publish = "dist"
 
-[build.environment]
-  NODE_VERSION = "16"
-
-# SSL/TLS設定
-[[headers]]
-  for = "/*"
-  [headers.values]
-    Strict-Transport-Security = "max-age=31536000; includeSubDomains; preload"
-
-# 強制HTTPS化
-[[redirects]]
-  from = "http://*"
-  to = "https://:splat"
-  status = 301
-  force = true
-
-# その他のリダイレクト設定
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
-
-[[redirects]]
-  from = "/success"
-  to = "/thanks.html"
-  status = 302
-
-[[redirects]]
-  from = "/thanks"
-  to = "/thanks.html"
-  status = 200
-
-# セキュリティヘッダー設定
 [[headers]]
   for = "/*"
   [headers.values]
@@ -42,21 +8,9 @@
     X-XSS-Protection = "1; mode=block"
     X-Content-Type-Options = "nosniff"
     Referrer-Policy = "strict-origin-when-cross-origin"
-    Content-Security-Policy = """
-      default-src 'self';
-      script-src 'self' 'unsafe-inline' 'unsafe-eval' https://unpkg.com https://cdnjs.cloudflare.com;
-      style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com https://unpkg.com;
-      img-src 'self' data: https://*.cloudflare.com https://*.githubusercontent.com;
-      font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com data:;
-      connect-src 'self' https://fonts.googleapis.com https://cdnjs.cloudflare.com https://unpkg.com;
-      worker-src 'self' blob:;
-      frame-src 'self';
-      media-src 'self';
-      object-src 'none';
-      """
+    Content-Security-Policy = "default-src 'self' https://fonts.googleapis.com https://fonts.gstatic.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data:; form-action 'self';"
 
-# 静的アセットのキャッシュ設定
-[[headers]]
-  for = "/**/*.{css,js,svg,jpg,jpeg,png,gif,ico,woff,woff2}"
-  [headers.values]
-    Cache-Control = "public, max-age=31536000, immutable" 
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200 

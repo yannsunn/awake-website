@@ -3,195 +3,122 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="株式会社Awakeは、ネット通販、AI事業、保険紹介で、お客様のビジネスの成長をサポートします。">
-    <meta name="keywords" content="ネット通販, AI事業, 保険紹介, ウェブサイト制作, EC販売">
-    <meta name="author" content="株式会社Awake">
-    <link rel="canonical" href="https://awakeinc.co.jp/">
+    <meta name="description" content="株式会社Awakeは、革新的なソリューションで企業の成長をサポートします。">
+    <meta name="keywords" content="Awake, システム開発, コンサルティング, ビジネスソリューション">
     
-    <!-- OGP設定 -->
-    <meta property="og:title" content="株式会社Awake - ビジネスの新たな可能性を開く">
-    <meta property="og:description" content="株式会社Awakeは、ネット通販、AI事業、保険紹介で、お客様のビジネスの成長をサポートします。">
+    <!-- OGP -->
+    <meta property="og:title" content="株式会社Awake - 革新的なビジネスソリューション">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://awakeinc.co.jp">
-    <meta property="og:image" content="assets/logo.svg">
+    <meta property="og:url" content="https://awake.co.jp/">
+    <meta property="og:image" content="https://awake.co.jp/images/ogp.jpg">
+    <meta property="og:description" content="株式会社Awakeは、革新的なソリューションで企業の成長をサポートします。">
     <meta property="og:site_name" content="株式会社Awake">
     
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="株式会社Awake - ビジネスの新たな可能性を開く">
-    <meta name="twitter:description" content="株式会社Awakeは、ネット通販、AI事業、保険紹介で、お客様のビジネスの成長をサポートします。">
-    <meta name="twitter:image" content="assets/logo.svg">
+    <meta name="twitter:title" content="株式会社Awake - 革新的なビジネスソリューション">
+    <meta name="twitter:description" content="株式会社Awakeは、革新的なソリューションで企業の成長をサポートします。">
+    <meta name="twitter:image" content="https://awake.co.jp/images/ogp.jpg">
     
-    <title>株式会社Awake | ビジネスの新たな可能性を開く</title>
-    
-    <!-- パフォーマンス最適化 -->
-    <meta http-equiv="x-dns-prefetch-control" content="on">
-    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
-    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
-    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
-    
-    <!-- フォント -->
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
     
-    <!-- ファビコン -->
-    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
-    <link rel="icon" type="image/png" href="assets/favicon.png">
-    <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
-    <link rel="manifest" href="assets/site.webmanifest">
+    <!-- Styles -->
+    <link rel="stylesheet" href="/css/reset.css">
+    <link rel="stylesheet" href="/css/style.css">
     
-    <!-- CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
-    <link rel="stylesheet" href="css/styles.css">
-    
-    <!-- クリティカルCSS -->
-    <style>
-        .loading{position:fixed;top:0;left:0;width:100%;height:100%;background-color:#fff;display:flex;justify-content:center;align-items:center;z-index:9999;transition:opacity 0.5s ease-out;pointer-events:none;}
-        .loading.hide{opacity:0;}
-        .loading-spinner{width:50px;height:50px;border:5px solid rgba(30,136,229,0.2);border-radius:50%;border-top-color:#1E88E5;animation:spin 1s ease-in-out infinite;}
-        @keyframes spin{to{transform:rotate(360deg);}}
-    </style>
+    <title>株式会社Awake - 革新的なビジネスソリューション</title>
 </head>
 <body>
-    <!-- ローディングインジケーター -->
-    <div class="loading">
-        <div class="loading-spinner"></div>
-    </div>
-    
-    <!-- ヘッダー -->
     <header class="header">
-        <div class="container">
-            <h1><a href="/">Awake Inc.</a></h1>
-            <nav>
-                <ul>
-                    <li><a href="#services">事業内容</a></li>
+        <div class="header__inner">
+            <h1 class="header__logo">
+                <a href="/">
+                    <img src="/images/logo.svg" alt="株式会社Awake" width="120" height="40">
+                </a>
+            </h1>
+            <nav class="header__nav">
+                <ul class="header__nav-list">
+                    <li><a href="#services">サービス</a></li>
                     <li><a href="#contact">お問い合わせ</a></li>
                 </ul>
             </nav>
         </div>
     </header>
-    
-    <!-- メインコンテンツ -->
-    <div id="root">
-        <!-- ヒーローセクション -->
+
+    <main>
         <section class="hero">
-            <div class="container">
-                <h2>ビジネスの新たな可能性を開く</h2>
-                <p>株式会社Awakeは、最新のテクノロジーで、お客様のビジネスの成長をサポートします。</p>
-                <a href="#contact" class="cta-button">お問い合わせ</a>
+            <div class="hero__inner">
+                <h2 class="hero__title">革新的なソリューションで<br>企業の成長をサポート</h2>
+                <p class="hero__text">私たちは、最新のテクノロジーと専門知識を活用し、<br>お客様のビジネスの成功をサポートします。</p>
             </div>
         </section>
 
-        <!-- サービスセクション -->
         <section id="services" class="services">
-            <div class="container">
-                <h2>事業内容</h2>
-                <div class="service-grid">
-                    <div class="service-card" data-aos="fade-up">
-                        <i class="fas fa-shopping-cart"></i>
-                        <h3>ネット通販</h3>
-                        <p>効率的なEC販売システムの構築から運営まで、トータルにサポートいたします。</p>
+            <div class="services__inner">
+                <h2 class="section-title">サービス</h2>
+                <div class="services__grid">
+                    <div class="service-card">
+                        <h3 class="service-card__title">システム開発</h3>
+                        <p class="service-card__text">最新技術を活用した、スケーラブルで高性能なシステムを開発します。</p>
                     </div>
-                    <div class="service-card" data-aos="fade-up" data-aos-delay="100">
-                        <i class="fas fa-robot"></i>
-                        <h3>AI事業</h3>
-                        <p>最新のAI技術を活用し、業務効率化や自動化のソリューションを提供します。</p>
+                    <div class="service-card">
+                        <h3 class="service-card__title">コンサルティング</h3>
+                        <p class="service-card__text">豊富な経験と知識を活かし、最適なビジネス戦略を提案します。</p>
                     </div>
-                    <div class="service-card" data-aos="fade-up" data-aos-delay="200">
-                        <i class="fas fa-shield-alt"></i>
-                        <h3>保険紹介</h3>
-                        <p>お客様のニーズに合わせた最適な保険プランをご提案いたします。</p>
+                    <div class="service-card">
+                        <h3 class="service-card__title">デジタル戦略</h3>
+                        <p class="service-card__text">デジタルトランスフォーメーションを通じて、ビジネスの革新を支援します。</p>
+                    </div>
+                    <div class="service-card">
+                        <h3 class="service-card__title">運用保守</h3>
+                        <p class="service-card__text">安定したシステム運用と迅速なサポート体制を提供します。</p>
                     </div>
                 </div>
             </div>
         </section>
-    </div>
-    
-    <!-- スクロールトップボタン -->
-    <button class="scroll-top" aria-label="トップへスクロール">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <polyline points="18 15 12 9 6 15"></polyline>
-        </svg>
-    </button>
-    
-    <!-- お問い合わせフォーム -->
-    <section id="contact" class="contact-section">
-        <div class="container">
-            <h2 class="section-title">お問い合わせ</h2>
-            <form id="contact-form" class="contact-form" method="POST" data-netlify="true" name="contact" action="/thanks" netlify-honeypot="bot-field">
-                <input type="hidden" name="form-name" value="contact">
-                <p class="hidden" style="display: none;">
-                    <label>スパム対策です。こちらには入力しないでください: <input name="bot-field" /></label>
-                </p>
-                <div class="form-group">
-                    <label for="name">お名前 <span class="required">*</span></label>
-                    <input type="text" id="name" name="name" required>
-                </div>
-                <div class="form-group">
-                    <label for="email">メールアドレス <span class="required">*</span></label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-                <div class="form-group">
-                    <label for="company">会社名</label>
-                    <input type="text" id="company" name="company">
-                </div>
-                <div class="form-group">
-                    <label for="message">お問い合わせ内容 <span class="required">*</span></label>
-                    <textarea id="message" name="message" required></textarea>
-                </div>
-                <div class="form-group">
-                    <label class="checkbox-container">
-                        <input type="checkbox" id="privacy" name="privacy" required>
-                        <span class="checkmark"></span>
-                        <a href="/privacy-policy.html" target="_blank">プライバシーポリシー</a>に同意する
-                    </label>
-                </div>
-                <button type="submit" class="submit-btn">送信する</button>
-            </form>
-        </div>
-    </section>
 
-    <!-- フッター -->
+        <section id="contact" class="contact">
+            <div class="contact__inner">
+                <h2 class="section-title">お問い合わせ</h2>
+                <form name="contact" method="POST" data-netlify="true" class="contact-form">
+                    <div class="form-group">
+                        <label for="name">お名前 <span class="required">必須</span></label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">メールアドレス <span class="required">必須</span></label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="company">会社名</label>
+                        <input type="text" id="company" name="company">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">お問い合わせ内容 <span class="required">必須</span></label>
+                        <textarea id="message" name="message" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="submit-button">送信する</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
+
     <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-logo">
-                    <img src="assets/logo.svg" alt="" width="120" height="40" loading="lazy">
-                </div>
-                <div class="footer-links">
-                    <ul>
-                        <li><a href="/privacy-policy.html">プライバシーポリシー</a></li>
-                        <li><a href="/terms.html">利用規約</a></li>
-                        <li><a href="/sitemap.xml">サイトマップ</a></li>
-                    </ul>
-                </div>
-                <div class="footer-social">
-                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
-                </div>
+        <div class="footer__inner">
+            <div class="footer__info">
+                <img src="/images/logo.svg" alt="株式会社Awake" width="120" height="40" class="footer__logo">
+                <p class="footer__address">
+                    〒000-0000<br>
+                    東京都千代田区○○○ ××ビル 8F
+                </p>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2024 株式会社Awake All Rights Reserved.</p>
-            </div>
+            <p class="footer__copyright">&copy; 2024 Awake Inc. All rights reserved.</p>
         </div>
     </footer>
-    
-    <!-- JavaScript -->
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    <script src="js/browser-support.js" type="module"></script>
-    <script src="js/performance-optimizer.js" type="module"></script>
-    <script src="js/main.js" type="module"></script>
-    
-    <!-- ローディング処理 -->
-    <script>
-        window.addEventListener('load', function() {
-            setTimeout(function() {
-                document.querySelector('.loading').classList.add('hide');
-            }, 500);
-        });
-    </script>
 </body>
 </html> 

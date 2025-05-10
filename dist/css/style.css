@@ -1,0 +1,239 @@
+:root {
+    --color-primary: #2C5282;
+    --color-primary-dark: #1A365D;
+    --color-text: #333333;
+    --color-text-light: #666666;
+    --color-background: #FFFFFF;
+    --color-background-alt: #F7FAFC;
+    --max-width: 1200px;
+    --header-height: 80px;
+    --spacing-xs: 0.8rem;
+    --spacing-sm: 1.6rem;
+    --spacing-md: 2.4rem;
+    --spacing-lg: 4.8rem;
+    --spacing-xl: 8rem;
+}
+
+/* Layout */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: var(--header-height);
+    background-color: var(--color-background);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 100;
+}
+
+.header__inner,
+.hero__inner,
+.services__inner,
+.contact__inner,
+.footer__inner {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+}
+
+.header__inner {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header__nav-list {
+    display: flex;
+    gap: var(--spacing-md);
+}
+
+.header__nav-list a {
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.header__nav-list a:hover {
+    color: var(--color-primary);
+}
+
+/* Hero Section */
+.hero {
+    margin-top: var(--header-height);
+    padding: var(--spacing-xl) 0;
+    background-color: var(--color-background-alt);
+    text-align: center;
+}
+
+.hero__title {
+    font-size: 4.8rem;
+    font-weight: 700;
+    margin-bottom: var(--spacing-md);
+    line-height: 1.4;
+}
+
+.hero__text {
+    font-size: 1.8rem;
+    color: var(--color-text-light);
+}
+
+/* Services Section */
+.services {
+    padding: var(--spacing-xl) 0;
+}
+
+.section-title {
+    font-size: 3.6rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: var(--spacing-lg);
+}
+
+.services__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--spacing-md);
+}
+
+.service-card {
+    padding: var(--spacing-md);
+    background-color: var(--color-background);
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.service-card:hover {
+    transform: translateY(-4px);
+}
+
+.service-card__title {
+    font-size: 2.4rem;
+    font-weight: 700;
+    margin-bottom: var(--spacing-sm);
+    color: var(--color-primary);
+}
+
+.service-card__text {
+    color: var(--color-text-light);
+}
+
+/* Contact Form */
+.contact {
+    padding: var(--spacing-xl) 0;
+    background-color: var(--color-background-alt);
+}
+
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.form-group {
+    margin-bottom: var(--spacing-md);
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: var(--spacing-xs);
+    font-weight: 500;
+}
+
+.required {
+    color: #E53E3E;
+    margin-left: var(--spacing-xs);
+    font-size: 1.4rem;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%;
+    padding: var(--spacing-sm);
+    border: 1px solid #CBD5E0;
+    border-radius: 4px;
+    transition: border-color 0.3s;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+textarea:focus {
+    outline: none;
+    border-color: var(--color-primary);
+}
+
+textarea {
+    height: 150px;
+    resize: vertical;
+}
+
+.submit-button {
+    display: block;
+    width: 100%;
+    padding: var(--spacing-sm);
+    background-color: var(--color-primary);
+    color: white;
+    font-weight: 700;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.submit-button:hover {
+    background-color: var(--color-primary-dark);
+}
+
+/* Footer */
+.footer {
+    padding: var(--spacing-lg) 0;
+    background-color: var(--color-primary-dark);
+    color: white;
+}
+
+.footer__info {
+    margin-bottom: var(--spacing-md);
+}
+
+.footer__logo {
+    margin-bottom: var(--spacing-sm);
+}
+
+.footer__address {
+    font-style: normal;
+    font-size: 1.4rem;
+    opacity: 0.8;
+}
+
+.footer__copyright {
+    text-align: center;
+    font-size: 1.4rem;
+    opacity: 0.8;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero__title {
+        font-size: 3.6rem;
+    }
+
+    .hero__text {
+        font-size: 1.6rem;
+    }
+
+    .section-title {
+        font-size: 3rem;
+    }
+
+    .services__grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero__title {
+        font-size: 3rem;
+    }
+
+    .header__nav-list {
+        gap: var(--spacing-sm);
+    }
+} 
