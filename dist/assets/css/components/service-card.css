@@ -2,24 +2,27 @@
     padding: var(--spacing-md);
     background-color: var(--color-background);
     border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
     position: relative;
 }
 
 .service-card:hover {
-    transform: translateY(-4px);
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
 .service-card__title {
-    font-size: 2.4rem;
+    font-size: 2.2rem;
     font-weight: 700;
     margin-bottom: var(--spacing-sm);
     color: var(--color-primary);
 }
 
 .service-card__text {
-    color: var(--color-text-light);
+    margin-bottom: var(--spacing-sm);
+    color: var(--color-text);
+    line-height: 1.6;
 }
 
 .service-card__link {
@@ -38,4 +41,33 @@
 .service-card__link::after {
     content: "→";
     margin-left: 0.5rem;
+}
+
+/* スクロールアニメーション */
+.js-scroll-anim {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.js-scroll-anim.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* アニメーションの遅延（カード間で少しずつ表示するため） */
+.js-scroll-anim:nth-child(1) {
+    transition-delay: 0.1s;
+}
+
+.js-scroll-anim:nth-child(2) {
+    transition-delay: 0.2s;
+}
+
+.js-scroll-anim:nth-child(3) {
+    transition-delay: 0.3s;
+}
+
+.js-scroll-anim:nth-child(4) {
+    transition-delay: 0.4s;
 } 
