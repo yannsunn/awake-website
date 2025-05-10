@@ -30,6 +30,26 @@
     <link rel="stylesheet" href="/css/style.css">
     
     <title>株式会社Awake - 革新的なビジネスソリューション</title>
+    <style>
+        .service-card {
+            position: relative;
+        }
+        .service-card__link {
+            display: inline-block;
+            margin-top: 1rem;
+            color: var(--color-primary);
+            text-decoration: underline;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        .service-card__link:hover {
+            color: var(--color-primary-dark);
+        }
+        .service-card__link::after {
+            content: "→";
+            margin-left: 0.5rem;
+        }
+    </style>
 </head>
 <body>
     <header class="header">
@@ -63,18 +83,22 @@
                     <div class="service-card">
                         <h3 class="service-card__title">EC通販</h3>
                         <p class="service-card__text">メーカー、問屋の商品やOEM商品を代理で販売いたします</p>
+                        <a href="/service-ec.html" class="service-card__link">詳細を見る</a>
                     </div>
                     <div class="service-card">
-                        <h3 class="service-card__title">HP,LP制作</h3>
-                        <p class="service-card__text">1ｰ2週間ほどでコーポレートサイトの作成を行います</p>
+                        <h3 class="service-card__title">HP制作LP制作</h3>
+                        <p class="service-card__text">1～2週間ほどでコーポレートサイトの作成を行います</p>
+                        <a href="/service-web.html" class="service-card__link">詳細を見る</a>
                     </div>
                     <div class="service-card">
                         <h3 class="service-card__title">動画編集</h3>
                         <p class="service-card__text">AIによる加工により顔出しなしでSNS運用が可能です</p>
+                        <a href="/service-video.html" class="service-card__link">詳細を見る</a>
                     </div>
                     <div class="service-card">
                         <h3 class="service-card__title">家具製作</h3>
                         <p class="service-card__text">人気のアイアン家具を完全オーダーメイドで製造します<br>一体型での納品になるので難しい組み立ても不要</p>
+                        <a href="/service-furniture.html" class="service-card__link">詳細を見る</a>
                     </div>
                 </div>
             </div>
