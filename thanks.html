@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="お問い合わせありがとうございます。株式会社Awakeの担当者から連絡させていただきます。">
+    <meta name="robots" content="noindex">
+    <title>お問い合わせ完了 | 株式会社Awake</title>
+    <link rel="canonical" href="https://awakeinc.co.jp/thanks.html">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    
+    <!-- ファビコン -->
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+    <link rel="icon" sizes="32x32" href="assets/favicon-32.png">
+    <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+    
+    <!-- フォント -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" as="style" onload="this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap"></noscript>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- ヘッダー -->
+    <header class="header">
+        <div class="container">
+            <h1><a href="/">Awake Inc.</a></h1>
+            <nav>
+                <ul>
+                    <li><a href="/#services">事業内容</a></li>
+                    <li><a href="/#contact">お問い合わせ</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <!-- お礼メッセージ -->
+    <section class="thanks-section">
+        <div class="container">
+            <div class="thanks-content">
+                <h2>お問い合わせありがとうございます</h2>
+                <p>内容を確認次第、担当者より連絡させていただきます。</p>
+                <p>通常、お問い合わせから2営業日以内にご返信いたします。</p>
+                <a href="/" class="cta-button">トップページへ戻る</a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- フッター -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="assets/logo.svg" alt="" width="120" height="40" loading="lazy">
+                </div>
+                <div class="footer-links">
+                    <ul>
+                        <li><a href="/privacy-policy.html">プライバシーポリシー</a></li>
+                        <li><a href="/terms.html">利用規約</a></li>
+                        <li><a href="/sitemap.xml">サイトマップ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-social">
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 株式会社Awake All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // ヘッダースクロール効果
+        const header = document.querySelector('.header');
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 100) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        }, { passive: true });
+    </script>
+</body>
+</html> 

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="120" height="40" viewBox="0 0 120 40" xmlns="http://www.w3.org/2000/svg">
+    <style>
+        .logo-text {
+            font-family: 'Arial', sans-serif;
+            font-weight: bold;
+        }
+        .primary {
+            fill: #1E88E5;
+        }
+        .secondary {
+            fill: #333333;
+        }
+    </style>
+    <text x="10" y="28" class="logo-text primary">Awake</text>
+    <text x="70" y="28" class="logo-text secondary">Inc.</text>
+</svg>

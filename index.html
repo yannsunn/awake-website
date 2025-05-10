@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="株式会社Awakeは、ネット通販、AI事業、保険紹介で、お客様のビジネスの成長をサポートします。">
+    <meta name="keywords" content="ネット通販, AI事業, 保険紹介, ウェブサイト制作, EC販売">
+    <meta name="author" content="株式会社Awake">
+    <link rel="canonical" href="https://awakeinc.co.jp/">
+    <base href="./">
+    
+    <!-- OGP設定 -->
+    <meta property="og:title" content="株式会社Awake - ビジネスの新たな可能性を開く">
+    <meta property="og:description" content="株式会社Awakeは、ネット通販、AI事業、保険紹介で、お客様のビジネスの成長をサポートします。">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://awakeinc.co.jp">
+    <meta property="og:image" content="assets/images/ogp.jpg">
+    <meta property="og:site_name" content="株式会社Awake">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="株式会社Awake - ビジネスの新たな可能性を開く">
+    <meta name="twitter:description" content="株式会社Awakeは、ネット通販、AI事業、保険紹介で、お客様のビジネスの成長をサポートします。">
+    <meta name="twitter:image" content="assets/images/ogp.jpg">
+    
+    <title>株式会社Awake | ビジネスの新たな可能性を開く</title>
+    
+    <!-- クリティカルCSS（インライン） -->
+    <style>
+        /* ページ読み込み中の基本スタイル */
+        *{margin:0;padding:0;box-sizing:border-box;}
+        body{font-family:'Noto Sans JP',Arial,sans-serif;line-height:1.6;color:#374151;background-color:#f9f9f9;overflow-x:hidden;}
+        .loading{position:fixed;top:0;left:0;width:100%;height:100%;background-color:#fff;display:flex;justify-content:center;align-items:center;z-index:9999;transition:opacity 0.5s ease-out;}
+        .loading.hide{opacity:0;pointer-events:none;}
+        .loading-spinner{width:50px;height:50px;border:5px solid rgba(30,136,229,0.2);border-radius:50%;border-top-color:#1E88E5;animation:spin 1s ease-in-out infinite;}
+        @keyframes spin{to{transform:rotate(360deg);}}
+    </style>
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    
+    <!-- ファビコン -->
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+    <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+    <link rel="manifest" href="assets/site.webmanifest">
+    
+    <!-- フォント -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
+    
+    <!-- パフォーマンス最適化 -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+    
+    <!-- プリロード重要リソース -->
+    <link rel="preload" href="css/style.css" as="style">
+</head>
+<body>
+    <!-- ローディングインジケーター -->
+    <div class="loading">
+        <div class="loading-spinner"></div>
+    </div>
+    
+    <!-- ヘッダー -->
+    <header class="header">
+        <div class="container">
+            <h1><a href="./">Awake Inc.</a></h1>
+            <nav>
+                <ul>
+                    <li><a href="./" class="active">ホーム</a></li>
+                    <li><a href="services/ec.html">ネット通販</a></li>
+                    <li><a href="services/ai.html">AI事業</a></li>
+                    <li><a href="services/insurance.html">保険紹介</a></li>
+                    <li><a href="services/furniture.html">家具販売</a></li>
+                    <li><a href="#contact">お問い合わせ</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <!-- メインコンテンツ -->
+    <main>
+        <!-- ヒーローセクション -->
+        <section class="hero">
+            <div class="container">
+                <h2>ビジネスの新たな可能性を開く</h2>
+                <p>株式会社Awakeは、最新のテクノロジーで、お客様のビジネスの成長をサポートします。</p>
+                <a href="#contact" class="cta-button">お問い合わせ</a>
+            </div>
+        </section>
+
+        <!-- サービスセクション -->
+        <section id="services" class="services">
+            <div class="container">
+                <h2>事業内容</h2>
+                <div class="service-grid">
+                    <div class="service-card" data-aos="fade-up">
+                        <i class="fas fa-shopping-cart"></i>
+                        <h3>ネット通販</h3>
+                        <p>効率的なEC販売システムの構築から運営まで、トータルにサポートいたします。</p>
+                        <a href="services/ec.html" class="mt-3">詳しく見る <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                    <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+                        <i class="fas fa-robot"></i>
+                        <h3>AI事業</h3>
+                        <p>最新のAI技術を活用し、業務効率化や自動化のソリューション、ウェブサイト制作もご提供します。</p>
+                        <a href="services/ai.html" class="mt-3">詳しく見る <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                    <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+                        <i class="fas fa-shield-alt"></i>
+                        <h3>保険紹介</h3>
+                        <p>お客様のニーズに合わせた最適な保険プランをご提案いたします。</p>
+                        <a href="services/insurance.html" class="mt-3">詳しく見る <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                    <div class="service-card" data-aos="fade-up" data-aos-delay="300">
+                        <i class="fas fa-couch"></i>
+                        <h3>家具販売</h3>
+                        <p>高品質な家具を厳選し、快適な暮らしやオフィス空間をサポートします。</p>
+                        <a href="services/furniture.html" class="mt-3">詳しく見る <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- お問い合わせフォーム -->
+        <section id="contact" class="contact-section">
+            <div class="container">
+                <h2 class="section-title">お問い合わせ</h2>
+                <form id="contact-form" class="contact-form" method="POST" data-netlify="true" name="contact" action="thanks.html" netlify-honeypot="bot-field">
+                    <input type="hidden" name="form-name" value="contact">
+                    <p class="hidden" style="display: none;">
+                        <label>スパム対策です。こちらには入力しないでください: <input name="bot-field" /></label>
+                    </p>
+                    <div class="form-group">
+                        <label for="name">お名前 <span class="required">*</span></label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">メールアドレス <span class="required">*</span></label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="company">会社名</label>
+                        <input type="text" id="company" name="company">
+                    </div>
+                    <div class="form-group">
+                        <label for="inquiry_type">お問い合わせ種別</label>
+                        <select id="inquiry_type" name="inquiry_type">
+                            <option value="">選択してください</option>
+                            <option value="ec">ネット通販について</option>
+                            <option value="ai">AI事業について</option>
+                            <option value="insurance">保険紹介について</option>
+                            <option value="furniture">家具販売について</option>
+                            <option value="other">その他</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">お問い合わせ内容 <span class="required">*</span></label>
+                        <textarea id="message" name="message" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label class="checkbox-container">
+                            <input type="checkbox" id="privacy" name="privacy" required>
+                            <span class="checkmark"></span>
+                            <a href="privacy-policy.html" target="_blank">プライバシーポリシー</a>に同意する
+                        </label>
+                    </div>
+                    <button type="submit" class="submit-btn">送信する</button>
+                </form>
+            </div>
+        </section>
+    </main>
+    
+    <!-- フッター -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="assets/logo.svg" alt="株式会社Awake" width="120" height="40" loading="lazy">
+                </div>
+                <div class="footer-links">
+                    <ul>
+                        <li><a href="privacy-policy.html">プライバシーポリシー</a></li>
+                        <li><a href="terms.html">利用規約</a></li>
+                        <li><a href="sitemap.xml">サイトマップ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-social">
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 株式会社Awake All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- スクロールトップボタン -->
+    <button class="scroll-top" aria-label="トップへスクロール">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+    
+    <!-- JavaScript -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script type="module" src="js/main.js"></script>
+    
+    <!-- ローディング処理 -->
+    <script>
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                document.querySelector('.loading').classList.add('hide');
+            }, 500);
+        });
+    </script>
+</body>
+</html> 
