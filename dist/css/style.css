@@ -201,6 +201,28 @@ textarea {
     font-style: normal;
     font-size: 1.4rem;
     opacity: 0.8;
+    margin-bottom: var(--spacing-sm);
+    line-height: 1.6;
+}
+
+.footer__links {
+    margin-top: var(--spacing-sm);
+}
+
+.footer__links ul {
+    display: flex;
+    gap: var(--spacing-md);
+}
+
+.footer__links a {
+    font-size: 1.4rem;
+    opacity: 0.8;
+    text-decoration: underline;
+    transition: opacity 0.3s;
+}
+
+.footer__links a:hover {
+    opacity: 1;
 }
 
 .footer__copyright {
@@ -225,6 +247,11 @@ textarea {
 
     .services__grid {
         grid-template-columns: 1fr;
+    }
+    
+    .footer__links ul {
+        flex-direction: column;
+        gap: var(--spacing-xs);
     }
 }
 
