@@ -26,11 +26,15 @@ jobs:
           node-version: '16'
       
       - name: Create .nojekyll file
-        run: touch public/.nojekyll
+        run: |
+          touch public/.nojekyll
+          echo "www.awakeinc.co.jp" > public/CNAME
       
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           folder: public
           branch: gh-pages
-          clean: true 
+          clean: true
+          clean-exclude: |
+            CNAME 
