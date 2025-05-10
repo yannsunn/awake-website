@@ -1,16 +1,9 @@
 [build]
-  publish = "dist"
-  command = "echo 'Static site, no build needed'"
+  publish = "public"
+  command = "# no build command"
 
 [build.environment]
-  NODE_VERSION = "16.20.2"
-  SKIP_RUBY = "true"
-  SKIP_GO = "true"
-  SKIP_PHP = "true"
-  SKIP_PYTHON = "true"
-
-[dev]
-  framework = "#static"
+  NODE_VERSION = "16"
 
 # SSL/TLS設定
 [[headers]]
