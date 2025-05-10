@@ -1,6 +1,7 @@
 # My Website
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/a6db04dd-b6c9-4b3a-bc87-db5599c6fa25/deploy-status)](https://app.netlify.com/sites/awakeinc/deploys)
+[![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-Active-brightgreen)](https://yannsunn.github.io/awake-website/)
 
 株式会社Awakeの公式ウェブサイトのソースコードです。
 
@@ -33,6 +34,12 @@
 3. 以下の設定を行う:
    - ビルドコマンド: なし（静的ファイルを直接デプロイ）
    - 公開ディレクトリ: `dist`
+
+### GitHub Pages
+
+リポジトリには GitHub Actions が設定されており、mainブランチにプッシュするとautomatically GitHub Pagesにデプロイされます。
+デプロイされたサイトは以下のURLでアクセスできます：
+https://yannsunn.github.io/awake-website/
 
 ## パフォーマンス最適化
 
