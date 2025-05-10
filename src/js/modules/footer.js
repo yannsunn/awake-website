@@ -1,4 +1,4 @@
-import { performanceUtils } from '../utils/performance';
+import { performanceUtils } from '../utils/performance.js';
 
 export class Footer {
     constructor() {
