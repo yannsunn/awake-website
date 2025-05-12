@@ -1,23 +1,2 @@
 # Local Netlify folder
 .netlify
-
-# ビルド成果物
-node_modules/
-bower_components/
-
-# 開発環境
-.vscode/
-.idea/
-.cursor/
-
-# 一時ファイル
-temp_images/
-.DS_Store
-*.log
-tmp/
-temp/
-
-# 機密情報
-.env
-.env.local
-.env.*.local

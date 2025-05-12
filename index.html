@@ -91,6 +91,87 @@
             content: "→";
             margin-left: 0.5rem;
         }
+        
+        /* CTAボタン */
+        .hero__cta {
+            margin-top: 2rem;
+            text-align: center;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background-color: var(--color-primary);
+            color: #fff;
+            border-radius: 50px;
+            font-weight: bold;
+            text-decoration: none;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-2px);
+            background-color: var(--color-primary-dark);
+        }
+        
+        .hero__cta-text {
+            margin-top: 1rem;
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+        
+        /* サービスカード追加要素 */
+        .service-card__price {
+            margin: 1rem 0;
+            text-align: center;
+        }
+        
+        .price-label {
+            display: block;
+            font-size: 0.9rem;
+            color: #666;
+        }
+        
+        .price {
+            display: block;
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--color-primary);
+        }
+        
+        .service-card__features {
+            margin: 1rem 0;
+            padding: 0;
+            list-style: none;
+        }
+        
+        .service-card__features li {
+            margin: 0.5rem 0;
+            color: #333;
+        }
+        
+        /* お問い合わせ特典 */
+        .contact__benefits {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .benefit-item {
+            text-align: center;
+        }
+        
+        .benefit-icon {
+            display: block;
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .benefit-item p {
+            font-size: 0.9rem;
+            color: #333;
+        }
     </style>
 </head>
 <body>
@@ -115,6 +196,10 @@
             <div class="hero__inner">
                 <h2 class="hero__title js-typing">革新的なソリューションで企業の成長をサポート</h2>
                 <p class="hero__text">私たちは、最新のテクノロジーと専門知識を活用し、<br>お客様のビジネスの成功をサポートします。</p>
+                <div class="hero__cta">
+                    <a href="#contact" class="cta-button">無料相談はこちら</a>
+                    <p class="hero__cta-text">初回相談は無料です。お気軽にご相談ください。</p>
+                </div>
             </div>
         </section>
 
@@ -126,6 +211,15 @@
                         <img src="/images/ec-shopping.jpg" alt="EC通販" class="service-card__image">
                         <h3 class="service-card__title">EC通販</h3>
                         <p class="service-card__text">メーカー、問屋の商品やOEM商品を代理で販売いたします</p>
+                        <div class="service-card__price">
+                            <span class="price-label">初期費用</span>
+                            <span class="price">¥0</span>
+                        </div>
+                        <ul class="service-card__features">
+                            <li>✓ 売上手数料10%〜</li>
+                            <li>✓ 在庫管理無料</li>
+                            <li>✓ 即日開始可能</li>
+                        </ul>
                         <a href="/services/ec/" class="service-card__link">詳細を見る</a>
                     </div>
                     <div class="service-card js-scroll-anim">
@@ -153,6 +247,20 @@
         <section id="contact" class="contact">
             <div class="contact__inner">
                 <h2 class="section-title">お問い合わせ</h2>
+                <div class="contact__benefits">
+                    <div class="benefit-item">
+                        <span class="benefit-icon">🎁</span>
+                        <p>今なら初回相談無料</p>
+                    </div>
+                    <div class="benefit-item">
+                        <span class="benefit-icon">⚡</span>
+                        <p>24時間以内に返信</p>
+                    </div>
+                    <div class="benefit-item">
+                        <span class="benefit-icon">🔒</span>
+                        <p>情報は厳重に管理</p>
+                    </div>
+                </div>
                 <div class="contact__content">
                     <div class="contact__map">
                         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3238.994795873357!2d139.4289384!3d35.7343481!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6018e2f3fde00001%3A0xc2bb09fbc996a30!2z44CSMjA3LTAwMTMg5p2x5Lqs6YO95p2x5aSn5ZKM5biC5ZCR5Y6f77yV5LiB55uu77yR77yR77yS77yZ4oiS77yW77yR!5e0!3m2!1sja!2sjp!4v1714474350000!5m2!1sja!2sjp" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
