@@ -13,19 +13,3 @@
 
 /* Pages */
 /* 各ページ固有のCSSがあれば追加する */ 
-
-/* ヘッダーロゴのスタイル追加 */
-.header__logo {
-    display: flex;
-    align-items: center;
-}
-
-.header__logo a {
-    color: white;
-    font-size: 1.2rem;
-    font-weight: bold;
-    text-decoration: none;
-    display: block;
-    padding: 1rem;
-    background-color: #1A1B41;
-} 
