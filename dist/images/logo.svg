@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="180" height="45" viewBox="0 0 180 45" fill="none">
+    <rect width="180" height="45" fill="#1A1B41"/>
+    <!-- メインのロゴマーク（ベッドと人物のシルエット） -->
+    <path fill="white" d="M25 15h30v5h-30z M22 20h36v3h-36z M25 23h30v12h-30z M22 35h36v5h-36z"/>
+    <path fill="white" d="M35 18c0 0-2 2-2 4s0 8 0 8l5 5 M33 22c1.5 0 2.5-1 2.5-2.5s-1-2.5-2.5-2.5-2.5 1-2.5 2.5 1 2.5 2.5 2.5z"/>
+    <!-- 光の効果（より自然な表現） -->
+    <path fill="white" d="M45 15l2-2 M47 17l2-1 M48 20l2 1"/>
+    <!-- テキスト -->
+    <text x="75" y="27.5" fill="white" font-family="Noto Sans JP" font-size="16" dominant-baseline="middle">株式会社Awake</text>
+</svg> 
