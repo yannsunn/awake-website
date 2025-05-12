@@ -22,11 +22,14 @@
 .header__nav-list {
     display: flex;
     gap: var(--spacing-md);
+    align-items: center;
 }
 
 .header__nav-list a {
     font-weight: 500;
     transition: color 0.3s;
+    white-space: nowrap;
+    padding: 0.5rem;
 }
 
 .header__nav-list a:hover {
@@ -38,10 +41,23 @@
     .header__nav-list {
         gap: var(--spacing-sm);
     }
+    
+    .header__inner {
+        padding: 0 var(--spacing-sm);
+    }
 }
 
 @media (max-width: 480px) {
     .header__nav-list {
-        gap: var(--spacing-sm);
+        gap: var(--spacing-xs);
+    }
+    
+    .header__logo img {
+        width: 150px;
+        height: auto;
+    }
+    
+    .header__nav-list a {
+        font-size: 0.9rem;
     }
 } 
