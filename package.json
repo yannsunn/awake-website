@@ -1,27 +1,31 @@
 {
-  "name": "my-website",
+  "name": "awake-website",
   "version": "1.0.0",
+  "description": "株式会社Awake公式ウェブサイト",
   "main": "index.js",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "export": "next export"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/yannsunn/awake-website.git"
-  },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "awake",
+    "website",
+    "corporate"
+  ],
+  "author": "Yasutaka Tagata",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/yannsunn/awake-website/issues"
   },
   "homepage": "https://github.com/yannsunn/awake-website#readme",
-  "description": "",
   "dependencies": {
-    "next": "latest",
-    "react": "latest",
-    "react-dom": "latest"
+    "next": "13.4.19",
+    "react": "18.2.0",
+    "react-dom": "18.2.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
   }
 }

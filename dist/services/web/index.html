@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="株式会社Awake – 1〜2週間でコーポレートサイトを制作">
+    
+    <!-- Base URL -->
+    <base href="/">
+    
+    <!-- OGP -->
+    <meta property="og:title" content="HP制作・LP制作サービス | 株式会社Awake">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://www.awakeinc.co.jp/services/web/">
+    <meta property="og:image" content="https://www.awakeinc.co.jp/images/ogp.jpg">
+    <meta property="og:description" content="1〜2週間でコーポレートサイトを制作。スピーディーな納品と高品質な制作を実現します。">
+    <meta property="og:site_name" content="株式会社Awake">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="stylesheet" href="/assets/css/pages/service-common.css">
+    
+    <title>HP制作・LP制作サービス | 株式会社Awake</title>
+    <style>
+        .service-hero {
+            background-image: url('/assets/images/web-design.jpg');
+        }
+        
+        .price-table {
+            width: 100%;
+            max-width: 800px;
+            margin: 3rem auto;
+            border-collapse: collapse;
+        }
+        
+        .price-table th,
+        .price-table td {
+            padding: 1rem;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+        
+        .price-table th {
+            background-color: var(--color-primary);
+            color: #fff;
+        }
+        
+        .price-table tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+        
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .portfolio-item {
+            position: relative;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        .portfolio-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .portfolio-item__content {
+            padding: 1.5rem;
+            background: #fff;
+        }
+        
+        .portfolio-item__title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: var(--color-primary);
+        }
+        
+        .portfolio-item__description {
+            font-size: 0.9rem;
+            color: #666;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <div id="header-placeholder"></div>
+
+    <main>
+        <section class="service-hero">
+            <div class="service-hero__inner">
+                <h2 class="service-hero__title">1〜2週間で<br>コーポレートサイトを制作</h2>
+                <p class="service-hero__text">スピーディーな納品と高品質な制作を実現<br>御社のブランドを魅力的に発信します</p>
+                <div class="hero__cta">
+                    <a href="#contact" class="cta-button">無料相談はこちら</a>
+                    <p class="hero__cta-text">初回相談は無料です。お気軽にご相談ください。</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="overview" class="service-section">
+            <div class="service-section__inner">
+                <h2 class="section-title">サービス概要</h2>
+                <p class="service-section__text">
+                    株式会社Awakeは、<strong>スピーディーで高品質なウェブサイト制作</strong>を提供します。<br>
+                    コーポレートサイトからランディングページまで、御社のニーズに合わせた最適なウェブサイトを制作。<br>
+                    デザインから実装、運用サポートまでワンストップでご提供します。
+                </p>
+                <ul class="benefit-list">
+                    <li class="benefit-item">
+                        <h3 class="benefit-item__title">最短1週間で納品</h3>
+                        <p>シンプルなLPなら1週間、コーポレートサイトは2週間で納品可能。急ぎのご要望にも対応。</p>
+                    </li>
+                    <li class="benefit-item">
+                        <h3 class="benefit-item__title">修正回数無制限</h3>
+                        <p>納品までの修正回数は無制限。ご要望を丁寧にヒアリングし、イメージ通りに仕上げます。</p>
+                    </li>
+                    <li class="benefit-item">
+                        <h3 class="benefit-item__title">SEO対策込み</h3>
+                        <p>基本的なSEO対策を標準で実施。検索エンジンからの流入を最大化します。</p>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="features" class="service-section">
+            <div class="service-section__inner">
+                <h2 class="section-title">選ばれる理由</h2>
+                <div class="feature-list">
+                    <div class="feature-card">
+                        <h3 class="feature-card__title">レスポンシブ対応</h3>
+                        <p class="feature-card__text">スマートフォンやタブレットなど、あらゆる画面サイズに最適化されたデザインを提供。</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3 class="feature-card__title">高速表示</h3>
+                        <p class="feature-card__text">最新の技術と最適化により、ストレスのない快適な表示速度を実現。</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3 class="feature-card__title">セキュリティ対策</h3>
+                        <p class="feature-card__text">SSL証明書の導入やセキュリティ対策を標準実施。安全なサイト運営を実現。</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3 class="feature-card__title">運用サポート</h3>
+                        <p class="feature-card__text">納品後も安心の運用サポート。更新作業や技術的なご相談に対応。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="price" class="service-section">
+            <div class="service-section__inner">
+                <h2 class="section-title">料金プラン</h2>
+                <table class="price-table">
+                    <tr>
+                        <th>プラン</th>
+                        <th>価格（税抜）</th>
+                        <th>納期</th>
+                        <th>主な機能</th>
+                    </tr>
+                    <tr>
+                        <td>LP制作</td>
+                        <td>98,000円〜</td>
+                        <td>1週間〜</td>
+                        <td>・レスポンシブ対応<br>・お問い合わせフォーム<br>・アクセス解析</td>
+                    </tr>
+                    <tr>
+                        <td>コーポレートサイト</td>
+                        <td>248,000円〜</td>
+                        <td>2週間〜</td>
+                        <td>・5〜10ページ程度<br>・CMS機能<br>・SEO対策</td>
+                    </tr>
+                    <tr>
+                        <td>ECサイト</td>
+                        <td>498,000円〜</td>
+                        <td>3週間〜</td>
+                        <td>・商品管理機能<br>・決済システム連携<br>・会員管理機能</td>
+                    </tr>
+                </table>
+            </div>
+        </section>
+
+        <section id="portfolio" class="service-section">
+            <div class="service-section__inner">
+                <h2 class="section-title">制作実績</h2>
+                <div class="portfolio-grid">
+                    <div class="portfolio-item">
+                        <img src="/assets/images/web-design.jpg" alt="コーポレートサイト制作例">
+                        <div class="portfolio-item__content">
+                            <h3 class="portfolio-item__title">コーポレートサイト制作</h3>
+                            <p class="portfolio-item__description">モダンなデザインと使いやすさを両立したコーポレートサイト。スマートフォン対応とSEO対策により、問い合わせ数が増加。</p>
+                        </div>
+                    </div>
+                    <div class="portfolio-item">
+                        <img src="/assets/images/ec-shopping.jpg" alt="ECサイト制作例">
+                        <div class="portfolio-item__content">
+                            <h3 class="portfolio-item__title">ECサイト制作</h3>
+                            <p class="portfolio-item__description">使いやすさと高いコンバージョン率を実現したECサイト。スマートフォンからの購入も快適に。</p>
+                        </div>
+                    </div>
+                    <div class="portfolio-item">
+                        <img src="/assets/images/modern-office.jpg" alt="コーポレートサイト制作例2">
+                        <div class="portfolio-item__content">
+                            <h3 class="portfolio-item__title">コーポレートサイト制作</h3>
+                            <p class="portfolio-item__description">企業の魅力を最大限に引き出すデザインと、情報設計を重視したコーポレートサイト。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="service-section contact-section">
+            <div class="service-section__inner">
+                <h2 class="section-title">お問い合わせ</h2>
+                <div class="contact__benefits">
+                    <div class="benefit-item">
+                        <span class="benefit-icon">🎁</span>
+                        <p>今なら初回相談無料</p>
+                    </div>
+                    <div class="benefit-item">
+                        <span class="benefit-icon">⚡</span>
+                        <p>24時間以内に返信</p>
+                    </div>
+                    <div class="benefit-item">
+                        <span class="benefit-icon">🔒</span>
+                        <p>情報は厳重に管理</p>
+                    </div>
+                </div>
+                <form name="contact" method="POST" data-netlify="true" class="contact-form">
+                    <div class="form-group">
+                        <label for="name">お名前 <span class="required">必須</span></label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">メールアドレス <span class="required">必須</span></label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="company">会社名</label>
+                        <input type="text" id="company" name="company">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">お問い合わせ内容 <span class="required">必須</span></label>
+                        <textarea id="message" name="message" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="submit-button">送信する</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Scripts -->
+    <script src="/assets/js/components.js"></script>
+</body>
+</html> 
