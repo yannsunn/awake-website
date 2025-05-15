@@ -1,9 +1,10 @@
 import Header from '@/components/Header/Header';
+import Footer from '@/components/Footer/Footer';
 import './globals.css';
 
 export const metadata = {
-  title: 'Awake',
-  description: '革新的なソリューションで企業の成長をサポート',
+  title: 'Awake - 革新的なビジネスソリューション',
+  description: '株式会社Awakeは、革新的なソリューションで企業の成長をサポートします。',
 };
 
 export default function RootLayout({ children }) {
@@ -11,9 +12,10 @@ export default function RootLayout({ children }) {
     <html lang="ja">
       <body>
         <Header />
-        <main style={{ paddingTop: '80px' }}>
+        <main>
           {children}
         </main>
+        <Footer />
       </body>
     </html>
   );

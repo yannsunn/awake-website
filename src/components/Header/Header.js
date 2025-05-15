@@ -6,10 +6,10 @@ const Header = () => {
   const [isServicesOpen, setIsServicesOpen] = useState(false);
 
   const services = [
-    { name: '動画編集', path: '/services/video' },
-    { name: '家具製作', path: '/services/furniture' },
+    { name: 'EC通販', path: '/services/ec' },
     { name: 'HP制作LP制作', path: '/services/web' },
-    { name: 'EC通販', path: '/services/ec' }
+    { name: '動画編集', path: '/services/video' },
+    { name: '家具製作', path: '/services/furniture' }
   ];
 
   return (
