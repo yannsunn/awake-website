@@ -6,6 +6,10 @@
     <meta name="description" content="株式会社Awakeは、革新的なソリューションで企業の成長をサポートします。">
     <meta name="keywords" content="Awake, システム開発, コンサルティング, ビジネスソリューション">
     
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAEeSURBVFhH7ZYxDoMwDEU5AkdgZGRkZGRkZGTkCIyMHKEjR2BkZGQER2DkCB0ZGRkZGRlxhP6XVhEqIYRQpaj9pKhq8vz8xI4d2xhjuq7rGGMPxpgTxtizKIrL4XB4lmV5I4QMfd8/OOe3uq6vWZbdkyS5p2l6rqrqorV+wJb9CKz5znxZlveyLK+c82vTNDfYth+s+c58nudXKeVFKXWFbfsRWvN937+GYbjDtv0IrblSKmj+b8cPQsQ5/0yAEOL8KQEhxPlvBGzb3+d5jrquewVBsEVRtMVxvKVpuiVJskVRtHmed8EXbhM6PDQPggBc14Xj42HP88D3fTBNE0zTBMuyNsdxwHVdcBwHLMsCy7LAsiywbRscx4HD4RR8AL2JvgHvkQpwAAAAAElFTkSuQmCC">
+    <link rel="apple-touch-icon" href="/assets/images/apple-touch-icon.png">
+    
     <!-- OGP -->
     <meta property="og:title" content="株式会社Awake - 革新的なビジネスソリューション">
     <meta property="og:type" content="website">
@@ -32,7 +36,7 @@
     <style>
         .hero {
             position: relative;
-            background-image: url('/images/modern-office.jpg');
+            background-image: url('/assets/images/modern-office.jpg');
             background-size: cover;
             background-position: center;
             color: #fff;
@@ -178,8 +182,8 @@
     <header class="header">
         <div class="header__inner">
             <h1 class="header__logo">
-                <a href="/">
-                    <img src="/images/logo.svg" alt="株式会社Awake" width="180" height="45">
+                <a href="/" style="text-decoration: none; color: var(--color-primary); font-size: 1.8rem; font-weight: bold;">
+                    Awake
                 </a>
             </h1>
             <nav class="header__nav">
@@ -208,7 +212,7 @@
                 <h2 class="section-title">サービス</h2>
                 <div class="services__grid">
                     <div class="service-card js-scroll-anim">
-                        <img src="/images/ec-shopping.jpg" alt="EC通販" class="service-card__image">
+                        <img src="/assets/images/ec-shopping.jpg" alt="EC通販" class="service-card__image">
                         <h3 class="service-card__title">EC通販</h3>
                         <p class="service-card__text">メーカー、問屋の商品やOEM商品を代理で販売いたします</p>
                         <div class="service-card__price">
@@ -223,19 +227,19 @@
                         <a href="/services/ec/" class="service-card__link">詳細を見る</a>
                     </div>
                     <div class="service-card js-scroll-anim">
-                        <img src="/images/web-design.jpg" alt="HP制作LP制作" class="service-card__image">
+                        <img src="/assets/images/web-design.jpg" alt="HP制作LP制作" class="service-card__image">
                         <h3 class="service-card__title">HP制作LP制作</h3>
                         <p class="service-card__text">1～2週間ほどでコーポレートサイトの作成を行います</p>
                         <a href="/services/web/" class="service-card__link">詳細を見る</a>
                     </div>
                     <div class="service-card js-scroll-anim">
-                        <img src="/images/video-editing.jpg" alt="動画編集" class="service-card__image">
+                        <img src="/assets/images/video-editing.jpg" alt="動画編集" class="service-card__image">
                         <h3 class="service-card__title">動画編集</h3>
                         <p class="service-card__text">AIによる加工により顔出しなしでSNS運用が可能です</p>
                         <a href="/services/video/" class="service-card__link">詳細を見る</a>
                     </div>
                     <div class="service-card js-scroll-anim">
-                        <img src="/images/furniture.jpg" alt="家具製作" class="service-card__image">
+                        <img src="/assets/images/furniture.jpg" alt="家具製作" class="service-card__image">
                         <h3 class="service-card__title">家具製作</h3>
                         <p class="service-card__text">人気のアイアン家具を完全オーダーメイドで製造します<br>一体型での納品になるので難しい組み立ても不要</p>
                         <a href="/services/furniture/" class="service-card__link">詳細を見る</a>
@@ -294,7 +298,7 @@
     <footer class="footer">
         <div class="footer__inner">
             <div class="footer__info">
-                <img src="/images/logo.svg" alt="株式会社Awake" width="300" height="40" class="footer__logo">
+                <img src="/assets/images/ogp.jpg" alt="株式会社Awake" width="180" height="180" class="footer__logo">
                 <p class="footer__address">
                     〒207-0013<br>
                     東京都東大和市向原5-1129-61 渡辺ビル1F<br>
@@ -315,5 +319,6 @@
 
     <!-- Scripts -->
     <script src="/assets/js/main.js"></script>
+    <script src="/assets/js/components.js"></script>
 </body>
 </html> 
