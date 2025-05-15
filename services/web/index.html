@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="株式会社Awake – 1〜2週間でコーポレートサイトを制作">
+    <meta name="description" content="株式会社Awakeのウェブ制作サービスについてご紹介します。モダンで使いやすいウェブサイトを制作します。">
     
     <!-- Base URL -->
     <base href="/">
@@ -22,10 +22,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
     
     <!-- Styles -->
-    <link rel="stylesheet" href="/assets/css/main.css">
-    <link rel="stylesheet" href="/assets/css/pages/service-common.css">
+    <link rel="stylesheet" href="../../assets/css/base.css">
+    <link rel="stylesheet" href="../../assets/css/main.css">
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/styles.css">
     
-    <title>HP制作・LP制作サービス | 株式会社Awake</title>
+    <title>ウェブ制作サービス | 株式会社Awake</title>
     <style>
         .service-hero {
             background-image: url('/assets/images/web-design.jpg');
@@ -94,177 +96,142 @@
     </style>
 </head>
 <body>
-    <!-- Header -->
-    <div id="header-placeholder"></div>
+    <header class="header">
+        <div class="header-inner container">
+            <h1 class="logo">
+                <a href="../../">Awake</a>
+            </h1>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="../../#services">サービス</a></li>
+                    <li><a href="../../#company">会社概要</a></li>
+                    <li><a href="../../#contact">お問い合わせ</a></li>
+                </ul>
+            </nav>
+            <button class="menu-toggle" aria-label="メニュー">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
 
     <main>
-        <section class="service-hero">
-            <div class="service-hero__inner">
-                <h2 class="service-hero__title">1〜2週間で<br>コーポレートサイトを制作</h2>
-                <p class="service-hero__text">スピーディーな納品と高品質な制作を実現<br>御社のブランドを魅力的に発信します</p>
-                <div class="hero__cta">
-                    <a href="#contact" class="cta-button">無料相談はこちら</a>
-                    <p class="hero__cta-text">初回相談は無料です。お気軽にご相談ください。</p>
-                </div>
+        <section class="page-hero">
+            <div class="container">
+                <h1>ウェブ制作</h1>
+                <p>モダンで使いやすいウェブサイトを制作します</p>
             </div>
         </section>
 
-        <section id="overview" class="service-section">
-            <div class="service-section__inner">
-                <h2 class="section-title">サービス概要</h2>
-                <p class="service-section__text">
-                    株式会社Awakeは、<strong>スピーディーで高品質なウェブサイト制作</strong>を提供します。<br>
-                    コーポレートサイトからランディングページまで、御社のニーズに合わせた最適なウェブサイトを制作。<br>
-                    デザインから実装、運用サポートまでワンストップでご提供します。
-                </p>
-                <ul class="benefit-list">
-                    <li class="benefit-item">
-                        <h3 class="benefit-item__title">最短1週間で納品</h3>
-                        <p>シンプルなLPなら1週間、コーポレートサイトは2週間で納品可能。急ぎのご要望にも対応。</p>
-                    </li>
-                    <li class="benefit-item">
-                        <h3 class="benefit-item__title">修正回数無制限</h3>
-                        <p>納品までの修正回数は無制限。ご要望を丁寧にヒアリングし、イメージ通りに仕上げます。</p>
-                    </li>
-                    <li class="benefit-item">
-                        <h3 class="benefit-item__title">SEO対策込み</h3>
-                        <p>基本的なSEO対策を標準で実施。検索エンジンからの流入を最大化します。</p>
-                    </li>
-                </ul>
-            </div>
-        </section>
-
-        <section id="features" class="service-section">
-            <div class="service-section__inner">
-                <h2 class="section-title">選ばれる理由</h2>
-                <div class="feature-list">
-                    <div class="feature-card">
-                        <h3 class="feature-card__title">レスポンシブ対応</h3>
-                        <p class="feature-card__text">スマートフォンやタブレットなど、あらゆる画面サイズに最適化されたデザインを提供。</p>
+        <section class="service-detail">
+            <div class="container">
+                <div class="service-overview">
+                    <div class="service-image">
+                        <img src="../../assets/images/web-design.jpg" alt="ウェブデザインイメージ">
                     </div>
-                    <div class="feature-card">
-                        <h3 class="feature-card__title">高速表示</h3>
-                        <p class="feature-card__text">最新の技術と最適化により、ストレスのない快適な表示速度を実現。</p>
-                    </div>
-                    <div class="feature-card">
-                        <h3 class="feature-card__title">セキュリティ対策</h3>
-                        <p class="feature-card__text">SSL証明書の導入やセキュリティ対策を標準実施。安全なサイト運営を実現。</p>
-                    </div>
-                    <div class="feature-card">
-                        <h3 class="feature-card__title">運用サポート</h3>
-                        <p class="feature-card__text">納品後も安心の運用サポート。更新作業や技術的なご相談に対応。</p>
+                    <div class="service-content">
+                        <h2>サービス概要</h2>
+                        <p>株式会社Awakeでは、お客様のビジネスに合わせたウェブサイト制作を行っています。モダンなデザイン、使いやすいユーザーインターフェース、SEO対策など、ウェブサイトに必要な要素を総合的に提供します。</p>
+                        <ul>
+                            <li>コーポレートサイト制作</li>
+                            <li>ランディングページ制作</li>
+                            <li>ブログ・メディアサイト構築</li>
+                            <li>レスポンシブデザイン対応</li>
+                            <li>WordPress開発</li>
+                        </ul>
                     </div>
                 </div>
-            </div>
-        </section>
 
-        <section id="price" class="service-section">
-            <div class="service-section__inner">
-                <h2 class="section-title">料金プラン</h2>
-                <table class="price-table">
-                    <tr>
-                        <th>プラン</th>
-                        <th>価格（税抜）</th>
-                        <th>納期</th>
-                        <th>主な機能</th>
-                    </tr>
-                    <tr>
-                        <td>LP制作</td>
-                        <td>98,000円〜</td>
-                        <td>1週間〜</td>
-                        <td>・レスポンシブ対応<br>・お問い合わせフォーム<br>・アクセス解析</td>
-                    </tr>
-                    <tr>
-                        <td>コーポレートサイト</td>
-                        <td>248,000円〜</td>
-                        <td>2週間〜</td>
-                        <td>・5〜10ページ程度<br>・CMS機能<br>・SEO対策</td>
-                    </tr>
-                    <tr>
-                        <td>ECサイト</td>
-                        <td>498,000円〜</td>
-                        <td>3週間〜</td>
-                        <td>・商品管理機能<br>・決済システム連携<br>・会員管理機能</td>
-                    </tr>
-                </table>
-            </div>
-        </section>
-
-        <section id="portfolio" class="service-section">
-            <div class="service-section__inner">
-                <h2 class="section-title">制作実績</h2>
-                <div class="portfolio-grid">
-                    <div class="portfolio-item">
-                        <img src="/assets/images/web-design.jpg" alt="コーポレートサイト制作例">
-                        <div class="portfolio-item__content">
-                            <h3 class="portfolio-item__title">コーポレートサイト制作</h3>
-                            <p class="portfolio-item__description">モダンなデザインと使いやすさを両立したコーポレートサイト。スマートフォン対応とSEO対策により、問い合わせ数が増加。</p>
+                <div class="service-features">
+                    <h2>特徴</h2>
+                    <div class="features-grid">
+                        <div class="feature-item">
+                            <h3>モダンなデザイン</h3>
+                            <p>最新のデザイントレンドを取り入れながらも、ブランドイメージに合わせたデザインを提案します。視覚的に美しく、ユーザーの印象に残るウェブサイトを制作します。</p>
                         </div>
-                    </div>
-                    <div class="portfolio-item">
-                        <img src="/assets/images/ec-shopping.jpg" alt="ECサイト制作例">
-                        <div class="portfolio-item__content">
-                            <h3 class="portfolio-item__title">ECサイト制作</h3>
-                            <p class="portfolio-item__description">使いやすさと高いコンバージョン率を実現したECサイト。スマートフォンからの購入も快適に。</p>
+                        <div class="feature-item">
+                            <h3>使いやすいUI/UX</h3>
+                            <p>ユーザーがストレスなく情報を得られる、直感的なユーザーインターフェースを設計します。ユーザー体験を最優先に考えたサイト設計を行います。</p>
                         </div>
-                    </div>
-                    <div class="portfolio-item">
-                        <img src="/assets/images/modern-office.jpg" alt="コーポレートサイト制作例2">
-                        <div class="portfolio-item__content">
-                            <h3 class="portfolio-item__title">コーポレートサイト制作</h3>
-                            <p class="portfolio-item__description">企業の魅力を最大限に引き出すデザインと、情報設計を重視したコーポレートサイト。</p>
+                        <div class="feature-item">
+                            <h3>SEO対策</h3>
+                            <p>検索エンジンで上位表示されるための技術的なSEO対策を実施します。コンテンツ設計の段階からSEOを意識した構成を提案します。</p>
+                        </div>
+                        <div class="feature-item">
+                            <h3>高速な表示速度</h3>
+                            <p>ユーザー離脱の原因となるページの読み込み遅延を防ぐため、最適化された軽量なコードでサイトを構築します。</p>
+                        </div>
+                        <div class="feature-item">
+                            <h3>セキュリティ対策</h3>
+                            <p>サイバー攻撃からウェブサイトを守るための適切なセキュリティ対策を実施します。安全なウェブ環境を提供します。</p>
+                        </div>
+                        <div class="feature-item">
+                            <h3>アクセシビリティ対応</h3>
+                            <p>あらゆるユーザーが情報にアクセスできるよう、ウェブアクセシビリティに配慮したサイト制作を行います。</p>
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
 
-        <section id="contact" class="service-section contact-section">
-            <div class="service-section__inner">
-                <h2 class="section-title">お問い合わせ</h2>
-                <div class="contact__benefits">
-                    <div class="benefit-item">
-                        <span class="benefit-icon">🎁</span>
-                        <p>今なら初回相談無料</p>
-                    </div>
-                    <div class="benefit-item">
-                        <span class="benefit-icon">⚡</span>
-                        <p>24時間以内に返信</p>
-                    </div>
-                    <div class="benefit-item">
-                        <span class="benefit-icon">🔒</span>
-                        <p>情報は厳重に管理</p>
-                    </div>
+                <div class="service-process">
+                    <h2>制作フロー</h2>
+                    <ol class="process-list">
+                        <li>
+                            <h3>ヒアリング・要件定義</h3>
+                            <p>お客様のビジネスやサイトの目的、ターゲットユーザーなどを詳しくヒアリングし、要件をまとめます。</p>
+                        </li>
+                        <li>
+                            <h3>サイト設計・情報設計</h3>
+                            <p>ヒアリングを基に、サイトマップやワイヤーフレームを作成し、情報構造を設計します。</p>
+                        </li>
+                        <li>
+                            <h3>デザイン制作</h3>
+                            <p>ブランドイメージに合わせたデザインを制作します。複数のデザイン案からお選びいただけます。</p>
+                        </li>
+                        <li>
+                            <h3>コーディング・実装</h3>
+                            <p>デザインを忠実に再現し、実際のウェブサイトとして構築します。SEO対策やセキュリティ対策も同時に実施します。</p>
+                        </li>
+                        <li>
+                            <h3>テスト・動作確認</h3>
+                            <p>様々なデバイスやブラウザでの動作確認を行い、問題がないことを確認します。</p>
+                        </li>
+                        <li>
+                            <h3>公開・運用サポート</h3>
+                            <p>サイトを公開し、必要に応じて運用サポートを提供します。アクセス解析や改善提案も行います。</p>
+                        </li>
+                    </ol>
                 </div>
-                <form name="contact" method="POST" data-netlify="true" class="contact-form">
-                    <div class="form-group">
-                        <label for="name">お名前 <span class="required">必須</span></label>
-                        <input type="text" id="name" name="name" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="email">メールアドレス <span class="required">必須</span></label>
-                        <input type="email" id="email" name="email" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="company">会社名</label>
-                        <input type="text" id="company" name="company">
-                    </div>
-                    <div class="form-group">
-                        <label for="message">お問い合わせ内容 <span class="required">必須</span></label>
-                        <textarea id="message" name="message" required></textarea>
-                    </div>
-                    <div class="form-group">
-                        <button type="submit" class="submit-button">送信する</button>
-                    </div>
-                </form>
+
+                <div class="service-cta">
+                    <h2>お問い合わせ</h2>
+                    <p>ウェブ制作サービスについてのご質問やお見積りのご依頼は、お気軽にお問い合わせください。</p>
+                    <a href="../../#contact" class="btn-primary">お問い合わせフォームへ</a>
+                </div>
             </div>
         </section>
     </main>
 
-    <!-- Footer -->
-    <div id="footer-placeholder"></div>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <a href="../../">Awake</a>
+                </div>
+                <div class="footer-links">
+                    <ul>
+                        <li><a href="../../#services">サービス</a></li>
+                        <li><a href="../../#company">会社概要</a></li>
+                        <li><a href="../../#contact">お問い合わせ</a></li>
+                        <li><a href="../../legal/privacy-policy/">プライバシーポリシー</a></li>
+                        <li><a href="../../legal/terms/">利用規約</a></li>
+                    </ul>
+                </div>
+            </div>
+            <p class="copyright">&copy; 2023 Awake Inc. All rights reserved.</p>
+        </div>
+    </footer>
 
-    <!-- Scripts -->
-    <script src="/assets/js/components.js"></script>
+    <script src="./js/main.js"></script>
 </body>
 </html> 
