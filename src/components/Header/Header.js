@@ -16,7 +16,7 @@ const Header = () => {
     <header className={styles.header}>
       <div className={styles.container}>
         <Link href="/" className={styles.logo}>
-          Awake
+          株式会社Awake
         </Link>
         
         <nav className={styles.nav}>
