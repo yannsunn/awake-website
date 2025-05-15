@@ -1,5 +1,6 @@
 [build]
   publish = "."
+  command = "# no build command needed"
 
 [[headers]]
   for = "/*"
@@ -9,7 +10,7 @@
     X-Content-Type-Options = "nosniff"
     Referrer-Policy = "strict-origin-when-cross-origin"
     Strict-Transport-Security = "max-age=31536000; includeSubDomains; preload"
-    Content-Security-Policy = "default-src 'self' https://fonts.googleapis.com https://fonts.gstatic.com https://www.google.com https://maps.google.com https://www.gstatic.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: https://*.google.com https://*.googleapis.com https://*.gstatic.com; frame-src https://www.google.com; form-action 'self';"
+    Content-Security-Policy = "default-src 'self' https://fonts.googleapis.com https://fonts.gstatic.com https://www.google.com https://maps.google.com https://www.gstatic.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: https://*.google.com https://*.googleapis.com https://*.gstatic.com https://awake-website.netlify.app; frame-src https://www.google.com; form-action 'self';"
 
 [[redirects]]
   from = "/*"
