@@ -4,10 +4,7 @@
   "description": "株式会社Awake公式ウェブサイト",
   "main": "index.js",
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "export": "next export"
+    "start": "echo 'Static site - no build required'"
   },
   "keywords": [
     "awake",
@@ -20,11 +17,6 @@
     "url": "https://github.com/yannsunn/awake-website/issues"
   },
   "homepage": "https://github.com/yannsunn/awake-website#readme",
-  "dependencies": {
-    "next": "13.4.19",
-    "react": "18.2.0",
-    "react-dom": "18.2.0"
-  },
   "engines": {
     "node": ">=18.0.0"
   }
