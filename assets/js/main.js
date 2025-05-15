@@ -180,13 +180,13 @@ function initTextTyping() {
     if (typingElements.length === 0) return;
     
     typingElements.forEach(element => {
-        const text = element.innerText;
-        element.innerText = '';
+        const text = element.textContent;
+        element.textContent = '';
         
-        const observer = new IntersectionObserver(entries => {
-            entries.forEach(entry => {
+        const observer = new IntersectionObserver(async (entries) => {
+            entries.forEach(async (entry) => {
                 if (entry.isIntersecting) {
-                    typeText(element, text);
+                    await typeText(element, text);
                     observer.unobserve(element);
                 }
             });
@@ -201,17 +201,21 @@ function initTextTyping() {
  */
 function typeText(element, text, speed = 50) {
     let i = 0;
+    const originalText = text;
     element.innerText = '';
     
-    const timer = setInterval(() => {
-        if (i < text.length) {
-            element.innerText += text.charAt(i);
-            i++;
-        } else {
-            clearInterval(timer);
-            element.classList.add('typing-completed');
-        }
-    }, speed);
+    return new Promise((resolve) => {
+        const timer = setInterval(() => {
+            if (i < originalText.length) {
+                element.innerText += originalText.charAt(i);
+                i++;
+            } else {
+                clearInterval(timer);
+                element.classList.add('typing-completed');
+                resolve();
+            }
+        }, speed);
+    });
 }
 
 /**
