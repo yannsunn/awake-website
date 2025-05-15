@@ -3,7 +3,6 @@
  */
 
 document.addEventListener('DOMContentLoaded', function() {
-    initMobileMenu();
     initSmoothScroll();
     initScrollAnimation();
     initParallaxEffect();
