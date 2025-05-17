@@ -1,22 +1,19 @@
-/* Modern CSS Reset */
-*,
-*::before,
-*::after {
+/* Reset CSS */
+*, *::before, *::after {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
 html {
-    font-size: 62.5%;
-    scroll-behavior: smooth;
+    font-size: var(--font-size-base);
+    line-height: var(--line-height-base);
 }
 
 body {
-    font-family: 'Noto Sans JP', sans-serif;
-    font-size: 1.6rem;
-    line-height: 1.7;
-    color: #333;
+    font-family: var(--font-family);
+    color: var(--color-text);
+    background-color: var(--color-background);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
@@ -24,7 +21,7 @@ body {
 img {
     max-width: 100%;
     height: auto;
-    vertical-align: middle;
+    display: block;
 }
 
 a {
@@ -32,22 +29,20 @@ a {
     text-decoration: none;
 }
 
+button {
+    border: none;
+    background: none;
+    cursor: pointer;
+    font: inherit;
+}
+
 ul, ol {
     list-style: none;
 }
 
-button,
-input,
-select,
-textarea {
-    font: inherit;
-    color: inherit;
-}
-
-button {
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
+h1, h2, h3, h4, h5, h6 {
+    font-weight: normal;
+    line-height: 1.2;
 }
 
 [hidden] {

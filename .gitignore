@@ -11,6 +11,9 @@
 /out/
 /build
 
+# production
+/dist
+
 # misc
 .DS_Store
 *.pem

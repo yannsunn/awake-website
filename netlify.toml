@@ -1,6 +1,6 @@
 [build]
   publish = "dist"
-  command = ""
+  command = "npm run build"
 
 [[headers]]
   for = "/*"
@@ -10,9 +10,14 @@
     X-Content-Type-Options = "nosniff"
     Referrer-Policy = "strict-origin-when-cross-origin"
     Strict-Transport-Security = "max-age=31536000; includeSubDomains; preload"
-    Content-Security-Policy = "default-src 'self' https://fonts.googleapis.com https://fonts.gstatic.com https://www.google.com https://maps.google.com https://www.gstatic.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: https://*.google.com https://*.googleapis.com https://*.gstatic.com https://awake-website.netlify.app; frame-src https://www.google.com; form-action 'self';"
+    Content-Security-Policy = "default-src 'self' https://fonts.googleapis.com https://fonts.gstatic.com https://www.google.com https://maps.google.com https://www.gstatic.com https://www.googletagmanager.com https://www.google-analytics.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: https://*.google.com https://*.googleapis.com https://*.gstatic.com https://www.google-analytics.com; frame-src https://www.google.com; form-action 'self';"
 
 [[redirects]]
-  from = "/*"
-  to = "/index.html"
+  from = "/services/*"
+  to = "/services/:splat"
+  status = 200
+
+[[redirects]]
+  from = "/legal/*"
+  to = "/legal/:splat"
   status = 200 

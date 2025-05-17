@@ -5,16 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="株式会社Awakeは、革新的なソリューションで企業の成長をサポートします。">
     <meta name="keywords" content="Awake, システム開発, コンサルティング, ビジネスソリューション">
+    <meta name="theme-color" content="#4A90E2">
+    <meta name="color-scheme" content="light dark">
+    
+    <!-- Resource Hints -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" href="/css/styles.min.css" as="style">
+    <link rel="preload" href="/js/bundle.min.js" as="script">
     
     <!-- Favicon -->
     <link rel="icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAEeSURBVFhH7ZYxDoMwDEU5AkdgZGRkZGRkZGTkCIyMHKEjR2BkZGQER2DkCB0ZGRkZGRlxhP6XVhEqIYRQpaj9pKhq8vz8xI4d2xhjuq7rGGMPxpgTxtizKIrL4XB4lmV5I4QMfd8/OOe3uq6vWZbdkyS5p2l6rqrqorV+wJb9CKz5znxZlveyLK+c82vTNDfYth+s+c58nudXKeVFKXWFbfsRWvN937+GYbjDtv0IrblSKmj+b8cPQsQ5/0yAEOL8KQEhxPlvBGzb3+d5jrquewVBsEVRtMVxvKVpuiVJskVRtHmed8EXbhM6PDQPggBc14Xj42HP88D3fTBNE0zTBMuyNsdxwHVdcBwHLMsCy7LAsiywbRscx4HD4RR8AL2JvgHvkQpwAAAAAElFTkSuQmCC">
-    <link rel="apple-touch-icon" href="/assets/images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAEeSURBVFhH7ZYxDoMwDEU5AkdgZGRkZGRkZGTkCIyMHKEjR2BkZGQER2DkCB0ZGRkZGRlxhP6XVhEqIYRQpaj9pKhq8vz8xI4d2xhjuq7rGGMPxpgTxtizKIrL4XB4lmV5I4QMfd8/OOe3uq6vWZbdkyS5p2l6rqrqorV+wJb9CKz5znxZlveyLK+c82vTNDfYth+s+c58nudXKeVFKXWFbfsRWvN937+GYbjDtv0IrblSKmj+b8cPQsQ5/0yAEOL8KQEhxPlvBGzb3+d5jrquewVBsEVRtMVxvKVpuiVJskVRtHmed8EXbhM6PDQPggBc14Xj42HP88D3fTBNE0zTBMuyNsdxwHVdcBwHLMsCy7LAsiywbRscx4HD4RR8AL2JvgHvkQpwAAAAAElFTkSuQmCC">
     
     <!-- OGP -->
     <meta property="og:title" content="株式会社Awake - 革新的なビジネスソリューション">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://awake-website.netlify.app/">
-    <meta property="og:image" content="https://awake-website.netlify.app/assets/images/ogp.jpg">
+    <meta property="og:image" content="/assets/images/ogp.jpg">
     <meta property="og:description" content="株式会社Awakeは、革新的なソリューションで企業の成長をサポートします。">
     <meta property="og:site_name" content="株式会社Awake">
     
@@ -22,57 +30,52 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="株式会社Awake - 革新的なビジネスソリューション">
     <meta name="twitter:description" content="株式会社Awakeは、革新的なソリューションで企業の成長をサポートします。">
-    <meta name="twitter:image" content="https://awake-website.netlify.app/assets/images/ogp.jpg">
+    <meta name="twitter:image" content="/assets/images/ogp.jpg">
     
     <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
     
-    <!-- Critical CSS -->
-    <style>
-        @import url('/css/critical.css');
-    </style>
+    <!-- CSS -->
+    <link rel="stylesheet" href="/css/styles.min.css">
     
-    <!-- CSS遅延読み込み -->
-    <script src="/js/loadCSS.js" defer></script>
-    <script src="/js/main.js" defer></script>
+    <!-- JavaScript -->
+    <script src="/js/bundle.min.js" defer></script>
     
     <title>株式会社Awake - 革新的なビジネスソリューション</title>
 </head>
 <body>
     <div id="header-placeholder"></div>
-    <header class="header">
+    <header class="header" role="banner">
         <div class="header__inner">
             <h1 class="header__logo">
-                <a href="/" style="text-decoration: none; color: var(--color-primary); font-size: 1.8rem; font-weight: bold;">
+                <a href="/" style="text-decoration: none; color: var(--color-primary); font-size: 1.8rem; font-weight: bold;" aria-label="株式会社Awake トップページ">
                     株式会社Awake
                 </a>
             </h1>
-            <nav class="header__nav">
+            <nav class="header__nav" role="navigation" aria-label="メインナビゲーション">
                 <ul class="header__nav-list">
-                    <li><a href="#services">サービス</a></li>
-                    <li><a href="#contact">お問い合わせ</a></li>
+                    <li><a href="#services" aria-label="サービス一覧へ">サービス</a></li>
+                    <li><a href="#contact" aria-label="お問い合わせフォームへ">お問い合わせ</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <main>
-        <section class="hero">
+    <main role="main">
+        <section class="hero" aria-labelledby="hero-title">
             <div class="hero__inner">
-                <h2 class="hero__title js-typing">革新的なソリューションで企業の成長をサポート</h2>
+                <h2 id="hero-title" class="hero__title js-typing">革新的なソリューションで企業の成長をサポート</h2>
                 <p class="hero__text">私たちは、最新のテクノロジーと専門知識を活用し、<br>お客様のビジネスの成功をサポートします。</p>
                 <div class="hero__cta">
-                    <a href="#contact" class="cta-button">無料相談はこちら</a>
+                    <a href="#contact" class="cta-button" role="button" aria-label="無料相談のお申し込み">無料相談はこちら</a>
                     <p class="hero__cta-text">初回相談は無料です。お気軽にご相談ください。</p>
                 </div>
             </div>
         </section>
 
-        <section id="services" class="services">
+        <section id="services" class="services" aria-labelledby="services-title">
             <div class="services__inner">
-                <h2 class="section-title">サービス</h2>
+                <h2 id="services-title" class="section-title">サービス</h2>
                 <div class="services__grid">
                     <div class="service-card js-scroll-anim">
                         <img src="/assets/images/ec-shopping.jpg" alt="EC通販" class="service-card__image">
@@ -102,9 +105,9 @@
             </div>
         </section>
 
-        <section id="contact" class="contact">
+        <section id="contact" class="contact" aria-labelledby="contact-title">
             <div class="contact__inner">
-                <h2 class="section-title">お問い合わせ</h2>
+                <h2 id="contact-title" class="section-title">お問い合わせ</h2>
                 <div class="contact__benefits">
                     <div class="benefit-item">
                         <span class="benefit-icon">🎁</span>
@@ -120,25 +123,25 @@
                     </div>
                 </div>
                 <div class="contact__content">
-                    <div class="contact__map">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3238.994795873357!2d139.4289384!3d35.7343481!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6018e2f3fde00001%3A0xc2bb09fbc996a30!2z44CSMjA3LTAwMTMg5p2x5Lqs6YO95p2x5aSn5ZKM5biC5ZCR5Y6f77yV5LiB55uu77yR77yR77yS77yZ4oiS77yW77yR!5e0!3m2!1sja!2sjp!4v1714474350000!5m2!1sja!2sjp" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <div class="contact__map" aria-label="会社所在地の地図">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3238.994795873357!2d139.4289384!3d35.7343481!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6018e2f3fde00001%3A0xc2bb09fbc996a30!2z44CSMjA3LTAwMTMg5p2x5Lqs6YO95p2x5aSn5ZKM5biC5ZCR5Y6f77yV5LiB55uu77yR77yR77yS77yZ4oiS77yW77yR!5e0!3m2!1sja!2sjp!4v1714474350000!5m2!1sja!2sjp" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Google Maps"></iframe>
                     </div>
-                    <form name="contact" method="POST" data-netlify="true" class="contact-form">
+                    <form name="contact" method="POST" data-netlify="true" class="contact-form" aria-labelledby="contact-title">
                         <div class="form-group">
-                            <label for="name">お名前 <span class="required">必須</span></label>
-                            <input type="text" id="name" name="name" required>
+                            <label for="name">お名前 <span class="required" aria-label="必須">必須</span></label>
+                            <input type="text" id="name" name="name" required aria-required="true">
                         </div>
                         <div class="form-group">
-                            <label for="email">メールアドレス <span class="required">必須</span></label>
-                            <input type="email" id="email" name="email" required>
+                            <label for="email">メールアドレス <span class="required" aria-label="必須">必須</span></label>
+                            <input type="email" id="email" name="email" required aria-required="true">
                         </div>
                         <div class="form-group">
                             <label for="company">会社名</label>
                             <input type="text" id="company" name="company">
                         </div>
                         <div class="form-group">
-                            <label for="message">お問い合わせ内容 <span class="required">必須</span></label>
-                            <textarea id="message" name="message" required></textarea>
+                            <label for="message">お問い合わせ内容 <span class="required" aria-label="必須">必須</span></label>
+                            <textarea id="message" name="message" required aria-required="true"></textarea>
                         </div>
                         <div class="form-group">
                             <button type="submit" class="submit-button">送信する</button>
@@ -150,23 +153,23 @@
     </main>
 
     <div id="footer-placeholder"></div>
-    <footer class="footer">
+    <footer class="footer" role="contentinfo">
         <div class="footer__inner">
             <div class="footer__info">
                 <img src="/assets/images/ogp.jpg" alt="株式会社Awake" width="180" height="180" class="footer__logo">
                 <p class="footer__address">
                     〒207-0013<br>
                     東京都東大和市向原5-1129-61 渡辺ビル1F<br>
-                    TEL: 050-7115-4948<br>
-                    Email: shop@awakeinc.co.jp<br>
+                    TEL: <a href="tel:050-7115-4948" aria-label="電話番号: 050-7115-4948">050-7115-4948</a><br>
+                    Email: <a href="mailto:shop@awakeinc.co.jp" aria-label="メールアドレス: shop@awakeinc.co.jp">shop@awakeinc.co.jp</a><br>
                     代表取締役: 田形 康貴 (Yasutaka Tagata)
                 </p>
-                <div class="footer__links">
+                <nav class="footer__links" aria-label="フッターナビゲーション">
                     <ul>
                         <li><a href="/legal/privacy-policy/">プライバシーポリシー</a></li>
                         <li><a href="/legal/terms/">利用規約</a></li>
                     </ul>
-                </div>
+                </nav>
             </div>
             <p class="footer__copyright">&copy; 2024 Awake Inc. All rights reserved.</p>
         </div>

@@ -1,8 +1,10 @@
 :root {
     /* Colors */
-    --color-primary: #2563eb;
-    --color-primary-dark: #1d4ed8;
-    --color-text: #1f2937;
+    --color-primary: #4A90E2;
+    --color-secondary: #2C3E50;
+    --color-text: #333333;
+    --color-background: #FFFFFF;
+    --color-accent: #E74C3C;
     --color-text-light: #f3f4f6;
     --color-bg: #ffffff;
     --color-bg-dark: #111827;
@@ -10,13 +12,15 @@
     
     /* Typography */
     --font-family: 'Noto Sans JP', sans-serif;
+    --font-size-base: 16px;
+    --line-height-base: 1.5;
     
     /* Spacing */
-    --spacing-xs: 0.5rem;
-    --spacing-sm: 1rem;
-    --spacing-md: 1.5rem;
+    --spacing-xs: 0.25rem;
+    --spacing-sm: 0.5rem;
+    --spacing-md: 1rem;
     --spacing-lg: 2rem;
-    --spacing-xl: 3rem;
+    --spacing-xl: 4rem;
     
     /* Container */
     --container-max-width: 1200px;
@@ -28,4 +32,8 @@
     --transition-background: background-color var(--transition-default);
     --transition-color: color var(--transition-default);
     --transition-opacity: opacity var(--transition-default);
+
+    /* Border and Shadow */
+    --border-radius: 4px;
+    --box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 } 
