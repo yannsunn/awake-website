@@ -29,154 +29,16 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
     
-    <!-- Styles -->
-    <link rel="stylesheet" href="/assets/css/main.css">
+    <!-- Critical CSS -->
+    <style>
+        @import url('/css/critical.css');
+    </style>
+    
+    <!-- CSS遅延読み込み -->
+    <script src="/js/loadCSS.js" defer></script>
+    <script src="/js/main.js" defer></script>
     
     <title>株式会社Awake - 革新的なビジネスソリューション</title>
-    <style>
-        .hero {
-            position: relative;
-            background-image: url('/assets/images/modern-office.jpg');
-            background-size: cover;
-            background-position: center;
-            color: #fff;
-        }
-        
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.5);
-        }
-        
-        .hero__inner {
-            position: relative;
-            z-index: 1;
-        }
-        
-        .service-card {
-            position: relative;
-            background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-            padding: 1.5rem;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            overflow: hidden;
-        }
-        
-        .service-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
-        }
-        
-        .service-card__image {
-            width: 100%;
-            height: 180px;
-            object-fit: cover;
-            border-radius: 4px;
-            margin-bottom: 1rem;
-        }
-        
-        .service-card__link {
-            display: inline-block;
-            margin-top: 1rem;
-            color: var(--color-primary);
-            text-decoration: underline;
-            font-weight: 500;
-            transition: color 0.3s;
-        }
-        .service-card__link:hover {
-            color: var(--color-primary-dark);
-        }
-        .service-card__link::after {
-            content: "→";
-            margin-left: 0.5rem;
-        }
-        
-        /* CTAボタン */
-        .hero__cta {
-            margin-top: 2rem;
-            text-align: center;
-        }
-        
-        .cta-button {
-            display: inline-block;
-            padding: 1rem 2rem;
-            background-color: var(--color-primary);
-            color: #fff;
-            border-radius: 50px;
-            font-weight: bold;
-            text-decoration: none;
-            transition: transform 0.3s ease, background-color 0.3s ease;
-        }
-        
-        .cta-button:hover {
-            transform: translateY(-2px);
-            background-color: var(--color-primary-dark);
-        }
-        
-        .hero__cta-text {
-            margin-top: 1rem;
-            font-size: 0.9rem;
-            opacity: 0.9;
-        }
-        
-        /* サービスカード追加要素 */
-        .service-card__price {
-            margin: 1rem 0;
-            text-align: center;
-        }
-        
-        .price-label {
-            display: block;
-            font-size: 0.9rem;
-            color: #666;
-        }
-        
-        .price {
-            display: block;
-            font-size: 1.8rem;
-            font-weight: bold;
-            color: var(--color-primary);
-        }
-        
-        .service-card__features {
-            margin: 1rem 0;
-            padding: 0;
-            list-style: none;
-        }
-        
-        .service-card__features li {
-            margin: 0.5rem 0;
-            color: #333;
-        }
-        
-        /* お問い合わせ特典 */
-        .contact__benefits {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            margin: 2rem 0;
-        }
-        
-        .benefit-item {
-            text-align: center;
-        }
-        
-        .benefit-icon {
-            display: block;
-            font-size: 2rem;
-            margin-bottom: 0.5rem;
-        }
-        
-        .benefit-item p {
-            font-size: 0.9rem;
-            color: #333;
-        }
-    </style>
 </head>
 <body>
     <div id="header-placeholder"></div>
@@ -309,8 +171,5 @@
             <p class="footer__copyright">&copy; 2024 Awake Inc. All rights reserved.</p>
         </div>
     </footer>
-
-    <!-- Scripts -->
-    <script src="/assets/js/main.js"></script>
 </body>
 </html> 
