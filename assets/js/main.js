@@ -205,16 +205,16 @@ function typeText(element, text, speed = 50) {
     element.innerText = '';
     
     return new Promise((resolve) => {
-        const timer = setInterval(() => {
+    const timer = setInterval(() => {
             if (i < originalText.length) {
                 element.innerText += originalText.charAt(i);
-                i++;
-            } else {
-                clearInterval(timer);
-                element.classList.add('typing-completed');
+            i++;
+        } else {
+            clearInterval(timer);
+            element.classList.add('typing-completed');
                 resolve();
-            }
-        }, speed);
+        }
+    }, speed);
     });
 }
 
