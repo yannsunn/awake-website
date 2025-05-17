@@ -2,13 +2,10 @@
  * 株式会社Awake Webサイト共通JavaScript
  */
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', () => {
+    initMobileMenu();
     initSmoothScroll();
     initScrollAnimation();
-    initParallaxEffect();
-    initHoverEffects();
-    initTextTyping();
-    initCounterAnimation();
 });
 
 /**
@@ -20,20 +17,12 @@ function initMobileMenu() {
     
     if (!menuToggle || !mobileMenu) return;
     
-    menuToggle.addEventListener('click', function() {
+    menuToggle.addEventListener('click', () => {
         const isOpen = menuToggle.getAttribute('aria-expanded') === 'true';
-        
         menuToggle.setAttribute('aria-expanded', !isOpen);
         mobileMenu.classList.toggle('is-active');
         document.body.classList.toggle('menu-open');
-        
-        if (!isOpen) {
-            // メニューが開いたときの処理
-            menuToggle.setAttribute('aria-label', 'メニューを閉じる');
-        } else {
-            // メニューが閉じたときの処理
-            menuToggle.setAttribute('aria-label', 'メニューを開く');
-        }
+        menuToggle.setAttribute('aria-label', isOpen ? 'メニューを開く' : 'メニューを閉じる');
     });
 }
 
@@ -41,38 +30,24 @@ function initMobileMenu() {
  * スムーススクロールの初期化
  */
 function initSmoothScroll() {
-    // ページ内リンクをクリックしたときの処理
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
+        anchor.addEventListener('click', e => {
             e.preventDefault();
+            const target = document.querySelector(anchor.getAttribute('href'));
             
-            // ハッシュ値の取得
-            const href = this.getAttribute('href');
-            
-            // 移動先の要素を取得
-            const target = document.querySelector(href);
-            
-            // 移動先の要素が存在する場合のみスクロール
             if (target) {
-                // スクロールのオフセット（ヘッダーの高さなど）
                 const headerHeight = document.querySelector('.header')?.offsetHeight || 0;
                 const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - headerHeight;
                 
-                // スムーススクロール
                 window.scrollTo({
                     top: targetPosition,
                     behavior: 'smooth'
                 });
                 
-                // モバイルメニューが開いていれば閉じる
+                // モバイルメニューを閉じる
                 const mobileMenu = document.querySelector('.js-mobile-menu');
-                const menuToggle = document.querySelector('.js-menu-toggle');
-                
                 if (mobileMenu?.classList.contains('is-active')) {
-                    mobileMenu.classList.remove('is-active');
-                    document.body.classList.remove('menu-open');
-                    menuToggle?.setAttribute('aria-expanded', 'false');
-                    menuToggle?.setAttribute('aria-label', 'メニューを開く');
+                    document.querySelector('.js-menu-toggle')?.click();
                 }
             }
         });
@@ -80,44 +55,20 @@ function initSmoothScroll() {
 }
 
 /**
- * スクロールアニメーションの初期化（改良版）
+ * スクロールアニメーションの初期化
  */
 function initScrollAnimation() {
-    // アニメーション対象の要素
-    const animElements = document.querySelectorAll('.js-scroll-anim');
-    
-    if (animElements.length === 0) return;
-    
-    // Intersection Observerの設定
-    const options = {
-        root: null,
-        rootMargin: '0px',
-        threshold: 0.15  // 要素の15%が見えたらコールバックを実行
-    };
-    
-    // Intersection Observerのコールバック
-    const callback = (entries, observer) => {
-        entries.forEach(entry => {
+    const observer = new IntersectionObserver(
+        entries => entries.forEach(entry => {
             if (entry.isIntersecting) {
-                // 要素が画面内に入ったら.is-visibleクラスを追加
                 entry.target.classList.add('is-visible');
-                
-                // 一度表示したら監視を解除（オプション）
-                // observer.unobserve(entry.target);
-            } else {
-                // スクロールで要素が画面外に出たら.is-visibleクラスを削除（再アニメーションを有効にする場合）
-                // entry.target.classList.remove('is-visible');
+                observer.unobserve(entry.target);
             }
-        });
-    };
+        }),
+        { threshold: 0.15 }
+    );
     
-    // Intersection Observerを作成
-    const observer = new IntersectionObserver(callback, options);
-    
-    // 監視する要素を登録
-    animElements.forEach(element => {
-        observer.observe(element);
-    });
+    document.querySelectorAll('.js-scroll-anim').forEach(el => observer.observe(el));
 }
 
 /**
