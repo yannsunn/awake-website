@@ -3,17 +3,6 @@
 /.pnp
 .pnp.js
 
-# testing
-/coverage
-
-# next.js
-/.next/
-/out/
-/build
-
-# production
-/dist
-
 # misc
 .DS_Store
 *.pem
@@ -29,9 +18,6 @@ yarn-error.log*
 .vscode
 *.swp
 *.swo
-
-# vercel
-.vercel
 
 # Local Netlify folder
 .netlify

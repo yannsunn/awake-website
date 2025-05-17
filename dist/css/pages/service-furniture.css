@@ -1,0 +1,131 @@
+/* 家具製作サービスページのスタイル */
+
+.service-content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: var(--spacing-md);
+}
+
+.service-section {
+    margin-bottom: var(--spacing-lg);
+}
+
+.service-section h3 {
+    font-size: 2.4rem;
+    font-weight: 700;
+    margin-bottom: var(--spacing-sm);
+    color: var(--color-primary);
+}
+
+.service-section p {
+    margin-bottom: var(--spacing-sm);
+    line-height: 1.8;
+}
+
+.service-image {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: var(--spacing-md);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: var(--color-primary);
+    color: white;
+    padding: var(--spacing-sm) var(--spacing-md);
+    border-radius: 4px;
+    font-weight: 700;
+    text-align: center;
+    transition: background-color 0.3s;
+    margin-top: var(--spacing-sm);
+}
+
+.cta-button:hover {
+    background-color: var(--color-primary-dark);
+}
+
+.service-features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--spacing-md);
+    margin: var(--spacing-lg) 0;
+}
+
+.feature-card {
+    padding: var(--spacing-md);
+    background-color: var(--color-background-alt);
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.feature-card h4 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: var(--spacing-xs);
+    color: var(--color-primary);
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--spacing-sm);
+    margin: var(--spacing-md) 0;
+}
+
+.gallery-item {
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.gallery-item:hover {
+    transform: translateY(-5px);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.testimonial {
+    background-color: var(--color-background-alt);
+    padding: var(--spacing-md);
+    border-radius: 8px;
+    margin: var(--spacing-md) 0;
+    position: relative;
+}
+
+.testimonial::before {
+    content: '"';
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    font-size: 6rem;
+    color: rgba(0, 0, 0, 0.1);
+    line-height: 1;
+}
+
+.testimonial p {
+    position: relative;
+    z-index: 1;
+}
+
+.testimonial__author {
+    text-align: right;
+    font-weight: 700;
+    margin-top: var(--spacing-sm);
+}
+
+/* レスポンシブ */
+@media (max-width: 768px) {
+    .service-features {
+        grid-template-columns: 1fr;
+    }
+    
+    .gallery {
+        grid-template-columns: repeat(2, 1fr);
+    }
+} 

@@ -1,37 +1,15 @@
 {
   "name": "awake-website",
   "version": "1.0.0",
-  "description": "株式会社Awake公式ウェブサイト",
-  "main": "index.js",
+  "description": "株式会社Awakeのコーポレートサイト",
   "scripts": {
-    "start": "serve dist",
-    "build": "npm run clean && npm run optimize-images && npm run copy-assets && npm run minify-css && npm run minify-js",
-    "clean": "rimraf \"./dist\"",
-    "optimize-images": "imagemin \"assets/images/**/*\" --out-dir=\"dist/assets/images\"",
-    "copy-assets": "copyfiles -u 1 \"assets/**/*\" \"favicon.ico\" \"dist\"",
-    "minify-css": "cleancss -o \"dist/css/styles.min.css\" \"css/styles.css\"",
-    "minify-js": "mkdirp dist/js && uglifyjs \"js/main.js\" \"js/loadCSS.js\" -o \"dist/js/bundle.min.js\""
+    "build": "npm run minify-css && npm run minify-js",
+    "minify-css": "cleancss -o css/styles.min.css css/styles.css",
+    "minify-js": "uglifyjs js/bundle.js -o js/bundle.min.js",
+    "start": "serve ."
   },
-  "keywords": [
-    "awake",
-    "website",
-    "corporate"
-  ],
-  "author": "Yasutaka Tagata",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/yannsunn/awake-website/issues"
-  },
-  "homepage": "https://github.com/yannsunn/awake-website#readme",
-  "engines": {
-    "node": ">=18.0.0"
-  },
-  "devDependencies": {
-    "clean-css-cli": "^5.6.2",
-    "copyfiles": "^2.4.1",
-    "imagemin-cli": "^7.0.0",
-    "mkdirp": "^3.0.1",
-    "rimraf": "^5.0.1",
+  "dependencies": {
+    "clean-css-cli": "^5.6.3",
     "serve": "^14.2.1",
     "uglify-js": "^3.17.4"
   }
