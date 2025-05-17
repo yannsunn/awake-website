@@ -8,7 +8,7 @@
     "build": "npm run clean && npm run optimize-images && npm run copy-assets && npm run minify-css && npm run minify-js",
     "clean": "rimraf \"./dist\"",
     "optimize-images": "imagemin \"assets/images/**/*\" --out-dir=\"dist/assets/images\"",
-    "copy-assets": "copyfiles -u 1 \"assets/**/*\" \"dist\"",
+    "copy-assets": "copyfiles -u 1 \"assets/**/*\" \"favicon.ico\" \"dist\"",
     "minify-css": "cleancss -o \"dist/css/styles.min.css\" \"css/styles.css\"",
     "minify-js": "mkdirp dist/js && uglifyjs \"js/main.js\" \"js/loadCSS.js\" -o \"dist/js/bundle.min.js\""
   },
