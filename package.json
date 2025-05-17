@@ -10,7 +10,7 @@
     "optimize-images": "imagemin \"assets/images/**/*\" --out-dir=\"dist/assets/images\"",
     "copy-assets": "copyfiles -u 1 \"assets/**/*\" \"dist\"",
     "minify-css": "cleancss -o \"dist/css/styles.min.css\" \"css/styles.css\"",
-    "minify-js": "if not exist dist\\js mkdir dist\\js && uglifyjs \"js/main.js\" \"js/loadCSS.js\" -o \"dist/js/bundle.min.js\""
+    "minify-js": "mkdirp dist/js && uglifyjs \"js/main.js\" \"js/loadCSS.js\" -o \"dist/js/bundle.min.js\""
   },
   "keywords": [
     "awake",
@@ -30,6 +30,7 @@
     "clean-css-cli": "^5.6.2",
     "copyfiles": "^2.4.1",
     "imagemin-cli": "^7.0.0",
+    "mkdirp": "^3.0.1",
     "rimraf": "^5.0.1",
     "serve": "^14.2.1",
     "uglify-js": "^3.17.4"
