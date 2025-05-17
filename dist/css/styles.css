@@ -1,0 +1,48 @@
+/* Reset */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Base */
+@import 'base/variables.css';
+@import 'base/animations.css';
+@import 'base/utilities.css';
+
+/* Layout */
+@import 'layout/header.css';
+@import 'layout/footer.css';
+
+/* Components */
+@import 'components/core.css';
+@import 'components/service-card.css';
+@import 'components/form.css';
+
+/* Pages */
+@import 'pages/services.css';
+
+/* Base Styles */
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-family);
+    color: var(--color-text);
+    line-height: 1.6;
+    background-color: var(--color-bg);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Base Styles */
+@import 'base/reset.css';
+@import 'base.css';
+
+/* Layout Components */
+@import 'layout/sections.css';
+
+/* Pages */
+@import 'pages/service-common.css'; 
