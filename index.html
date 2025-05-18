@@ -11,8 +11,8 @@
     <!-- Resource Hints -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preload" href="/css/styles.min.css" as="style">
-    <link rel="preload" href="/js/bundle.min.js" as="script">
+    <link rel="preload" href="/css/styles.css" as="style">
+    <link rel="preload" href="/js/main.js" as="script">
     
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
@@ -36,10 +36,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
     
     <!-- CSS -->
-    <link rel="stylesheet" href="/css/styles.min.css">
-    
+    <link rel="stylesheet" href="/css/styles.css">
+
     <!-- JavaScript -->
-    <script src="/js/bundle.min.js" defer></script>
+    <script src="/js/loadCSS.js" defer></script>
+    <script src="/js/main.js" defer></script>
     
     <title>株式会社Awake - 革新的なビジネスソリューション</title>
 </head>
@@ -78,25 +79,25 @@
                 <h2 id="services-title" class="section-title">サービス</h2>
                 <div class="services__grid">
                     <div class="service-card js-scroll-anim">
-                        <img src="/assets/images/ec-shopping.jpg" alt="EC通販" class="service-card__image">
+                        <img src="/assets/images/ec-shopping.jpg" alt="EC通販" class="service-card__image" loading="lazy">
                         <h3 class="service-card__title">EC通販</h3>
                         <p class="service-card__text">メーカー、問屋の商品やOEM商品を代理で販売いたします</p>
                         <a href="/services/ec/" class="service-card__link">詳細を見る</a>
                     </div>
                     <div class="service-card js-scroll-anim">
-                        <img src="/assets/images/web-design.jpg" alt="HP制作LP制作" class="service-card__image">
+                        <img src="/assets/images/web-design.jpg" alt="HP制作LP制作" class="service-card__image" loading="lazy">
                         <h3 class="service-card__title">HP制作LP制作</h3>
                         <p class="service-card__text">1～2週間ほどでコーポレートサイトの作成を行います</p>
                         <a href="/services/web/" class="service-card__link">詳細を見る</a>
                     </div>
                     <div class="service-card js-scroll-anim">
-                        <img src="/assets/images/video-editing.jpg" alt="動画編集" class="service-card__image">
+                        <img src="/assets/images/video-editing.jpg" alt="動画編集" class="service-card__image" loading="lazy">
                         <h3 class="service-card__title">動画編集</h3>
                         <p class="service-card__text">AIによる加工により顔出しなしでSNS運用が可能です</p>
                         <a href="/services/video/" class="service-card__link">詳細を見る</a>
                     </div>
                     <div class="service-card js-scroll-anim">
-                        <img src="/assets/images/furniture.jpg" alt="家具製作" class="service-card__image">
+                        <img src="/assets/images/furniture.jpg" alt="家具製作" class="service-card__image" loading="lazy">
                         <h3 class="service-card__title">家具製作</h3>
                         <p class="service-card__text">人気のアイアン家具を完全オーダーメイドで製造します</p>
                         <a href="/services/furniture/" class="service-card__link">詳細を見る</a>
@@ -156,7 +157,7 @@
     <footer class="footer" role="contentinfo">
         <div class="footer__inner">
             <div class="footer__info">
-                <img src="/assets/images/ogp.jpg" alt="株式会社Awake" width="180" height="180" class="footer__logo">
+                <img src="/assets/images/ogp.jpg" alt="株式会社Awake" width="180" height="180" class="footer__logo" loading="lazy">
                 <p class="footer__address">
                     〒207-0013<br>
                     東京都東大和市向原5-1129-61 渡辺ビル1F<br>
