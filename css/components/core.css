@@ -63,4 +63,11 @@
     .grid-4 {
         grid-template-columns: 1fr;
     }
+}
+
+.cta-button, .service-card__link, .submit-button {
+    padding: 1em 2em;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    transition: background 0.2s, box-shadow 0.2s;
 } 

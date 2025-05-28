@@ -14,26 +14,28 @@
 }
 
 .required {
-    color: #E53E3E;
-    margin-left: var(--spacing-xs);
-    font-size: 1.4rem;
+    color: #e53935;
+    font-weight: bold;
+    margin-left: 0.3em;
 }
 
 input[type="text"],
 input[type="email"],
 textarea {
     width: 100%;
-    padding: var(--spacing-sm);
-    border: 1px solid #CBD5E0;
-    border-radius: 4px;
-    transition: border-color 0.3s;
+    padding: 0.8em;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    transition: border 0.2s, box-shadow 0.2s;
+    box-sizing: border-box;
 }
 
 input[type="text"]:focus,
 input[type="email"]:focus,
 textarea:focus {
     outline: none;
-    border-color: var(--color-primary);
+    border: 1.5px solid #4A90E2;
+    box-shadow: 0 0 0 2px #4A90E233;
 }
 
 textarea {
