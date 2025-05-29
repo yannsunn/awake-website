@@ -59,6 +59,11 @@ img {
     text-align: center;
 }
 
+.text-primary-bold {
+    font-weight: bold;
+    color: var(--color-primary);
+}
+
 .mt-1 { margin-top: var(--spacing-xs); }
 .mt-2 { margin-top: var(--spacing-sm); }
 .mt-3 { margin-top: var(--spacing-md); }
@@ -89,10 +94,15 @@ img {
 }
 
 .btn-primary {
-    background-color: var(--color-primary);
-    color: white;
+    background-color: #f97316;
+    color: var(--color-text-light);
+    padding: 1em 2.5em;
+    border-radius: 0.5rem;
+    text-decoration: none;
+    font-weight: 700;
+    transition: background-color 0.3s ease;
 }
 
 .btn-primary:hover {
-    background-color: var(--color-primary-dark);
+    background-color: #ea580c;
 } 
