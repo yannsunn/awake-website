@@ -26,8 +26,21 @@
     <title>動画編集サービス | 株式会社Awake</title>
 </head>
 <body>
-    <!-- Header -->
-    <div id="header-placeholder"></div>
+    <header class="header" role="banner">
+        <div class="header__inner">
+            <h1 class="header__logo">
+                <a href="/" style="text-decoration: none; color: var(--color-primary); font-size: 1.8rem; font-weight: bold;" aria-label="株式会社Awake トップページ">
+                    株式会社Awake
+                </a>
+            </h1>
+            <nav class="header__nav" role="navigation" aria-label="メインナビゲーション">
+                <ul class="header__nav-list">
+                    <li><a href="/#services" aria-label="サービス一覧へ">サービス</a></li>
+                    <li><a href="/#contact" aria-label="お問い合わせフォームへ">お問い合わせ</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
     <main>
         <section class="page-header">
@@ -133,8 +146,27 @@
         </section>
     </main>
 
-    <!-- Footer -->
-    <div id="footer-placeholder"></div>
+    <footer class="footer" role="contentinfo">
+        <div class="footer__inner">
+            <div class="footer__info">
+                <img src="/assets/images/ogp.jpg" alt="株式会社Awake" width="180" height="180" class="footer__logo" loading="lazy">
+                <p class="footer__address">
+                    〒207-0013<br>
+                    東京都東大和市向原5-1129-61 渡辺ビル1F<br>
+                    TEL: <a href="tel:050-7115-4948" aria-label="電話番号: 050-7115-4948">050-7115-4948</a><br>
+                    Email: <a href="mailto:shop@awakeinc.co.jp" aria-label="メールアドレス: shop@awakeinc.co.jp">shop@awakeinc.co.jp</a><br>
+                    代表取締役: 田形 康貴 (Yasutaka Tagata)
+                </p>
+                <nav class="footer__links" aria-label="フッターナビゲーション">
+                    <ul>
+                        <li><a href="/legal/privacy-policy/">プライバシーポリシー</a></li>
+                        <li><a href="/legal/terms/">利用規約</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <p class="footer__copyright">&copy; 2024 Awake Inc. All rights reserved.</p>
+        </div>
+    </footer>
 
     <!-- Scripts -->
     <script src="/assets/js/components.js"></script>
