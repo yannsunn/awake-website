@@ -74,24 +74,25 @@
 
 .price-table {
     width: 100%;
+    max-width: 800px;
+    margin: 3rem auto;
     border-collapse: collapse;
-    margin: var(--spacing-md) 0;
 }
 
 .price-table th,
 .price-table td {
-    padding: var(--spacing-sm);
-    border: 1px solid #e2e8f0;
+    padding: 1rem;
+    border: 1px solid #ddd;
     text-align: left;
 }
 
 .price-table th {
-    background-color: var(--color-background-alt);
-    font-weight: 700;
+    background-color: var(--color-primary);
+    color: #fff;
 }
 
 .price-table tr:nth-child(even) {
-    background-color: #f8fafc;
+    background-color: #f8f9fa;
 }
 
 /* レスポンシブ */
@@ -99,4 +100,43 @@
     .service-features {
         grid-template-columns: 1fr;
     }
+}
+
+/* ポートフォリオ */
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.portfolio-item {
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.portfolio-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.portfolio-item__content {
+    padding: 1.5rem;
+    background: #fff;
+}
+
+.portfolio-item__title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: var(--color-primary);
+}
+
+.portfolio-item__description {
+    font-size: 0.9rem;
+    color: #666;
+    line-height: 1.6;
 } 

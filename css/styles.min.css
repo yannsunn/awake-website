@@ -49,3 +49,9 @@
 .benefit-item:hover .benefit-icon {
   transform: scale(1.18) rotate(-8deg);
 }
+
+.footer__inner {
+    text-align: center;
+    margin: 0 auto;
+    max-width: 1200px;
+}
