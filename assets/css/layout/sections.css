@@ -44,6 +44,27 @@
     padding: var(--spacing-xl) 0;
     background-color: var(--color-background-alt);
     text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+.hero__inner {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+    position: relative;
+    z-index: 2;
 }
 
 .hero__title {
@@ -51,11 +72,14 @@
     font-weight: 700;
     margin-bottom: var(--spacing-md);
     line-height: 1.4;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .hero__text {
     font-size: 1.8rem;
-    color: var(--color-text-light);
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 /* Services Section */
