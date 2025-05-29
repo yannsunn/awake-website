@@ -55,3 +55,9 @@
     margin: 0 auto;
     max-width: 1200px;
 }
+
+.footer__links ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
