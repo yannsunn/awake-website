@@ -27,6 +27,12 @@
     border-radius: 8px;
     margin-bottom: var(--spacing-md);
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    opacity: 0.85;
+    transition: opacity 0.3s;
+}
+
+.service-image:hover {
+    opacity: 1;
 }
 
 .cta-button {
