@@ -64,6 +64,11 @@ img {
     color: var(--color-primary);
 }
 
+.required {
+    color: red;
+    margin-left: 0.2rem;
+}
+
 .mt-1 { margin-top: var(--spacing-xs); }
 .mt-2 { margin-top: var(--spacing-sm); }
 .mt-3 { margin-top: var(--spacing-md); }
