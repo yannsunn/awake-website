@@ -4,11 +4,16 @@
 .page-hero {
     position: relative;
     min-height: 100vh;
+    max-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
     overflow: hidden;
     margin-top: var(--header-height);
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    background-attachment: scroll !important;
 }
 
 .hero-overlay {
@@ -358,6 +363,9 @@
 .content-image img {
     width: 100%;
     height: auto;
+    max-height: 400px;
+    object-fit: cover;
+    object-position: center;
     display: block;
     transition: transform 0.6s ease;
 }
@@ -424,6 +432,12 @@
 
 /* Responsive */
 @media (max-width: 768px) {
+    .page-hero {
+        max-height: 70vh;
+        min-height: 70vh;
+        background-attachment: scroll !important;
+    }
+    
     .hero-content {
         padding: var(--spacing-lg);
     }
@@ -443,6 +457,26 @@
     .pricing-grid {
         grid-template-columns: 1fr;
     }
+    
+    .content-image img {
+        max-height: 250px;
+    }
+}
+
+/* Gallery and Portfolio Image Optimization */
+.portfolio-grid .portfolio-item img,
+.gallery-grid .gallery-item img,
+.overview-image img {
+    max-height: 300px;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.portfolio-thumbnail img {
+    max-height: 250px;
+    width: 100%;
+    object-fit: cover;
 }
 
 /* Loading Animation */
