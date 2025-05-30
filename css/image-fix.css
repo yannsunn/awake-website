@@ -1,0 +1,29 @@
+/* EMERGENCY IMAGE SIZE FIX */
+img, 
+.service-card__image,
+.hero img,
+.hero__image,
+.service__image,
+.content img {
+    max-width: 100% !important;
+    height: auto !important;
+    max-height: 300px !important;
+    object-fit: cover !important;
+}
+
+.service-card__image {
+    max-height: 200px !important;
+}
+
+.hero img {
+    max-height: 500px !important;
+}
+
+@media (max-width: 768px) {
+    img {
+        max-height: 200px !important;
+    }
+    .hero img {
+        max-height: 300px !important;
+    }
+}
