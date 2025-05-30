@@ -27,6 +27,7 @@
     <link rel="stylesheet" href="./css/styles.css">
     <link rel="stylesheet" href="/css/image-fix.css">
     <link rel="stylesheet" href="/css/services-optimized.css">
+    <link rel="stylesheet" href="/css/ui-improvements.css">
     
     <title>家具製作サービス | 株式会社Awake</title>
 </head>
@@ -43,7 +44,30 @@
             </button>
             <nav class="header__nav" role="navigation" aria-label="メインナビゲーション">
                 <ul class="header__nav-list">
-                    <li><a href="/#services" aria-label="サービス一覧へ">サービス</a></li>
+                    <li class="header__nav-item has-dropdown">
+                        <a href="/#services" aria-label="サービス一覧へ">サービス</a>
+                        <div class="services-dropdown">
+                            <h3>各種サービス</h3>
+                            <div class="services-grid">
+                                <a href="/services/web/" class="service-link">
+                                    <div class="service-icon">🌐</div>
+                                    <div class="service-name">HP制作<br>LP制作</div>
+                                </a>
+                                <a href="/services/ec/" class="service-link">
+                                    <div class="service-icon">🛒</div>
+                                    <div class="service-name">EC通販<br>代理販売</div>
+                                </a>
+                                <a href="/services/video/" class="service-link">
+                                    <div class="service-icon">🎬</div>
+                                    <div class="service-name">動画編集<br>制作</div>
+                                </a>
+                                <a href="/services/furniture/" class="service-link current">
+                                    <div class="service-icon">🪑</div>
+                                    <div class="service-name">家具製作<br>オーダーメイド</div>
+                                </a>
+                            </div>
+                        </div>
+                    </li>
                     <li><a href="/#contact" aria-label="お問い合わせフォームへ">お問い合わせ</a></li>
                 </ul>
             </nav>
