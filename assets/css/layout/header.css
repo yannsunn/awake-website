@@ -40,8 +40,10 @@
 
 .header__nav-list a:hover {
     color: var(--color-primary);
-    background-color: rgba(44, 82, 130, 0.1);
+    background-color: rgba(44, 82, 130, 0.15);
     transform: translateY(-2px);
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(44, 82, 130, 0.2);
 }
 
 /* Mobile Menu */
