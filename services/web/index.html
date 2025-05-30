@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="株式会社Awakeのウェブ制作サービスについてご紹介します。モダンで使いやすいウェブサイトを制作します。">
+    <meta name="description" content="株式会社AwakeのHP制作・LP制作サービス。モダンで高品質なウェブサイトを最短1週間で制作。SEO対策・レスポンシブ対応・高速表示を実現します。">
     
     <!-- Base URL -->
     <base href="/">
@@ -13,7 +13,7 @@
     <meta property="og:type" content="article">
     <meta property="og:url" content="https://www.awakeinc.co.jp/services/web/">
     <meta property="og:image" content="https://www.awakeinc.co.jp/images/ogp.jpg">
-    <meta property="og:description" content="1〜2週間でコーポレートサイトを制作。スピーディーな納品と高品質な制作を実現します。">
+    <meta property="og:description" content="1週間でコーポレートサイトを制作。スピーディーな納品と高品質な制作を実現します。">
     <meta property="og:site_name" content="株式会社Awake">
     
     <!-- Fonts -->
@@ -22,12 +22,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
     
     <!-- Styles -->
-    <link rel="stylesheet" href="../../assets/css/base.css">
-    <link rel="stylesheet" href="../../assets/css/main.css">
-    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../../css/styles.min.css">
     <link rel="stylesheet" href="./css/styles.css">
     
-    <title>ウェブ制作サービス | 株式会社Awake</title>
+    <title>HP制作・LP制作サービス | 株式会社Awake</title>
 </head>
 <body>
     <header class="header" role="banner">
@@ -47,101 +45,401 @@
     </header>
 
     <main>
-        <section class="page-hero">
+        <!-- Hero Section with Glassmorphism -->
+        <section class="page-hero" style="background-image: url('https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?auto=format&fit=crop&w=1500&q=80'); background-size: cover; background-position: center; background-attachment: fixed;">
+            <div class="hero-overlay"></div>
             <div class="container">
-                <h1>ウェブ制作</h1>
-                <p>モダンで使いやすいウェブサイトを制作します。<br><span class="text-primary-bold">最短1週間・高品質・集客力UP。まずは無料相談でご要望をお聞かせください。</span></p>
-                <div style="margin-top:1.5rem;">
-                    <a href="#contact" class="btn btn-primary">今すぐ無料相談を申し込む</a>
-                    <p style="margin-top:0.5rem;font-size:1rem;color:#666;">初回相談は完全無料・最短当日返信。ご相談だけでも大歓迎です。</p>
+                <div class="hero-content glass-card">
+                    <h1 class="hero-title">HP制作・LP制作</h1>
+                    <p class="hero-text">最新技術とデザインで、<br>ビジネスの成長を加速するウェブサイトを制作</p>
+                    <div class="hero-features">
+                        <div class="hero-feature">
+                            <span class="feature-icon">⚡</span>
+                            <span>最短1週間納品</span>
+                        </div>
+                        <div class="hero-feature">
+                            <span class="feature-icon">🎨</span>
+                            <span>モダンデザイン</span>
+                        </div>
+                        <div class="hero-feature">
+                            <span class="feature-icon">📈</span>
+                            <span>SEO対策込み</span>
+                        </div>
+                    </div>
+                    <div class="hero-cta">
+                        <a href="#contact" class="btn btn-primary btn-glow">
+                            <span>無料相談を申し込む</span>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M5 12h14M12 5l7 7-7 7"/>
+                            </svg>
+                        </a>
+                        <p class="cta-note">24時間以内に返信・相談無料</p>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section class="service-detail">
+        <!-- Service Overview with Modern Cards -->
+        <section class="service-overview-section">
             <div class="container">
-                <div class="service-overview">
-                    <div class="service-image">
-                        <img src="../../assets/images/web-design.jpg" alt="ウェブデザインイメージ" loading="lazy">
+                <div class="section-header">
+                    <h2 class="section-title gradient-text">サービス概要</h2>
+                    <p class="section-subtitle">最新技術と豊富な経験で、御社のビジネスに最適なウェブサイトを制作します</p>
+                </div>
+                
+                <div class="overview-grid">
+                    <div class="overview-image">
+                        <img src="https://images.unsplash.com/photo-1558655146-9f40138edfeb?auto=format&fit=crop&w=800&q=80" alt="ウェブデザインプロセス" loading="lazy">
+                        <div class="image-overlay">
+                            <div class="overlay-content">
+                                <h3>Professional Web Design</h3>
+                                <p>ユーザー体験を最優先に設計</p>
+                            </div>
+                        </div>
                     </div>
-                    <div class="service-content">
-                        <h2>サービス概要</h2>
-                        <p>株式会社Awakeでは、お客様のビジネスに合わせたウェブサイト制作を行っています。<span class="text-primary-bold">スピード納品・高品質・集客力</span>を両立。モダンなデザイン、使いやすいUI、SEO対策など、ウェブサイトに必要な要素を総合的にご提案します。</p>
-                        <ul>
-                            <li>コーポレートサイト制作（<span class="text-primary-bold">最短1週間納品</span>）</li>
-                            <li>ランディングページ制作</li>
-                            <li>ブログ・メディアサイト構築</li>
-                            <li>レスポンシブデザイン対応</li>
-                            <li>WordPress開発</li>
-                        </ul>
+                    
+                    <div class="overview-content">
+                        <h3 class="content-title">ビジネスの成長を支えるウェブ制作</h3>
+                        <p class="content-text">
+                            株式会社Awakeでは、単なるウェブサイト制作ではなく、
+                            <span class="highlight">ビジネスの成長を支えるパートナー</span>として、
+                            戦略的なウェブソリューションを提供します。
+                        </p>
+                        
+                        <div class="service-list">
+                            <div class="service-item glass-card-mini">
+                                <div class="item-icon">🏢</div>
+                                <div class="item-content">
+                                    <h4>コーポレートサイト</h4>
+                                    <p>企業の信頼性を高める洗練されたデザイン</p>
+                                </div>
+                            </div>
+                            <div class="service-item glass-card-mini">
+                                <div class="item-icon">🎯</div>
+                                <div class="item-content">
+                                    <h4>ランディングページ</h4>
+                                    <p>コンバージョン率を最大化する設計</p>
+                                </div>
+                            </div>
+                            <div class="service-item glass-card-mini">
+                                <div class="item-icon">🛍️</div>
+                                <div class="item-content">
+                                    <h4>ECサイト構築</h4>
+                                    <p>売上を伸ばす使いやすいオンラインストア</p>
+                                </div>
+                            </div>
+                            <div class="service-item glass-card-mini">
+                                <div class="item-icon">📱</div>
+                                <div class="item-content">
+                                    <h4>レスポンシブ対応</h4>
+                                    <p>全デバイスで最適な表示を実現</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
+            </div>
+        </section>
 
-                <div class="service-features">
-                    <h2>特徴</h2>
-                    <div class="features-grid">
-                        <div class="feature-item">
-                            <h3>モダンなデザイン</h3>
-                            <p>最新のデザイントレンドを取り入れながらも、ブランドイメージに合わせたデザインを提案。<span class="text-primary-bold">第一印象で選ばれるサイト</span>を制作します。</p>
+        <!-- Features Section with Modern Grid -->
+        <section class="features-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title gradient-text">選ばれる6つの理由</h2>
+                    <p class="section-subtitle">Awakeが提供する価値</p>
+                </div>
+                
+                <div class="features-grid">
+                    <div class="feature-card glass-card">
+                        <div class="feature-icon-wrapper">
+                            <div class="feature-icon gradient-bg">🚀</div>
                         </div>
-                        <div class="feature-item">
-                            <h3>使いやすいUI/UX</h3>
-                            <p>ユーザーがストレスなく情報を得られる、直感的なユーザーインターフェースを設計。<span class="text-primary-bold">成果につながる導線設計</span>を徹底します。</p>
+                        <h3>高速表示</h3>
+                        <p>最新の最適化技術で、ページ表示速度を極限まで高速化。離脱率を低減し、SEO評価も向上します。</p>
+                    </div>
+                    
+                    <div class="feature-card glass-card">
+                        <div class="feature-icon-wrapper">
+                            <div class="feature-icon gradient-bg">🎨</div>
                         </div>
-                        <div class="feature-item">
-                            <h3>SEO対策</h3>
-                            <p>検索エンジンで上位表示されるための技術的なSEO対策を実施。<span class="text-primary-bold">集客・お問い合わせ増加</span>を実現します。</p>
+                        <h3>洗練されたデザイン</h3>
+                        <p>トレンドを押さえながらも時代に左右されない、ブランド価値を高めるデザインを提供します。</p>
+                    </div>
+                    
+                    <div class="feature-card glass-card">
+                        <div class="feature-icon-wrapper">
+                            <div class="feature-icon gradient-bg">📈</div>
                         </div>
-                        <div class="feature-item">
-                            <h3>高速な表示速度</h3>
-                            <p>ユーザー離脱の原因となるページの読み込み遅延を防ぐため、<span class="text-primary-bold">最適化された軽量なコード</span>でサイトを構築します。</p>
+                        <h3>SEO最適化</h3>
+                        <p>検索エンジンで上位表示されるための技術的SEO対策を標準実装。集客力の高いサイトを構築します。</p>
+                    </div>
+                    
+                    <div class="feature-card glass-card">
+                        <div class="feature-icon-wrapper">
+                            <div class="feature-icon gradient-bg">🔒</div>
                         </div>
-                        <div class="feature-item">
-                            <h3>セキュリティ対策</h3>
-                            <p>サイバー攻撃からウェブサイトを守るための適切なセキュリティ対策を実施。<span class="text-primary-bold">安全なウェブ環境</span>を提供します。</p>
+                        <h3>セキュリティ対策</h3>
+                        <p>SSL証明書はもちろん、最新のセキュリティ対策で、安全なウェブ環境を提供します。</p>
+                    </div>
+                    
+                    <div class="feature-card glass-card">
+                        <div class="feature-icon-wrapper">
+                            <div class="feature-icon gradient-bg">♿</div>
                         </div>
-                        <div class="feature-item">
-                            <h3>アクセシビリティ対応</h3>
-                            <p>あらゆるユーザーが情報にアクセスできるよう、<span class="text-primary-bold">ウェブアクセシビリティに配慮</span>したサイト制作を行います。</p>
+                        <h3>アクセシビリティ</h3>
+                        <p>すべての人が使いやすいウェブサイトを。WCAG準拠のアクセシブルな設計を心がけています。</p>
+                    </div>
+                    
+                    <div class="feature-card glass-card">
+                        <div class="feature-icon-wrapper">
+                            <div class="feature-icon gradient-bg">🤝</div>
                         </div>
+                        <h3>継続的サポート</h3>
+                        <p>納品後も安心。更新サポートやマーケティング支援など、長期的なパートナーシップを提供します。</p>
                     </div>
                 </div>
+            </div>
+        </section>
 
-                <div class="service-process">
-                    <h2>制作フロー</h2>
-                    <ol class="process-list">
-                        <li>
+        <!-- Process Section with Timeline -->
+        <section class="process-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title gradient-text">制作プロセス</h2>
+                    <p class="section-subtitle">透明性の高い6ステップで、安心の制作進行</p>
+                </div>
+                
+                <div class="process-timeline">
+                    <div class="timeline-line"></div>
+                    
+                    <div class="process-item">
+                        <div class="process-number">01</div>
+                        <div class="process-content glass-card">
                             <h3>ヒアリング・要件定義</h3>
-                            <p>お客様のビジネスやサイトの目的、ターゲットユーザーなどを詳しくヒアリングし、要件をまとめます。</p>
-                        </li>
-                        <li>
-                            <h3>サイト設計・情報設計</h3>
-                            <p>ヒアリングを基に、サイトマップやワイヤーフレームを作成し、情報構造を設計します。</p>
-                        </li>
-                        <li>
+                            <p>お客様のビジネス目標、ターゲットユーザー、必要な機能などを詳しくお伺いします。</p>
+                            <span class="process-duration">1-2日</span>
+                        </div>
+                    </div>
+                    
+                    <div class="process-item">
+                        <div class="process-number">02</div>
+                        <div class="process-content glass-card">
+                            <h3>情報設計・ワイヤーフレーム</h3>
+                            <p>サイトマップとワイヤーフレームを作成し、情報構造とユーザー動線を設計します。</p>
+                            <span class="process-duration">2-3日</span>
+                        </div>
+                    </div>
+                    
+                    <div class="process-item">
+                        <div class="process-number">03</div>
+                        <div class="process-content glass-card">
                             <h3>デザイン制作</h3>
-                            <p>ブランドイメージに合わせたデザインを制作します。複数のデザイン案からお選びいただけます。</p>
-                        </li>
-                        <li>
+                            <p>ブランドイメージに合わせたビジュアルデザインを制作。複数案から選択可能です。</p>
+                            <span class="process-duration">3-4日</span>
+                        </div>
+                    </div>
+                    
+                    <div class="process-item">
+                        <div class="process-number">04</div>
+                        <div class="process-content glass-card">
                             <h3>コーディング・実装</h3>
-                            <p>デザインを忠実に再現し、実際のウェブサイトとして構築します。SEO対策やセキュリティ対策も同時に実施します。</p>
-                        </li>
-                        <li>
-                            <h3>テスト・動作確認</h3>
-                            <p>様々なデバイスやブラウザでの動作確認を行い、問題がないことを確認します。</p>
-                        </li>
-                        <li>
-                            <h3>公開・運用サポート</h3>
-                            <p>サイトを公開し、必要に応じて運用サポートを提供します。アクセス解析や改善提案も行います。</p>
-                        </li>
-                    </ol>
+                            <p>最新のWeb標準に準拠したクリーンなコードで、高速・安全なサイトを構築します。</p>
+                            <span class="process-duration">4-5日</span>
+                        </div>
+                    </div>
+                    
+                    <div class="process-item">
+                        <div class="process-number">05</div>
+                        <div class="process-content glass-card">
+                            <h3>テスト・品質保証</h3>
+                            <p>各種デバイス・ブラウザでの動作確認、表示速度の最適化を実施します。</p>
+                            <span class="process-duration">1-2日</span>
+                        </div>
+                    </div>
+                    
+                    <div class="process-item">
+                        <div class="process-number">06</div>
+                        <div class="process-content glass-card">
+                            <h3>公開・運用開始</h3>
+                            <p>サーバーへの設置、ドメイン設定を行い、公開。運用マニュアルもご提供します。</p>
+                            <span class="process-duration">1日</span>
+                        </div>
+                    </div>
                 </div>
+            </div>
+        </section>
 
-                <div class="service-cta" id="contact">
-                    <h2>お問い合わせ・無料相談</h2>
-                    <p style="text-align:center;font-size:1.1rem;margin-bottom:1.5rem;">「どんな**ウェブサイト**が最適か分からない」「まずは話だけ聞きたい」<br>そんな方も大歓迎です。<span class="text-primary-bold">ご相談・お見積りは完全無料</span>です。</p>
-                    <a href="../../#contact" class="btn btn-primary">今すぐ無料相談を申し込む</a>
-                    <p style="text-align:center;font-size:0.95rem;color:#888;margin-top:0.5rem;">送信後、担当者より24時間以内にご連絡いたします。<br>個人情報は厳重に管理し、営業目的での利用は一切ありません。</p>
+        <!-- Portfolio Section -->
+        <section class="portfolio-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title gradient-text">制作実績</h2>
+                    <p class="section-subtitle">多様な業界での豊富な実績</p>
+                </div>
+                
+                <div class="portfolio-grid">
+                    <div class="portfolio-item">
+                        <div class="portfolio-image">
+                            <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=800&q=80" alt="コーポレートサイト実績">
+                            <div class="portfolio-overlay">
+                                <h3>大手製造業様</h3>
+                                <p>コーポレートサイトリニューアル</p>
+                                <div class="portfolio-tags">
+                                    <span>レスポンシブ</span>
+                                    <span>多言語対応</span>
+                                    <span>CMS構築</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="portfolio-item">
+                        <div class="portfolio-image">
+                            <img src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&w=800&q=80" alt="ECサイト実績">
+                            <div class="portfolio-overlay">
+                                <h3>アパレルブランド様</h3>
+                                <p>ECサイト新規構築</p>
+                                <div class="portfolio-tags">
+                                    <span>Shopify</span>
+                                    <span>在庫管理連携</span>
+                                    <span>決済システム</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="portfolio-item">
+                        <div class="portfolio-image">
+                            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80" alt="ランディングページ実績">
+                            <div class="portfolio-overlay">
+                                <h3>IT企業様</h3>
+                                <p>サービス紹介LP制作</p>
+                                <div class="portfolio-tags">
+                                    <span>A/Bテスト</span>
+                                    <span>CV率向上</span>
+                                    <span>アニメーション</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pricing Section -->
+        <section class="pricing-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title gradient-text">料金プラン</h2>
+                    <p class="section-subtitle">明確な料金体系で安心</p>
+                </div>
+                
+                <div class="pricing-grid">
+                    <div class="pricing-card glass-card">
+                        <div class="pricing-header">
+                            <h3>ライトプラン</h3>
+                            <div class="pricing-price">
+                                <span class="currency">¥</span>
+                                <span class="amount">200,000</span>
+                                <span class="period">〜</span>
+                            </div>
+                        </div>
+                        <ul class="pricing-features">
+                            <li>5ページまで</li>
+                            <li>レスポンシブ対応</li>
+                            <li>基本SEO対策</li>
+                            <li>お問い合わせフォーム</li>
+                            <li>1ヶ月間の修正対応</li>
+                        </ul>
+                        <a href="#contact" class="btn btn-outline">相談する</a>
+                    </div>
+                    
+                    <div class="pricing-card glass-card featured">
+                        <div class="pricing-badge">人気</div>
+                        <div class="pricing-header">
+                            <h3>スタンダードプラン</h3>
+                            <div class="pricing-price">
+                                <span class="currency">¥</span>
+                                <span class="amount">500,000</span>
+                                <span class="period">〜</span>
+                            </div>
+                        </div>
+                        <ul class="pricing-features">
+                            <li>10ページまで</li>
+                            <li>レスポンシブ対応</li>
+                            <li>高度なSEO対策</li>
+                            <li>CMS導入（更新機能）</li>
+                            <li>アクセス解析設置</li>
+                            <li>3ヶ月間の修正対応</li>
+                        </ul>
+                        <a href="#contact" class="btn btn-primary">相談する</a>
+                    </div>
+                    
+                    <div class="pricing-card glass-card">
+                        <div class="pricing-header">
+                            <h3>プレミアムプラン</h3>
+                            <div class="pricing-price">
+                                <span class="currency">¥</span>
+                                <span class="amount">1,000,000</span>
+                                <span class="period">〜</span>
+                            </div>
+                        </div>
+                        <ul class="pricing-features">
+                            <li>ページ数無制限</li>
+                            <li>フルカスタマイズ</li>
+                            <li>高度な機能実装</li>
+                            <li>多言語対応</li>
+                            <li>継続的な改善提案</li>
+                            <li>6ヶ月間の修正対応</li>
+                        </ul>
+                        <a href="#contact" class="btn btn-outline">相談する</a>
+                    </div>
+                </div>
+                
+                <p class="pricing-note">
+                    ※ 表示価格は税抜きです。プロジェクトの規模や要件により変動する場合があります。<br>
+                    詳細なお見積りは無料相談にてご提案いたします。
+                </p>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta-section" id="contact">
+            <div class="container">
+                <div class="cta-content glass-card">
+                    <h2 class="cta-title gradient-text">まずは無料相談から</h2>
+                    <p class="cta-text">
+                        ウェブサイトに関するお悩みやご要望をお聞かせください。<br>
+                        最適なソリューションをご提案いたします。
+                    </p>
+                    
+                    <div class="cta-benefits">
+                        <div class="benefit-item">
+                            <span class="benefit-icon">✓</span>
+                            <span>相談・お見積り無料</span>
+                        </div>
+                        <div class="benefit-item">
+                            <span class="benefit-icon">✓</span>
+                            <span>24時間以内に返信</span>
+                        </div>
+                        <div class="benefit-item">
+                            <span class="benefit-icon">✓</span>
+                            <span>オンライン相談可</span>
+                        </div>
+                    </div>
+                    
+                    <a href="/#contact" class="btn btn-primary btn-large btn-glow">
+                        <span>無料相談フォームへ</span>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                    </a>
+                    
+                    <p class="cta-note">
+                        お電話でのご相談も承っております<br>
+                        <a href="tel:050-7115-4948" class="phone-link">050-7115-4948</a>
+                        （平日 9:00-18:00）
+                    </p>
                 </div>
             </div>
         </section>
@@ -156,7 +454,7 @@
                     東京都東大和市向原5-1129-61 渡辺ビル1F<br>
                     TEL: <a href="tel:050-7115-4948" aria-label="電話番号: 050-7115-4948">050-7115-4948</a><br>
                     Email: <a href="mailto:shop@awakeinc.co.jp" aria-label="メールアドレス: shop@awakeinc.co.jp">shop@awakeinc.co.jp</a><br>
-                    代表取締役: 田形 康貴 (Yasutaka Tagata)
+                    代表取締役: 田形 康貴
                 </p>
                 <nav class="footer__links" aria-label="フッターナビゲーション">
                     <ul>
@@ -169,6 +467,6 @@
         </div>
     </footer>
 
-    <script src="/assets/js/components.js"></script>
+    <script src="/js/bundle.min.js"></script>
 </body>
-</html> 
+</html>
