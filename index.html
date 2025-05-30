@@ -37,6 +37,7 @@
     
     <!-- CSS -->
     <link rel="stylesheet" href="/css/styles.min.css">
+    <link rel="stylesheet" href="/services/common.css">
     <link rel="stylesheet" href="/assets/css/base/animations.css">
     <link rel="stylesheet" href="/assets/css/base/utilities.css">
     <link rel="stylesheet" href="/assets/css/pages/homepage.css">
@@ -75,27 +76,50 @@
     </header>
 
     <main role="main">
-        <section class="hero" aria-labelledby="hero-title">
+        <section class="hero page-hero" aria-labelledby="hero-title" style="background-image: url('/assets/images/modern-office.jpg'); background-size: cover; background-position: center; background-attachment: fixed;">
+            <div class="hero-overlay"></div>
             <div class="ambient-shape ambient-shape-1"></div>
             <div class="ambient-shape ambient-shape-2"></div>
-            <div class="hero__inner glass-card">
-                <h2 id="hero-title" class="hero__title">革新的なソリューションで<br>企業の成長をサポート</h2>
-                <p class="hero__text">最新テクノロジーと専門知識で、<br>御社の課題を最短で解決します。<br><span class="text-primary-bold">まずは無料相談で、最適なご提案を体験してください。</span></p>
-                <div class="hero__cta">
-                    <a href="#contact" class="btn btn-primary btn-glow" role="button" aria-label="無料相談のお申し込み">
-                        <span>今すぐ無料相談を申し込む</span>
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M5 12h14M12 5l7 7-7 7"/>
-                        </svg>
-                    </a>
-                    <p class="hero__cta-text">初回相談は完全無料・最短当日返信。<br>ご相談だけでも大歓迎です。</p>
+            <div class="container">
+                <div class="hero-content glass-card">
+                    <h1 id="hero-title" class="hero-title">革新的なソリューションで<br>企業の成長をサポート</h1>
+                    <p class="hero-text">最新テクノロジーと専門知識で、御社の課題を最短で解決します。<br><span class="text-gradient-premium">まずは無料相談で、最適なご提案を体験してください。</span></p>
+                    <div class="hero-features">
+                        <div class="hero-feature">
+                            <span class="feature-icon">🚀</span>
+                            <span>最短1週間納品</span>
+                        </div>
+                        <div class="hero-feature">
+                            <span class="feature-icon">✨</span>
+                            <span>成果報酬型</span>
+                        </div>
+                        <div class="hero-feature">
+                            <span class="feature-icon">🔒</span>
+                            <span>完全サポート</span>
+                        </div>
+                    </div>
+                    <div class="hero-cta">
+                        <a href="#contact" class="btn btn-primary btn-glow" role="button" aria-label="無料相談のお申し込み">
+                            <span>今すぐ無料相談を申し込む</span>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M5 12h14M12 5l7 7-7 7"/>
+                            </svg>
+                        </a>
+                        <a href="#services" class="btn btn-secondary">
+                            <span>サービスを見る</span>
+                        </a>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section id="services" class="services" aria-labelledby="services-title">
-            <div class="services__inner">
-                <h2 id="services-title" class="section-title gradient">サービス</h2>
+        <section id="services" class="services section" aria-labelledby="services-title">
+            <div class="container">
+                <div class="section-header">
+                    <p class="section-subtitle">サービス</p>
+                    <h2 id="services-title" class="section-title gradient">組み合わせ自由なトータルソリューション</h2>
+                    <p class="section-description">あなたのビジネスに最適なソリューションを組み合わせてご提供します。<br>豊富な実績と高い技術力で、期待以上の成果をお約束します。</p>
+                </div>
                 <div class="services__grid">
                     <div class="service-card scroll-fade-in">
                         <img src="/assets/images/ec-shopping.jpg" alt="EC通販サービス - オンラインショッピング" class="service-card__image" loading="lazy">
@@ -134,7 +158,7 @@
         </section>
 
         <!-- Statistics Section -->
-        <section class="statistics bg-gradient-mesh noise" aria-label="会社統計">
+        <section class="statistics section bg-gradient-mesh noise" aria-label="会社統計">
             <div class="container">
                 <div class="section-header">
                     <p class="section-subtitle">実績</p>
@@ -174,7 +198,7 @@
         </section>
 
         <!-- Testimonials Section -->
-        <section class="testimonials" aria-label="お客様の声">
+        <section class="testimonials section section-alt" aria-label="お客様の声">
             <div class="container">
                 <div class="section-header">
                     <p class="section-subtitle">お客様の声</p>
@@ -223,9 +247,13 @@
             </div>
         </section>
 
-        <section id="contact" class="contact" aria-labelledby="contact-title">
-            <div class="contact__inner">
-                <h2 id="contact-title" class="section-title">お問い合わせ・無料相談</h2>
+        <section id="contact" class="contact section" aria-labelledby="contact-title">
+            <div class="container">
+                <div class="section-header">
+                    <p class="section-subtitle">お問い合わせ</p>
+                    <h2 id="contact-title" class="section-title gradient">まずは無料相談から始めましょう</h2>
+                    <p class="section-description">あなたのビジネスの課題をお聞かせください。最適なソリューションをご提案いたします。</p>
+                </div>
                 <div class="contact__benefits">
                     <div class="benefit-item">
                         <span class="benefit-icon">🎁</span>
