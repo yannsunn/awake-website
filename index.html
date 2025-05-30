@@ -37,6 +37,10 @@
     
     <!-- CSS -->
     <link rel="stylesheet" href="/css/styles.min.css">
+    <link rel="stylesheet" href="/services/common.css">
+    <link rel="stylesheet" href="/assets/css/base/animations.css">
+    <link rel="stylesheet" href="/assets/css/base/utilities.css">
+    <link rel="stylesheet" href="/assets/css/pages/homepage.css">
     
     <!-- JavaScript -->
     <script src="/js/bundle.min.js" defer></script>
@@ -44,6 +48,13 @@
     <title>株式会社Awake - 革新的なビジネスソリューション</title>
 </head>
 <body>
+    <!-- Page Loader -->
+    <div class="page-loader">
+        <div class="loader-content">
+            <div class="loader-logo">株式会社Awake</div>
+            <div class="loader-spinner"></div>
+        </div>
+    </div>
     <div id="header-placeholder"></div>
     <header class="header" role="banner">
         <div class="header__inner">
@@ -52,6 +63,9 @@
                     株式会社Awake
                 </a>
             </h1>
+            <button class="header__menu-toggle" aria-label="メニューを開く" aria-expanded="false">
+                <span class="hamburger-icon">☰</span>
+            </button>
             <nav class="header__nav" role="navigation" aria-label="メインナビゲーション">
                 <ul class="header__nav-list">
                     <li><a href="#services" aria-label="サービス一覧へ">サービス</a></li>
@@ -62,47 +76,77 @@
     </header>
 
     <main role="main">
-        <section class="hero" aria-labelledby="hero-title" style="background-image: url('https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=1500&q=80'); background-size: cover; background-position: center;">
-            <div class="hero__inner">
-                <h2 id="hero-title" class="hero__title">革新的なソリューションで企業の成長をサポート</h2>
-                <p class="hero__text">最新テクノロジーと専門知識で、<br>御社の課題を最短で解決します。<br><span class="text-primary-bold">まずは無料相談で、最適なご提案を体験してください。</span></p>
-                <div class="hero__cta">
-                    <a href="#contact" class="btn btn-primary" role="button" aria-label="無料相談のお申し込み">今すぐ無料相談を申し込む</a>
-                    <p class="hero__cta-text">初回相談は完全無料・最短当日返信。<br>ご相談だけでも大歓迎です。</p>
+        <section class="hero page-hero" aria-labelledby="hero-title" style="background-image: url('/assets/images/modern-office.jpg'); background-size: cover; background-position: center; background-attachment: fixed;">
+            <div class="hero-overlay"></div>
+            <div class="ambient-shape ambient-shape-1"></div>
+            <div class="ambient-shape ambient-shape-2"></div>
+            <div class="container">
+                <div class="hero-content glass-card">
+                    <h1 id="hero-title" class="hero-title">革新的なソリューションで<br>企業の成長をサポート</h1>
+                    <p class="hero-text">最新テクノロジーと専門知識で、御社の課題を最短で解決します。<br><span class="text-gradient-premium">まずは無料相談で、最適なご提案を体験してください。</span></p>
+                    <div class="hero-features">
+                        <div class="hero-feature">
+                            <span class="feature-icon">🚀</span>
+                            <span>最短1週間納品</span>
+                        </div>
+                        <div class="hero-feature">
+                            <span class="feature-icon">✨</span>
+                            <span>成果報酬型</span>
+                        </div>
+                        <div class="hero-feature">
+                            <span class="feature-icon">🔒</span>
+                            <span>完全サポート</span>
+                        </div>
+                    </div>
+                    <div class="hero-cta">
+                        <a href="#contact" class="btn btn-primary btn-glow" role="button" aria-label="無料相談のお申し込み">
+                            <span>今すぐ無料相談を申し込む</span>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M5 12h14M12 5l7 7-7 7"/>
+                            </svg>
+                        </a>
+                        <a href="#services" class="btn btn-secondary">
+                            <span>サービスを見る</span>
+                        </a>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section id="services" class="services" aria-labelledby="services-title">
-            <div class="services__inner">
-                <h2 id="services-title" class="section-title">サービス</h2>
+        <section id="services" class="services section" aria-labelledby="services-title">
+            <div class="container">
+                <div class="section-header">
+                    <p class="section-subtitle">サービス</p>
+                    <h2 id="services-title" class="section-title gradient">組み合わせ自由なトータルソリューション</h2>
+                    <p class="section-description">あなたのビジネスに最適なソリューションを組み合わせてご提供します。<br>豊富な実績と高い技術力で、期待以上の成果をお約束します。</p>
+                </div>
                 <div class="services__grid">
-                    <div class="service-card">
-                        <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=800&q=80" alt="EC通販" class="service-card__image" loading="lazy">
+                    <div class="service-card scroll-fade-in">
+                        <img src="/assets/images/ec-shopping.jpg" alt="EC通販サービス - オンラインショッピング" class="service-card__image" loading="lazy">
                         <div class="service-card__content">
                             <h3 class="service-card__title">EC通販</h3>
                             <p class="service-card__text">メーカー・問屋・OEM商品の代理販売を、<span class="text-primary-bold">初期費用0円・成果報酬型</span>でリスクゼロ。まずは無料相談でご提案します。</p>
                             <a href="/services/ec/" class="service-card__link">詳細を見る</a>
                         </div>
                     </div>
-                    <div class="service-card">
-                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80" alt="HP制作LP制作" class="service-card__image" loading="lazy">
+                    <div class="service-card scroll-fade-in">
+                        <img src="/assets/images/web-design.jpg" alt="ウェブサイト制作・LP制作サービス" class="service-card__image" loading="lazy">
                         <div class="service-card__content">
                             <h3 class="service-card__title">HP制作LP制作</h3>
                             <p class="service-card__text">最短1週間・高品質・集客力UP。<span class="text-primary-bold">まずは無料相談でご要望をお聞かせください。</span></p>
                             <a href="/services/web/" class="service-card__link">詳細を見る</a>
                         </div>
                     </div>
-                    <div class="service-card">
-                        <img src="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44b?auto=format&fit=crop&w=800&q=80" alt="動画編集" class="service-card__image" loading="lazy">
+                    <div class="service-card scroll-fade-in">
+                        <img src="/assets/images/video-editing.jpg" alt="動画編集・制作サービス" class="service-card__image" loading="lazy">
                         <div class="service-card__content">
                             <h3 class="service-card__title">動画編集</h3>
                             <p class="service-card__text">AI活用で顔出し不要・SNS最適化。<span class="text-primary-bold">まずは無料相談でご提案します。</span></p>
                             <a href="/services/video/" class="service-card__link">詳細を見る</a>
                         </div>
                     </div>
-                    <div class="service-card">
-                        <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=800&q=80" alt="家具製作" class="service-card__image" loading="lazy">
+                    <div class="service-card scroll-fade-in">
+                        <img src="/assets/images/furniture.jpg" alt="オーダーメイド家具製作サービス" class="service-card__image" loading="lazy">
                         <div class="service-card__content">
                             <h3 class="service-card__title">家具製作</h3>
                             <p class="service-card__text">世界に一つだけのオーダーメイド家具を、<span class="text-primary-bold">まずは無料相談で理想をお聞かせください。</span></p>
@@ -113,9 +157,103 @@
             </div>
         </section>
 
-        <section id="contact" class="contact" aria-labelledby="contact-title">
-            <div class="contact__inner">
-                <h2 id="contact-title" class="section-title">お問い合わせ・無料相談</h2>
+        <!-- Statistics Section -->
+        <section class="statistics section bg-gradient-mesh noise" aria-label="会社統計">
+            <div class="container">
+                <div class="section-header">
+                    <p class="section-subtitle">実績</p>
+                    <h2 class="section-title gradient">数字で見るAwakeの成果</h2>
+                </div>
+                <div class="stats-grid">
+                    <div class="stat-card glass-card scroll-fade-in">
+                        <div class="stat-icon">🚀</div>
+                        <div class="stat-number" data-target="150">
+                            <span class="counter">0</span>+
+                        </div>
+                        <div class="stat-label">プロジェクト完了</div>
+                    </div>
+                    <div class="stat-card glass-card scroll-fade-in">
+                        <div class="stat-icon">🎆</div>
+                        <div class="stat-number" data-target="98">
+                            <span class="counter">0</span>%
+                        </div>
+                        <div class="stat-label">顧客満足度</div>
+                    </div>
+                    <div class="stat-card glass-card scroll-fade-in">
+                        <div class="stat-icon">✨</div>
+                        <div class="stat-number" data-target="5">
+                            <span class="counter">0</span>年+
+                        </div>
+                        <div class="stat-label">業界経験</div>
+                    </div>
+                    <div class="stat-card glass-card scroll-fade-in">
+                        <div class="stat-icon">👥</div>
+                        <div class="stat-number" data-target="20">
+                            <span class="counter">0</span>+
+                        </div>
+                        <div class="stat-label">専門スタッフ</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section class="testimonials section section-alt" aria-label="お客様の声">
+            <div class="container">
+                <div class="section-header">
+                    <p class="section-subtitle">お客様の声</p>
+                    <h2 class="section-title gradient">信頼と実績が語るサービスの質</h2>
+                </div>
+                <div class="testimonials-carousel">
+                    <div class="testimonial-card glass-card active">
+                        <div class="testimonial-rating">⭐⭐⭐⭐⭐</div>
+                        <p class="testimonial-text">
+                            「Awakeさんにお願いして本当に良かったです。プロフェッショナルな提案と迅速な対応で、
+                            弊社のECサイトの売上が3倍に伸びました。」
+                        </p>
+                        <div class="testimonial-author">
+                            <div class="author-name">田中 太郎様</div>
+                            <div class="author-company">株式会社サンプル CEO</div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card glass-card">
+                        <div class="testimonial-rating">⭐⭐⭐⭐⭐</div>
+                        <p class="testimonial-text">
+                            「動画制作からマーケティングまでワンストップでお任せできるのが本当に助かります。
+                            品質も高く、期待以上の仕上がりでした。」
+                        </p>
+                        <div class="testimonial-author">
+                            <div class="author-name">佐藤 花子様</div>
+                            <div class="author-company">合同会社テスト マーケティング部長</div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card glass-card">
+                        <div class="testimonial-rating">⭐⭐⭐⭐⭐</div>
+                        <p class="testimonial-text">
+                            「オーダーメイド家具の品質が素晴らしく、オフィスの雰囲気が一変しました。
+                            細かい要望にも対応していただき感謝しています。」
+                        </p>
+                        <div class="testimonial-author">
+                            <div class="author-name">鈴木 一郎様</div>
+                            <div class="author-company">有限会社アルファ 代表取締役</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-indicators">
+                    <button class="indicator active" data-slide="0"></button>
+                    <button class="indicator" data-slide="1"></button>
+                    <button class="indicator" data-slide="2"></button>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact section" aria-labelledby="contact-title">
+            <div class="container">
+                <div class="section-header">
+                    <p class="section-subtitle">お問い合わせ</p>
+                    <h2 id="contact-title" class="section-title gradient">まずは無料相談から始めましょう</h2>
+                    <p class="section-description">あなたのビジネスの課題をお聞かせください。最適なソリューションをご提案いたします。</p>
+                </div>
                 <div class="contact__benefits">
                     <div class="benefit-item">
                         <span class="benefit-icon">🎁</span>
