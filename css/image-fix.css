@@ -1,29 +1,119 @@
-/* EMERGENCY IMAGE SIZE FIX */
-img, 
-.service-card__image,
-.hero img,
-.hero__image,
-.service__image,
-.content img {
+/* 画像サイズ最適化 - CRITICAL FIX */
+
+/* すべての画像に基本制限を適用 */
+img {
     max-width: 100% !important;
     height: auto !important;
-    max-height: 300px !important;
+    object-fit: cover !important;
+    object-position: center !important;
+    display: block !important;
+}
+
+/* サービスカード画像 - 最大高さ200px */
+.service-card__image,
+.service-card img {
+    max-height: 200px !important;
+    width: 100% !important;
+    object-fit: cover !important;
+    border-radius: 16px 16px 0 0 !important;
+}
+
+/* ヒーロー画像 - 最大高さ500px */
+.hero img,
+.hero__image,
+.page-hero img,
+.hero::before {
+    max-height: 500px !important;
+    width: 100% !important;
     object-fit: cover !important;
 }
 
-.service-card__image {
-    max-height: 200px !important;
+/* ヒーローセクション自体の高さ制限 */
+.hero,
+.page-hero {
+    max-height: 100vh !important;
+    overflow: hidden !important;
 }
 
-.hero img {
-    max-height: 500px !important;
+/* コンテンツ画像 */
+.content img,
+.overview-image img,
+.portfolio-image img,
+.gallery-item img {
+    max-height: 350px !important;
+    width: 100% !important;
+    object-fit: cover !important;
 }
 
+/* ポートフォリオとギャラリー画像 */
+.portfolio-thumbnail img {
+    max-height: 250px !important;
+    object-fit: cover !important;
+}
+
+/* フッターロゴ */
+.footer__logo {
+    max-width: 150px !important;
+    max-height: 150px !important;
+}
+
+/* モバイル対応 - さらに小さく */
 @media (max-width: 768px) {
     img {
         max-height: 200px !important;
     }
-    .hero img {
+    
+    .service-card__image,
+    .service-card img {
+        max-height: 150px !important;
+    }
+    
+    .hero img,
+    .hero__image,
+    .page-hero img {
         max-height: 300px !important;
     }
+    
+    .hero,
+    .page-hero {
+        max-height: 70vh !important;
+    }
+    
+    .content img,
+    .overview-image img {
+        max-height: 200px !important;
+    }
+    
+    .portfolio-thumbnail img {
+        max-height: 180px !important;
+    }
+}
+
+/* 超小型デバイス */
+@media (max-width: 480px) {
+    img {
+        max-height: 150px !important;
+    }
+    
+    .service-card__image {
+        max-height: 120px !important;
+    }
+    
+    .hero,
+    .page-hero {
+        max-height: 60vh !important;
+    }
+}
+
+/* 画像の横スクロール防止 */
+body {
+    overflow-x: hidden !important;
+}
+
+/* コンテナの幅制限 */
+.container,
+.hero-content,
+.service-card {
+    max-width: 100% !important;
+    overflow: hidden !important;
 }
