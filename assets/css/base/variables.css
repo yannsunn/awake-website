@@ -1,10 +1,16 @@
 :root {
     --color-primary: #2C5282;
     --color-primary-dark: #1A365D;
-    --color-text: #333333;
-    --color-text-light: #666666;
+    --color-primary-light: #4299E1;
+    --color-accent: #FF3D00;
+    --color-text: #2D3748;
+    --color-text-light: #718096;
+    --color-text-muted: #A0AEC0;
     --color-background: #FFFFFF;
-    --color-background-alt: #F7FAFC;
+    --color-background-alt: #F8FAFC;
+    --color-background-card: rgba(255, 255, 255, 0.95);
+    --color-border: #E2E8F0;
+    --color-border-light: rgba(255, 255, 255, 0.2);
     --max-width: 1200px;
     --header-height: 80px;
     --spacing-xs: 0.8rem;
@@ -12,4 +18,41 @@
     --spacing-md: 2.4rem;
     --spacing-lg: 4.8rem;
     --spacing-xl: 8rem;
+    --border-radius: 12px;
+    --border-radius-sm: 8px;
+    --border-radius-lg: 16px;
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.08);
+    --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.12);
+    --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.16);
+    --transition: all 0.3s ease;
+    --backdrop-blur: blur(10px);
+}
+
+/* Responsive breakpoints */
+@media (max-width: 1200px) {
+    :root {
+        --max-width: 960px;
+        --spacing-lg: 4rem;
+        --spacing-xl: 6rem;
+    }
+}
+
+@media (max-width: 768px) {
+    :root {
+        --max-width: 100%;
+        --spacing-md: 2rem;
+        --spacing-lg: 3rem;
+        --spacing-xl: 4rem;
+        --header-height: 70px;
+    }
+}
+
+@media (max-width: 480px) {
+    :root {
+        --spacing-sm: 1.2rem;
+        --spacing-md: 1.8rem;
+        --spacing-lg: 2.4rem;
+        --spacing-xl: 3.2rem;
+        --header-height: 60px;
+    }
 } 

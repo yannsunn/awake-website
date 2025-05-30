@@ -55,7 +55,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
+    background: linear-gradient(135deg, rgba(44, 82, 130, 0.8) 0%, rgba(26, 54, 93, 0.6) 100%);
     z-index: 1;
 }
 
@@ -71,15 +71,18 @@
     font-size: 4.8rem;
     font-weight: 700;
     margin-bottom: var(--spacing-md);
-    line-height: 1.4;
+    line-height: 1.3;
     color: white;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+    animation: fadeInUp 1s ease-out;
 }
 
 .hero__text {
     font-size: 1.8rem;
     color: white;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+    margin-bottom: var(--spacing-lg);
+    animation: fadeInUp 1s ease-out 0.3s both;
 }
 
 /* Services Section */
@@ -89,14 +92,29 @@
 
 .services__grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: var(--spacing-md);
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-lg);
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 /* Contact Section */
 .contact {
     padding: var(--spacing-xl) 0;
-    background-color: var(--color-background-alt);
+    background: linear-gradient(135deg, var(--color-background-alt) 0%, #EDF2F7 100%);
+    position: relative;
+}
+
+.contact::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient(circle at 20% 80%, rgba(44, 82, 130, 0.03) 0%, transparent 50%),
+                      radial-gradient(circle at 80% 20%, rgba(44, 82, 130, 0.03) 0%, transparent 50%);
+    pointer-events: none;
 }
 
 .contact__content {
@@ -104,15 +122,60 @@
     grid-template-columns: 1fr 1fr;
     gap: var(--spacing-lg);
     margin-top: var(--spacing-lg);
+    position: relative;
+    z-index: 1;
 }
 
 .contact__map {
     width: 100%;
     height: 100%;
     min-height: 450px;
-    border-radius: 8px;
+    border-radius: var(--border-radius);
     overflow: hidden;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: var(--shadow-lg);
+    transition: var(--transition);
+}
+
+.contact__map:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 48px rgba(0, 0, 0, 0.15);
+}
+
+/* Contact Benefits */
+.contact__benefits {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-lg);
+}
+
+.benefit-item {
+    text-align: center;
+    padding: var(--spacing-md);
+    background: var(--color-background-card);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+    backdrop-filter: var(--backdrop-blur);
+    border: 1px solid var(--color-border-light);
+}
+
+.benefit-item:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+    background: rgba(255, 255, 255, 0.98);
+}
+
+.benefit-icon {
+    font-size: 2.5rem;
+    display: block;
+    margin-bottom: var(--spacing-sm);
+}
+
+.benefit-item p {
+    font-weight: 600;
+    color: var(--color-text);
+    margin: 0;
 }
 
 .contact__map iframe {
@@ -121,8 +184,37 @@
     border: none;
 }
 
+/* Hero CTA styling */
+.hero__cta {
+    margin-top: var(--spacing-lg);
+    animation: fadeInUp 1s ease-out 0.6s both;
+}
+
+.hero__cta-text {
+    font-size: 1.2rem;
+    margin-top: var(--spacing-sm);
+    opacity: 0.9;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
+    .hero {
+        padding: var(--spacing-lg) 0;
+        background-attachment: scroll;
+    }
+    
     .hero__title {
         font-size: 3.6rem;
     }
@@ -159,6 +251,15 @@
 
 @media (max-width: 480px) {
     .hero__title {
-        font-size: 3rem;
+        font-size: 2.8rem;
+        line-height: 1.2;
+    }
+    
+    .hero__text {
+        font-size: 1.4rem;
+    }
+    
+    .hero__cta-text {
+        font-size: 1rem;
     }
 } 

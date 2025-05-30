@@ -9,6 +9,9 @@
     transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
 .service-card:hover {
@@ -23,6 +26,8 @@
     object-fit: cover;
     transition: transform 0.3s ease;
     display: block;
+    border-radius: 16px 16px 0 0;
+    aspect-ratio: 16/9;
 }
 
 .service-card:hover .service-card__image {
@@ -31,6 +36,9 @@
 
 .service-card__content {
     padding: var(--spacing-lg);
+    flex: 1;
+    display: flex;
+    flex-direction: column;
 }
 
 .service-card__title {

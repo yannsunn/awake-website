@@ -4,9 +4,12 @@
     left: 0;
     width: 100%;
     height: var(--header-height);
-    background-color: var(--color-background);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 2px 16px rgba(0, 0, 0, 0.1);
     z-index: 100;
+    transition: all 0.3s ease;
 }
 
 .header__inner {
@@ -27,19 +30,77 @@
 
 .header__nav-list a {
     font-weight: 500;
-    transition: color 0.3s;
+    transition: all 0.3s ease;
     white-space: nowrap;
-    padding: 0.5rem;
+    padding: 0.8rem 1.2rem;
+    border-radius: 8px;
+    position: relative;
+    overflow: hidden;
 }
 
 .header__nav-list a:hover {
     color: var(--color-primary);
+    background-color: rgba(44, 82, 130, 0.1);
+    transform: translateY(-2px);
+}
+
+/* Mobile Menu */
+.header__menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.header__menu-toggle:hover {
+    background-color: rgba(44, 82, 130, 0.1);
+}
+
+.header__nav {
+    transition: all 0.3s ease;
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
+    .header__menu-toggle {
+        display: block;
+    }
+    
+    .header__nav {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: rgba(255, 255, 255, 0.98);
+        backdrop-filter: blur(10px);
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+        transform: translateY(-100%);
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+    }
+    
+    .header__nav.is-open {
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+    }
+    
     .header__nav-list {
-        gap: var(--spacing-sm);
+        flex-direction: column;
+        gap: 0;
+        padding: var(--spacing-md);
+    }
+    
+    .header__nav-list a {
+        width: 100%;
+        text-align: center;
+        padding: var(--spacing-sm);
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     }
     
     .header__inner {
@@ -47,17 +108,17 @@
     }
 }
 
+/* Smooth scroll */
+html {
+    scroll-behavior: smooth;
+}
+
 @media (max-width: 480px) {
-    .header__nav-list {
-        gap: var(--spacing-xs);
-    }
-    
-    .header__logo img {
-        width: 150px;
-        height: auto;
+    .header__logo {
+        font-size: 1.4rem;
     }
     
     .header__nav-list a {
-        font-size: 0.9rem;
+        font-size: 0.95rem;
     }
 } 
