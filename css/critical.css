@@ -22,6 +22,23 @@ body {
     -moz-osx-font-smoothing: grayscale;
 }
 
+/* Global Image Optimization */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* Prevent horizontal scroll from oversized content */
+html, body {
+    overflow-x: hidden;
+}
+
 /* Header */
 .header {
     position: fixed;
@@ -70,6 +87,7 @@ body {
 .hero {
     position: relative;
     min-height: 100vh;
+    max-height: 100vh;
     padding: 8rem 0;
     background: var(--primary-gradient);
     color: #fff;
@@ -90,8 +108,10 @@ body {
     background-image: url('/assets/images/modern-office.jpg');
     background-size: cover;
     background-position: center;
+    background-repeat: no-repeat;
     opacity: 0.3;
     z-index: 0;
+    transform: scale(1.1);
 }
 
 .hero::after {
@@ -156,11 +176,27 @@ body {
         display: none;
     }
     
+    .hero {
+        max-height: 70vh;
+        min-height: 70vh;
+        padding: 4rem 0;
+    }
+    
     .hero__title {
         font-size: 2rem;
     }
     
     .hero__text {
         font-size: 1rem;
+    }
+    
+    /* Constrain images on mobile */
+    img {
+        max-height: 300px;
+    }
+    
+    .service-card__image {
+        height: 200px;
+        max-height: 200px;
     }
 } 
