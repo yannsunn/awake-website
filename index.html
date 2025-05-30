@@ -42,6 +42,7 @@
     <link rel="stylesheet" href="/assets/css/base/utilities.css">
     <link rel="stylesheet" href="/assets/css/pages/homepage.css">
     <link rel="stylesheet" href="/css/image-fix.css">
+    <link rel="stylesheet" href="/css/ui-improvements.css">
     
     <!-- JavaScript -->
     <script src="/js/bundle.min.js" defer></script>
@@ -69,7 +70,30 @@
             </button>
             <nav class="header__nav" role="navigation" aria-label="メインナビゲーション">
                 <ul class="header__nav-list">
-                    <li><a href="#services" aria-label="サービス一覧へ">サービス</a></li>
+                    <li class="header__nav-item has-dropdown">
+                        <a href="#services" aria-label="サービス一覧へ">サービス</a>
+                        <div class="services-dropdown">
+                            <h3>各種サービス</h3>
+                            <div class="services-grid">
+                                <a href="/services/web/" class="service-link">
+                                    <div class="service-icon">🌐</div>
+                                    <div class="service-name">HP制作<br>LP制作</div>
+                                </a>
+                                <a href="/services/ec/" class="service-link">
+                                    <div class="service-icon">🛒</div>
+                                    <div class="service-name">EC通販<br>代理販売</div>
+                                </a>
+                                <a href="/services/video/" class="service-link">
+                                    <div class="service-icon">🎬</div>
+                                    <div class="service-name">動画編集<br>制作</div>
+                                </a>
+                                <a href="/services/furniture/" class="service-link">
+                                    <div class="service-icon">🪑</div>
+                                    <div class="service-name">家具製作<br>オーダーメイド</div>
+                                </a>
+                            </div>
+                        </div>
+                    </li>
                     <li><a href="#contact" aria-label="お問い合わせフォームへ">お問い合わせ</a></li>
                 </ul>
             </nav>
@@ -316,22 +340,38 @@
     <footer class="footer" role="contentinfo">
         <div class="footer__inner">
             <div class="footer__info">
-                <img src="/assets/images/ogp.jpg" alt="株式会社Awake" width="180" height="180" class="footer__logo" loading="lazy">
-                <p class="footer__address">
-                    〒207-0013<br>
-                    東京都東大和市向原5-1129-61 渡辺ビル1F<br>
-                    TEL: <a href="tel:050-7115-4948" aria-label="電話番号: 050-7115-4948">050-7115-4948</a><br>
-                    Email: <a href="mailto:shop@awakeinc.co.jp" aria-label="メールアドレス: shop@awakeinc.co.jp">shop@awakeinc.co.jp</a><br>
-                    代表取締役: 田形 康貴
-                </p>
-                <nav class="footer__links" aria-label="フッターナビゲーション">
-                    <ul>
+                <img src="/assets/images/ogp.jpg" alt="株式会社Awake" class="footer__logo" loading="lazy">
+                <div class="footer__company-info">
+                    <h2 class="footer__company-name">株式会社Awake</h2>
+                    <p class="footer__tagline">革新的なソリューションで企業の成長をサポート</p>
+                    <p class="footer__address">
+                        〒207-0013<br>
+                        東京都東大和市向原5-1129-61 渡辺ビル1F<br>
+                        TEL: <a href="tel:050-7115-4948" aria-label="電話番号: 050-7115-4948">050-7115-4948</a><br>
+                        Email: <a href="mailto:shop@awakeinc.co.jp" aria-label="メールアドレス: shop@awakeinc.co.jp">shop@awakeinc.co.jp</a><br>
+                        代表取締役: 田形 康貴 (Yasutaka Tagata)
+                    </p>
+                </div>
+            </div>
+            <div class="footer__links">
+                <nav aria-label="フッターナビゲーション">
+                    <h3 class="footer__nav-title">サービス</h3>
+                    <ul class="footer__nav-list">
+                        <li><a href="/services/web/">HP制作・LP制作</a></li>
+                        <li><a href="/services/ec/">EC通販代理販売</a></li>
+                        <li><a href="/services/video/">動画編集・制作</a></li>
+                        <li><a href="/services/furniture/">家具製作</a></li>
+                    </ul>
+                </nav>
+                <nav aria-label="法的情報">
+                    <h3 class="footer__nav-title">法的情報</h3>
+                    <ul class="footer__nav-list">
                         <li><a href="/legal/privacy-policy/">プライバシーポリシー</a></li>
                         <li><a href="/legal/terms/">利用規約</a></li>
                     </ul>
                 </nav>
             </div>
-            <p class="footer__copyright">&copy; 2024 Awake Inc. All rights reserved.</p>
+            <p class="footer__copyright">&copy; 2024 Awake Inc. All rights reserved. | 革新的なソリューションで企業の成長をサポートします。</p>
         </div>
     </footer>
 </body>
