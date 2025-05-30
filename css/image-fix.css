@@ -1,4 +1,4 @@
-/* コーポレートサイト標準画像サイズ最適化 */
+/* 美しい表示のための画像サイズ最適化 */
 
 /* すべての画像に基本制限を適用 */
 img {
@@ -9,75 +9,97 @@ img {
     display: block !important;
 }
 
-/* サービスカード画像 - 標準的なカードサイズ */
+/* サービスカード画像 - 美しいプロポーション */
 .service-card__image,
 .service-card img {
-    max-height: 240px !important;
-    min-height: 200px !important;
+    height: 280px !important;
     width: 100% !important;
     object-fit: cover !important;
-    aspect-ratio: 16/9 !important;
-    border-radius: 8px 8px 0 0 !important;
+    object-position: center !important;
+    border-radius: 12px 12px 0 0 !important;
+    transition: transform 0.3s ease !important;
 }
 
-/* ヒーロー画像 - 標準的なヒーローセクション */
+.service-card:hover .service-card__image {
+    transform: scale(1.05) !important;
+}
+
+/* ヒーロー画像 - インパクトのあるサイズ */
 .hero img,
 .hero__image,
 .page-hero img {
-    max-height: 600px !important;
+    height: auto !important;
+    max-height: none !important;
     width: 100% !important;
     object-fit: cover !important;
 }
 
-/* ヒーローセクション自体 - 標準的な高さ */
+/* ヒーローセクション自体 - 適切な高さ */
 .hero,
 .page-hero {
-    max-height: 80vh !important;
-    min-height: 500px !important;
+    height: 85vh !important;
+    min-height: 600px !important;
+    max-height: 900px !important;
     overflow: hidden !important;
+    position: relative !important;
 }
 
 /* ヒーロー背景画像の制御 */
-.hero::before,
-.page-hero {
+.hero::before {
+    height: 100% !important;
+    width: 100% !important;
+    object-fit: cover !important;
     background-size: cover !important;
     background-position: center !important;
     background-repeat: no-repeat !important;
 }
 
-/* コンテンツ画像 - 記事や説明用 */
+/* コンテンツ画像 - バランスの良いサイズ */
 .content img,
 .overview-image img {
-    max-height: 300px !important;
+    height: 320px !important;
     width: 100% !important;
     object-fit: cover !important;
-    border-radius: 8px !important;
+    border-radius: 12px !important;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1) !important;
 }
 
 /* ポートフォリオ・ギャラリー画像 */
 .portfolio-image img,
 .portfolio-thumbnail img,
 .gallery-item img {
-    max-height: 280px !important;
+    height: 300px !important;
     width: 100% !important;
     object-fit: cover !important;
-    aspect-ratio: 4/3 !important;
-    border-radius: 8px !important;
+    border-radius: 12px !important;
+    transition: transform 0.3s ease !important;
 }
 
-/* ロゴ画像 */
-.header__logo img,
+.portfolio-item:hover .portfolio-image img,
+.portfolio-item:hover .portfolio-thumbnail img {
+    transform: scale(1.05) !important;
+}
+
+/* ロゴ画像 - 適切なサイズ */
+.header__logo img {
+    height: auto !important;
+    max-height: 50px !important;
+    max-width: 180px !important;
+    object-fit: contain !important;
+}
+
 .footer__logo {
-    max-width: 200px !important;
-    max-height: 60px !important;
+    height: auto !important;
+    max-height: 120px !important;
+    max-width: 120px !important;
     object-fit: contain !important;
 }
 
 /* アイコン画像 */
 .icon img,
 .feature-icon img {
-    max-width: 64px !important;
-    max-height: 64px !important;
+    height: 48px !important;
+    width: 48px !important;
     object-fit: contain !important;
 }
 
@@ -85,19 +107,24 @@ img {
 @media (max-width: 1024px) {
     .service-card__image,
     .service-card img {
-        max-height: 220px !important;
-        min-height: 180px !important;
+        height: 250px !important;
     }
     
     .hero,
     .page-hero {
-        max-height: 70vh !important;
-        min-height: 450px !important;
+        height: 75vh !important;
+        min-height: 500px !important;
+        max-height: 750px !important;
     }
     
     .content img,
     .overview-image img {
-        max-height: 250px !important;
+        height: 280px !important;
+    }
+    
+    .portfolio-image img,
+    .portfolio-thumbnail img {
+        height: 260px !important;
     }
 }
 
@@ -105,32 +132,29 @@ img {
 @media (max-width: 768px) {
     .service-card__image,
     .service-card img {
-        max-height: 180px !important;
-        min-height: 150px !important;
-        aspect-ratio: 16/9 !important;
+        height: 220px !important;
     }
     
     .hero,
     .page-hero {
-        max-height: 60vh !important;
-        min-height: 400px !important;
-    }
-    
-    .hero img,
-    .hero__image,
-    .page-hero img {
-        max-height: 400px !important;
+        height: 65vh !important;
+        min-height: 450px !important;
+        max-height: 600px !important;
     }
     
     .content img,
     .overview-image img {
-        max-height: 200px !important;
+        height: 240px !important;
     }
     
     .portfolio-image img,
     .portfolio-thumbnail img {
-        max-height: 200px !important;
-        aspect-ratio: 16/9 !important;
+        height: 220px !important;
+    }
+    
+    .header__logo img {
+        max-height: 40px !important;
+        max-width: 150px !important;
     }
 }
 
@@ -138,30 +162,29 @@ img {
 @media (max-width: 480px) {
     .service-card__image,
     .service-card img {
-        max-height: 160px !important;
-        min-height: 140px !important;
+        height: 200px !important;
     }
     
     .hero,
     .page-hero {
-        max-height: 50vh !important;
-        min-height: 350px !important;
-    }
-    
-    .hero img,
-    .hero__image,
-    .page-hero img {
-        max-height: 350px !important;
+        height: 60vh !important;
+        min-height: 400px !important;
+        max-height: 500px !important;
     }
     
     .content img,
     .overview-image img {
-        max-height: 160px !important;
+        height: 200px !important;
+    }
+    
+    .portfolio-image img,
+    .portfolio-thumbnail img {
+        height: 180px !important;
     }
     
     .header__logo img {
-        max-width: 150px !important;
-        max-height: 40px !important;
+        max-height: 35px !important;
+        max-width: 120px !important;
     }
 }
 
@@ -178,12 +201,13 @@ body {
     overflow: hidden !important;
 }
 
-/* 画像読み込み最適化 */
-img[loading="lazy"] {
-    opacity: 0;
-    transition: opacity 0.3s ease;
+/* 美しい影とエフェクト */
+.service-card {
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1) !important;
+    transition: all 0.3s ease !important;
 }
 
-img[loading="lazy"].loaded {
-    opacity: 1;
+.service-card:hover {
+    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.15) !important;
+    transform: translateY(-4px) !important;
 }
