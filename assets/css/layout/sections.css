@@ -7,10 +7,12 @@
 }
 
 .section-title {
-    font-size: 3.6rem;
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
     font-weight: 700;
     text-align: center;
-    margin-bottom: var(--spacing-lg);
+    margin-bottom: calc(var(--spacing-lg) * 1.5);
+    letter-spacing: -0.02em;
+    line-height: 1.2;
 }
 
 /* Page Header */
@@ -48,90 +50,43 @@
     text-align: center;
     position: relative;
     overflow: hidden;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 25%, #f093fb 50%, #4fd1c5 100%);
-    background-size: 400% 400%;
-    animation: gradientShift 15s ease infinite;
 }
 
-.hero::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(15, 15, 35, 0.4);
-    z-index: 1;
+.hero.page-hero .hero-overlay {
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.92) 0%, rgba(118, 75, 162, 0.88) 50%, rgba(240, 147, 251, 0.85) 100%);
 }
 
-.hero::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
-    opacity: 0.03;
-    z-index: 2;
-    pointer-events: none;
-}
-
-.hero__inner {
+.container {
     max-width: var(--max-width);
     margin: 0 auto;
     padding: 0 var(--spacing-md);
     position: relative;
     z-index: 3;
-    backdrop-filter: blur(40px);
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: var(--border-radius-xl);
-    padding: var(--spacing-xl);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
 }
 
-.hero__title {
-    font-size: clamp(3rem, 6vw, 5rem);
-    font-weight: 700;
-    margin-bottom: var(--spacing-md);
-    line-height: 1.1;
-    color: white;
-    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
-    animation: fadeInUp 1s ease-out;
-    letter-spacing: -0.03em;
-    background: linear-gradient(135deg, #ffffff 0%, #e0e7ff 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    filter: drop-shadow(0 4px 20px rgba(0, 0, 0, 0.4));
-}
+/* Hero styles moved to common.css for consistency */
 
-.hero__text {
-    font-size: 1.8rem;
-    color: white;
-    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
-    margin-bottom: var(--spacing-lg);
-    animation: fadeInUp 1s ease-out 0.3s both;
-}
+/* Text styles unified with service pages */
 
 /* Services Section */
 .services {
-    padding: var(--spacing-xl) 0;
+    padding: var(--spacing-2xl) 0;
+    background: var(--color-background);
+    position: relative;
 }
 
 .services__grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: var(--spacing-lg);
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: calc(var(--spacing-lg) * 1.25);
     max-width: 1200px;
     margin: 0 auto;
 }
 
 /* Contact Section */
 .contact {
-    padding: var(--spacing-xl) 0;
-    background: linear-gradient(135deg, var(--color-background-alt) 0%, #EDF2F7 100%);
+    padding: var(--spacing-2xl) 0;
+    background: linear-gradient(180deg, var(--color-background-alt) 0%, rgba(102, 126, 234, 0.03) 100%);
     position: relative;
 }
 
@@ -174,20 +129,23 @@
 /* Contact Benefits */
 .contact__benefits {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: var(--spacing-md);
-    margin-bottom: var(--spacing-lg);
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--spacing-lg);
+    margin-bottom: calc(var(--spacing-xl) * 1.25);
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .benefit-item {
     text-align: center;
-    padding: var(--spacing-md);
-    background: var(--color-background-card);
-    border-radius: var(--border-radius);
-    box-shadow: var(--shadow-sm);
+    padding: calc(var(--spacing-md) * 1.5);
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: var(--border-radius-lg);
+    box-shadow: 0 8px 32px rgba(102, 126, 234, 0.08);
     transition: var(--transition);
     backdrop-filter: var(--backdrop-blur);
-    border: 1px solid var(--color-border-light);
+    border: 1px solid rgba(102, 126, 234, 0.1);
 }
 
 .benefit-item:hover {
@@ -215,10 +173,7 @@
 }
 
 /* Hero CTA styling */
-.hero__cta {
-    margin-top: var(--spacing-lg);
-    animation: fadeInUp 1s ease-out 0.6s both;
-}
+/* CTA styles unified with service pages */
 
 /* Ambient animated elements */
 .hero .ambient-shape {

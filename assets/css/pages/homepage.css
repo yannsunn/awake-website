@@ -1,9 +1,41 @@
 /* Homepage Premium Styles */
 
-/* Statistics Section */
-.statistics {
+/* Section Standardization */
+.section {
     padding: var(--spacing-2xl) 0;
     position: relative;
+}
+
+.section-alt {
+    background: var(--color-background-alt);
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: calc(var(--spacing-xl) * 1.5);
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.section-subtitle {
+    font-size: 1.125rem;
+    color: var(--color-primary);
+    font-weight: 600;
+    margin-bottom: var(--spacing-sm);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.section-description {
+    font-size: 1.25rem;
+    color: var(--color-text-light);
+    line-height: 1.8;
+    margin-top: var(--spacing-md);
+}
+
+/* Statistics Section */
+.statistics {
     overflow: hidden;
 }
 
@@ -56,8 +88,6 @@
 
 /* Testimonials Section */
 .testimonials {
-    padding: var(--spacing-2xl) 0;
-    background: var(--color-background-alt);
     position: relative;
 }
 
@@ -139,6 +169,7 @@
 /* Enhanced Service Cards */
 .services__grid {
     perspective: 1000px;
+    margin-top: var(--spacing-xl);
 }
 
 .service-card {
