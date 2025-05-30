@@ -1,0 +1,433 @@
+/* サービスページ最適化統合CSS - トップページ品質レベル */
+
+/* === 統一されたデザインシステム === */
+
+:root {
+    /* サービス別カラーシステム */
+    --web-primary: #ff3d00;
+    --web-secondary: #ff6e40;
+    --ec-primary: #2196f3;
+    --ec-secondary: #42a5f5;
+    --video-primary: #9c27b0;
+    --video-secondary: #ba68c8;
+    --furniture-primary: #795548;
+    --furniture-secondary: #a1887f;
+    
+    /* 統一グラデーション */
+    --web-gradient: linear-gradient(135deg, #ff3d00 0%, #ff6e40 100%);
+    --ec-gradient: linear-gradient(135deg, #2196f3 0%, #42a5f5 100%);
+    --video-gradient: linear-gradient(135deg, #9c27b0 0%, #ba68c8 100%);
+    --furniture-gradient: linear-gradient(135deg, #795548 0%, #a1887f 100%);
+    
+    /* プレミアムガラス効果 */
+    --glass-premium: rgba(255, 255, 255, 0.15);
+    --glass-hover: rgba(255, 255, 255, 0.25);
+    --backdrop-blur-heavy: blur(40px) saturate(180%);
+    
+    /* 統一シャドウ */
+    --shadow-premium: 0 20px 60px rgba(0, 0, 0, 0.25);
+    --shadow-hover: 0 30px 80px rgba(0, 0, 0, 0.35);
+    
+    /* タイポグラフィ */
+    --font-hero: clamp(3rem, 6vw, 5rem);
+    --font-title: clamp(2rem, 4vw, 3.5rem);
+    --font-subtitle: clamp(1.25rem, 2vw, 1.5rem);
+    --font-body: clamp(1rem, 1.5vw, 1.125rem);
+    
+    /* スペーシング */
+    --section-padding: clamp(4rem, 8vw, 8rem);
+    --card-padding: clamp(1.5rem, 3vw, 3rem);
+}
+
+/* === ヒーローセクション最適化 === */
+
+.page-hero {
+    position: relative;
+    height: 90vh !important;
+    min-height: 700px !important;
+    max-height: 1000px !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background-attachment: fixed !important;
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.3) 100%);
+    backdrop-filter: var(--backdrop-blur-heavy);
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 10;
+    text-align: center;
+    padding: var(--card-padding);
+    max-width: 900px;
+    width: 100%;
+    background: var(--glass-premium);
+    backdrop-filter: var(--backdrop-blur-heavy);
+    border-radius: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: var(--shadow-premium);
+    animation: heroFadeIn 1s ease-out;
+}
+
+.hero-title {
+    font-size: var(--font-hero);
+    font-weight: 700;
+    color: white;
+    margin-bottom: 1.5rem;
+    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+}
+
+.hero-text {
+    font-size: var(--font-subtitle);
+    color: rgba(255, 255, 255, 0.95);
+    line-height: 1.6;
+    margin-bottom: 2.5rem;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* === セクション統一スタイル === */
+
+.section {
+    padding: var(--section-padding) 0;
+    position: relative;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 4rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.section-title {
+    font-size: var(--font-title);
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+}
+
+.section-subtitle {
+    font-size: var(--font-body);
+    color: var(--color-text-light);
+    line-height: 1.6;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* サービス別グラデーションタイトル */
+.web-page .gradient-text { background: var(--web-gradient); }
+.ec-page .gradient-text { background: var(--ec-gradient); }
+.video-page .gradient-text { background: var(--video-gradient); }
+.furniture-page .gradient-text { background: var(--furniture-gradient); }
+
+.gradient-text {
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* === プレミアムカード統一 === */
+
+.glass-card {
+    background: var(--glass-premium);
+    backdrop-filter: var(--backdrop-blur-heavy);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    box-shadow: var(--shadow-premium);
+    padding: var(--card-padding);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.glass-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+    pointer-events: none;
+    transition: transform 0.6s ease;
+}
+
+.glass-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-hover);
+    background: var(--glass-hover);
+}
+
+.glass-card:hover::before {
+    transform: rotate(180deg);
+}
+
+/* === 特徴セクション === */
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2.5rem;
+    margin-top: 3rem;
+}
+
+.feature-card {
+    text-align: center;
+    padding: 2.5rem 2rem;
+    transition: transform 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+}
+
+.feature-icon-wrapper {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 2rem;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.feature-card:hover .feature-icon-wrapper {
+    transform: scale(1.1);
+}
+
+/* サービス別アイコン背景 */
+.web-page .feature-icon-wrapper { background: var(--web-gradient); }
+.ec-page .feature-icon-wrapper { background: var(--ec-gradient); }
+.video-page .feature-icon-wrapper { background: var(--video-gradient); }
+.furniture-page .feature-icon-wrapper { background: var(--furniture-gradient); }
+
+.feature-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: var(--color-text);
+}
+
+.feature-description {
+    color: var(--color-text-light);
+    line-height: 1.6;
+}
+
+/* === ボタン統一スタイル === */
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1rem 2.5rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 50px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+    border: none;
+    position: relative;
+    overflow: hidden;
+    text-transform: none;
+}
+
+.btn-primary {
+    color: white;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* サービス別プライマリボタン */
+.web-page .btn-primary { background: var(--web-gradient); }
+.ec-page .btn-primary { background: var(--ec-gradient); }
+.video-page .btn-primary { background: var(--video-gradient); }
+.furniture-page .btn-primary { background: var(--furniture-gradient); }
+
+.btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+}
+
+.btn-outline {
+    background: transparent;
+    border: 2px solid;
+    backdrop-filter: blur(10px);
+}
+
+/* サービス別アウトラインボタン */
+.web-page .btn-outline { border-color: var(--web-primary); color: var(--web-primary); }
+.ec-page .btn-outline { border-color: var(--ec-primary); color: var(--ec-primary); }
+.video-page .btn-outline { border-color: var(--video-primary); color: var(--video-primary); }
+.furniture-page .btn-outline { border-color: var(--furniture-primary); color: var(--furniture-primary); }
+
+.btn-outline:hover {
+    color: white;
+    transform: translateY(-3px);
+}
+
+.web-page .btn-outline:hover { background: var(--web-gradient); }
+.ec-page .btn-outline:hover { background: var(--ec-gradient); }
+.video-page .btn-outline:hover { background: var(--video-gradient); }
+.furniture-page .btn-outline:hover { background: var(--furniture-gradient); }
+
+/* === 価格表統一 === */
+
+.pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.pricing-card {
+    text-align: center;
+    padding: 3rem 2rem;
+    position: relative;
+}
+
+.pricing-card.featured {
+    transform: scale(1.05);
+    border: 2px solid;
+}
+
+.web-page .pricing-card.featured { border-color: var(--web-primary); }
+.ec-page .pricing-card.featured { border-color: var(--ec-primary); }
+.video-page .pricing-card.featured { border-color: var(--video-primary); }
+.furniture-page .pricing-card.featured { border-color: var(--furniture-primary); }
+
+.pricing-badge {
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 0.5rem 1.5rem;
+    border-radius: 25px;
+    color: white;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.web-page .pricing-badge { background: var(--web-gradient); }
+.ec-page .pricing-badge { background: var(--ec-gradient); }
+.video-page .pricing-badge { background: var(--video-gradient); }
+.furniture-page .pricing-badge { background: var(--furniture-gradient); }
+
+/* === レスポンシブ最適化 === */
+
+@media (max-width: 1024px) {
+    .page-hero {
+        height: 80vh !important;
+        min-height: 600px !important;
+    }
+    
+    .features-grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .page-hero {
+        height: 70vh !important;
+        min-height: 500px !important;
+        background-attachment: scroll !important;
+    }
+    
+    .hero-content {
+        margin: 1rem;
+        padding: 2rem 1.5rem;
+    }
+    
+    .features-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .pricing-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .pricing-card.featured {
+        transform: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .page-hero {
+        height: 60vh !important;
+        min-height: 450px !important;
+    }
+    
+    .hero-content {
+        padding: 1.5rem 1rem;
+    }
+    
+    .feature-card {
+        padding: 2rem 1rem;
+    }
+}
+
+/* === アニメーション === */
+
+@keyframes heroFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* スクロールアニメーション */
+.scroll-reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s ease;
+}
+
+.scroll-reveal.revealed {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* === パフォーマンス最適化 === */
+
+.lazy-load {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.lazy-load.loaded {
+    opacity: 1;
+}
+
+/* GPU加速 */
+.glass-card,
+.btn,
+.feature-card,
+.pricing-card {
+    will-change: transform;
+    transform: translateZ(0);
+}
