@@ -3,7 +3,13 @@
  * 高コンバージョン率・高CTR実現機能
  */
 
+// 重複実行防止フラグ
+let awake2025Initialized = false;
+
 document.addEventListener('DOMContentLoaded', function() {
+    if (awake2025Initialized) return;
+    awake2025Initialized = true;
+    
     initDarkModeToggle();
     initPersonalization();
     initMicroInteractions();
@@ -81,6 +87,10 @@ function initPersonalization() {
  * パーソナライズされたメッセージ表示
  */
 function showPersonalizedMessage(userType, userName, visitCount) {
+    // 既存のメッセージがある場合は削除
+    const existingMessages = document.querySelectorAll('.context-message');
+    existingMessages.forEach(msg => msg.remove());
+    
     const messages = {
         new: `🎉 初回訪問ありがとうございます！${userName ? userName + 'さん、' : ''}最適なサービスをご提案いたします。`,
         returning: `👋 お帰りなさい！${userName ? userName + 'さん、' : ''}前回ご覧いただいたサービスの続きはいかがですか？`,
@@ -89,7 +99,7 @@ function showPersonalizedMessage(userType, userName, visitCount) {
     
     if (messages[userType]) {
         const messageElement = document.createElement('div');
-        messageElement.className = 'context-message';
+        messageElement.className = 'context-message personalized-message';
         messageElement.innerHTML = messages[userType];
         
         const hero = document.querySelector('.hero-content');
@@ -405,8 +415,12 @@ function initContextAwareMessaging() {
  */
 function displayContextMessage(message) {
     if (message) {
+        // 既存のコンテキストメッセージがある場合は削除
+        const existingContextMessages = document.querySelectorAll('.context-message:not(.personalized-message)');
+        existingContextMessages.forEach(msg => msg.remove());
+        
         const messageElement = document.createElement('div');
-        messageElement.className = 'context-message';
+        messageElement.className = 'context-message context-aware-message';
         messageElement.innerHTML = message;
         
         const header = document.querySelector('.header');
