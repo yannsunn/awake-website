@@ -1,22 +1,24 @@
 /**
- * 株式会社Awake Webサイト共通JavaScript
+ * 株式会社Awake 動画編集・制作ページ - 最適化JavaScript
  */
 
 document.addEventListener('DOMContentLoaded', function() {
+    initMobileMenu();
     initSmoothScroll();
     initScrollAnimation();
-    initParallaxEffect();
     initHoverEffects();
     initTextTyping();
     initCounterAnimation();
+    initPortfolioModal();
+    initPricingCalculator();
 });
 
 /**
  * モバイルメニューの初期化
  */
 function initMobileMenu() {
-    const menuToggle = document.querySelector('.js-menu-toggle');
-    const mobileMenu = document.querySelector('.js-mobile-menu');
+    const menuToggle = document.querySelector('.header__menu-toggle');
+    const mobileMenu = document.querySelector('.header__nav');
     
     if (!menuToggle || !mobileMenu) return;
     
@@ -27,116 +29,76 @@ function initMobileMenu() {
         mobileMenu.classList.toggle('is-active');
         document.body.classList.toggle('menu-open');
         
-        if (!isOpen) {
-            // メニューが開いたときの処理
-            menuToggle.setAttribute('aria-label', 'メニューを閉じる');
-        } else {
-            // メニューが閉じたときの処理
-            menuToggle.setAttribute('aria-label', 'メニューを開く');
-        }
+        menuToggle.setAttribute('aria-label', !isOpen ? 'メニューを閉じる' : 'メニューを開く');
     });
 }
 
 /**
- * スムーススクロールの初期化
+ * スムーススクロールの初期化（最適化版）
  */
 function initSmoothScroll() {
-    // ページ内リンクをクリックしたときの処理
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            e.preventDefault();
-            
-            // ハッシュ値の取得
-            const href = this.getAttribute('href');
-            
-            // 移動先の要素を取得
-            const target = document.querySelector(href);
-            
-            // 移動先の要素が存在する場合のみスクロール
-            if (target) {
-                // スクロールのオフセット（ヘッダーの高さなど）
-                const headerHeight = document.querySelector('.header')?.offsetHeight || 0;
-                const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - headerHeight;
+    try {
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
                 
-                // スムーススクロール
-                window.scrollTo({
-                    top: targetPosition,
-                    behavior: 'smooth'
-                });
+                const href = this.getAttribute('href');
+                if (!href || href === '#') return;
                 
-                // モバイルメニューが開いていれば閉じる
-                const mobileMenu = document.querySelector('.js-mobile-menu');
-                const menuToggle = document.querySelector('.js-menu-toggle');
-                
-                if (mobileMenu?.classList.contains('is-active')) {
-                    mobileMenu.classList.remove('is-active');
-                    document.body.classList.remove('menu-open');
-                    menuToggle?.setAttribute('aria-expanded', 'false');
-                    menuToggle?.setAttribute('aria-label', 'メニューを開く');
+                const target = document.querySelector(href);
+                if (target) {
+                    const headerHeight = document.querySelector('.header')?.offsetHeight || 0;
+                    const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - headerHeight;
+                    
+                    window.scrollTo({
+                        top: Math.max(0, targetPosition),
+                        behavior: 'smooth'
+                    });
+                    
+                    // モバイルメニューを閉じる
+                    const mobileMenu = document.querySelector('.header__nav');
+                    const menuToggle = document.querySelector('.header__menu-toggle');
+                    
+                    if (mobileMenu?.classList.contains('is-active')) {
+                        mobileMenu.classList.remove('is-active');
+                        document.body.classList.remove('menu-open');
+                        menuToggle?.setAttribute('aria-expanded', 'false');
+                        menuToggle?.setAttribute('aria-label', 'メニューを開く');
+                    }
                 }
-            }
+            });
         });
-    });
+    } catch (error) {
+        console.warn('スムーススクロール初期化エラー:', error);
+    }
 }
 
 /**
- * スクロールアニメーションの初期化（改良版）
+ * スクロールアニメーションの初期化（Intersection Observer使用）
  */
 function initScrollAnimation() {
-    // アニメーション対象の要素
-    const animElements = document.querySelectorAll('.js-scroll-anim');
+    const animElements = document.querySelectorAll('.scroll-fade-in, .js-scroll-anim, .ai-feature-card, .portfolio-item');
     
     if (animElements.length === 0) return;
     
-    // Intersection Observerの設定
     const options = {
         root: null,
         rootMargin: '0px',
-        threshold: 0.15  // 要素の15%が見えたらコールバックを実行
+        threshold: 0.15
     };
     
-    // Intersection Observerのコールバック
-    const callback = (entries, observer) => {
+    const callback = (entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                // 要素が画面内に入ったら.is-visibleクラスを追加
                 entry.target.classList.add('is-visible');
-                
-                // 一度表示したら監視を解除（オプション）
-                // observer.unobserve(entry.target);
-            } else {
-                // スクロールで要素が画面外に出たら.is-visibleクラスを削除（再アニメーションを有効にする場合）
-                // entry.target.classList.remove('is-visible');
             }
         });
     };
     
-    // Intersection Observerを作成
     const observer = new IntersectionObserver(callback, options);
     
-    // 監視する要素を登録
     animElements.forEach(element => {
         observer.observe(element);
-    });
-}
-
-/**
- * パララックス効果の初期化
- */
-function initParallaxEffect() {
-    const parallaxElements = document.querySelectorAll('.js-parallax');
-    
-    if (parallaxElements.length === 0) return;
-    
-    // スクロールイベントでパララックス効果を適用
-    window.addEventListener('scroll', () => {
-        const scrollTop = window.pageYOffset;
-        
-        parallaxElements.forEach(element => {
-            const speed = element.dataset.speed || 0.5;
-            const offset = scrollTop * speed;
-            element.style.transform = `translateY(${offset}px)`;
-        });
     });
 }
 
@@ -144,29 +106,33 @@ function initParallaxEffect() {
  * ホバーエフェクトの初期化
  */
 function initHoverEffects() {
-    // サービスカードのホバーエフェクト
-    const serviceCards = document.querySelectorAll('.service-card');
+    // AIフィーチャーカードのホバーエフェクト
+    const featureCards = document.querySelectorAll('.ai-feature-card, .pricing-card, .portfolio-item');
     
-    serviceCards.forEach(card => {
+    featureCards.forEach(card => {
         card.addEventListener('mouseenter', function() {
-            this.querySelector('.service-card__link').classList.add('is-hover');
+            this.style.transform = 'translateY(-8px) scale(1.02)';
+            this.style.boxShadow = '0 20px 40px rgba(0, 0, 0, 0.15)';
         });
         
         card.addEventListener('mouseleave', function() {
-            this.querySelector('.service-card__link').classList.remove('is-hover');
+            this.style.transform = 'translateY(0) scale(1)';
+            this.style.boxShadow = '';
         });
     });
     
     // ボタンのホバーエフェクト
-    const buttons = document.querySelectorAll('.cta-button, .submit-button');
+    const buttons = document.querySelectorAll('.btn, .service-card__link');
     
     buttons.forEach(button => {
         button.addEventListener('mouseenter', function() {
-            this.classList.add('is-hover');
+            this.style.transform = 'scale(1.05)';
+            this.style.filter = 'brightness(1.1)';
         });
         
         button.addEventListener('mouseleave', function() {
-            this.classList.remove('is-hover');
+            this.style.transform = 'scale(1)';
+            this.style.filter = 'brightness(1)';
         });
     });
 }
@@ -200,14 +166,11 @@ function initTextTyping() {
  * テキストをタイプライター風にアニメーション表示
  */
 function typeText(element, text, speed = 50) {
-    let i = 0;
-    const originalText = text;
-    element.innerText = '';
-    
     return new Promise((resolve) => {
+        let i = 0;
         const timer = setInterval(() => {
-            if (i < originalText.length) {
-                element.innerText += originalText.charAt(i);
+            if (i < text.length) {
+                element.textContent += text.charAt(i);
                 i++;
             } else {
                 clearInterval(timer);
@@ -222,7 +185,7 @@ function typeText(element, text, speed = 50) {
  * 数値カウントアップアニメーションの初期化
  */
 function initCounterAnimation() {
-    const counterElements = document.querySelectorAll('.js-counter');
+    const counterElements = document.querySelectorAll('.counter, .js-counter');
     
     if (counterElements.length === 0) return;
     
@@ -236,7 +199,7 @@ function initCounterAnimation() {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 const target = entry.target;
-                const targetValue = parseInt(target.dataset.value) || 0;
+                const targetValue = parseInt(target.dataset.target || target.textContent) || 0;
                 const duration = parseInt(target.dataset.duration) || 2000;
                 
                 countUp(target, targetValue, duration);
@@ -262,14 +225,116 @@ function countUp(element, targetValue, duration) {
         const progress = Math.min(elapsedTime / duration, 1);
         const currentValue = Math.floor(progress * (targetValue - startValue) + startValue);
         
-        element.innerText = currentValue.toLocaleString();
+        element.textContent = currentValue.toLocaleString();
         
         if (progress < 1) {
             requestAnimationFrame(updateCount);
         } else {
-            element.innerText = targetValue.toLocaleString();
+            element.textContent = targetValue.toLocaleString();
         }
     }
     
     requestAnimationFrame(updateCount);
-} 
+}
+
+/**
+ * ポートフォリオモーダルの初期化
+ */
+function initPortfolioModal() {
+    const portfolioItems = document.querySelectorAll('.portfolio-item');
+    
+    portfolioItems.forEach(item => {
+        const playButton = item.querySelector('.play-button');
+        if (playButton) {
+            playButton.addEventListener('click', function(e) {
+                e.preventDefault();
+                // 動画プレビューモーダルを表示する処理
+                showVideoPreview(item);
+            });
+        }
+    });
+}
+
+/**
+ * 動画プレビューを表示
+ */
+function showVideoPreview(portfolioItem) {
+    const title = portfolioItem.querySelector('h3')?.textContent || '動画プレビュー';
+    const description = portfolioItem.querySelector('p')?.textContent || '';
+    
+    // モーダルHTML生成
+    const modal = document.createElement('div');
+    modal.className = 'video-modal';
+    modal.innerHTML = `
+        <div class="modal-overlay">
+            <div class="modal-content">
+                <button class="modal-close" aria-label="モーダルを閉じる">&times;</button>
+                <h3>${title}</h3>
+                <div class="video-container">
+                    <p>動画プレビューはデモ版です</p>
+                    <p>${description}</p>
+                </div>
+            </div>
+        </div>
+    `;
+    
+    document.body.appendChild(modal);
+    document.body.style.overflow = 'hidden';
+    
+    // 閉じる処理
+    const closeModal = () => {
+        document.body.removeChild(modal);
+        document.body.style.overflow = '';
+    };
+    
+    modal.querySelector('.modal-close').addEventListener('click', closeModal);
+    modal.querySelector('.modal-overlay').addEventListener('click', function(e) {
+        if (e.target === this) closeModal();
+    });
+    
+    // ESCキーで閉じる
+    const handleEsc = (e) => {
+        if (e.key === 'Escape') {
+            closeModal();
+            document.removeEventListener('keydown', handleEsc);
+        }
+    };
+    document.addEventListener('keydown', handleEsc);
+}
+
+/**
+ * 料金計算機の初期化
+ */
+function initPricingCalculator() {
+    const pricingCards = document.querySelectorAll('.pricing-card');
+    
+    pricingCards.forEach(card => {
+        const button = card.querySelector('.btn');
+        if (button) {
+            button.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const planName = card.querySelector('.pricing-title')?.textContent || '';
+                const price = card.querySelector('.price-amount')?.textContent || '';
+                
+                // 選択されたプランをハイライト
+                pricingCards.forEach(c => c.classList.remove('selected'));
+                card.classList.add('selected');
+                
+                // 問い合わせフォームにプラン情報を自動入力
+                const contactLink = document.querySelector('a[href*="#contact"]');
+                if (contactLink) {
+                    contactLink.click();
+                    
+                    // フォームが表示されたら情報を入力
+                    setTimeout(() => {
+                        const serviceField = document.querySelector('#inquiry_service');
+                        if (serviceField) {
+                            serviceField.value = `動画編集・制作 - ${planName}（${price}）`;
+                        }
+                    }, 1000);
+                }
+            });
+        }
+    });
+}

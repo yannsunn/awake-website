@@ -1,22 +1,25 @@
 /**
- * 株式会社Awake Webサイト共通JavaScript
+ * 株式会社Awake 家具製作オーダーメイドページ - 最適化JavaScript
  */
 
 document.addEventListener('DOMContentLoaded', function() {
+    initMobileMenu();
     initSmoothScroll();
     initScrollAnimation();
-    initParallaxEffect();
     initHoverEffects();
     initTextTyping();
     initCounterAnimation();
+    initImageGallery();
+    initOrderForm();
+    initMaterialSelector();
 });
 
 /**
  * モバイルメニューの初期化
  */
 function initMobileMenu() {
-    const menuToggle = document.querySelector('.js-menu-toggle');
-    const mobileMenu = document.querySelector('.js-mobile-menu');
+    const menuToggle = document.querySelector('.header__menu-toggle');
+    const mobileMenu = document.querySelector('.header__nav');
     
     if (!menuToggle || !mobileMenu) return;
     
@@ -27,116 +30,76 @@ function initMobileMenu() {
         mobileMenu.classList.toggle('is-active');
         document.body.classList.toggle('menu-open');
         
-        if (!isOpen) {
-            // メニューが開いたときの処理
-            menuToggle.setAttribute('aria-label', 'メニューを閉じる');
-        } else {
-            // メニューが閉じたときの処理
-            menuToggle.setAttribute('aria-label', 'メニューを開く');
-        }
+        menuToggle.setAttribute('aria-label', !isOpen ? 'メニューを閉じる' : 'メニューを開く');
     });
 }
 
 /**
- * スムーススクロールの初期化
+ * スムーススクロールの初期化（最適化版）
  */
 function initSmoothScroll() {
-    // ページ内リンクをクリックしたときの処理
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            e.preventDefault();
-            
-            // ハッシュ値の取得
-            const href = this.getAttribute('href');
-            
-            // 移動先の要素を取得
-            const target = document.querySelector(href);
-            
-            // 移動先の要素が存在する場合のみスクロール
-            if (target) {
-                // スクロールのオフセット（ヘッダーの高さなど）
-                const headerHeight = document.querySelector('.header')?.offsetHeight || 0;
-                const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - headerHeight;
+    try {
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
                 
-                // スムーススクロール
-                window.scrollTo({
-                    top: targetPosition,
-                    behavior: 'smooth'
-                });
+                const href = this.getAttribute('href');
+                if (!href || href === '#') return;
                 
-                // モバイルメニューが開いていれば閉じる
-                const mobileMenu = document.querySelector('.js-mobile-menu');
-                const menuToggle = document.querySelector('.js-menu-toggle');
-                
-                if (mobileMenu?.classList.contains('is-active')) {
-                    mobileMenu.classList.remove('is-active');
-                    document.body.classList.remove('menu-open');
-                    menuToggle?.setAttribute('aria-expanded', 'false');
-                    menuToggle?.setAttribute('aria-label', 'メニューを開く');
+                const target = document.querySelector(href);
+                if (target) {
+                    const headerHeight = document.querySelector('.header')?.offsetHeight || 0;
+                    const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - headerHeight;
+                    
+                    window.scrollTo({
+                        top: Math.max(0, targetPosition),
+                        behavior: 'smooth'
+                    });
+                    
+                    // モバイルメニューを閉じる
+                    const mobileMenu = document.querySelector('.header__nav');
+                    const menuToggle = document.querySelector('.header__menu-toggle');
+                    
+                    if (mobileMenu?.classList.contains('is-active')) {
+                        mobileMenu.classList.remove('is-active');
+                        document.body.classList.remove('menu-open');
+                        menuToggle?.setAttribute('aria-expanded', 'false');
+                        menuToggle?.setAttribute('aria-label', 'メニューを開く');
+                    }
                 }
-            }
+            });
         });
-    });
+    } catch (error) {
+        console.warn('スムーススクロール初期化エラー:', error);
+    }
 }
 
 /**
- * スクロールアニメーションの初期化（改良版）
+ * スクロールアニメーションの初期化（Intersection Observer使用）
  */
 function initScrollAnimation() {
-    // アニメーション対象の要素
-    const animElements = document.querySelectorAll('.js-scroll-anim');
+    const animElements = document.querySelectorAll('.scroll-fade-in, .js-scroll-anim, .gallery-item, .process-item');
     
     if (animElements.length === 0) return;
     
-    // Intersection Observerの設定
     const options = {
         root: null,
         rootMargin: '0px',
-        threshold: 0.15  // 要素の15%が見えたらコールバックを実行
+        threshold: 0.15
     };
     
-    // Intersection Observerのコールバック
-    const callback = (entries, observer) => {
+    const callback = (entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                // 要素が画面内に入ったら.is-visibleクラスを追加
                 entry.target.classList.add('is-visible');
-                
-                // 一度表示したら監視を解除（オプション）
-                // observer.unobserve(entry.target);
-            } else {
-                // スクロールで要素が画面外に出たら.is-visibleクラスを削除（再アニメーションを有効にする場合）
-                // entry.target.classList.remove('is-visible');
             }
         });
     };
     
-    // Intersection Observerを作成
     const observer = new IntersectionObserver(callback, options);
     
-    // 監視する要素を登録
     animElements.forEach(element => {
         observer.observe(element);
-    });
-}
-
-/**
- * パララックス効果の初期化
- */
-function initParallaxEffect() {
-    const parallaxElements = document.querySelectorAll('.js-parallax');
-    
-    if (parallaxElements.length === 0) return;
-    
-    // スクロールイベントでパララックス効果を適用
-    window.addEventListener('scroll', () => {
-        const scrollTop = window.pageYOffset;
-        
-        parallaxElements.forEach(element => {
-            const speed = element.dataset.speed || 0.5;
-            const offset = scrollTop * speed;
-            element.style.transform = `translateY(${offset}px)`;
-        });
     });
 }
 
@@ -144,29 +107,35 @@ function initParallaxEffect() {
  * ホバーエフェクトの初期化
  */
 function initHoverEffects() {
-    // サービスカードのホバーエフェクト
-    const serviceCards = document.querySelectorAll('.service-card');
+    // ギャラリーアイテムのホバーエフェクト
+    const galleryItems = document.querySelectorAll('.gallery-item, .portfolio-item, .material-option');
     
-    serviceCards.forEach(card => {
-        card.addEventListener('mouseenter', function() {
-            this.querySelector('.service-card__link').classList.add('is-hover');
+    galleryItems.forEach(item => {
+        item.addEventListener('mouseenter', function() {
+            this.style.transform = 'scale(1.05) translateY(-5px)';
+            this.style.boxShadow = '0 15px 35px rgba(0, 0, 0, 0.15)';
+            this.style.zIndex = '10';
         });
         
-        card.addEventListener('mouseleave', function() {
-            this.querySelector('.service-card__link').classList.remove('is-hover');
+        item.addEventListener('mouseleave', function() {
+            this.style.transform = 'scale(1) translateY(0)';
+            this.style.boxShadow = '';
+            this.style.zIndex = '';
         });
     });
     
     // ボタンのホバーエフェクト
-    const buttons = document.querySelectorAll('.cta-button, .submit-button');
+    const buttons = document.querySelectorAll('.btn, .cta-button');
     
     buttons.forEach(button => {
         button.addEventListener('mouseenter', function() {
-            this.classList.add('is-hover');
+            this.style.transform = 'scale(1.05)';
+            this.style.filter = 'brightness(1.1)';
         });
         
         button.addEventListener('mouseleave', function() {
-            this.classList.remove('is-hover');
+            this.style.transform = 'scale(1)';
+            this.style.filter = 'brightness(1)';
         });
     });
 }
@@ -200,14 +169,11 @@ function initTextTyping() {
  * テキストをタイプライター風にアニメーション表示
  */
 function typeText(element, text, speed = 50) {
-    let i = 0;
-    const originalText = text;
-    element.innerText = '';
-    
     return new Promise((resolve) => {
+        let i = 0;
         const timer = setInterval(() => {
-            if (i < originalText.length) {
-                element.innerText += originalText.charAt(i);
+            if (i < text.length) {
+                element.textContent += text.charAt(i);
                 i++;
             } else {
                 clearInterval(timer);
@@ -222,7 +188,7 @@ function typeText(element, text, speed = 50) {
  * 数値カウントアップアニメーションの初期化
  */
 function initCounterAnimation() {
-    const counterElements = document.querySelectorAll('.js-counter');
+    const counterElements = document.querySelectorAll('.counter, .js-counter');
     
     if (counterElements.length === 0) return;
     
@@ -236,7 +202,7 @@ function initCounterAnimation() {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 const target = entry.target;
-                const targetValue = parseInt(target.dataset.value) || 0;
+                const targetValue = parseInt(target.dataset.target || target.textContent) || 0;
                 const duration = parseInt(target.dataset.duration) || 2000;
                 
                 countUp(target, targetValue, duration);
@@ -262,14 +228,164 @@ function countUp(element, targetValue, duration) {
         const progress = Math.min(elapsedTime / duration, 1);
         const currentValue = Math.floor(progress * (targetValue - startValue) + startValue);
         
-        element.innerText = currentValue.toLocaleString();
+        element.textContent = currentValue.toLocaleString();
         
         if (progress < 1) {
             requestAnimationFrame(updateCount);
         } else {
-            element.innerText = targetValue.toLocaleString();
+            element.textContent = targetValue.toLocaleString();
         }
     }
     
     requestAnimationFrame(updateCount);
-} 
+}
+
+/**
+ * 画像ギャラリーの初期化
+ */
+function initImageGallery() {
+    const galleryItems = document.querySelectorAll('.gallery-item img, .portfolio-image img');
+    
+    galleryItems.forEach(img => {
+        img.addEventListener('click', function(e) {
+            e.preventDefault();
+            showImageModal(this);
+        });
+    });
+}
+
+/**
+ * 画像モーダルを表示
+ */
+function showImageModal(imgElement) {
+    const modal = document.createElement('div');
+    modal.className = 'image-modal';
+    modal.innerHTML = `
+        <div class="modal-overlay">
+            <div class="modal-content">
+                <button class="modal-close" aria-label="モーダルを閉じる">&times;</button>
+                <img src="${imgElement.src}" alt="${imgElement.alt}" class="modal-image">
+                <p class="modal-caption">${imgElement.alt}</p>
+            </div>
+        </div>
+    `;
+    
+    document.body.appendChild(modal);
+    document.body.style.overflow = 'hidden';
+    
+    // 閉じる処理
+    const closeModal = () => {
+        document.body.removeChild(modal);
+        document.body.style.overflow = '';
+    };
+    
+    modal.querySelector('.modal-close').addEventListener('click', closeModal);
+    modal.querySelector('.modal-overlay').addEventListener('click', function(e) {
+        if (e.target === this) closeModal();
+    });
+    
+    // ESCキーで閉じる
+    const handleEsc = (e) => {
+        if (e.key === 'Escape') {
+            closeModal();
+            document.removeEventListener('keydown', handleEsc);
+        }
+    };
+    document.addEventListener('keydown', handleEsc);
+}
+
+/**
+ * オーダーフォームの初期化
+ */
+function initOrderForm() {
+    const orderButtons = document.querySelectorAll('.order-button, .btn[href*="contact"]');
+    
+    orderButtons.forEach(button => {
+        button.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            // 選択された家具タイプやサイズを取得
+            const furnitureType = this.closest('.gallery-item, .service-item')?.querySelector('h3, h4')?.textContent || '';
+            
+            // 問い合わせフォームに移動
+            const contactSection = document.querySelector('#contact');
+            if (contactSection) {
+                contactSection.scrollIntoView({ behavior: 'smooth' });
+                
+                // フォームに情報を自動入力
+                setTimeout(() => {
+                    const serviceField = document.querySelector('#inquiry_service');
+                    if (serviceField && furnitureType) {
+                        serviceField.value = `家具製作オーダーメイド - ${furnitureType}`;
+                    }
+                }, 1000);
+            }
+        });
+    });
+}
+
+/**
+ * 素材セレクターの初期化
+ */
+function initMaterialSelector() {
+    const materialOptions = document.querySelectorAll('.material-option, .wood-type');
+    
+    materialOptions.forEach(option => {
+        option.addEventListener('click', function() {
+            // 同じグループの他の選択を解除
+            const group = this.closest('.material-selector, .wood-selector');
+            if (group) {
+                group.querySelectorAll('.material-option, .wood-type').forEach(item => {
+                    item.classList.remove('selected');
+                });
+            }
+            
+            // 現在の選択をハイライト
+            this.classList.add('selected');
+            
+            // 選択された素材情報を表示
+            const materialName = this.querySelector('h4, .material-name')?.textContent || this.textContent;
+            showMaterialInfo(materialName);
+        });
+    });
+}
+
+/**
+ * 選択された素材の情報を表示
+ */
+function showMaterialInfo(materialName) {
+    // 既存の情報パネルを削除
+    const existingPanel = document.querySelector('.material-info-panel');
+    if (existingPanel) {
+        existingPanel.remove();
+    }
+    
+    // 新しい情報パネルを作成
+    const infoPanel = document.createElement('div');
+    infoPanel.className = 'material-info-panel';
+    infoPanel.innerHTML = `
+        <div class="panel-content">
+            <h5>${materialName}の特徴</h5>
+            <p>選択された素材の詳細情報がここに表示されます。価格や納期についてはお問い合わせください。</p>
+            <button class="close-panel" aria-label="パネルを閉じる">&times;</button>
+        </div>
+    `;
+    
+    // パネルを挿入
+    const materialSelector = document.querySelector('.material-selector, .wood-selector');
+    if (materialSelector) {
+        materialSelector.appendChild(infoPanel);
+        
+        // 閉じるボタンの処理
+        infoPanel.querySelector('.close-panel').addEventListener('click', function() {
+            infoPanel.remove();
+        });
+        
+        // 5秒後に自動で閉じる
+        setTimeout(() => {
+            if (infoPanel.parentNode) {
+                infoPanel.remove();
+            }
+        }, 5000);
+    }
+}
