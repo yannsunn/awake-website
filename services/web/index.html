@@ -7,17 +7,25 @@
     <meta name="keywords" content="HP制作, LP制作, ウェブ制作, コーポレートサイト, ランディングページ, 株式会社Awake, SEO対策, レスポンシブデザイン">
     <meta name="author" content="株式会社Awake">
     <meta name="theme-color" content="#667eea">
-    <meta name="color-scheme" content="light">
+    <meta name="color-scheme" content="light dark">
+    <meta name="theme-color" content="#667eea" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#0d1117" media="(prefers-color-scheme: dark)">
     
     <!-- Resource Hints -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preload" href="/css/corporate-master.css" as="style">
     <link rel="preload" href="/js/bundle.min.js" as="script">
+    <link rel="preload" href="/js/2025-features.js" as="script">
     
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
     <link rel="apple-touch-icon" href="/favicon.ico">
+    
+    <!-- 2025年標準：Progressive Web App対応 -->
+    <link rel="manifest" href="/manifest.json">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
     
     <!-- OGP -->
     <meta property="og:title" content="HP制作・LP制作サービス | 株式会社Awake">
@@ -157,6 +165,27 @@
                 </div>
             </div>
         </section>
+        
+        <!-- 2025年トレンド：スマートレコメンデーション -->
+        <section class="smart-recommendation adaptive-content" role="region" aria-labelledby="recommendation-title">
+            <div class="container">
+                <h2 id="recommendation-title" class="recommendation-title">🤖 あなたに最適なプラン</h2>
+                <div class="recommendation-items"></div>
+            </div>
+        </section>
+        
+        <!-- 2025年トレンド：ユーザージャーニープログレス -->
+        <section class="user-journey-progress" role="region" aria-labelledby="journey-title">
+            <div class="container">
+                <h3 id="journey-title" class="sr-only">ホームページ制作の進捗ステップ</h3>
+                <div class="journey-steps" role="progressbar" aria-valuenow="1" aria-valuemin="1" aria-valuemax="4">
+                    <div class="journey-step current" aria-label="ステップ1: 要件ヒアリング">1</div>
+                    <div class="journey-step" aria-label="ステップ2: デザイン制作">2</div>
+                    <div class="journey-step" aria-label="ステップ3: 開発・実装">3</div>
+                    <div class="journey-step" aria-label="ステップ4: 公開・納品">4</div>
+                </div>
+            </div>
+        </section>
 
         <!-- Service Overview Section -->
         <section class="section" aria-labelledby="overview-title">
@@ -167,8 +196,8 @@
                 </header>
                 
                 <div class="services__grid">
-                    <div class="service-overview-grid">
-                        <div class="overview-image">
+                    <div class="service-overview-grid card-3d hover-3d">
+                        <div class="overview-image glass-morphism-2025">
                             <img src="https://images.unsplash.com/photo-1558655146-9f40138edfeb?auto=format&fit=crop&w=800&q=80" 
                                  alt="ウェブデザインプロセス" 
                                  loading="lazy"
@@ -177,37 +206,37 @@
                         </div>
                         
                         <div class="overview-content">
-                            <h3 class="content-title">ビジネスの成長を支えるウェブ制作</h3>
+                            <h3 class="content-title gradient text-glow">ビジネスの成長を支えるウェブ制作</h3>
                             <p class="content-text">
                                 株式会社Awakeでは、単なるウェブサイト制作ではなく、
-                                <span class="text-primary-bold">ビジネスの成長を支えるパートナー</span>として、
+                                <span class="text-primary-bold holographic-text">ビジネスの成長を支えるパートナー</span>として、
                                 戦略的なウェブソリューションを提供します。
                             </p>
                             
                             <div class="service-list" role="list" aria-label="サービス一覧">
-                                <div class="service-item glass-card" role="listitem">
-                                    <div class="item-icon" aria-hidden="true">🏢</div>
+                                <div class="service-item glass-card hover-lift magnetic-hover" role="listitem">
+                                    <div class="item-icon floating-icon" aria-hidden="true">🏢</div>
                                     <div class="item-content">
                                         <h4>コーポレートサイト</h4>
                                         <p>企業の信頼性を高める洗練されたデザイン</p>
                                     </div>
                                 </div>
-                                <div class="service-item glass-card" role="listitem">
-                                    <div class="item-icon" aria-hidden="true">🎯</div>
+                                <div class="service-item glass-card hover-lift magnetic-hover" role="listitem">
+                                    <div class="item-icon floating-icon" aria-hidden="true">🎯</div>
                                     <div class="item-content">
                                         <h4>ランディングページ</h4>
                                         <p>コンバージョン率を最大化する設計</p>
                                     </div>
                                 </div>
-                                <div class="service-item glass-card" role="listitem">
-                                    <div class="item-icon" aria-hidden="true">🛍️</div>
+                                <div class="service-item glass-card hover-lift magnetic-hover" role="listitem">
+                                    <div class="item-icon floating-icon" aria-hidden="true">🛍️</div>
                                     <div class="item-content">
                                         <h4>ECサイト構築</h4>
                                         <p>売上を伸ばす使いやすいオンラインストア</p>
                                     </div>
                                 </div>
-                                <div class="service-item glass-card" role="listitem">
-                                    <div class="item-icon" aria-hidden="true">📱</div>
+                                <div class="service-item glass-card hover-lift magnetic-hover" role="listitem">
+                                    <div class="item-icon floating-icon" aria-hidden="true">📱</div>
                                     <div class="item-content">
                                         <h4>レスポンシブ対応</h4>
                                         <p>全デバイスで最適な表示を実現</p>
@@ -583,6 +612,7 @@
     </footer>
 
     <!-- JavaScript -->
+    <script src="/js/2025-features.js" defer></script>
     <script src="/js/bundle.min.js" defer></script>
 </body>
 </html>
