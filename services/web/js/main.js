@@ -3,6 +3,7 @@
  */
 
 document.addEventListener('DOMContentLoaded', function() {
+    initMobileMenu();
     initSmoothScroll();
     initScrollAnimation();
     initParallaxEffect();
@@ -41,42 +42,47 @@ function initMobileMenu() {
  * スムーススクロールの初期化
  */
 function initSmoothScroll() {
-    // ページ内リンクをクリックしたときの処理
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            e.preventDefault();
-            
-            // ハッシュ値の取得
-            const href = this.getAttribute('href');
-            
-            // 移動先の要素を取得
-            const target = document.querySelector(href);
-            
-            // 移動先の要素が存在する場合のみスクロール
-            if (target) {
-                // スクロールのオフセット（ヘッダーの高さなど）
-                const headerHeight = document.querySelector('.header')?.offsetHeight || 0;
-                const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - headerHeight;
+    try {
+        // ページ内リンクをクリックしたときの処理
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
                 
-                // スムーススクロール
-                window.scrollTo({
-                    top: targetPosition,
-                    behavior: 'smooth'
-                });
+                // ハッシュ値の取得
+                const href = this.getAttribute('href');
+                if (!href || href === '#') return;
                 
-                // モバイルメニューが開いていれば閉じる
-                const mobileMenu = document.querySelector('.js-mobile-menu');
-                const menuToggle = document.querySelector('.js-menu-toggle');
+                // 移動先の要素を取得
+                const target = document.querySelector(href);
                 
-                if (mobileMenu?.classList.contains('is-active')) {
-                    mobileMenu.classList.remove('is-active');
-                    document.body.classList.remove('menu-open');
-                    menuToggle?.setAttribute('aria-expanded', 'false');
-                    menuToggle?.setAttribute('aria-label', 'メニューを開く');
+                // 移動先の要素が存在する場合のみスクロール
+                if (target) {
+                    // スクロールのオフセット（ヘッダーの高さなど）
+                    const headerHeight = document.querySelector('.header')?.offsetHeight || 0;
+                    const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - headerHeight;
+                    
+                    // スムーススクロール
+                    window.scrollTo({
+                        top: Math.max(0, targetPosition),
+                        behavior: 'smooth'
+                    });
+                    
+                    // モバイルメニューが開いていれば閉じる
+                    const mobileMenu = document.querySelector('.js-mobile-menu');
+                    const menuToggle = document.querySelector('.js-menu-toggle');
+                    
+                    if (mobileMenu?.classList.contains('is-active')) {
+                        mobileMenu.classList.remove('is-active');
+                        document.body.classList.remove('menu-open');
+                        menuToggle?.setAttribute('aria-expanded', 'false');
+                        menuToggle?.setAttribute('aria-label', 'メニューを開く');
+                    }
                 }
-            }
+            });
         });
-    });
+    } catch (error) {
+        console.warn('スムーススクロール初期化エラー:', error);
+    }
 }
 
 /**
@@ -121,23 +127,36 @@ function initScrollAnimation() {
 }
 
 /**
- * パララックス効果の初期化
+ * パララックス効果の初期化（パフォーマンス最適化版）
  */
 function initParallaxEffect() {
     const parallaxElements = document.querySelectorAll('.js-parallax');
     
     if (parallaxElements.length === 0) return;
     
-    // スクロールイベントでパララックス効果を適用
-    window.addEventListener('scroll', () => {
+    let ticking = false;
+    
+    function updateParallax() {
         const scrollTop = window.pageYOffset;
         
         parallaxElements.forEach(element => {
-            const speed = element.dataset.speed || 0.5;
+            const speed = parseFloat(element.dataset.speed) || 0.5;
             const offset = scrollTop * speed;
-            element.style.transform = `translateY(${offset}px)`;
+            element.style.transform = `translate3d(0, ${offset}px, 0)`;
         });
-    });
+        
+        ticking = false;
+    }
+    
+    // requestAnimationFrameでパフォーマンス最適化
+    function requestTick() {
+        if (!ticking) {
+            requestAnimationFrame(updateParallax);
+            ticking = true;
+        }
+    }
+    
+    window.addEventListener('scroll', requestTick, { passive: true });
 }
 
 /**
