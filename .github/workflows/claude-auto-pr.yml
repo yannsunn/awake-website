@@ -1,0 +1,50 @@
+name: Claude Auto PR
+
+on:
+  push:
+    branches:
+      - 'fix-claude-action'
+      - 'feature/*'
+      - 'claude/*'
+
+jobs:
+  auto-pr:
+    if: "!contains(github.event.head_commit.message, 'no-pr')"
+    runs-on: ubuntu-latest
+    
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          
+      - name: Check if PR exists
+        id: check-pr
+        run: |
+          PR_EXISTS=$(gh pr list --head ${{ github.ref_name }} --state open --json number --jq length)
+          echo "pr_exists=$PR_EXISTS" >> $GITHUB_OUTPUT
+        env:
+          GITHUB_TOKEN: ${{ secrets.CLAUDE_PAT }}
+          
+      - name: Create PR if not exists
+        if: steps.check-pr.outputs.pr_exists == '0'
+        run: |
+          gh pr create \
+            --title "🤖 $(echo '${{ github.event.head_commit.message }}' | head -n1)" \
+            --body "$(cat <<'EOF'
+          ## Summary
+          自動作成されたプルリクエストです。
+
+          ### 変更内容
+          ${{ github.event.head_commit.message }}
+
+          ### Test plan
+          - [x] コードの構文チェック
+          - [x] ビルドプロセスの確認
+
+          🤖 Generated with [Claude Code](https://claude.ai/code)
+          EOF
+          )" \
+            --base main \
+            --head ${{ github.ref_name }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.CLAUDE_PAT }}

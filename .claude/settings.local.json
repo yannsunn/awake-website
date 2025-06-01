@@ -20,7 +20,10 @@
       "Bash(/home/march/.nvm/versions/node/v22.16.0/lib/node_modules/@anthropic-ai/claude-code/vendor/ripgrep/x64-linux/rg -n \"img src=|background-image:\" /mnt/c/Users/march/my-website/services/ --type html)",
       "Bash(gh pr list:*)",
       "WebFetch(domain:github.com)",
-      "Bash(gh api:*)"
+      "Bash(gh api:*)",
+      "Bash(git rev-parse:*)",
+      "Bash(git fetch:*)",
+      "Bash(git merge:*)"
     ]
   },
   "enableAllProjectMcpServers": false
