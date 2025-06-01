@@ -4,102 +4,150 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="株式会社Awakeの家具製作サービス。オーダーメイドのアイアン家具を完全カスタムで製造。世界に一つだけの理想の家具を実現します。">
+    <meta name="keywords" content="オーダーメイド家具, アイアン家具, 家具製作, カスタム家具, 株式会社Awake, スチール家具, インダストリアル家具">
+    <meta name="author" content="株式会社Awake">
+    <meta name="theme-color" content="#667eea">
+    <meta name="color-scheme" content="light">
     
-    <!-- Base URL -->
-    <base href="/">
-    
-    <!-- OGP -->
-    <meta property="og:title" content="家具製作サービス | 株式会社Awake">
-    <meta property="og:type" content="article">
-    <meta property="og:url" content="https://www.awakeinc.co.jp/services/furniture/">
-    <meta property="og:image" content="https://www.awakeinc.co.jp/images/ogp.jpg">
-    <meta property="og:description" content="オーダーメイドのアイアン家具を完全カスタムで製造。世界に一つだけの理想の家具を実現します。">
-    <meta property="og:site_name" content="株式会社Awake">
-    
-    <!-- Fonts -->
+    <!-- Resource Hints -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="preload" href="/css/corporate-master.css" as="style">
+    <link rel="preload" href="/js/bundle.min.js" as="script">
     
-    <!-- Styles -->
-    <link rel="stylesheet" href="../../css/styles.min.css">
-    <link rel="stylesheet" href="../common.css">
-    <link rel="stylesheet" href="./css/styles.css">
-    <link rel="stylesheet" href="/css/image-fix.css">
-    <link rel="stylesheet" href="/css/services-optimized.css">
-    <link rel="stylesheet" href="/css/ui-improvements.css">
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" href="/favicon.ico">
     
-    <title>家具製作サービス | 株式会社Awake</title>
+    <!-- OGP -->
+    <meta property="og:title" content="家具製作・オーダーメイドサービス | 株式会社Awake">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://awake-website.netlify.app/services/furniture/">
+    <meta property="og:image" content="https://awake-website.netlify.app/assets/images/furniture.jpg">
+    <meta property="og:description" content="世界に一つだけのオーダーメイド家具を、理想をかたちにしたプロの技術で製作。">
+    <meta property="og:site_name" content="株式会社Awake">
+    <meta property="og:locale" content="ja_JP">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="家具製作・オーダーメイドサービス | 株式会社Awake">
+    <meta name="twitter:description" content="アイアン家具のオーダーメイド製作。テーブル・チェア・シェルフなど、理想のサイズで製作。">
+    <meta name="twitter:image" content="https://awake-website.netlify.app/assets/images/furniture.jpg">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="/css/corporate-master.css">
+    
+    <!-- Schema.org JSON-LD -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "serviceType": "Custom Furniture Manufacturing",
+        "provider": {
+            "@type": "Organization",
+            "name": "株式会社Awake",
+            "url": "https://awake-website.netlify.app/"
+        },
+        "name": "家具製作・オーダーメイドサービス",
+        "description": "オーダーメイドのアイアン家具を完全カスタムで製造。世界に一つだけの理想の家具を実現します。テーブル・チェア・シェルフなど、あらゆる家具に対応。",
+        "url": "https://awake-website.netlify.app/services/furniture/",
+        "image": "https://awake-website.netlify.app/assets/images/furniture.jpg",
+        "offers": {
+            "@type": "AggregateOffer",
+            "priceCurrency": "JPY",
+            "lowPrice": "30000",
+            "highPrice": "2000000",
+            "eligibleRegion": {
+                "@type": "Country",
+                "name": "Japan"
+            }
+        }
+    }
+    </script>
+    
+    <title>家具製作・オーダーメイドサービス | 株式会社Awake</title>
 </head>
 <body>
+    <!-- Skip to main content -->
+    <a href="#main-content" class="sr-only sr-only-focusable">メインコンテンツにスキップ</a>
+    
+    <!-- Header -->
     <header class="header" role="banner">
         <div class="header__inner">
             <h1 class="header__logo">
-                <a href="/" aria-label="株式会社Awake トップページ">
+                <a href="/" aria-label="株式会社Awake ホームページ">
                     株式会社Awake
                 </a>
             </h1>
-            <button class="header__menu-toggle" aria-label="メニューを開く" aria-expanded="false">
+            <button class="header__menu-toggle" aria-label="メニューを開く" aria-expanded="false" aria-controls="main-navigation">
                 <span class="hamburger-icon">☰</span>
             </button>
-            <nav class="header__nav" role="navigation" aria-label="メインナビゲーション">
+            <nav class="header__nav" role="navigation" aria-label="メインナビゲーション" id="main-navigation">
                 <ul class="header__nav-list">
                     <li class="header__nav-item has-dropdown">
-                        <a href="/#services" aria-label="サービス一覧へ">サービス</a>
-                        <div class="services-dropdown">
+                        <a href="/#services" aria-label="サービス一覧へ" aria-haspopup="true" aria-expanded="false">サービス</a>
+                        <div class="services-dropdown" role="menu" aria-label="サービス一覧">
                             <h3>各種サービス</h3>
                             <div class="services-grid">
-                                <a href="/services/web/" class="service-link">
-                                    <div class="service-icon">🌐</div>
+                                <a href="/services/web/" class="service-link" role="menuitem">
+                                    <div class="service-icon" aria-hidden="true">🌐</div>
                                     <div class="service-name">HP制作<br>LP制作</div>
                                 </a>
-                                <a href="/services/ec/" class="service-link">
-                                    <div class="service-icon">🛒</div>
+                                <a href="/services/ec/" class="service-link" role="menuitem">
+                                    <div class="service-icon" aria-hidden="true">🛒</div>
                                     <div class="service-name">EC通販<br>代理販売</div>
                                 </a>
-                                <a href="/services/video/" class="service-link">
-                                    <div class="service-icon">🎬</div>
+                                <a href="/services/video/" class="service-link" role="menuitem">
+                                    <div class="service-icon" aria-hidden="true">🎬</div>
                                     <div class="service-name">動画編集<br>制作</div>
                                 </a>
-                                <a href="/services/furniture/" class="service-link current">
-                                    <div class="service-icon">🪑</div>
+                                <a href="/services/furniture/" class="service-link current" role="menuitem" aria-current="page">
+                                    <div class="service-icon" aria-hidden="true">🪑</div>
                                     <div class="service-name">家具製作<br>オーダーメイド</div>
                                 </a>
                             </div>
                         </div>
                     </li>
-                    <li><a href="/#contact" aria-label="お問い合わせフォームへ">お問い合わせ</a></li>
+                    <li class="header__nav-item">
+                        <a href="/#contact" aria-label="お問い合わせフォームへ">お問い合わせ</a>
+                    </li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <main>
-        <!-- Hero Section with Glassmorphism -->
-        <section class="page-hero" style="background-image: url('/assets/images/furniture.jpg'); background-size: cover; background-position: center; background-attachment: fixed;">
-            <div class="hero-overlay"></div>
+    <!-- Main Content -->
+    <main role="main" id="main-content">
+        <!-- Hero Section -->
+        <section class="hero" aria-labelledby="hero-title" style="background-image: url('/assets/images/furniture.jpg')">
+            <div class="hero-overlay" aria-hidden="true"></div>
             <div class="container">
                 <div class="hero-content glass-card">
-                    <h1 class="hero-title">オーダーメイド家具製作</h1>
-                    <p class="hero-text">職人の技と素材の美しさで、<br>世界に一つだけの理想を形に</p>
-                    <div class="hero-features">
-                        <div class="hero-feature">
-                            <span class="feature-icon">🔨</span>
+                    <h1 id="hero-title" class="hero-title">家具製作</h1>
+                    <p class="hero-text">
+                        職人の技と素材の美しさで、<br><span class="text-gradient-premium">世界に一つだけの理想を形に</span>
+                    </p>
+                    <div class="hero-features" role="list" aria-label="サービスの特徴">
+                        <div class="hero-feature" role="listitem">
+                            <span class="feature-icon" aria-hidden="true">🔨</span>
                             <span>職人の手仕事</span>
                         </div>
-                        <div class="hero-feature">
-                            <span class="feature-icon">✨</span>
+                        <div class="hero-feature" role="listitem">
+                            <span class="feature-icon" aria-hidden="true">✨</span>
                             <span>完全オーダーメイド</span>
                         </div>
-                        <div class="hero-feature">
-                            <span class="feature-icon">🏠</span>
+                        <div class="hero-feature" role="listitem">
+                            <span class="feature-icon" aria-hidden="true">🏠</span>
                             <span>一体型納品</span>
                         </div>
                     </div>
                     <div class="hero-cta">
-                        <a href="#contact" class="btn btn-primary btn-glow">
+                        <a href="/#contact" class="btn btn-primary btn-glow" role="button" aria-label="無料相談のお申し込み">
                             <span>無料相談を申し込む</span>
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
                                 <path d="M5 12h14M12 5l7 7-7 7"/>
                             </svg>
                         </a>
@@ -447,29 +495,49 @@
         </section>
     </main>
 
+    <!-- Footer -->
     <footer class="footer" role="contentinfo">
         <div class="footer__inner">
             <div class="footer__info">
-                <img src="/assets/images/ogp.jpg" alt="株式会社Awake" width="180" height="180" class="footer__logo" loading="lazy">
-                <p class="footer__address">
-                    〒207-0013<br>
-                    東京都東大和市向原5-1129-61 渡辺ビル1F<br>
-                    TEL: <a href="tel:050-7115-4948" aria-label="電話番号: 050-7115-4948">050-7115-4948</a><br>
-                    Email: <a href="mailto:shop@awakeinc.co.jp" aria-label="メールアドレス: shop@awakeinc.co.jp">shop@awakeinc.co.jp</a><br>
-                    代表取締役: 田形 康貴
-                </p>
-                <nav class="footer__links" aria-label="フッターナビゲーション">
-                    <ul>
+                <img src="/assets/images/ogp.jpg" alt="株式会社Awake ロゴ" class="footer__logo" loading="lazy" width="120" height="120">
+                <div class="footer__company-info">
+                    <h2 class="footer__company-name">株式会社Awake</h2>
+                    <p class="footer__tagline">革新的なソリューションで企業の成長をサポート</p>
+                    <address class="footer__address">
+                        〒207-0013<br>
+                        東京都東大和市向原5-1129-61 渡辺ビル1F<br>
+                        TEL: <a href="tel:+81-50-7115-4948" aria-label="電話番号: 050-7115-4948">050-7115-4948</a><br>
+                        Email: <a href="mailto:shop@awakeinc.co.jp" aria-label="メールアドレス: shop@awakeinc.co.jp">shop@awakeinc.co.jp</a><br>
+                        代表取締役: 田形 康貴 (Yasutaka Tagata)
+                    </address>
+                </div>
+            </div>
+            <div class="footer__links">
+                <nav aria-label="サービスリンク">
+                    <h3 class="footer__nav-title">サービス</h3>
+                    <ul class="footer__nav-list">
+                        <li><a href="/services/web/">HP制作・LP制作</a></li>
+                        <li><a href="/services/ec/">EC通販代理販売</a></li>
+                        <li><a href="/services/video/">動画編集・制作</a></li>
+                        <li><a href="/services/furniture/">家具製作</a></li>
+                    </ul>
+                </nav>
+                <nav aria-label="法的情報">
+                    <h3 class="footer__nav-title">法的情報</h3>
+                    <ul class="footer__nav-list">
                         <li><a href="/legal/privacy-policy/">プライバシーポリシー</a></li>
                         <li><a href="/legal/terms/">利用規約</a></li>
                     </ul>
                 </nav>
             </div>
-            <p class="footer__copyright">&copy; 2024 Awake Inc. All rights reserved.</p>
+            <p class="footer__copyright">
+                &copy; 2024 Awake Inc. All rights reserved.<br>
+                革新的なソリューションで企業の成長をサポートします。
+            </p>
         </div>
     </footer>
 
-    <script src="/js/bundle.min.js"></script>
-    <script src="/js/services-optimized.js"></script>
+    <!-- JavaScript -->
+    <script src="/js/bundle.min.js" defer></script>
 </body>
 </html>
