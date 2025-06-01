@@ -7,17 +7,25 @@
     <meta name="keywords" content="株式会社Awake, HP制作, LP制作, EC通販, 動画編集, 家具製作, ビジネスソリューション, コーポレートサイト">
     <meta name="author" content="株式会社Awake">
     <meta name="theme-color" content="#667eea">
-    <meta name="color-scheme" content="light">
+    <meta name="color-scheme" content="light dark">
+    <meta name="theme-color" content="#667eea" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#0d1117" media="(prefers-color-scheme: dark)">
     
     <!-- Resource Hints -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preload" href="/css/corporate-master.css" as="style">
     <link rel="preload" href="/js/bundle.min.js" as="script">
+    <link rel="preload" href="/js/2025-features.js" as="script">
     
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
     <link rel="apple-touch-icon" href="/favicon.ico">
+    
+    <!-- 2025年標準：Progressive Web App対応 -->
+    <link rel="manifest" href="/manifest.json">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
     
     <!-- OGP -->
     <meta property="og:title" content="株式会社Awake - 革新的なビジネスソリューション">
@@ -166,6 +174,14 @@
                         </a>
                     </div>
                 </div>
+            </div>
+        </section>
+        
+        <!-- 2025年トレンド：スマートレコメンデーション -->
+        <section class="smart-recommendation adaptive-content" role="region" aria-labelledby="recommendation-title">
+            <div class="container">
+                <h2 id="recommendation-title" class="recommendation-title">🤖 あなたに最適なサービス</h2>
+                <div class="recommendation-items"></div>
             </div>
         </section>
 
@@ -517,5 +533,9 @@
             display: block;
         }
     </style>
+    
+    <!-- 2025年最新機能JavaScript -->
+    <script src="/js/2025-features.js" defer></script>
+    <script src="/js/bundle.min.js" defer></script>
 </body>
 </html>
