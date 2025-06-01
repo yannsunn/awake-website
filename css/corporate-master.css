@@ -1453,23 +1453,6 @@ body {
 /* === 2025年トレンド：3D・ハイパーリアリスティック要素 === */
 
 /* 3Dカードコンポーネント */
-.card-3d {
-    perspective: 1000px;
-    transform-style: preserve-3d;
-}
-
-.card-3d-inner {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    text-align: center;
-    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-    transform-style: preserve-3d;
-}
-
-.card-3d:hover .card-3d-inner {
-    transform: rotateY(-10deg) rotateX(5deg) translateZ(20px);
-}
 
 /* リアルシャドウ効果 */
 .realistic-shadow {
@@ -1507,65 +1490,7 @@ body {
         0 6px 12px rgba(0, 0, 0, 0.05);
 }
 
-/* ガラスモーフィズム 2025年版 */
-.glass-morphism-2025 {
-    background: rgba(255, 255, 255, 0.08);
-    backdrop-filter: blur(40px) saturate(200%);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: var(--awake-radius-xl);
-    box-shadow: 
-        0 8px 32px rgba(0, 0, 0, 0.1),
-        inset 0 1px 0 rgba(255, 255, 255, 0.2),
-        inset 0 -1px 0 rgba(0, 0, 0, 0.1);
-    position: relative;
-    overflow: hidden;
-}
-
-.glass-morphism-2025::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(
-        90deg,
-        transparent,
-        rgba(255, 255, 255, 0.1),
-        transparent
-    );
-    transition: left 0.5s;
-}
-
-.glass-morphism-2025:hover::before {
-    left: 100%;
-}
-
-/* ホログラフィック効果 */
-.holographic {
-    background: linear-gradient(
-        45deg,
-        #667eea,
-        #764ba2,
-        #f093fb,
-        #667eea
-    );
-    background-size: 400% 400%;
-    animation: holographicShift 4s ease-in-out infinite;
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    position: relative;
-}
-
-@keyframes holographicShift {
-    0%, 100% {
-        background-position: 0% 50%;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
-}
+/* 重複削除 - 2025-corporate-elite.cssで定義済み */
 
 /* パーティクル効果 */
 .particle-bg {
@@ -1808,39 +1733,9 @@ body {
 
 /* === 2025年トレンド：マイクロインタラクション === */
 
-/* マグネティックホバー効果 */
-.magnetic-hover {
-    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    position: relative;
-}
+/* 重複削除 - magnetic-hoverは2025-corporate-elite.cssで定義済み */
 
-.magnetic-hover:hover {
-    transform: scale(1.05);
-}
-
-/* リプルエフェクト */
-.ripple-effect {
-    position: relative;
-    overflow: hidden;
-}
-
-.ripple-effect::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 0;
-    height: 0;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.5);
-    transform: translate(-50%, -50%);
-    transition: width 0.6s, height 0.6s;
-}
-
-.ripple-effect:active::before {
-    width: 300px;
-    height: 300px;
-}
+/* 重複削除 - ripple-effectは2025-corporate-elite.cssとJavaScriptで実装済み */
 
 /* プルスアニメーション */
 .pulse-on-hover {
