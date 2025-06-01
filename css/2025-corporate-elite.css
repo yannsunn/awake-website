@@ -352,6 +352,45 @@
     }
 }
 
+/* === メッセージスタイル === */
+.context-message {
+    background: var(--awake-gradient-glass);
+    border: 1px solid rgba(245, 158, 11, 0.2);
+    border-radius: 12px;
+    padding: 1rem;
+    margin: 1rem 0;
+    backdrop-filter: blur(10px);
+    animation: slideInFromTop 0.5s ease-out;
+    font-size: 0.9rem;
+    color: var(--awake-text-premium-dark);
+}
+
+.context-message.personalized-message {
+    border-color: rgba(102, 126, 234, 0.3);
+}
+
+.context-message.context-aware-message {
+    position: fixed;
+    top: 90px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+    max-width: 90%;
+    width: auto;
+    margin: 0;
+}
+
+@keyframes slideInFromTop {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 /* === 高パフォーマンス最適化 === */
 .card-3d,
 .hover-lift,
