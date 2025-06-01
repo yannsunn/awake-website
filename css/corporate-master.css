@@ -1107,6 +1107,142 @@ body {
     background: var(--awake-bg-secondary);
 }
 
+/* === モーダル・オーバーレイスタイル === */
+.video-modal,
+.image-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: var(--awake-z-modal);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(5px);
+}
+
+.modal-content {
+    position: relative;
+    background: var(--awake-bg-glass);
+    backdrop-filter: blur(20px);
+    border-radius: var(--awake-radius-xl);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: var(--awake-space-6);
+    max-width: 90vw;
+    max-height: 90vh;
+    overflow-y: auto;
+    animation: modalFadeIn 0.3s ease-out;
+}
+
+.modal-close {
+    position: absolute;
+    top: var(--awake-space-2);
+    right: var(--awake-space-2);
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: var(--awake-transition);
+}
+
+.modal-close:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: scale(1.1);
+}
+
+.modal-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: var(--awake-radius);
+}
+
+.modal-caption {
+    margin-top: var(--awake-space-3);
+    text-align: center;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+/* 素材情報パネル */
+.material-info-panel {
+    position: relative;
+    margin-top: var(--awake-space-4);
+    background: var(--awake-bg-glass);
+    backdrop-filter: blur(10px);
+    border-radius: var(--awake-radius);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    animation: slideInUp 0.3s ease-out;
+}
+
+.panel-content {
+    padding: var(--awake-space-4);
+    position: relative;
+}
+
+.close-panel {
+    position: absolute;
+    top: var(--awake-space-1);
+    right: var(--awake-space-1);
+    background: transparent;
+    border: none;
+    color: var(--awake-text-muted);
+    font-size: 1.25rem;
+    cursor: pointer;
+    transition: var(--awake-transition);
+}
+
+.close-panel:hover {
+    color: var(--awake-text-primary);
+    transform: scale(1.1);
+}
+
+/* 選択状態のスタイル */
+.selected {
+    background: var(--awake-gradient-primary) !important;
+    color: white !important;
+    box-shadow: var(--awake-shadow-premium) !important;
+    transform: scale(1.05) !important;
+}
+
+/* アニメーション */
+@keyframes modalFadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 /* アクセシビリティ */
 @media (prefers-reduced-motion: reduce) {
     *,
