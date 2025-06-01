@@ -12,7 +12,7 @@ img {
 /* サービスカード画像 - 美しいプロポーション */
 .service-card__image,
 .service-card img {
-    height: 280px !important;
+    height: 200px !important;
     width: 100% !important;
     object-fit: cover !important;
     object-position: center !important;
@@ -37,9 +37,9 @@ img {
 /* ヒーローセクション自体 - 適切な高さ */
 .hero,
 .page-hero {
-    height: 85vh !important;
-    min-height: 600px !important;
-    max-height: 900px !important;
+    height: 60vh !important;
+    min-height: 400px !important;
+    max-height: 500px !important;
     overflow: hidden !important;
     position: relative !important;
 }
@@ -57,7 +57,7 @@ img {
 /* コンテンツ画像 - バランスの良いサイズ */
 .content img,
 .overview-image img {
-    height: 320px !important;
+    height: 300px !important;
     width: 100% !important;
     object-fit: cover !important;
     border-radius: 12px !important;
@@ -107,24 +107,24 @@ img {
 @media (max-width: 1024px) {
     .service-card__image,
     .service-card img {
-        height: 250px !important;
+        height: 180px !important;
     }
     
     .hero,
     .page-hero {
-        height: 75vh !important;
-        min-height: 500px !important;
-        max-height: 750px !important;
+        height: 55vh !important;
+        min-height: 350px !important;
+        max-height: 450px !important;
     }
     
     .content img,
     .overview-image img {
-        height: 280px !important;
+        height: 250px !important;
     }
     
     .portfolio-image img,
     .portfolio-thumbnail img {
-        height: 260px !important;
+        height: 220px !important;
     }
 }
 
@@ -132,24 +132,24 @@ img {
 @media (max-width: 768px) {
     .service-card__image,
     .service-card img {
-        height: 220px !important;
+        height: 160px !important;
     }
     
     .hero,
     .page-hero {
-        height: 65vh !important;
-        min-height: 450px !important;
-        max-height: 600px !important;
+        height: 50vh !important;
+        min-height: 300px !important;
+        max-height: 400px !important;
     }
     
     .content img,
     .overview-image img {
-        height: 240px !important;
+        height: 200px !important;
     }
     
     .portfolio-image img,
     .portfolio-thumbnail img {
-        height: 220px !important;
+        height: 180px !important;
     }
     
     .header__logo img {
@@ -162,24 +162,24 @@ img {
 @media (max-width: 480px) {
     .service-card__image,
     .service-card img {
-        height: 200px !important;
+        height: 140px !important;
     }
     
     .hero,
     .page-hero {
-        height: 60vh !important;
-        min-height: 400px !important;
-        max-height: 500px !important;
+        height: 45vh !important;
+        min-height: 250px !important;
+        max-height: 350px !important;
     }
     
     .content img,
     .overview-image img {
-        height: 200px !important;
+        height: 180px !important;
     }
     
     .portfolio-image img,
     .portfolio-thumbnail img {
-        height: 180px !important;
+        height: 160px !important;
     }
     
     .header__logo img {
