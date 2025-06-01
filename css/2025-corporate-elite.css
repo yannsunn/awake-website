@@ -15,10 +15,19 @@
     --awake-accent-gold-light: #fbbf24;
     --awake-accent-premium: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
     
+    /* 2025年高級カラーパレット */
+    --awake-luxury-platinum: #e5e7eb;
+    --awake-luxury-silver: #f3f4f6;
+    --awake-luxury-champagne: #fef3c7;
+    --awake-luxury-rose-gold: #fed7aa;
+    
     /* グラデーション2025 */
     --awake-gradient-elite: linear-gradient(135deg, #1e293b 0%, #334155 50%, #475569 100%);
     --awake-gradient-premium: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
     --awake-gradient-glass: linear-gradient(135deg, rgba(255,255,255,0.95) 0%, rgba(248,250,252,0.9) 100%);
+    --awake-gradient-luxury: linear-gradient(135deg, #fef3c7 0%, #fed7aa 50%, #f59e0b 100%);
+    --awake-gradient-platinum: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 50%, #cbd5e1 100%);
+    --awake-gradient-hero: linear-gradient(135deg, rgba(30, 41, 59, 0.95) 0%, rgba(51, 65, 85, 0.9) 50%, rgba(71, 85, 105, 0.85) 100%);
     
     /* 背景 */
     --awake-bg-ultra-white: #ffffff;
@@ -35,13 +44,18 @@
     --awake-shadow-premium: 0 20px 40px -8px rgba(30, 41, 59, 0.15);
     --awake-shadow-glass: 0 8px 32px 0 rgba(31, 38, 135, 0.2);
     
-    /* フォントサイズ - 2025年標準 */
-    --awake-text-hero: clamp(3rem, 6vw, 5rem);
-    --awake-text-h1: clamp(2.5rem, 5vw, 4rem);
-    --awake-text-h2: clamp(2rem, 4vw, 3rem);
-    --awake-text-h3: clamp(1.5rem, 3vw, 2rem);
-    --awake-text-large: clamp(1.25rem, 2.5vw, 1.5rem);
-    --awake-text-body: clamp(1.125rem, 2vw, 1.25rem);
+    /* フォントサイズ - 2025年標準（PC改行最適化） */
+    --awake-text-hero: clamp(3.5rem, 7vw, 6rem);
+    --awake-text-h1: clamp(2.75rem, 5.5vw, 4.5rem);
+    --awake-text-h2: clamp(2.25rem, 4.5vw, 3.5rem);
+    --awake-text-h3: clamp(1.75rem, 3.5vw, 2.5rem);
+    --awake-text-large: clamp(1.375rem, 2.75vw, 1.75rem);
+    --awake-text-body: clamp(1.25rem, 2.25vw, 1.5rem);
+    
+    /* 2025年高級コンテナサイズ */
+    --awake-container-max: 1400px;
+    --awake-container-medium: 1200px;
+    --awake-container-small: 800px;
 }
 
 /* === ダークモード対応（2025年標準） - 高コントラスト版 === */
@@ -68,6 +82,88 @@
 }
 
 /* === 2025年 企業レベル コンポーネント === */
+
+/* === 2025年高級レイアウトシステム === */
+
+/* 全体的な日本語フォント最適化 */
+body {
+    font-feature-settings: "palt" 1; /* プロポーショナルメトリクス */
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    word-break: break-word; /* 日本語の改行処理 */
+    overflow-wrap: break-word;
+}
+
+/* 高級コンテナシステム */
+.container {
+    max-width: var(--awake-container-max);
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.container-medium {
+    max-width: var(--awake-container-medium);
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.container-small {
+    max-width: var(--awake-container-small);
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+/* PC用改行最適化レイアウト */
+@media (min-width: 1024px) {
+    .container {
+        padding: 0 3rem;
+    }
+    
+    /* テキストブロックの最大幅制限（可読性向上） */
+    .text-content-block {
+        max-width: 65ch; /* 理想的な1行文字数 */
+        margin: 0 auto;
+    }
+    
+    /* 2カラムレイアウト */
+    .two-column-layout {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 4rem;
+        align-items: center;
+    }
+    
+    /* 3カラムレイアウト */
+    .three-column-layout {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 3rem;
+    }
+    
+    /* PC専用改行の表示 */
+    .pc-break {
+        display: inline;
+    }
+}
+
+/* モバイル対応 - PC専用改行を非表示 */
+@media (max-width: 1023px) {
+    .pc-break {
+        display: none;
+    }
+    
+    /* モバイル用レイアウト調整 */
+    .three-column-layout {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .two-column-layout {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+}
 
 /* ガラスモルフィズム2025 - 視認性改善版 */
 .glass-morphism-2025 {
@@ -223,52 +319,65 @@
     color: white;
 }
 
-/* === 企業プレゼン対応 テキスト階層 === */
+/* === 企業プレゼン対応 テキスト階層 - 視認性最適化版 === */
 .heading-hero {
     font-size: var(--awake-text-hero);
     font-weight: 800;
-    line-height: 1.1;
-    letter-spacing: -0.02em;
+    line-height: 1.25; /* 改善: 1.1 → 1.25 */
+    letter-spacing: 0; /* 改善: -0.02em → 0 */
     color: var(--awake-text-ultra-dark);
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem; /* 改善: 1.5rem → 2rem */
+    word-spacing: 0.1em; /* 追加: 単語間隔 */
 }
 
 .heading-h1 {
     font-size: var(--awake-text-h1);
     font-weight: 700;
-    line-height: 1.2;
+    line-height: 1.35; /* 改善: 1.2 → 1.35 */
+    letter-spacing: 0.01em; /* 追加: 文字間隔 */
     color: var(--awake-text-ultra-dark);
-    margin-bottom: 1.25rem;
+    margin-bottom: 1.75rem; /* 改善: 1.25rem → 1.75rem */
+    word-spacing: 0.05em; /* 追加: 単語間隔 */
 }
 
 .heading-h2 {
     font-size: var(--awake-text-h2);
     font-weight: 600;
-    line-height: 1.3;
+    line-height: 1.45; /* 改善: 1.3 → 1.45 */
+    letter-spacing: 0.015em; /* 追加: 文字間隔 */
     color: var(--awake-text-premium-dark);
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem; /* 改善: 1rem → 1.5rem */
+    word-spacing: 0.05em; /* 追加: 単語間隔 */
 }
 
 .heading-h3 {
     font-size: var(--awake-text-h3);
     font-weight: 600;
-    line-height: 1.4;
+    line-height: 1.5; /* 改善: 1.4 → 1.5 */
+    letter-spacing: 0.02em; /* 追加: 文字間隔 */
     color: var(--awake-text-premium-dark);
-    margin-bottom: 0.75rem;
+    margin-bottom: 1.25rem; /* 改善: 0.75rem → 1.25rem */
+    word-spacing: 0.05em; /* 追加: 単語間隔 */
 }
 
 .text-large {
     font-size: var(--awake-text-large);
     font-weight: 500;
-    line-height: 1.6;
+    line-height: 1.65; /* 改善: 1.6 → 1.65 */
+    letter-spacing: 0.01em; /* 追加: 文字間隔 */
     color: var(--awake-text-corporate);
+    margin-bottom: 1.5rem; /* 追加: 段落間隔 */
+    word-spacing: 0.03em; /* 追加: 単語間隔 */
 }
 
 .text-body-premium {
     font-size: var(--awake-text-body);
     font-weight: 400;
-    line-height: 1.7;
+    line-height: 1.8; /* 改善: 1.7 → 1.8 */
+    letter-spacing: 0.01em; /* 追加: 文字間隔 */
     color: var(--awake-text-corporate);
+    margin-bottom: 1.25rem; /* 追加: 段落間隔 */
+    word-spacing: 0.03em; /* 追加: 単語間隔 */
 }
 
 /* === 高品質ボタン === */
@@ -346,20 +455,23 @@
     box-shadow: var(--awake-shadow-premium);
 }
 
-/* === 2025年 セクション背景 === */
+/* === 2025年 セクション背景 - 視認性最適化版 === */
 .section-2025-white {
     background: var(--awake-bg-ultra-white);
     position: relative;
+    padding: 4rem 0; /* 追加: セクション内余白 */
 }
 
 .section-2025-pearl {
     background: var(--awake-bg-pearl);
     position: relative;
+    padding: 4rem 0; /* 追加: セクション内余白 */
 }
 
 .section-2025-gradient {
     background: linear-gradient(135deg, var(--awake-bg-pearl) 0%, var(--awake-bg-silver) 100%);
     position: relative;
+    padding: 5rem 0; /* 追加: ヒーローセクション用大きな余白 */
 }
 
 /* 装飾要素 */
@@ -377,8 +489,9 @@
     pointer-events: none;
 }
 
-/* === レスポンシブ === */
+/* === レスポンシブ - 視認性最適化版 === */
 @media (max-width: 768px) {
+    /* モバイルでの3D効果無効化 */
     .card-3d:hover {
         transform: none;
     }
@@ -389,6 +502,54 @@
     
     .magnetic-hover:hover {
         transform: scale(1.02);
+    }
+    
+    /* モバイル用テキスト間隔調整 */
+    .heading-hero {
+        line-height: 1.3; /* さらに広く */
+        margin-bottom: 2.5rem;
+        text-align: center; /* 中央揃えで読みやすく */
+    }
+    
+    .heading-h1 {
+        line-height: 1.4;
+        margin-bottom: 2rem;
+        text-align: center;
+    }
+    
+    .heading-h2 {
+        line-height: 1.5;
+        margin-bottom: 1.75rem;
+        text-align: center;
+    }
+    
+    .text-large {
+        line-height: 1.75; /* モバイルではより広い行間 */
+        margin-bottom: 2rem;
+        text-align: center;
+    }
+    
+    .text-body-premium {
+        line-height: 1.85;
+        margin-bottom: 1.5rem;
+    }
+    
+    /* セクション間隔をモバイル用に調整 */
+    .section-2025-white,
+    .section-2025-pearl {
+        padding: 3rem 0;
+    }
+    
+    .section-2025-gradient {
+        padding: 4rem 0;
+    }
+    
+    /* ボタンのタップ領域拡大 */
+    .btn-2025-primary,
+    .btn-2025-secondary {
+        min-height: 52px; /* 48px → 52px */
+        min-width: 140px; /* 120px → 140px */
+        padding: 1.25rem 2.5rem; /* より大きなタップ領域 */
     }
 }
 
@@ -458,6 +619,204 @@
 .focus-visible {
     outline: 3px solid #f59e0b !important;
     outline-offset: 2px !important;
+}
+
+/* === 日本語テキスト最適化 === */
+.japanese-text-optimization {
+    /* 日本語の読みやすさ向上 */
+    font-feature-settings: "palt" 1; /* プロポーショナルメトリクス */
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* 段落ブロックの視認性向上 */
+.content-block {
+    background: rgba(255, 255, 255, 0.8);
+    padding: 2rem;
+    border-radius: 16px;
+    margin-bottom: 2rem;
+    border-left: 4px solid var(--awake-accent-gold);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+/* リスト要素の視認性向上 */
+.readable-list {
+    list-style: none;
+    padding: 0;
+}
+
+.readable-list li {
+    padding: 0.75rem 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    line-height: 1.8;
+}
+
+.readable-list li:last-child {
+    border-bottom: none;
+}
+
+/* 強調テキストの視認性向上 */
+.emphasis-text {
+    background: linear-gradient(135deg, rgba(245, 158, 11, 0.2), rgba(245, 158, 11, 0.1));
+    padding: 0.25rem 0.5rem;
+    border-radius: 6px;
+    font-weight: 600;
+    border-left: 3px solid var(--awake-accent-gold);
+}
+
+/* === 2025年高級デザインコンポーネント === */
+
+/* プレミアムヒーローセクション */
+.hero-premium-2025 {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    background: var(--awake-gradient-hero);
+    overflow: hidden;
+}
+
+.hero-premium-2025::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(circle at 20% 30%, rgba(245, 158, 11, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 70%, rgba(217, 119, 6, 0.08) 0%, transparent 50%),
+        radial-gradient(circle at 40% 80%, rgba(30, 41, 59, 0.1) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+/* 高級カードデザイン */
+.luxury-card-2025 {
+    background: var(--awake-gradient-glass);
+    backdrop-filter: blur(20px) saturate(180%);
+    border: 1px solid rgba(245, 158, 11, 0.2);
+    border-radius: 32px;
+    padding: 3rem;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 
+        0 25px 50px -12px rgba(0, 0, 0, 0.15),
+        0 0 0 1px rgba(255, 255, 255, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.luxury-card-2025::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--awake-gradient-luxury);
+    opacity: 0;
+    transition: opacity 0.6s ease;
+    z-index: -1;
+}
+
+.luxury-card-2025:hover::before {
+    opacity: 0.05;
+}
+
+.luxury-card-2025:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 
+        0 35px 70px -15px rgba(0, 0, 0, 0.2),
+        0 0 0 1px rgba(245, 158, 11, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+/* エレガントなテキストエフェクト */
+.elegant-text-2025 {
+    background: var(--awake-gradient-luxury);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 200% 200%;
+    animation: elegantFlow 4s ease-in-out infinite;
+    font-weight: 700;
+    position: relative;
+}
+
+@keyframes elegantFlow {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+}
+
+/* プラチナボタン */
+.btn-platinum-2025 {
+    background: var(--awake-gradient-platinum);
+    color: var(--awake-text-ultra-dark);
+    padding: 1.25rem 2.5rem;
+    border: 2px solid rgba(203, 213, 225, 0.5);
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 1.125rem;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    overflow: hidden;
+    min-height: 56px;
+    min-width: 160px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.btn-platinum-2025::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(245, 158, 11, 0.2), transparent);
+    transition: left 0.6s;
+}
+
+.btn-platinum-2025:hover::before {
+    left: 100%;
+}
+
+.btn-platinum-2025:hover {
+    transform: translateY(-4px) scale(1.05);
+    border-color: rgba(245, 158, 11, 0.4);
+    box-shadow: 
+        0 20px 40px -8px rgba(245, 158, 11, 0.2),
+        0 0 0 3px rgba(245, 158, 11, 0.1);
+}
+
+/* セクションディバイダー */
+.section-divider-2025 {
+    height: 2px;
+    background: var(--awake-gradient-luxury);
+    margin: 6rem 0;
+    border-radius: 1px;
+    position: relative;
+    overflow: hidden;
+}
+
+.section-divider-2025::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.8), transparent);
+    animation: dividerFlow 3s ease-in-out infinite;
+}
+
+@keyframes dividerFlow {
+    0% { left: -100%; }
+    100% { left: 100%; }
 }
 
 /* ボタンのフォーカス状態 */
