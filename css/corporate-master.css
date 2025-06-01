@@ -1450,6 +1450,230 @@ body {
     }
 }
 
+/* === 2025年トレンド：3D・ハイパーリアリスティック要素 === */
+
+/* 3Dカードコンポーネント */
+.card-3d {
+    perspective: 1000px;
+    transform-style: preserve-3d;
+}
+
+.card-3d-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    transform-style: preserve-3d;
+}
+
+.card-3d:hover .card-3d-inner {
+    transform: rotateY(-10deg) rotateX(5deg) translateZ(20px);
+}
+
+/* リアルシャドウ効果 */
+.realistic-shadow {
+    position: relative;
+}
+
+.realistic-shadow::before {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 10%;
+    right: 10%;
+    height: 20px;
+    background: radial-gradient(ellipse, rgba(0,0,0,0.15) 0%, transparent 70%);
+    transform: scaleY(0.3);
+    z-index: -1;
+    transition: var(--awake-transition);
+}
+
+.realistic-shadow:hover::before {
+    transform: scaleY(0.5) translateY(10px);
+    opacity: 0.8;
+}
+
+/* 3Dホバーエフェクト */
+.hover-3d {
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hover-3d:hover {
+    transform: translateY(-8px) rotateX(5deg) rotateY(-2deg);
+    box-shadow: 
+        0 25px 50px rgba(0, 0, 0, 0.15),
+        0 12px 25px rgba(0, 0, 0, 0.1),
+        0 6px 12px rgba(0, 0, 0, 0.05);
+}
+
+/* ガラスモーフィズム 2025年版 */
+.glass-morphism-2025 {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(40px) saturate(200%);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: var(--awake-radius-xl);
+    box-shadow: 
+        0 8px 32px rgba(0, 0, 0, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2),
+        inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.glass-morphism-2025::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.1),
+        transparent
+    );
+    transition: left 0.5s;
+}
+
+.glass-morphism-2025:hover::before {
+    left: 100%;
+}
+
+/* ホログラフィック効果 */
+.holographic {
+    background: linear-gradient(
+        45deg,
+        #667eea,
+        #764ba2,
+        #f093fb,
+        #667eea
+    );
+    background-size: 400% 400%;
+    animation: holographicShift 4s ease-in-out infinite;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    position: relative;
+}
+
+@keyframes holographicShift {
+    0%, 100% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+}
+
+/* パーティクル効果 */
+.particle-bg {
+    position: relative;
+    overflow: hidden;
+}
+
+.particle-bg::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        radial-gradient(2px 2px at 20px 30px, #667eea, transparent),
+        radial-gradient(2px 2px at 40px 70px, #764ba2, transparent),
+        radial-gradient(1px 1px at 90px 40px, #f093fb, transparent),
+        radial-gradient(1px 1px at 130px 80px, #667eea, transparent);
+    background-repeat: repeat;
+    background-size: 200px 100px;
+    animation: particleFloat 20s linear infinite;
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+@keyframes particleFloat {
+    0% {
+        transform: translateX(0) translateY(0);
+    }
+    100% {
+        transform: translateX(-200px) translateY(-100px);
+    }
+}
+
+/* ネオングロウ効果 */
+.neon-glow {
+    position: relative;
+    color: #ffffff;
+    text-shadow:
+        0 0 5px currentColor,
+        0 0 10px currentColor,
+        0 0 15px currentColor,
+        0 0 20px #667eea,
+        0 0 35px #667eea,
+        0 0 40px #667eea;
+    animation: neonFlicker 2s ease-in-out infinite alternate;
+}
+
+@keyframes neonFlicker {
+    from {
+        text-shadow:
+            0 0 5px currentColor,
+            0 0 10px currentColor,
+            0 0 15px currentColor,
+            0 0 20px #667eea,
+            0 0 35px #667eea,
+            0 0 40px #667eea;
+    }
+    to {
+        text-shadow:
+            0 0 2px currentColor,
+            0 0 5px currentColor,
+            0 0 8px currentColor,
+            0 0 12px #667eea,
+            0 0 18px #667eea,
+            0 0 22px #667eea;
+    }
+}
+
+/* 浮遊アニメーション */
+.floating {
+    animation: floating 3s ease-in-out infinite;
+}
+
+@keyframes floating {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* リキッドモーション */
+.liquid-blob {
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+    animation: liquidTransform 8s ease-in-out infinite;
+    background: var(--awake-gradient-primary);
+}
+
+@keyframes liquidTransform {
+    0%, 100% {
+        border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+        transform: rotate(0deg);
+    }
+    25% {
+        border-radius: 58% 42% 75% 25% / 76% 46% 54% 24%;
+    }
+    50% {
+        border-radius: 50% 50% 33% 67% / 55% 27% 73% 45%;
+        transform: rotate(180deg);
+    }
+    75% {
+        border-radius: 33% 67% 58% 42% / 63% 68% 32% 37%;
+    }
+}
+
 /* === ユーティリティクラス（最新デザインパターン対応） === */
 
 /* テキストアライメント */
@@ -1582,6 +1806,211 @@ body {
 .focus\:ring-2:focus { box-shadow: 0 0 0 2px rgba(102, 126, 234, 0.3); }
 .focus\:ring-4:focus { box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.3); }
 
+/* === 2025年トレンド：マイクロインタラクション === */
+
+/* マグネティックホバー効果 */
+.magnetic-hover {
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+}
+
+.magnetic-hover:hover {
+    transform: scale(1.05);
+}
+
+/* リプルエフェクト */
+.ripple-effect {
+    position: relative;
+    overflow: hidden;
+}
+
+.ripple-effect::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+
+.ripple-effect:active::before {
+    width: 300px;
+    height: 300px;
+}
+
+/* プルスアニメーション */
+.pulse-on-hover {
+    transition: var(--awake-transition);
+}
+
+.pulse-on-hover:hover {
+    animation: pulseGlow 1.5s ease-in-out infinite;
+}
+
+@keyframes pulseGlow {
+    0%, 100% {
+        box-shadow: 0 0 20px rgba(102, 126, 234, 0.4);
+    }
+    50% {
+        box-shadow: 0 0 40px rgba(102, 126, 234, 0.8);
+    }
+}
+
+/* スムーズカウンター */
+.smooth-counter {
+    font-variant-numeric: tabular-nums;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ローディングスピナー */
+.loading-spinner {
+    width: 20px;
+    height: 20px;
+    border: 2px solid #f3f3f3;
+    border-top: 2px solid var(--awake-primary);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    display: inline-block;
+    margin-right: var(--awake-space-2);
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* スムーズカウントアップ */
+.count-up {
+    font-weight: 700;
+    color: var(--awake-primary);
+    font-size: var(--awake-font-size-3xl);
+    line-height: 1;
+    display: inline-block;
+    min-width: 3ch;
+    text-align: center;
+}
+
+/* プログレスバーアニメーション */
+.progress-bar {
+    width: 100%;
+    height: 4px;
+    background: rgba(102, 126, 234, 0.2);
+    border-radius: var(--awake-radius-full);
+    overflow: hidden;
+    position: relative;
+}
+
+.progress-fill {
+    height: 100%;
+    background: var(--awake-gradient-primary);
+    border-radius: var(--awake-radius-full);
+    transition: width 1.5s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+}
+
+.progress-fill::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.4),
+        transparent
+    );
+    animation: progressShimmer 2s ease-in-out infinite;
+}
+
+@keyframes progressShimmer {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+/* タイピングアニメーション */
+.typing-animation::after {
+    content: '|';
+    animation: typingCursor 1s infinite;
+    color: var(--awake-primary);
+}
+
+@keyframes typingCursor {
+    0%, 50% {
+        opacity: 1;
+    }
+    51%, 100% {
+        opacity: 0;
+    }
+}
+
+/* フローティングラベル */
+.floating-label {
+    position: relative;
+}
+
+.floating-label input,
+.floating-label textarea {
+    padding-top: var(--awake-space-6);
+}
+
+.floating-label label {
+    position: absolute;
+    top: var(--awake-space-4);
+    left: var(--awake-space-4);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    pointer-events: none;
+    color: var(--awake-text-muted);
+}
+
+.floating-label input:focus + label,
+.floating-label input:not(:placeholder-shown) + label,
+.floating-label textarea:focus + label,
+.floating-label textarea:not(:placeholder-shown) + label {
+    top: var(--awake-space-1);
+    font-size: var(--awake-font-size-xs);
+    color: var(--awake-primary);
+    font-weight: 600;
+}
+
+/* スムーズアコーディオン */
+.smooth-accordion {
+    overflow: hidden;
+    transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.smooth-accordion.collapsed {
+    max-height: 0;
+}
+
+.smooth-accordion.expanded {
+    max-height: 500px;
+}
+
+/* パラレックススクロールヘルパー */
+.parallax-element {
+    transform: translateZ(0);
+    will-change: transform;
+}
+
+/* スムーズズーム */
+.smooth-zoom {
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.smooth-zoom:hover {
+    transform: scale(1.1);
+}
+
 /* レスポンシブヘルパー */
 @media (max-width: 768px) {
     .md\:hidden { display: none !important; }
@@ -1596,6 +2025,142 @@ body {
     .sm\:block { display: block; }
     .sm\:text-sm { font-size: var(--awake-font-size-sm); }
     .sm\:p-4 { padding: var(--awake-space-4); }
+}
+
+/* === 2025年トレンド：パーソナライゼーション・コンテキストアウェア === */
+
+/* パーソナライズドCTA */
+.personalized-cta {
+    position: relative;
+    overflow: hidden;
+    background: var(--awake-gradient-primary);
+    border-radius: var(--awake-radius-lg);
+    padding: var(--awake-space-6);
+    text-align: center;
+    color: white;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.personalized-cta::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+        45deg,
+        transparent,
+        rgba(255, 255, 255, 0.1),
+        transparent
+    );
+    transform: rotate(45deg);
+    transition: transform 0.8s;
+}
+
+.personalized-cta:hover::before {
+    transform: translateX(100%) rotate(45deg);
+}
+
+/* コンテキストアウェアメッセージ */
+.context-message {
+    background: rgba(102, 126, 234, 0.1);
+    border: 1px solid rgba(102, 126, 234, 0.2);
+    border-radius: var(--awake-radius);
+    padding: var(--awake-space-3) var(--awake-space-4);
+    margin-bottom: var(--awake-space-4);
+    font-size: var(--awake-font-size-sm);
+    color: var(--awake-primary);
+    font-weight: 500;
+    position: relative;
+    animation: contextSlideIn 0.5s ease-out;
+}
+
+@keyframes contextSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.context-message::before {
+    content: '💡';
+    margin-right: var(--awake-space-2);
+}
+
+/* === 2025年トレンド：動画コンテンツ統合 === */
+
+/* ビデオバックグラウンド */
+.video-background {
+    position: relative;
+    overflow: hidden;
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.video-background video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    transform: translateX(-50%) translateY(-50%);
+    z-index: -1;
+    filter: brightness(0.7);
+}
+
+/* インタラクティブビデオ */
+.interactive-video-container {
+    position: relative;
+    border-radius: var(--awake-radius-lg);
+    overflow: hidden;
+    box-shadow: var(--awake-shadow-xl);
+    transition: var(--awake-transition);
+}
+
+.interactive-video-container:hover {
+    transform: scale(1.02);
+    box-shadow: var(--awake-shadow-premium);
+}
+
+/* ビデオプレイボタン */
+.video-play-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80px;
+    height: 80px;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(20px);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: var(--awake-font-size-2xl);
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 3;
+}
+
+.video-play-button:hover {
+    transform: translate(-50%, -50%) scale(1.1);
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.video-play-button::before {
+    content: '▶';
+    margin-left: 4px;
 }
 
 /* === モーダル・オーバーレイスタイル === */
@@ -1821,15 +2386,118 @@ body {
     }
 }
 
-/* ダークモード対応（将来の拡張用） */
+/* === 2025年標準：ダークモード完全対応 === */
+
+/* ダークモード基本設定 */
 @media (prefers-color-scheme: dark) {
     :root {
-        --awake-bg-primary: #0f0f23;
-        --awake-bg-secondary: #1a1a2e;
-        --awake-text-primary: #ffffff;
-        --awake-text-secondary: #e2e8f0;
-        --awake-bg-glass: rgba(0, 0, 0, 0.8);
+        /* 2025年ダークモードカラーパレット */
+        --awake-bg-primary: #0d1117;      /* GitHub Dark Pro */
+        --awake-bg-secondary: #161b22;     /* サイドバー・カード */
+        --awake-bg-tertiary: #21262d;      /* ヘッダー・フッター */
+        --awake-bg-glass: rgba(13, 17, 23, 0.95);
+        --awake-bg-glass-light: rgba(22, 27, 34, 0.9);
+        
+        /* テキスト階層 */
+        --awake-text-primary: #f0f6fc;     /* 最高視認性 */
+        --awake-text-secondary: #c9d1d9;   /* セカンダリ */
+        --awake-text-muted: #8b949e;       /* ミュート */
+        --awake-text-light: #6e7681;       /* 補助情報 */
+        
+        /* アクセントカラー（ダーク用調整） */
+        --awake-primary: #58a6ff;          /* 明るいブルー */
+        --awake-primary-dark: #1f6feb;     /* ホバー用 */
+        --awake-primary-light: #79c0ff;    /* ライト用 */
+        
+        /* ボーダー・区切り線 */
+        --awake-border-primary: #30363d;
+        --awake-border-secondary: #21262d;
+        
+        /* シャドウ（ダークモード用） */
+        --awake-shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
+        --awake-shadow-lg: 0 8px 48px rgba(0, 0, 0, 0.6);
+        --awake-shadow-xl: 0 16px 64px rgba(0, 0, 0, 0.8);
+        --awake-shadow-premium: 0 20px 60px rgba(88, 166, 255, 0.3);
     }
+    
+    /* カード要素の調整 */
+    .service-card {
+        background: var(--awake-bg-secondary);
+        border-color: var(--awake-border-primary);
+    }
+    
+    /* フォーム要素の調整 */
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        background: var(--awake-bg-secondary);
+        border-color: var(--awake-border-primary);
+        color: var(--awake-text-primary);
+    }
+    
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+        background: var(--awake-bg-tertiary);
+        border-color: var(--awake-primary);
+    }
+    
+    /* ボタンの調整 */
+    .btn-outline {
+        color: var(--awake-primary);
+        border-color: var(--awake-primary);
+    }
+    
+    .btn-ghost:hover {
+        background: rgba(88, 166, 255, 0.1);
+    }
+}
+
+/* ダークモード切り替えボタン */
+.theme-toggle {
+    position: fixed;
+    top: 100px;
+    right: var(--awake-space-4);
+    z-index: var(--awake-z-tooltip);
+    background: var(--awake-bg-glass);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: var(--awake-radius-full);
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: var(--awake-transition);
+    color: var(--awake-text-primary);
+    font-size: var(--awake-font-size-lg);
+}
+
+.theme-toggle:hover {
+    transform: scale(1.1);
+    background: var(--awake-primary);
+    color: white;
+}
+
+.theme-toggle:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(88, 166, 255, 0.3);
+}
+
+/* ダークモード適用時のアニメーション */
+.dark-mode-transition {
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+/* 2025年トレンド：コンテキストアウェア背景 */
+.contextual-bg {
+    background: linear-gradient(
+        135deg,
+        var(--awake-bg-primary) 0%,
+        var(--awake-bg-secondary) 100%
+    );
+    transition: background 0.5s ease;
 }
 
 /* === サービスページ共通スタイル === */
