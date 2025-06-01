@@ -25,10 +25,10 @@
     --awake-bg-pearl: #fafbfc;
     --awake-bg-silver: #f8fafc;
     
-    /* 高コントラストテキスト */
-    --awake-text-ultra-dark: #0f172a;
-    --awake-text-premium-dark: #1e293b;
-    --awake-text-corporate: #374151;
+    /* 高コントラストテキスト - WCAG AAA準拠 */
+    --awake-text-ultra-dark: #000000;
+    --awake-text-premium-dark: #1a1a1a;
+    --awake-text-corporate: #2d2d2d;
     
     /* プレミアムシャドウ */
     --awake-shadow-elite: 0 25px 50px -12px rgba(0, 0, 0, 0.12);
@@ -44,28 +44,52 @@
     --awake-text-body: clamp(1.125rem, 2vw, 1.25rem);
 }
 
-/* === ダークモード対応（2025年標準） === */
+/* === ダークモード対応（2025年標準） - 高コントラスト版 === */
 @media (prefers-color-scheme: dark) {
     :root {
         --awake-bg-ultra-white: #0d1117;
         --awake-bg-pearl: #161b22;
         --awake-bg-silver: #21262d;
-        --awake-text-ultra-dark: #f0f6fc;
-        --awake-text-premium-dark: #e6edf3;
-        --awake-text-corporate: #c9d1d9;
+        --awake-text-ultra-dark: #ffffff;
+        --awake-text-premium-dark: #f0f6fc;
+        --awake-text-corporate: #e6edf3;
         --awake-gradient-glass: linear-gradient(135deg, rgba(22,27,34,0.95) 0%, rgba(33,38,45,0.9) 100%);
+    }
+    
+    /* ダークモード時のガラスモルフィズム調整 */
+    .glass-morphism-2025::before {
+        background: rgba(22, 27, 34, 0.9);
+    }
+    
+    /* ダークモード時のホログラフィックテキスト調整 */
+    .holographic-text {
+        filter: drop-shadow(0 0 2px rgba(245, 158, 11, 0.8));
     }
 }
 
 /* === 2025年 企業レベル コンポーネント === */
 
-/* ガラスモルフィズム2025 */
+/* ガラスモルフィズム2025 - 視認性改善版 */
 .glass-morphism-2025 {
     background: var(--awake-gradient-glass);
-    backdrop-filter: blur(20px) saturate(180%);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(15px) saturate(150%);
+    border: 1px solid rgba(255, 255, 255, 0.3);
     border-radius: 24px;
     box-shadow: var(--awake-shadow-glass);
+    /* 視認性向上のための追加背景 */
+    position: relative;
+}
+
+.glass-morphism-2025::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.85);
+    border-radius: 24px;
+    z-index: -1;
 }
 
 /* 3Dカード効果 */
@@ -105,15 +129,28 @@
     transform: scale(1.05);
 }
 
-/* ホログラフィックテキスト */
+/* ホログラフィックテキスト - 視認性改善版 */
 .holographic-text {
-    background: linear-gradient(45deg, #f59e0b, #d97706, #f59e0b, #d97706);
+    background: linear-gradient(45deg, #d97706, #f59e0b, #d97706, #f59e0b);
     background-size: 300% 300%;
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     animation: holographic-flow 3s ease-in-out infinite;
     font-weight: 700;
+    /* フォールバック用テキストシャドウ */
+    filter: drop-shadow(0 0 1px rgba(217, 119, 6, 0.8));
+    /* 視認性向上のための代替色設定 */
+    position: relative;
+}
+
+/* ホログラフィックテキストのフォールバック */
+@supports not (background-clip: text) {
+    .holographic-text {
+        background: none;
+        color: #d97706;
+        text-shadow: 0 0 10px rgba(217, 119, 6, 0.3);
+    }
 }
 
 @keyframes holographic-flow {
@@ -240,7 +277,7 @@
     color: white;
     padding: 1rem 2rem;
     border-radius: 16px;
-    border: none;
+    border: 2px solid #d97706;
     font-weight: 600;
     font-size: 1.125rem;
     cursor: pointer;
@@ -248,6 +285,9 @@
     box-shadow: var(--awake-shadow-premium);
     position: relative;
     overflow: hidden;
+    /* 視認性向上のための最小サイズ保証 */
+    min-height: 48px;
+    min-width: 120px;
 }
 
 .btn-2025-primary::before {
@@ -402,6 +442,31 @@
     will-change: backdrop-filter;
 }
 
+/* === 視認性向上ユーティリティ === */
+.high-contrast-text {
+    color: var(--awake-text-ultra-dark) !important;
+    font-weight: 600 !important;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.readable-background {
+    background: rgba(255, 255, 255, 0.95) !important;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.focus-visible {
+    outline: 3px solid #f59e0b !important;
+    outline-offset: 2px !important;
+}
+
+/* ボタンのフォーカス状態 */
+.btn-2025-primary:focus,
+.btn-2025-secondary:focus {
+    outline: 3px solid #fbbf24;
+    outline-offset: 2px;
+}
+
 /* アクセシビリティ */
 @media (prefers-reduced-motion: reduce) {
     .card-3d,
@@ -417,5 +482,20 @@
     .hover-lift:hover,
     .magnetic-hover:hover {
         transform: none;
+    }
+}
+
+/* 高コントラストモード対応 */
+@media (prefers-contrast: high) {
+    .holographic-text {
+        background: none !important;
+        color: #d97706 !important;
+        -webkit-text-fill-color: unset !important;
+    }
+    
+    .glass-morphism-2025 {
+        background: rgba(255, 255, 255, 0.95) !important;
+        backdrop-filter: none !important;
+        border: 2px solid #000 !important;
     }
 }
