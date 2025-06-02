@@ -3,18 +3,14 @@
  * 企業プレゼン対応・最高品質インタラクション
  */
 
+// 重複実行防止フラグ
+let awakeCorporateEnhancedInitialized = false;
+
 document.addEventListener('DOMContentLoaded', function() {
-    // 基本機能の初期化
-    initDarkModeToggle();
-    initPersonalization();
-    initMicroInteractions();
-    initVideoIntegration();
-    initRealTimeFeedback();
-    initContextAwareMessaging();
-    initSmoothScrollEnhancements();
-    init3DEffects();
+    if (awakeCorporateEnhancedInitialized) return;
+    awakeCorporateEnhancedInitialized = true;
     
-    // 2025年コーポレート拡張機能
+    // 2025年コーポレート拡張機能のみ（基本機能は2025-features.jsで実行）
     initCorporateAnimations();
     initIntersectionObserver();
     initPerformanceOptimization();
