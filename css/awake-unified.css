@@ -179,10 +179,10 @@ a:hover, a:focus {
 .hero {
     background: linear-gradient(135deg, rgba(102, 126, 234, 0.9), rgba(118, 75, 162, 0.9));
     color: white;
-    padding: var(--awake-space-8) 0;
+    padding: var(--awake-space-6) 0;
     text-align: center;
     position: relative;
-    min-height: 600px;
+    min-height: 400px;
     display: flex;
     align-items: center;
 }
@@ -323,8 +323,8 @@ a:hover, a:focus {
     }
     
     .hero {
-        padding: var(--awake-space-6) 0;
-        min-height: 400px;
+        padding: var(--awake-space-4) 0;
+        min-height: 300px;
     }
     
     .hero-content {
