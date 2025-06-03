@@ -155,17 +155,6 @@ a:hover, a:focus {
     justify-content: space-between;
     align-items: center;
     padding: 0.75rem 0;
-    height: 100%;
-}
-
-/* メインコンテンツのオフセット調整 */
-main {
-    padding-top: 0; /* sticky headerの場合は不要 */
-}
-
-/* ヒーローセクションの調整（ヘッダーとの重なりを防ぐ） */
-.hero {
-    margin-top: 0; /* stickyなので追加マージン不要 */
 }
 
 .header__logo a {
