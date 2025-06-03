@@ -1,33 +1,33 @@
 {
   "permissions": {
     "allow": [
-      "Bash(git config:*)",
-      "Bash(git commit:*)",
-      "Bash(git push:*)",
-      "Bash(npm run build:*)",
-      "Bash(sudo apt:*)",
-      "Bash(sudo apt install:*)",
-      "Bash(rm:*)",
-      "Bash(cat:*)",
-      "Bash(git add:*)",
+      // Git Operations - Version control management
+      "Bash(git:*)",
+      
+      // GitHub CLI - Repository and PR management
+      "Bash(gh:*)",
+      
+      // NPM Commands - Build and development
       "Bash(npm start)",
-      "Bash(gh pr create:*)",
-      "Bash(gh pr view:*)",
-      "Bash(find:*)",
+      "Bash(npm run:*)",
+      
+      // File Operations - Essential file manipulation
       "Bash(ls:*)",
+      "Bash(cat:*)",
+      "Bash(rm:*)",
+      "Bash(find:*)",
+      
+      // Search Tools - Content search and analysis
       "Bash(grep:*)",
       "Bash(rg:*)",
-      "Bash(/home/march/.nvm/versions/node/v22.16.0/lib/node_modules/@anthropic-ai/claude-code/vendor/ripgrep/x64-linux/rg -n \"img src=|background-image:\" /mnt/c/Users/march/my-website/services/ --type html)",
-      "Bash(gh pr list:*)",
-      "WebFetch(domain:github.com)",
-      "Bash(gh api:*)",
-      "Bash(git rev-parse:*)",
-      "Bash(git fetch:*)",
-      "Bash(git merge:*)",
+      
+      // System Commands - Basic system operations
       "Bash(true)",
-      "Bash(gh pr close:*)",
-      "Bash(gh issue list:*)",
-      "Bash(gh issue view:*)"
+      "Bash(sudo apt:*)",
+      
+      // Web Access - External resource fetching
+      "WebFetch(domain:github.com)",
+      "WebFetch(domain:awake-website.netlify.app)"
     ]
   },
   "enableAllProjectMcpServers": false
