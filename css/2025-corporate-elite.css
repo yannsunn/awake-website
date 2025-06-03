@@ -568,6 +568,15 @@ body {
     animation: slideInFromTop 0.5s ease-out;
     font-size: 0.9rem;
     color: var(--awake-text-premium-dark);
+    /* 確実にstatic表示 */
+    position: static !important;
+    display: block !important;
+    width: auto !important;
+    left: auto !important;
+    right: auto !important;
+    top: auto !important;
+    bottom: auto !important;
+    z-index: auto !important;
 }
 
 .context-message.personalized-message {
@@ -575,53 +584,17 @@ body {
 }
 
 .context-message.context-aware-message {
-    position: fixed;
-    top: 90px;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 1000;
-    max-width: 90%;
-    width: auto;
-    margin: 0;
-}
-
-@keyframes slideInFromTop {
-    from {
-        opacity: 0;
-        transform: translateY(-20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* === メッセージスタイル === */
-.context-message {
-    background: var(--awake-gradient-glass);
-    border: 1px solid rgba(245, 158, 11, 0.2);
-    border-radius: 12px;
-    padding: 1rem;
-    margin: 1rem 0;
-    backdrop-filter: blur(10px);
-    animation: slideInFromTop 0.5s ease-out;
-    font-size: 0.9rem;
-    color: var(--awake-text-premium-dark);
-}
-
-.context-message.personalized-message {
-    border-color: rgba(102, 126, 234, 0.3);
-}
-
-.context-message.context-aware-message {
-    position: fixed;
-    top: 90px;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 1000;
-    max-width: 90%;
-    width: auto;
-    margin: 0;
+    position: static !important;
+    display: block !important;
+    width: auto !important;
+    max-width: 100%;
+    margin: 1rem auto;
+    left: auto !important;
+    right: auto !important;
+    top: auto !important;
+    bottom: auto !important;
+    z-index: auto !important;
+    transform: none !important;
 }
 
 @keyframes slideInFromTop {
