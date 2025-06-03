@@ -147,7 +147,7 @@ a:hover, a:focus {
     box-shadow: var(--awake-shadow);
     position: sticky;
     top: 0;
-    z-index: 1000;
+    z-index: 1100;
 }
 
 .header__inner {
@@ -155,6 +155,17 @@ a:hover, a:focus {
     justify-content: space-between;
     align-items: center;
     padding: 0.75rem 0;
+    height: 100%;
+}
+
+/* メインコンテンツのオフセット調整 */
+main {
+    padding-top: 0; /* sticky headerの場合は不要 */
+}
+
+/* ヒーローセクションの調整（ヘッダーとの重なりを防ぐ） */
+.hero {
+    margin-top: 0; /* stickyなので追加マージン不要 */
 }
 
 .header__logo a {
@@ -173,6 +184,72 @@ a:hover, a:focus {
     font-weight: 500;
     color: var(--awake-text-body);
     padding: var(--awake-space-1) var(--awake-space-2);
+}
+
+/* ヘッダーナビゲーションドロップダウン */
+.header__nav-item.has-dropdown {
+    position: relative;
+}
+
+.services-dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: var(--awake-bg-white);
+    box-shadow: var(--awake-shadow-lg);
+    border-radius: 8px;
+    padding: 1rem;
+    min-width: 300px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+    z-index: 1200; /* ヘッダーより高い優先度 */
+}
+
+.header__nav-item.has-dropdown:hover .services-dropdown {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+/* モバイルメニュー */
+.header__menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .header__menu-toggle {
+        display: block;
+    }
+    
+    .header__nav {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: var(--awake-bg-white);
+        box-shadow: var(--awake-shadow);
+        transform: translateY(-10px);
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+    }
+    
+    .header__nav.active {
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+    }
+    
+    .header__nav-list {
+        flex-direction: column;
+        padding: 1rem 0;
+    }
 }
 
 /* === HERO SECTION === */

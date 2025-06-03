@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', function() {
     if (awake2025Initialized) return;
     awake2025Initialized = true;
     
+    initHeaderMenu(); // ヘッダーメニュー機能を追加
     initDarkModeToggle();
     initPersonalization();
     initMicroInteractions();
@@ -19,6 +20,30 @@ document.addEventListener('DOMContentLoaded', function() {
     initSmoothScrollEnhancements();
     init3DEffects();
 });
+
+/**
+ * ヘッダーメニュー機能
+ */
+function initHeaderMenu() {
+    const menuToggle = document.querySelector('.header__menu-toggle');
+    const nav = document.querySelector('.header__nav');
+    
+    if (menuToggle && nav) {
+        menuToggle.addEventListener('click', function() {
+            nav.classList.toggle('active');
+            const isOpen = nav.classList.contains('active');
+            this.setAttribute('aria-expanded', isOpen);
+        });
+        
+        // モバイルメニュー外クリック時に閉じる
+        document.addEventListener('click', function(event) {
+            if (!event.target.closest('.header')) {
+                nav.classList.remove('active');
+                menuToggle.setAttribute('aria-expanded', 'false');
+            }
+        });
+    }
+}
 
 /**
  * ダークモード切り替え機能
@@ -423,9 +448,26 @@ function displayContextMessage(message) {
         messageElement.className = 'context-message context-aware-message';
         messageElement.innerHTML = message;
         
-        const header = document.querySelector('.header');
-        if (header) {
-            header.after(messageElement);
+        // 確実にstatic表示にする
+        messageElement.style.position = 'static';
+        messageElement.style.display = 'block';
+        messageElement.style.width = 'auto';
+        messageElement.style.left = 'auto';
+        messageElement.style.right = 'auto';
+        messageElement.style.top = 'auto';
+        messageElement.style.bottom = 'auto';
+        messageElement.style.zIndex = 'auto';
+        
+        // ヒーローコンテンツ内に適切に挿入
+        const hero = document.querySelector('.hero-content');
+        if (hero) {
+            hero.insertBefore(messageElement, hero.firstChild);
+        } else {
+            // フォールバック: サービスセクションの前に挿入
+            const servicesSection = document.querySelector('#services');
+            if (servicesSection) {
+                servicesSection.parentNode.insertBefore(messageElement, servicesSection);
+            }
         }
     }
 }
