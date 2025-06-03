@@ -12,10 +12,10 @@ This is a Japanese corporate website for 株式会社Awake (Awake Inc.), a stati
 # Start local development server (uses serve package)
 npm start
 
-# Build minified CSS (combines critical.css, services.css, and core.css)
+# Build production assets (minifies CSS)
 npm run build
 
-# Minify CSS files
+# Minify CSS files individually
 npm run minify-css
 
 # Minify JavaScript files
@@ -24,38 +24,69 @@ npm run minify-js
 
 ## Architecture
 
-### CSS Structure
-The project has a dual CSS architecture:
-- `assets/css/` - Source CSS files organized by purpose
-- `css/` - Compiled/processed CSS files
+### CSS Architecture (Unified System)
+The project uses a unified CSS system centered around `css/awake-unified.css`:
+- **Unified CSS**: `css/awake-unified.css` - Primary stylesheet with 21:1 contrast ratio, WCAG AAA compliance
+- **Elite Design**: `css/2025-corporate-elite.css` - Premium design system with glass morphism, 3D effects
+- **Legacy Structure**: `assets/css/` - Original source files (being phased out)
 
-CSS is modularly organized:
-- `base/` - Foundation styles (reset, variables, animations, utilities)
-- `components/` - Reusable UI components (forms, service cards, etc.)
-- `layout/` - Structural components (header, footer, sections)
-- `pages/` - Page-specific styles
-- `services/` - Service page-specific styles
+Key CSS features:
+- High contrast design (21:1 ratio) for optimal visibility
+- Japanese font optimization with Noto Sans JP
+- Glass morphism and premium visual effects
+- Dark mode support with system preference detection
+
+### JavaScript Architecture
+- **2025 Features**: `js/2025-features.js` - Modern web features (dark mode, personalization, micro-interactions)
+- **Corporate Enhanced**: `js/2025-corporate-enhanced.js` - Enterprise-grade interactions and animations
+- **Bundle**: `js/bundle.min.js` - Minified production JavaScript
+- **Duplicate Prevention**: All JS files include initialization flags to prevent multiple executions
 
 ### Page Structure
 - Homepage: `index.html`
 - Service pages: `/services/{web|ec|video|furniture}/index.html`
 - Legal pages: `/legal/{terms|privacy-policy}/index.html`
 
-Each service page has its own CSS and JavaScript files for specific functionality.
+Each service page follows a consistent structure with:
+- Progressive Web App metadata
+- Schema.org JSON-LD structured data
+- Resource hints for performance
+- Unified CSS references
 
 ### Build Process
-1. CSS files are concatenated and minified into `css/styles.min.css`
-2. JavaScript is minified into `js/bundle.min.js`
-3. The site is deployed to Netlify with security headers configured in `netlify.toml`
+1. CSS: `critical.css` + `services.css` + `core.css` → `styles.min.css` (via clean-css)
+2. JavaScript: `bundle.js` → `bundle.min.js` (via uglify-js)
+3. Deployment: Static files served via Netlify with strict security headers
+
+### Deployment Configuration
+Netlify configuration (`netlify.toml`) includes:
+- Strict security headers (CSP, X-Frame-Options, HSTS)
+- Content Security Policy allowing specific domains (Google Fonts, Unsplash, etc.)
+- SPA-style redirects for service and legal pages
 
 ## Important Considerations
 
-1. **Japanese Language**: All content is in Japanese. Maintain proper encoding and language attributes.
+1. **Japanese Language**: All content is in Japanese. Maintain proper encoding (`UTF-8`) and `lang="ja"` attributes.
 
-2. **Security Headers**: The site implements strict security headers via Netlify configuration, including CSP and X-Frame-Options.
+2. **Unified CSS System**: Use `awake-unified.css` as the primary stylesheet. It consolidates 22+ CSS files into a clean, maintainable structure.
 
-3. **Performance**: The site prioritizes performance with minified assets and optimized images.
+3. **High Contrast Design**: The design prioritizes accessibility with 21:1 contrast ratios. Maintain this standard when adding new styles.
 
-4. **No Framework**: This is vanilla HTML/CSS/JS - no React, Vue, or other frameworks. Keep solutions simple and framework-free.
+4. **JavaScript Duplicate Prevention**: All JS files use initialization flags. Follow this pattern when adding new scripts:
+   ```javascript
+   let myFeatureInitialized = false;
+   if (myFeatureInitialized) return;
+   myFeatureInitialized = true;
+   ```
 
-5. **Service Pages**: Each service has its own directory with dedicated styles and scripts. Maintain this separation when adding features.
+5. **No Framework**: This is vanilla HTML/CSS/JS. Avoid introducing frameworks that would change the fundamental architecture.
+
+6. **Service Page Consistency**: Each service page should include:
+   - PWA metadata and theme colors
+   - Resource hints for performance
+   - Schema.org structured data
+   - Consistent CSS and JS references
+
+7. **Security**: The site implements strict CSP. When adding external resources, ensure they're whitelisted in `netlify.toml`.
+
+8. **Performance**: Images use Unsplash CDN with optimization parameters (`auto=format&fit=crop&w=800&q=80`). Maintain this pattern for new images.
