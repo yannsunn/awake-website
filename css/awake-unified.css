@@ -154,11 +154,11 @@ a:hover, a:focus {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: var(--awake-space-2) 0;
+    padding: 0.75rem 0;
 }
 
 .header__logo a {
-    font-size: var(--awake-text-xl);
+    font-size: var(--awake-text-lg);
     font-weight: 700;
     color: var(--awake-text-primary);
 }
@@ -166,7 +166,7 @@ a:hover, a:focus {
 .header__nav-list {
     display: flex;
     list-style: none;
-    gap: var(--awake-space-4);
+    gap: var(--awake-space-3);
 }
 
 .header__nav-item a {
@@ -331,9 +331,13 @@ a:hover, a:focus {
         padding: var(--awake-space-4);
     }
     
+    .header__inner {
+        padding: 0.5rem 0;
+    }
+    
     .header__nav-list {
         flex-direction: column;
-        gap: var(--awake-space-2);
+        gap: var(--awake-space-1);
     }
     
     .services__grid {
