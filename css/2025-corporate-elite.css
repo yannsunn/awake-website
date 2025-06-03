@@ -713,7 +713,7 @@ body {
 /* プレミアムヒーローセクション */
 .hero-premium-2025 {
     position: relative;
-    min-height: 100vh;
+    min-height: 60vh;
     display: flex;
     align-items: center;
     background: var(--awake-gradient-hero);
