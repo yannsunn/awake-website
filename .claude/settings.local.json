@@ -1,34 +1,27 @@
 {
   "permissions": {
     "allow": [
-      // Git Operations - Version control management
-      "Bash(git:*)",
-      
-      // GitHub CLI - Repository and PR management
-      "Bash(gh:*)",
-      
-      // NPM Commands - Build and development
-      "Bash(npm start)",
-      "Bash(npm run:*)",
-      
-      // File Operations - Essential file manipulation
-      "Bash(ls:*)",
-      "Bash(cat:*)",
-      "Bash(rm:*)",
-      "Bash(find:*)",
-      
-      // Search Tools - Content search and analysis
+      "Bash(gh pr edit:*)",
+      "Bash(pkill:*)",
+      "Bash(/home/march/.nvm/versions/node/v22.16.0/lib/node_modules/@anthropic-ai/claude-code/vendor/ripgrep/x64-linux/rg \"gradient-elite|text-glow|heading-h1\" css/corporate-master.css -A 10 -B 2)",
       "Bash(grep:*)",
-      "Bash(rg:*)",
-      
-      // System Commands - Basic system operations
+      "Bash(rm:*)",
+      "Bash(npm start)",
+      "Bash(find:*)",
+      "Bash(for file in services/*/index.html)",
+      "Bash(do sed -i 's/#667eea/#8b5cf6/g' \"$file\")",
+      "Bash(done)",
+      "Bash(do sed -i 's/#0d1117/#6d28d9/g' \"$file\")",
+      "Bash(do sed -i 's|/css/corporate-master.css|/css/awake-unified.css|g' \"$file\")",
+      "Bash(do sed -i 's/corporate-master.css/awake-unified.css/g' \"$file\")",
+      "Bash(do sed -i 's/glass-card/service-card/g; s/btn-glow//g; s/hover-3d//g; s/card-3d//g; s/magnetic-hover//g; s/hover-lift//g; s/floating-icon//g; s/holographic-text//g; s/text-glow//g; s/text-gradient-premium//g; s/glass-card-mini/service-card/g' \"$file\")",
+      "Bash(do sed -i 's|/js/2025-corporate-enhanced.js||g; s|<link rel=\"\"stylesheet\"\" href=\"\"/css/image-fix.css\"\">||g; s|<link rel=\"\"manifest\"\" href=\"\"/manifest.json\"\">||g' \"$file\")",
+      "Bash(npm run lint)",
       "Bash(true)",
-      "Bash(sudo apt:*)",
-      
-      // Web Access - External resource fetching
-      "WebFetch(domain:github.com)",
-      "WebFetch(domain:awake-website.netlify.app)"
-    ]
-  },
-  "enableAllProjectMcpServers": false
+      "Bash(npm run:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)"
+    ],
+    "deny": []
+  }
 }

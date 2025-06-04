@@ -3,36 +3,39 @@
    企業プレゼン対応・最高品質デザインシステム
    ======================================== */
 
-/* === 2025年カラーパレット - 高級感・信頼性重視 === */
+/* === 2025年カラーパレット - 紫基調・視認性重視 === */
 :root {
-    /* メインブランド（深みのある紺系） */
-    --awake-primary-2025: #1e293b;
-    --awake-primary-2025-light: #334155;
-    --awake-primary-2025-ultra: #0f172a;
+    /* メインブランド（紫基調） */
+    --awake-primary-2025: #8b5cf6;         /* 鮮やかな紫 */
+    --awake-primary-2025-light: #a78bfa;   /* 薄い紫 */
+    --awake-primary-2025-dark: #7c3aed;    /* 濃い紫 */
+    --awake-primary-2025-ultra: #6d28d9;   /* 深い紫 */
     
-    /* アクセント（プレミアム金） */
-    --awake-accent-gold: #f59e0b;
-    --awake-accent-gold-light: #fbbf24;
-    --awake-accent-premium: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+    /* アクセント（ピンク系） */
+    --awake-accent-pink: #ec4899;
+    --awake-accent-pink-light: #f9a8d4;
+    --awake-accent-gradient: linear-gradient(135deg, #8b5cf6 0%, #ec4899 100%);
     
     /* 2025年高級カラーパレット */
-    --awake-luxury-platinum: #e5e7eb;
-    --awake-luxury-silver: #f3f4f6;
-    --awake-luxury-champagne: #fef3c7;
-    --awake-luxury-rose-gold: #fed7aa;
+    --awake-luxury-purple-light: #f3e8ff;  /* 極薄紫 */
+    --awake-luxury-lavender: #e9d5ff;      /* ラベンダー */
+    --awake-luxury-silver: #f9fafb;        /* シルバーグレー */
+    --awake-luxury-white: #ffffff;         /* 純白 */
     
-    /* グラデーション2025 */
-    --awake-gradient-elite: linear-gradient(135deg, #1e293b 0%, #334155 50%, #475569 100%);
-    --awake-gradient-premium: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
-    --awake-gradient-glass: linear-gradient(135deg, rgba(255,255,255,0.95) 0%, rgba(248,250,252,0.9) 100%);
-    --awake-gradient-luxury: linear-gradient(135deg, #fef3c7 0%, #fed7aa 50%, #f59e0b 100%);
-    --awake-gradient-platinum: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 50%, #cbd5e1 100%);
-    --awake-gradient-hero: linear-gradient(135deg, rgba(30, 41, 59, 0.95) 0%, rgba(51, 65, 85, 0.9) 50%, rgba(71, 85, 105, 0.85) 100%);
+    /* グラデーション2025（紫基調） */
+    --awake-gradient-elite: linear-gradient(135deg, #f3e8ff 0%, #e9d5ff 100%);  /* 薄紫グラデ */
+    --awake-gradient-premium: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%); /* 紫グラデ */
+    --awake-gradient-glass: linear-gradient(135deg, rgba(255,255,255,0.98) 0%, rgba(243,232,255,0.95) 100%);
+    --awake-gradient-luxury: linear-gradient(135deg, #8b5cf6 0%, #a78bfa 50%, #ec4899 100%);
+    --awake-gradient-platinum: linear-gradient(135deg, #ffffff 0%, #f9fafb 50%, #f3e8ff 100%);
+    --awake-gradient-hero: linear-gradient(135deg, rgba(139, 92, 246, 0.08) 0%, rgba(236, 72, 153, 0.05) 100%);
     
-    /* 背景 */
+    /* 背景（明るい色調） */
     --awake-bg-ultra-white: #ffffff;
-    --awake-bg-pearl: #fafbfc;
-    --awake-bg-silver: #f8fafc;
+    --awake-bg-pearl: #faf5ff;        /* 薄紫がかった白 */
+    --awake-bg-silver: #f9fafb;       /* ニュートラルグレー */
+    --awake-bg-section: #ffffff;      /* セクションは白 */
+    --awake-bg-purple-light: rgba(139, 92, 246, 0.05); /* 極薄紫 */
     
     /* 高コントラストテキスト - WCAG AAA準拠 */
     --awake-text-ultra-dark: #000000;
@@ -74,11 +77,6 @@
     .glass-morphism-2025::before {
         background: rgba(22, 27, 34, 0.9);
     }
-    
-    /* ダークモード時のホログラフィックテキスト調整 */
-    .holographic-text {
-        filter: drop-shadow(0 0 2px rgba(245, 158, 11, 0.8));
-    }
 }
 
 /* === 2025年 企業レベル コンポーネント === */
@@ -100,6 +98,7 @@ body {
     max-width: var(--awake-container-max);
     margin: 0 auto;
     padding: 0 2rem;
+    position: relative;
 }
 
 .container-medium {
@@ -114,229 +113,101 @@ body {
     padding: 0 2rem;
 }
 
-/* PC用改行最適化レイアウト */
-@media (min-width: 1024px) {
-    .container {
-        padding: 0 3rem;
-    }
-    
-    /* テキストブロックの最大幅制限（可読性向上） */
-    .text-content-block {
-        max-width: 65ch; /* 理想的な1行文字数 */
-        margin: 0 auto;
-    }
-    
-    /* 2カラムレイアウト */
-    .two-column-layout {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 4rem;
-        align-items: center;
-    }
-    
-    /* 3カラムレイアウト */
-    .three-column-layout {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 3rem;
-    }
-    
-    /* PC専用改行の表示 */
-    .pc-break {
-        display: inline;
-    }
-}
+/* === 2025年 高級コンポーネント === */
 
-/* モバイル対応 - PC専用改行を非表示 */
-@media (max-width: 1023px) {
-    .pc-break {
-        display: none;
-    }
-    
-    /* モバイル用レイアウト調整 */
-    .three-column-layout {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-    }
-    
-    .two-column-layout {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-    }
-}
-/* ガラスモルフィズム2025 - 視認性改善版 */
-.glass-morphism-2025 {
-    background: var(--awake-gradient-glass);
-    backdrop-filter: blur(15px) saturate(150%);
-    border: 1px solid rgba(255, 255, 255, 0.3);
+/* 高級カード - ガラスモルフィズム */
+.luxury-card-2025 {
+    background: var(--awake-bg-glass);
+    border: 1px solid rgba(139, 92, 246, 0.1);
     border-radius: 24px;
-    box-shadow: var(--awake-shadow-glass);
-    /* 視認性向上のための追加背景 */
+    padding: 2.5rem;
     position: relative;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
-.glass-morphism-2025::before {
+.luxury-card-2025::before {
     content: '';
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(255, 255, 255, 0.85);
-    border-radius: 24px;
+    background: var(--awake-gradient-glass);
+    opacity: 0.5;
     z-index: -1;
+}
+
+.luxury-card-2025:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--awake-shadow-elite);
+    border-color: rgba(139, 92, 246, 0.2);
+}
+
+/* ガラスモルフィズム効果 */
+.glass-morphism-2025 {
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    background: rgba(255, 255, 255, 0.95);
+    border: 1px solid rgba(139, 92, 246, 0.08);
+    border-radius: 20px;
+    box-shadow: 0 8px 32px 0 rgba(139, 92, 246, 0.1);
 }
 
 /* 3Dカード効果 */
 .card-3d {
-    perspective: 1000px;
     transform-style: preserve-3d;
-    transition: transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transform: perspective(1000px) rotateY(0deg);
+    transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
 .card-3d:hover {
-    transform: rotateY(5deg) rotateX(5deg) translateZ(20px);
+    transform: perspective(1000px) rotateY(5deg) rotateX(5deg) translateZ(20px);
 }
 
-.card-3d-inner {
-    transition: transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    transform-style: preserve-3d;
-}
-
-/* ホバーリフト効果 */
+/* 高級ホバーリフト */
 .hover-lift {
-    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), 
-                box-shadow 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .hover-lift:hover {
-    transform: translateY(-12px) scale(1.02);
-    box-shadow: var(--awake-shadow-elite);
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: var(--awake-shadow-premium);
 }
 
-/* マグネティックホバー */
-.magnetic-hover {
-    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    cursor: pointer;
-}
-
-.magnetic-hover:hover {
-    transform: scale(1.05);
-}
-
-/* ホログラフィックテキスト - 視認性改善版 */
-.holographic-text {
-    background: linear-gradient(45deg, #d97706, #f59e0b, #d97706, #f59e0b);
-    background-size: 300% 300%;
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    animation: holographic-flow 3s ease-in-out infinite;
-    font-weight: 700;
-    /* フォールバック用テキストシャドウ */
-    filter: drop-shadow(0 0 1px rgba(217, 119, 6, 0.8));
-    /* 視認性向上のための代替色設定 */
-    position: relative;
-}
-
-/* ホログラフィックテキストのフォールバック */
-@supports not (background-clip: text) {
-    .holographic-text {
-        background: none;
-        color: #d97706;
-        text-shadow: 0 0 10px rgba(217, 119, 6, 0.3);
-    }
-}
-
-@keyframes holographic-flow {
-    0%, 100% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-}
-
-/* テキストグロウ */
-.text-glow {
-    text-shadow: 0 0 20px rgba(245, 158, 11, 0.3),
-                 0 0 40px rgba(245, 158, 11, 0.2),
-                 0 0 80px rgba(245, 158, 11, 0.1);
-    transition: text-shadow 0.3s ease;
-}
-
-.text-glow:hover {
-    text-shadow: 0 0 20px rgba(245, 158, 11, 0.5),
-                 0 0 40px rgba(245, 158, 11, 0.3),
-                 0 0 80px rgba(245, 158, 11, 0.2);
-}
-
-/* フローティングアイコン */
-.floating-icon {
-    animation: float-gentle 3s ease-in-out infinite;
-    display: inline-block;
-}
-
-@keyframes float-gentle {
-    0%, 100% { transform: translateY(0px); }
-    50% { transform: translateY(-8px); }
-}
-
-/* リップル効果 */
-.ripple-effect {
-    position: relative;
-    overflow: hidden;
-}
-
-.ripple-animation {
-    position: absolute;
-    border-radius: 50%;
-    background: rgba(245, 158, 11, 0.3);
-    transform: scale(0);
-    animation: ripple 0.6s linear;
-    pointer-events: none;
-}
-
-@keyframes ripple {
-    to {
-        transform: scale(4);
-        opacity: 0;
-    }
-}
-
-/* ホログラフィック背景 */
-.holographic-bg {
-    background: linear-gradient(45deg, rgba(245, 158, 11, 0.1), rgba(217, 119, 6, 0.1));
-    border: 1px solid rgba(245, 158, 11, 0.2);
-    backdrop-filter: blur(10px);
-}
-
-/* === 2025年 高品質グラデーション === */
+/* === 2025年 高品質グラデーション（視認性優先） === */
 .gradient-elite {
-    background: var(--awake-gradient-elite);
-    color: white;
+    /* グラデーションを無効化してシンプルなテキストに */
+    background: none !important;
+    color: var(--awake-text-ultra-dark) !important;
 }
 
 .gradient-premium {
-    background: var(--awake-gradient-premium);
-    color: white;
+    background: none !important;
+    color: var(--awake-text-ultra-dark) !important;
 }
 
 /* === 企業プレゼン対応 テキスト階層 - 視認性最適化版 === */
 .heading-hero {
     font-size: var(--awake-text-hero);
-    font-weight: 700; /* 軽量化: 800 → 700 */
-    line-height: 1.3; /* 読みやすく調整 */
+    font-weight: 700;
+    line-height: 1.3;
     letter-spacing: 0;
     color: var(--awake-text-ultra-dark);
-    margin-bottom: 1.5rem; /* 適切な間隔 */
-    word-spacing: normal; /* 自然な単語間隔 */
+    margin-bottom: 1.5rem;
+    word-spacing: normal;
 }
 
 .heading-h1 {
     font-size: var(--awake-text-h1);
-    font-weight: 600; /* 軽量化: 700 → 600 */
+    font-weight: 700;
     line-height: 1.4;
     letter-spacing: 0;
-    color: var(--awake-text-ultra-dark);
+    color: var(--awake-text-ultra-dark) !important;
     margin-bottom: 1.25rem;
     word-spacing: normal;
+    background: none !important;
+    text-shadow: none !important;
 }
 
 .heading-h2 {
@@ -351,7 +222,7 @@ body {
 
 .heading-h3 {
     font-size: var(--awake-text-h3);
-    font-weight: 500; /* 軽量化: 600 → 500 */
+    font-weight: 500;
     line-height: 1.6;
     letter-spacing: 0;
     color: var(--awake-text-premium-dark);
@@ -361,56 +232,35 @@ body {
 
 .text-large {
     font-size: var(--awake-text-large);
-    font-weight: 400; /* 軽量化: 500 → 400 */
+    font-weight: 400;
     line-height: 1.7;
-    letter-spacing: 0;
     color: var(--awake-text-corporate);
-    margin-bottom: 1rem;
-    word-spacing: normal;
+    margin-bottom: 1.5rem;
 }
 
 .text-body-premium {
     font-size: var(--awake-text-body);
     font-weight: 400;
-    line-height: 1.7;
-    letter-spacing: 0;
+    line-height: 1.8;
     color: var(--awake-text-corporate);
     margin-bottom: 1rem;
-    word-spacing: normal;
 }
 
-/* === 高品質ボタン === */
+/* === 2025年 プレミアムボタン === */
 .btn-2025-primary {
     background: var(--awake-gradient-premium);
     color: white;
-    padding: 1rem 2rem;
+    padding: 1rem 2.5rem;
+    border: none;
     border-radius: 16px;
-    border: 2px solid #d97706;
     font-weight: 600;
     font-size: 1.125rem;
     cursor: pointer;
-    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    box-shadow: var(--awake-shadow-premium);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     position: relative;
     overflow: hidden;
-    /* 視認性向上のための最小サイズ保証 */
     min-height: 48px;
     min-width: 120px;
-}
-
-.btn-2025-primary::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
-    transition: left 0.5s;
-}
-
-.btn-2025-primary:hover::before {
-    left: 100%;
 }
 
 .btn-2025-primary:hover {
@@ -418,94 +268,92 @@ body {
     box-shadow: var(--awake-shadow-elite);
 }
 
-.btn-2025-secondary {
-    background: transparent;
+.btn-platinum-2025 {
+    background: var(--awake-gradient-platinum);
     color: var(--awake-primary-2025);
-    padding: 1rem 2rem;
-    border: 2px solid var(--awake-primary-2025);
-    border-radius: 16px;
-    font-weight: 600;
-    font-size: 1.125rem;
+    padding: 0.875rem 2rem;
+    border: 1px solid rgba(139, 92, 246, 0.2);
+    border-radius: 12px;
+    font-weight: 500;
+    font-size: 1rem;
     cursor: pointer;
-    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    position: relative;
-    overflow: hidden;
+    transition: all 0.3s ease;
 }
 
-.btn-2025-secondary::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 0;
-    height: 100%;
+.btn-platinum-2025:hover {
     background: var(--awake-primary-2025);
-    transition: width 0.3s ease;
-    z-index: -1;
-}
-
-.btn-2025-secondary:hover::before {
-    width: 100%;
-}
-
-.btn-2025-secondary:hover {
     color: white;
-    transform: translateY(-3px);
+    transform: translateY(-2px);
     box-shadow: var(--awake-shadow-premium);
 }
 
-/* === 2025年 セクション背景 - 視認性最適化版 === */
+/* === 2025年 セクション背景 - 紫基調・視認性最適化版 === */
 .section-2025-white {
-    background: var(--awake-bg-ultra-white);
+    background: #ffffff;
     position: relative;
-    padding: 4rem 0; /* 追加: セクション内余白 */
+    padding: 4rem 0;
 }
 
 .section-2025-pearl {
-    background: var(--awake-bg-pearl);
+    background: #faf5ff; /* 薄紫がかった白 */
     position: relative;
-    padding: 4rem 0; /* 追加: セクション内余白 */
+    padding: 4rem 0;
 }
 
 .section-2025-gradient {
-    background: linear-gradient(135deg, var(--awake-bg-pearl) 0%, var(--awake-bg-silver) 100%);
+    background: linear-gradient(135deg, rgba(139, 92, 246, 0.03) 0%, rgba(236, 72, 153, 0.02) 100%);
     position: relative;
-    padding: 5rem 0; /* 追加: ヒーローセクション用大きな余白 */
+    padding: 5rem 0;
 }
 
-/* 装飾要素 */
-.section-2025-white::before,
-.section-2025-pearl::before,
-.section-2025-gradient::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: radial-gradient(circle at 20% 80%, rgba(245, 158, 11, 0.05) 0%, transparent 50%),
-                radial-gradient(circle at 80% 20%, rgba(30, 41, 59, 0.05) 0%, transparent 50%);
-    pointer-events: none;
+/* グラデーションメッシュ背景（紫基調・明るい） */
+.bg-gradient-mesh {
+    background: 
+        radial-gradient(circle at 20% 80%, rgba(139, 92, 246, 0.08) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(236, 72, 153, 0.06) 0%, transparent 50%),
+        radial-gradient(circle at 40% 40%, rgba(167, 139, 250, 0.05) 0%, transparent 50%),
+        #faf5ff;
+    position: relative;
+}
+
+/* === 2025年 マイクロインタラクション === */
+
+/* ホログラフィックテキスト */
+.holographic-text {
+    background: var(--awake-gradient-luxury);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    position: relative;
+    font-weight: 700;
+}
+
+/* エレガントなテキストエフェクト - 視認性最優先版 */
+.elegant-text-2025 {
+    /* 視認性優先：透明効果を削除して確実な黒文字に */
+    color: var(--awake-text-ultra-dark) !important;
+    background: none !important;
+    background-clip: unset !important;
+    -webkit-background-clip: unset !important;
+    -webkit-text-fill-color: var(--awake-text-ultra-dark) !important;
+    animation: none !important;
+    font-weight: 700;
+    position: relative;
+    text-shadow: none !important;
+}
+
+/* 視認性最優先：問題のあるエフェクトクラスを無効化 */
+.text-glow {
+    /* グロウ効果を削除して明確な文字表示 */
+    text-shadow: none !important;
+    color: var(--awake-text-ultra-dark) !important;
 }
 
 /* === レスポンシブ - 視認性最適化版 === */
 @media (max-width: 768px) {
-    /* モバイルでの3D効果無効化 */
-    .card-3d:hover {
-        transform: none;
-    }
-    
-    .hover-lift:hover {
-        transform: translateY(-6px) scale(1.01);
-    }
-    
-    .magnetic-hover:hover {
-        transform: scale(1.02);
-    }
-    
-    /* モバイル用テキスト調整 - 読みやすさ重視 */
+    /* モバイル用テキスト調整 */
     .heading-hero {
-        font-size: clamp(1.75rem, 5vw, 2.5rem); /* モバイル専用サイズ */
+        font-size: clamp(1.75rem, 5vw, 2.5rem);
         line-height: 1.3;
         margin-bottom: 1.5rem;
         text-align: center;
@@ -518,26 +366,6 @@ body {
         text-align: center;
     }
     
-    .heading-h2 {
-        font-size: clamp(1.375rem, 3.5vw, 1.75rem);
-        line-height: 1.5;
-        margin-bottom: 1rem;
-        text-align: center;
-    }
-    
-    .text-large {
-        font-size: clamp(1rem, 2.5vw, 1.125rem);
-        line-height: 1.6;
-        margin-bottom: 1rem;
-        text-align: center;
-    }
-    
-    .text-body-premium {
-        font-size: clamp(0.875rem, 2vw, 1rem);
-        line-height: 1.6;
-        margin-bottom: 1rem;
-    }
-    
     /* セクション間隔をモバイル用に調整 */
     .section-2025-white,
     .section-2025-pearl {
@@ -547,330 +375,31 @@ body {
     .section-2025-gradient {
         padding: 4rem 0;
     }
-    
-    /* ボタンのタップ領域拡大 */
-    .btn-2025-primary,
-    .btn-2025-secondary {
-        min-height: 52px; /* 48px → 52px */
-        min-width: 140px; /* 120px → 140px */
-        padding: 1.25rem 2.5rem; /* より大きなタップ領域 */
-    }
-}
-
-/* === メッセージスタイル === */
-.context-message {
-    background: var(--awake-gradient-glass);
-    border: 1px solid rgba(245, 158, 11, 0.2);
-    border-radius: 12px;
-    padding: 1rem;
-    margin: 1rem 0;
-    backdrop-filter: blur(10px);
-    animation: slideInFromTop 0.5s ease-out;
-    font-size: 0.9rem;
-    color: var(--awake-text-premium-dark);
-    /* 確実にstatic表示 */
-    position: static !important;
-    display: block !important;
-    width: auto !important;
-    left: auto !important;
-    right: auto !important;
-    top: auto !important;
-    bottom: auto !important;
-    z-index: auto !important;
-}
-
-.context-message.personalized-message {
-    border-color: rgba(102, 126, 234, 0.3);
-}
-
-.context-message.context-aware-message {
-    position: static !important;
-    display: block !important;
-    width: auto !important;
-    max-width: 100%;
-    margin: 1rem auto;
-    left: auto !important;
-    right: auto !important;
-    top: auto !important;
-    bottom: auto !important;
-    z-index: auto !important;
-    transform: none !important;
-}
-
-@keyframes slideInFromTop {
-    from {
-        opacity: 0;
-        transform: translateY(-20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* === 高パフォーマンス最適化 === */
-.card-3d,
-.hover-lift,
-.magnetic-hover {
-    will-change: transform;
-}
-
-.glass-morphism-2025 {
-    will-change: backdrop-filter;
 }
 
 /* === 視認性向上ユーティリティ === */
 .high-contrast-text {
     color: var(--awake-text-ultra-dark) !important;
     font-weight: 600 !important;
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
 }
 
 .readable-background {
-    background: rgba(255, 255, 255, 0.95) !important;
+    background: rgba(255, 255, 255, 0.98) !important;
     backdrop-filter: blur(10px);
-    border: 1px solid rgba(0, 0, 0, 0.1);
-}
-
-.focus-visible {
-    outline: 3px solid #f59e0b !important;
-    outline-offset: 2px !important;
-}
-
-/* === 日本語テキスト最適化 === */
-.japanese-text-optimization {
-    /* 日本語の読みやすさ向上 */
-    font-feature-settings: "palt" 1; /* プロポーショナルメトリクス */
-    text-rendering: optimizeLegibility;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-}
-
-/* 段落ブロックの視認性向上 */
-.content-block {
-    background: rgba(255, 255, 255, 0.8);
-    padding: 2rem;
-    border-radius: 16px;
-    margin-bottom: 2rem;
-    border-left: 4px solid var(--awake-accent-gold);
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-}
-
-/* リスト要素の視認性向上 */
-.readable-list {
-    list-style: none;
-    padding: 0;
-}
-
-.readable-list li {
-    padding: 0.75rem 0;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-    line-height: 1.8;
-}
-
-.readable-list li:last-child {
-    border-bottom: none;
-}
-
-/* 強調テキストの視認性向上 */
-.emphasis-text {
-    background: linear-gradient(135deg, rgba(245, 158, 11, 0.2), rgba(245, 158, 11, 0.1));
-    padding: 0.25rem 0.5rem;
-    border-radius: 6px;
-    font-weight: 600;
-    border-left: 3px solid var(--awake-accent-gold);
-}
-
-/* === 2025年高級デザインコンポーネント === */
-
-/* プレミアムヒーローセクション */
-.hero-premium-2025 {
-    position: relative;
-    min-height: 60vh;
-    display: flex;
-    align-items: center;
-    background: var(--awake-gradient-hero);
-    overflow: hidden;
-}
-
-.hero-premium-2025::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: 
-        radial-gradient(circle at 20% 30%, rgba(245, 158, 11, 0.1) 0%, transparent 50%),
-        radial-gradient(circle at 80% 70%, rgba(217, 119, 6, 0.08) 0%, transparent 50%),
-        radial-gradient(circle at 40% 80%, rgba(30, 41, 59, 0.1) 0%, transparent 50%);
-    pointer-events: none;
-}
-
-/* 高級カードデザイン */
-.luxury-card-2025 {
-    background: var(--awake-gradient-glass);
-    backdrop-filter: blur(20px) saturate(180%);
-    border: 1px solid rgba(245, 158, 11, 0.2);
-    border-radius: 32px;
-    padding: 3rem;
-    position: relative;
-    overflow: hidden;
-    box-shadow: 
-        0 25px 50px -12px rgba(0, 0, 0, 0.15),
-        0 0 0 1px rgba(255, 255, 255, 0.1),
-        inset 0 1px 0 rgba(255, 255, 255, 0.2);
-    transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-}
-
-.luxury-card-2025::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: var(--awake-gradient-luxury);
-    opacity: 0;
-    transition: opacity 0.6s ease;
-    z-index: -1;
-}
-
-.luxury-card-2025:hover::before {
-    opacity: 0.05;
-}
-
-.luxury-card-2025:hover {
-    transform: translateY(-8px) scale(1.02);
-    box-shadow: 
-        0 35px 70px -15px rgba(0, 0, 0, 0.2),
-        0 0 0 1px rgba(245, 158, 11, 0.3),
-        inset 0 1px 0 rgba(255, 255, 255, 0.3);
-}
-
-/* エレガントなテキストエフェクト */
-.elegant-text-2025 {
-    background: var(--awake-gradient-luxury);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-size: 200% 200%;
-    animation: elegantFlow 4s ease-in-out infinite;
-    font-weight: 700;
-    position: relative;
-}
-
-@keyframes elegantFlow {
-    0%, 100% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-}
-
-/* プラチナボタン */
-.btn-platinum-2025 {
-    background: var(--awake-gradient-platinum);
-    color: var(--awake-text-ultra-dark);
-    padding: 1.25rem 2.5rem;
-    border: 2px solid rgba(203, 213, 225, 0.5);
-    border-radius: 20px;
-    font-weight: 600;
-    font-size: 1.125rem;
-    cursor: pointer;
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    position: relative;
-    overflow: hidden;
-    min-height: 56px;
-    min-width: 160px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.5rem;
-}
-
-.btn-platinum-2025::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(245, 158, 11, 0.2), transparent);
-    transition: left 0.6s;
-}
-
-.btn-platinum-2025:hover::before {
-    left: 100%;
-}
-
-.btn-platinum-2025:hover {
-    transform: translateY(-4px) scale(1.05);
-    border-color: rgba(245, 158, 11, 0.4);
-    box-shadow: 
-        0 20px 40px -8px rgba(245, 158, 11, 0.2),
-        0 0 0 3px rgba(245, 158, 11, 0.1);
 }
 
 /* セクションディバイダー */
 .section-divider-2025 {
-    height: 2px;
-    background: var(--awake-gradient-luxury);
-    margin: 6rem 0;
-    border-radius: 1px;
-    position: relative;
-    overflow: hidden;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(139, 92, 246, 0.2), transparent);
+    margin: 2rem 0;
 }
 
-.section-divider-2025::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.8), transparent);
-    animation: dividerFlow 3s ease-in-out infinite;
+/* ホバー効果の紫色調整 */
+.magnetic-hover {
+    transition: all 0.3s ease;
 }
 
-@keyframes dividerFlow {
-    0% { left: -100%; }
-    100% { left: 100%; }
-}
-/* ボタンのフォーカス状態 */
-.btn-2025-primary:focus,
-.btn-2025-secondary:focus,
-.btn-platinum-2025:focus {
-    outline: 3px solid #fbbf24;
-    outline-offset: 2px;
-}
-
-/* アクセシビリティ */
-@media (prefers-reduced-motion: reduce) {
-    .card-3d,
-    .hover-lift,
-    .magnetic-hover,
-    .floating-icon,
-    .holographic-text {
-        animation: none;
-        transition: none;
-    }
-    
-    .card-3d:hover,
-    .hover-lift:hover,
-    .magnetic-hover:hover {
-        transform: none;
-    }
-}
-
-/* 高コントラストモード対応 */
-@media (prefers-contrast: high) {
-    .holographic-text {
-        background: none !important;
-        color: #d97706 !important;
-        -webkit-text-fill-color: unset !important;
-    }
-    
-    .glass-morphism-2025 {
-        background: rgba(255, 255, 255, 0.95) !important;
-        backdrop-filter: none !important;
-        border: 2px solid #000 !important;
-    }
+.magnetic-hover:hover {
+    transform: scale(1.05);
 }
