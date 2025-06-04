@@ -375,6 +375,76 @@ body {
     .section-2025-gradient {
         padding: 4rem 0;
     }
+    
+    /* ボタンのタップ領域拡大 */
+    .btn-2025-primary,
+    .btn-2025-secondary {
+        min-height: 52px; /* 48px → 52px */
+        min-width: 140px; /* 120px → 140px */
+        padding: 1.25rem 2.5rem; /* より大きなタップ領域 */
+    }
+}
+
+/* === メッセージスタイル === */
+.context-message {
+    background: var(--awake-gradient-glass);
+    border: 1px solid rgba(245, 158, 11, 0.2);
+    border-radius: 12px;
+    padding: 1rem;
+    margin: 1rem 0;
+    backdrop-filter: blur(10px);
+    animation: slideInFromTop 0.5s ease-out;
+    font-size: 0.9rem;
+    color: var(--awake-text-premium-dark);
+    /* 確実にstatic表示 */
+    position: static !important;
+    display: block !important;
+    width: auto !important;
+    left: auto !important;
+    right: auto !important;
+    top: auto !important;
+    bottom: auto !important;
+    z-index: auto !important;
+}
+
+.context-message.personalized-message {
+    border-color: rgba(102, 126, 234, 0.3);
+}
+
+.context-message.context-aware-message {
+    position: static !important;
+    display: block !important;
+    width: auto !important;
+    max-width: 100%;
+    margin: 1rem auto;
+    left: auto !important;
+    right: auto !important;
+    top: auto !important;
+    bottom: auto !important;
+    z-index: auto !important;
+    transform: none !important;
+}
+
+@keyframes slideInFromTop {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* === 高パフォーマンス最適化 === */
+.card-3d,
+.hover-lift,
+.magnetic-hover {
+    will-change: transform;
+}
+
+.glass-morphism-2025 {
+    will-change: backdrop-filter;
 }
 
 /* === 視認性向上ユーティリティ === */
