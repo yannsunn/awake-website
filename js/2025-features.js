@@ -6,22 +6,7 @@
 // 重複実行防止フラグ
 let awake2025Initialized = false;
 
-document.addEventListener('DOMContentLoaded', function() {
-    if (awake2025Initialized) return;
-    awake2025Initialized = true;
-    
-    initHeaderMenu(); // ヘッダーメニュー機能を追加
-    // コーポレートサイトに必要な機能のみ有効化
-    initSmoothScrollEnhancements();
-    // 不要な機能はコメントアウト
-    // initDarkModeToggle();
-    // initPersonalization();
-    // initMicroInteractions();
-    // initVideoIntegration();
-    // initRealTimeFeedback();
-    // initContextAwareMessaging();
-    // init3DEffects();
-});
+// 機能定義を先に行い、初期化で呼び出す
 
 /**
  * ヘッダーメニュー機能
@@ -46,6 +31,50 @@ function initHeaderMenu() {
         });
     }
 }
+
+/**
+ * スムーズスクロール機能強化
+ */
+function initSmoothScrollEnhancements() {
+    try {
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const href = this.getAttribute('href');
+                const target = document.querySelector(href);
+                
+                if (target) {
+                    const targetPosition = target.getBoundingClientRect().top + window.pageYOffset;
+                    window.scrollTo({
+                        top: targetPosition - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    } catch (error) {
+        console.error('Smooth scroll error:', error);
+    }
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    if (awake2025Initialized) return;
+    awake2025Initialized = true;
+    
+    initHeaderMenu(); // ヘッダーメニュー機能を追加
+    // コーポレートサイトに必要な機能のみ有効化
+    initSmoothScrollEnhancements();
+    // 不要な機能はコメントアウト
+    // initDarkModeToggle();
+    // initPersonalization();
+    // initMicroInteractions();
+    // initVideoIntegration();
+    // initRealTimeFeedback();
+    // initContextAwareMessaging();
+    // init3DEffects();
+});
+
+// 重複関数定義を削除 - 上記で定義済み
 
 /**
  * ダークモード切り替え機能
