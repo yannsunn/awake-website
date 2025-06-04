@@ -23,15 +23,21 @@ html {
     --awake-text-body: #333333;         /* 12.6:1 高コントラスト */
     --awake-text-muted: #555555;        /* 7.6:1 AA+準拠 */
     
-    /* ブランドカラー */
-    --awake-primary: #667eea;
-    --awake-primary-dark: #5a67d8;
-    --awake-accent: #f59e0b;
+    /* ブランドカラー（紫基調） */
+    --awake-primary: #8b5cf6;         /* 鮮やかな紫 */
+    --awake-primary-dark: #7c3aed;    /* 濃い紫 */
+    --awake-primary-light: #a78bfa;   /* 薄い紫 */
+    --awake-primary-bg: #f3e8ff;      /* 背景用の極薄紫 */
+    --awake-primary-hover: #9333ea;   /* ホバー用紫 */
+    --awake-accent: #ec4899;          /* アクセントピンク */
+    --awake-accent-light: #f9a8d4;    /* 薄いピンク */
     
     /* 背景 */
     --awake-bg-white: #ffffff;
-    --awake-bg-light: #fafbfc;
-    --awake-bg-glass: rgba(255, 255, 255, 0.95);
+    --awake-bg-light: #faf5ff;        /* 薄紫がかった白 */
+    --awake-bg-section: #f9fafb;      /* セクション背景（ニュートラル） */
+    --awake-bg-glass: rgba(255, 255, 255, 0.98);
+    --awake-bg-purple-light: rgba(139, 92, 246, 0.05); /* 極薄紫背景 */
     
     /* 読みやすいフォントサイズ */
     --awake-text-xs: 0.875rem;    /* 14px */
@@ -93,10 +99,12 @@ body {
 
 /* === HEADINGS (読みやすさ最優先) === */
 h1, h2, h3, h4, h5, h6 {
-    font-weight: 600;
+    font-weight: 700; /* 視認性向上：太字強化 */
     line-height: 1.4;
-    color: var(--awake-text-primary);
+    color: var(--awake-text-primary) !important; /* 確実な最高コントラスト */
     margin-bottom: var(--awake-space-2);
+    background: none !important; /* 背景効果削除 */
+    text-shadow: none !important; /* シャドウ効果削除 */
 }
 
 h1 { font-size: var(--awake-text-4xl); }
@@ -243,8 +251,8 @@ a:hover, a:focus {
 
 /* === HERO SECTION === */
 .hero {
-    background: linear-gradient(135deg, rgba(102, 126, 234, 0.9), rgba(118, 75, 162, 0.9));
-    color: white;
+    background: linear-gradient(135deg, rgba(139, 92, 246, 0.08), rgba(236, 72, 153, 0.05));
+    color: var(--awake-text-primary);
     padding: var(--awake-space-6) 0;
     text-align: center;
     position: relative;
@@ -254,7 +262,7 @@ a:hover, a:focus {
 }
 
 .hero-content {
-    background: var(--awake-bg-glass);
+    background: rgba(255, 255, 255, 0.98);
     backdrop-filter: blur(10px);
     border-radius: 16px;
     padding: var(--awake-space-6);
@@ -275,7 +283,7 @@ a:hover, a:focus {
     line-height: 1.6;
 }
 
-/* === BUTTONS === */
+/* === BUTTONS (紫基調) === */
 .btn {
     display: inline-flex;
     align-items: center;
@@ -320,12 +328,13 @@ a:hover, a:focus {
     padding: var(--awake-space-4);
     box-shadow: var(--awake-shadow);
     transition: all 0.2s ease;
-    border: 1px solid rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(139, 92, 246, 0.1); /* 紫のボーダー */
 }
 
 .service-card:hover, .glass-card:hover {
     transform: translateY(-4px);
     box-shadow: var(--awake-shadow-lg);
+    border-color: rgba(139, 92, 246, 0.2); /* ホバー時に紫を強調 */
 }
 
 /* === GRID LAYOUTS === */
@@ -469,7 +478,7 @@ a:hover, a:focus {
 
 .section-subtitle {
     font-size: var(--awake-text-base);
-    color: var(--awake-accent);
+    color: var(--awake-primary); /* 紫色に変更 */
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.1em;

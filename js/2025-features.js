@@ -11,14 +11,16 @@ document.addEventListener('DOMContentLoaded', function() {
     awake2025Initialized = true;
     
     initHeaderMenu(); // ヘッダーメニュー機能を追加
-    initDarkModeToggle();
-    initPersonalization();
-    initMicroInteractions();
-    initVideoIntegration();
-    initRealTimeFeedback();
-    initContextAwareMessaging();
+    // コーポレートサイトに必要な機能のみ有効化
     initSmoothScrollEnhancements();
-    init3DEffects();
+    // 不要な機能はコメントアウト
+    // initDarkModeToggle();
+    // initPersonalization();
+    // initMicroInteractions();
+    // initVideoIntegration();
+    // initRealTimeFeedback();
+    // initContextAwareMessaging();
+    // init3DEffects();
 });
 
 /**
