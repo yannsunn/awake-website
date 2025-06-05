@@ -7,14 +7,13 @@
     <meta name="keywords" content="オーダーメイド家具, アイアン家具, 家具製作, カスタム家具, 株式会社Awake, スチール家具, インダストリアル家具">
     <meta name="author" content="株式会社Awake">
     <meta name="color-scheme" content="light dark">
-    <meta name="theme-color" content="#8b5cf6" media="(prefers-color-scheme: light)">
-    <meta name="theme-color" content="#6d28d9" media="(prefers-color-scheme: dark)">
+    <meta name="theme-color" content="#6366f1">
     
     <!-- Resource Hints -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preload" href="/css/awake-master.min.css" as="style">
-    <link rel="preload" href="/js/awake-master.js" as="script">
+    <link rel="preload" href="/css/awake-corporate.css" as="style">
+    <link rel="preload" href="/js/awake-corporate.js" as="script">
     
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
@@ -42,8 +41,8 @@
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700&display=swap" rel="stylesheet">
     
-    <!-- CSS (統一・最適化版) -->
-    <link rel="stylesheet" href="/css/awake-master.min.css">
+    <!-- CSS -->
+    <link rel="stylesheet" href="/css/awake-corporate.css">
     
     <!-- Schema.org JSON-LD -->
     <script type="application/ld+json">
@@ -79,45 +78,22 @@
     <!-- Skip to main content -->
     <a href="#main-content" class="sr-only sr-only-focusable">メインコンテンツにスキップ</a>
     
-    <!-- Header -->
+    <!-- ヘッダー -->
     <header class="header" role="banner">
         <div class="header__inner">
-            <h1 class="header__logo">
-                <a href="/" aria-label="株式会社Awake ホームページ">
-                    株式会社Awake
-                </a>
-            </h1>
-            <button class="header__menu-toggle" aria-label="メニューを開く" aria-expanded="false" aria-controls="main-navigation">
-                <span class="hamburger-icon">☰</span>
-            </button>
-            <nav class="header__nav" role="navigation" aria-label="メインナビゲーション" id="main-navigation">
+            <div class="header__logo">
+                <a href="/" aria-label="株式会社Awake ホームページ">株式会社Awake</a>
+            </div>
+            <nav class="header__nav" role="navigation" aria-label="メインナビゲーション">
                 <ul class="header__nav-list">
-                    <li class="header__nav-item has-dropdown">
-                        <a href="/#services" aria-label="サービス一覧へ" aria-haspopup="true" aria-expanded="false">サービス</a>
-                        <div class="services-dropdown" role="menu" aria-label="サービス一覧">
-                            <h3>各種サービス</h3>
-                            <div class="services-grid">
-                                <a href="/services/web/" class="service-link" role="menuitem">
-                                    <div class="service-icon" aria-hidden="true">🌐</div>
-                                    <div class="service-name">HP制作<br>LP制作</div>
-                                </a>
-                                <a href="/services/ec/" class="service-link" role="menuitem">
-                                    <div class="service-icon" aria-hidden="true">🛒</div>
-                                    <div class="service-name">EC通販<br>代理販売</div>
-                                </a>
-                                <a href="/services/video/" class="service-link" role="menuitem">
-                                    <div class="service-icon" aria-hidden="true">🎬</div>
-                                    <div class="service-name">動画編集<br>制作</div>
-                                </a>
-                                <a href="/services/furniture/" class="service-link current" role="menuitem" aria-current="page">
-                                    <div class="service-icon" aria-hidden="true">🪑</div>
-                                    <div class="service-name">家具製作<br>オーダーメイド</div>
-                                </a>
-                            </div>
-                        </div>
+                    <li class="header__nav-item">
+                        <a href="/#services">サービス</a>
                     </li>
                     <li class="header__nav-item">
-                        <a href="/#contact" aria-label="お問い合わせフォームへ">お問い合わせ</a>
+                        <a href="/#contact">お問い合わせ</a>
+                    </li>
+                    <li class="header__nav-item">
+                        <a href="/#contact" class="header__cta">無料相談</a>
                     </li>
                 </ul>
             </nav>
@@ -549,6 +525,6 @@
     </footer>
 
     <!-- JavaScript -->
-    <script src="/js/awake-master.js" defer></script>
+    <script src="/js/awake-corporate.js" defer></script>
 </body>
 </html>
