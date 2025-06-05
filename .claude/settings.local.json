@@ -31,7 +31,8 @@
       "Bash(ls:*)",
       "Bash(rg:*)",
       "Bash(node:*)",
-      "Bash(curl:*)"
+      "Bash(curl:*)",
+      "Bash(awk:*)"
     ],
     "deny": []
   }
