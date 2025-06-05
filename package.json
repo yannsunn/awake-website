@@ -4,7 +4,7 @@
   "description": "株式会社Awakeのコーポレートサイト",
   "scripts": {
     "build": "npm run minify-css",
-    "minify-css": "cleancss -o css/styles.min.css css/awake-unified.css css/2025-corporate-elite.css",
+    "minify-css": "cleancss -o css/awake-master.min.css css/awake-master.css",
     "minify-js": "uglifyjs js/bundle.js -o js/bundle.min.js",
     "start": "serve ."
   },
