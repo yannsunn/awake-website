@@ -1,7 +1,13 @@
+'use client'
+
 import Link from 'next/link'
 import Image from 'next/image'
+import { usePathname } from 'next/navigation'
 
 export default function Footer() {
+  const pathname = usePathname()
+  const isHomePage = pathname === '/'
+  
   return (
     <footer className="bg-gray-900 text-white" role="contentinfo">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
@@ -71,7 +77,7 @@ export default function Footer() {
             <ul className="space-y-2">
               <li>
                 <Link 
-                  href="#features" 
+                  href={isHomePage ? "#features" : "/#features"}
                   className="text-gray-300 hover:text-white transition-colors"
                 >
                   特徴
@@ -79,7 +85,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link 
-                  href="#services" 
+                  href={isHomePage ? "#services" : "/#services"}
                   className="text-gray-300 hover:text-white transition-colors"
                 >
                   サービス
@@ -87,7 +93,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link 
-                  href="#contact" 
+                  href={isHomePage ? "#contact" : "/#contact"}
                   className="text-gray-300 hover:text-white transition-colors"
                 >
                   お問い合わせ
