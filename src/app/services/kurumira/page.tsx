@@ -358,4 +358,4 @@ export default function KurumiraServicePage() {
       <Footer />
     </>
   )
-}
+}// Force rebuild at Fri Jun  6 21:12:14 JST 2025
