@@ -42,8 +42,6 @@
       "Bash(mkdir:*)",
       "Bash(cp:*)",
       "Bash(npm install:*)",
-      "Bash(mkdir:*)",
-      "Bash(cp:*)",
       "Bash(cat:*)",
       "Bash(mv:*)",
       "Bash(npm ls)",
