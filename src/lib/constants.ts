@@ -40,6 +40,13 @@ export const SERVICES = {
     gradient: 'from-orange-500 to-red-600',
     href: '/services/furniture',
   },
+  kurumira: {
+    title: 'クルミラ直販店',
+    description: '代理店を通さない直販価格で量子エネルギーデバイス「CLEMIRA」を提供。身体機能向上をサポート。',
+    icon: '⚡',
+    gradient: 'from-orange-600 to-red-700',
+    href: '/services/kurumira',
+  },
 } as const
 
 // Navigation items
@@ -56,6 +63,7 @@ export const FOOTER_LINKS = {
     { href: '/services/ec', label: 'EC通販代理販売' },
     { href: '/services/video', label: '動画編集・制作' },
     { href: '/services/furniture', label: '家具製作' },
+    { href: '/services/kurumira', label: 'クルミラ直販店' },
   ],
   company: [
     { href: '#features', label: '特徴' },

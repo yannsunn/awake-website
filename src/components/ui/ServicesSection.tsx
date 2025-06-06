@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { Globe, ShoppingCart, Video, Armchair, ArrowRight } from 'lucide-react'
+import { Globe, ShoppingCart, Video, Armchair, Zap, ArrowRight } from 'lucide-react'
 import Section from './Section'
 import SectionHeader from './SectionHeader'
 import { SERVICES } from '@/lib/constants'
@@ -9,6 +9,7 @@ const serviceIcons = {
   ec: ShoppingCart,
   video: Video,
   furniture: Armchair,
+  kurumira: Zap,
 } as const
 
 export default function ServicesSection() {
