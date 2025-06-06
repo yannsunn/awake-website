@@ -36,7 +36,18 @@
       "Bash(chmod:*)",
       "Bash(/mnt/c/Users/march/my-website/resolve_conflicts.sh)",
       "Bash(git checkout:*)",
-      "Bash(git rm:*)"
+      "Bash(git rm:*)",
+      "Bash(tree:*)",
+      "Bash(npx create-next-app:*)",
+      "Bash(mkdir:*)",
+      "Bash(cp:*)",
+      "Bash(npm install:*)",
+      "Bash(mkdir:*)",
+      "Bash(cp:*)",
+      "Bash(cat:*)",
+      "Bash(mv:*)",
+      "Bash(npm ls)",
+      "Bash(vercel:*)"
     ],
     "deny": []
   }

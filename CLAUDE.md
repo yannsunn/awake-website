@@ -4,89 +4,101 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-This is a Japanese corporate website for 株式会社Awake (Awake Inc.), a static multi-page website built with vanilla HTML/CSS/JavaScript. The site offers business consulting services in web development, e-commerce, video production, and furniture design.
+This is a Japanese corporate website for 株式会社Awake (Awake Inc.), built with **Next.js 15**, **React 18**, **TypeScript**, and **Tailwind CSS**. The site offers business consulting services in web development, e-commerce, video production, and furniture design.
 
 ## Development Commands
 
 ```bash
-# Start local development server (uses serve package)
-npm start
+# Start local development server with Turbopack
+npm run dev
 
-# Build production assets (minifies CSS)
+# Build production assets
 npm run build
 
-# Minify CSS files individually
-npm run minify-css
+# Start production server
+npm start
 
-# Minify JavaScript files
-npm run minify-js
+# Run ESLint
+npm run lint
+
+# Type checking
+npm run type-check
 ```
 
 ## Architecture
 
-### CSS Architecture (Unified System)
-The project uses a unified CSS system centered around `css/awake-unified.css`:
-- **Unified CSS**: `css/awake-unified.css` - Primary stylesheet with 21:1 contrast ratio, WCAG AAA compliance
-- **Elite Design**: `css/2025-corporate-elite.css` - Premium design system with glass morphism, 3D effects
-- **Legacy Structure**: `assets/css/` - Original source files (being phased out)
+### Tech Stack
+- **Framework**: Next.js 15 (App Router)
+- **Language**: TypeScript 5.7+
+- **Styling**: Tailwind CSS 3.4+ with custom design system
+- **UI Components**: React 18 + Lucide React Icons
+- **Animations**: Framer Motion
+- **Fonts**: Noto Sans JP (Google Fonts)
 
-Key CSS features:
-- High contrast design (21:1 ratio) for optimal visibility
-- Japanese font optimization with Noto Sans JP
-- Glass morphism and premium visual effects
-- Dark mode support with system preference detection
+### Project Structure
+```
+src/
+├── app/                    # Next.js App Router pages
+│   ├── page.tsx           # Homepage
+│   ├── layout.tsx         # Root layout
+│   ├── globals.css        # Global styles + Tailwind
+│   ├── services/          # Service pages
+│   │   ├── web/
+│   │   ├── ec/
+│   │   ├── video/
+│   │   └── furniture/
+│   └── legal/            # Legal pages
+│       ├── terms/
+│       └── privacy-policy/
+├── components/           # React components
+│   ├── layout/          # Layout components
+│   └── ui/              # UI components
+└── lib/                 # Utilities and schemas
+    └── schema.ts        # JSON-LD structured data
+```
 
-### JavaScript Architecture
-- **2025 Features**: `js/2025-features.js` - Modern web features (dark mode, personalization, micro-interactions)
-- **Corporate Enhanced**: `js/2025-corporate-enhanced.js` - Enterprise-grade interactions and animations
-- **Bundle**: `js/bundle.min.js` - Minified production JavaScript
-- **Duplicate Prevention**: All JS files include initialization flags to prevent multiple executions
-
-### Page Structure
-- Homepage: `index.html`
-- Service pages: `/services/{web|ec|video|furniture}/index.html`
-- Legal pages: `/legal/{terms|privacy-policy}/index.html`
-
-Each service page follows a consistent structure with:
-- Progressive Web App metadata
-- Schema.org JSON-LD structured data
-- Resource hints for performance
-- Unified CSS references
-
-### Build Process
-1. CSS: `critical.css` + `services.css` + `core.css` → `styles.min.css` (via clean-css)
-2. JavaScript: `bundle.js` → `bundle.min.js` (via uglify-js)
-3. Deployment: Static files served via Netlify with strict security headers
-
-### Deployment Configuration
-Netlify configuration (`netlify.toml`) includes:
-- Strict security headers (CSP, X-Frame-Options, HSTS)
-- Content Security Policy allowing specific domains (Google Fonts, Unsplash, etc.)
-- SPA-style redirects for service and legal pages
+### Design System
+- **Primary Colors**: 
+  - Purple: `#6366f1` (primary-purple)
+  - Purple Dark: `#4f46e5` (primary-purple-dark)
+  - Pink: `#ec4899` (primary-pink)
+- **Typography**: Noto Sans JP with responsive sizing
+- **High Contrast**: 21:1 ratio for WCAG AAA compliance
+- **Glass Morphism**: Backdrop blur effects for modern UI
+- **Responsive Design**: Mobile-first approach with Tailwind breakpoints
 
 ## Important Considerations
 
-1. **Japanese Language**: All content is in Japanese. Maintain proper encoding (`UTF-8`) and `lang="ja"` attributes.
+### Component Development
+1. **React Best Practices**: Use functional components with TypeScript, proper prop typing, and React hooks
+2. **Component Structure**: Follow the established pattern in `src/components/`
+3. **Styling**: Use Tailwind CSS classes with custom design tokens (primary-purple, etc.)
+4. **Accessibility**: Maintain WCAG AAA standards with proper ARIA labels and semantic HTML
 
-2. **Unified CSS System**: Use `awake-unified.css` as the primary stylesheet. It consolidates 22+ CSS files into a clean, maintainable structure.
+### Next.js Patterns
+1. **App Router**: All pages use the new App Router pattern (`src/app/`)
+2. **Metadata**: Each page exports proper `Metadata` for SEO optimization
+3. **Server Components**: Default to Server Components, use `'use client'` only when needed
+4. **Image Optimization**: Always use `next/image` for optimized loading
 
-3. **High Contrast Design**: The design prioritizes accessibility with 21:1 contrast ratios. Maintain this standard when adding new styles.
+### TypeScript Guidelines
+1. **Strict Mode**: Project uses strict TypeScript configuration
+2. **Type Safety**: Properly type all props, state, and function parameters
+3. **Imports**: Use absolute imports with `@/` alias for cleaner code
 
-4. **JavaScript Duplicate Prevention**: All JS files use initialization flags. Follow this pattern when adding new scripts:
-   ```javascript
-   let myFeatureInitialized = false;
-   if (myFeatureInitialized) return;
-   myFeatureInitialized = true;
-   ```
+### Performance Optimization
+1. **Code Splitting**: Leverage Next.js automatic code splitting
+2. **Bundle Size**: Keep components small and focused
+3. **SEO**: Each page includes proper metadata and structured data
+4. **Fonts**: Use Next.js font optimization with `next/font/google`
 
-5. **No Framework**: This is vanilla HTML/CSS/JS. Avoid introducing frameworks that would change the fundamental architecture.
+### Content Management
+1. **Japanese Content**: All content in Japanese, maintain `lang="ja"`
+2. **Schema.org**: Include JSON-LD structured data for business information
+3. **Consistency**: Follow established content patterns across service pages
 
-6. **Service Page Consistency**: Each service page should include:
-   - PWA metadata and theme colors
-   - Resource hints for performance
-   - Schema.org structured data
-   - Consistent CSS and JS references
-
-7. **Security**: The site implements strict CSP. When adding external resources, ensure they're whitelisted in `netlify.toml`.
-
-8. **Performance**: Images use Unsplash CDN with optimization parameters (`auto=format&fit=crop&w=800&q=80`). Maintain this pattern for new images.
+### Development Workflow
+1. **TypeScript**: Always run `npm run type-check` before commits
+2. **Linting**: Use `npm run lint` to maintain code quality
+3. **Testing**: Test builds with `npm run build` before deployment
+4. **Hot Reload**: Use `npm run dev` with Turbopack for fast development
