@@ -30,7 +30,8 @@ export default function Header() {
     { href: '/services/web', title: 'HP制作・LP制作' },
     { href: '/services/ec', title: 'EC通販サイト制作' },
     { href: '/services/video', title: '動画編集・制作' },
-    { href: '/services/furniture', title: '家具製作' }
+    { href: '/services/furniture', title: '家具製作' },
+    { href: '/services/kurumira', title: 'クルミラ直販店' }
   ]
 
   return (

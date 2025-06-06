@@ -69,6 +69,14 @@ export default function Footer() {
                   家具製作
                 </Link>
               </li>
+              <li>
+                <Link 
+                  href="/services/kurumira" 
+                  className="text-gray-300 hover:text-white transition-colors"
+                >
+                  クルミラ直販店
+                </Link>
+              </li>
             </ul>
           </div>
           
