@@ -52,7 +52,9 @@
       "Bash(npx prisma init:*)",
       "Bash(npx prisma:*)",
       "WebFetch(domain:clemira.jp)",
-      "Bash(npx next lint:*)"
+      "Bash(npx next lint:*)",
+      "Bash(timeout 10s npm run dev)",
+      "WebFetch(domain:github.com)"
     ],
     "deny": []
   }
