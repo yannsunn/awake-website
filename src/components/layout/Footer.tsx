@@ -74,7 +74,7 @@ export default function Footer() {
                   href="/services/kurumira" 
                   className="text-gray-300 hover:text-white transition-colors"
                 >
-                  クルミラ直販店
+                  CLEMIRA直販店
                 </Link>
               </li>
             </ul>

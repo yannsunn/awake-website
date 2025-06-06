@@ -6,18 +6,18 @@ import Link from 'next/link'
 import Image from 'next/image'
 
 export const metadata: Metadata = {
-  title: "クルミラ直販店 - 量子エネルギーデバイス | 株式会社Awake",
+  title: "CLEMIRA直販店 - 量子エネルギーデバイス | 株式会社Awake",
   description: "正規代理店を通さない直販価格で、量子エネルギーデバイス「CLEMIRA」シリーズを提供。身体機能向上・パフォーマンス最適化をサポート。",
-  keywords: "クルミラ, CLEMIRA, 量子エネルギー, 身体機能向上, 直販店, パフォーマンス向上, 株式会社Awake",
+  keywords: "CLEMIRA, 量子エネルギー, 身体機能向上, 直販店, パフォーマンス向上, 株式会社Awake",
   openGraph: {
-    title: "クルミラ直販店 - 量子エネルギーデバイス | 株式会社Awake",
+    title: "CLEMIRA直販店 - 量子エネルギーデバイス | 株式会社Awake",
     description: "代理店を通さない直販価格で、革新的な量子エネルギーデバイスを提供。科学的根拠に基づく身体機能向上を実現。",
     images: ["/assets/images/modern-office.jpg"],
     url: "https://awake-website-five.vercel.app/services/kurumira/",
   },
   twitter: {
     card: "summary_large_image",
-    title: "クルミラ直販店 - 量子エネルギーデバイス | 株式会社Awake",
+    title: "CLEMIRA直販店 - 量子エネルギーデバイス | 株式会社Awake",
     description: "正規代理店を通さない直販価格で、最新量子エネルギー技術を提供",
     images: ["/assets/images/modern-office.jpg"],
   },
@@ -98,7 +98,7 @@ const kurumiraServiceSchema = {
     "name": "株式会社Awake",
     "url": "https://awake-website-five.vercel.app/"
   },
-  "name": "クルミラ直販店 - 量子エネルギーデバイス",
+  "name": "CLEMIRA直販店 - 量子エネルギーデバイス",
   "description": "正規代理店を通さない直販価格で、量子エネルギーデバイス「CLEMIRA」シリーズを提供。身体機能向上・パフォーマンス最適化をサポート。",
   "url": "https://awake-website-five.vercel.app/services/kurumira/",
   "image": "https://awake-website-five.vercel.app/assets/images/modern-office.jpg",
@@ -144,7 +144,7 @@ export default function KurumiraServicePage() {
                   <span className="text-white/80 font-semibold">Quantum Energy Direct Sales</span>
                 </div>
                 <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
-                  クルミラ直販店<br />量子エネルギーデバイス
+                  CLEMIRA直販店<br />量子エネルギーデバイス
                 </h1>
                 <p className="text-xl text-white/90 mb-8 leading-relaxed">
                   代理店を通さない直販価格で、革新的な量子エネルギー技術を提供。<br />
