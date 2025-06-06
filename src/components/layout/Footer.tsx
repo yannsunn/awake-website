@@ -1,0 +1,114 @@
+import Link from 'next/link'
+
+export default function Footer() {
+  return (
+    <footer className="bg-gray-900 text-white" role="contentinfo">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div>
+            <h3 className="text-xl font-bold mb-4">株式会社Awake</h3>
+            <p className="text-gray-300 mb-4">
+              革新的なソリューションで企業の成長をサポート
+            </p>
+            <div className="text-gray-300 leading-relaxed">
+              <p>〒207-0013</p>
+              <p>東京都東大和市向原5-1129-61 渡辺ビル1F</p>
+              <p className="mt-2">TEL: 050-7115-4948</p>
+              <p>Email: shop@awakeinc.co.jp</p>
+            </div>
+          </div>
+          
+          <div>
+            <h3 className="text-xl font-bold mb-4">サービス</h3>
+            <ul className="space-y-2">
+              <li>
+                <Link 
+                  href="/services/web" 
+                  className="text-gray-300 hover:text-white transition-colors"
+                >
+                  HP制作・LP制作
+                </Link>
+              </li>
+              <li>
+                <Link 
+                  href="/services/ec" 
+                  className="text-gray-300 hover:text-white transition-colors"
+                >
+                  EC通販代理販売
+                </Link>
+              </li>
+              <li>
+                <Link 
+                  href="/services/video" 
+                  className="text-gray-300 hover:text-white transition-colors"
+                >
+                  動画編集・制作
+                </Link>
+              </li>
+              <li>
+                <Link 
+                  href="/services/furniture" 
+                  className="text-gray-300 hover:text-white transition-colors"
+                >
+                  家具製作
+                </Link>
+              </li>
+            </ul>
+          </div>
+          
+          <div>
+            <h3 className="text-xl font-bold mb-4">会社情報</h3>
+            <ul className="space-y-2">
+              <li>
+                <Link 
+                  href="#features" 
+                  className="text-gray-300 hover:text-white transition-colors"
+                >
+                  特徴
+                </Link>
+              </li>
+              <li>
+                <Link 
+                  href="#services" 
+                  className="text-gray-300 hover:text-white transition-colors"
+                >
+                  サービス
+                </Link>
+              </li>
+              <li>
+                <Link 
+                  href="#contact" 
+                  className="text-gray-300 hover:text-white transition-colors"
+                >
+                  お問い合わせ
+                </Link>
+              </li>
+              <li>
+                <Link 
+                  href="/legal/privacy-policy" 
+                  className="text-gray-300 hover:text-white transition-colors"
+                >
+                  プライバシーポリシー
+                </Link>
+              </li>
+              <li>
+                <Link 
+                  href="/legal/terms" 
+                  className="text-gray-300 hover:text-white transition-colors"
+                >
+                  利用規約
+                </Link>
+              </li>
+            </ul>
+          </div>
+        </div>
+        
+        <div className="border-t border-gray-800 mt-8 pt-8 text-center">
+          <p className="text-gray-300">
+            &copy; 2024 Awake Inc. All rights reserved. | 代表取締役: 田形 康貴
+          </p>
+        </div>
+      </div>
+    </footer>
+  )
+}

@@ -1,0 +1,286 @@
+import type { Metadata } from 'next'
+import Header from '@/components/layout/Header'
+import Footer from '@/components/layout/Footer'
+import { ShoppingCart, CheckCircle, TrendingUp, Shield, Zap, ArrowRight } from 'lucide-react'
+import Link from 'next/link'
+import Image from 'next/image'
+
+export const metadata: Metadata = {
+  title: "EC通販代理販売サービス | 株式会社Awake",
+  description: "初期費用0円・成果報酬型でメーカー・問屋・OEM商品をワンストップで販売代行。リスクゼロで売上最大化を実現します。",
+  keywords: "EC代理販売, 通販代行, メーカー販売, OEM, Amazon販売, 楽天販売, Yahoo販売, 株式会社Awake",
+  openGraph: {
+    title: "EC通販代理販売サービス | 株式会社Awake",
+    description: "初期費用0円・成果報酬型でメーカー・問屋・OEM商品をワンストップで販売代行。リスクゼロで売上最大化を実現します。",
+    images: ["/assets/images/ec-shopping.jpg"],
+    url: "https://awake-website.netlify.app/services/ec/",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "EC通販代理販売サービス | 株式会社Awake",
+    description: "初期費用0円・成果報酬型でメーカー・問屋・OEM商品をワンストップで販売代行",
+    images: ["/assets/images/ec-shopping.jpg"],
+  },
+}
+
+const features = [
+  {
+    icon: Shield,
+    title: "リスクゼロ",
+    description: "初期費用0円・成果報酬型なので、リスクなく始められます。売上が発生してからの手数料制です。"
+  },
+  {
+    icon: TrendingUp,
+    title: "売上最大化",
+    description: "Amazon・楽天・Yahoo!ショッピングなど複数のプラットフォームで同時販売し、売上を最大化します。"
+  },
+  {
+    icon: Zap,
+    title: "スピード対応",
+    description: "商品登録から販売開始まで最短3日。迅速な対応でビジネスチャンスを逃しません。"
+  },
+  {
+    icon: CheckCircle,
+    title: "フルサポート",
+    description: "商品撮影・ページ制作・在庫管理・発送・カスタマーサポートまで全てお任せください。"
+  }
+]
+
+const process = [
+  {
+    step: "01",
+    title: "商品情報ヒアリング",
+    description: "商品の特徴、ターゲット、販売戦略などを詳しくお聞きします。"
+  },
+  {
+    step: "02",
+    title: "販売プラン策定",
+    description: "最適な販売チャネルと戦略を立案し、収益予測をご提示します。"
+  },
+  {
+    step: "03",
+    title: "商品ページ制作",
+    description: "プロのカメラマン・デザイナーが魅力的な商品ページを制作します。"
+  },
+  {
+    step: "04",
+    title: "販売開始・運用",
+    description: "複数のECサイトで同時販売開始。運用・改善も継続して行います。"
+  }
+]
+
+const commission = [
+  {
+    platform: "Amazon",
+    rate: "10%〜15%",
+    description: "売上に応じた手数料"
+  },
+  {
+    platform: "楽天市場",
+    rate: "12%〜18%",
+    description: "売上に応じた手数料"
+  },
+  {
+    platform: "Yahoo!ショッピング",
+    rate: "10%〜15%",
+    description: "売上に応じた手数料"
+  }
+]
+
+const ecServiceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "E-commerce Agency",
+  "provider": {
+    "@type": "Organization",
+    "name": "株式会社Awake",
+    "url": "https://awake-website.netlify.app/"
+  },
+  "name": "EC通販代理販売サービス",
+  "description": "初期費用0円・成果報酬型でメーカー・問屋・OEM商品をワンストップで販売代行。リスクゼロで売上最大化を実現します。",
+  "url": "https://awake-website.netlify.app/services/ec/",
+  "image": "https://awake-website.netlify.app/assets/images/ec-shopping.jpg"
+}
+
+export default function EcServicePage() {
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(ecServiceSchema),
+        }}
+      />
+      
+      <Header />
+      
+      <main role="main" className="pt-16">
+        {/* Hero Section */}
+        <section className="bg-gradient-to-br from-green-600 to-green-800 py-20">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              <div>
+                <div className="flex items-center mb-6">
+                  <ShoppingCart className="h-8 w-8 text-white mr-3" />
+                  <span className="text-white/80 font-semibold">E-commerce Agency</span>
+                </div>
+                <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
+                  EC通販代理販売<br />サービス
+                </h1>
+                <p className="text-xl text-white/90 mb-8 leading-relaxed">
+                  初期費用0円・成果報酬型でメーカー・問屋・OEM商品を<br />
+                  ワンストップで販売代行。リスクゼロで売上最大化。
+                </p>
+                <Link 
+                  href="#contact"
+                  className="inline-flex items-center bg-white text-green-600 px-8 py-4 rounded-lg font-bold hover:bg-gray-100 transition-colors"
+                >
+                  無料診断を受ける
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </Link>
+              </div>
+              <div className="relative">
+                <Image
+                  src="/assets/images/ec-shopping.jpg"
+                  alt="EC通販のイメージ"
+                  width={600}
+                  height={400}
+                  className="rounded-2xl shadow-2xl"
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Features Section */}
+        <section className="py-20 bg-white">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-16">
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                サービスの特徴
+              </h2>
+              <p className="text-xl text-gray-600">
+                リスクゼロで始められる成果報酬型EC代理販売
+              </p>
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+              {features.map((feature, index) => {
+                const IconComponent = feature.icon
+                return (
+                  <div key={index} className="text-center">
+                    <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-green-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                      <IconComponent className="h-8 w-8 text-white" />
+                    </div>
+                    <h3 className="text-xl font-bold text-gray-900 mb-3">
+                      {feature.title}
+                    </h3>
+                    <p className="text-gray-600">
+                      {feature.description}
+                    </p>
+                  </div>
+                )
+              })}
+            </div>
+          </div>
+        </section>
+
+        {/* Process Section */}
+        <section className="py-20 bg-gray-50">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-16">
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                サービスの流れ
+              </h2>
+              <p className="text-xl text-gray-600">
+                シンプルな4ステップで販売開始
+              </p>
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+              {process.map((item, index) => (
+                <div key={index} className="text-center">
+                  <div className="w-16 h-16 bg-green-500 text-white rounded-full flex items-center justify-center mx-auto mb-4 text-xl font-bold">
+                    {item.step}
+                  </div>
+                  <h3 className="text-xl font-bold text-gray-900 mb-3">
+                    {item.title}
+                  </h3>
+                  <p className="text-gray-600">
+                    {item.description}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Commission Section */}
+        <section className="py-20 bg-white">
+          <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-16">
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                手数料体系
+              </h2>
+              <p className="text-xl text-gray-600">
+                成果報酬型で安心の料金設定
+              </p>
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {commission.map((item, index) => (
+                <div key={index} className="bg-gray-50 p-8 rounded-2xl text-center">
+                  <h3 className="text-2xl font-bold text-gray-900 mb-4">
+                    {item.platform}
+                  </h3>
+                  <div className="text-4xl font-bold text-green-600 mb-4">
+                    {item.rate}
+                  </div>
+                  <p className="text-gray-600">
+                    {item.description}
+                  </p>
+                </div>
+              ))}
+            </div>
+            
+            <div className="mt-12 text-center">
+              <p className="text-lg text-gray-700 bg-green-50 p-6 rounded-lg">
+                💰 <strong>初期費用0円</strong> + <strong>月額固定費なし</strong><br />
+                売上が発生した分のみ手数料をいただく完全成果報酬型です
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* CTA Section */}
+        <section id="contact" className="py-20 bg-gradient-to-br from-green-600 to-green-800">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+              まずは無料で売上診断してみませんか？
+            </h2>
+            <p className="text-xl text-white/90 mb-8">
+              商品情報をお聞かせいただければ、売上予測と最適な販売戦略を無料でご提案いたします。
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link 
+                href="/#contact"
+                className="bg-white text-green-600 px-8 py-4 rounded-lg font-bold hover:bg-gray-100 transition-colors inline-flex items-center justify-center"
+              >
+                無料診断を受ける
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Link>
+              <Link 
+                href="/"
+                className="border-2 border-white text-white px-8 py-4 rounded-lg font-bold hover:bg-white hover:text-green-600 transition-colors"
+              >
+                他のサービスを見る
+              </Link>
+            </div>
+          </div>
+        </section>
+      </main>
+      
+      <Footer />
+    </>
+  )
+}
