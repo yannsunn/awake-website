@@ -32,7 +32,11 @@
       "Bash(rg:*)",
       "Bash(node:*)",
       "Bash(curl:*)",
-      "Bash(awk:*)"
+      "Bash(awk:*)",
+      "Bash(chmod:*)",
+      "Bash(/mnt/c/Users/march/my-website/resolve_conflicts.sh)",
+      "Bash(git checkout:*)",
+      "Bash(git rm:*)"
     ],
     "deny": []
   }
