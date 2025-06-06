@@ -1,10 +1,37 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
+import { ChevronDown } from 'lucide-react'
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [isServicesOpen, setIsServicesOpen] = useState(false)
+  const pathname = usePathname()
+  const servicesRef = useRef<HTMLDivElement>(null)
+  
+  const isHomePage = pathname === '/'
+  
+  // 外部クリックでドロップダウンを閉じる
+  useEffect(() => {
+    function handleClickOutside(event: MouseEvent) {
+      if (servicesRef.current && !servicesRef.current.contains(event.target as Node)) {
+        setIsServicesOpen(false)
+      }
+    }
+    
+    document.addEventListener('mousedown', handleClickOutside)
+    return () => document.removeEventListener('mousedown', handleClickOutside)
+  }, [])
+  
+  // サービスページのリンク
+  const services = [
+    { href: '/services/web', title: 'HP制作・LP制作' },
+    { href: '/services/ec', title: 'EC通販サイト制作' },
+    { href: '/services/video', title: '動画編集・制作' },
+    { href: '/services/furniture', title: '家具製作' }
+  ]
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-sm border-b border-gray-200">
@@ -20,27 +47,57 @@ export default function Header() {
             </Link>
           </div>
           
-          <nav className="hidden md:flex space-x-8" role="navigation" aria-label="メインナビゲーション">
+          <nav className="hidden md:flex items-center space-x-8" role="navigation" aria-label="メインナビゲーション">
             <Link 
-              href="#features" 
+              href={isHomePage ? "#features" : "/#features"} 
               className="text-gray-700 hover:text-primary-purple transition-colors font-medium"
             >
               特徴
             </Link>
+            
+            {/* サービスドロップダウン */}
+            <div className="relative" ref={servicesRef}>
+              <button
+                onClick={() => setIsServicesOpen(!isServicesOpen)}
+                className="flex items-center text-gray-700 hover:text-primary-purple transition-colors font-medium"
+                aria-expanded={isServicesOpen}
+              >
+                サービス
+                <ChevronDown className={`ml-1 h-4 w-4 transition-transform ${isServicesOpen ? 'rotate-180' : ''}`} />
+              </button>
+              
+              {isServicesOpen && (
+                <div className="absolute top-full left-0 mt-1 w-56 bg-white rounded-lg shadow-lg border border-gray-200 py-2 z-50">
+                  <Link 
+                    href={isHomePage ? "#services" : "/#services"}
+                    className="block px-4 py-2 text-gray-700 hover:bg-gray-50 hover:text-primary-purple transition-colors"
+                    onClick={() => setIsServicesOpen(false)}
+                  >
+                    サービス一覧
+                  </Link>
+                  <div className="border-t border-gray-100 my-1"></div>
+                  {services.map((service) => (
+                    <Link
+                      key={service.href}
+                      href={service.href}
+                      className="block px-4 py-2 text-gray-700 hover:bg-gray-50 hover:text-primary-purple transition-colors"
+                      onClick={() => setIsServicesOpen(false)}
+                    >
+                      {service.title}
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </div>
+            
             <Link 
-              href="#services" 
-              className="text-gray-700 hover:text-primary-purple transition-colors font-medium"
-            >
-              サービス
-            </Link>
-            <Link 
-              href="#contact" 
+              href={isHomePage ? "#contact" : "/#contact"} 
               className="text-gray-700 hover:text-primary-purple transition-colors font-medium"
             >
               お問い合わせ
             </Link>
             <Link 
-              href="#contact" 
+              href={isHomePage ? "#contact" : "/#contact"} 
               className="bg-primary-purple text-white px-4 py-2 rounded-lg hover:bg-primary-purple-dark transition-colors font-medium"
             >
               無料相談
@@ -68,28 +125,45 @@ export default function Header() {
           <div className="md:hidden">
             <div className="px-2 pt-2 pb-3 space-y-1 bg-white border-t border-gray-200">
               <Link 
-                href="#features" 
+                href={isHomePage ? "#features" : "/#features"} 
                 className="block px-3 py-2 text-gray-700 hover:text-primary-purple transition-colors"
                 onClick={() => setIsMenuOpen(false)}
               >
                 特徴
               </Link>
+              
+              {/* モバイルサービスメニュー */}
+              <div className="space-y-1">
+                <Link 
+                  href={isHomePage ? "#services" : "/#services"}
+                  className="block px-3 py-2 text-gray-700 hover:text-primary-purple transition-colors font-medium"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  サービス一覧
+                </Link>
+                <div className="pl-6 space-y-1">
+                  {services.map((service) => (
+                    <Link
+                      key={service.href}
+                      href={service.href}
+                      className="block px-3 py-2 text-sm text-gray-600 hover:text-primary-purple transition-colors"
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      {service.title}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+              
               <Link 
-                href="#services" 
-                className="block px-3 py-2 text-gray-700 hover:text-primary-purple transition-colors"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                サービス
-              </Link>
-              <Link 
-                href="#contact" 
+                href={isHomePage ? "#contact" : "/#contact"} 
                 className="block px-3 py-2 text-gray-700 hover:text-primary-purple transition-colors"
                 onClick={() => setIsMenuOpen(false)}
               >
                 お問い合わせ
               </Link>
               <Link 
-                href="#contact" 
+                href={isHomePage ? "#contact" : "/#contact"} 
                 className="block mx-3 my-2 px-4 py-2 bg-primary-purple text-white rounded-lg hover:bg-primary-purple-dark transition-colors text-center"
                 onClick={() => setIsMenuOpen(false)}
               >
