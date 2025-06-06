@@ -48,7 +48,9 @@
       "Bash(vercel:*)",
       "Bash(npm update:*)",
       "WebFetch(domain:awake-website-five.vercel.app)",
-      "WebFetch(domain:awake-website-five.vercel.app)"
+      "WebFetch(domain:awake-website-five.vercel.app)",
+      "Bash(npx prisma init:*)",
+      "Bash(npx prisma:*)"
     ],
     "deny": []
   }

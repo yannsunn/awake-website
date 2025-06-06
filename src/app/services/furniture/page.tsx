@@ -153,8 +153,16 @@ export default function FurnitureServicePage() {
       
       <main role="main" className="pt-16">
         {/* Hero Section */}
-        <section className="bg-gradient-to-br from-orange-600 to-red-600 py-20">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <section className="relative py-20 overflow-hidden">
+          {/* Animated Background */}
+          <div className="absolute inset-0 bg-gradient-to-br from-amber-500 via-orange-600 to-red-700">
+            <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTAiIGhlaWdodD0iNTAiIHZpZXdCb3g9IjAgMCA1MCA1MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8cG9seWdvbiBwb2ludHM9IjI1LDUgNDUsNDUgNSw0NSIgZmlsbD0icmdiYSgyNTUsIDI1NSwgMjU1LCAwLjA2KSIvPgo8L3N2Zz4=')] opacity-20"></div>
+            <div className="absolute top-0 right-0 w-72 h-72 bg-yellow-300/20 rounded-full blur-3xl translate-x-1/4 -translate-y-1/4"></div>
+            <div className="absolute bottom-0 left-0 w-96 h-96 bg-red-400/15 rounded-full blur-3xl -translate-x-1/3 translate-y-1/2"></div>
+            <div className="absolute top-1/2 left-1/3 w-40 h-40 bg-orange-300/20 rounded-full blur-2xl"></div>
+            <div className="absolute bottom-1/4 right-1/3 w-24 h-24 bg-white/10 rounded-full blur-xl"></div>
+          </div>
+          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div>
                 <div className="flex items-center mb-6">
