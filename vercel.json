@@ -1,6 +1,5 @@
 {
   "framework": "nextjs",
-  "regions": ["hnd1"],
   "functions": {
     "src/app/**/*.tsx": {
       "runtime": "nodejs20.x"
