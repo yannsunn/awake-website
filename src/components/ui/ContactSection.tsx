@@ -24,19 +24,31 @@ export default function ContactSection() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setIsSubmitting(true)
+    setSubmitStatus('idle')
     
-    // TODO: Implement form submission logic with Next.js API route
     try {
-      // Simulated API call
-      await new Promise(resolve => setTimeout(resolve, 1000))
-      setSubmitStatus('success')
-      setFormData({
-        name: '',
-        email: '',
-        company: '',
-        service: '',
-        message: ''
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
       })
+      
+      const result = await response.json()
+      
+      if (result.success) {
+        setSubmitStatus('success')
+        setFormData({
+          name: '',
+          email: '',
+          company: '',
+          service: '',
+          message: ''
+        })
+      } else {
+        setSubmitStatus('error')
+      }
     } catch {
       setSubmitStatus('error')
     } finally {

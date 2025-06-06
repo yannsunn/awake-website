@@ -3,8 +3,16 @@ import { ArrowRight, ChevronDown } from 'lucide-react'
 
 export default function HeroSection() {
   return (
-    <section className="min-h-screen bg-gradient-to-br from-primary-purple via-primary-purple-dark to-primary-pink flex items-center justify-center pt-16" id="hero" aria-labelledby="hero-title">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <section className="relative min-h-screen flex items-center justify-center pt-16 overflow-hidden" id="hero" aria-labelledby="hero-title">
+      {/* Enhanced Animated Background */}
+      <div className="absolute inset-0 bg-gradient-to-br from-primary-purple via-primary-purple-dark to-primary-pink">
+        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgdmlld0JveD0iMCAwIDEwMCAxMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CiAgPGNpcmNsZSBjeD0iNTAiIGN5PSI1MCIgcj0iMiIgZmlsbD0icmdiYSgyNTUsIDI1NSwgMjU1LCAwLjEpIi8+CiAgPGNpcmNsZSBjeD0iMjAiIGN5PSIyMCIgcj0iMSIgZmlsbD0icmdiYSgyNTUsIDI1NSwgMjU1LCAwLjA4KSIvPgogIDxjaXJjbGUgY3g9IjgwIiBjeT0iODAiIHI9IjEuNSIgZmlsbD0icmdiYSgyNTUsIDI1NSwgMjU1LCAwLjEyKSIvPgo8L3N2Zz4=')] opacity-30"></div>
+        <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-yellow-400/20 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2 animate-pulse"></div>
+        <div className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-pink-400/15 rounded-full blur-3xl translate-x-1/3 translate-y-1/3"></div>
+        <div className="absolute top-1/3 right-1/4 w-[300px] h-[300px] bg-purple-300/10 rounded-full blur-2xl"></div>
+        <div className="absolute bottom-1/4 left-1/4 w-[200px] h-[200px] bg-white/10 rounded-full blur-xl animate-pulse"></div>
+      </div>
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center z-10">
         <div className="max-w-4xl mx-auto">
           <h1 id="hero-title" className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
             革新的なソリューションで<br />

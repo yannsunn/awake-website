@@ -116,8 +116,15 @@ export default function EcServicePage() {
       
       <main role="main" className="pt-16">
         {/* Hero Section */}
-        <section className="bg-gradient-to-br from-green-600 to-green-800 py-20">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <section className="relative py-20 overflow-hidden">
+          {/* Animated Background */}
+          <div className="absolute inset-0 bg-gradient-to-br from-emerald-500 via-green-600 to-teal-700">
+            <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8cGF0aCBkPSJNMzAgMGwxMCA2LjY3djEzLjMzTDMwIDI3IDIwIDIwVjYuNjdMMyAweiIgZmlsbD0icmdiYSgyNTUsIDI1NSwgMjU1LCAwLjA1KSIvPgo8L3N2Zz4=')] opacity-30"></div>
+            <div className="absolute top-0 right-0 w-80 h-80 bg-yellow-400/15 rounded-full blur-3xl translate-x-1/4 -translate-y-1/4"></div>
+            <div className="absolute bottom-0 left-0 w-64 h-64 bg-blue-400/20 rounded-full blur-2xl -translate-x-1/3 translate-y-1/2"></div>
+            <div className="absolute top-1/2 left-1/2 w-32 h-32 bg-white/10 rounded-full blur-xl -translate-x-1/2 -translate-y-1/2"></div>
+          </div>
+          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div>
                 <div className="flex items-center mb-6">
