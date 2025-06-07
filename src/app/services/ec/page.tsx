@@ -121,20 +121,20 @@ export default function EcServicePage() {
           <div className="absolute inset-0 bg-gradient-to-br from-blue-600 via-blue-700 to-blue-800">
             {/* Grid Pattern */}
             <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgdmlld0JveD0iMCAwIDEwMCAxMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CiAgPGRlZnM+CiAgICA8cGF0dGVybiBpZD0iZ3JpZCIgd2lkdGg9IjEwMCIgaGVpZ2h0PSIxMDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiPgogICAgICA8cGF0aCBkPSJNIDEwMCAwIEwgMCAwIDAgMTAwIiBmaWxsPSJub25lIiBzdHJva2U9InJnYmEoMjU1LCAyNTUsIDI1NSwgMC4wMykiIHN0cm9rZS13aWR0aD0iMSIvPgogICAgPC9wYXR0ZXJuPgogIDwvZGVmcz4KICA8cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2dyaWQpIiAvPgo8L3N2Zz4=')] opacity-20"></div>
-            {/* Floating Amazon-style Elements */}
-            <div className="absolute top-1/4 left-1/4 w-2 h-2 bg-orange-400 rounded-full animate-pulse"></div>
-            <div className="absolute top-2/3 right-1/3 w-1 h-1 bg-yellow-400 rounded-full animate-pulse" style={{animationDelay: '2s'}}></div>
-            <div className="absolute bottom-1/3 left-1/5 w-1.5 h-1.5 bg-orange-300 rounded-full animate-pulse" style={{animationDelay: '4s'}}></div>
-            {/* Modern Blurred Shapes */}
-            <div className="absolute top-0 left-0 w-[600px] h-[600px] bg-gradient-to-br from-orange-500/15 to-red-600/10 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2"></div>
-            <div className="absolute bottom-0 right-0 w-[700px] h-[700px] bg-gradient-to-tr from-yellow-500/10 to-orange-500/15 rounded-full blur-3xl translate-x-1/3 translate-y-1/3"></div>
-            <div className="absolute top-1/2 left-1/2 w-[400px] h-[400px] bg-gradient-to-r from-orange-400/8 to-yellow-500/8 rounded-full blur-2xl -translate-x-1/2 -translate-y-1/2"></div>
+            {/* Subtle Background Elements */}
+            <div className="absolute top-1/4 left-1/4 w-2 h-2 bg-blue-300 rounded-full opacity-60"></div>
+            <div className="absolute top-2/3 right-1/3 w-1 h-1 bg-blue-200 rounded-full opacity-60"></div>
+            <div className="absolute bottom-1/3 left-1/5 w-1.5 h-1.5 bg-blue-400 rounded-full opacity-60"></div>
+            {/* Modern Blurred Shapes - Blue tones */}
+            <div className="absolute top-0 left-0 w-[600px] h-[600px] bg-gradient-to-br from-blue-500/8 to-blue-600/5 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2"></div>
+            <div className="absolute bottom-0 right-0 w-[700px] h-[700px] bg-gradient-to-tr from-blue-400/6 to-blue-500/8 rounded-full blur-3xl translate-x-1/3 translate-y-1/3"></div>
+            <div className="absolute top-1/2 left-1/2 w-[400px] h-[400px] bg-gradient-to-r from-blue-300/4 to-blue-400/6 rounded-full blur-2xl -translate-x-1/2 -translate-y-1/2"></div>
           </div>
           {/* Floating Icons */}
-          <div className="absolute top-20 right-20 text-orange-400/30 hidden lg:block animate-pulse">
+          <div className="absolute top-20 right-20 text-blue-300/20 hidden lg:block">
             <Star size={32} />
           </div>
-          <div className="absolute bottom-32 left-16 text-yellow-400/30 hidden lg:block animate-pulse" style={{animationDelay: '2s'}}>
+          <div className="absolute bottom-32 left-16 text-blue-200/20 hidden lg:block">
             <Package size={28} />
           </div>
           <div className="absolute top-1/3 left-20 text-orange-300/30 hidden lg:block animate-pulse" style={{animationDelay: '4s'}}>
@@ -210,8 +210,8 @@ export default function EcServicePage() {
           
           <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-20">
-              <div className="inline-flex items-center bg-gradient-to-r from-orange-100 to-yellow-100 px-6 py-2 rounded-full mb-6">
-                <span className="text-orange-600 font-semibold text-sm">FEATURES</span>
+              <div className="inline-flex items-center bg-gradient-to-r from-blue-100 to-blue-100 px-6 py-2 rounded-full mb-6">
+                <span className="text-blue-600 font-semibold text-sm">FEATURES</span>
               </div>
               <h2 className="text-4xl md:text-5xl font-semibold text-gray-900 mb-6">
                 サービスの特徴
@@ -229,12 +229,12 @@ export default function EcServicePage() {
                     {/* Glass Card */}
                     <div className="relative bg-white/80 backdrop-blur-sm border border-gray-200/50 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-500 transform hover:-translate-y-2">
                       {/* Gradient Border on Hover */}
-                      <div className="absolute inset-0 bg-gradient-to-r from-orange-500 to-yellow-500 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" style={{padding: '1px'}}>
+                      <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-blue-600 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" style={{padding: '1px'}}>
                         <div className="bg-white rounded-2xl h-full w-full"></div>
                       </div>
                       
                       <div className="relative z-10 text-center">
-                        <div className="w-16 h-16 bg-gradient-to-br from-orange-500 to-orange-600 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                        <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-6 transition-transform duration-300">
                           <IconComponent className="h-8 w-8 text-white" />
                         </div>
                         <h3 className="text-xl font-semibold text-gray-900 mb-4">
@@ -269,18 +269,18 @@ export default function EcServicePage() {
             
             <div className="relative">
               {/* Connection Lines */}
-              <div className="hidden lg:block absolute top-1/2 left-0 right-0 h-0.5 bg-gradient-to-r from-orange-200 via-orange-300 to-orange-200 transform -translate-y-1/2"></div>
+              <div className="hidden lg:block absolute top-1/2 left-0 right-0 h-0.5 bg-gradient-to-r from-blue-200 via-blue-300 to-blue-200 transform -translate-y-1/2"></div>
               
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 relative z-10">
                 {process.map((item, index) => (
                   <div key={index} className="text-center relative">
                     {/* Step Circle */}
                     <div className="relative mb-8">
-                      <div className="w-20 h-20 bg-gradient-to-br from-orange-500 to-orange-600 text-white rounded-full flex items-center justify-center mx-auto shadow-lg">
+                      <div className="w-20 h-20 bg-gradient-to-br from-blue-500 to-blue-600 text-white rounded-full flex items-center justify-center mx-auto shadow-lg">
                         <span className="text-2xl font-bold">{item.step}</span>
                       </div>
-                      {/* Pulse Effect */}
-                      <div className="absolute inset-0 w-20 h-20 bg-orange-400 rounded-full mx-auto animate-ping opacity-20"></div>
+                      {/* Subtle Effect */}
+                      <div className="absolute inset-0 w-20 h-20 bg-blue-400 rounded-full mx-auto opacity-10"></div>
                     </div>
                     
                     {/* Content Card */}
@@ -300,15 +300,15 @@ export default function EcServicePage() {
         </section>
 
         {/* Commission Section */}
-        <section className="py-24 bg-gradient-to-br from-gray-50 to-orange-50 relative overflow-hidden">
+        <section className="py-24 bg-gradient-to-br from-gray-50 to-blue-50 relative overflow-hidden">
           {/* Background Decoration */}
-          <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-orange-200/20 to-yellow-200/20 rounded-full blur-3xl"></div>
-          <div className="absolute bottom-0 left-0 w-96 h-96 bg-gradient-to-tr from-blue-200/20 to-purple-200/20 rounded-full blur-3xl"></div>
+          <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-blue-200/20 to-blue-300/20 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-0 left-0 w-96 h-96 bg-gradient-to-tr from-blue-200/20 to-blue-300/20 rounded-full blur-3xl"></div>
           
           <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-20">
-              <div className="inline-flex items-center bg-gradient-to-r from-green-100 to-emerald-100 px-6 py-2 rounded-full mb-6">
-                <span className="text-green-600 font-semibold text-sm">PRICING</span>
+              <div className="inline-flex items-center bg-gradient-to-r from-blue-100 to-blue-100 px-6 py-2 rounded-full mb-6">
+                <span className="text-blue-600 font-semibold text-sm">PRICING</span>
               </div>
               <h2 className="text-4xl md:text-5xl font-semibold text-gray-900 mb-6">
                 手数料体系
@@ -324,7 +324,7 @@ export default function EcServicePage() {
                   {/* Glass Card */}
                   <div className="relative bg-white/90 backdrop-blur-sm border border-white/50 p-8 rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-3">
                     {/* Gradient Border */}
-                    <div className="absolute inset-0 bg-gradient-to-r from-orange-500 via-yellow-500 to-orange-500 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" style={{padding: '2px'}}>
+                    <div className="absolute inset-0 bg-gradient-to-r from-blue-500 via-blue-600 to-blue-500 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" style={{padding: '2px'}}>
                       <div className="bg-white rounded-3xl h-full w-full"></div>
                     </div>
                     
@@ -332,7 +332,7 @@ export default function EcServicePage() {
                       <h3 className="text-2xl font-bold text-gray-900 mb-6">
                         {item.platform}
                       </h3>
-                      <div className="text-5xl font-bold bg-gradient-to-r from-orange-500 to-yellow-500 bg-clip-text text-transparent mb-4">
+                      <div className="text-5xl font-bold bg-gradient-to-r from-blue-500 to-blue-600 bg-clip-text text-transparent mb-4">
                         {item.rate}
                       </div>
                       <p className="text-gray-600 text-lg">
@@ -346,14 +346,14 @@ export default function EcServicePage() {
             
             {/* Success Guarantee */}
             <div className="relative">
-              <div className="bg-gradient-to-r from-green-500 to-emerald-600 p-8 rounded-3xl shadow-xl text-center text-white">
+              <div className="bg-gradient-to-r from-blue-500 to-blue-600 p-8 rounded-3xl shadow-xl text-center text-white">
                 <div className="flex items-center justify-center mb-4">
                   <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center mr-4">
                     <CheckCircle className="h-6 w-6" />
                   </div>
                   <h3 className="text-2xl font-bold">完全成果報酬型</h3>
                 </div>
-                <p className="text-xl text-green-100 leading-relaxed">
+                <p className="text-xl text-blue-100 leading-relaxed">
                   <strong>初期費用0円</strong> + <strong>月額固定費なし</strong><br />
                   売上が発生した分のみ手数料をいただく安心システム
                 </p>
@@ -366,20 +366,20 @@ export default function EcServicePage() {
         <section id="contact" className="py-24 bg-blue-600 relative overflow-hidden">
           {/* Background Effects */}
           <div className="absolute inset-0">
-            <div className="absolute top-0 left-0 w-[600px] h-[600px] bg-gradient-to-br from-orange-500/10 to-yellow-500/10 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2"></div>
-            <div className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-gradient-to-tr from-yellow-500/10 to-orange-500/10 rounded-full blur-3xl translate-x-1/2 translate-y-1/2"></div>
+            <div className="absolute top-0 left-0 w-[600px] h-[600px] bg-gradient-to-br from-blue-400/8 to-blue-500/8 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2"></div>
+            <div className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-gradient-to-tr from-blue-400/8 to-blue-500/8 rounded-full blur-3xl translate-x-1/2 translate-y-1/2"></div>
           </div>
           
           <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             {/* Badge */}
-            <div className="inline-flex items-center bg-gradient-to-r from-orange-500/20 to-yellow-500/20 backdrop-blur-sm border border-orange-400/30 rounded-full px-6 py-3 mb-8">
-              <Star className="h-5 w-5 text-orange-400 mr-2" />
-              <span className="text-orange-200 font-semibold text-sm">無料相談受付中</span>
+            <div className="inline-flex items-center bg-gradient-to-r from-blue-500/20 to-blue-600/20 backdrop-blur-sm border border-blue-400/30 rounded-full px-6 py-3 mb-8">
+              <Star className="h-5 w-5 text-blue-300 mr-2" />
+              <span className="text-blue-200 font-semibold text-sm">無料相談受付中</span>
             </div>
             
             <h2 className="text-4xl md:text-6xl font-semibold text-white mb-8">
               Amazon特価での<br />
-              <span className="bg-gradient-to-r from-orange-400 to-yellow-400 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-blue-300 to-blue-200 bg-clip-text text-transparent">
                 代理販売
               </span>を始めませんか？
             </h2>
