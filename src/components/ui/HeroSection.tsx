@@ -38,41 +38,41 @@ export default function HeroSection() {
 
   return (
     <section className="relative min-h-screen flex items-center justify-center pt-16 overflow-hidden" id="hero" aria-labelledby="hero-title">
-      {/* Advanced Animated Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
+      {/* Advanced Animated Background - Lighter */}
+      <div className="absolute inset-0 bg-gradient-to-br from-slate-700 via-purple-700 to-slate-700">
         {/* Grid Pattern */}
-        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgdmlld0JveD0iMCAwIDEwMCAxMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CiAgPGRlZnM+CiAgICA8cGF0dGVybiBpZD0iZ3JpZCIgd2lkdGg9IjEwMCIgaGVpZ2h0PSIxMDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiPgogICAgICA8cGF0aCBkPSJNIDEwMCAwIEwgMCAwIDAgMTAwIiBmaWxsPSJub25lIiBzdHJva2U9InJnYmEoMjU1LCAyNTUsIDI1NSwgMC4wMykiIHN0cm9rZS13aWR0aD0iMSIvPgogICAgPC9wYXR0ZXJuPgogIDwvZGVmcz4KICA8cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2dyaWQpIiAvPgo8L3N2Zz4=')] opacity-20"></div>
+        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgdmlld0JveD0iMCAwIDEwMCAxMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CiAgPGRlZnM+CiAgICA8cGF0dGVybiBpZD0iZ3JpZCIgd2lkdGg9IjEwMCIgaGVpZ2h0PSIxMDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiPgogICAgICA8cGF0aCBkPSJNIDEwMCAwIEwgMCAwIDAgMTAwIiBmaWxsPSJub25lIiBzdHJva2U9InJnYmEoMjU1LCAyNTUsIDI1NSwgMC4wNSkiIHN0cm9rZS13aWR0aD0iMSIvPgogICAgPC9wYXR0ZXJuPgogIDwvZGVmcz4KICA8cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2dyaWQpIiAvPgo8L3N2Zz4=')] opacity-30"></div>
         
         {/* Floating Elements */}
         <motion.div 
           variants={floatingVariants}
           animate="float"
-          className="absolute top-1/4 left-1/4 w-2 h-2 bg-cyan-400 rounded-full blur-[1px]"
+          className="absolute top-1/4 left-1/4 w-2 h-2 bg-cyan-400 rounded-full blur-[1px] opacity-60"
         />
         <motion.div 
           variants={floatingVariants}
           animate="float"
           style={{ animationDelay: '2s' }}
-          className="absolute top-1/3 right-1/3 w-1 h-1 bg-yellow-400 rounded-full blur-[0.5px]"
+          className="absolute top-1/3 right-1/3 w-1 h-1 bg-yellow-400 rounded-full blur-[0.5px] opacity-60"
         />
         <motion.div 
           variants={floatingVariants}
           animate="float"
           style={{ animationDelay: '4s' }}
-          className="absolute bottom-1/3 left-1/5 w-1.5 h-1.5 bg-pink-400 rounded-full blur-[1px]"
+          className="absolute bottom-1/3 left-1/5 w-1.5 h-1.5 bg-pink-400 rounded-full blur-[1px] opacity-60"
         />
         
-        {/* Modern Blurred Shapes */}
-        <div className="absolute top-0 left-0 w-[600px] h-[600px] bg-gradient-to-br from-cyan-500/20 to-blue-600/20 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2 animate-pulse"></div>
-        <div className="absolute bottom-0 right-0 w-[700px] h-[700px] bg-gradient-to-tr from-purple-500/15 to-pink-500/15 rounded-full blur-3xl translate-x-1/3 translate-y-1/3"></div>
-        <div className="absolute top-1/2 left-1/2 w-[400px] h-[400px] bg-gradient-to-r from-yellow-400/10 to-orange-500/10 rounded-full blur-2xl -translate-x-1/2 -translate-y-1/2 animate-pulse"></div>
+        {/* Modern Blurred Shapes - Lighter */}
+        <div className="absolute top-0 left-0 w-[600px] h-[600px] bg-gradient-to-br from-cyan-500/10 to-blue-600/10 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2 animate-pulse"></div>
+        <div className="absolute bottom-0 right-0 w-[700px] h-[700px] bg-gradient-to-tr from-purple-500/8 to-pink-500/8 rounded-full blur-3xl translate-x-1/3 translate-y-1/3"></div>
+        <div className="absolute top-1/2 left-1/2 w-[400px] h-[400px] bg-gradient-to-r from-yellow-400/6 to-orange-500/6 rounded-full blur-2xl -translate-x-1/2 -translate-y-1/2 animate-pulse"></div>
       </div>
 
       {/* Floating Icons */}
       <motion.div
         variants={floatingVariants}
         animate="float"
-        className="absolute top-20 right-20 text-cyan-400/20 hidden lg:block"
+        className="absolute top-20 right-20 text-cyan-400/30 hidden lg:block"
       >
         <Sparkles size={32} />
       </motion.div>
@@ -80,7 +80,7 @@ export default function HeroSection() {
         variants={floatingVariants}
         animate="float"
         style={{ animationDelay: '2s' }}
-        className="absolute bottom-32 left-16 text-yellow-400/20 hidden lg:block"
+        className="absolute bottom-32 left-16 text-yellow-400/30 hidden lg:block"
       >
         <Zap size={28} />
       </motion.div>
@@ -88,7 +88,7 @@ export default function HeroSection() {
         variants={floatingVariants}
         animate="float"
         style={{ animationDelay: '4s' }}
-        className="absolute top-1/3 left-20 text-pink-400/20 hidden lg:block"
+        className="absolute top-1/3 left-20 text-pink-400/30 hidden lg:block"
       >
         <TrendingUp size={24} />
       </motion.div>
@@ -113,7 +113,7 @@ export default function HeroSection() {
             className="text-5xl md:text-7xl lg:text-8xl font-black text-white mb-8 leading-tight"
           >
             <span className="bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
-              革新的
+              革命的
             </span>
             なソリューションで<br />
             企業の成長を
