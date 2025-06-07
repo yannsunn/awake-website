@@ -113,7 +113,7 @@ export default function HeroSection() {
           <motion.h1 
             id="hero-title" 
             variants={itemVariants}
-            className="text-5xl md:text-7xl lg:text-8xl font-black text-white drop-shadow-lg mb-8 leading-tight"
+            className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black text-white drop-shadow-lg mb-8 leading-tight"
           >
             <span className="bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
               革命的
