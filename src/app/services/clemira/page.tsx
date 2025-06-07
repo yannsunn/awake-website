@@ -7,8 +7,8 @@ import Image from 'next/image'
 
 export const metadata: Metadata = {
   title: "CLEMIRA直販店 - 量子エネルギーデバイス | 株式会社Awake",
-  description: "本社直送で、量子エネルギーデバイス「CLEMIRA」シリーズを提供。確かな品質と信頼の正規品をお届けします。",
-  keywords: "CLEMIRA, 量子エネルギー, 直販店, 本社直送, 正規品, 株式会社Awake",
+  description: "日本アールエスナイン株式会社の正規品を本社直送でお届け。CLEMIRA insole（22万円）、PHOENIX（16.5万円）、athlete（5.5万円）、blackcard（2.75万円）を取り扱い。",
+  keywords: "CLEMIRA, クレミラ, 量子エネルギー, 直販店, 本社直送, 正規品, 株式会社Awake, 日本アールエスナイン",
   openGraph: {
     title: "CLEMIRA直販店 - 量子エネルギーデバイス | 株式会社Awake",
     description: "本社直送で、革新的な量子エネルギーデバイスを提供。確かな品質と安心のアフターサービス。",
@@ -48,21 +48,23 @@ const features = [
 
 const products = [
   {
-    name: "CLEMIRA インソール",
+    name: "CLEMIRA insole",
     price: "¥220,000",
+    image: "/assets/images/modern-office.jpg",
     description: "最新の量子エネルギー技術を採用したインソール",
     features: [
       "24時間装着可能な設計",
       "スポーツシーンでの使用に最適",
       "日常生活でも快適に使用",
       "耐久性に優れた素材",
-      "1年間品質保証"
+      "正規品保証付き"
     ],
     popular: true
   },
   {
     name: "CLEMIRA PHOENIX",
     price: "¥165,000",
+    image: "/assets/images/web-design.jpg",
     description: "コア技術を搭載したプレミアムモデル",
     features: [
       "CLEMIRA CORE技術搭載",
@@ -75,12 +77,52 @@ const products = [
   {
     name: "CLEMIRA athlete",
     price: "¥55,000",
+    image: "/assets/images/video-editing.jpg",
     description: "アスリート向けエントリーモデル",
     features: [
       "コンパクト設計",
       "スポーツシーンでの使用に特化",
       "軽量で携帯に便利",
       "簡単操作ですぐに使用可能",
+      "本社直送・正規品保証"
+    ]
+  },
+  {
+    name: "CLEMIRA blackcard",
+    price: "¥27,500",
+    image: "/assets/images/ec-shopping.jpg",
+    description: "携帯に便利なカード型デバイス",
+    features: [
+      "カード型の薄型設計",
+      "財布に入れて常時携帯可能",
+      "日常生活での活用に最適",
+      "軽量コンパクト設計",
+      "本社直送・正規品保証"
+    ]
+  },
+  {
+    name: "【自動車用】CLEMIRA極",
+    price: "¥27,500",
+    image: "/assets/images/furniture.jpg",
+    description: "自動車専用の量子エネルギーデバイス",
+    features: [
+      "車内環境に最適化",
+      "高温環境に対応",
+      "簡単設置ですぐに使用可能",
+      "長距離ドライブに最適",
+      "本社直送・正規品保証"
+    ]
+  },
+  {
+    name: "【携帯用】CLEMIRA極",
+    price: "¥27,500",
+    image: "/assets/images/ogp.jpg",
+    description: "携帯用コンパクトモデル",
+    features: [
+      "ポケットサイズのコンパクト設計",
+      "外出先での活用に最適",
+      "軽量で持ち運びが簡単",
+      "旅行や出張に便利",
       "本社直送・正規品保証"
     ]
   }
@@ -96,13 +138,13 @@ const clemiraServiceSchema = {
     "url": "https://awake-website-five.vercel.app/"
   },
   "name": "CLEMIRA直販店 - 量子エネルギーデバイス",
-  "description": "正規代理店を通さない直販価格で、量子エネルギーデバイス「CLEMIRA」シリーズを提供。身体機能向上・パフォーマンス最適化をサポート。",
+  "description": "本社直送で、量子エネルギーデバイス「CLEMIRA」シリーズを提供。確かな品質の正規品をお届けします。",
   "url": "https://awake-website-five.vercel.app/services/clemira/",
   "image": "https://awake-website-five.vercel.app/assets/images/modern-office.jpg",
   "offers": {
     "@type": "AggregateOffer",
     "priceCurrency": "JPY",
-    "lowPrice": "55000",
+    "lowPrice": "27500",
     "highPrice": "220000",
     "eligibleRegion": {
       "@type": "Country",
@@ -224,7 +266,7 @@ export default function ClemiraServicePage() {
               </p>
             </div>
             
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {products.map((product, index) => (
                 <div 
                   key={index} 
@@ -240,6 +282,15 @@ export default function ClemiraServicePage() {
                       </span>
                     </div>
                   )}
+                  <div className="mb-4">
+                    <Image
+                      src={product.image}
+                      alt={product.name}
+                      width={300}
+                      height={200}
+                      className="w-full h-40 object-cover rounded-lg"
+                    />
+                  </div>
                   <h3 className="text-2xl font-bold text-gray-900 mb-2">
                     {product.name}
                   </h3>
