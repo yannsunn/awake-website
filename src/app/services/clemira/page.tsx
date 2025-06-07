@@ -132,24 +132,123 @@ const clemiraServiceSchema = {
   "@context": "https://schema.org",
   "@type": "Service",
   "serviceType": "Quantum Energy Device Sales",
+  "category": "Health and Wellness Products",
+  "brand": {
+    "@type": "Brand",
+    "name": "CLEMIRA"
+  },
   "provider": {
     "@type": "Organization",
     "name": "株式会社Awake",
-    "url": "https://awake-website-five.vercel.app/"
+    "alternateName": "Awake Inc.",
+    "url": "https://awake-website-five.vercel.app/",
+    "telephone": "+81-50-7115-4948",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "東京都東大和市向原5-1129-61 渡辺ビル1F",
+      "addressLocality": "東大和市",
+      "addressRegion": "東京都",
+      "postalCode": "207-0013",
+      "addressCountry": "JP"
+    },
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+81-50-7115-4948",
+      "contactType": "customer service",
+      "availableLanguage": "Japanese"
+    }
   },
   "name": "CLEMIRA直販店 - 量子エネルギーデバイス",
   "description": "本社直送で、量子エネルギーデバイス「CLEMIRA」シリーズを提供。確かな品質の正規品をお届けします。",
   "url": "https://awake-website-five.vercel.app/services/clemira/",
   "image": "https://awake-website-five.vercel.app/assets/images/modern-office.jpg",
+  "areaServed": {
+    "@type": "Country",
+    "name": "Japan"
+  },
   "offers": {
     "@type": "AggregateOffer",
     "priceCurrency": "JPY",
-    "lowPrice": "27500",
-    "highPrice": "220000",
+    "lowPrice": "27500.00",
+    "highPrice": "220000.00",
+    "offerCount": 6,
+    "availability": "https://schema.org/InStock",
+    "validFrom": "2025-01-01",
+    "priceValidUntil": "2025-12-31",
     "eligibleRegion": {
       "@type": "Country",
       "name": "Japan"
+    },
+    "seller": {
+      "@type": "Organization",
+      "name": "株式会社Awake"
     }
+  },
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "CLEMIRA製品カタログ",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Product",
+          "name": "CLEMIRA insole",
+          "description": "最新の量子エネルギー技術を採用したインソール"
+        },
+        "price": "220000.00",
+        "priceCurrency": "JPY"
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Product",
+          "name": "CLEMIRA PHOENIX",
+          "description": "コア技術を搭載したプレミアムモデル"
+        },
+        "price": "165000.00",
+        "priceCurrency": "JPY"
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Product",
+          "name": "CLEMIRA athlete",
+          "description": "アスリート向けエントリーモデル"
+        },
+        "price": "55000.00",
+        "priceCurrency": "JPY"
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Product",
+          "name": "CLEMIRA blackcard",
+          "description": "携帯に便利なカード型デバイス"
+        },
+        "price": "27500.00",
+        "priceCurrency": "JPY"
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Product",
+          "name": "【自動車用】CLEMIRA極",
+          "description": "自動車専用の量子エネルギーデバイス"
+        },
+        "price": "27500.00",
+        "priceCurrency": "JPY"
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Product",
+          "name": "【携帯用】CLEMIRA極",
+          "description": "携帯用コンパクトモデル"
+        },
+        "price": "27500.00",
+        "priceCurrency": "JPY"
+      }
+    ]
   }
 }
 
@@ -289,6 +388,8 @@ export default function ClemiraServicePage() {
                       width={300}
                       height={200}
                       className="w-full h-40 object-cover rounded-lg"
+                      priority={index === 0}
+                      quality={85}
                     />
                   </div>
                   <h3 className="text-2xl font-bold text-gray-900 mb-2">
