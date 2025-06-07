@@ -1,7 +1,7 @@
 'use client'
 
 import Link from 'next/link'
-import { Globe, ShoppingCart, Video, Armchair, Zap, ArrowRight } from 'lucide-react'
+import { Globe, ShoppingCart, Video, Armchair, Zap, Bot, ArrowRight } from 'lucide-react'
 import { motion } from 'framer-motion'
 import { useInView } from 'framer-motion'
 import { useRef } from 'react'
@@ -13,6 +13,7 @@ const serviceIcons = {
   video: Video,
   furniture: Armchair,
   clemira: Zap,
+  ai: Bot,
 } as const
 
 export default function ServicesSection() {
@@ -79,7 +80,7 @@ export default function ServicesSection() {
         </motion.div>
         
         <motion.div 
-          className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12"
           variants={containerVariants}
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}
