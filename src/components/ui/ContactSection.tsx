@@ -137,9 +137,10 @@ export default function ContactSection() {
                 >
                   <option value="">選択してください</option>
                   <option value="web">HP制作・LP制作</option>
-                  <option value="ec">EC通販代理販売</option>
+                  <option value="ec">EC通販サイト制作</option>
                   <option value="video">動画編集・制作</option>
                   <option value="furniture">家具製作</option>
+                  <option value="clemira">CLEMIRA製品について</option>
                   <option value="all">すべて</option>
                   <option value="other">その他</option>
                 </select>
