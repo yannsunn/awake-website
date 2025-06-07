@@ -49,7 +49,7 @@ const features = [
 const products = [
   {
     name: "CLEMIRA インソール",
-    price: "¥198,000",
+    price: "¥220,000",
     description: "最新の量子エネルギー技術を採用したインソール",
     features: [
       "24時間装着可能な設計",
@@ -62,7 +62,7 @@ const products = [
   },
   {
     name: "CLEMIRA PHOENIX",
-    price: "¥148,500",
+    price: "¥165,000",
     description: "コア技術を搭載したプレミアムモデル",
     features: [
       "CLEMIRA CORE技術搭載",
@@ -74,7 +74,7 @@ const products = [
   },
   {
     name: "CLEMIRA athlete",
-    price: "¥49,500",
+    price: "¥55,000",
     description: "アスリート向けエントリーモデル",
     features: [
       "コンパクト設計",
@@ -102,8 +102,8 @@ const clemiraServiceSchema = {
   "offers": {
     "@type": "AggregateOffer",
     "priceCurrency": "JPY",
-    "lowPrice": "49500",
-    "highPrice": "198000",
+    "lowPrice": "55000",
+    "highPrice": "220000",
     "eligibleRegion": {
       "@type": "Country",
       "name": "Japan"
