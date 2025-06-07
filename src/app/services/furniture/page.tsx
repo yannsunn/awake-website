@@ -97,7 +97,7 @@ const ironFurnitureProducts = [
     name: "アイアンバー",
     price: "¥15,000",
     description: "ランドリーバー・物干し用のシンプルなアイアンバー",
-    image: "/assets/images/furniture.jpg",
+    image: "https://static.mercdn.net/item/detail/orig/photos/m49765327227_1.jpg?1733724134",
     features: [
       "20角パイプ仕様",
       "幅150cm×奥行30cm", 
@@ -109,7 +109,7 @@ const ironFurnitureProducts = [
     name: "アイアングリーンハンギング",
     price: "¥5,000",
     description: "植物用アイアンハンギングバー・雑貨", 
-    image: "/assets/images/furniture.jpg",
+    image: "https://static.mercdn.net/item/detail/orig/photos/m23082557248_1.jpg?1733724134",
     features: [
       "直径120cm対応",
       "高さ10cm調整可能",
@@ -121,7 +121,7 @@ const ironFurnitureProducts = [
     name: "アイアン物干しバー",
     price: "¥15,000",
     description: "F型20角パイプを使用した物干しバー",
-    image: "/assets/images/furniture.jpg", 
+    image: "https://static.mercdn.net/item/detail/orig/photos/m12911620454_1.jpg?1733724134", 
     features: [
       "F型20角パイプ",
       "直径150cm×奥行30cm",
@@ -133,7 +133,7 @@ const ironFurnitureProducts = [
     name: "アイアンサイドテーブル",
     price: "¥8,000",
     description: "角パイプを使用したシンプルなサイドテーブル",
-    image: "/assets/images/furniture.jpg",
+    image: "https://static.mercdn.net/item/detail/orig/photos/m93226931201_1.jpg?1733724134",
     features: [
       "角パイプ仕様",
       "高さ60cm×横幅30cm",
@@ -145,7 +145,7 @@ const ironFurnitureProducts = [
     name: "二段シェルフ",
     price: "¥3,500",
     description: "2段シェルフ アイアンラック オープンラック オーブンラック",
-    image: "/assets/images/furniture.jpg",
+    image: "https://static.mercdn.net/item/detail/orig/photos/m84329302852_1.jpg?1733724134",
     features: [
       "幅50cm×奥行30cm",
       "製造サイズ(mm)",
@@ -157,7 +157,7 @@ const ironFurnitureProducts = [
     name: "アイアンバー（sold）",
     price: "¥3,800", 
     description: "アイアン雑貨・アイアン家具バー（売り切れ）",
-    image: "/assets/images/furniture.jpg",
+    image: "https://static.mercdn.net/item/detail/orig/photos/m92779832010_1.jpg?1733724134",
     features: [
       "売り切れ商品",
       "参考価格表示",
