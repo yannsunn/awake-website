@@ -11,7 +11,7 @@ const notoSansJP = Noto_Sans_JP({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://awake.co.jp"),
+  metadataBase: new URL("https://awakeinc.co.jp"),
   title: "株式会社Awake | ビジネスコンサルティング",
   description: "Web制作、EC運営代行、動画制作、家具製造まで、一気通貫でビジネス成長をサポートする株式会社Awakeです。",
   keywords: "Web制作,EC運営代行,動画制作,家具製造,ビジネスコンサルティング",

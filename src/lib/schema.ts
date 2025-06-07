@@ -3,8 +3,8 @@ export const organizationSchema = {
   "@type": "Organization",
   "name": "株式会社Awake",
   "alternateName": "Awake Inc.",
-  "url": "https://awake.co.jp/",
-  "logo": "https://awake.co.jp/assets/images/ogp.jpg",
+  "url": "https://awakeinc.co.jp/",
+  "logo": "https://awakeinc.co.jp/assets/images/ogp.jpg",
   "contactPoint": {
     "@type": "ContactPoint",
     "telephone": "+81-50-7115-4948",

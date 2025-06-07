@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     title: "CLEMIRA直販店 - 量子エネルギーデバイス | 株式会社Awake",
     description: "本社直送で、革新的な量子エネルギーデバイスを提供。確かな品質と安心のアフターサービス。",
     images: ["/assets/images/modern-office.jpg"],
-    url: "https://awake.co.jp/services/clemira/",
+    url: "https://awakeinc.co.jp/services/clemira/",
   },
   twitter: {
     card: "summary_large_image",
@@ -141,7 +141,7 @@ const clemiraServiceSchema = {
     "@type": "Organization",
     "name": "株式会社Awake",
     "alternateName": "Awake Inc.",
-    "url": "https://awake.co.jp/",
+    "url": "https://awakeinc.co.jp/",
     "telephone": "+81-50-7115-4948",
     "address": {
       "@type": "PostalAddress",
@@ -160,8 +160,8 @@ const clemiraServiceSchema = {
   },
   "name": "CLEMIRA直販店 - 量子エネルギーデバイス",
   "description": "本社直送で、量子エネルギーデバイス「CLEMIRA」シリーズを提供。確かな品質の正規品をお届けします。",
-  "url": "https://awake.co.jp/services/clemira/",
-  "image": "https://awake.co.jp/assets/images/modern-office.jpg",
+  "url": "https://awakeinc.co.jp/services/clemira/",
+  "image": "https://awakeinc.co.jp/assets/images/modern-office.jpg",
   "areaServed": {
     "@type": "Country",
     "name": "Japan"
