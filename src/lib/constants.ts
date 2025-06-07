@@ -47,6 +47,13 @@ export const SERVICES = {
     gradient: 'from-orange-600 to-red-700',
     href: '/services/clemira',
   },
+  ai: {
+    title: 'AI研修・AIコンサル',
+    description: '企業のDX推進をAI技術で支援。ChatGPT活用研修からAIシステム導入まで包括的にサポート。',
+    icon: '🤖',
+    gradient: 'from-cyan-500 to-blue-600',
+    href: '/services/ai',
+  },
 } as const
 
 // Navigation items
@@ -63,7 +70,8 @@ export const FOOTER_LINKS = {
     { href: '/services/ec', label: 'EC通販代理販売' },
     { href: '/services/video', label: '動画編集・制作' },
     { href: '/services/furniture', label: '家具製作' },
-    { href: '/services/kurumira', label: 'CLEMIRA直販店' },
+    { href: '/services/clemira', label: 'CLEMIRA直販店' },
+    { href: '/services/ai', label: 'AI研修・AIコンサル' },
   ],
   company: [
     { href: '#features', label: '特徴' },
