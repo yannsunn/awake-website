@@ -26,8 +26,8 @@ export const metadata: Metadata = {
 const features = [
   {
     icon: Bot,
-    title: "ChatGPT活用研修",
-    description: "実務に直結するChatGPT活用法を習得。プロンプトエンジニアリングから業務効率化まで実践的に学習。"
+    title: "主要AI全般の研修",
+    description: "ChatGPT、Claude、Geminiなど主要AIツールの特徴と実践的な活用法を包括的に学習。"
   },
   {
     icon: TrendingUp,
@@ -48,31 +48,31 @@ const features = [
 
 const services = [
   {
-    name: "ChatGPT基礎研修",
-    duration: "1日間",
-    participants: "5-20名",
-    price: "¥300,000〜",
-    description: "ChatGPTの基本操作から効果的なプロンプト作成まで",
+    name: "AI全般基礎研修",
+    duration: "1時間",
+    participants: "10名〜",
+    price: "¥5,000〜",
+    description: "ChatGPT、Claude、Geminiなど主要AIツールの使い方を習得",
     features: [
-      "ChatGPTの基本機能と活用法",
+      "ChatGPT・Claude・Geminiの基本操作",
+      "各AIツールの特徴と使い分け",
       "効果的なプロンプト作成技術",
-      "業務別活用事例の紹介",
-      "実践演習とフィードバック",
-      "導入後の運用方法"
+      "業務での実践的な活用方法",
+      "安全で効率的な使い方"
     ]
   },
   {
     name: "AI導入コンサルティング",
-    duration: "3-6ヶ月",
+    duration: "1ヶ月",
     participants: "企業単位",
-    price: "¥500,000〜",
-    description: "企業の課題分析からAIシステム導入まで包括的支援",
+    price: "¥298,000〜",
+    description: "業務効率化とDX推進のためのAI導入を包括的に支援",
     features: [
-      "現状業務の詳細分析",
-      "AI導入効果の試算",
-      "最適なツール選定支援",
-      "導入プロジェクト管理",
-      "効果測定と改善提案"
+      "業務プロセスの効率化診断",
+      "AI活用による改善提案",
+      "最適なAIツール選定・導入",
+      "社員向け実践トレーニング",
+      "継続的な効果測定サポート"
     ]
   },
   {
@@ -151,7 +151,7 @@ const aiServiceSchema = {
   "offers": {
     "@type": "AggregateOffer",
     "priceCurrency": "JPY",
-    "lowPrice": "300000",
+    "lowPrice": "5000",
     "highPrice": "1000000",
     "eligibleRegion": {
       "@type": "Country",
@@ -194,7 +194,8 @@ export default function AIServicePage() {
                 </h1>
                 <p className="text-xl text-white/90 mb-8 leading-relaxed">
                   企業のDX推進をAI技術で支援。<br />
-                  ChatGPT活用研修からAIシステム導入まで包括的にサポートします。
+                  ChatGPT・Claude・Geminiなど主要AIツールの活用研修から<br />
+                  AIシステム導入まで包括的にサポートします。
                 </p>
                 <Link 
                   href="#contact"
