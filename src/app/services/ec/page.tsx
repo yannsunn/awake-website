@@ -6,19 +6,19 @@ import Link from 'next/link'
 import Image from 'next/image'
 
 export const metadata: Metadata = {
-  title: "EC通販代理販売サービス | 株式会社Awake",
-  description: "初期費用0円・成果報酬型でメーカー・問屋・OEM商品をワンストップで販売代行。リスクゼロで売上最大化を実現します。",
-  keywords: "EC代理販売, 通販代行, メーカー販売, OEM, Amazon販売, 楽天販売, Yahoo販売, 株式会社Awake",
+  title: "Amazon特価代理販売サービス | 株式会社Awake",
+  description: "Amazon特価にて代理販売。在庫はメーカー様からの直送または預託在庫から発送。初期費用0円・成果報酬型でリスクゼロ。",
+  keywords: "Amazon特価, 代理販売, メーカー直送, 預託在庫, Amazon販売, 株式会社Awake",
   openGraph: {
-    title: "EC通販代理販売サービス | 株式会社Awake",
-    description: "初期費用0円・成果報酬型でメーカー・問屋・OEM商品をワンストップで販売代行。リスクゼロで売上最大化を実現します。",
+    title: "Amazon特価代理販売サービス | 株式会社Awake",
+    description: "Amazon特価にて代理販売。在庫はメーカー様からの直送または預託在庫から発送。初期費用0円・成果報酬型でリスクゼロ。",
     images: ["/assets/images/ec-shopping.jpg"],
     url: "https://awake-website.netlify.app/services/ec/",
   },
   twitter: {
     card: "summary_large_image",
-    title: "EC通販代理販売サービス | 株式会社Awake",
-    description: "初期費用0円・成果報酬型でメーカー・問屋・OEM商品をワンストップで販売代行",
+    title: "Amazon特価代理販売サービス | 株式会社Awake",
+    description: "Amazon特価にて代理販売。在庫はメーカー様からの直送または預託在庫から発送",
     images: ["/assets/images/ec-shopping.jpg"],
   },
 }
@@ -31,8 +31,8 @@ const features = [
   },
   {
     icon: TrendingUp,
-    title: "売上最大化",
-    description: "Amazon・楽天・Yahoo!ショッピングなど複数のプラットフォームで同時販売し、売上を最大化します。"
+    title: "Amazon特価販売",
+    description: "Amazonの特価システムを活用し、競合他社より魅力的な価格で商品を販売いたします。"
   },
   {
     icon: Zap,
@@ -41,8 +41,8 @@ const features = [
   },
   {
     icon: CheckCircle,
-    title: "フルサポート",
-    description: "商品撮影・ページ制作・在庫管理・発送・カスタマーサポートまで全てお任せください。"
+    title: "柔軟な在庫管理",
+    description: "メーカー様からの直送、または弊社への預託在庫からの発送など、ご都合に合わせた在庫管理システム。"
   }
 ]
 
@@ -54,8 +54,8 @@ const process = [
   },
   {
     step: "02",
-    title: "販売プラン策定",
-    description: "最適な販売チャネルと戦略を立案し、収益予測をご提示します。"
+    title: "在庫・発送方法決定",
+    description: "メーカー様直送か預託在庫かを決定し、最適な物流戦略を立案いたします。"
   },
   {
     step: "03",
@@ -64,26 +64,26 @@ const process = [
   },
   {
     step: "04",
-    title: "販売開始・運用",
-    description: "複数のECサイトで同時販売開始。運用・改善も継続して行います。"
+    title: "Amazon特価販売開始",
+    description: "Amazon特価にて販売開始。在庫管理・発送・運用も継続してサポートいたします。"
   }
 ]
 
 const commission = [
   {
-    platform: "Amazon",
+    platform: "Amazon特価販売",
     rate: "10%〜15%",
     description: "売上に応じた手数料"
   },
   {
-    platform: "楽天市場",
-    rate: "12%〜18%",
-    description: "売上に応じた手数料"
+    platform: "メーカー直送",
+    rate: "在庫なし",
+    description: "メーカー様から直接発送"
   },
   {
-    platform: "Yahoo!ショッピング",
-    rate: "10%〜15%",
-    description: "売上に応じた手数料"
+    platform: "預託在庫発送",
+    rate: "弊社管理",
+    description: "預けていただいた在庫から発送"
   }
 ]
 
@@ -96,8 +96,8 @@ const ecServiceSchema = {
     "name": "株式会社Awake",
     "url": "https://awake-website.netlify.app/"
   },
-  "name": "EC通販代理販売サービス",
-  "description": "初期費用0円・成果報酬型でメーカー・問屋・OEM商品をワンストップで販売代行。リスクゼロで売上最大化を実現します。",
+  "name": "Amazon特価代理販売サービス",
+  "description": "Amazon特価にて代理販売。在庫はメーカー様からの直送または預託在庫から発送。初期費用0円・成果報酬型でリスクゼロ。",
   "url": "https://awake-website.netlify.app/services/ec/",
   "image": "https://awake-website.netlify.app/assets/images/ec-shopping.jpg"
 }
@@ -132,11 +132,11 @@ export default function EcServicePage() {
                   <span className="text-white/80 font-semibold">E-commerce Agency</span>
                 </div>
                 <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
-                  EC通販代理販売<br />サービス
+                  Amazon特価<br />代理販売サービス
                 </h1>
                 <p className="text-xl text-white/90 mb-8 leading-relaxed">
-                  初期費用0円・成果報酬型でメーカー・問屋・OEM商品を<br />
-                  ワンストップで販売代行。リスクゼロで売上最大化。
+                  Amazon特価にて代理販売。在庫はメーカー様からの直送<br />
+                  または預託在庫から発送。初期費用0円・成果報酬型。
                 </p>
                 <Link 
                   href="#contact"
@@ -167,7 +167,7 @@ export default function EcServicePage() {
                 サービスの特徴
               </h2>
               <p className="text-xl text-gray-600">
-                リスクゼロで始められる成果報酬型EC代理販売
+                Amazon特価での代理販売・柔軟な在庫管理システム
               </p>
             </div>
             
@@ -230,7 +230,7 @@ export default function EcServicePage() {
                 手数料体系
               </h2>
               <p className="text-xl text-gray-600">
-                成果報酬型で安心の料金設定
+                Amazon特価販売と在庫管理方法
               </p>
             </div>
             
@@ -263,10 +263,10 @@ export default function EcServicePage() {
         <section id="contact" className="py-20 bg-gradient-to-br from-green-600 to-green-800">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-              まずは無料で売上診断してみませんか？
+              Amazon特価での代理販売を始めませんか？
             </h2>
             <p className="text-xl text-white/90 mb-8">
-              商品情報をお聞かせいただければ、売上予測と最適な販売戦略を無料でご提案いたします。
+              商品情報をお聞かせいただければ、Amazon特価での売上予測と最適な在庫管理方法を無料でご提案いたします。
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link 
