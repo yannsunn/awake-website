@@ -216,6 +216,77 @@ export default function ContactSection() {
             </div>
           </div>
         </div>
+        
+        {/* Company Information & Google Map */}
+        <div className="mt-16 bg-white rounded-2xl shadow-2xl p-8 md:p-12">
+          <div className="text-center mb-8">
+            <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
+              会社所在地
+            </h3>
+            <p className="text-lg text-gray-600">
+              お気軽にお立ち寄りください
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+            {/* Company Details */}
+            <div className="space-y-4">
+              <div>
+                <h4 className="text-lg font-semibold text-gray-900 mb-2">株式会社Awake</h4>
+                <div className="space-y-2 text-gray-600">
+                  <p>
+                    <strong>住所:</strong><br />
+                    〒207-0013<br />
+                    東京都東大和市向原5-1129-61 渡辺ビル1F
+                  </p>
+                  <p>
+                    <strong>電話:</strong> 050-7115-4948
+                  </p>
+                  <p>
+                    <strong>営業時間:</strong> 平日 9:00-18:00
+                  </p>
+                </div>
+              </div>
+              
+              <div className="pt-4">
+                <h5 className="font-semibold text-gray-900 mb-2">アクセス</h5>
+                <div className="space-y-1 text-gray-600">
+                  <p>• 西武拝島線「東大和市駅」より徒歩約15分</p>
+                  <p>• 多摩モノレール「上北台駅」より徒歩約20分</p>
+                  <p>• 駐車場完備（お車でお越しの際はご連絡ください）</p>
+                </div>
+              </div>
+            </div>
+            
+            {/* Google Map */}
+            <div className="w-full">
+              <div className="relative w-full h-80 bg-gray-100 rounded-lg overflow-hidden">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3234.367951234567!2d139.4123456789012!3d35.7456789012345!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzXCsDQ0JzQ0LjQiTiAxMznCsDI0JzQ0LjQiRQ!5e0!3m2!1sja!2sjp!4v1234567890123!5m2!1sja!2sjp&q=東京都東大和市向原5-1129-61"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0 }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="株式会社Awake 所在地"
+                  className="rounded-lg"
+                />
+              </div>
+              <div className="mt-4 text-center">
+                <a
+                  href="https://www.google.com/maps/search/東京都東大和市向原5-1129-61"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center text-primary-purple hover:text-primary-purple-dark font-medium transition-colors"
+                >
+                  Google Mapsで開く
+                  <ArrowRight className="ml-1 h-4 w-4" />
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   )

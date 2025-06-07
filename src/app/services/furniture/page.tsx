@@ -94,75 +94,75 @@ const process = [
 
 const ironFurnitureProducts = [
   {
-    name: "アイアンデスク",
-    price: "¥45,000",
-    description: "頑丈なアイアンフレームとウッド天板のワークデスク",
+    name: "アイアンバー",
+    price: "¥15,000",
+    description: "ランドリーバー・物干し用のシンプルなアイアンバー",
     image: "/assets/images/furniture.jpg",
     features: [
-      "アイアンフレーム仕様",
-      "天然木天板",
-      "高さ調整可能",
+      "20角パイプ仕様",
+      "幅150cm×奥行30cm", 
+      "ランドリーバー対応",
       "配送・組立込み"
     ]
   },
   {
-    name: "アイアンシェルフ",
-    price: "¥32,000",
-    description: "インダストリアルデザインのオープンシェルフ", 
+    name: "アイアングリーンハンギング",
+    price: "¥5,000",
+    description: "植物用アイアンハンギングバー・雑貨", 
     image: "/assets/images/furniture.jpg",
     features: [
-      "4段オープン棚",
-      "アイアンフレーム",
-      "木製棚板",
-      "壁固定金具付属"
+      "直径120cm対応",
+      "高さ10cm調整可能",
+      "中央に宇の神殿",
+      "グリーンハンギング対応"
     ]
   },
   {
-    name: "アイアンベンチ",
-    price: "¥28,000",
-    description: "無骨で男らしいアイアンフレームベンチ",
+    name: "アイアン物干しバー",
+    price: "¥15,000",
+    description: "F型20角パイプを使用した物干しバー",
     image: "/assets/images/furniture.jpg", 
     features: [
-      "座面クッション付き",
-      "アイアン脚",
-      "レザー調シート",
-      "耐荷重150kg"
-    ]
-  },
-  {
-    name: "アイアンハンガーラック",
-    price: "¥18,000",
-    description: "シンプルで機能的なハンガーラック",
-    image: "/assets/images/furniture.jpg",
-    features: [
-      "キャスター付き",
-      "高さ調整可能", 
-      "耐荷重30kg",
-      "組立簡単"
-    ]
-  },
-  {
-    name: "アイアンテレビ台",
-    price: "¥52,000",
-    description: "インダストリアルスタイルのTVボード",
-    image: "/assets/images/furniture.jpg",
-    features: [
-      "幅120cm対応",
-      "収納棚付き",
-      "配線穴完備",
-      "アンティーク仕上げ"
+      "F型20角パイプ",
+      "直径150cm×奥行30cm",
+      "オーダー・デザイン変更可能",
+      "ビス希望の方は連絡ください"
     ]
   },
   {
     name: "アイアンサイドテーブル",
-    price: "¥15,000", 
-    description: "コンパクトで使いやすいサイドテーブル",
+    price: "¥8,000",
+    description: "角パイプを使用したシンプルなサイドテーブル",
     image: "/assets/images/furniture.jpg",
     features: [
-      "円形天板",
-      "アイアン脚",
-      "移動しやすい軽量設計",
-      "傷防止フェルト付き"
+      "角パイプ仕様",
+      "高さ60cm×横幅30cm",
+      "ビス変更可能",
+      "オーダー・デザイン変更対応"
+    ]
+  },
+  {
+    name: "二段シェルフ",
+    price: "¥3,500",
+    description: "2段シェルフ アイアンラック オープンラック オーブンラック",
+    image: "/assets/images/furniture.jpg",
+    features: [
+      "幅50cm×奥行30cm",
+      "製造サイズ(mm)",
+      "アイアンラック仕様",
+      "オープンラック対応"
+    ]
+  },
+  {
+    name: "アイアンバー（sold）",
+    price: "¥3,800", 
+    description: "アイアン雑貨・アイアン家具バー（売り切れ）",
+    image: "/assets/images/furniture.jpg",
+    features: [
+      "売り切れ商品",
+      "参考価格表示",
+      "類似商品制作可能",
+      "お気軽にご相談ください"
     ]
   }
 ]
