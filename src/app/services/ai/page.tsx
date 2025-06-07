@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     title: "AI研修・AIコンサルティング | 株式会社Awake",
     description: "企業のDX推進をAI技術で支援。ChatGPT活用研修からAIシステム導入まで包括的にサポート。",
     images: ["/assets/images/modern-office.jpg"],
-    url: "https://awake-website-five.vercel.app/services/ai/",
+    url: "https://awake.co.jp/services/ai/",
   },
   twitter: {
     card: "summary_large_image",
@@ -142,12 +142,12 @@ const aiServiceSchema = {
   "provider": {
     "@type": "Organization",
     "name": "株式会社Awake",
-    "url": "https://awake-website-five.vercel.app/"
+    "url": "https://awake.co.jp/"
   },
   "name": "AI研修・AIコンサルティング",
   "description": "企業のDX推進をAI技術で支援。ChatGPT活用研修からAIシステム導入まで包括的にサポート。",
-  "url": "https://awake-website-five.vercel.app/services/ai/",
-  "image": "https://awake-website-five.vercel.app/assets/images/modern-office.jpg",
+  "url": "https://awake.co.jp/services/ai/",
+  "image": "https://awake.co.jp/assets/images/modern-office.jpg",
   "offers": {
     "@type": "AggregateOffer",
     "priceCurrency": "JPY",
