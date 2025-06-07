@@ -103,17 +103,17 @@ const pricing = [
     popular: true
   },
   {
-    name: "プレミアム",
-    price: "10万円〜",
+    name: "SNS運用代行",
+    price: "16.5万円",
     period: "/月",
-    description: "継続的な動画制作",
+    description: "SNS運用を完全サポート",
     features: [
-      "月10本まで制作",
-      "戦略的企画・構成",
-      "完全オリジナル制作",
-      "A/Bテスト対応",
-      "分析・改善提案",
-      "無制限修正"
+      "月10本までの動画制作",
+      "投稿スケジュール管理",
+      "コンテンツ企画・戦略",
+      "エンゲージメント分析",
+      "コメント対応サポート",
+      "月次レポート提供"
     ]
   }
 ]
@@ -135,7 +135,7 @@ const videoServiceSchema = {
     "@type": "AggregateOffer",
     "priceCurrency": "JPY",
     "lowPrice": "15000",
-    "highPrice": "100000",
+    "highPrice": "165000",
     "eligibleRegion": {
       "@type": "Country",
       "name": "Japan"
