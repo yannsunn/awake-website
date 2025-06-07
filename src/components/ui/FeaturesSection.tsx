@@ -69,7 +69,7 @@ export default function FeaturesSection() {
   }
 
   return (
-    <section className="py-20 bg-white relative" id="features" aria-labelledby="features-title" ref={ref}>
+    <section className="py-24 bg-gradient-to-b from-gray-50 to-white relative" id="features" aria-labelledby="features-title" ref={ref}>
       
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div 
@@ -79,8 +79,8 @@ export default function FeaturesSection() {
           animate={isInView ? "visible" : "hidden"}
         >
           <motion.div variants={itemVariants} className="mb-6">
-            <span className="inline-flex items-center gap-2 px-4 py-2 bg-gray-100 border border-gray-200 rounded-full text-gray-700 text-sm font-medium">
-              <div className="w-2 h-2 bg-blue-600 rounded-full"></div>
+            <span className="inline-flex items-center gap-2 px-5 py-3 bg-white/80 backdrop-blur-sm border border-blue-200/50 rounded-full text-blue-700 text-sm font-semibold shadow-lg shadow-blue-100/50">
+              <div className="w-2 h-2 bg-blue-500 rounded-full animate-pulse"></div>
               革新的な特徴
             </span>
           </motion.div>
@@ -116,20 +116,31 @@ export default function FeaturesSection() {
                 custom={feature.delay}
                 className="group relative"
               >
-                <div className="relative bg-white rounded-2xl border border-gray-200 p-8 lg:p-10 hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+                <div className="group relative bg-white/80 backdrop-blur-sm rounded-3xl border border-gray-100 p-8 lg:p-10 hover:shadow-xl hover:shadow-blue-100/25 transition-all duration-500 hover:-translate-y-2">
+                  {/* Gradient Border on Hover */}
+                  <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-blue-600 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" style={{padding: '1px'}}>
+                    <div className="bg-white rounded-3xl h-full w-full"></div>
+                  </div>
                   {/* Icon */}
-                  <div className="relative">
-                    <div className="w-14 h-14 bg-blue-600 rounded-xl flex items-center justify-center mb-6 transition-all duration-300">
-                      <IconComponent className="h-7 w-7 text-white" />
+                  <div className="relative z-10">
+                    <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-3 transition-all duration-300 shadow-lg">
+                      <IconComponent className="h-8 w-8 text-white" />
                     </div>
                     
                     {/* Content */}
-                    <h3 className="text-xl font-semibold text-gray-900 mb-4">
+                    <h3 className="text-xl font-bold text-gray-900 mb-4 group-hover:text-blue-900 transition-colors">
                       {feature.title}
                     </h3>
                     <p className="text-gray-600 leading-relaxed">
                       {feature.description}
                     </p>
+                    
+                    {/* Hover Indicator */}
+                    <div className="absolute bottom-6 right-6 w-8 h-8 bg-gradient-to-r from-blue-500 to-blue-600 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 group-hover:translate-x-1">
+                      <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                      </svg>
+                    </div>
                   </div>
                 </div>
               </motion.div>

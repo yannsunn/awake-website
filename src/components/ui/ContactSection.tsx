@@ -1,9 +1,14 @@
 'use client'
 
-import { useState } from 'react'
-import { ArrowRight, Phone, Mail, Shield } from 'lucide-react'
+import { useState, useRef } from 'react'
+import { ArrowRight, Phone, Mail, Shield, MapPin } from 'lucide-react'
+import { motion } from 'framer-motion'
+import { useInView } from 'framer-motion'
 
 export default function ContactSection() {
+  const ref = useRef(null)
+  const isInView = useInView(ref, { once: true, amount: 0.1 })
+  
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -13,6 +18,26 @@ export default function ContactSection() {
   })
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle')
+
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+        duration: 0.6
+      }
+    }
+  }
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.6, ease: "easeOut" }
+    }
+  }
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
     setFormData(prev => ({
@@ -57,18 +82,54 @@ export default function ContactSection() {
   }
 
   return (
-    <section className="py-20 bg-gray-900" id="contact" aria-labelledby="contact-title">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 id="contact-title" className="text-3xl md:text-4xl font-semibold text-white mb-4">
-            まずは無料相談から始めましょう
-          </h2>
-          <p className="text-lg text-gray-300 max-w-3xl mx-auto">
-            あなたのビジネスの課題をお聞かせください。最適なソリューションをご提案いたします。
-          </p>
-        </div>
+    <section className="py-24 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 relative overflow-hidden" id="contact" aria-labelledby="contact-title" ref={ref}>
+      {/* Background Effects */}
+      <div className="absolute inset-0">
+        <div className="absolute top-0 left-0 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-0 right-0 w-80 h-80 bg-blue-600/10 rounded-full blur-3xl"></div>
+        <div className="absolute top-1/2 left-1/2 w-64 h-64 bg-blue-400/5 rounded-full blur-2xl -translate-x-1/2 -translate-y-1/2"></div>
+      </div>
+      
+      <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <motion.div 
+          className="text-center mb-20"
+          variants={containerVariants}
+          initial="hidden"
+          animate={isInView ? "visible" : "hidden"}
+        >
+          <motion.div variants={itemVariants} className="mb-6">
+            <span className="inline-flex items-center gap-2 px-5 py-3 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full text-blue-300 text-sm font-semibold shadow-lg">
+              <div className="w-2 h-2 bg-blue-400 rounded-full animate-pulse"></div>
+              無料相談受付中
+            </span>
+          </motion.div>
+          <motion.h2 
+            id="contact-title" 
+            variants={itemVariants}
+            className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6"
+          >
+            まずは
+            <span className="bg-gradient-to-r from-blue-400 to-blue-300 bg-clip-text text-transparent">
+              無料相談
+            </span>
+            から<br className="md:hidden" />始めましょう
+          </motion.h2>
+          <motion.p 
+            variants={itemVariants}
+            className="text-lg md:text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed"
+          >
+            あなたのビジネスの課題をお聞かせください。
+            <br className="hidden md:block" />
+            最適なソリューションをご提案いたします。
+          </motion.p>
+        </motion.div>
         
-        <div className="bg-white rounded-2xl shadow-2xl p-8 md:p-12">
+        <motion.div 
+          className="bg-white/95 backdrop-blur-sm rounded-3xl shadow-2xl border border-white/20 p-8 md:p-12"
+          variants={itemVariants}
+          initial="hidden"
+          animate={isInView ? "visible" : "hidden"}
+        >
           <form onSubmit={handleSubmit} className="space-y-6" noValidate>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>
@@ -215,13 +276,24 @@ export default function ContactSection() {
               <span>個人情報は厳重に管理し、営業目的での利用は一切ありません</span>
             </div>
           </div>
-        </div>
+        </motion.div>
         
         {/* Company Information & Google Map */}
-        <div className="mt-16 bg-white rounded-2xl shadow-2xl p-8 md:p-12">
-          <div className="text-center mb-8">
+        <motion.div 
+          className="mt-16 bg-white/95 backdrop-blur-sm rounded-3xl shadow-2xl border border-white/20 p-8 md:p-12"
+          variants={itemVariants}
+          initial="hidden"
+          animate={isInView ? "visible" : "hidden"}
+        >
+          <div className="text-center mb-12">
+            <div className="inline-flex items-center gap-2 px-5 py-3 bg-blue-50 border border-blue-200/50 rounded-full text-blue-700 text-sm font-semibold mb-6">
+              <MapPin className="w-4 h-4" />
+              アクセス情報
+            </div>
             <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
-              会社所在地
+              <span className="bg-gradient-to-r from-blue-600 to-blue-800 bg-clip-text text-transparent">
+                会社所在地
+              </span>
             </h3>
             <p className="text-lg text-gray-600">
               お気軽にお立ち寄りください
@@ -230,37 +302,54 @@ export default function ContactSection() {
           
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
             {/* Company Details */}
-            <div className="space-y-4">
-              <div>
-                <h4 className="text-lg font-semibold text-gray-900 mb-2">株式会社Awake</h4>
-                <div className="space-y-2 text-gray-600">
-                  <p>
-                    <strong>住所:</strong><br />
-                    〒207-0013<br />
-                    東京都東大和市向原5-1129-61 渡辺ビル1F
-                  </p>
-                  <p>
-                    <strong>電話:</strong> 050-7115-4948
-                  </p>
-                  <p>
-                    <strong>営業時間:</strong> 平日 9:00-18:00
-                  </p>
+            <div className="space-y-6">
+              <div className="bg-gradient-to-br from-blue-50 to-blue-100/50 rounded-2xl p-6 border border-blue-200/30">
+                <h4 className="text-xl font-bold text-gray-900 mb-4 flex items-center gap-2">
+                  <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
+                  株式会社Awake
+                </h4>
+                <div className="space-y-3 text-gray-700">
+                  <div className="flex items-start gap-3">
+                    <MapPin className="w-5 h-5 text-blue-600 mt-0.5 flex-shrink-0" />
+                    <div>
+                      <strong>住所:</strong><br />
+                      〒207-0013<br />
+                      東京都東大和市向原5-1129-61 渡辺ビル1F
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <Phone className="w-5 h-5 text-blue-600 flex-shrink-0" />
+                    <div>
+                      <strong>電話:</strong> 050-7115-4948
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <div className="w-5 h-5 flex items-center justify-center">
+                      <div className="w-3 h-3 bg-blue-600 rounded-full"></div>
+                    </div>
+                    <div>
+                      <strong>営業時間:</strong> 平日 9:00-18:00
+                    </div>
+                  </div>
                 </div>
               </div>
               
-              <div className="pt-4">
-                <h5 className="font-semibold text-gray-900 mb-2">アクセス</h5>
-                <div className="space-y-1 text-gray-600">
-                  <p>• 西武拝島線「東大和市駅」より徒歩約15分</p>
-                  <p>• 多摩モノレール「上北台駅」より徒歩約20分</p>
-                  <p>• 駐車場完備（お車でお越しの際はご連絡ください）</p>
+              <div className="bg-gradient-to-br from-gray-50 to-gray-100/50 rounded-2xl p-6 border border-gray-200/30">
+                <h5 className="font-bold text-gray-900 mb-3 flex items-center gap-2">
+                  <div className="w-2 h-2 bg-gray-600 rounded-full"></div>
+                  アクセス
+                </h5>
+                <div className="space-y-2 text-gray-700">
+                  <p className="flex items-center gap-2">• 西武拝島線「東大和市駅」より徒歩約15分</p>
+                  <p className="flex items-center gap-2">• 多摩モノレール「上北台駅」より徒歩約20分</p>
+                  <p className="flex items-center gap-2">• 駐車場完備（お車でお越しの際はご連絡ください）</p>
                 </div>
               </div>
             </div>
             
             {/* Google Map */}
             <div className="w-full">
-              <div className="relative w-full h-80 bg-gray-100 rounded-lg overflow-hidden">
+              <div className="relative w-full h-80 bg-gray-100 rounded-2xl overflow-hidden border border-gray-200/50 shadow-lg">
                 <iframe
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3234.367951234567!2d139.4123456789012!3d35.7456789012345!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzXCsDQ0JzQ0LjQiTiAxMznCsDI0JzQ0LjQiRQ!5e0!3m2!1sja!2sjp!4v1234567890123!5m2!1sja!2sjp&q=東京都東大和市向原5-1129-61"
                   width="100%"
@@ -270,23 +359,23 @@ export default function ContactSection() {
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
                   title="株式会社Awake 所在地"
-                  className="rounded-lg"
+                  className="rounded-2xl"
                 />
               </div>
-              <div className="mt-4 text-center">
+              <div className="mt-6 text-center">
                 <a
                   href="https://www.google.com/maps/search/東京都東大和市向原5-1129-61"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center text-blue-600 hover:text-blue-700 font-medium transition-colors"
+                  className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-blue-50 to-blue-100 hover:from-blue-100 hover:to-blue-200 text-blue-700 font-semibold rounded-xl border border-blue-200/50 hover:border-blue-300 transition-all duration-300 shadow-lg hover:shadow-xl"
                 >
                   Google Mapsで開く
-                  <ArrowRight className="ml-1 h-4 w-4" />
+                  <ArrowRight className="h-4 w-4" />
                 </a>
               </div>
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   )
