@@ -6,19 +6,19 @@ import Link from 'next/link'
 import Image from 'next/image'
 
 export const metadata: Metadata = {
-  title: "家具製作サービス | 株式会社Awake",
-  description: "世界に一つだけのオーダーメイド家具を完全カスタムで製造。職人の技術で理想の家具を制作します。現地採寸・組立設置まで対応。",
-  keywords: "オーダーメイド家具, カスタム家具, 家具製作, 木工, 鉄工, インテリア, 株式会社Awake",
+  title: "アイアン家具製作・販売 | 株式会社Awake",
+  description: "インダストリアルデザインのアイアン家具を制作・販売。デスク、シェルフ、ベンチなど無骨で機能的な家具を豊富に取り揃え。配送・組立込み。",
+  keywords: "アイアン家具, インダストリアル家具, スチール家具, 鉄製家具, デスク, シェルフ, ベンチ, 株式会社Awake",
   openGraph: {
-    title: "家具製作サービス | 株式会社Awake",
-    description: "世界に一つだけのオーダーメイド家具を完全カスタムで製造。職人の技術で理想の家具を制作します。",
+    title: "アイアン家具製作・販売 | 株式会社Awake",
+    description: "インダストリアルデザインのアイアン家具を制作・販売。無骨で機能的な家具を豊富に取り揃え。",
     images: ["/assets/images/furniture.jpg"],
-    url: "https://awake-website.netlify.app/services/furniture/",
+    url: "https://awake-website-five.vercel.app/services/furniture/",
   },
   twitter: {
     card: "summary_large_image",
-    title: "家具製作サービス | 株式会社Awake",
-    description: "世界に一つだけのオーダーメイド家具を完全カスタムで製造。職人の技術で理想の家具を制作",
+    title: "アイアン家具製作・販売 | 株式会社Awake",
+    description: "インダストリアルデザインのアイアン家具を制作・販売。無骨で機能的な家具をお届け",
     images: ["/assets/images/furniture.jpg"],
   },
 }
@@ -92,6 +92,81 @@ const process = [
   }
 ]
 
+const ironFurnitureProducts = [
+  {
+    name: "アイアンデスク",
+    price: "¥45,000",
+    description: "頑丈なアイアンフレームとウッド天板のワークデスク",
+    image: "/assets/images/furniture.jpg",
+    features: [
+      "アイアンフレーム仕様",
+      "天然木天板",
+      "高さ調整可能",
+      "配送・組立込み"
+    ]
+  },
+  {
+    name: "アイアンシェルフ",
+    price: "¥32,000",
+    description: "インダストリアルデザインのオープンシェルフ", 
+    image: "/assets/images/furniture.jpg",
+    features: [
+      "4段オープン棚",
+      "アイアンフレーム",
+      "木製棚板",
+      "壁固定金具付属"
+    ]
+  },
+  {
+    name: "アイアンベンチ",
+    price: "¥28,000",
+    description: "無骨で男らしいアイアンフレームベンチ",
+    image: "/assets/images/furniture.jpg", 
+    features: [
+      "座面クッション付き",
+      "アイアン脚",
+      "レザー調シート",
+      "耐荷重150kg"
+    ]
+  },
+  {
+    name: "アイアンハンガーラック",
+    price: "¥18,000",
+    description: "シンプルで機能的なハンガーラック",
+    image: "/assets/images/furniture.jpg",
+    features: [
+      "キャスター付き",
+      "高さ調整可能", 
+      "耐荷重30kg",
+      "組立簡単"
+    ]
+  },
+  {
+    name: "アイアンテレビ台",
+    price: "¥52,000",
+    description: "インダストリアルスタイルのTVボード",
+    image: "/assets/images/furniture.jpg",
+    features: [
+      "幅120cm対応",
+      "収納棚付き",
+      "配線穴完備",
+      "アンティーク仕上げ"
+    ]
+  },
+  {
+    name: "アイアンサイドテーブル",
+    price: "¥15,000", 
+    description: "コンパクトで使いやすいサイドテーブル",
+    image: "/assets/images/furniture.jpg",
+    features: [
+      "円形天板",
+      "アイアン脚",
+      "移動しやすい軽量設計",
+      "傷防止フェルト付き"
+    ]
+  }
+]
+
 const furnitureTypes = [
   {
     name: "テーブル",
@@ -118,20 +193,21 @@ const furnitureTypes = [
 const furnitureServiceSchema = {
   "@context": "https://schema.org",
   "@type": "Service",
-  "serviceType": "Custom Furniture Manufacturing",
+  "serviceType": "Iron Furniture Manufacturing and Sales",
   "provider": {
     "@type": "Organization",
     "name": "株式会社Awake",
-    "url": "https://awake-website.netlify.app/"
+    "url": "https://awake-website-five.vercel.app/"
   },
-  "name": "家具製作サービス",
-  "description": "世界に一つだけのオーダーメイド家具を完全カスタムで製造。職人の技術で理想の家具を制作します。",
-  "url": "https://awake-website.netlify.app/services/furniture/",
-  "image": "https://awake-website.netlify.app/assets/images/furniture.jpg",
+  "name": "アイアン家具製作・販売",
+  "description": "インダストリアルデザインのアイアン家具を制作・販売。デスク、シェルフ、ベンチなど機能的な家具を豊富に取り揃え。",
+  "url": "https://awake-website-five.vercel.app/services/furniture/",
+  "image": "https://awake-website-five.vercel.app/assets/images/furniture.jpg",
   "offers": {
     "@type": "AggregateOffer",
     "priceCurrency": "JPY",
-    "lowPrice": "80000",
+    "lowPrice": "15000",
+    "highPrice": "52000",
     "eligibleRegion": {
       "@type": "Country",
       "name": "Japan"
@@ -170,11 +246,11 @@ export default function FurnitureServicePage() {
                   <span className="text-white/80 font-semibold">Custom Furniture</span>
                 </div>
                 <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
-                  家具製作<br />サービス
+                  アイアン家具<br />製作・販売
                 </h1>
                 <p className="text-xl text-white/90 mb-8 leading-relaxed">
-                  世界に一つだけのオーダーメイド家具を完全カスタムで製造。<br />
-                  職人の技術で理想を形にします。
+                  インダストリアルデザインのアイアン家具を制作・販売。<br />
+                  無骨で男らしい、機能性とデザイン性を兼ね備えた家具をお届けします。
                 </p>
                 <Link 
                   href="#contact"
@@ -282,6 +358,62 @@ export default function FurnitureServicePage() {
                   <p className="text-gray-600">
                     {item.description}
                   </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Iron Furniture Products Section */}
+        <section className="py-20 bg-white">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-16">
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                アイアン家具ラインナップ
+              </h2>
+              <p className="text-xl text-gray-600">
+                インダストリアルデザインの機能的な家具を豊富に取り揃え
+              </p>
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {ironFurnitureProducts.map((product, index) => (
+                <div key={index} className="bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition-shadow border border-gray-200">
+                  <div className="mb-4">
+                    <Image
+                      src={product.image}
+                      alt={product.name}
+                      width={300}
+                      height={200}
+                      className="w-full h-48 object-cover rounded-lg"
+                    />
+                  </div>
+                  <h3 className="text-xl font-bold text-gray-900 mb-2">
+                    {product.name}
+                  </h3>
+                  <p className="text-gray-600 mb-4">{product.description}</p>
+                  <div className="mb-4">
+                    <div className="text-2xl font-bold text-orange-600">
+                      {product.price}
+                    </div>
+                    <div className="text-sm text-gray-500">
+                      配送・組立込み
+                    </div>
+                  </div>
+                  <ul className="space-y-2 mb-6">
+                    {product.features.map((feature, featureIndex) => (
+                      <li key={featureIndex} className="flex items-center text-sm">
+                        <CheckCircle className="h-4 w-4 text-green-500 mr-2 flex-shrink-0" />
+                        <span className="text-gray-700">{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  <Link 
+                    href="#contact"
+                    className="block text-center py-2 px-4 rounded-lg font-medium transition-colors border-2 border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-white"
+                  >
+                    詳細を問い合わせ
+                  </Link>
                 </div>
               ))}
             </div>

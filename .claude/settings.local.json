@@ -55,7 +55,8 @@
       "Bash(npx next lint:*)",
       "Bash(timeout 10s npm run dev)",
       "WebFetch(domain:github.com)",
-      "WebFetch(domain:search.google.com)"
+      "WebFetch(domain:search.google.com)",
+      "WebFetch(domain:jp.mercari.com)"
     ],
     "deny": []
   }
