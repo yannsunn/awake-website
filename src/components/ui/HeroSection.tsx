@@ -37,11 +37,11 @@ export default function HeroSection() {
   }
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center pt-16 overflow-hidden" id="hero" aria-labelledby="hero-title">
-      {/* Clean Modern Background */}
-      <div className="absolute inset-0 bg-gradient-to-b from-gray-50 to-white">
-        {/* Subtle Grid Pattern */}
-        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHZpZXdCb3g9IjAgMCA0MCA0MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8ZGVmcz4KICAgIDxwYXR0ZXJuIGlkPSJncmlkIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiPgogICAgICA8cGF0aCBkPSJtIDQwIDAgTCAwIDAgMCA0MCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJyZ2JhKDEwMCwgMTE2LCAxMzksIDAuMDUpIiBzdHJva2Utd2lkdGg9IjEiLz4KICAgIDwvcGF0dGVybj4KICA8L2RlZnM+CiAgPHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNncmlkKSIgLz4KPC9zdmc+')] opacity-60"></div>
+    <section className="relative min-h-screen flex items-center overflow-hidden" id="hero" aria-labelledby="hero-title">
+      {/* Background with Image */}
+      <div className="absolute inset-0 bg-gradient-to-br from-blue-600 via-blue-700 to-blue-800">
+        <div className="absolute inset-0 bg-[url('/assets/images/modern-office.jpg')] bg-cover bg-center opacity-20"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-blue-900/50 to-blue-800/30"></div>
       </div>
       
       <motion.div 
@@ -52,8 +52,8 @@ export default function HeroSection() {
       >
         <div className="max-w-5xl mx-auto">
           <motion.div variants={itemVariants} className="mb-8">
-            <span className="inline-flex items-center gap-2 px-4 py-2 bg-gray-100 border border-gray-200 rounded-full text-gray-700 text-sm font-medium">
-              <div className="w-2 h-2 bg-blue-600 rounded-full"></div>
+            <span className="inline-flex items-center gap-2 px-5 py-3 bg-white/80 backdrop-blur-sm border border-blue-200/50 rounded-full text-blue-700 text-sm font-semibold shadow-lg shadow-blue-100/50">
+              <div className="w-2 h-2 bg-blue-500 rounded-full animate-pulse"></div>
               2025年最新のソリューション
             </span>
           </motion.div>
@@ -61,30 +61,27 @@ export default function HeroSection() {
           <motion.h1 
             id="hero-title" 
             variants={itemVariants}
-            className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-900 mb-8 leading-tight"
+            className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-8 leading-tight"
           >
-            <span className="text-blue-700">
-              革命的
-            </span>
-            なソリューションで<br />
-            企業の成長を
-            <span className="text-blue-700">
-              加速
-            </span>
+            革命的なソリューションで<br />
+            企業の成長を加速
           </motion.h1>
           
           <motion.p 
             variants={itemVariants}
-            className="text-lg md:text-xl text-gray-700 mb-6 font-medium leading-relaxed"
+            className="text-lg md:text-xl text-white/90 mb-8 font-medium leading-relaxed"
           >
             最新テクノロジーとAI技術で、御社の課題を
-            <span className="text-blue-700 font-semibold bg-blue-50 px-2 py-1 rounded">最短24時間</span>
+            <span className="inline-flex items-center gap-1 text-blue-700 font-bold bg-gradient-to-r from-blue-50 to-blue-100 px-3 py-1 rounded-lg border border-blue-200/50 shadow-sm">
+              <div className="w-1.5 h-1.5 bg-blue-500 rounded-full"></div>
+              最短24時間
+            </span>
             で解決
           </motion.p>
           
           <motion.p 
             variants={itemVariants}
-            className="text-base md:text-lg text-gray-600 mb-12 leading-relaxed max-w-4xl mx-auto"
+            className="text-base md:text-lg text-white/80 mb-12 leading-relaxed max-w-4xl mx-auto"
           >
             HP制作・EC通販・動画編集・家具製作まで、プロフェッショナルなサービスをワンストップで提供。
             <br className="hidden md:block" />
@@ -97,38 +94,37 @@ export default function HeroSection() {
           >
             <Link 
               href="#contact" 
-              className="inline-flex items-center justify-center px-8 py-4 bg-blue-600 text-white font-semibold rounded-lg transition-all duration-200 hover:bg-blue-700 shadow-lg hover:shadow-xl"
+              className="group relative inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-blue-600 to-blue-700 text-white font-semibold rounded-xl transition-all duration-300 hover:from-blue-700 hover:to-blue-800 shadow-lg hover:shadow-xl hover:shadow-blue-500/25 hover:-translate-y-0.5"
             >
-              今すぐ無料相談を始める
-              <ArrowRight className="ml-2 h-5 w-5" />
+              <span className="relative z-10">今すぐ無料相談を始める</span>
+              <ArrowRight className="relative z-10 ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+              <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-blue-600 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
             </Link>
             
             <Link 
               href="#services" 
-              className="inline-flex items-center justify-center px-8 py-4 bg-white border-2 border-gray-300 text-gray-700 font-semibold rounded-lg transition-all duration-200 hover:border-gray-400 hover:bg-gray-50"
+              className="group inline-flex items-center justify-center px-8 py-4 bg-white/80 backdrop-blur-sm border-2 border-blue-200 text-blue-700 font-semibold rounded-xl transition-all duration-300 hover:bg-blue-50 hover:border-blue-300 shadow-lg hover:shadow-xl"
             >
               サービスを見る
-              <ChevronDown className="ml-2 h-5 w-5" />
+              <ChevronDown className="ml-2 h-5 w-5 group-hover:translate-y-0.5 transition-transform" />
             </Link>
           </motion.div>
           
           <motion.div 
             variants={itemVariants}
-            className="mt-16 flex justify-center items-center gap-8 text-gray-600"
+            className="mt-16 grid grid-cols-3 gap-6 max-w-2xl mx-auto"
           >
-            <div className="text-center">
-              <div className="text-2xl font-bold text-blue-600">24時間</div>
-              <div className="text-sm">最短納期</div>
+            <div className="text-center p-6 bg-white/60 backdrop-blur-sm rounded-2xl border border-blue-100/50 shadow-lg">
+              <div className="text-3xl font-bold bg-gradient-to-r from-blue-600 to-blue-700 bg-clip-text text-transparent mb-2">24時間</div>
+              <div className="text-sm text-gray-600 font-medium">最短納期</div>
             </div>
-            <div className="w-px h-8 bg-gray-300"></div>
-            <div className="text-center">
-              <div className="text-2xl font-bold text-blue-600">1000+</div>
-              <div className="text-sm">実績数</div>
+            <div className="text-center p-6 bg-white/60 backdrop-blur-sm rounded-2xl border border-blue-100/50 shadow-lg">
+              <div className="text-3xl font-bold bg-gradient-to-r from-blue-600 to-blue-700 bg-clip-text text-transparent mb-2">1000+</div>
+              <div className="text-sm text-gray-600 font-medium">実績数</div>
             </div>
-            <div className="w-px h-8 bg-gray-300"></div>
-            <div className="text-center">
-              <div className="text-2xl font-bold text-blue-600">99%</div>
-              <div className="text-sm">満足度</div>
+            <div className="text-center p-6 bg-white/60 backdrop-blur-sm rounded-2xl border border-blue-100/50 shadow-lg">
+              <div className="text-3xl font-bold bg-gradient-to-r from-blue-600 to-blue-700 bg-clip-text text-transparent mb-2">99%</div>
+              <div className="text-sm text-gray-600 font-medium">満足度</div>
             </div>
           </motion.div>
         </div>
