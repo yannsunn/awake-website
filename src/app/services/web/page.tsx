@@ -127,7 +127,7 @@ export default function WebServicePage() {
         {/* Hero Section */}
         <section className="relative py-20 overflow-hidden">
           {/* Animated Background */}
-          <div className="absolute inset-0 bg-gradient-to-br from-primary-purple via-purple-600 to-primary-purple-dark">
+          <div className="absolute inset-0 bg-gradient-to-br from-blue-600 via-blue-700 to-blue-800">
             <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHZpZXdCb3g9IjAgMCA0MCA0MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8Y2lyY2xlIGN4PSIyMCIgY3k9IjIwIiByPSIyIiBmaWxsPSJyZ2JhKDI1NSwgMjU1LCAyNTUsIDAuMSkiLz4KPC9zdmc+')] opacity-20"></div>
             <div className="absolute top-0 left-0 w-72 h-72 bg-white/10 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2"></div>
             <div className="absolute bottom-0 right-0 w-96 h-96 bg-pink-400/20 rounded-full blur-3xl translate-x-1/3 translate-y-1/3"></div>
@@ -139,7 +139,7 @@ export default function WebServicePage() {
                   <Globe className="h-8 w-8 text-white mr-3" />
                   <span className="text-white/80 font-semibold">Web Development</span>
                 </div>
-                <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
+                <h1 className="text-4xl md:text-5xl font-semibold text-white mb-6">
                   HP制作・LP制作<br />サービス
                 </h1>
                 <p className="text-xl text-white/90 mb-8 leading-relaxed">
@@ -148,7 +148,7 @@ export default function WebServicePage() {
                 </p>
                 <Link 
                   href="#contact"
-                  className="inline-flex items-center bg-white text-primary-purple px-8 py-4 rounded-lg font-bold hover:bg-gray-100 transition-colors"
+                  className="inline-flex items-center bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-colors"
                 >
                   無料相談を始める
                   <ArrowRight className="ml-2 h-5 w-5" />
@@ -171,7 +171,7 @@ export default function WebServicePage() {
         <section className="py-20 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              <h2 className="text-3xl md:text-4xl font-semibold text-gray-900 mb-4">
                 サービスの特徴
               </h2>
               <p className="text-xl text-gray-600">
@@ -184,10 +184,10 @@ export default function WebServicePage() {
                 const IconComponent = feature.icon
                 return (
                   <div key={index} className="text-center">
-                    <div className="w-16 h-16 bg-gradient-to-br from-primary-purple to-primary-pink rounded-full flex items-center justify-center mx-auto mb-4">
+                    <div className="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
                       <IconComponent className="h-8 w-8 text-white" />
                     </div>
-                    <h3 className="text-xl font-bold text-gray-900 mb-3">
+                    <h3 className="text-xl font-semibold text-gray-900 mb-3">
                       {feature.title}
                     </h3>
                     <p className="text-gray-600">
@@ -204,7 +204,7 @@ export default function WebServicePage() {
         <section className="py-20 bg-gray-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              <h2 className="text-3xl md:text-4xl font-semibold text-gray-900 mb-4">
                 料金プラン
               </h2>
               <p className="text-xl text-gray-600">
@@ -217,21 +217,21 @@ export default function WebServicePage() {
                 <div 
                   key={index} 
                   className={`bg-white p-8 rounded-2xl shadow-lg ${
-                    plan.popular ? 'ring-2 ring-primary-purple relative' : ''
+                    plan.popular ? 'ring-2 ring-blue-600 relative' : ''
                   }`}
                 >
                   {plan.popular && (
                     <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                      <span className="bg-primary-purple text-white px-4 py-2 rounded-full text-sm font-bold">
+                      <span className="bg-blue-600 text-white px-4 py-2 rounded-full text-sm font-semibold">
                         人気
                       </span>
                     </div>
                   )}
-                  <h3 className="text-2xl font-bold text-gray-900 mb-2">
+                  <h3 className="text-2xl font-semibold text-gray-900 mb-2">
                     {plan.name}
                   </h3>
                   <p className="text-gray-600 mb-4">{plan.description}</p>
-                  <div className="text-3xl font-bold text-primary-purple mb-6">
+                  <div className="text-3xl font-semibold text-blue-600 mb-6">
                     {plan.price}
                   </div>
                   <ul className="space-y-3 mb-8">
@@ -244,10 +244,10 @@ export default function WebServicePage() {
                   </ul>
                   <Link 
                     href="#contact"
-                    className={`block text-center py-3 px-6 rounded-lg font-bold transition-colors ${
+                    className={`block text-center py-3 px-6 rounded-lg font-semibold transition-colors ${
                       plan.popular 
-                        ? 'bg-primary-purple text-white hover:bg-primary-purple-dark' 
-                        : 'border-2 border-primary-purple text-primary-purple hover:bg-primary-purple hover:text-white'
+                        ? 'bg-blue-600 text-white hover:bg-blue-700' 
+                        : 'border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white'
                     }`}
                   >
                     詳細を問い合わせる
@@ -259,9 +259,9 @@ export default function WebServicePage() {
         </section>
 
         {/* CTA Section */}
-        <section id="contact" className="py-20 bg-gradient-to-br from-primary-purple to-primary-purple-dark">
+        <section id="contact" className="py-20 bg-blue-600">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+            <h2 className="text-3xl md:text-4xl font-semibold text-white mb-6">
               まずは無料相談から始めませんか？
             </h2>
             <p className="text-xl text-white/90 mb-8">
@@ -270,14 +270,14 @@ export default function WebServicePage() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link 
                 href="/#contact"
-                className="bg-white text-primary-purple px-8 py-4 rounded-lg font-bold hover:bg-gray-100 transition-colors inline-flex items-center justify-center"
+                className="bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-colors inline-flex items-center justify-center"
               >
                 今すぐ無料相談
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Link>
               <Link 
                 href="/"
-                className="border-2 border-white text-white px-8 py-4 rounded-lg font-bold hover:bg-white hover:text-primary-purple transition-colors"
+                className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition-colors"
               >
                 他のサービスを見る
               </Link>

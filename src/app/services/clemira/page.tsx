@@ -268,7 +268,7 @@ export default function ClemiraServicePage() {
         {/* Hero Section */}
         <section className="relative py-20 overflow-hidden">
           {/* Animated Background */}
-          <div className="absolute inset-0 bg-gradient-to-br from-orange-500 via-red-600 to-purple-700">
+          <div className="absolute inset-0 bg-gradient-to-br from-blue-600 via-blue-700 to-blue-800">
             <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8Y2lyY2xlIGN4PSIzMCIgY3k9IjMwIiByPSIyIiBmaWxsPSJyZ2JhKDI1NSwgMjU1LCAyNTUsIDAuMSkiLz4KICA8Y2lyY2xlIGN4PSIxMCIgY3k9IjEwIiByPSIxIiBmaWxsPSJyZ2JhKDI1NSwgMjU1LCAyNTUsIDAuMDgpIi8+CiAgPGNpcmNsZSBjeD0iNTAiIGN5PSI1MCIgcj0iMS41IiBmaWxsPSJyZ2JhKDI1NSwgMjU1LCAyNTUsIDAuMTIpIi8+Cjwvc3ZnPg==')] opacity-25"></div>
             <div className="absolute top-0 left-0 w-96 h-96 bg-yellow-400/20 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2 animate-pulse"></div>
             <div className="absolute bottom-0 right-0 w-80 h-80 bg-cyan-400/15 rounded-full blur-3xl translate-x-1/3 translate-y-1/3"></div>
@@ -281,7 +281,7 @@ export default function ClemiraServicePage() {
                   <Zap className="h-8 w-8 text-white mr-3" />
                   <span className="text-white/80 font-semibold">Quantum Energy Direct Sales</span>
                 </div>
-                <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
+                <h1 className="text-4xl md:text-5xl font-semibold text-white mb-6">
                   CLEMIRA直販店<br />量子エネルギーデバイス
                 </h1>
                 <p className="text-xl text-white/90 mb-8 leading-relaxed">
@@ -291,14 +291,14 @@ export default function ClemiraServicePage() {
                 <div className="flex flex-col sm:flex-row gap-4">
                   <Link 
                     href="#products"
-                    className="inline-flex items-center bg-white text-orange-600 px-8 py-4 rounded-lg font-bold hover:bg-gray-100 transition-colors"
+                    className="inline-flex items-center bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-colors"
                   >
                     製品を見る
                     <ArrowRight className="ml-2 h-5 w-5" />
                   </Link>
                   <Link 
                     href="#contact"
-                    className="inline-flex items-center border-2 border-white text-white px-8 py-4 rounded-lg font-bold hover:bg-white hover:text-orange-600 transition-colors"
+                    className="inline-flex items-center border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition-colors"
                   >
                     お問い合わせ
                   </Link>
@@ -324,7 +324,7 @@ export default function ClemiraServicePage() {
         <section className="py-20 bg-gradient-to-b from-orange-50 to-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              <h2 className="text-3xl md:text-4xl font-semibold text-gray-900 mb-4">
                 本社直送だからできること
               </h2>
               <p className="text-xl text-gray-600">
@@ -337,10 +337,10 @@ export default function ClemiraServicePage() {
                 const IconComponent = feature.icon
                 return (
                   <div key={index} className="text-center group">
-                    <div className="w-16 h-16 bg-gradient-to-br from-orange-500 to-red-600 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
+                    <div className="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-105 transition-transform">
                       <IconComponent className="h-8 w-8 text-white" />
                     </div>
-                    <h3 className="text-xl font-bold text-gray-900 mb-3">
+                    <h3 className="text-xl font-semibold text-gray-900 mb-3">
                       {feature.title}
                     </h3>
                     <p className="text-gray-600">
@@ -357,7 +357,7 @@ export default function ClemiraServicePage() {
         <section id="products" className="py-20 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              <h2 className="text-3xl md:text-4xl font-semibold text-gray-900 mb-4">
                 CLEMIRA製品ラインナップ
               </h2>
               <p className="text-xl text-gray-600">
@@ -370,12 +370,12 @@ export default function ClemiraServicePage() {
                 <div 
                   key={index} 
                   className={`bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow ${
-                    product.popular ? 'ring-2 ring-orange-500 relative' : 'border border-gray-200'
+                    product.popular ? 'ring-2 ring-blue-600 relative' : 'border border-gray-200'
                   }`}
                 >
                   {product.popular && (
                     <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                      <span className="bg-orange-500 text-white px-4 py-2 rounded-full text-sm font-bold flex items-center">
+                      <span className="bg-blue-600 text-white px-4 py-2 rounded-full text-sm font-semibold flex items-center">
                         <Star className="w-4 h-4 mr-1" />
                         人気No.1
                       </span>
@@ -392,13 +392,13 @@ export default function ClemiraServicePage() {
                       quality={85}
                     />
                   </div>
-                  <h3 className="text-2xl font-bold text-gray-900 mb-2">
+                  <h3 className="text-2xl font-semibold text-gray-900 mb-2">
                     {product.name}
                   </h3>
                   <p className="text-gray-600 mb-4">{product.description}</p>
                   <div className="mb-6">
                     <div className="flex items-center gap-3">
-                      <div className="text-3xl font-bold text-orange-600">
+                      <div className="text-3xl font-semibold text-blue-600">
                         {product.price}
                       </div>
                     </div>
@@ -416,10 +416,10 @@ export default function ClemiraServicePage() {
                   </ul>
                   <Link 
                     href="#contact"
-                    className={`block text-center py-3 px-6 rounded-lg font-bold transition-colors ${
+                    className={`block text-center py-3 px-6 rounded-lg font-semibold transition-colors ${
                       product.popular 
-                        ? 'bg-orange-500 text-white hover:bg-orange-600' 
-                        : 'border-2 border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-white'
+                        ? 'bg-blue-600 text-white hover:bg-blue-700' 
+                        : 'border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white'
                     }`}
                   >
                     お問い合わせ
@@ -434,37 +434,37 @@ export default function ClemiraServicePage() {
         <section className="py-20 bg-gray-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              <h2 className="text-3xl md:text-4xl font-semibold text-gray-900 mb-4">
                 CLEMIRAを選ぶ理由
               </h2>
             </div>
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
               <div className="text-center">
-                <div className="w-20 h-20 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                  <TrendingUp className="h-10 w-10 text-orange-600" />
+                <div className="w-20 h-20 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                  <TrendingUp className="h-10 w-10 text-blue-600" />
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-4">本社直送</h3>
+                <h3 className="text-xl font-semibold text-gray-900 mb-4">本社直送</h3>
                 <p className="text-gray-600">
                   メーカー本社から直接お届け。正規品のみを取り扱い、迅速かつ確実にお手元へ。
                 </p>
               </div>
               
               <div className="text-center">
-                <div className="w-20 h-20 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                  <ShieldCheck className="h-10 w-10 text-orange-600" />
+                <div className="w-20 h-20 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                  <ShieldCheck className="h-10 w-10 text-blue-600" />
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-4">品質保証</h3>
+                <h3 className="text-xl font-semibold text-gray-900 mb-4">品質保証</h3>
                 <p className="text-gray-600">
                   正規品のみを取り扱い、アフターサポートまで一貫対応。安心の品質管理体制でお客様をサポート。
                 </p>
               </div>
               
               <div className="text-center">
-                <div className="w-20 h-20 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                  <Zap className="h-10 w-10 text-orange-600" />
+                <div className="w-20 h-20 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                  <Zap className="h-10 w-10 text-blue-600" />
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-4">専門サポート</h3>
+                <h3 className="text-xl font-semibold text-gray-900 mb-4">専門サポート</h3>
                 <p className="text-gray-600">
                   製品に関するご質問やご相談に、専門スタッフが丁寧にお答え。安心してご利用いただけます。
                 </p>
@@ -474,9 +474,9 @@ export default function ClemiraServicePage() {
         </section>
 
         {/* CTA Section */}
-        <section id="contact" className="py-20 bg-gradient-to-br from-orange-500 to-red-600">
+        <section id="contact" className="py-20 bg-blue-600">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+            <h2 className="text-3xl md:text-4xl font-semibold text-white mb-6">
               CLEMIRA製品に関するお問い合わせ
             </h2>
             <p className="text-xl text-white/90 mb-8">
@@ -485,14 +485,14 @@ export default function ClemiraServicePage() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link 
                 href="/#contact"
-                className="bg-white text-orange-600 px-8 py-4 rounded-lg font-bold hover:bg-gray-100 transition-colors inline-flex items-center justify-center"
+                className="bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-colors inline-flex items-center justify-center"
               >
                 今すぐ相談する
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Link>
               <Link 
                 href="/"
-                className="border-2 border-white text-white px-8 py-4 rounded-lg font-bold hover:bg-white hover:text-orange-600 transition-colors"
+                className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition-colors"
               >
                 他のサービスを見る
               </Link>

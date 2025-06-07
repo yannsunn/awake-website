@@ -231,7 +231,7 @@ export default function FurnitureServicePage() {
         {/* Hero Section */}
         <section className="relative py-20 overflow-hidden">
           {/* Animated Background */}
-          <div className="absolute inset-0 bg-gradient-to-br from-amber-500 via-orange-600 to-red-700">
+          <div className="absolute inset-0 bg-gradient-to-br from-blue-600 via-blue-700 to-blue-800">
             <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTAiIGhlaWdodD0iNTAiIHZpZXdCb3g9IjAgMCA1MCA1MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8cG9seWdvbiBwb2ludHM9IjI1LDUgNDUsNDUgNSw0NSIgZmlsbD0icmdiYSgyNTUsIDI1NSwgMjU1LCAwLjA2KSIvPgo8L3N2Zz4=')] opacity-20"></div>
             <div className="absolute top-0 right-0 w-72 h-72 bg-yellow-300/20 rounded-full blur-3xl translate-x-1/4 -translate-y-1/4"></div>
             <div className="absolute bottom-0 left-0 w-96 h-96 bg-red-400/15 rounded-full blur-3xl -translate-x-1/3 translate-y-1/2"></div>
@@ -245,7 +245,7 @@ export default function FurnitureServicePage() {
                   <Armchair className="h-8 w-8 text-white mr-3" />
                   <span className="text-white/80 font-semibold">Custom Furniture</span>
                 </div>
-                <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
+                <h1 className="text-4xl md:text-5xl font-semibold text-white mb-6">
                   アイアン家具<br />製作・販売
                 </h1>
                 <p className="text-xl text-white/90 mb-8 leading-relaxed">
@@ -254,7 +254,7 @@ export default function FurnitureServicePage() {
                 </p>
                 <Link 
                   href="#contact"
-                  className="inline-flex items-center bg-white text-orange-600 px-8 py-4 rounded-lg font-bold hover:bg-gray-100 transition-colors"
+                  className="inline-flex items-center bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-colors"
                 >
                   製作を相談する
                   <ArrowRight className="ml-2 h-5 w-5" />
@@ -277,7 +277,7 @@ export default function FurnitureServicePage() {
         <section className="py-20 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              <h2 className="text-3xl md:text-4xl font-semibold text-gray-900 mb-4">
                 サービスの特徴
               </h2>
               <p className="text-xl text-gray-600">
@@ -290,10 +290,10 @@ export default function FurnitureServicePage() {
                 const IconComponent = feature.icon
                 return (
                   <div key={index} className="text-center">
-                    <div className="w-16 h-16 bg-gradient-to-br from-orange-500 to-red-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <div className="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
                       <IconComponent className="h-8 w-8 text-white" />
                     </div>
-                    <h3 className="text-xl font-bold text-gray-900 mb-3">
+                    <h3 className="text-xl font-semibold text-gray-900 mb-3">
                       {feature.title}
                     </h3>
                     <p className="text-gray-600">
@@ -310,7 +310,7 @@ export default function FurnitureServicePage() {
         <section className="py-20 bg-gray-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              <h2 className="text-3xl md:text-4xl font-semibold text-gray-900 mb-4">
                 使用素材
               </h2>
               <p className="text-xl text-gray-600">
@@ -338,7 +338,7 @@ export default function FurnitureServicePage() {
         <section className="py-20 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              <h2 className="text-3xl md:text-4xl font-semibold text-gray-900 mb-4">
                 製作の流れ
               </h2>
               <p className="text-xl text-gray-600">
@@ -349,7 +349,7 @@ export default function FurnitureServicePage() {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
               {process.map((item, index) => (
                 <div key={index} className="text-center">
-                  <div className="w-16 h-16 bg-orange-500 text-white rounded-full flex items-center justify-center mx-auto mb-4 text-xl font-bold">
+                  <div className="w-16 h-16 bg-blue-600 text-white rounded-full flex items-center justify-center mx-auto mb-4 text-xl font-semibold">
                     {item.step}
                   </div>
                   <h3 className="text-xl font-bold text-gray-900 mb-3">
@@ -368,7 +368,7 @@ export default function FurnitureServicePage() {
         <section className="py-20 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              <h2 className="text-3xl md:text-4xl font-semibold text-gray-900 mb-4">
                 アイアン家具ラインナップ
               </h2>
               <p className="text-xl text-gray-600">
@@ -388,12 +388,12 @@ export default function FurnitureServicePage() {
                       className="w-full h-48 object-cover rounded-lg"
                     />
                   </div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-2">
+                  <h3 className="text-xl font-semibold text-gray-900 mb-2">
                     {product.name}
                   </h3>
                   <p className="text-gray-600 mb-4">{product.description}</p>
                   <div className="mb-4">
-                    <div className="text-2xl font-bold text-orange-600">
+                    <div className="text-2xl font-semibold text-blue-600">
                       {product.price}
                     </div>
                     <div className="text-sm text-gray-500">
@@ -410,7 +410,7 @@ export default function FurnitureServicePage() {
                   </ul>
                   <Link 
                     href="#contact"
-                    className="block text-center py-2 px-4 rounded-lg font-medium transition-colors border-2 border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-white"
+                    className="block text-center py-2 px-4 rounded-lg font-medium transition-colors border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white"
                   >
                     詳細を問い合わせ
                   </Link>
@@ -424,7 +424,7 @@ export default function FurnitureServicePage() {
         <section className="py-20 bg-gray-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              <h2 className="text-3xl md:text-4xl font-semibold text-gray-900 mb-4">
                 製作可能な家具
               </h2>
               <p className="text-xl text-gray-600">
@@ -435,13 +435,13 @@ export default function FurnitureServicePage() {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
               {furnitureTypes.map((type, index) => (
                 <div key={index} className="bg-white p-8 rounded-2xl shadow-lg">
-                  <h3 className="text-2xl font-bold text-gray-900 mb-3">
+                  <h3 className="text-2xl font-semibold text-gray-900 mb-3">
                     {type.name}
                   </h3>
                   <p className="text-gray-600 mb-4">
                     {type.description}
                   </p>
-                  <div className="text-xl font-bold text-orange-600">
+                  <div className="text-xl font-semibold text-blue-600">
                     {type.price}
                   </div>
                 </div>
@@ -458,9 +458,9 @@ export default function FurnitureServicePage() {
         </section>
 
         {/* CTA Section */}
-        <section id="contact" className="py-20 bg-gradient-to-br from-orange-600 to-red-600">
+        <section id="contact" className="py-20 bg-blue-600">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+            <h2 className="text-3xl md:text-4xl font-semibold text-white mb-6">
               理想の家具を一緒に作りませんか？
             </h2>
             <p className="text-xl text-white/90 mb-8">
@@ -469,14 +469,14 @@ export default function FurnitureServicePage() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link 
                 href="/#contact"
-                className="bg-white text-orange-600 px-8 py-4 rounded-lg font-bold hover:bg-gray-100 transition-colors inline-flex items-center justify-center"
+                className="bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-colors inline-flex items-center justify-center"
               >
                 製作を相談する
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Link>
               <Link 
                 href="/"
-                className="border-2 border-white text-white px-8 py-4 rounded-lg font-bold hover:bg-white hover:text-orange-600 transition-colors"
+                className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition-colors"
               >
                 他のサービスを見る
               </Link>

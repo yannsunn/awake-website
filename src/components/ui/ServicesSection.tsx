@@ -26,12 +26,12 @@ export default function ServicesSection() {
           return (
             <div 
               key={key} 
-              className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 group"
+              className="bg-white p-8 rounded-2xl border border-gray-200 hover:shadow-lg transition-all duration-300 group"
             >
-              <div className={`w-16 h-16 bg-gradient-to-br ${service.gradient} rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
-                <IconComponent className="h-8 w-8 text-white" />
+              <div className="w-14 h-14 bg-blue-600 rounded-xl flex items-center justify-center mb-6 transition-all duration-300">
+                <IconComponent className="h-7 w-7 text-white" />
               </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">
+              <h3 className="text-xl font-semibold text-gray-900 mb-4">
                 {service.title}
               </h3>
               <p className="text-gray-600 leading-relaxed mb-6">
@@ -39,7 +39,7 @@ export default function ServicesSection() {
               </p>
               <Link 
                 href={service.href}
-                className="inline-flex items-center text-primary-purple hover:text-primary-purple-dark font-semibold group-hover:translate-x-1 transition-transform duration-300"
+                className="inline-flex items-center text-blue-600 hover:text-blue-700 font-medium transition-colors duration-200"
               >
                 詳細を見る
                 <ArrowRight className="ml-2 h-4 w-4" />
