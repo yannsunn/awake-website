@@ -40,12 +40,12 @@ export const SERVICES = {
     gradient: 'from-orange-500 to-red-600',
     href: '/services/furniture',
   },
-  kurumira: {
+  clemira: {
     title: 'CLEMIRA直販店',
     description: '代理店を通さない直販価格で量子エネルギーデバイス「CLEMIRA」を提供。身体機能向上をサポート。',
     icon: '⚡',
     gradient: 'from-orange-600 to-red-700',
-    href: '/services/kurumira',
+    href: '/services/clemira',
   },
 } as const
 

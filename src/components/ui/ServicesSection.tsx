@@ -9,7 +9,7 @@ const serviceIcons = {
   ec: ShoppingCart,
   video: Video,
   furniture: Armchair,
-  kurumira: Zap,
+  clemira: Zap,
 } as const
 
 export default function ServicesSection() {
