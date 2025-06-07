@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     title: "アイアン家具製作・販売 | 株式会社Awake",
     description: "インダストリアルデザインのアイアン家具を制作・販売。無骨で機能的な家具を豊富に取り揃え。",
     images: ["/assets/images/furniture.jpg"],
-    url: "https://awake.co.jp/services/furniture/",
+    url: "https://awakeinc.co.jp/services/furniture/",
   },
   twitter: {
     card: "summary_large_image",
@@ -197,12 +197,12 @@ const furnitureServiceSchema = {
   "provider": {
     "@type": "Organization",
     "name": "株式会社Awake",
-    "url": "https://awake.co.jp/"
+    "url": "https://awakeinc.co.jp/"
   },
   "name": "アイアン家具製作・販売",
   "description": "インダストリアルデザインのアイアン家具を制作・販売。デスク、シェルフ、ベンチなど機能的な家具を豊富に取り揃え。",
-  "url": "https://awake.co.jp/services/furniture/",
-  "image": "https://awake.co.jp/assets/images/furniture.jpg",
+  "url": "https://awakeinc.co.jp/services/furniture/",
+  "image": "https://awakeinc.co.jp/assets/images/furniture.jpg",
   "offers": {
     "@type": "AggregateOffer",
     "priceCurrency": "JPY",
