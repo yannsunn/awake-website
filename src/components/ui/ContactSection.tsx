@@ -57,13 +57,13 @@ export default function ContactSection() {
   }
 
   return (
-    <section className="py-20 bg-gradient-to-br from-primary-purple to-primary-purple-dark" id="contact" aria-labelledby="contact-title">
+    <section className="py-20 bg-gray-900" id="contact" aria-labelledby="contact-title">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 id="contact-title" className="text-3xl md:text-4xl font-bold text-white mb-4">
+          <h2 id="contact-title" className="text-3xl md:text-4xl font-semibold text-white mb-4">
             まずは無料相談から始めましょう
           </h2>
-          <p className="text-xl text-white/90 max-w-3xl mx-auto">
+          <p className="text-lg text-gray-300 max-w-3xl mx-auto">
             あなたのビジネスの課題をお聞かせください。最適なソリューションをご提案いたします。
           </p>
         </div>
@@ -83,7 +83,7 @@ export default function ContactSection() {
                   onChange={handleChange}
                   required
                   placeholder="山田 太郎"
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-purple focus:border-primary-purple transition-colors"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors"
                   aria-describedby="name-help"
                 />
                 <div id="name-help" className="sr-only">お名前をフルネームでご入力ください</div>
@@ -101,7 +101,7 @@ export default function ContactSection() {
                   onChange={handleChange}
                   required
                   placeholder="yamada@example.com"
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-purple focus:border-primary-purple transition-colors"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors"
                   aria-describedby="email-help"
                 />
                 <div id="email-help" className="sr-only">返信用のメールアドレスをご入力ください</div>
@@ -120,7 +120,7 @@ export default function ContactSection() {
                   value={formData.company}
                   onChange={handleChange}
                   placeholder="株式会社サンプル"
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-purple focus:border-primary-purple transition-colors"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors"
                 />
               </div>
               
@@ -133,7 +133,7 @@ export default function ContactSection() {
                   name="service"
                   value={formData.service}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-purple focus:border-primary-purple transition-colors"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors"
                 >
                   <option value="">選択してください</option>
                   <option value="web">HP制作・LP制作</option>
@@ -159,7 +159,7 @@ export default function ContactSection() {
                 required
                 rows={5}
                 placeholder="ご質問・ご相談内容をお聞かせください"
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-purple focus:border-primary-purple transition-colors resize-none"
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors resize-none"
                 aria-describedby="message-help"
               />
               <div id="message-help" className="sr-only">具体的なご要望や質問をご記入ください</div>
@@ -169,7 +169,7 @@ export default function ContactSection() {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full bg-primary-purple text-white font-bold py-4 px-8 rounded-lg hover:bg-primary-purple-dark transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center"
+                className="w-full bg-blue-600 text-white font-semibold py-4 px-8 rounded-lg hover:bg-blue-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center"
               >
                 {isSubmitting ? (
                   <span className="flex items-center">
@@ -278,7 +278,7 @@ export default function ContactSection() {
                   href="https://www.google.com/maps/search/東京都東大和市向原5-1129-61"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center text-primary-purple hover:text-primary-purple-dark font-medium transition-colors"
+                  className="inline-flex items-center text-blue-600 hover:text-blue-700 font-medium transition-colors"
                 >
                   Google Mapsで開く
                   <ArrowRight className="ml-1 h-4 w-4" />

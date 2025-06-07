@@ -118,7 +118,7 @@ export default function EcServicePage() {
         {/* Hero Section */}
         <section className="relative min-h-screen flex items-center overflow-hidden">
           {/* Modern Amazon-inspired Background */}
-          <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-orange-900 to-slate-800">
+          <div className="absolute inset-0 bg-gradient-to-br from-blue-600 via-blue-700 to-blue-800">
             {/* Grid Pattern */}
             <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgdmlld0JveD0iMCAwIDEwMCAxMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CiAgPGRlZnM+CiAgICA8cGF0dGVybiBpZD0iZ3JpZCIgd2lkdGg9IjEwMCIgaGVpZ2h0PSIxMDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiPgogICAgICA8cGF0aCBkPSJNIDEwMCAwIEwgMCAwIDAgMTAwIiBmaWxsPSJub25lIiBzdHJva2U9InJnYmEoMjU1LCAyNTUsIDI1NSwgMC4wMykiIHN0cm9rZS13aWR0aD0iMSIvPgogICAgPC9wYXR0ZXJuPgogIDwvZGVmcz4KICA8cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2dyaWQpIiAvPgo8L3N2Zz4=')] opacity-20"></div>
             {/* Floating Amazon-style Elements */}
@@ -148,7 +148,7 @@ export default function EcServicePage() {
                   <ShoppingCart className="h-6 w-6 text-orange-400 mr-3" />
                   <span className="text-orange-200 font-semibold text-sm tracking-wide">AMAZON SPECIAL PRICING</span>
                 </div>
-                <h1 className="text-5xl md:text-7xl font-black text-white mb-8 leading-tight">
+                <h1 className="text-5xl md:text-6xl font-semibold text-white mb-8 leading-tight">
                   <span className="bg-gradient-to-r from-orange-400 via-yellow-400 to-orange-300 bg-clip-text text-transparent">
                     Amazon
                   </span>
@@ -161,7 +161,7 @@ export default function EcServicePage() {
                 <div className="flex flex-col sm:flex-row gap-4">
                   <Link 
                     href="#contact"
-                    className="group inline-flex items-center justify-center bg-gradient-to-r from-orange-500 to-orange-600 text-white px-8 py-4 rounded-xl font-bold hover:from-orange-600 hover:to-orange-700 transition-all duration-300 shadow-xl hover:shadow-2xl hover:shadow-orange-500/25 transform hover:-translate-y-1"
+                    className="group inline-flex items-center justify-center bg-blue-600 text-white px-8 py-4 rounded-xl font-semibold hover:bg-blue-700 transition-all duration-300 shadow-xl"
                   >
                     無料診断を受ける
                     <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
@@ -213,7 +213,7 @@ export default function EcServicePage() {
               <div className="inline-flex items-center bg-gradient-to-r from-orange-100 to-yellow-100 px-6 py-2 rounded-full mb-6">
                 <span className="text-orange-600 font-semibold text-sm">FEATURES</span>
               </div>
-              <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+              <h2 className="text-4xl md:text-5xl font-semibold text-gray-900 mb-6">
                 サービスの特徴
               </h2>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -237,7 +237,7 @@ export default function EcServicePage() {
                         <div className="w-16 h-16 bg-gradient-to-br from-orange-500 to-orange-600 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
                           <IconComponent className="h-8 w-8 text-white" />
                         </div>
-                        <h3 className="text-xl font-bold text-gray-900 mb-4">
+                        <h3 className="text-xl font-semibold text-gray-900 mb-4">
                           {feature.title}
                         </h3>
                         <p className="text-gray-600 leading-relaxed">
@@ -259,7 +259,7 @@ export default function EcServicePage() {
               <div className="inline-flex items-center bg-gradient-to-r from-blue-100 to-purple-100 px-6 py-2 rounded-full mb-6">
                 <span className="text-blue-600 font-semibold text-sm">PROCESS</span>
               </div>
-              <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+              <h2 className="text-4xl md:text-5xl font-semibold text-gray-900 mb-6">
                 サービスの流れ
               </h2>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -310,7 +310,7 @@ export default function EcServicePage() {
               <div className="inline-flex items-center bg-gradient-to-r from-green-100 to-emerald-100 px-6 py-2 rounded-full mb-6">
                 <span className="text-green-600 font-semibold text-sm">PRICING</span>
               </div>
-              <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+              <h2 className="text-4xl md:text-5xl font-semibold text-gray-900 mb-6">
                 手数料体系
               </h2>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -363,7 +363,7 @@ export default function EcServicePage() {
         </section>
 
         {/* CTA Section */}
-        <section id="contact" className="py-24 bg-gradient-to-br from-slate-900 via-orange-900 to-slate-800 relative overflow-hidden">
+        <section id="contact" className="py-24 bg-blue-600 relative overflow-hidden">
           {/* Background Effects */}
           <div className="absolute inset-0">
             <div className="absolute top-0 left-0 w-[600px] h-[600px] bg-gradient-to-br from-orange-500/10 to-yellow-500/10 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2"></div>
@@ -377,7 +377,7 @@ export default function EcServicePage() {
               <span className="text-orange-200 font-semibold text-sm">無料相談受付中</span>
             </div>
             
-            <h2 className="text-4xl md:text-6xl font-bold text-white mb-8">
+            <h2 className="text-4xl md:text-6xl font-semibold text-white mb-8">
               Amazon特価での<br />
               <span className="bg-gradient-to-r from-orange-400 to-yellow-400 bg-clip-text text-transparent">
                 代理販売
@@ -392,7 +392,7 @@ export default function EcServicePage() {
             <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
               <Link 
                 href="/#contact"
-                className="group bg-gradient-to-r from-orange-500 to-orange-600 text-white px-10 py-5 rounded-xl font-bold hover:from-orange-600 hover:to-orange-700 transition-all duration-300 shadow-xl hover:shadow-2xl hover:shadow-orange-500/25 transform hover:-translate-y-1 inline-flex items-center justify-center text-lg"
+                className="group bg-white text-blue-600 px-10 py-5 rounded-xl font-semibold hover:bg-gray-100 transition-all duration-300 shadow-xl inline-flex items-center justify-center text-lg"
               >
                 無料診断を受ける
                 <ArrowRight className="ml-3 h-6 w-6 group-hover:translate-x-1 transition-transform" />

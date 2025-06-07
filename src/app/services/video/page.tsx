@@ -159,7 +159,7 @@ export default function VideoServicePage() {
         {/* Hero Section */}
         <section className="relative py-20 overflow-hidden">
           {/* Animated Background */}
-          <div className="absolute inset-0 bg-gradient-to-br from-purple-600 via-pink-500 to-orange-500">
+          <div className="absolute inset-0 bg-gradient-to-br from-blue-600 via-blue-700 to-blue-800">
             <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8cmVjdCB4PSIxMCIgeT0iMTAiIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgcng9IjgiIGZpbGw9InJnYmEoMjU1LCAyNTUsIDI1NSwgMC4wOCkiLz4KPC9zdmc+')] opacity-25"></div>
             <div className="absolute top-0 left-0 w-96 h-96 bg-cyan-400/20 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2 animate-pulse"></div>
             <div className="absolute bottom-0 right-0 w-80 h-80 bg-yellow-400/25 rounded-full blur-3xl translate-x-1/3 translate-y-1/3"></div>
@@ -172,7 +172,7 @@ export default function VideoServicePage() {
                   <Video className="h-8 w-8 text-white mr-3" />
                   <span className="text-white/80 font-semibold">Video Production</span>
                 </div>
-                <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
+                <h1 className="text-4xl md:text-5xl font-semibold text-white mb-6">
                   動画編集・制作<br />サービス
                 </h1>
                 <p className="text-xl text-white/90 mb-8 leading-relaxed">
@@ -181,7 +181,7 @@ export default function VideoServicePage() {
                 </p>
                 <Link 
                   href="#contact"
-                  className="inline-flex items-center bg-white text-purple-600 px-8 py-4 rounded-lg font-bold hover:bg-gray-100 transition-colors"
+                  className="inline-flex items-center bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-colors"
                 >
                   制作依頼をする
                   <ArrowRight className="ml-2 h-5 w-5" />
@@ -204,7 +204,7 @@ export default function VideoServicePage() {
         <section className="py-20 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              <h2 className="text-3xl md:text-4xl font-semibold text-gray-900 mb-4">
                 サービスの特徴
               </h2>
               <p className="text-xl text-gray-600">
@@ -217,10 +217,10 @@ export default function VideoServicePage() {
                 const IconComponent = feature.icon
                 return (
                   <div key={index} className="text-center">
-                    <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <div className="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
                       <IconComponent className="h-8 w-8 text-white" />
                     </div>
-                    <h3 className="text-xl font-bold text-gray-900 mb-3">
+                    <h3 className="text-xl font-semibold text-gray-900 mb-3">
                       {feature.title}
                     </h3>
                     <p className="text-gray-600">
@@ -237,7 +237,7 @@ export default function VideoServicePage() {
         <section className="py-20 bg-gray-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              <h2 className="text-3xl md:text-4xl font-semibold text-gray-900 mb-4">
                 対応プラットフォーム
               </h2>
               <p className="text-xl text-gray-600">
@@ -251,7 +251,7 @@ export default function VideoServicePage() {
                   <div className={`w-16 h-16 bg-gradient-to-br ${platform.color} rounded-full flex items-center justify-center mx-auto mb-4`}>
                     <Video className="h-8 w-8 text-white" />
                   </div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-2">
+                  <h3 className="text-xl font-semibold text-gray-900 mb-2">
                     {platform.name}
                   </h3>
                   <p className="text-gray-600 text-sm mb-2">
@@ -270,7 +270,7 @@ export default function VideoServicePage() {
         <section className="py-20 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              <h2 className="text-3xl md:text-4xl font-semibold text-gray-900 mb-4">
                 料金プラン
               </h2>
               <p className="text-xl text-gray-600">
@@ -283,22 +283,22 @@ export default function VideoServicePage() {
                 <div 
                   key={index} 
                   className={`bg-white p-8 rounded-2xl shadow-lg ${
-                    plan.popular ? 'ring-2 ring-purple-500 relative' : ''
+                    plan.popular ? 'ring-2 ring-blue-600 relative' : ''
                   }`}
                 >
                   {plan.popular && (
                     <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                      <span className="bg-purple-500 text-white px-4 py-2 rounded-full text-sm font-bold">
+                      <span className="bg-blue-600 text-white px-4 py-2 rounded-full text-sm font-semibold">
                         人気
                       </span>
                     </div>
                   )}
-                  <h3 className="text-2xl font-bold text-gray-900 mb-2">
+                  <h3 className="text-2xl font-semibold text-gray-900 mb-2">
                     {plan.name}
                   </h3>
                   <p className="text-gray-600 mb-4">{plan.description}</p>
                   <div className="mb-6">
-                    <span className="text-3xl font-bold text-purple-600">{plan.price}</span>
+                    <span className="text-3xl font-semibold text-blue-600">{plan.price}</span>
                     <span className="text-gray-500">{plan.period}</span>
                   </div>
                   <ul className="space-y-3 mb-8">
@@ -311,10 +311,10 @@ export default function VideoServicePage() {
                   </ul>
                   <Link 
                     href="#contact"
-                    className={`block text-center py-3 px-6 rounded-lg font-bold transition-colors ${
+                    className={`block text-center py-3 px-6 rounded-lg font-semibold transition-colors ${
                       plan.popular 
-                        ? 'bg-purple-500 text-white hover:bg-purple-600' 
-                        : 'border-2 border-purple-500 text-purple-500 hover:bg-purple-500 hover:text-white'
+                        ? 'bg-blue-600 text-white hover:bg-blue-700' 
+                        : 'border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white'
                     }`}
                   >
                     プランを選択
@@ -326,9 +326,9 @@ export default function VideoServicePage() {
         </section>
 
         {/* CTA Section */}
-        <section id="contact" className="py-20 bg-gradient-to-br from-purple-600 to-pink-600">
+        <section id="contact" className="py-20 bg-blue-600">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+            <h2 className="text-3xl md:text-4xl font-semibold text-white mb-6">
               動画でビジネスを加速させませんか？
             </h2>
             <p className="text-xl text-white/90 mb-8">
@@ -337,14 +337,14 @@ export default function VideoServicePage() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link 
                 href="/#contact"
-                className="bg-white text-purple-600 px-8 py-4 rounded-lg font-bold hover:bg-gray-100 transition-colors inline-flex items-center justify-center"
+                className="bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-colors inline-flex items-center justify-center"
               >
                 制作依頼をする
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Link>
               <Link 
                 href="/"
-                className="border-2 border-white text-white px-8 py-4 rounded-lg font-bold hover:bg-white hover:text-purple-600 transition-colors"
+                className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition-colors"
               >
                 他のサービスを見る
               </Link>

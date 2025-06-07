@@ -41,7 +41,7 @@ export default function Header() {
           <div className="flex-shrink-0">
             <Link 
               href="/" 
-              className="text-2xl font-bold text-primary-purple hover:text-primary-purple-dark transition-colors"
+              className="text-2xl font-bold text-gray-900 hover:text-blue-600 transition-colors"
               aria-label="株式会社Awake ホームページ"
             >
               株式会社Awake
