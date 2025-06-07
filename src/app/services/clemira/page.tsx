@@ -50,7 +50,7 @@ const products = [
   {
     name: "CLEMIRA insole",
     price: "¥220,000",
-    image: "/assets/images/modern-office.jpg",
+    image: "/assets/images/clemira/insole.jpg",
     description: "最新の量子エネルギー技術を採用したインソール",
     features: [
       "24時間装着可能な設計",
@@ -64,7 +64,7 @@ const products = [
   {
     name: "CLEMIRA PHOENIX",
     price: "¥165,000",
-    image: "/assets/images/web-design.jpg",
+    image: "/assets/images/clemira/phoenix.jpg",
     description: "コア技術を搭載したプレミアムモデル",
     features: [
       "CLEMIRA CORE技術搭載",
@@ -77,7 +77,7 @@ const products = [
   {
     name: "CLEMIRA athlete",
     price: "¥55,000",
-    image: "/assets/images/video-editing.jpg",
+    image: "/assets/images/clemira/athlete.jpg",
     description: "アスリート向けエントリーモデル",
     features: [
       "コンパクト設計",
@@ -90,7 +90,7 @@ const products = [
   {
     name: "CLEMIRA blackcard",
     price: "¥27,500",
-    image: "/assets/images/ec-shopping.jpg",
+    image: "/assets/images/clemira/blackcard.jpg",
     description: "携帯に便利なカード型デバイス",
     features: [
       "カード型の薄型設計",
@@ -103,7 +103,7 @@ const products = [
   {
     name: "【自動車用】CLEMIRA極",
     price: "¥27,500",
-    image: "/assets/images/furniture.jpg",
+    image: "/assets/images/clemira/extreme.jpg",
     description: "自動車専用の量子エネルギーデバイス",
     features: [
       "車内環境に最適化",
@@ -116,7 +116,7 @@ const products = [
   {
     name: "【携帯用】CLEMIRA極",
     price: "¥27,500",
-    image: "/assets/images/ogp.jpg",
+    image: "/assets/images/clemira/extreme.jpg",
     description: "携帯用コンパクトモデル",
     features: [
       "ポケットサイズのコンパクト設計",
