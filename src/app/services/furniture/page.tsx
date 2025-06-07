@@ -488,4 +488,4 @@ export default function FurnitureServicePage() {
       <Footer />
     </>
   )
-}
+}// Force rebuild Sat Jun  7 16:58:45 JST 2025
