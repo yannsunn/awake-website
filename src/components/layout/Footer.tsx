@@ -71,7 +71,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link 
-                  href="/services/kurumira" 
+                  href="/services/clemira" 
                   className="text-gray-300 hover:text-white transition-colors"
                 >
                   CLEMIRA直販店

@@ -7,18 +7,18 @@ import Image from 'next/image'
 
 export const metadata: Metadata = {
   title: "CLEMIRA直販店 - 量子エネルギーデバイス | 株式会社Awake",
-  description: "正規代理店を通さない直販価格で、量子エネルギーデバイス「CLEMIRA」シリーズを提供。身体機能向上・パフォーマンス最適化をサポート。",
-  keywords: "CLEMIRA, 量子エネルギー, 身体機能向上, 直販店, パフォーマンス向上, 株式会社Awake",
+  description: "本社直送で、量子エネルギーデバイス「CLEMIRA」シリーズを提供。確かな品質と信頼の正規品をお届けします。",
+  keywords: "CLEMIRA, 量子エネルギー, 直販店, 本社直送, 正規品, 株式会社Awake",
   openGraph: {
     title: "CLEMIRA直販店 - 量子エネルギーデバイス | 株式会社Awake",
-    description: "代理店を通さない直販価格で、革新的な量子エネルギーデバイスを提供。科学的根拠に基づく身体機能向上を実現。",
+    description: "本社直送で、革新的な量子エネルギーデバイスを提供。確かな品質と安心のアフターサービス。",
     images: ["/assets/images/modern-office.jpg"],
-    url: "https://awake-website-five.vercel.app/services/kurumira/",
+    url: "https://awake-website-five.vercel.app/services/clemira/",
   },
   twitter: {
     card: "summary_large_image",
     title: "CLEMIRA直販店 - 量子エネルギーデバイス | 株式会社Awake",
-    description: "正規代理店を通さない直販価格で、最新量子エネルギー技術を提供",
+    description: "本社直送で、最新量子エネルギー技術の正規品をお届け",
     images: ["/assets/images/modern-office.jpg"],
   },
 }
@@ -27,17 +27,17 @@ const features = [
   {
     icon: Zap,
     title: "量子エネルギー技術",
-    description: "見えない量子エネルギーが様々な物質に作用し、身体機能を根本から向上させる革新的技術。"
+    description: "最新の量子エネルギー技術を採用した革新的なデバイス。様々なシーンでの活用が期待されています。"
   },
   {
     icon: ShieldCheck,
-    title: "第三者機関検証済み",
-    description: "独立した検査機関による効果測定を実施。科学的根拠に基づく確かな品質保証。"
+    title: "本社直送・正規品保証",
+    description: "すべての製品はメーカー本社から直送。正規品のみをお届けし、安心のアフターサポートを提供。"
   },
   {
     icon: Target,
-    title: "多用途対応",
-    description: "人体・食品・植物・自動車など、あらゆる分野で効果を発揮する汎用性の高いテクノロジー。"
+    title: "多様なシーンで活用",
+    description: "スポーツ、日常生活、ビジネスなど、様々な場面でご利用いただける汎用性の高いデバイス。"
   },
   {
     icon: Award,
@@ -50,13 +50,12 @@ const products = [
   {
     name: "CLEMIRA インソール",
     price: "¥198,000",
-    originalPrice: "¥220,000",
-    description: "足元から全身のパフォーマンスを向上",
+    description: "最新の量子エネルギー技術を採用したインソール",
     features: [
-      "24時間装着可能",
-      "運動パフォーマンス向上",
-      "疲労軽減効果",
-      "血流改善サポート",
+      "24時間装着可能な設計",
+      "スポーツシーンでの使用に最適",
+      "日常生活でも快適に使用",
+      "耐久性に優れた素材",
       "1年間品質保証"
     ],
     popular: true
@@ -64,32 +63,30 @@ const products = [
   {
     name: "CLEMIRA PHOENIX",
     price: "¥148,500",
-    originalPrice: "¥165,000",
     description: "コア技術を搭載したプレミアムモデル",
     features: [
-      "CLEMIRA CORE技術",
-      "広範囲エネルギー放射",
-      "持続的効果発現",
-      "多用途対応設計",
-      "専用ケース付属"
+      "CLEMIRA CORE技術搭載",
+      "幅広いシーンで活用可能",
+      "長時間の使用に対応",
+      "多用途に使える設計",
+      "本社直送・正規品保証"
     ]
   },
   {
     name: "CLEMIRA athlete",
     price: "¥49,500",
-    originalPrice: "¥55,000",
     description: "アスリート向けエントリーモデル",
     features: [
       "コンパクト設計",
-      "スポーツ特化仕様",
-      "即効性重視",
-      "携帯性抜群",
-      "初回限定価格"
+      "スポーツシーンでの使用に特化",
+      "軽量で携帯に便利",
+      "簡単操作ですぐに使用可能",
+      "本社直送・正規品保証"
     ]
   }
 ]
 
-const kurumiraServiceSchema = {
+const clemiraServiceSchema = {
   "@context": "https://schema.org",
   "@type": "Service",
   "serviceType": "Quantum Energy Device Sales",
@@ -100,7 +97,7 @@ const kurumiraServiceSchema = {
   },
   "name": "CLEMIRA直販店 - 量子エネルギーデバイス",
   "description": "正規代理店を通さない直販価格で、量子エネルギーデバイス「CLEMIRA」シリーズを提供。身体機能向上・パフォーマンス最適化をサポート。",
-  "url": "https://awake-website-five.vercel.app/services/kurumira/",
+  "url": "https://awake-website-five.vercel.app/services/clemira/",
   "image": "https://awake-website-five.vercel.app/assets/images/modern-office.jpg",
   "offers": {
     "@type": "AggregateOffer",
@@ -114,13 +111,13 @@ const kurumiraServiceSchema = {
   }
 }
 
-export default function KurumiraServicePage() {
+export default function ClemiraServicePage() {
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify(kurumiraServiceSchema),
+          __html: JSON.stringify(clemiraServiceSchema),
         }}
       />
       
@@ -147,8 +144,8 @@ export default function KurumiraServicePage() {
                   CLEMIRA直販店<br />量子エネルギーデバイス
                 </h1>
                 <p className="text-xl text-white/90 mb-8 leading-relaxed">
-                  代理店を通さない直販価格で、革新的な量子エネルギー技術を提供。<br />
-                  身体機能向上とパフォーマンス最適化を科学的にサポートします。
+                  本社直送で、革新的な量子エネルギー技術の正規品をお届け。<br />
+                  様々なシーンでの活用が期待される最新テクノロジーです。
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">
                   <Link 
@@ -162,7 +159,7 @@ export default function KurumiraServicePage() {
                     href="#contact"
                     className="inline-flex items-center border-2 border-white text-white px-8 py-4 rounded-lg font-bold hover:bg-white hover:text-orange-600 transition-colors"
                   >
-                    直販価格を確認
+                    お問い合わせ
                   </Link>
                 </div>
               </div>
@@ -175,7 +172,7 @@ export default function KurumiraServicePage() {
                   className="rounded-2xl shadow-2xl"
                 />
                 <div className="absolute -top-4 -right-4 bg-yellow-400 text-black px-4 py-2 rounded-full font-bold text-sm">
-                  🔥 直販限定価格
+                  📦 本社直送
                 </div>
               </div>
             </div>
@@ -187,10 +184,10 @@ export default function KurumiraServicePage() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-                直販店だからできること
+                本社直送だからできること
               </h2>
               <p className="text-xl text-gray-600">
-                代理店マージンを排除し、お客様に最適な価格と品質を提供
+                メーカー本社から直接お届け。確かな品質と安心のサポート
               </p>
             </div>
             
@@ -220,10 +217,10 @@ export default function KurumiraServicePage() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-                直販限定価格
+                CLEMIRA製品ラインナップ
               </h2>
               <p className="text-xl text-gray-600">
-                代理店価格より最大10%OFF。確かな品質を適正価格で
+                すべて本社直送。確かな品質の正規品をお届け
               </p>
             </div>
             
@@ -252,12 +249,9 @@ export default function KurumiraServicePage() {
                       <div className="text-3xl font-bold text-orange-600">
                         {product.price}
                       </div>
-                      <div className="text-lg text-gray-400 line-through">
-                        {product.originalPrice}
-                      </div>
                     </div>
-                    <div className="text-sm text-green-600 font-medium">
-                      直販価格で{((parseFloat(product.originalPrice.replace(/[¥,]/g, '')) - parseFloat(product.price.replace(/[¥,]/g, ''))) / parseFloat(product.originalPrice.replace(/[¥,]/g, '')) * 100).toFixed(0)}%OFF
+                    <div className="text-sm text-blue-600 font-medium">
+                      本社直送・正規品保証
                     </div>
                   </div>
                   <ul className="space-y-3 mb-8">
@@ -276,7 +270,7 @@ export default function KurumiraServicePage() {
                         : 'border-2 border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-white'
                     }`}
                   >
-                    直販価格で購入
+                    お問い合わせ
                   </Link>
                 </div>
               ))}
@@ -289,7 +283,7 @@ export default function KurumiraServicePage() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-                なぜ直販店を選ぶのか
+                CLEMIRAを選ぶ理由
               </h2>
             </div>
             
@@ -298,9 +292,9 @@ export default function KurumiraServicePage() {
                 <div className="w-20 h-20 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-6">
                   <TrendingUp className="h-10 w-10 text-orange-600" />
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-4">最適価格</h3>
+                <h3 className="text-xl font-bold text-gray-900 mb-4">本社直送</h3>
                 <p className="text-gray-600">
-                  代理店マージンを排除し、メーカー品質を最適価格でご提供。中間業者を通さない透明な価格設定。
+                  メーカー本社から直接お届け。正規品のみを取り扱い、迅速かつ確実にお手元へ。
                 </p>
               </div>
               
@@ -318,9 +312,9 @@ export default function KurumiraServicePage() {
                 <div className="w-20 h-20 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-6">
                   <Zap className="h-10 w-10 text-orange-600" />
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-4">専門知識</h3>
+                <h3 className="text-xl font-bold text-gray-900 mb-4">専門サポート</h3>
                 <p className="text-gray-600">
-                  量子エネルギー技術の専門知識を持つスタッフが、お客様に最適な製品選びをサポートいたします。
+                  製品に関するご質問やご相談に、専門スタッフが丁寧にお答え。安心してご利用いただけます。
                 </p>
               </div>
             </div>
@@ -331,10 +325,10 @@ export default function KurumiraServicePage() {
         <section id="contact" className="py-20 bg-gradient-to-br from-orange-500 to-red-600">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-              直販限定価格でお試しください
+              CLEMIRA製品に関するお問い合わせ
             </h2>
             <p className="text-xl text-white/90 mb-8">
-              量子エネルギーの効果を、まずは体験から。専門スタッフがサポートいたします。
+              製品の詳細やご注文について、専門スタッフが丁寧にご案内いたします。
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link 
