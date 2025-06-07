@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: '/',
       disallow: ['/api/', '/_next/', '/admin/'],
     },
-    sitemap: 'https://awake-website-five.vercel.app/sitemap.xml',
+    sitemap: 'https://awake.co.jp/sitemap.xml',
   }
 }
