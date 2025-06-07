@@ -7,11 +7,11 @@ import Image from 'next/image'
 
 export const metadata: Metadata = {
   title: "HP制作・LP制作サービス | 株式会社Awake",
-  description: "モダンで高品質なウェブサイトを最短1週間で制作。SEO対策・レスポンシブ対応・高速表示を実現します。",
+  description: "LP制作55,000円、ホームページ制作132,000円から。初回1週間+修正2週間で合計3週間前後の制作期間。",
   keywords: "HP制作, LP制作, ウェブ制作, コーポレートサイト, ランディングページ, 株式会社Awake, SEO対策, レスポンシブデザイン",
   openGraph: {
     title: "HP制作・LP制作サービス | 株式会社Awake",
-    description: "1週間でコーポレートサイトを制作。スピーディーな納品と高品質な制作を実現します。",
+    description: "LP制作55,000円から。3週間前後でコーポレートサイトを制作。スピーディーな納品と高品質な制作を実現します。",
     images: ["/assets/images/web-design.jpg"],
     url: "https://awake-website.netlify.app/services/web/",
   },
@@ -26,8 +26,8 @@ export const metadata: Metadata = {
 const features = [
   {
     icon: Clock,
-    title: "最短1週間納品",
-    description: "企画から公開まで、最短1週間での納品を実現。お急ぎのプロジェクトにも対応可能です。"
+    title: "スピード納品",
+    description: "初回1週間、修正後2週間、合計3週間前後で納品。早ければ2週間前後での対応も可能です。"
   },
   {
     icon: TrendingUp,
@@ -48,42 +48,40 @@ const features = [
 
 const pricing = [
   {
-    name: "スタンダード",
-    price: "20万円〜",
-    description: "基本的なコーポレートサイト",
+    name: "LP制作",
+    price: "55,000円",
+    description: "シンプルなランディングページ",
     features: [
-      "5ページまで",
+      "1ページのLP制作",
       "レスポンシブデザイン",
       "基本的なSEO対策",
       "お問い合わせフォーム",
-      "1ヶ月間のサポート"
+      "制作期間：2週間前後"
     ]
   },
   {
-    name: "プレミアム",
-    price: "50万円〜",
-    description: "本格的なビジネスサイト",
+    name: "ホームページ制作",
+    price: "132,000円",
+    description: "コーポレートサイト",
     features: [
-      "10ページまで",
+      "5ページまで",
       "カスタムデザイン",
       "高度なSEO対策",
-      "CMS機能",
-      "アクセス解析設定",
-      "3ヶ月間のサポート"
+      "お問い合わせフォーム",
+      "制作期間：3週間前後"
     ],
     popular: true
   },
   {
     name: "エンタープライズ",
-    price: "100万円〜",
+    price: "要相談",
     description: "大規模サイト・特殊機能",
     features: [
       "ページ数無制限",
       "完全オリジナルデザイン",
       "システム連携",
       "高度な機能開発",
-      "パフォーマンス最適化",
-      "6ヶ月間のサポート"
+      "制作期間：要相談"
     ]
   }
 ]
@@ -98,14 +96,14 @@ const webServiceSchema = {
     "url": "https://awake-website.netlify.app/"
   },
   "name": "HP制作・LP制作サービス",
-  "description": "モダンで高品質なウェブサイトを最短1週間で制作。SEO対策・レスポンシブ対応・高速表示を実現します。",
+  "description": "LP制作55,000円、ホームページ制作132,000円から。初回1週間+修正2週間で合計3週間前後の制作期間。SEO対策・レスポンシブ対応・高速表示を実現します。",
   "url": "https://awake-website.netlify.app/services/web/",
   "image": "https://awake-website.netlify.app/assets/images/web-design.jpg",
   "offers": {
     "@type": "AggregateOffer",
     "priceCurrency": "JPY",
-    "lowPrice": "200000",
-    "highPrice": "1000000",
+    "lowPrice": "55000",
+    "highPrice": "500000",
     "eligibleRegion": {
       "@type": "Country",
       "name": "Japan"
@@ -145,8 +143,8 @@ export default function WebServicePage() {
                   HP制作・LP制作<br />サービス
                 </h1>
                 <p className="text-xl text-white/90 mb-8 leading-relaxed">
-                  モダンで高品質なウェブサイトを最短1週間で制作。<br />
-                  SEO対策・レスポンシブ対応・高速表示を実現します。
+                  LP制作55,000円、ホームページ制作132,000円から。<br />
+                  初回1週間+修正2週間で合計3週間前後での制作を実現します。
                 </p>
                 <Link 
                   href="#contact"
