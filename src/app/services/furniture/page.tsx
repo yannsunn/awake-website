@@ -96,29 +96,29 @@ const ironFurnitureProducts = [
   {
     name: "アイアンバー",
     price: "¥15,000",
-    description: "ランドリーバー・物干し用のシンプルなアイアンバー",
+    description: "ランドリーバー・天井取付型のアイアンバー",
     image: "https://static.mercdn.net/item/detail/orig/photos/m49765327227_1.jpg?1733724134",
     features: [
       "20角パイプ仕様",
       "幅150cm×奥行30cm", 
       "ランドリーバー対応",
-      "配送・組立込み"
+      "参考にしてご連絡ください"
     ]
   },
   {
-    name: "アイアングリーンハンギング",
+    name: "アイアンバー、アイアン雑貨、アイアン家具、グリーンハンギング",
     price: "¥5,000",
     description: "植物用アイアンハンギングバー・雑貨", 
     image: "https://static.mercdn.net/item/detail/orig/photos/m23082557248_1.jpg?1733724134",
     features: [
-      "直径120cm対応",
-      "高さ10cm調整可能",
+      "直径120cm",
+      "高さ10cm",
       "中央に宇の神殿",
-      "グリーンハンギング対応"
+      "ビス変更ご希望の方はご連絡ください"
     ]
   },
   {
-    name: "アイアン物干しバー",
+    name: "アイアンバー、物干し",
     price: "¥15,000",
     description: "F型20角パイプを使用した物干しバー",
     image: "https://static.mercdn.net/item/detail/orig/photos/m12911620454_1.jpg?1733724134", 
@@ -126,11 +126,11 @@ const ironFurnitureProducts = [
       "F型20角パイプ",
       "直径150cm×奥行30cm",
       "オーダー・デザイン変更可能",
-      "ビス希望の方は連絡ください"
+      "ビス希望の方はご連絡ください"
     ]
   },
   {
-    name: "アイアンサイドテーブル",
+    name: "アイアン家具、サイドテーブル",
     price: "¥8,000",
     description: "角パイプを使用したシンプルなサイドテーブル",
     image: "https://static.mercdn.net/item/detail/orig/photos/m93226931201_1.jpg?1733724134",
@@ -138,23 +138,23 @@ const ironFurnitureProducts = [
       "角パイプ仕様",
       "高さ60cm×横幅30cm",
       "ビス変更可能",
-      "オーダー・デザイン変更対応"
+      "お気軽にご相談ください"
     ]
   },
   {
     name: "二段シェルフ",
     price: "¥3,500",
-    description: "2段シェルフ アイアンラック オープンラック オーブンラック",
+    description: "2段シェルフ アイアンラック オープンラック",
     image: "https://static.mercdn.net/item/detail/orig/photos/m84329302852_1.jpg?1733724134",
     features: [
-      "幅50cm×奥行30cm",
       "製造サイズ(mm)",
+      "幅50×奥行30(フライヤーcm)",
       "アイアンラック仕様",
-      "オープンラック対応"
+      "オーダー承ります"
     ]
   },
   {
-    name: "アイアンバー（sold）",
+    name: "アイアンバー、アイアン雑貨、アイアン家具",
     price: "¥3,800", 
     description: "アイアン雑貨・アイアン家具バー（売り切れ）",
     image: "https://static.mercdn.net/item/detail/orig/photos/m92779832010_1.jpg?1733724134",
