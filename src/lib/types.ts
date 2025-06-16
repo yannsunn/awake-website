@@ -54,7 +54,7 @@ export interface ProcessStep {
   description: string
 }
 
-// Button variant types
+// Button variant types - 型安全性を保証するため、BUTTON_STYLESのキーと完全に同期
 export type ButtonVariant = 'primary' | 'secondary' | 'outline' | 'minimal'
 
 // Form submission status
