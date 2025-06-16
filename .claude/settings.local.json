@@ -61,7 +61,8 @@
       "Bash(/home/march/.nvm/versions/node/v22.16.0/lib/node_modules/@anthropic-ai/claude-code/vendor/ripgrep/x64-linux/rg \"awake-website-five\\.vercel\\.app\" src/)",
       "WebFetch(domain:awakeinc.co.jp)",
       "Bash(npm audit:*)",
-      "Bash(./agent-send.sh:*)"
+      "Bash(./agent-send.sh:*)",
+      "Bash(npm uninstall:*)"
     ],
     "deny": []
   }
