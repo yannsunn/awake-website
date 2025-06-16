@@ -197,11 +197,10 @@ export default function ContactSection() {
                   className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors"
                 >
                   <option value="">選択してください</option>
-                  <option value="web">HP制作・LP制作</option>
-                  <option value="ec">Amazon特価代理販売サービス</option>
-                  <option value="video">動画編集・制作</option>
-                  <option value="furniture">家具製作</option>
-                  <option value="clemira">CLEMIRA製品について</option>
+                  <option value="web">ホームページ制作・LP制作</option>
+                  <option value="ec">Amazon代理店サービス</option>
+                  <option value="video">動画編集制作</option>
+                  <option value="ai">AI研修・AIコンサルティング</option>
                   <option value="all">すべて</option>
                   <option value="other">その他</option>
                 </select>

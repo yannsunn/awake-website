@@ -42,7 +42,7 @@ export default function Footer() {
                   href="/services/web" 
                   className="text-gray-300 hover:text-white transition-colors"
                 >
-                  HP制作・LP制作
+                  ホームページ制作・LP制作
                 </Link>
               </li>
               <li>
@@ -50,7 +50,7 @@ export default function Footer() {
                   href="/services/ec" 
                   className="text-gray-300 hover:text-white transition-colors"
                 >
-                  EC通販代理販売
+                  Amazon代理店サービス
                 </Link>
               </li>
               <li>
@@ -58,23 +58,15 @@ export default function Footer() {
                   href="/services/video" 
                   className="text-gray-300 hover:text-white transition-colors"
                 >
-                  動画編集・制作
+                  動画編集制作
                 </Link>
               </li>
               <li>
                 <Link 
-                  href="/services/furniture" 
+                  href="/services/ai" 
                   className="text-gray-300 hover:text-white transition-colors"
                 >
-                  家具製作
-                </Link>
-              </li>
-              <li>
-                <Link 
-                  href="/services/clemira" 
-                  className="text-gray-300 hover:text-white transition-colors"
-                >
-                  CLEMIRA直販店
+                  AI研修・AIコンサルティング
                 </Link>
               </li>
             </ul>
