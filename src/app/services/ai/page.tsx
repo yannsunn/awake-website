@@ -6,8 +6,8 @@ import Link from 'next/link'
 import Image from 'next/image'
 
 export const metadata: Metadata = {
-  title: "AI研修・AIコンサルティング | 株式会社Awake",
-  description: "企業のDX推進をAI技術で支援。ChatGPT活用研修からAIシステム導入まで包括的にサポート。生産性向上と業務効率化を実現します。",
+  title: "業務効率化AI研修・AIコンサルティング | 株式会社Awake",
+  description: "ChatGPT研修からDX推進まで包括サポート。実践的研修とコンサルで企業変革を実現。業務効率化と生産性向上。",
   keywords: "AI研修, AIコンサルティング, ChatGPT研修, DX推進, AI導入, 生産性向上, 業務効率化, 株式会社Awake",
   openGraph: {
     title: "AI研修・AIコンサルティング | 株式会社Awake",
@@ -189,19 +189,18 @@ export default function AIServicePage() {
                   <Bot className="h-8 w-8 text-white mr-3" />
                   <span className="text-white/80 font-semibold">AI Training & Consulting</span>
                 </div>
-                <h1 className="text-4xl md:text-5xl font-semibold text-white mb-6">
-                  AI研修・<br />AIコンサルティング
+                <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
+                  業務効率化を実現する<br />AI研修・コンサルティング
                 </h1>
                 <p className="text-xl text-white/90 mb-8 leading-relaxed">
-                  企業のDX推進をAI技術で支援。<br />
-                  ChatGPT・Claude・Geminiなど主要AIツールの活用研修から<br />
-                  AIシステム導入まで包括的にサポートします。
+                  ChatGPT研修からDX推進まで包括サポート。<br />
+                  実践的研修とコンサルで企業変革を実現し、業務効率化と生産性向上。
                 </p>
                 <Link 
                   href="#contact"
                   className="inline-flex items-center bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-colors"
                 >
-                  研修・コンサルを相談する
+                  無料相談・お見積り
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Link>
               </div>
@@ -212,6 +211,9 @@ export default function AIServicePage() {
                   width={600}
                   height={400}
                   className="rounded-2xl shadow-2xl"
+                  priority
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  quality={85}
                 />
                 <div className="absolute -top-4 -right-4 bg-cyan-400 text-black px-4 py-2 rounded-full font-bold text-sm">
                   🤖 DX推進支援

@@ -6,8 +6,8 @@ import Link from 'next/link'
 import Image from 'next/image'
 
 export const metadata: Metadata = {
-  title: "Amazon特価代理販売サービス | 株式会社Awake",
-  description: "Amazon特価にて代理販売。在庫はメーカー様からの直送または預託在庫から発送。初期費用0円・成果報酬型でリスクゼロ。",
+  title: "初期費用0円Amazon代理販売サービス | 株式会社Awake",
+  description: "完全成果報酬型Amazon販売代行。商品選定から販売戦略までプロが全て代行。リスクゼロで開始。",
   keywords: "Amazon特価, 代理販売, メーカー直送, 預託在庫, Amazon販売, 株式会社Awake",
   openGraph: {
     title: "Amazon特価代理販売サービス | 株式会社Awake",
@@ -148,22 +148,22 @@ export default function EcServicePage() {
                   <ShoppingCart className="h-6 w-6 text-orange-400 mr-3" />
                   <span className="text-orange-200 font-semibold text-sm tracking-wide">AMAZON SPECIAL PRICING</span>
                 </div>
-                <h1 className="text-5xl md:text-6xl font-semibold text-white mb-8 leading-tight">
+                <h1 className="text-5xl md:text-6xl font-bold text-white mb-8 leading-tight">
                   <span className="bg-gradient-to-r from-orange-400 via-yellow-400 to-orange-300 bg-clip-text text-transparent">
                     Amazon
                   </span>
-                  <br />特価代理販売
+                  代理販売サービス
                 </h1>
                 <p className="text-xl md:text-2xl text-gray-300 mb-10 leading-relaxed font-light">
-                  メーカー直送・預託在庫対応<br />
-                  <span className="text-orange-300">初期費用0円</span>の完全成果報酬型
+                  <span className="text-orange-300">初期費用0円・完全成果報酬型</span><br />
+                  Amazon販売のプロが商品選定から販売戦略まで全て代行
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">
                   <Link 
                     href="#contact"
                     className="group inline-flex items-center justify-center bg-blue-600 text-white px-8 py-4 rounded-xl font-semibold hover:bg-blue-700 transition-all duration-300 shadow-xl"
                   >
-                    無料診断を受ける
+                    無料相談・診断
                     <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                   </Link>
                   <div className="flex items-center text-white/80 text-sm">
@@ -179,6 +179,9 @@ export default function EcServicePage() {
                     <Image
                       src="/assets/images/ec-shopping.jpg"
                       alt="Amazon特価代理販売のイメージ"
+                      priority
+                      sizes="(max-width: 768px) 100vw, 50vw"
+                      quality={85}
                       width={500}
                       height={350}
                       className="w-full h-auto object-cover transform hover:scale-105 transition-transform duration-500"
