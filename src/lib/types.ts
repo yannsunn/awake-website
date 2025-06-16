@@ -55,7 +55,7 @@ export interface ProcessStep {
 }
 
 // Button variant types
-export type ButtonVariant = 'primary' | 'secondary' | 'white'
+export type ButtonVariant = 'primary' | 'secondary' | 'outline' | 'minimal'
 
 // Form submission status
 export type SubmitStatus = 'idle' | 'loading' | 'success' | 'error'
