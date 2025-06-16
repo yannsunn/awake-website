@@ -6,18 +6,18 @@ import Link from 'next/link'
 import Image from 'next/image'
 
 export const metadata: Metadata = {
-  title: "業務効率化AI研修・AIコンサルティング | 株式会社Awake",
-  description: "ChatGPT研修からDX推進まで包括サポート。実践的研修とコンサルで企業変革を実現。業務効率化と生産性向上。",
-  keywords: "AI研修, AIコンサルティング, ChatGPT研修, DX推進, AI導入, 生産性向上, 業務効率化, 株式会社Awake",
+  title: "業務効率化AIコンサルティング | 株式会社Awake",
+  description: "ChatGPT基礎からDX推進まで包括サポート。実践的コンサルティングで企業変革を実現。業務効率化と生産性向上。",
+  keywords: "AIコンサルティング, ChatGPT活用, DX推進, AI導入, 生産性向上, 業務効率化, 株式会社Awake",
   openGraph: {
-    title: "AI研修・AIコンサルティング | 株式会社Awake",
-    description: "企業のDX推進をAI技術で支援。ChatGPT活用研修からAIシステム導入まで包括的にサポート。",
+    title: "AIコンサルティング | 株式会社Awake",
+    description: "企業のDX推進をAI技術で支援。ChatGPT活用からAIシステム導入まで包括的にサポート。",
     images: ["/assets/images/modern-office.jpg"],
     url: "https://awakeinc.co.jp/services/ai/",
   },
   twitter: {
     card: "summary_large_image",
-    title: "AI研修・AIコンサルティング | 株式会社Awake",
+    title: "AIコンサルティング | 株式会社Awake",
     description: "企業のDX推進をAI技術で支援。ChatGPT活用からAIシステム導入まで",
     images: ["/assets/images/modern-office.jpg"],
   },
@@ -26,8 +26,8 @@ export const metadata: Metadata = {
 const features = [
   {
     icon: Bot,
-    title: "主要AI全般の研修",
-    description: "ChatGPT、Claude、Geminiなど主要AIツールの特徴と実践的な活用法を包括的に学習。"
+    title: "AI戦略コンサルティング",
+    description: "ChatGPT、Claude、Geminiなど主要AIツールの戦略的活用を包括的にコンサルティング。"
   },
   {
     icon: TrendingUp,
@@ -36,31 +36,17 @@ const features = [
   },
   {
     icon: Users,
-    title: "全社員向け研修",
-    description: "経営層から現場スタッフまで、職種・レベル別にカスタマイズした研修プログラムを提供。"
+    title: "組織全体のDX推進",
+    description: "経営層から現場スタッフまで、組織全体のデジタル変革をコンサルティングで支援。"
   },
   {
     icon: BookOpen,
-    title: "継続的フォロー",
-    description: "研修後の運用支援、定期的な効果測定、追加研修まで中長期的にサポート。"
+    title: "継続的改善支援",
+    description: "導入後の運用改善、定期的な効果測定、戦略見直しまで中長期的にサポート。"
   }
 ]
 
 const services = [
-  {
-    name: "AI全般基礎研修",
-    duration: "1時間",
-    participants: "10名〜",
-    price: "¥5,000〜",
-    description: "ChatGPT、Claude、Geminiなど主要AIツールの使い方を習得",
-    features: [
-      "ChatGPT・Claude・Geminiの基本操作",
-      "各AIツールの特徴と使い分け",
-      "効果的なプロンプト作成技術",
-      "業務での実践的な活用方法",
-      "安全で効率的な使い方"
-    ]
-  },
   {
     name: "AI導入コンサルティング",
     duration: "1ヶ月",
@@ -71,7 +57,7 @@ const services = [
       "業務プロセスの効率化診断",
       "AI活用による改善提案",
       "最適なAIツール選定・導入",
-      "社員向け実践トレーニング",
+      "社員向け実践指導",
       "継続的な効果測定サポート"
     ]
   },
@@ -84,7 +70,7 @@ const services = [
     features: [
       "DX戦略の策定支援",
       "段階的なAI導入計画",
-      "全社員向け研修実施",
+      "組織全体の変革支援",
       "業務プロセス改善提案",
       "継続的な効果測定・改善"
     ]
@@ -138,20 +124,20 @@ const process = [
 const aiServiceSchema = {
   "@context": "https://schema.org",
   "@type": "Service",
-  "serviceType": "AI Training and Consulting",
+  "serviceType": "AI Consulting",
   "provider": {
     "@type": "Organization",
     "name": "株式会社Awake",
     "url": "https://awakeinc.co.jp/"
   },
-  "name": "AI研修・AIコンサルティング",
-  "description": "企業のDX推進をAI技術で支援。ChatGPT活用研修からAIシステム導入まで包括的にサポート。",
+  "name": "AIコンサルティング",
+  "description": "企業のDX推進をAI技術で支援。ChatGPT活用からAIシステム導入まで包括的にサポート。",
   "url": "https://awakeinc.co.jp/services/ai/",
   "image": "https://awakeinc.co.jp/assets/images/modern-office.jpg",
   "offers": {
     "@type": "AggregateOffer",
     "priceCurrency": "JPY",
-    "lowPrice": "5000",
+    "lowPrice": "298000",
     "highPrice": "1000000",
     "eligibleRegion": {
       "@type": "Country",
@@ -190,11 +176,11 @@ export default function AIServicePage() {
                   <span className="text-white/80 font-semibold">AI Training & Consulting</span>
                 </div>
                 <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
-                  業務効率化を実現する<br />AI研修・コンサルティング
+                  業務効率化を実現する<br />AIコンサルティング
                 </h1>
                 <p className="text-xl text-white/90 mb-8 leading-relaxed">
-                  ChatGPT研修からDX推進まで包括サポート。<br />
-                  実践的研修とコンサルで企業変革を実現し、業務効率化と生産性向上。
+                  ChatGPT活用からDX推進まで包括サポート。<br />
+                  実践的コンサルティングで企業変革を実現し、業務効率化と生産性向上。
                 </p>
                 <Link 
                   href="#contact"

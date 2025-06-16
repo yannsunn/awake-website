@@ -30,22 +30,13 @@ export const SERVICES = {
     features: ['商品リサーチ', '販売戦略立案', '広告運用', '在庫管理'],
     results: '平均売上増加率250%',
   },
-  video: {
-    title: '動画編集制作',
-    description: '【エンゲージメント5倍向上】ブランド価値を高める高品質動画制作。YouTube・SNS最適化で視聴者の心を掴み、売上向上を実現。',
-    icon: 'video',
-    color: '#1e40af',
-    href: '/services/video',
-    features: ['プロ品質編集', 'SNS最適化', 'ブランディング', 'エフェクト制作'],
-    results: 'エンゲージメント平均5倍向上',
-  },
   ai: {
-    title: 'AI研修・AIコンサルティング',
-    description: '【業務効率70%向上】ChatGPT基礎からDX推進まで包括サポート。実践的研修(1時間/¥5,000)とコンサル(1ヶ月/¥298,000)で企業変革を実現。',
+    title: 'AIコンサルティング',
+    description: '【業務効率70%向上】ChatGPT基礎からDX推進まで包括サポート。実践的コンサルティング(1ヶ月/¥298,000)で企業変革を実現。',
     icon: 'ai',
     color: '#1e40af',
     href: '/services/ai',
-    features: ['ChatGPT研修', 'DX戦略立案', '業務自動化', '継続サポート'],
+    features: ['ChatGPT活用', 'DX戦略立案', '業務自動化', '継続サポート'],
     results: '業務効率平均70%向上',
   },
 } as const
@@ -62,8 +53,7 @@ export const FOOTER_LINKS = {
   services: [
     { href: '/services/web', label: 'ホームページ制作・LP制作' },
     { href: '/services/ec', label: 'Amazon代理店サービス' },
-    { href: '/services/video', label: '動画編集制作' },
-    { href: '/services/ai', label: 'AI研修・AIコンサルティング' },
+    { href: '/services/ai', label: 'AIコンサルティング' },
   ],
   company: [
     { href: '#features', label: '特徴' },
