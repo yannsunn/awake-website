@@ -199,8 +199,7 @@ export default function ContactSection() {
                   <option value="">選択してください</option>
                   <option value="web">ホームページ制作・LP制作</option>
                   <option value="ec">Amazon代理店サービス</option>
-                  <option value="video">動画編集制作</option>
-                  <option value="ai">AI研修・AIコンサルティング</option>
+                  <option value="ai">AIコンサルティング</option>
                   <option value="all">すべて</option>
                   <option value="other">その他</option>
                 </select>

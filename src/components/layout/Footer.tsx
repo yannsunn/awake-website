@@ -55,18 +55,10 @@ export default function Footer() {
               </li>
               <li>
                 <Link 
-                  href="/services/video" 
-                  className="text-gray-300 hover:text-white transition-colors"
-                >
-                  動画編集制作
-                </Link>
-              </li>
-              <li>
-                <Link 
                   href="/services/ai" 
                   className="text-gray-300 hover:text-white transition-colors"
                 >
-                  AI研修・AIコンサルティング
+                  AIコンサルティング
                 </Link>
               </li>
             </ul>
