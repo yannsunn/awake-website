@@ -2,52 +2,94 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Professional Corporate Color Palette */
 :root {
-  --primary-purple: #6366f1;
-  --primary-purple-dark: #4f46e5;
-  --primary-pink: #ec4899;
+  --corporate-blue-50: #f0f9ff;
+  --corporate-blue-100: #e0f2fe;
+  --corporate-blue-200: #bae6fd;
+  --corporate-blue-300: #7dd3fc;
+  --corporate-blue-400: #38bdf8;
+  --corporate-blue-500: #0ea5e9;
+  --corporate-blue-600: #0284c7;
+  --corporate-blue-700: #0369a1;
+  --corporate-blue-800: #1e40af;
+  --corporate-blue-900: #1e3a8a;
+  
+  --corporate-gray-50: #f9fafb;
+  --corporate-gray-100: #f3f4f6;
+  --corporate-gray-200: #e5e7eb;
+  --corporate-gray-300: #d1d5db;
+  --corporate-gray-400: #9ca3af;
+  --corporate-gray-500: #6b7280;
+  --corporate-gray-600: #4b5563;
+  --corporate-gray-700: #374151;
+  --corporate-gray-800: #1f2937;
+  --corporate-gray-900: #111827;
+  
   --background: #ffffff;
-  --foreground: #1a1a1a;
-  --gray-50: #f9fafb;
-  --gray-100: #f3f4f6;
-  --gray-200: #e5e7eb;
-  --gray-800: #1f2937;
-  --gray-900: #111827;
+  --foreground: #111827;
 }
 
+/* Professional Typography */
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-noto-sans-jp), sans-serif;
-  line-height: 1.6;
+  font-family: var(--font-noto-sans-jp), -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  line-height: 1.7;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-/* Glass morphism effect */
-.glass {
-  backdrop-filter: blur(10px);
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+/* Professional Button Focus States */
+.btn-focus {
+  @apply focus:outline-none focus:ring-2 focus:ring-corporate-blue-300 focus:ring-offset-2;
 }
 
-/* Smooth transitions */
+/* Professional Card Hover Effects */
+.card-hover {
+  @apply transition-all duration-200 hover:shadow-corporate-hover hover:-translate-y-1;
+}
+
+/* Subtle animations for professional feel */
 * {
-  transition: all 0.3s ease;
+  transition: all 0.2s ease-in-out;
 }
 
-/* Custom scrollbar */
+/* Professional scrollbar */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 6px;
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--gray-100);
+  background: var(--corporate-gray-100);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--primary-purple);
-  border-radius: 4px;
+  background: var(--corporate-blue-400);
+  border-radius: 3px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--primary-purple-dark);
+  background: var(--corporate-blue-600);
+}
+
+/* Professional text selection */
+::selection {
+  background: var(--corporate-blue-100);
+  color: var(--corporate-blue-900);
+}
+
+/* Corporate-grade form styling */
+.form-input {
+  @apply w-full px-4 py-3 border border-corporate-gray-300 rounded-md focus:border-corporate-blue-500 focus:ring-1 focus:ring-corporate-blue-500 focus:outline-none transition-colors;
+}
+
+.form-textarea {
+  @apply w-full px-4 py-3 border border-corporate-gray-300 rounded-md focus:border-corporate-blue-500 focus:ring-1 focus:ring-corporate-blue-500 focus:outline-none transition-colors resize-none;
+}
+
+/* Professional loading states */
+.loading {
+  @apply animate-subtle-pulse;
 }
