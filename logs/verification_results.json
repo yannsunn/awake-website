@@ -1,0 +1,38 @@
+{
+  "timestamp": "2025-06-17T00:44:58.688189",
+  "tests": {
+    "agent_communication": {
+      "script_exists": true,
+      "list_command": true,
+      "priority_analysis": true,
+      "mock_communication": true
+    },
+    "logging_system": {
+      "custom_logging_import": false,
+      "log_file_creation": true
+    },
+    "performance": {
+      "concurrent_operations": {
+        "total_operations": 50,
+        "completed_operations": 50,
+        "errors": 0,
+        "total_time": 0.052724361419677734,
+        "operations_per_second": 948.3282234944063,
+        "success_rate": 1.0
+      },
+      "memory_usage": {
+        "initial_objects": 13470,
+        "peak_objects": 13471,
+        "final_objects": 13470,
+        "objects_created": 1,
+        "objects_cleaned": 1,
+        "cleanup_efficiency": 1.0
+      }
+    },
+    "failure_scenarios": {
+      "invalid_agent_handling": true,
+      "error_recovery_simulation": true
+    }
+  },
+  "overall_success": false
+}
