@@ -62,7 +62,8 @@
       "WebFetch(domain:awakeinc.co.jp)",
       "Bash(npm audit:*)",
       "Bash(./agent-send.sh:*)",
-      "Bash(npm uninstall:*)"
+      "Bash(npm uninstall:*)",
+      "WebFetch(domain:vercel.com)"
     ],
     "deny": []
   }
