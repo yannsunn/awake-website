@@ -197,7 +197,7 @@ export default function ContactSection() {
                   className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors"
                 >
                   <option value="">選択してください</option>
-                  <option value="web">ホームページ制作・LP制作</option>
+                  <option value="web">ホームページ制作</option>
                   <option value="ec">Amazon代理店サービス</option>
                   <option value="ai">AIコンサルティング</option>
                   <option value="all">すべて</option>
