@@ -26,7 +26,7 @@ export default function Button({
   disabled = false,
   className = ''
 }: ButtonProps) {
-  const baseStyles = BUTTON_STYLES[variant]
+  const baseStyles = BUTTON_STYLES[variant as keyof typeof BUTTON_STYLES]
   const styles = `${baseStyles} inline-flex items-center justify-center ${disabled ? 'opacity-50 cursor-not-allowed' : ''} ${className}`
 
   const content = (
