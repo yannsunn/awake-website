@@ -6,8 +6,8 @@ import Link from 'next/link'
 import Image from 'next/image'
 
 export const metadata: Metadata = {
-  title: "動画編集・制作サービス | 株式会社Awake",
-  description: "AI技術活用で顔出し不要・SNS最適化。YouTube・TikTok・Instagram等のプロ動画制作。24時間納品対応。",
+  title: "ブランド価値向上動画編集制作サービス | 株式会社Awake",
+  description: "YouTube・SNS最適化でエンゲージメント向上。プロ品質編集で視聴者の心を残む。最短24時間納品。",
   keywords: "動画編集, 動画制作, YouTube, TikTok, Instagram, SNS動画, AI動画編集, 株式会社Awake",
   openGraph: {
     title: "動画編集・制作サービス | 株式会社Awake",
@@ -172,18 +172,18 @@ export default function VideoServicePage() {
                   <Video className="h-8 w-8 text-white mr-3" />
                   <span className="text-white/80 font-semibold">Video Production</span>
                 </div>
-                <h1 className="text-4xl md:text-5xl font-semibold text-white mb-6">
-                  動画編集・制作<br />サービス
+                <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
+                  ブランド価値を高める<br />高品質動画制作
                 </h1>
                 <p className="text-xl text-white/90 mb-8 leading-relaxed">
-                  AI技術活用で顔出し不要・SNS最適化。<br />
-                  YouTube・TikTok・Instagram等のプロ動画制作。
+                  YouTube・SNS最適化で視聴者の心を残み、エンゲージメント向上。<br />
+                  プロ品質編集で動画マーケティングを最大化。
                 </p>
                 <Link 
                   href="#contact"
                   className="inline-flex items-center bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-colors"
                 >
-                  制作依頼をする
+                  無料相談・お見積り
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Link>
               </div>
@@ -194,6 +194,9 @@ export default function VideoServicePage() {
                   width={600}
                   height={400}
                   className="rounded-2xl shadow-2xl"
+                  priority
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  quality={85}
                 />
               </div>
             </div>

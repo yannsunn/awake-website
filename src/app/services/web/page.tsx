@@ -6,8 +6,8 @@ import Link from 'next/link'
 import Image from 'next/image'
 
 export const metadata: Metadata = {
-  title: "HP制作・LP制作サービス | 株式会社Awake",
-  description: "LP制作55,000円、ホームページ制作132,000円から。初回1週間+修正2週間で合計3週間前後の制作期間。",
+  title: "売上直結ホームページ制作・LP制作 | 株式会社Awake",
+  description: "SEO最適化とコンバージョン最適化で集客力を最大化。LP制作55,000円から、最短2週間納品。",
   keywords: "HP制作, LP制作, ウェブ制作, コーポレートサイト, ランディングページ, 株式会社Awake, SEO対策, レスポンシブデザイン",
   openGraph: {
     title: "HP制作・LP制作サービス | 株式会社Awake",
@@ -139,18 +139,18 @@ export default function WebServicePage() {
                   <Globe className="h-8 w-8 text-white mr-3" />
                   <span className="text-white/80 font-semibold">Web Development</span>
                 </div>
-                <h1 className="text-4xl md:text-5xl font-semibold text-white mb-6">
-                  HP制作・LP制作<br />サービス
+                <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
+                  売上直結<br />ホームページ制作
                 </h1>
                 <p className="text-xl text-white/90 mb-8 leading-relaxed">
-                  LP制作55,000円、ホームページ制作132,000円から。<br />
-                  初回1週間+修正2週間で合計3週間前後での制作を実現します。
+                  SEO最適化とコンバージョン最適化で集客力を最大化。<br />
+                  LP制作55,000円から、最短2週間納品でスピーディー対応。
                 </p>
                 <Link 
                   href="#contact"
                   className="inline-flex items-center bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-colors"
                 >
-                  無料相談を始める
+                  無料相談・お見積り
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Link>
               </div>
@@ -161,6 +161,9 @@ export default function WebServicePage() {
                   width={600}
                   height={400}
                   className="rounded-2xl shadow-2xl"
+                  priority
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  quality={85}
                 />
               </div>
             </div>
@@ -289,4 +292,4 @@ export default function WebServicePage() {
       <Footer />
     </>
   )
-}// Force deploy Sat Jun  7 15:30:07 JST 2025
+}

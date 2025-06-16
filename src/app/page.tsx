@@ -3,6 +3,7 @@ import Footer from '@/components/layout/Footer'
 import HeroSection from '@/components/ui/HeroSection'
 import FeaturesSection from '@/components/ui/FeaturesSection'
 import ServicesSection from '@/components/ui/ServicesSection'
+import MissionVisionSection from '@/components/ui/MissionVisionSection'
 import ContactSection from '@/components/ui/ContactSection'
 
 export default function Home() {
@@ -18,6 +19,7 @@ export default function Home() {
         <HeroSection />
         <FeaturesSection />
         <ServicesSection />
+        <MissionVisionSection />
         <ContactSection />
       </main>
       

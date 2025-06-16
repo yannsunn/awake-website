@@ -101,6 +101,14 @@ export default function Footer() {
               </li>
               <li>
                 <Link 
+                  href="/about" 
+                  className="text-gray-300 hover:text-white transition-colors"
+                >
+                  会社概要・代表挨拶
+                </Link>
+              </li>
+              <li>
+                <Link 
                   href="/legal/privacy-policy" 
                   className="text-gray-300 hover:text-white transition-colors"
                 >
