@@ -13,12 +13,12 @@ export const COMPANY_INFO = {
 // Core Service Portfolio - Neuro-design optimized for professional corporate focus
 export const SERVICES = {
   web: {
-    title: 'ホームページ制作・LP制作',
-    description: '【コンバージョン率3倍改善】戦略的UX設計とニューロマーケティングで売上直結サイトを構築。データ分析と継続改善で確実な成果を実現。',
+    title: 'ホームページ制作',
+    description: '【コンバージョン率3倍改善】戦略的UX設計とニューロマーケティングで売上直結サイトを構築。プロフェッショナルなコーポレートサイトから大規模サイトまで対応。',
     icon: 'web',
     color: '#1e40af',
     href: '/services/web',
-    features: ['売上直結設計', 'SEO最適化', 'レスポンシブ対応', 'A/Bテスト実装'],
+    features: ['コーポレートサイト', 'SEO最適化', 'レスポンシブ対応', 'エンタープライズ対応'],
     results: 'コンバージョン率平均3倍向上',
   },
   ec: {
@@ -51,7 +51,7 @@ export const NAVIGATION = [
 // Footer links
 export const FOOTER_LINKS = {
   services: [
-    { href: '/services/web', label: 'ホームページ制作・LP制作' },
+    { href: '/services/web', label: 'ホームページ制作' },
     { href: '/services/ec', label: 'Amazon代理店サービス' },
     { href: '/services/ai', label: 'AIコンサルティング' },
   ],
