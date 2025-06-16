@@ -37,11 +37,11 @@ export default function HeroSection() {
   }
 
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden" id="hero" aria-labelledby="hero-title">
-      {/* Background with Image */}
-      <div className="absolute inset-0 bg-gradient-to-br from-blue-600 via-blue-700 to-blue-800">
-        <div className="absolute inset-0 bg-[url('/assets/images/modern-office.jpg')] bg-cover bg-center opacity-20"></div>
-        <div className="absolute inset-0 bg-gradient-to-r from-blue-900/50 to-blue-800/30"></div>
+    <section className="relative min-h-screen flex items-center overflow-hidden bg-white" id="hero" aria-labelledby="hero-title">
+      {/* Professional Background */}
+      <div className="absolute inset-0 bg-corporate-gray-50">
+        <div className="absolute inset-0 bg-[url('/assets/images/modern-office.jpg')] bg-cover bg-center opacity-5"></div>
+        <div className="absolute inset-0 bg-white/80"></div>
       </div>
       
       <motion.div 
@@ -52,40 +52,40 @@ export default function HeroSection() {
       >
         <div className="max-w-5xl mx-auto">
           <motion.div variants={itemVariants} className="mb-8">
-            <span className="inline-flex items-center gap-2 px-5 py-3 bg-white/80 backdrop-blur-sm border border-blue-200/50 rounded-full text-blue-700 text-sm font-semibold shadow-lg shadow-blue-100/50">
-              <div className="w-2 h-2 bg-blue-500 rounded-full animate-pulse"></div>
-              2025年最新のソリューション
+            <span className="inline-flex items-center gap-2 px-5 py-3 bg-corporate-blue-50 border border-corporate-blue-200 rounded-md text-corporate-blue-800 text-sm font-semibold shadow-corporate">
+              <div className="w-2 h-2 bg-corporate-blue-600 rounded-full"></div>
+              プロフェッショナル・ソリューション
             </span>
           </motion.div>
           
           <motion.h1 
             id="hero-title" 
             variants={itemVariants}
-            className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-8 leading-tight"
+            className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-corporate-gray-900 mb-8 leading-tight"
           >
-            革命的なソリューションで<br />
-            企業の成長を加速
+            企業の成長を支える<br />
+            戦略的デジタルソリューション
           </motion.h1>
           
           <motion.p 
             variants={itemVariants}
-            className="text-lg md:text-xl text-white/90 mb-8 font-medium leading-relaxed"
+            className="text-lg md:text-xl text-corporate-gray-700 mb-8 font-medium leading-relaxed"
           >
-            最新テクノロジーとAI技術で、御社の課題を
-            <span className="inline-flex items-center gap-1 text-blue-700 font-bold bg-gradient-to-r from-blue-50 to-blue-100 px-3 py-1 rounded-lg border border-blue-200/50 shadow-sm">
-              <div className="w-1.5 h-1.5 bg-blue-500 rounded-full"></div>
-              最短24時間
+            ホームページ制作・LP制作・Amazon代理店サービス・動画編集制作により、
+            <span className="inline-flex items-center gap-1 text-corporate-blue-800 font-bold bg-corporate-blue-50 px-3 py-1 rounded-md border border-corporate-blue-200 shadow-sm ml-1">
+              <div className="w-1.5 h-1.5 bg-corporate-blue-600 rounded-full"></div>
+              確実な成果
             </span>
-            で解決
+            を実現します
           </motion.p>
           
           <motion.p 
             variants={itemVariants}
-            className="text-base md:text-lg text-white/80 mb-12 leading-relaxed max-w-4xl mx-auto"
+            className="text-base md:text-lg text-corporate-gray-600 mb-12 leading-relaxed max-w-4xl mx-auto"
           >
-            HP制作・EC通販・動画編集・家具製作まで、プロフェッショナルなサービスをワンストップで提供。
+            データドリブンなアプローチとプロフェッショナルな技術力で、お客様のビジネス価値を最大化。
             <br className="hidden md:block" />
-            まずは無料相談で、最適なご提案を体験してください。
+            まずは無料コンサルティングで、最適な戦略をご提案いたします。
           </motion.p>
           
           <motion.div 
@@ -94,18 +94,17 @@ export default function HeroSection() {
           >
             <Link 
               href="#contact" 
-              className="group relative inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-blue-600 to-blue-700 text-white font-semibold rounded-xl transition-all duration-300 hover:from-blue-700 hover:to-blue-800 shadow-lg hover:shadow-xl hover:shadow-blue-500/25 hover:-translate-y-0.5"
+              className="group relative inline-flex items-center justify-center px-8 py-4 bg-corporate-blue-800 text-white font-semibold rounded-md transition-all duration-200 hover:bg-corporate-blue-900 shadow-corporate hover:shadow-corporate-lg btn-focus card-hover"
             >
-              <span className="relative z-10">今すぐ無料相談を始める</span>
+              <span className="relative z-10">無料コンサルティング開始</span>
               <ArrowRight className="relative z-10 ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-              <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-blue-600 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
             </Link>
             
             <Link 
               href="#services" 
-              className="group inline-flex items-center justify-center px-8 py-4 bg-white/80 backdrop-blur-sm border-2 border-blue-200 text-blue-700 font-semibold rounded-xl transition-all duration-300 hover:bg-blue-50 hover:border-blue-300 shadow-lg hover:shadow-xl"
+              className="group inline-flex items-center justify-center px-8 py-4 bg-white border-2 border-corporate-blue-800 text-corporate-blue-800 font-semibold rounded-md transition-all duration-200 hover:bg-corporate-blue-50 shadow-corporate hover:shadow-corporate-lg btn-focus"
             >
-              サービスを見る
+              サービス詳細を見る
               <ChevronDown className="ml-2 h-5 w-5 group-hover:translate-y-0.5 transition-transform" />
             </Link>
           </motion.div>
@@ -114,17 +113,17 @@ export default function HeroSection() {
             variants={itemVariants}
             className="mt-16 grid grid-cols-3 gap-6 max-w-2xl mx-auto"
           >
-            <div className="text-center p-6 bg-white/60 backdrop-blur-sm rounded-2xl border border-blue-100/50 shadow-lg">
-              <div className="text-3xl font-bold bg-gradient-to-r from-blue-600 to-blue-700 bg-clip-text text-transparent mb-2">24時間</div>
-              <div className="text-sm text-gray-600 font-medium">最短納期</div>
+            <div className="text-center p-6 bg-white rounded-lg border border-corporate-gray-200 shadow-corporate card-hover">
+              <div className="text-3xl font-bold text-corporate-blue-800 mb-2">最短1週間</div>
+              <div className="text-sm text-corporate-gray-600 font-medium">納期</div>
             </div>
-            <div className="text-center p-6 bg-white/60 backdrop-blur-sm rounded-2xl border border-blue-100/50 shadow-lg">
-              <div className="text-3xl font-bold bg-gradient-to-r from-blue-600 to-blue-700 bg-clip-text text-transparent mb-2">1000+</div>
-              <div className="text-sm text-gray-600 font-medium">実績数</div>
+            <div className="text-center p-6 bg-white rounded-lg border border-corporate-gray-200 shadow-corporate card-hover">
+              <div className="text-3xl font-bold text-corporate-blue-800 mb-2">500+</div>
+              <div className="text-sm text-corporate-gray-600 font-medium">プロジェクト実績</div>
             </div>
-            <div className="text-center p-6 bg-white/60 backdrop-blur-sm rounded-2xl border border-blue-100/50 shadow-lg">
-              <div className="text-3xl font-bold bg-gradient-to-r from-blue-600 to-blue-700 bg-clip-text text-transparent mb-2">99%</div>
-              <div className="text-sm text-gray-600 font-medium">満足度</div>
+            <div className="text-center p-6 bg-white rounded-lg border border-corporate-gray-200 shadow-corporate card-hover">
+              <div className="text-3xl font-bold text-corporate-blue-800 mb-2">100%</div>
+              <div className="text-sm text-corporate-gray-600 font-medium">品質保証</div>
             </div>
           </motion.div>
         </div>

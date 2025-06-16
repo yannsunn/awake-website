@@ -56,7 +56,12 @@
       "Bash(timeout 10s npm run dev)",
       "WebFetch(domain:github.com)",
       "WebFetch(domain:search.google.com)",
-      "WebFetch(domain:jp.mercari.com)"
+      "WebFetch(domain:jp.mercari.com)",
+      "Bash(/home/march/.nvm/versions/node/v22.16.0/lib/node_modules/@anthropic-ai/claude-code/vendor/ripgrep/x64-linux/rg \"awake-website-five\\.vercel\\.app\" src/ -A 2 -B 2)",
+      "Bash(/home/march/.nvm/versions/node/v22.16.0/lib/node_modules/@anthropic-ai/claude-code/vendor/ripgrep/x64-linux/rg \"awake-website-five\\.vercel\\.app\" src/)",
+      "WebFetch(domain:awakeinc.co.jp)",
+      "Bash(npm audit:*)",
+      "Bash(./agent-send.sh:*)"
     ],
     "deny": []
   }
