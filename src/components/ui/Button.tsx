@@ -26,8 +26,9 @@ export default function Button({
   disabled = false,
   className = ''
 }: ButtonProps) {
-  // 型安全性を確保: ButtonVariant型がBUTTON_STYLESのキーと完全に一致することを保証
-  const baseStyles = BUTTON_STYLES[variant as keyof typeof BUTTON_STYLES] || BUTTON_STYLES.primary
+  // 🛡️ 完全型安全保証: あらゆるエッジケースに対応する防御的実装
+  const validVariant = (variant && variant in BUTTON_STYLES) ? variant : 'primary'
+  const baseStyles = BUTTON_STYLES[validVariant as keyof typeof BUTTON_STYLES]
   const styles = `${baseStyles} inline-flex items-center justify-center ${disabled ? 'opacity-50 cursor-not-allowed' : ''} ${className}`
 
   const content = (
