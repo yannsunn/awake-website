@@ -13,11 +13,11 @@ const notoSansJP = Noto_Sans_JP({
 export const metadata: Metadata = {
   metadataBase: new URL("https://awakeinc.co.jp"),
   title: "株式会社Awake | ビジネスコンサルティング",
-  description: "Web制作、EC運営代行、動画制作、家具製造まで、一気通貫でビジネス成長をサポートする株式会社Awakeです。",
-  keywords: "Web制作,EC運営代行,動画制作,家具製造,ビジネスコンサルティング",
+  description: "ホームページ制作、AIコンサルティング、Amazon代理店サービスで企業の成長をサポートする株式会社Awakeです。",
+  keywords: "ホームページ制作,AIコンサルティング,Amazon代理店,ビジネスコンサルティング,株式会社Awake",
   openGraph: {
     title: "株式会社Awake | ビジネスコンサルティング",
-    description: "Web制作、EC運営代行、動画制作、家具製造まで、一気通貫でビジネス成長をサポートする株式会社Awakeです。",
+    description: "ホームページ制作、AIコンサルティング、Amazon代理店サービスで企業の成長をサポートする株式会社Awakeです。",
     images: ["/assets/images/ogp.jpg"],
     locale: "ja_JP",
     type: "website",
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "株式会社Awake | ビジネスコンサルティング",
-    description: "Web制作、EC運営代行、動画制作、家具製造まで、一気通貫でビジネス成長をサポートする株式会社Awakeです。",
+    description: "ホームページ制作、AIコンサルティング、Amazon代理店サービスで企業の成長をサポートする株式会社Awakeです。",
     images: ["/assets/images/ogp.jpg"],
   },
   robots: "index, follow",
@@ -37,16 +37,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ja">
-      <head>
+    <html lang="ja" suppressHydrationWarning>
+      <body className={`${notoSansJP.variable} font-sans antialiased`} suppressHydrationWarning>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify(organizationSchema),
           }}
         />
-      </head>
-      <body className={`${notoSansJP.variable} font-sans antialiased`}>
         {children}
       </body>
     </html>
