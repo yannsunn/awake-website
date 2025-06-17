@@ -44,8 +44,8 @@ export default function HeroSection() {
     <section className="relative min-h-screen flex items-center overflow-hidden bg-white" id="hero" aria-labelledby="hero-title">
       {/* Awake Background */}
       <div className="absolute inset-0 bg-[#2B3A5A]">
-        <div className="absolute inset-0 bg-[url('/assets/images/hero-background.png')] bg-contain bg-center bg-no-repeat opacity-80"></div>
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-900/20 via-blue-800/10 to-blue-700/5"></div>
+        <div className="absolute inset-0 bg-[url('/assets/images/hero-background.png')] bg-cover bg-center opacity-90"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-900/15 via-transparent to-blue-700/10"></div>
       </div>
       
       <motion.div 
