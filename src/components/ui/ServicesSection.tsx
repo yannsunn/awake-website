@@ -18,25 +18,29 @@ const serviceIcons = {
 
 export default function ServicesSection() {
   const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, amount: 0.1 })
+  const isInView = useInView(ref, { once: true, amount: 0.3 })
 
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.15,
-        duration: 0.6
+        staggerChildren: 0.1,
+        duration: 0.5,
+        ease: [0.4, 0, 0.2, 1]
       }
     }
   }
 
   const itemVariants = {
-    hidden: { opacity: 0, y: 30 },
+    hidden: { opacity: 0, y: 20 },
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.6, ease: "easeOut" }
+      transition: { 
+        duration: 0.4, 
+        ease: [0.4, 0, 0.2, 1] 
+      }
     }
   }
 
@@ -85,7 +89,7 @@ export default function ServicesSection() {
                 variants={itemVariants}
                 className="group relative"
               >
-                <div className="relative bg-white rounded-lg border border-corporate-gray-200 p-8 hover:shadow-lg hover:border-corporate-blue-300 transition-all duration-200">
+                <div className="relative bg-white rounded-lg border border-corporate-gray-200 p-8 hover:shadow-lg hover:border-corporate-blue-300 transition-base hover-lift">
                   
                   <div>
                     {/* Icon */}

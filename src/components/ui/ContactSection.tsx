@@ -7,7 +7,7 @@ import { useInView } from 'framer-motion'
 
 export default function ContactSection() {
   const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, amount: 0.1 })
+  const isInView = useInView(ref, { once: true, amount: 0.3 })
   
   const [formData, setFormData] = useState({
     name: '',
@@ -24,18 +24,22 @@ export default function ContactSection() {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.2,
-        duration: 0.6
+        staggerChildren: 0.1,
+        duration: 0.4,
+        ease: [0.4, 0, 0.2, 1]
       }
     }
   }
 
   const itemVariants = {
-    hidden: { opacity: 0, y: 30 },
+    hidden: { opacity: 0, y: 20 },
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.6, ease: "easeOut" }
+      transition: { 
+        duration: 0.4, 
+        ease: [0.4, 0, 0.2, 1] 
+      }
     }
   }
 

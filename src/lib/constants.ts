@@ -66,10 +66,10 @@ export const FOOTER_LINKS = {
 
 // Professional button styles - Neuro-design optimized for corporate branding
 export const BUTTON_STYLES = {
-  primary: 'bg-corporate-blue-800 text-white px-8 py-4 rounded-md font-semibold hover:bg-corporate-blue-900 transition-colors duration-200 focus:ring-2 focus:ring-corporate-blue-300 focus:outline-none',
-  secondary: 'border-2 border-corporate-blue-800 text-corporate-blue-800 px-8 py-4 rounded-md font-semibold hover:bg-corporate-blue-800 hover:text-white transition-colors duration-200 focus:ring-2 focus:ring-corporate-blue-300 focus:outline-none',
-  outline: 'border border-gray-300 text-gray-700 px-8 py-4 rounded-md font-medium hover:bg-gray-50 transition-colors duration-200 focus:ring-2 focus:ring-gray-200 focus:outline-none',
-  minimal: 'text-corporate-blue-800 px-4 py-2 font-medium hover:text-corporate-blue-900 hover:bg-corporate-blue-50 rounded transition-colors duration-200',
+  primary: 'bg-corporate-blue-800 text-white px-8 py-4 rounded-md font-semibold hover:bg-corporate-blue-900 transition-base focus:ring-2 focus:ring-corporate-blue-300 focus:outline-none',
+  secondary: 'border-2 border-corporate-blue-800 text-corporate-blue-800 px-8 py-4 rounded-md font-semibold hover:bg-corporate-blue-800 hover:text-white transition-base focus:ring-2 focus:ring-corporate-blue-300 focus:outline-none',
+  outline: 'border border-gray-300 text-gray-700 px-8 py-4 rounded-md font-medium hover:bg-gray-50 transition-base focus:ring-2 focus:ring-gray-200 focus:outline-none',
+  minimal: 'text-corporate-blue-800 px-4 py-2 font-medium hover:text-corporate-blue-900 hover:bg-corporate-blue-50 rounded transition-base',
 } as const
 
 // Professional animation classes - Subtle and corporate-appropriate

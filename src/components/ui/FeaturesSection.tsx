@@ -46,25 +46,29 @@ const features = [
 
 export default function FeaturesSection() {
   const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, amount: 0.1 })
+  const isInView = useInView(ref, { once: true, amount: 0.3 })
 
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.1,
-        duration: 0.6
+        staggerChildren: 0.08,
+        duration: 0.4,
+        ease: [0.4, 0, 0.2, 1]
       }
     }
   }
 
   const itemVariants = {
-    hidden: { opacity: 0, y: 50 },
+    hidden: { opacity: 0, y: 20 },
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.6, ease: "easeOut" }
+      transition: { 
+        duration: 0.4, 
+        ease: [0.4, 0, 0.2, 1] 
+      }
     }
   }
 
@@ -116,14 +120,14 @@ export default function FeaturesSection() {
                 custom={feature.delay}
                 className="group relative"
               >
-                <div className="group relative bg-white/80 backdrop-blur-sm rounded-3xl border border-gray-100 p-8 lg:p-10 hover:shadow-xl hover:shadow-blue-100/25 transition-all duration-500 hover:-translate-y-2">
+                <div className="group relative bg-white/80 backdrop-blur-sm rounded-3xl border border-gray-100 p-8 lg:p-10 hover:shadow-xl hover:shadow-blue-100/25 transition-transform transition-shadow duration-200 hover:-translate-y-1 gpu-accelerated">
                   {/* Gradient Border on Hover */}
                   <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-blue-600 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" style={{padding: '1px'}}>
                     <div className="bg-white rounded-3xl h-full w-full"></div>
                   </div>
                   {/* Icon */}
                   <div className="relative z-10">
-                    <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-3 transition-all duration-300 shadow-lg">
+                    <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-105 transition-transform duration-200 shadow-lg gpu-accelerated">
                       <IconComponent className="h-8 w-8 text-white" />
                     </div>
                     

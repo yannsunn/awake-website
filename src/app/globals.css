@@ -51,9 +51,41 @@ body {
   @apply transition-all duration-200 hover:shadow-corporate-hover hover:-translate-y-1;
 }
 
-/* Subtle animations for professional feel */
-* {
-  transition: all 0.2s ease-in-out;
+/* Optimized transitions for smooth animations */
+/* Removed global transition to prevent janky animations */
+
+/* Performance-optimized animation utilities */
+.transition-base {
+  transition: color 0.15s ease, background-color 0.15s ease, border-color 0.15s ease;
+}
+
+.transition-transform {
+  transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.transition-opacity {
+  transition: opacity 0.2s ease;
+}
+
+.transition-all-fast {
+  transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* GPU-accelerated animations */
+.gpu-accelerated {
+  will-change: transform;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Smooth hover states */
+.hover-lift {
+  transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.2s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-2px);
 }
 
 /* Professional scrollbar */

@@ -39,7 +39,7 @@ export default function Header() {
           <div className="flex-shrink-0">
             <Link 
               href="/" 
-              className="text-2xl font-bold text-corporate-gray-900 hover:text-corporate-blue-600 transition-colors"
+              className="text-2xl font-bold text-corporate-gray-900 hover:text-corporate-blue-600 transition-base"
               aria-label="株式会社Awake ホームページ"
             >
               株式会社Awake
@@ -49,7 +49,7 @@ export default function Header() {
           <nav className="hidden md:flex items-center space-x-8" role="navigation" aria-label="メインナビゲーション">
             <Link 
               href={isHomePage ? "#features" : "/#features"} 
-              className="text-corporate-gray-700 hover:text-corporate-blue-600 transition-colors font-medium"
+              className="text-corporate-gray-700 hover:text-corporate-blue-600 transition-base font-medium"
             >
               特徴
             </Link>
@@ -58,18 +58,18 @@ export default function Header() {
             <div className="relative" ref={servicesRef}>
               <button
                 onClick={() => setIsServicesOpen(!isServicesOpen)}
-                className="flex items-center text-corporate-gray-700 hover:text-corporate-blue-600 transition-colors font-medium"
+                className="flex items-center text-corporate-gray-700 hover:text-corporate-blue-600 transition-base font-medium"
                 aria-expanded={isServicesOpen}
               >
                 サービス
-                <ChevronDown className={`ml-1 h-4 w-4 transition-transform ${isServicesOpen ? 'rotate-180' : ''}`} />
+                <ChevronDown className={`ml-1 h-4 w-4 transition-transform duration-200 ${isServicesOpen ? 'rotate-180' : ''}`} />
               </button>
               
               {isServicesOpen && (
                 <div className="absolute top-full left-0 mt-1 w-56 bg-white rounded-lg shadow-lg border border-corporate-gray-200 py-2 z-50">
                   <Link 
                     href={isHomePage ? "#services" : "/#services"}
-                    className="block px-4 py-2 text-corporate-gray-700 hover:bg-corporate-gray-50 hover:text-corporate-blue-600 transition-colors"
+                    className="block px-4 py-2 text-corporate-gray-700 hover:bg-corporate-gray-50 hover:text-corporate-blue-600 transition-base"
                     onClick={() => setIsServicesOpen(false)}
                   >
                     サービス一覧
@@ -79,7 +79,7 @@ export default function Header() {
                     <Link
                       key={service.href}
                       href={service.href}
-                      className="block px-4 py-2 text-corporate-gray-700 hover:bg-corporate-gray-50 hover:text-corporate-blue-600 transition-colors"
+                      className="block px-4 py-2 text-corporate-gray-700 hover:bg-corporate-gray-50 hover:text-corporate-blue-600 transition-base"
                       onClick={() => setIsServicesOpen(false)}
                     >
                       {service.title}
@@ -91,13 +91,13 @@ export default function Header() {
             
             <Link 
               href={isHomePage ? "#contact" : "/#contact"} 
-              className="text-corporate-gray-700 hover:text-corporate-blue-600 transition-colors font-medium"
+              className="text-corporate-gray-700 hover:text-corporate-blue-600 transition-base font-medium"
             >
               お問い合わせ
             </Link>
             <Link 
               href={isHomePage ? "#contact" : "/#contact"} 
-              className="bg-corporate-blue-600 text-white px-6 py-2 rounded-md hover:bg-corporate-blue-700 transition-colors font-medium"
+              className="bg-corporate-blue-600 text-white px-6 py-2 rounded-md hover:bg-corporate-blue-700 transition-base font-medium"
             >
               無料相談
             </Link>
@@ -125,7 +125,7 @@ export default function Header() {
             <div className="px-2 pt-2 pb-3 space-y-1 bg-white border-t border-corporate-gray-200">
               <Link 
                 href={isHomePage ? "#features" : "/#features"} 
-                className="block px-3 py-2 text-corporate-gray-700 hover:text-corporate-blue-600 transition-colors"
+                className="block px-3 py-2 text-corporate-gray-700 hover:text-corporate-blue-600 transition-base"
                 onClick={() => setIsMenuOpen(false)}
               >
                 特徴
@@ -135,7 +135,7 @@ export default function Header() {
               <div className="space-y-1">
                 <Link 
                   href={isHomePage ? "#services" : "/#services"}
-                  className="block px-3 py-2 text-corporate-gray-700 hover:text-corporate-blue-600 transition-colors font-medium"
+                  className="block px-3 py-2 text-corporate-gray-700 hover:text-corporate-blue-600 transition-base font-medium"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   サービス一覧
@@ -145,7 +145,7 @@ export default function Header() {
                     <Link
                       key={service.href}
                       href={service.href}
-                      className="block px-3 py-2 text-sm text-corporate-gray-600 hover:text-corporate-blue-600 transition-colors"
+                      className="block px-3 py-2 text-sm text-corporate-gray-600 hover:text-corporate-blue-600 transition-base"
                       onClick={() => setIsMenuOpen(false)}
                     >
                       {service.title}
@@ -156,14 +156,14 @@ export default function Header() {
               
               <Link 
                 href={isHomePage ? "#contact" : "/#contact"} 
-                className="block px-3 py-2 text-corporate-gray-700 hover:text-corporate-blue-600 transition-colors"
+                className="block px-3 py-2 text-corporate-gray-700 hover:text-corporate-blue-600 transition-base"
                 onClick={() => setIsMenuOpen(false)}
               >
                 お問い合わせ
               </Link>
               <Link 
                 href={isHomePage ? "#contact" : "/#contact"} 
-                className="block mx-3 my-2 px-4 py-2 bg-corporate-blue-600 text-white rounded-md hover:bg-corporate-blue-700 transition-colors text-center"
+                className="block mx-3 my-2 px-4 py-2 bg-corporate-blue-600 text-white rounded-md hover:bg-corporate-blue-700 transition-base text-center"
                 onClick={() => setIsMenuOpen(false)}
               >
                 無料相談
