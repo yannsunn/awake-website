@@ -1,8 +1,9 @@
 'use client'
 
 import Link from 'next/link'
-import { ArrowRight, ChevronDown, Sparkles, Zap, TrendingUp } from 'lucide-react'
+import { ArrowRight } from 'lucide-react'
 import { motion } from 'framer-motion'
+import Image from 'next/image'
 
 export default function HeroSection() {
   const containerVariants = {
@@ -10,125 +11,137 @@ export default function HeroSection() {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.15,
-        duration: 0.6,
+        staggerChildren: 0.2,
+        duration: 0.8,
         ease: "easeOut"
       }
     }
   }
 
   const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
+    hidden: { opacity: 0, y: 30 },
     visible: {
       opacity: 1,
       y: 0,
       transition: { 
-        duration: 0.5, 
-        ease: [0.4, 0, 0.2, 1]
+        duration: 0.6, 
+        ease: [0.25, 0.1, 0.25, 1]
       }
     }
   }
 
-  const floatingVariants = {
-    float: {
-      y: [-10, 10, -10],
-      transition: {
-        duration: 4,
-        repeat: Infinity,
-        ease: "easeInOut"
+  const logoVariants = {
+    hidden: { opacity: 0, scale: 0.8 },
+    visible: {
+      opacity: 1,
+      scale: 1,
+      transition: { 
+        duration: 0.8, 
+        ease: "easeOut",
+        delay: 0.3
       }
     }
   }
 
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden bg-white" id="hero" aria-labelledby="hero-title">
-      {/* Awake Background */}
-      <div className="absolute inset-0 bg-[#2B3A5A]">
-        <div className="absolute inset-0 bg-[url('/assets/images/hero-background.png')] bg-cover bg-bottom opacity-70"></div>
-        <div className="absolute inset-0 bg-gradient-to-b from-blue-900/40 via-blue-800/20 to-transparent"></div>
+    <section className="relative min-h-screen flex flex-col justify-center overflow-hidden bg-white" id="hero" aria-labelledby="hero-title">
+      {/* Clean Background */}
+      <div className="absolute inset-0 bg-gradient-to-br from-gray-50 via-white to-gray-100"></div>
+      
+      {/* Subtle Pattern */}
+      <div className="absolute inset-0 opacity-30">
+        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8Y2lyY2xlIGN4PSIzMCIgY3k9IjMwIiByPSIxLjUiIGZpbGw9IiNlNWU3ZWIiLz4KPC9zdmc+')] opacity-40"></div>
       </div>
       
       <motion.div 
-        className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center z-10 pt-20"
+        className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center z-10"
         variants={containerVariants}
         initial="hidden"
         animate="visible"
       >
-        <div className="max-w-5xl mx-auto">
-          <motion.div variants={itemVariants} className="mb-8">
-            <span className="inline-flex items-center gap-2 px-5 py-3 bg-white/20 backdrop-blur-sm border border-white/30 rounded-md text-white text-sm font-semibold shadow-lg">
-              <div className="w-2 h-2 bg-white rounded-full"></div>
-              プロフェッショナル・ソリューション
-            </span>
+        <div className="max-w-4xl mx-auto">
+          {/* Company Logo */}
+          <motion.div 
+            variants={logoVariants}
+            className="mb-12 flex justify-center"
+          >
+            <div className="relative w-80 h-48 md:w-96 md:h-56">
+              <Image
+                src="/assets/images/hero-background.png"
+                alt="Awake Inc. Logo"
+                fill
+                className="object-contain"
+                priority
+                quality={90}
+              />
+            </div>
           </motion.div>
           
+          {/* Company Name */}
           <motion.h1 
             id="hero-title" 
             variants={itemVariants}
-            className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-8 leading-tight"
+            className="text-5xl md:text-6xl lg:text-7xl font-light text-gray-900 mb-6 tracking-tight"
           >
-            企業の成長を支える<br />
-            戦略的デジタルソリューション
+            株式会社<span className="font-normal">Awake</span>
           </motion.h1>
           
+          {/* Tagline */}
           <motion.p 
             variants={itemVariants}
-            className="text-lg md:text-xl text-white/90 mb-8 font-medium leading-relaxed"
+            className="text-xl md:text-2xl text-gray-600 mb-12 font-light leading-relaxed"
           >
-            ホームページ制作・AIコンサルティング・Amazon代理店サービスにより、
-            <span className="inline-flex items-center gap-1 text-white font-bold bg-white/20 backdrop-blur-sm px-3 py-1 rounded-md border border-white/30 shadow-sm ml-1">
-              <div className="w-1.5 h-1.5 bg-white rounded-full"></div>
-              確実な成果
-            </span>
-            を実現します
+            デジタルソリューションで、新しい価値を創造する
           </motion.p>
           
-          <motion.p 
-            variants={itemVariants}
-            className="text-base md:text-lg text-white/80 mb-12 leading-relaxed max-w-4xl mx-auto"
-          >
-            データドリブンなアプローチとプロフェッショナルな技術力で、お客様のビジネス価値を最大化。
-            <br className="hidden md:block" />
-            まずは無料コンサルティングで、最適な戦略をご提案いたします。
-          </motion.p>
-          
+          {/* Services Grid */}
           <motion.div 
             variants={itemVariants}
-            className="flex flex-col sm:flex-row gap-6 justify-center"
+            className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16 max-w-5xl mx-auto"
+          >
+            <div className="group bg-white rounded-2xl p-8 shadow-sm border border-gray-100 hover:shadow-lg transition-all duration-300">
+              <div className="w-12 h-12 bg-gray-100 rounded-lg flex items-center justify-center mb-6 group-hover:bg-gray-200 transition-colors">
+                <svg className="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9v-9m0-9v9"></path>
+                </svg>
+              </div>
+              <h3 className="text-lg font-medium text-gray-900 mb-3">ホームページ制作</h3>
+              <p className="text-gray-600 text-sm leading-relaxed">企業の価値を最大化するプロフェッショナルなウェブサイト</p>
+            </div>
+            
+            <div className="group bg-white rounded-2xl p-8 shadow-sm border border-gray-100 hover:shadow-lg transition-all duration-300">
+              <div className="w-12 h-12 bg-gray-100 rounded-lg flex items-center justify-center mb-6 group-hover:bg-gray-200 transition-colors">
+                <svg className="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+                </svg>
+              </div>
+              <h3 className="text-lg font-medium text-gray-900 mb-3">AIコンサルティング</h3>
+              <p className="text-gray-600 text-sm leading-relaxed">最先端AI技術による業務効率化とデジタル変革支援</p>
+            </div>
+            
+            <div className="group bg-white rounded-2xl p-8 shadow-sm border border-gray-100 hover:shadow-lg transition-all duration-300">
+              <div className="w-12 h-12 bg-gray-100 rounded-lg flex items-center justify-center mb-6 group-hover:bg-gray-200 transition-colors">
+                <svg className="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path>
+                </svg>
+              </div>
+              <h3 className="text-lg font-medium text-gray-900 mb-3">Amazon代理店</h3>
+              <p className="text-gray-600 text-sm leading-relaxed">Amazon特価での代理販売とEC事業の包括的サポート</p>
+            </div>
+          </motion.div>
+          
+          {/* CTA Button */}
+          <motion.div 
+            variants={itemVariants}
+            className="flex justify-center"
           >
             <Link 
               href="#contact" 
-              className="group relative inline-flex items-center justify-center px-8 py-4 bg-white text-blue-900 font-semibold rounded-md transition-all duration-200 hover:bg-gray-100 shadow-lg hover:shadow-xl btn-focus card-hover"
+              className="group inline-flex items-center justify-center px-8 py-4 bg-gray-900 text-white font-medium rounded-lg transition-all duration-200 hover:bg-gray-800 shadow-lg hover:shadow-xl"
             >
-              <span className="relative z-10">無料コンサルティング開始</span>
-              <ArrowRight className="relative z-10 ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+              <span>お問い合わせ</span>
+              <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
             </Link>
-            
-            <Link 
-              href="#services" 
-              className="group inline-flex items-center justify-center px-8 py-4 bg-white/20 backdrop-blur-sm border-2 border-white/30 text-white font-semibold rounded-md transition-all duration-200 hover:bg-white/30 shadow-lg hover:shadow-xl btn-focus"
-            >
-              サービス詳細を見る
-              <ChevronDown className="ml-2 h-5 w-5 group-hover:translate-y-0.5 transition-transform" />
-            </Link>
-          </motion.div>
-          
-          <motion.div 
-            variants={itemVariants}
-            className="mt-16 grid grid-cols-3 gap-6 max-w-2xl mx-auto"
-          >
-            <div className="text-center p-6 bg-white/20 backdrop-blur-sm rounded-lg border border-white/30 shadow-lg card-hover">
-              <div className="text-3xl font-bold text-white mb-2">最短1週間</div>
-              <div className="text-sm text-white/80 font-medium">納期</div>
-            </div>
-            <div className="text-center p-6 bg-white/20 backdrop-blur-sm rounded-lg border border-white/30 shadow-lg card-hover">
-              <div className="text-3xl font-bold text-white mb-2">500+</div>
-              <div className="text-sm text-white/80 font-medium">プロジェクト実績</div>
-            </div>
-            <div className="text-center p-6 bg-white/20 backdrop-blur-sm rounded-lg border border-white/30 shadow-lg card-hover">
-              <div className="text-3xl font-bold text-white mb-2">100%</div>
-              <div className="text-sm text-white/80 font-medium">品質保証</div>
-            </div>
           </motion.div>
         </div>
       </motion.div>

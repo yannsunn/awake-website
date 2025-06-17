@@ -63,7 +63,8 @@
       "Bash(npm audit:*)",
       "Bash(./agent-send.sh:*)",
       "Bash(npm uninstall:*)",
-      "WebFetch(domain:vercel.com)"
+      "WebFetch(domain:vercel.com)",
+      "WebFetch(domain:www.toyota-battery.com)"
     ],
     "deny": []
   }
