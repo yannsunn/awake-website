@@ -4,44 +4,11 @@ import Link from 'next/link'
 import { ArrowRight } from 'lucide-react'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
+import { memo } from 'react'
+import { commonAnimations, optimizedViewport } from '@/lib/animations'
 
-export default function HeroSection() {
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.2,
-        duration: 0.8,
-        ease: "easeOut"
-      }
-    }
-  }
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 30 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { 
-        duration: 0.6, 
-        ease: [0.25, 0.1, 0.25, 1]
-      }
-    }
-  }
-
-  const logoVariants = {
-    hidden: { opacity: 0, scale: 0.8 },
-    visible: {
-      opacity: 1,
-      scale: 1,
-      transition: { 
-        duration: 0.8, 
-        ease: "easeOut",
-        delay: 0.3
-      }
-    }
-  }
+// 🚀 Ultra-Optimized Hero Section with Memoization
+const HeroSection = memo(function HeroSection() {
 
   return (
     <section className="relative min-h-screen flex flex-col justify-center overflow-hidden bg-white" id="hero" aria-labelledby="hero-title">
@@ -55,14 +22,14 @@ export default function HeroSection() {
       
       <motion.div 
         className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center z-10"
-        variants={containerVariants}
+        variants={commonAnimations.staggerContainer}
         initial="hidden"
         animate="visible"
       >
         <div className="max-w-4xl mx-auto">
-          {/* Company Logo */}
+          {/* Company Logo - Ultra Optimized */}
           <motion.div 
-            variants={logoVariants}
+            variants={commonAnimations.logoReveal}
             className="mb-12 flex justify-center"
           >
             <div className="relative w-80 h-48 md:w-96 md:h-56">
@@ -72,31 +39,34 @@ export default function HeroSection() {
                 fill
                 className="object-contain"
                 priority
-                quality={90}
+                quality={85}
+                sizes="(max-width: 768px) 320px, 384px"
+                placeholder="blur"
+                blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q=="
               />
             </div>
           </motion.div>
           
-          {/* Company Name */}
+          {/* Company Name - Optimized */}
           <motion.h1 
             id="hero-title" 
-            variants={itemVariants}
+            variants={commonAnimations.fadeInUp}
             className="text-5xl md:text-6xl lg:text-7xl font-light text-gray-900 mb-6 tracking-tight"
           >
             株式会社<span className="font-normal">Awake</span>
           </motion.h1>
           
-          {/* Tagline */}
+          {/* Tagline - Optimized */}
           <motion.p 
-            variants={itemVariants}
+            variants={commonAnimations.fadeInUp}
             className="text-xl md:text-2xl text-gray-600 mb-12 font-light leading-relaxed"
           >
             デジタルソリューションで、新しい価値を創造する
           </motion.p>
           
-          {/* Services Grid */}
+          {/* Services Grid - Ultra Optimized */}
           <motion.div 
-            variants={itemVariants}
+            variants={commonAnimations.fadeInUp}
             className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16 max-w-5xl mx-auto"
           >
             <div className="group bg-white rounded-2xl p-8 shadow-sm border border-gray-100 hover:shadow-lg transition-all duration-300">
@@ -130,9 +100,9 @@ export default function HeroSection() {
             </div>
           </motion.div>
           
-          {/* CTA Button */}
+          {/* CTA Button - Ultra Optimized */}
           <motion.div 
-            variants={itemVariants}
+            variants={commonAnimations.fadeIn}
             className="flex justify-center"
           >
             <Link 
@@ -147,4 +117,6 @@ export default function HeroSection() {
       </motion.div>
     </section>
   )
-}
+})
+
+export default HeroSection
