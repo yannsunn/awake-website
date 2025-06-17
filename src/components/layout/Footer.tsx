@@ -40,7 +40,7 @@ export default function Footer() {
               <li>
                 <Link 
                   href="/services/web" 
-                  className="text-gray-300 hover:text-white transition-colors"
+                  className="text-gray-300 hover:text-white transition-base"
                 >
                   ホームページ制作
                 </Link>
@@ -48,7 +48,7 @@ export default function Footer() {
               <li>
                 <Link 
                   href="/services/ai" 
-                  className="text-gray-300 hover:text-white transition-colors"
+                  className="text-gray-300 hover:text-white transition-base"
                 >
                   AIコンサルティング
                 </Link>
@@ -56,7 +56,7 @@ export default function Footer() {
               <li>
                 <Link 
                   href="/services/ec" 
-                  className="text-gray-300 hover:text-white transition-colors"
+                  className="text-gray-300 hover:text-white transition-base"
                 >
                   Amazon代理店サービス
                 </Link>
@@ -70,7 +70,7 @@ export default function Footer() {
               <li>
                 <Link 
                   href={isHomePage ? "#features" : "/#features"}
-                  className="text-gray-300 hover:text-white transition-colors"
+                  className="text-gray-300 hover:text-white transition-base"
                 >
                   特徴
                 </Link>
@@ -78,7 +78,7 @@ export default function Footer() {
               <li>
                 <Link 
                   href={isHomePage ? "#services" : "/#services"}
-                  className="text-gray-300 hover:text-white transition-colors"
+                  className="text-gray-300 hover:text-white transition-base"
                 >
                   サービス
                 </Link>
@@ -86,7 +86,7 @@ export default function Footer() {
               <li>
                 <Link 
                   href={isHomePage ? "#contact" : "/#contact"}
-                  className="text-gray-300 hover:text-white transition-colors"
+                  className="text-gray-300 hover:text-white transition-base"
                 >
                   お問い合わせ
                 </Link>
@@ -94,7 +94,7 @@ export default function Footer() {
               <li>
                 <Link 
                   href="/about" 
-                  className="text-gray-300 hover:text-white transition-colors"
+                  className="text-gray-300 hover:text-white transition-base"
                 >
                   会社概要・代表挨拶
                 </Link>
@@ -102,7 +102,7 @@ export default function Footer() {
               <li>
                 <Link 
                   href="/legal/privacy-policy" 
-                  className="text-gray-300 hover:text-white transition-colors"
+                  className="text-gray-300 hover:text-white transition-base"
                 >
                   プライバシーポリシー
                 </Link>
@@ -110,7 +110,7 @@ export default function Footer() {
               <li>
                 <Link 
                   href="/legal/terms" 
-                  className="text-gray-300 hover:text-white transition-colors"
+                  className="text-gray-300 hover:text-white transition-base"
                 >
                   利用規約
                 </Link>

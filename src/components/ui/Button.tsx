@@ -1,3 +1,4 @@
+import { memo } from 'react'
 import Link from 'next/link'
 import { ArrowRight, type LucideIcon } from 'lucide-react'
 import { BUTTON_STYLES } from '@/lib/constants'
@@ -15,7 +16,7 @@ interface ButtonProps {
   className?: string
 }
 
-export default function Button({ 
+const Button = memo(function Button({ 
   href, 
   variant = 'primary', 
   icon: Icon,
@@ -57,4 +58,6 @@ export default function Button({
       {content}
     </button>
   )
-}
+})
+
+export default Button

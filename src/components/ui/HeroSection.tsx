@@ -10,26 +10,30 @@ export default function HeroSection() {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.3,
-        duration: 0.8
+        staggerChildren: 0.15,
+        duration: 0.6,
+        ease: "easeOut"
       }
     }
   }
 
   const itemVariants = {
-    hidden: { opacity: 0, y: 30 },
+    hidden: { opacity: 0, y: 20 },
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.6, ease: "easeOut" }
+      transition: { 
+        duration: 0.5, 
+        ease: [0.4, 0, 0.2, 1]
+      }
     }
   }
 
   const floatingVariants = {
     float: {
-      y: [-20, 20, -20],
+      y: [-10, 10, -10],
       transition: {
-        duration: 6,
+        duration: 4,
         repeat: Infinity,
         ease: "easeInOut"
       }
