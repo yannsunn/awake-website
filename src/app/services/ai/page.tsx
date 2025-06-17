@@ -5,7 +5,25 @@ import { ArrowRight } from 'lucide-react'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
 import { memo } from 'react'
-import { commonAnimations, optimizedViewport } from '@/lib/animations'
+
+// アニメーション設定をローカルで定義（インポートエラー回避）
+const fadeInUp = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.5 } }
+}
+
+const staggerContainer = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: { staggerChildren: 0.1 }
+  }
+}
+
+const fadeIn = {
+  hidden: { opacity: 0 },
+  visible: { opacity: 1, transition: { duration: 0.4 } }
+}
 
 export const metadata: Metadata = {
   title: "AIコンサルティング | 株式会社Awake",
@@ -69,27 +87,27 @@ const AIServicePage = memo(function AIServicePage() {
         <section className="py-20 bg-gradient-to-br from-gray-50 via-white to-gray-100">
           <motion.div 
             className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
-            variants={commonAnimations.staggerContainer}
+            variants={staggerContainer}
             initial="hidden"
             animate="visible"
           >
             <div className="text-center max-w-4xl mx-auto">
               <motion.h1 
-                variants={commonAnimations.fadeInUp}
+                variants={fadeInUp}
                 className="text-4xl md:text-5xl font-light text-gray-900 mb-6 tracking-tight"
               >
                 AIコンサルティング
               </motion.h1>
               
               <motion.p 
-                variants={commonAnimations.fadeInUp}
+                variants={fadeInUp}
                 className="text-xl text-gray-600 mb-12 font-light leading-relaxed"
               >
                 最先端AI技術による業務効率化とデジタル変革支援
               </motion.p>
 
               <motion.div 
-                variants={commonAnimations.fadeIn}
+                variants={fadeIn}
                 className="flex justify-center"
               >
                 <Link 
@@ -108,19 +126,19 @@ const AIServicePage = memo(function AIServicePage() {
         <section className="py-20 bg-white">
           <motion.div 
             className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
-            variants={commonAnimations.staggerContainer}
+            variants={staggerContainer}
             initial="hidden"
             whileInView="visible"
-            viewport={optimizedViewport}
+            viewport={{ once: true, amount: 0.2 }}
           >
-            <motion.div variants={commonAnimations.fadeInUp} className="text-center mb-16">
+            <motion.div variants={fadeInUp} className="text-center mb-16">
               <h2 className="text-3xl font-light text-gray-900 mb-4">
                 導入効果
               </h2>
             </motion.div>
             
             <motion.div 
-              variants={commonAnimations.fadeInUp}
+              variants={fadeInUp}
               className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto"
             >
               {benefits.map((benefit, index) => (
@@ -144,12 +162,12 @@ const AIServicePage = memo(function AIServicePage() {
         <section id="services" className="py-20 bg-gray-50">
           <motion.div 
             className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
-            variants={commonAnimations.staggerContainer}
+            variants={staggerContainer}
             initial="hidden"
             whileInView="visible"
-            viewport={optimizedViewport}
+            viewport={{ once: true, amount: 0.2 }}
           >
-            <motion.div variants={commonAnimations.fadeInUp} className="text-center mb-16">
+            <motion.div variants={fadeInUp} className="text-center mb-16">
               <h2 className="text-3xl font-light text-gray-900 mb-4">
                 サービスメニュー
               </h2>
@@ -159,7 +177,7 @@ const AIServicePage = memo(function AIServicePage() {
             </motion.div>
             
             <motion.div 
-              variants={commonAnimations.fadeInUp}
+              variants={fadeInUp}
               className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto"
             >
               {services.map((service, index) => (
@@ -203,19 +221,19 @@ const AIServicePage = memo(function AIServicePage() {
         <section className="py-20 bg-white">
           <motion.div 
             className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
-            variants={commonAnimations.staggerContainer}
+            variants={staggerContainer}
             initial="hidden"
             whileInView="visible"
-            viewport={optimizedViewport}
+            viewport={{ once: true, amount: 0.2 }}
           >
-            <motion.div variants={commonAnimations.fadeInUp} className="text-center mb-16">
+            <motion.div variants={fadeInUp} className="text-center mb-16">
               <h2 className="text-3xl font-light text-gray-900 mb-4">
                 導入の流れ
               </h2>
             </motion.div>
             
             <motion.div 
-              variants={commonAnimations.fadeInUp}
+              variants={fadeInUp}
               className="grid grid-cols-1 md:grid-cols-4 gap-8"
             >
               {[
@@ -244,10 +262,10 @@ const AIServicePage = memo(function AIServicePage() {
         <section className="py-20 bg-gray-50">
           <motion.div 
             className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center"
-            variants={commonAnimations.fadeIn}
+            variants={fadeIn}
             initial="hidden"
             whileInView="visible"
-            viewport={optimizedViewport}
+            viewport={{ once: true, amount: 0.2 }}
           >
             <h2 className="text-3xl font-light text-gray-900 mb-6">
               AI導入で企業の未来を変えませんか？
