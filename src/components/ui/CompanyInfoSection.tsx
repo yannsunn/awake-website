@@ -2,41 +2,22 @@
 
 import { motion } from 'framer-motion'
 import { MapPin, Phone, Mail, Calendar, Users, Award } from 'lucide-react'
+import { memo } from 'react'
+import { commonAnimations, optimizedViewport } from '@/lib/animations'
 
-export default function CompanyInfoSection() {
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-        duration: 0.6
-      }
-    }
-  }
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { 
-        duration: 0.5,
-        ease: "easeOut"
-      }
-    }
-  }
+// 🚀 Ultra-Optimized Company Info Section
+const CompanyInfoSection = memo(function CompanyInfoSection() {
 
   return (
     <section className="py-20 bg-gray-50" id="company-info">
       <motion.div 
         className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
-        variants={containerVariants}
+        variants={commonAnimations.staggerContainer}
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true, amount: 0.3 }}
+        viewport={optimizedViewport}
       >
-        <motion.div variants={itemVariants} className="text-center mb-16">
+        <motion.div variants={commonAnimations.fadeInUp} className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-light text-gray-900 mb-4">
             会社情報
           </h2>
@@ -47,7 +28,7 @@ export default function CompanyInfoSection() {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Company Details */}
-          <motion.div variants={itemVariants}>
+          <motion.div variants={commonAnimations.fadeInUp}>
             <div className="bg-white rounded-2xl p-8 shadow-sm border border-gray-100">
               <h3 className="text-2xl font-medium text-gray-900 mb-8">企業概要</h3>
               
@@ -101,7 +82,7 @@ export default function CompanyInfoSection() {
           </motion.div>
 
           {/* Contact Information */}
-          <motion.div variants={itemVariants}>
+          <motion.div variants={commonAnimations.fadeInUp}>
             <div className="bg-white rounded-2xl p-8 shadow-sm border border-gray-100">
               <h3 className="text-2xl font-medium text-gray-900 mb-8">お問い合わせ</h3>
               
@@ -148,7 +129,7 @@ export default function CompanyInfoSection() {
         </div>
 
         {/* Mission Statement */}
-        <motion.div variants={itemVariants} className="mt-16">
+        <motion.div variants={commonAnimations.scaleIn} className="mt-16">
           <div className="bg-white rounded-2xl p-12 shadow-sm border border-gray-100 text-center">
             <h3 className="text-2xl font-medium text-gray-900 mb-6">私たちのミッション</h3>
             <p className="text-lg text-gray-600 leading-relaxed max-w-4xl mx-auto">
@@ -161,4 +142,6 @@ export default function CompanyInfoSection() {
       </motion.div>
     </section>
   )
-}
+})
+
+export default CompanyInfoSection
