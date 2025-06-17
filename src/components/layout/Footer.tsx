@@ -47,18 +47,18 @@ export default function Footer() {
               </li>
               <li>
                 <Link 
-                  href="/services/ec" 
-                  className="text-gray-300 hover:text-white transition-colors"
-                >
-                  Amazon代理店サービス
-                </Link>
-              </li>
-              <li>
-                <Link 
                   href="/services/ai" 
                   className="text-gray-300 hover:text-white transition-colors"
                 >
                   AIコンサルティング
+                </Link>
+              </li>
+              <li>
+                <Link 
+                  href="/services/ec" 
+                  className="text-gray-300 hover:text-white transition-colors"
+                >
+                  Amazon代理店サービス
                 </Link>
               </li>
             </ul>
