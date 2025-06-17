@@ -21,15 +21,6 @@ export const SERVICES = {
     features: ['コーポレートサイト', 'SEO最適化', 'レスポンシブ対応', 'エンタープライズ対応'],
     results: 'コンバージョン率平均3倍向上',
   },
-  ec: {
-    title: 'Amazon代理店サービス',
-    description: '【初期費用0円・完全成果報酬】Amazon販売のプロが商品選定から販売戦略まで全て代行。売上が上がってから手数料をいただく安心システム。',
-    icon: 'ec',
-    color: '#1e40af',
-    href: '/services/ec',
-    features: ['商品リサーチ', '販売戦略立案', '広告運用', '在庫管理'],
-    results: '平均売上増加率250%',
-  },
   ai: {
     title: 'AIコンサルティング',
     description: '【業務効率70%向上】ChatGPT基礎からDX推進まで包括サポート。実践的コンサルティング(1ヶ月/¥298,000)で企業変革を実現。',
@@ -38,6 +29,15 @@ export const SERVICES = {
     href: '/services/ai',
     features: ['ChatGPT活用', 'DX戦略立案', '業務自動化', '継続サポート'],
     results: '業務効率平均70%向上',
+  },
+  ec: {
+    title: 'Amazon代理店サービス',
+    description: '【初期費用0円・完全成果報酬】Amazon販売のプロが商品選定から販売戦略まで全て代行。売上が上がってから手数料をいただく安心システム。',
+    icon: 'ec',
+    color: '#1e40af',
+    href: '/services/ec',
+    features: ['商品リサーチ', '販売戦略立案', '広告運用', '在庫管理'],
+    results: '平均売上増加率250%',
   },
 } as const
 
@@ -52,8 +52,8 @@ export const NAVIGATION = [
 export const FOOTER_LINKS = {
   services: [
     { href: '/services/web', label: 'ホームページ制作' },
-    { href: '/services/ec', label: 'Amazon代理店サービス' },
     { href: '/services/ai', label: 'AIコンサルティング' },
+    { href: '/services/ec', label: 'Amazon代理店サービス' },
   ],
   company: [
     { href: '#features', label: '特徴' },
