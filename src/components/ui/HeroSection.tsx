@@ -42,10 +42,10 @@ export default function HeroSection() {
 
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden bg-white" id="hero" aria-labelledby="hero-title">
-      {/* Professional Background */}
-      <div className="absolute inset-0 bg-corporate-gray-50">
-        <div className="absolute inset-0 bg-[url('/assets/images/modern-office.jpg')] bg-cover bg-center opacity-5"></div>
-        <div className="absolute inset-0 bg-white/80"></div>
+      {/* Awake Background */}
+      <div className="absolute inset-0 bg-[#2B3A5A]">
+        <div className="absolute inset-0 bg-[url('/assets/images/hero-background.png')] bg-cover bg-center opacity-60"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-900/30 via-blue-800/20 to-blue-700/10"></div>
       </div>
       
       <motion.div 
@@ -56,8 +56,8 @@ export default function HeroSection() {
       >
         <div className="max-w-5xl mx-auto">
           <motion.div variants={itemVariants} className="mb-8">
-            <span className="inline-flex items-center gap-2 px-5 py-3 bg-corporate-blue-50 border border-corporate-blue-200 rounded-md text-corporate-blue-800 text-sm font-semibold shadow-corporate">
-              <div className="w-2 h-2 bg-corporate-blue-600 rounded-full"></div>
+            <span className="inline-flex items-center gap-2 px-5 py-3 bg-white/20 backdrop-blur-sm border border-white/30 rounded-md text-white text-sm font-semibold shadow-lg">
+              <div className="w-2 h-2 bg-white rounded-full"></div>
               プロフェッショナル・ソリューション
             </span>
           </motion.div>
@@ -65,7 +65,7 @@ export default function HeroSection() {
           <motion.h1 
             id="hero-title" 
             variants={itemVariants}
-            className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-corporate-gray-900 mb-8 leading-tight"
+            className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-8 leading-tight"
           >
             企業の成長を支える<br />
             戦略的デジタルソリューション
@@ -73,11 +73,11 @@ export default function HeroSection() {
           
           <motion.p 
             variants={itemVariants}
-            className="text-lg md:text-xl text-corporate-gray-700 mb-8 font-medium leading-relaxed"
+            className="text-lg md:text-xl text-white/90 mb-8 font-medium leading-relaxed"
           >
-            ホームページ制作・LP制作・Amazon代理店サービス・動画編集制作により、
-            <span className="inline-flex items-center gap-1 text-corporate-blue-800 font-bold bg-corporate-blue-50 px-3 py-1 rounded-md border border-corporate-blue-200 shadow-sm ml-1">
-              <div className="w-1.5 h-1.5 bg-corporate-blue-600 rounded-full"></div>
+            ホームページ制作・AIコンサルティング・Amazon代理店サービスにより、
+            <span className="inline-flex items-center gap-1 text-white font-bold bg-white/20 backdrop-blur-sm px-3 py-1 rounded-md border border-white/30 shadow-sm ml-1">
+              <div className="w-1.5 h-1.5 bg-white rounded-full"></div>
               確実な成果
             </span>
             を実現します
@@ -85,7 +85,7 @@ export default function HeroSection() {
           
           <motion.p 
             variants={itemVariants}
-            className="text-base md:text-lg text-corporate-gray-600 mb-12 leading-relaxed max-w-4xl mx-auto"
+            className="text-base md:text-lg text-white/80 mb-12 leading-relaxed max-w-4xl mx-auto"
           >
             データドリブンなアプローチとプロフェッショナルな技術力で、お客様のビジネス価値を最大化。
             <br className="hidden md:block" />
@@ -98,7 +98,7 @@ export default function HeroSection() {
           >
             <Link 
               href="#contact" 
-              className="group relative inline-flex items-center justify-center px-8 py-4 bg-corporate-blue-800 text-white font-semibold rounded-md transition-all duration-200 hover:bg-corporate-blue-900 shadow-corporate hover:shadow-corporate-lg btn-focus card-hover"
+              className="group relative inline-flex items-center justify-center px-8 py-4 bg-white text-blue-900 font-semibold rounded-md transition-all duration-200 hover:bg-gray-100 shadow-lg hover:shadow-xl btn-focus card-hover"
             >
               <span className="relative z-10">無料コンサルティング開始</span>
               <ArrowRight className="relative z-10 ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
@@ -106,7 +106,7 @@ export default function HeroSection() {
             
             <Link 
               href="#services" 
-              className="group inline-flex items-center justify-center px-8 py-4 bg-white border-2 border-corporate-blue-800 text-corporate-blue-800 font-semibold rounded-md transition-all duration-200 hover:bg-corporate-blue-50 shadow-corporate hover:shadow-corporate-lg btn-focus"
+              className="group inline-flex items-center justify-center px-8 py-4 bg-white/20 backdrop-blur-sm border-2 border-white/30 text-white font-semibold rounded-md transition-all duration-200 hover:bg-white/30 shadow-lg hover:shadow-xl btn-focus"
             >
               サービス詳細を見る
               <ChevronDown className="ml-2 h-5 w-5 group-hover:translate-y-0.5 transition-transform" />
@@ -117,17 +117,17 @@ export default function HeroSection() {
             variants={itemVariants}
             className="mt-16 grid grid-cols-3 gap-6 max-w-2xl mx-auto"
           >
-            <div className="text-center p-6 bg-white rounded-lg border border-corporate-gray-200 shadow-corporate card-hover">
-              <div className="text-3xl font-bold text-corporate-blue-800 mb-2">最短1週間</div>
-              <div className="text-sm text-corporate-gray-600 font-medium">納期</div>
+            <div className="text-center p-6 bg-white/20 backdrop-blur-sm rounded-lg border border-white/30 shadow-lg card-hover">
+              <div className="text-3xl font-bold text-white mb-2">最短1週間</div>
+              <div className="text-sm text-white/80 font-medium">納期</div>
             </div>
-            <div className="text-center p-6 bg-white rounded-lg border border-corporate-gray-200 shadow-corporate card-hover">
-              <div className="text-3xl font-bold text-corporate-blue-800 mb-2">500+</div>
-              <div className="text-sm text-corporate-gray-600 font-medium">プロジェクト実績</div>
+            <div className="text-center p-6 bg-white/20 backdrop-blur-sm rounded-lg border border-white/30 shadow-lg card-hover">
+              <div className="text-3xl font-bold text-white mb-2">500+</div>
+              <div className="text-sm text-white/80 font-medium">プロジェクト実績</div>
             </div>
-            <div className="text-center p-6 bg-white rounded-lg border border-corporate-gray-200 shadow-corporate card-hover">
-              <div className="text-3xl font-bold text-corporate-blue-800 mb-2">100%</div>
-              <div className="text-sm text-corporate-gray-600 font-medium">品質保証</div>
+            <div className="text-center p-6 bg-white/20 backdrop-blur-sm rounded-lg border border-white/30 shadow-lg card-hover">
+              <div className="text-3xl font-bold text-white mb-2">100%</div>
+              <div className="text-sm text-white/80 font-medium">品質保証</div>
             </div>
           </motion.div>
         </div>
