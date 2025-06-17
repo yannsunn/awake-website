@@ -27,10 +27,9 @@ export default function Header() {
   
   // コアサービスページのリンク - ニューロデザイン最適化
   const services = [
-    { href: '/services/web', title: 'ホームページ制作・LP制作' },
-    { href: '/services/ec', title: 'Amazon代理店サービス' },
-    { href: '/services/video', title: '動画編集制作' },
-    { href: '/services/ai', title: 'AI研修・AIコンサルティング' }
+    { href: '/services/web', title: 'ホームページ制作' },
+    { href: '/services/ai', title: 'AIコンサルティング' },
+    { href: '/services/ec', title: 'Amazon代理店サービス' }
   ]
 
   return (
