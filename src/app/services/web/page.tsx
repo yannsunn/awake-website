@@ -5,58 +5,49 @@ import { ArrowRight } from 'lucide-react'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
-  title: "AIコンサルティング | 株式会社Awake",
-  description: "ChatGPT活用からDX推進まで包括サポート。実践的コンサルティングで企業変革を実現。",
-  keywords: "AIコンサルティング, ChatGPT活用, DX推進, AI導入, 生産性向上, 業務効率化",
+  title: "ホームページ制作 | 株式会社Awake",
+  description: "132,000円からプロフェッショナルなコーポレートサイトを制作。企業の価値を最大化するウェブデザイン。",
+  keywords: "ホームページ制作, ウェブ制作, コーポレートサイト, SEO対策, 株式会社Awake",
 }
 
-const services = [
+const pricing = [
   {
-    name: "AI導入コンサルティング",
-    duration: "1ヶ月",
-    price: "¥298,000〜",
+    name: "スタンダード",
+    price: "¥132,000",
     features: [
-      "業務プロセス効率化診断",
-      "AI活用による改善提案",
-      "最適なAIツール選定・導入",
-      "社員向け実践指導",
-      "継続的効果測定サポート"
+      "5ページまで",
+      "レスポンシブデザイン", 
+      "基本SEO対策",
+      "お問い合わせフォーム",
+      "3週間制作期間"
     ]
   },
   {
-    name: "全社DX推進プログラム",
-    duration: "6-12ヶ月",
-    price: "¥1,000,000〜",
+    name: "プレミアム", 
+    price: "¥298,000",
     features: [
-      "DX戦略の策定支援",
-      "段階的なAI導入計画",
-      "組織全体の変革支援",
-      "業務プロセス改善提案",
-      "継続的効果測定・改善"
+      "10ページまで",
+      "カスタムデザイン",
+      "高度なSEO対策", 
+      "CMS機能",
+      "6週間制作期間"
+    ]
+  },
+  {
+    name: "エンタープライズ",
+    price: "要相談",
+    features: [
+      "ページ数無制限",
+      "完全オリジナル",
+      "システム連携",
+      "専属サポート",
+      "柔軟な制作期間"
     ]
   }
 ]
 
-const benefits = [
-  {
-    title: "生産性向上",
-    metric: "平均40%",
-    description: "AI活用により業務処理時間を大幅短縮"
-  },
-  {
-    title: "コスト削減",
-    metric: "年間20%",
-    description: "業務効率化によるコスト削減効果"
-  },
-  {
-    title: "品質向上",
-    metric: "エラー80%減",
-    description: "AI支援によるヒューマンエラーの大幅削減"
-  }
-]
-
-// 🚀 Ultra-Rich AI Service Page (Toyota Style) - Motion-Free Build Fix
-export default function AIServicePage() {
+// 🚀 Ultra-Rich Web Service Page (Toyota Style) - Motion-Free Build Fix
+export default function WebServicePage() {
   return (
     <>
       <Header />
@@ -67,19 +58,19 @@ export default function AIServicePage() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center max-w-4xl mx-auto">
               <h1 className="text-4xl md:text-5xl font-light text-gray-900 mb-6 tracking-tight">
-                AIコンサルティング
+                ホームページ制作
               </h1>
               
               <p className="text-xl text-gray-600 mb-12 font-light leading-relaxed">
-                最先端AI技術による業務効率化とデジタル変革支援
+                企業の価値を最大化するプロフェッショナルなウェブサイト
               </p>
 
               <div className="flex justify-center">
                 <Link 
-                  href="#services" 
+                  href="#pricing" 
                   className="inline-flex items-center justify-center px-8 py-4 bg-gray-900 text-white font-medium rounded-lg transition-all duration-200 hover:bg-gray-800 shadow-lg hover:shadow-xl"
                 >
-                  サービス詳細を見る
+                  料金プランを見る
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Link>
               </div>
@@ -87,50 +78,84 @@ export default function AIServicePage() {
           </div>
         </section>
 
-        {/* Benefits Section - Rich Content */}
+        {/* Features Section - Rich Content */}
         <section className="py-20 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
               <h2 className="text-3xl font-light text-gray-900 mb-4">
-                導入効果
+                サービス特徴
               </h2>
               <p className="text-lg text-gray-600">
-                実証されたAI活用による業務改善成果
+                高品質なウェブサイトを確実にお届け
               </p>
             </div>
             
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
-              {benefits.map((benefit, index) => (
-                <div key={index} className="text-center hover:shadow-lg transition-shadow duration-300 p-6 rounded-xl">
-                  <div className="text-3xl font-light text-gray-900 mb-2">
-                    {benefit.metric}
-                  </div>
-                  <h3 className="text-lg font-medium text-gray-900 mb-3">
-                    {benefit.title}
-                  </h3>
-                  <p className="text-gray-600 text-sm">
-                    {benefit.description}
-                  </p>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+              <div className="text-center hover:shadow-lg transition-shadow duration-300 p-6 rounded-xl">
+                <div className="w-16 h-16 bg-gray-900 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <div className="text-white font-bold text-xl">¥</div>
                 </div>
-              ))}
+                <h3 className="text-lg font-medium text-gray-900 mb-3">
+                  プロフェッショナル制作
+                </h3>
+                <p className="text-gray-600 text-sm">
+                  132,000円からプロ品質のサイトを制作。コストパフォーマンスに優れた価格設定
+                </p>
+              </div>
+              
+              <div className="text-center hover:shadow-lg transition-shadow duration-300 p-6 rounded-xl">
+                <div className="w-16 h-16 bg-gray-900 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <div className="text-white font-bold text-xl">S</div>
+                </div>
+                <h3 className="text-lg font-medium text-gray-900 mb-3">
+                  SEO最適化
+                </h3>
+                <p className="text-gray-600 text-sm">
+                  検索エンジン対策を標準実装。Googleでの上位表示をサポート
+                </p>
+              </div>
+              
+              <div className="text-center hover:shadow-lg transition-shadow duration-300 p-6 rounded-xl">
+                <div className="w-16 h-16 bg-gray-900 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <div className="text-white font-bold text-xl">↗</div>
+                </div>
+                <h3 className="text-lg font-medium text-gray-900 mb-3">
+                  スケーラブル設計
+                </h3>
+                <p className="text-gray-600 text-sm">
+                  企業成長に合わせて拡張可能。将来のニーズにも対応
+                </p>
+              </div>
+              
+              <div className="text-center hover:shadow-lg transition-shadow duration-300 p-6 rounded-xl">
+                <div className="w-16 h-16 bg-gray-900 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <div className="text-white font-bold text-xl">📱</div>
+                </div>
+                <h3 className="text-lg font-medium text-gray-900 mb-3">
+                  レスポンシブ対応
+                </h3>
+                <p className="text-gray-600 text-sm">
+                  全デバイスで最適表示を保証。PC・タブレット・スマホ完全対応
+                </p>
+              </div>
             </div>
           </div>
         </section>
 
-        {/* Services Section - Rich Content */}
-        <section id="services" className="py-20 bg-gray-50">
+        {/* Pricing Section - Rich Content */}
+        <section id="pricing" className="py-20 bg-gray-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
               <h2 className="text-3xl font-light text-gray-900 mb-4">
-                サービスメニュー
+                料金プラン
               </h2>
               <p className="text-lg text-gray-600">
-                企業のニーズに合わせた柔軟なプログラム
+                ニーズに合わせた柔軟なプラン設計
               </p>
             </div>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-              {services.map((service, index) => (
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+              {pricing.map((plan, index) => (
                 <div 
                   key={index}
                   className={`bg-white rounded-2xl p-8 shadow-sm border hover:shadow-xl transition-shadow duration-300 ${
@@ -144,21 +169,14 @@ export default function AIServicePage() {
                       </span>
                     </div>
                   )}
-                  <h3 className="text-xl font-medium text-gray-900 mb-4">
-                    {service.name}
+                  <h3 className="text-xl font-medium text-gray-900 mb-2">
+                    {plan.name}
                   </h3>
-                  <div className="mb-6 space-y-2">
-                    <div className="flex justify-between">
-                      <span className="text-sm text-gray-500">期間:</span>
-                      <span className="text-sm font-medium">{service.duration}</span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span className="text-sm text-gray-500">料金:</span>
-                      <span className="text-lg font-light text-gray-900">{service.price}</span>
-                    </div>
+                  <div className="text-3xl font-light text-gray-900 mb-6">
+                    {plan.price}
                   </div>
                   <ul className="space-y-3 mb-8">
-                    {service.features.map((feature, featureIndex) => (
+                    {plan.features.map((feature, featureIndex) => (
                       <li key={featureIndex} className="text-gray-600 text-sm flex items-center">
                         <span className="w-2 h-2 bg-gray-900 rounded-full mr-3"></span>
                         {feature}
@@ -173,7 +191,7 @@ export default function AIServicePage() {
                         : 'border border-gray-300 text-gray-700 hover:bg-gray-50 hover:border-gray-400'
                     }`}
                   >
-                    詳細を問い合わせ
+                    お問い合わせ
                   </Link>
                 </div>
               ))}
@@ -181,15 +199,15 @@ export default function AIServicePage() {
           </div>
         </section>
 
-        {/* Process Section - Rich Content */}
+        {/* Service Process Section - Rich Content */}
         <section className="py-20 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
               <h2 className="text-3xl font-light text-gray-900 mb-4">
-                導入の流れ
+                制作の流れ
               </h2>
               <p className="text-lg text-gray-600">
-                体系的なアプローチで確実な成果を実現
+                お客様と二人三脚で進める安心の制作プロセス
               </p>
             </div>
             
@@ -197,26 +215,26 @@ export default function AIServicePage() {
               {[
                 { 
                   step: "01", 
-                  title: "現状分析", 
-                  desc: "課題・目標・業務フローを詳細に分析し、AI導入の可能性を評価",
+                  title: "ヒアリング", 
+                  desc: "ご要望とサイトの目的を詳しくお聞きします。競合分析も実施",
                   time: "1週間"
                 },
                 { 
                   step: "02", 
-                  title: "プログラム設計", 
-                  desc: "企業の課題に最適化したAI活用プログラムを設計・提案",
+                  title: "企画・設計", 
+                  desc: "サイト構成とデザインコンセプトを策定。ワイヤーフレーム作成",
                   time: "1-2週間"
                 },
                 { 
                   step: "03", 
-                  title: "実践的研修", 
-                  desc: "業務に即した実践的な研修を実施。段階的なスキル習得をサポート",
-                  time: "1-3ヶ月"
+                  title: "制作・開発", 
+                  desc: "デザイン作成からコーディングまで実施。SEO対策も同時進行",
+                  time: "2-4週間"
                 },
                 { 
                   step: "04", 
-                  title: "継続フォロー", 
-                  desc: "効果測定と継続的な改善提案。長期的な成果向上を支援",
+                  title: "公開・運用", 
+                  desc: "テスト完了後の公開と継続的なサポート。アナリティクス設定",
                   time: "継続"
                 }
               ].map((item, index) => (
@@ -231,7 +249,7 @@ export default function AIServicePage() {
                     {item.desc}
                   </p>
                   <div className="text-xs text-gray-500 font-medium">
-                    期間: {item.time}
+                    目安: {item.time}
                   </div>
                 </div>
               ))}
@@ -239,43 +257,43 @@ export default function AIServicePage() {
           </div>
         </section>
 
-        {/* Success Cases Section - Rich Content */}
+        {/* Technical Specs Section - Added Rich Content */}
         <section className="py-20 bg-gray-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
               <h2 className="text-3xl font-light text-gray-900 mb-4">
-                AI導入実績
+                技術仕様・対応範囲
               </h2>
             </div>
             
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               <div className="bg-white p-6 rounded-xl shadow-sm">
-                <h3 className="text-lg font-medium text-gray-900 mb-4">製造業A社</h3>
+                <h3 className="text-lg font-medium text-gray-900 mb-4">開発技術</h3>
                 <ul className="space-y-2 text-sm text-gray-600">
-                  <li>• 生産性40%向上</li>
-                  <li>• 品質管理自動化</li>
-                  <li>• 年間コスト30%削減</li>
-                  <li>• 3ヶ月でROI達成</li>
+                  <li>• Next.js / React</li>
+                  <li>• TypeScript</li>
+                  <li>• Tailwind CSS</li>
+                  <li>• Node.js</li>
                 </ul>
               </div>
               
               <div className="bg-white p-6 rounded-xl shadow-sm">
-                <h3 className="text-lg font-medium text-gray-900 mb-4">小売業B社</h3>
+                <h3 className="text-lg font-medium text-gray-900 mb-4">対応機能</h3>
                 <ul className="space-y-2 text-sm text-gray-600">
-                  <li>• 在庫最適化実現</li>
-                  <li>• 売上予測精度85%</li>
-                  <li>• 業務時間50%短縮</li>
-                  <li>• 顧客満足度向上</li>
+                  <li>• CMS連携</li>
+                  <li>• お問い合わせフォーム</li>
+                  <li>• ブログ機能</li>
+                  <li>• 多言語対応</li>
                 </ul>
               </div>
               
               <div className="bg-white p-6 rounded-xl shadow-sm">
-                <h3 className="text-lg font-medium text-gray-900 mb-4">サービス業C社</h3>
+                <h3 className="text-lg font-medium text-gray-900 mb-4">保証・サポート</h3>
                 <ul className="space-y-2 text-sm text-gray-600">
-                  <li>• 問い合わせ対応自動化</li>
-                  <li>• 顧客対応時間60%削減</li>
-                  <li>• 社員満足度向上</li>
-                  <li>• 新規事業展開</li>
+                  <li>• 3ヶ月無料サポート</li>
+                  <li>• バックアップ対応</li>
+                  <li>• SSL証明書設定</li>
+                  <li>• セキュリティ対策</li>
                 </ul>
               </div>
             </div>
@@ -286,10 +304,10 @@ export default function AIServicePage() {
         <section className="py-20 bg-white">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h2 className="text-3xl font-light text-gray-900 mb-6">
-              AI導入で企業の未来を変えませんか？
+              まずはお気軽にご相談ください
             </h2>
             <p className="text-lg text-gray-600 mb-8">
-              無料の現状分析から始めて、最適なAI活用戦略をご提案いたします
+              お客様のご要望をお聞かせください。無料でお見積りいたします
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link 
@@ -303,7 +321,7 @@ export default function AIServicePage() {
                 href="/about"
                 className="inline-flex items-center justify-center px-8 py-4 border border-gray-300 text-gray-700 font-medium rounded-lg transition-all duration-200 hover:bg-gray-50 hover:border-gray-400"
               >
-                導入事例を見る
+                制作実績を見る
               </Link>
             </div>
           </div>
