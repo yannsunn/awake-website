@@ -50,11 +50,11 @@ export default function AboutPage() {
         <section className="py-20 bg-gradient-to-br from-gray-50 via-white to-gray-100">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h1 className="text-4xl md:text-5xl font-light text-gray-900 mb-6 tracking-tight">
-              会社概要・代表挨拶
+              会社概要
             </h1>
             <p className="text-xl text-gray-600 font-light leading-relaxed">
-              弊社とつながるすべての人に感謝と繁栄を<br />
-              信頼の関係づくりで、共に成長し続ける企業です。
+              信頼の絆で、共に成長し続ける企業<br />
+              株式会社Awakeは、美しいコーポレートサイト制作と先進的なAI導入支援を通じて、お客様企業の成長と発展を支えるテクノロジーパートナーです。
             </p>
           </div>
         </section>
@@ -72,18 +72,25 @@ export default function AboutPage() {
                   代表挨拶
                 </h2>
                 <div className="space-y-6 text-gray-700 leading-relaxed">
+                  <div className="mb-4">
+                    <p className="font-semibold text-gray-900 mb-2">代表取締役CEO　田形 康貴</p>
+                    <p className="text-lg text-gray-600">お客様、パートナー企業の皆様、そして当社に関わるすべての方々へ</p>
+                  </div>
                   <p>
-                    「弊社とつながるすべての人に感謝と繁栄を」
+                    私がトヨタ系ディーラーで整備士として働いていた頃、一台一台の車に込められたお客様の想いと向き合う中で、「信頼」という価値の重みを学びました。その後、物販企業を経営する中で、ビジネスの本質は技術やサービスの提供だけでなく、人と人との信頼関係にあることを確信しました。
                   </p>
                   <p>
-                    これが私たちの根本的な想いです。すべての企業に美しいコーポレートサイトを、そして社内にAIを導入していただきたい。HPは会社の顔であり、AI導入は代表のリテラシーが試される時代だからです。
+                    2020年に株式会社Awakeを設立し、5期目を迎えた今、私たちが大切にしているのは「与え続けることで縁を太くする」という理念です。これは単なる美辞麗句ではなく、実体験から生まれた経営の核心です。
                   </p>
                   <p>
-                    私は与え続けることで縁が太くなると信じています。まず代表である私が起き上がり、お客様との信頼の関係づくりに全力で取り組みます。ただのサービス提供者ではなく、共に成長し続けるパートナーとして、皆様の繁栄をお手伝いいたします。
+                    現代は、企業ウェブサイトが会社の顔となり、AI活用が競争力を左右する時代です。しかし、どんなに技術が進化しても、その根底にあるべきは人と人との信頼関係だと私は信じています。
                   </p>
-                  <div className="pt-4">
-                    <p className="font-semibold text-gray-900">代表取締役</p>
-                    <p className="text-2xl font-bold text-gray-900">田形 康貴</p>
+                  <p>
+                    私たちは、単なるサービス提供者ではありません。お客様の課題を自らの課題として捉え、共に解決策を模索し、成功を分かち合うパートナーでありたいと願っています。お客様の繁栄なくして、私たちの成長はありません。この想いを胸に、これからも誠実に、そして情熱を持って事業に取り組んでまいります。
+                  </p>
+                  <div className="pt-6 border-t border-gray-200">
+                    <p className="text-xl font-semibold text-gray-900 mb-2">つながるすべての人に、感謝と繁栄を。</p>
+                    <p className="text-gray-600">この言葉を実現するために、私たちは今日も全力で走り続けます。</p>
                   </div>
                 </div>
               </div>
@@ -123,8 +130,9 @@ export default function AboutPage() {
                   <Target className="h-8 w-8 text-white" />
                 </div>
                 <h3 className="text-2xl font-light text-gray-900 mb-4">ミッション</h3>
+                <p className="text-lg font-semibold text-gray-800 mb-3">つながるすべての人に、感謝と繁栄を</p>
                 <p className="text-gray-600 leading-relaxed">
-                  つながるすべての人に感謝と繁栄をもたらすこと。それが私たちの使命です。美しいコーポレートサイトと効果的なAI導入により、企業の価値向上を支援します。ホームページは企業の顔として、AIは経営革新の手段として、今の時代に欠かせない要素となっています。私たちは継続的な価値提供を通じて信頼関係を築き、お客様と共に成長するパートナーを目指します。
+                  私たちは、美しいコーポレートサイト制作と革新的なAI導入支援を通じて、すべての企業がデジタル時代に輝ける未来を創造します。技術の力で可能性を広げ、信頼の絆で成功を確かなものにします。
                 </p>
               </div>
               
@@ -133,16 +141,70 @@ export default function AboutPage() {
                   <Award className="h-8 w-8 text-white" />
                 </div>
                 <h3 className="text-2xl font-light text-gray-900 mb-4">ビジョン</h3>
+                <p className="text-lg font-semibold text-gray-800 mb-3">技術と信頼の融合で、持続可能な共栄社会を実現する</p>
                 <p className="text-gray-600 leading-relaxed">
-                  代表自らが率先して行動し、模範を示すことから始まります。トヨタの整備士から物販事業を経て起業した経験を活かし、信頼関係の構築を最も重視しています。静岡県清水区出身の代表田形康貴は、2020年の設立から現在5期目を迎え、「与え続けることで関係性を深める」という経営哲学のもと、お客様と共に持続的な成長を遂げる未来を築いてまいります。
+                  急速に進化するデジタル社会において、私たちは最先端技術の提供者であると同時に、お客様に寄り添う伴走者でありたいと考えています。「与え続けることで縁を太くする」という理念のもと、短期的な成果よりも長期的な関係性を重視し、お客様と共に成長し続ける企業を目指します。
                 </p>
               </div>
             </div>
           </div>
         </section>
 
-        {/* Company Values */}
+        {/* Our Promise */}
         <section className="py-20 bg-white">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-16">
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                私たちの約束
+              </h2>
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
+              {[
+                {
+                  number: "1",
+                  title: "真のパートナーシップ",
+                  description: "お客様の成功を自らの成功と捉え、課題解決に全力で取り組みます"
+                },
+                {
+                  number: "2", 
+                  title: "継続的な価値創造",
+                  description: "導入後も伴走し、変化する時代に合わせた最適なソリューションを提供し続けます"
+                },
+                {
+                  number: "3",
+                  title: "誠実な関係構築", 
+                  description: "透明性を保ち、約束を守り、期待を超える成果を追求します"
+                },
+                {
+                  number: "4",
+                  title: "革新への挑戦",
+                  description: "最新技術を積極的に取り入れ、お客様に新たな可能性を提案します"
+                },
+                {
+                  number: "5",
+                  title: "感謝の循環",
+                  description: "いただいた信頼に感謝し、それ以上の価値でお返しすることで、豊かな関係を築きます"
+                }
+              ].map((promise, index) => (
+                <div key={index} className="text-center p-6 rounded-xl hover:shadow-lg transition-shadow duration-300">
+                  <div className="w-16 h-16 bg-gray-900 text-white rounded-full flex items-center justify-center mx-auto mb-4 text-xl font-bold">
+                    {promise.number}
+                  </div>
+                  <h3 className="text-lg font-medium text-gray-900 mb-3">
+                    {promise.title}
+                  </h3>
+                  <p className="text-gray-600 text-sm leading-relaxed">
+                    {promise.description}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Company Values */}
+        <section className="py-20 bg-gray-50">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
@@ -181,6 +243,9 @@ export default function AboutPage() {
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
                 会社概要
               </h2>
+              <p className="text-lg text-gray-600 font-medium">
+                令和2年設立 | 信頼と革新で、共に未来を創る
+              </p>
             </div>
             
             <div className="bg-white rounded-2xl shadow-sm border p-8">
