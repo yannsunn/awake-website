@@ -32,7 +32,7 @@ const HeroSection = memo(function HeroSection() {
             variants={commonAnimations.logoReveal}
             className="mb-12 flex justify-center"
           >
-            <div className="relative w-96 h-60 md:w-[28rem] md:h-72 lg:w-[32rem] lg:h-80">
+            <div className="relative w-96 h-72 md:w-[28rem] md:h-80 lg:w-[32rem] lg:h-96">
               <Image
                 src="/assets/images/hero-background.png"
                 alt="Awake Inc. Logo"
