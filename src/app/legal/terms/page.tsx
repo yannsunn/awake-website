@@ -3,6 +3,7 @@ import Header from '@/components/layout/Header'
 import Footer from '@/components/layout/Footer'
 import { ArrowLeft } from 'lucide-react'
 import Link from 'next/link'
+import { COMPANY_DATA } from '@/lib/company-data'
 
 export const metadata: Metadata = {
   title: "利用規約 | 株式会社Awake",
@@ -128,10 +129,10 @@ export default function TermsPage() {
                     本規約に関するお問い合わせは、下記の連絡先までお願いいたします。
                   </p>
                   <div className="mt-4 p-6 bg-gray-50 rounded-lg">
-                    <p className="font-bold text-gray-900">株式会社Awake</p>
-                    <p className="text-gray-700">〒207-0013 東京都東大和市向原5-1129-61 渡辺ビル1F</p>
-                    <p className="text-gray-700">TEL: 050-7115-4948</p>
-                    <p className="text-gray-700">Email: shop@awakeinc.co.jp</p>
+                    <p className="font-bold text-gray-900">{COMPANY_DATA.basic.name}</p>
+                    <p className="text-gray-700">{COMPANY_DATA.contact.address.postal} {COMPANY_DATA.contact.address.full}</p>
+                    <p className="text-gray-700">TEL: {COMPANY_DATA.contact.phone}</p>
+                    <p className="text-gray-700">Email: {COMPANY_DATA.contact.email}</p>
                   </div>
                 </section>
               </div>

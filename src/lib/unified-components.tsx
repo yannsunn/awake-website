@@ -4,10 +4,12 @@ import { memo } from 'react'
 import { ArrowRight } from 'lucide-react'
 import Link from 'next/link'
 import { COMPANY_DATA } from './company-data'
+import Button from '@/components/ui/Button'
 
-// 🚀 UNIFIED COMPONENTS - No More Duplication!
+// 🚀 UNIFIED COMPONENTS - 重複撲滅完了！
 
-// ✨ Master CTA Button - Used everywhere
+// ✨ 統一Button使用推奨 - CTAButtonは非推奨 (Button使用を推奨)
+// 後方互換性のため残存
 export const CTAButton = memo(function CTAButton({
   href,
   children,
@@ -21,24 +23,7 @@ export const CTAButton = memo(function CTAButton({
   className?: string
   [key: string]: any
 }) {
-  const baseClasses = 'inline-flex items-center justify-center px-8 py-4 rounded-lg font-medium transition-all duration-200'
-  
-  const variants = {
-    primary: 'bg-gray-900 text-white hover:bg-gray-800 shadow-lg hover:shadow-xl',
-    secondary: 'border border-gray-300 text-gray-700 hover:bg-gray-50 hover:border-gray-400',
-    outline: 'border-2 border-gray-900 text-gray-900 hover:bg-gray-900 hover:text-white'
-  }
-
-  return (
-    <Link 
-      href={href}
-      className={`${baseClasses} ${variants[variant]} ${className}`}
-      {...props}
-    >
-      {children}
-      <ArrowRight className="ml-2 h-5 w-5" />
-    </Link>
-  )
+  return <Button href={href} variant={variant} showArrow className={className} {...props}>{children}</Button>
 })
 
 // ✨ Service Card Component - Reusable everywhere

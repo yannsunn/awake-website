@@ -3,6 +3,7 @@ import Header from '@/components/layout/Header'
 import Footer from '@/components/layout/Footer'
 import { User, Target, Heart, Award, Users, Zap } from 'lucide-react'
 import Image from 'next/image'
+import { COMPANY_DATA } from '@/lib/company-data'
 
 export const metadata: Metadata = {
   title: "会社概要・代表挨拶 | 株式会社Awake",
@@ -186,35 +187,35 @@ export default function AboutPage() {
               <dl className="grid grid-cols-1 gap-6">
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                   <dt className="text-sm font-semibold text-gray-900">会社名</dt>
-                  <dd className="sm:col-span-2 text-sm text-gray-700">株式会社Awake（Awake Inc.）</dd>
+                  <dd className="sm:col-span-2 text-sm text-gray-700">{COMPANY_DATA.basic.name}（{COMPANY_DATA.basic.nameEn}）</dd>
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                   <dt className="text-sm font-semibold text-gray-900">代表取締役</dt>
-                  <dd className="sm:col-span-2 text-sm text-gray-700">田形 康貴</dd>
+                  <dd className="sm:col-span-2 text-sm text-gray-700">{COMPANY_DATA.basic.ceo}</dd>
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                   <dt className="text-sm font-semibold text-gray-900">所在地</dt>
-                  <dd className="sm:col-span-2 text-sm text-gray-700">〒207-0013 東京都東大和市向原5-1129-61 渡辺ビル1F</dd>
+                  <dd className="sm:col-span-2 text-sm text-gray-700">{COMPANY_DATA.contact.address.postal} {COMPANY_DATA.contact.address.full}</dd>
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                   <dt className="text-sm font-semibold text-gray-900">電話番号</dt>
-                  <dd className="sm:col-span-2 text-sm text-gray-700">050-7115-4948</dd>
+                  <dd className="sm:col-span-2 text-sm text-gray-700">{COMPANY_DATA.contact.phone}</dd>
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                   <dt className="text-sm font-semibold text-gray-900">メールアドレス</dt>
-                  <dd className="sm:col-span-2 text-sm text-gray-700">shop@awakeinc.co.jp</dd>
+                  <dd className="sm:col-span-2 text-sm text-gray-700">{COMPANY_DATA.contact.email}</dd>
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                   <dt className="text-sm font-semibold text-gray-900">営業時間</dt>
-                  <dd className="sm:col-span-2 text-sm text-gray-700">平日 9:00-18:00</dd>
+                  <dd className="sm:col-span-2 text-sm text-gray-700">{COMPANY_DATA.contact.businessHours.weekdays}</dd>
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                   <dt className="text-sm font-semibold text-gray-900">事業内容</dt>
                   <dd className="sm:col-span-2 text-sm text-gray-700">
                     <ul className="list-disc list-inside space-y-1">
-                      <li>ホームページ制作サービス</li>
-                      <li>Amazon代理店サービス</li>
-                      <li>AIコンサルティングサービス</li>
+                      {COMPANY_DATA.services.list.map((service, index) => (
+                        <li key={index}>{service}</li>
+                      ))}
                     </ul>
                   </dd>
                 </div>

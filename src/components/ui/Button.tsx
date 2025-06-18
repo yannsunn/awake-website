@@ -14,6 +14,8 @@ interface ButtonProps {
   type?: 'button' | 'submit' | 'reset'
   disabled?: boolean
   className?: string
+  target?: string
+  rel?: string
 }
 
 const Button = memo(function Button({ 
@@ -25,7 +27,9 @@ const Button = memo(function Button({
   onClick,
   type = 'button',
   disabled = false,
-  className = ''
+  className = '',
+  target,
+  rel
 }: ButtonProps) {
   // 🛡️ 完全型安全保証: あらゆるエッジケースに対応する防御的実装
   const validVariant = (variant && variant in BUTTON_STYLES) ? variant : 'primary'
@@ -42,7 +46,12 @@ const Button = memo(function Button({
 
   if (href) {
     return (
-      <Link href={href} className={styles}>
+      <Link 
+        href={href} 
+        className={styles}
+        target={target}
+        rel={rel}
+      >
         {content}
       </Link>
     )
