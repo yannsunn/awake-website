@@ -92,7 +92,7 @@ export default function EcServicePage() {
               </h1>
               
               <p className="text-xl text-gray-600 mb-12 font-light leading-relaxed">
-                弊社とつながるすべての人に感謝と繁栄を。【7年の実績】信頼の関係づくりで共に成長し、SEO上位表示とプロのカタログ作成で売上アップを実現します。
+                【7年の実績】Amazon販売のプロが、SEO上位表示とプロのカタログ作成で確実な売上アップを実現します。
               </p>
 
               <div className="flex justify-center">
@@ -328,7 +328,7 @@ export default function EcServicePage() {
               共に成長するパートナーとして
             </h2>
             <p className="text-lg text-gray-600 mb-8">
-              静岡県清水区出身、トヨタ整備士から物販企業を経た代表が、信頼の関係づくりを第一に、お客様の繁栄をお手伝いいたします。
+              まずはお気軽にご相談ください。Amazon販売のプロが御社の成功をサポートいたします。
             </p>
             <LineContactHighlight />
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
