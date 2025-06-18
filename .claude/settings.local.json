@@ -69,7 +69,9 @@
       "Bash(npm ls:*)",
       "Bash(git clean:*)",
       "Bash(npx vercel:*)",
-      "Bash(echo:*)"
+      "Bash(echo:*)",
+      "Bash(git branch:*)",
+      "WebFetch(domain:my-website-9yn7nmels-yasuus-projects.vercel.app)"
     ],
     "deny": []
   }

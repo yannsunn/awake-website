@@ -3,33 +3,35 @@ import Header from '@/components/layout/Header'
 import Footer from '@/components/layout/Footer'
 import { CheckCircle, TrendingUp, Shield, Zap, ArrowRight } from 'lucide-react'
 import Link from 'next/link'
+import { COMPANY_DATA } from '@/lib/company-data'
+import { LineContactHighlight } from '@/lib/unified-components'
 
 export const metadata: Metadata = {
-  title: "Amazon代理店サービス | 株式会社Awake",
-  description: "完全成果報酬型Amazon販売代行。商品選定から販売戦略までプロが全て代行。リスクゼロで開始。",
-  keywords: "Amazon代理店, 代理販売, Amazon販売, 株式会社Awake",
+  title: "Amazon代理販売サービス | 株式会社Awake",
+  description: "【7年の実績】Amazon代理販売でSEO上位表示を実現。完全成果報酬型でリスクゼロ。カタログ作成から販売まで全てお任せ。",
+  keywords: "Amazon代理販売, SEO上位表示, カタログ作成, 7年経験, 株式会社Awake",
 }
 
 const features = [
   {
     icon: Shield,
-    title: "リスクゼロ",
-    description: "初期費用0円・成果報酬型なので、リスクなく始められます。売上が発生してからの手数料制です。"
+    title: "7年の実績と経験",
+    description: "Amazon販売代行で7年の豊富な実績。数百社の成功事例をもとに、確実な売上向上をサポートします。"
   },
   {
     icon: TrendingUp,
-    title: "Amazon特価販売",
-    description: "Amazonの特価システムを活用し、競合他社より魅力的な価格で商品を販売いたします。"
+    title: "SEO検索上位表示",
+    description: "Amazon内での検索順位を上げる専門技術。お客様の商品を多くの人に見つけてもらいやすくします。"
   },
   {
     icon: Zap,
-    title: "スピード対応",
-    description: "商品登録から販売開始まで最短3日。迅速な対応でビジネスチャンスを逃しません。"
+    title: "プロのカタログ作成",
+    description: "魅力的な商品ページを作成。写真撮影から文章作成まで、売れるカタログを制作いたします。"
   },
   {
     icon: CheckCircle,
-    title: "柔軟な在庫管理",
-    description: "メーカー様からの直送、または弊社への預託在庫からの発送など、ご都合に合わせた在庫管理システム。"
+    title: "完全成果報酬制",
+    description: "初期費用0円でスタート。売上が上がった分だけ手数料をいただくので、リスクなく始められます。"
   }
 ]
 
@@ -86,11 +88,11 @@ export default function EcServicePage() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center max-w-4xl mx-auto">
               <h1 className="text-4xl md:text-5xl font-light text-gray-900 mb-6 tracking-tight">
-                Amazon代理店サービス
+                Amazon代理販売サービス
               </h1>
               
               <p className="text-xl text-gray-600 mb-12 font-light leading-relaxed">
-                完全成果報酬型でリスクゼロ。プロが商品選定から販売戦略まで代行
+                【7年の実績】SEO上位表示とプロのカタログ作成で売上アップ。完全成果報酬でリスクゼロ。
               </p>
 
               <div className="flex justify-center">
@@ -114,7 +116,7 @@ export default function EcServicePage() {
                 サービス特徴
               </h2>
               <p className="text-lg text-gray-600">
-                Amazon特価販売システムで確実な売上拡大を実現
+                7年の経験とSEO技術、プロのカタログ作成で売上を確実にアップ
               </p>
             </div>
             
@@ -155,26 +157,26 @@ export default function EcServicePage() {
               {[
                 {
                   step: "01",
-                  title: "商品情報ヒアリング",
-                  description: "商品の特徴、ターゲット、販売戦略などを詳しくお聞きします。競合分析も実施。",
+                  title: "詳細ヒアリング",
+                  description: "7年の経験をもとに商品の特徴やターゲットをお聞きし、最適な販売戦略を提案します。",
                   time: "1週間"
                 },
                 {
                   step: "02",
-                  title: "在庫・発送方法決定",
-                  description: "メーカー様直送か預託在庫かを決定し、最適な物流戦略を立案いたします。",
-                  time: "1週間"
+                  title: "プロのカタログ作成",
+                  description: "売れる商品ページを制作。魅力的な写真撮影と説明文で、お客様の目を引くカタログを作ります。",
+                  time: "2週間"
                 },
                 {
                   step: "03",
-                  title: "商品ページ制作",
-                  description: "プロのカメラマン・デザイナーが魅力的な商品ページを制作します。SEO対策も実施。",
-                  time: "2-3週間"
+                  title: "SEO最適化設定",
+                  description: "Amazon内での検索上位表示を実現。多くの人に商品を見つけてもらえるよう設定します。",
+                  time: "1週間"
                 },
                 {
                   step: "04",
-                  title: "Amazon特価販売開始",
-                  description: "Amazon特価にて販売開始。在庫管理・発送・運用も継続してサポートいたします。",
+                  title: "販売開始・運用サポート",
+                  description: "販売開始後も継続的にサポート。売上データを分析し、さらなる改善を行います。",
                   time: "継続"
                 }
               ].map((item, index) => (
@@ -258,16 +260,18 @@ export default function EcServicePage() {
                       </li>
                     ))}
                   </ul>
-                  <Link 
-                    href="/#contact"
+                  <a 
+                    href={COMPANY_DATA.contact.lineUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className={`block text-center py-3 px-6 rounded-lg font-medium transition-all duration-200 ${
                       index === 0 
-                        ? 'bg-gray-900 text-white hover:bg-gray-800 shadow-lg hover:shadow-xl' 
-                        : 'border border-gray-300 text-gray-700 hover:bg-gray-50 hover:border-gray-400'
+                        ? 'bg-green-500 text-white hover:bg-green-600 shadow-lg hover:shadow-xl' 
+                        : 'border border-green-300 text-green-700 hover:bg-green-50 hover:border-green-400'
                     }`}
                   >
-                    お問い合わせ
-                  </Link>
+                    📱 LINE で相談
+                  </a>
                 </div>
               ))}
             </div>
@@ -326,20 +330,17 @@ export default function EcServicePage() {
             <p className="text-lg text-gray-600 mb-8">
               商品情報をお聞かせください。売上予測と最適な戦略を無料でご提案
             </p>
+            <LineContactHighlight />
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link 
-                href="/#contact"
-                className="inline-flex items-center justify-center px-8 py-4 bg-gray-900 text-white font-medium rounded-lg transition-all duration-200 hover:bg-gray-800 shadow-lg hover:shadow-xl"
+              <a 
+                href={COMPANY_DATA.contact.lineUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center px-8 py-4 bg-green-500 text-white font-medium rounded-lg transition-all duration-200 hover:bg-green-600 shadow-lg hover:shadow-xl"
               >
-                無料診断を受ける
+                📱 無料相談をLINEで受ける
                 <ArrowRight className="ml-2 h-5 w-5" />
-              </Link>
-              <Link 
-                href="/about"
-                className="inline-flex items-center justify-center px-8 py-4 border border-gray-300 text-gray-700 font-medium rounded-lg transition-all duration-200 hover:bg-gray-50 hover:border-gray-400"
-              >
-                実績・事例を見る
-              </Link>
+              </a>
             </div>
           </div>
         </section>
