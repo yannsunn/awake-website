@@ -66,7 +66,7 @@ const pricing = [
   }
 ]
 
-// 🚀 Ultra-Optimized Web Service Page (Toyota Style) - Fixed Export
+// 🚀 Ultra-Optimized Web Service Page (Toyota Style) - Ultimate Fix
 export default function WebServicePage() {
   return (
     <>
@@ -228,8 +228,49 @@ export default function WebServicePage() {
           </motion.div>
         </section>
 
-        {/* CTA Section - Simple */}
+        {/* Service Process Section */}
         <section className="py-20 bg-white">
+          <motion.div 
+            className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
+            variants={staggerContainer}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+          >
+            <motion.div variants={fadeInUp} className="text-center mb-16">
+              <h2 className="text-3xl font-light text-gray-900 mb-4">
+                制作の流れ
+              </h2>
+            </motion.div>
+            
+            <motion.div 
+              variants={fadeInUp}
+              className="grid grid-cols-1 md:grid-cols-4 gap-8"
+            >
+              {[
+                { step: "01", title: "ヒアリング", desc: "ご要望とサイトの目的を詳しくお聞きします" },
+                { step: "02", title: "企画・設計", desc: "サイト構成とデザインコンセプトを策定" },
+                { step: "03", title: "制作・開発", desc: "デザイン作成からコーディングまで実施" },
+                { step: "04", title: "公開・運用", desc: "テスト完了後の公開と継続的なサポート" }
+              ].map((item, index) => (
+                <div key={index} className="text-center">
+                  <div className="w-12 h-12 bg-gray-900 text-white rounded-full flex items-center justify-center mx-auto mb-4 text-sm font-medium">
+                    {item.step}
+                  </div>
+                  <h3 className="text-lg font-medium text-gray-900 mb-3">
+                    {item.title}
+                  </h3>
+                  <p className="text-gray-600 text-sm">
+                    {item.desc}
+                  </p>
+                </div>
+              ))}
+            </motion.div>
+          </motion.div>
+        </section>
+
+        {/* CTA Section - Simple */}
+        <section className="py-20 bg-gray-50">
           <motion.div 
             className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center"
             variants={fadeIn}
