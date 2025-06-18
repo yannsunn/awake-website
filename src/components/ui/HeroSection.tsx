@@ -32,17 +32,20 @@ const HeroSection = memo(function HeroSection() {
             variants={commonAnimations.logoReveal}
             className="mb-12 flex justify-center"
           >
-            <div className="relative w-96 h-72 md:w-[28rem] md:h-80 lg:w-[32rem] lg:h-96">
+            <div className="relative w-full max-w-lg md:max-w-xl lg:max-w-2xl mx-auto" style={{ aspectRatio: '4/3', minHeight: '320px' }}>
               <Image
                 src="/assets/images/hero-background.png"
                 alt="Awake Inc. Logo"
                 fill
-                className="object-contain"
+                className="object-contain object-center"
                 priority
                 quality={90}
-                sizes="(max-width: 768px) 384px, (max-width: 1024px) 448px, 512px"
-                placeholder="blur"
-                blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q=="
+                sizes="(max-width: 768px) 100vw, (max-width: 1024px) 80vw, 60vw"
+                style={{ 
+                  objectFit: 'contain',
+                  objectPosition: 'center',
+                  padding: '1rem'
+                }}
               />
             </div>
           </motion.div>
