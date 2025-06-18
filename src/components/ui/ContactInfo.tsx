@@ -9,7 +9,7 @@ import { LineContactHighlight, ContactMethod } from '@/lib/unified-components'
 const ContactInfo = memo(function ContactInfo() {
   return (
     <div className="bg-white rounded-2xl p-8 shadow-sm border border-gray-100">
-      <h3 className="text-2xl font-medium text-gray-900 mb-8">お気軽にお問い合わせください</h3>
+      <h3 className="text-2xl font-medium text-gray-900 mb-8">連絡先・アクセス</h3>
       
       <LineContactHighlight />
       
