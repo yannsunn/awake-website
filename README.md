@@ -374,4 +374,4 @@ sleep 300
 
 **作者**: [GitHub](https://github.com/nishimoto265/Claude-Code-Communication)
 **ライセンス**: MIT
-**質問**: [Issues](https://github.com/nishimoto265/Claude-Code-Communication/issues)へどうぞ！
+**質問**: [Issues](https://github.com/nishimoto265/Claude-Code-Communication/issues)へどうぞ！EMERGENCY_BUILD_20250619_012938
