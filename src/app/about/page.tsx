@@ -75,7 +75,7 @@ export default function AboutPage() {
                     株式会社Awakeは、「目覚めよ、可能性を」をモットーに、企業様の潜在能力を最大限に引き出すソリューションを提供しています。
                   </p>
                   <p>
-                    現代のビジネス環境は急速に変化しており、デジタル変革なくして企業の持続的成長はありえません。私たちは、ホームページ制作からAmazon販売支援、動画制作、AI研修まで、包括的なデジタルソリューションで企業様の変革をサポートいたします。
+                    現代のビジネス環境は急速に変化しており、デジタル変革なくして企業の持続的成長はありえません。私たちは、ホームページ制作からAmazon販売支援、AIコンサルティングまで、包括的なデジタルソリューションで企業様の変革をサポートいたします。
                   </p>
                   <p>
                     お客様一社一社と真摯に向き合い、ただのサービス提供者ではなく、成長を共にするパートナーとして、長期的な関係を築いてまいります。
@@ -214,10 +214,9 @@ export default function AboutPage() {
                   <dt className="text-sm font-semibold text-gray-900">事業内容</dt>
                   <dd className="sm:col-span-2 text-sm text-gray-700">
                     <ul className="list-disc list-inside space-y-1">
-                      <li>ホームページ制作・LP制作サービス</li>
+                      <li>ホームページ制作サービス</li>
                       <li>Amazon代理店サービス</li>
-                      <li>動画編集制作サービス</li>
-                      <li>AI研修・AIコンサルティングサービス</li>
+                      <li>AIコンサルティングサービス</li>
                     </ul>
                   </dd>
                 </div>
