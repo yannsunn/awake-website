@@ -2,8 +2,9 @@
 
 import Link from 'next/link'
 import { memo } from 'react'
+import { COMPANY_DATA } from '@/lib/company-data'
 
-// 🚀 Ultra-Optimized Footer (Toyota Style)
+// 🚀 Ultra-Optimized Footer (Toyota Style) - Data Unified
 const Footer = memo(function Footer() {
   return (
     <footer className="bg-gray-900 text-white" role="contentinfo">
@@ -11,14 +12,14 @@ const Footer = memo(function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Company Info */}
           <div>
-            <h3 className="text-xl font-light text-white mb-4">株式会社Awake</h3>
+            <h3 className="text-xl font-light text-white mb-4">{COMPANY_DATA.basic.name}</h3>
             <p className="text-gray-400 mb-6 leading-relaxed">
-              デジタルソリューションで、新しい価値を創造する
+              {COMPANY_DATA.basic.mission}
             </p>
             <div className="text-gray-400 text-sm space-y-1">
-              <p>〒207-0013</p>
-              <p>東京都東大和市向原5-1129-61 渡辺ビル1F</p>
-              <p className="mt-3">TEL: 050-7115-4948</p>
+              <p>{COMPANY_DATA.contact.address.postal}</p>
+              <p>{COMPANY_DATA.contact.address.full}</p>
+              <p className="mt-3">TEL: {COMPANY_DATA.contact.phone}</p>
             </div>
           </div>
           
@@ -26,30 +27,16 @@ const Footer = memo(function Footer() {
           <div>
             <h3 className="text-lg font-medium text-white mb-4">サービス</h3>
             <ul className="space-y-3">
-              <li>
-                <Link 
-                  href="/services/web" 
-                  className="text-gray-400 hover:text-white transition-colors text-sm"
-                >
-                  ホームページ制作
-                </Link>
-              </li>
-              <li>
-                <Link 
-                  href="/services/ai" 
-                  className="text-gray-400 hover:text-white transition-colors text-sm"
-                >
-                  AIコンサルティング
-                </Link>
-              </li>
-              <li>
-                <Link 
-                  href="/services/ec" 
-                  className="text-gray-400 hover:text-white transition-colors text-sm"
-                >
-                  Amazon代理店サービス
-                </Link>
-              </li>
+              {Object.values(COMPANY_DATA.services.details).map((service, index) => (
+                <li key={index}>
+                  <Link 
+                    href={service.href} 
+                    className="text-gray-400 hover:text-white transition-colors text-sm"
+                  >
+                    {service.title}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
           
@@ -58,7 +45,7 @@ const Footer = memo(function Footer() {
             <h3 className="text-lg font-medium text-white mb-4">お問い合わせ</h3>
             <div className="space-y-3">
               <p className="text-gray-400 text-sm">
-                営業時間: 平日 9:00-18:00
+                営業時間: {COMPANY_DATA.contact.businessHours.weekdays}
               </p>
               <p className="text-gray-400 text-sm">
                 初回相談は無料です
@@ -75,7 +62,7 @@ const Footer = memo(function Footer() {
         
         <div className="border-t border-gray-800 mt-8 pt-8 text-center">
           <p className="text-gray-400 text-sm">
-            © 2024 株式会社Awake. All rights reserved.
+            © 2024 {COMPANY_DATA.basic.name}. All rights reserved.
           </p>
         </div>
       </div>

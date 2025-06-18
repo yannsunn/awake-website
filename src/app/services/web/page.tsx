@@ -3,51 +3,19 @@ import Header from '@/components/layout/Header'
 import Footer from '@/components/layout/Footer'
 import { ArrowRight } from 'lucide-react'
 import Link from 'next/link'
+import { COMPANY_DATA } from '@/lib/company-data'
+import { PricingCard, CTAButton, FeatureHighlight } from '@/lib/unified-components'
 
 export const metadata: Metadata = {
-  title: "ホームページ制作 | 株式会社Awake",
-  description: "132,000円からプロフェッショナルなコーポレートサイトを制作。企業の価値を最大化するウェブデザイン。",
-  keywords: "ホームページ制作, ウェブ制作, コーポレートサイト, SEO対策, 株式会社Awake",
+  title: `${COMPANY_DATA.services.details.web.title}${COMPANY_DATA.metadata.baseTitleSuffix}`,
+  description: COMPANY_DATA.services.details.web.longDescription,
+  keywords: `${COMPANY_DATA.metadata.keywords}, ホームページ制作, ウェブ制作, コーポレートサイト, SEO対策`,
 }
 
-const pricing = [
-  {
-    name: "スタンダード",
-    price: "¥132,000",
-    features: [
-      "5ページまで",
-      "レスポンシブデザイン", 
-      "基本SEO対策",
-      "お問い合わせフォーム",
-      "3週間制作期間"
-    ]
-  },
-  {
-    name: "プレミアム", 
-    price: "¥298,000",
-    features: [
-      "10ページまで",
-      "カスタムデザイン",
-      "高度なSEO対策", 
-      "CMS機能",
-      "6週間制作期間"
-    ]
-  },
-  {
-    name: "エンタープライズ",
-    price: "要相談",
-    features: [
-      "ページ数無制限",
-      "完全オリジナル",
-      "システム連携",
-      "専属サポート",
-      "柔軟な制作期間"
-    ]
-  }
-]
-
-// 🚀 Ultra-Rich Web Service Page (Toyota Style) - Motion-Free Build Fix
+// 🚀 Ultra-Rich Web Service Page - Data Unified & Component Optimized
 export default function WebServicePage() {
+  const service = COMPANY_DATA.services.details.web
+  
   return (
     <>
       <Header />
@@ -58,21 +26,17 @@ export default function WebServicePage() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center max-w-4xl mx-auto">
               <h1 className="text-4xl md:text-5xl font-light text-gray-900 mb-6 tracking-tight">
-                ホームページ制作
+                {service.title}
               </h1>
               
               <p className="text-xl text-gray-600 mb-12 font-light leading-relaxed">
-                企業の価値を最大化するプロフェッショナルなウェブサイト
+                {service.description}
               </p>
 
               <div className="flex justify-center">
-                <Link 
-                  href="#pricing" 
-                  className="inline-flex items-center justify-center px-8 py-4 bg-gray-900 text-white font-medium rounded-lg transition-all duration-200 hover:bg-gray-800 shadow-lg hover:shadow-xl"
-                >
+                <CTAButton href="#pricing">
                   料金プランを見る
-                  <ArrowRight className="ml-2 h-5 w-5" />
-                </Link>
+                </CTAButton>
               </div>
             </div>
           </div>
@@ -91,53 +55,29 @@ export default function WebServicePage() {
             </div>
             
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-              <div className="text-center hover:shadow-lg transition-shadow duration-300 p-6 rounded-xl">
-                <div className="w-16 h-16 bg-gray-900 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <div className="text-white font-bold text-xl">¥</div>
-                </div>
-                <h3 className="text-lg font-medium text-gray-900 mb-3">
-                  プロフェッショナル制作
-                </h3>
-                <p className="text-gray-600 text-sm">
-                  132,000円からプロ品質のサイトを制作。コストパフォーマンスに優れた価格設定
-                </p>
-              </div>
+              <FeatureHighlight
+                icon={<div className="text-white font-bold text-xl">¥</div>}
+                title="プロフェッショナル制作"
+                description="132,000円からプロ品質のサイトを制作。コストパフォーマンスに優れた価格設定"
+              />
               
-              <div className="text-center hover:shadow-lg transition-shadow duration-300 p-6 rounded-xl">
-                <div className="w-16 h-16 bg-gray-900 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <div className="text-white font-bold text-xl">S</div>
-                </div>
-                <h3 className="text-lg font-medium text-gray-900 mb-3">
-                  SEO最適化
-                </h3>
-                <p className="text-gray-600 text-sm">
-                  検索エンジン対策を標準実装。Googleでの上位表示をサポート
-                </p>
-              </div>
+              <FeatureHighlight
+                icon={<div className="text-white font-bold text-xl">S</div>}
+                title="SEO最適化"
+                description="検索エンジン対策を標準実装。Googleでの上位表示をサポート"
+              />
               
-              <div className="text-center hover:shadow-lg transition-shadow duration-300 p-6 rounded-xl">
-                <div className="w-16 h-16 bg-gray-900 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <div className="text-white font-bold text-xl">↗</div>
-                </div>
-                <h3 className="text-lg font-medium text-gray-900 mb-3">
-                  スケーラブル設計
-                </h3>
-                <p className="text-gray-600 text-sm">
-                  企業成長に合わせて拡張可能。将来のニーズにも対応
-                </p>
-              </div>
+              <FeatureHighlight
+                icon={<div className="text-white font-bold text-xl">↗</div>}
+                title="スケーラブル設計"
+                description="企業成長に合わせて拡張可能。将来のニーズにも対応"
+              />
               
-              <div className="text-center hover:shadow-lg transition-shadow duration-300 p-6 rounded-xl">
-                <div className="w-16 h-16 bg-gray-900 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <div className="text-white font-bold text-xl">📱</div>
-                </div>
-                <h3 className="text-lg font-medium text-gray-900 mb-3">
-                  レスポンシブ対応
-                </h3>
-                <p className="text-gray-600 text-sm">
-                  全デバイスで最適表示を保証。PC・タブレット・スマホ完全対応
-                </p>
-              </div>
+              <FeatureHighlight
+                icon={<div className="text-white font-bold text-xl">📱</div>}
+                title="レスポンシブ対応"
+                description="全デバイスで最適表示を保証。PC・タブレット・スマホ完全対応"
+              />
             </div>
           </div>
         </section>
@@ -155,46 +95,9 @@ export default function WebServicePage() {
             </div>
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-              {pricing.map((plan, index) => (
-                <div 
-                  key={index}
-                  className={`bg-white rounded-2xl p-8 shadow-sm border hover:shadow-xl transition-shadow duration-300 ${
-                    index === 0 ? 'border-gray-900 ring-2 ring-gray-900 ring-opacity-10' : 'border-gray-200'
-                  }`}
-                >
-                  {index === 0 && (
-                    <div className="text-center mb-4">
-                      <span className="bg-gray-900 text-white px-4 py-1 rounded-full text-sm font-medium">
-                        人気プラン
-                      </span>
-                    </div>
-                  )}
-                  <h3 className="text-xl font-medium text-gray-900 mb-2">
-                    {plan.name}
-                  </h3>
-                  <div className="text-3xl font-light text-gray-900 mb-6">
-                    {plan.price}
-                  </div>
-                  <ul className="space-y-3 mb-8">
-                    {plan.features.map((feature, featureIndex) => (
-                      <li key={featureIndex} className="text-gray-600 text-sm flex items-center">
-                        <span className="w-2 h-2 bg-gray-900 rounded-full mr-3"></span>
-                        {feature}
-                      </li>
-                    ))}
-                  </ul>
-                  <Link 
-                    href="/#contact"
-                    className={`block text-center py-3 px-6 rounded-lg font-medium transition-all duration-200 ${
-                      index === 0 
-                        ? 'bg-gray-900 text-white hover:bg-gray-800 shadow-lg hover:shadow-xl' 
-                        : 'border border-gray-300 text-gray-700 hover:bg-gray-50 hover:border-gray-400'
-                    }`}
-                  >
-                    お問い合わせ
-                  </Link>
-                </div>
-              ))}
+              <PricingCard plan={service.pricing.standard} featured />
+              <PricingCard plan={service.pricing.premium} />
+              <PricingCard plan={service.pricing.enterprise} />
             </div>
           </div>
         </section>
@@ -238,20 +141,13 @@ export default function WebServicePage() {
                   time: "継続"
                 }
               ].map((item, index) => (
-                <div key={index} className="text-center hover:shadow-lg transition-shadow duration-300 p-6 rounded-xl">
-                  <div className="w-12 h-12 bg-gray-900 text-white rounded-full flex items-center justify-center mx-auto mb-4 text-sm font-medium">
-                    {item.step}
-                  </div>
-                  <h3 className="text-lg font-medium text-gray-900 mb-3">
-                    {item.title}
-                  </h3>
-                  <p className="text-gray-600 text-sm mb-2">
-                    {item.desc}
-                  </p>
-                  <div className="text-xs text-gray-500 font-medium">
-                    目安: {item.time}
-                  </div>
-                </div>
+                <FeatureHighlight
+                  key={index}
+                  icon={<div className="text-white text-sm font-medium">{item.step}</div>}
+                  title={item.title}
+                  description={item.desc}
+                  metric={item.time}
+                />
               ))}
             </div>
           </div>
@@ -310,19 +206,12 @@ export default function WebServicePage() {
               お客様のご要望をお聞かせください。無料でお見積りいたします
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link 
-                href="/#contact"
-                className="inline-flex items-center justify-center px-8 py-4 bg-gray-900 text-white font-medium rounded-lg transition-all duration-200 hover:bg-gray-800 shadow-lg hover:shadow-xl"
-              >
+              <CTAButton href="/#contact">
                 無料相談を申し込む
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </Link>
-              <Link 
-                href="/about"
-                className="inline-flex items-center justify-center px-8 py-4 border border-gray-300 text-gray-700 font-medium rounded-lg transition-all duration-200 hover:bg-gray-50 hover:border-gray-400"
-              >
+              </CTAButton>
+              <CTAButton href="/about" variant="secondary">
                 制作実績を見る
-              </Link>
+              </CTAButton>
             </div>
           </div>
         </section>
