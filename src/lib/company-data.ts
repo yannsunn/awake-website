@@ -1,11 +1,13 @@
-// 🚀 Unified Company Data - Ultra-Optimized Single Source of Truth
+// 🚀 MASTER DATA SOURCE - Complete Company Information Unification
 export const COMPANY_DATA = {
   basic: {
     name: '株式会社Awake',
     nameEn: 'Awake Inc.',
     ceo: '田形 康貴',
     established: '2023年',
-    mission: 'デジタルソリューションで、新しい価値を創造する'
+    mission: 'デジタルソリューションで、新しい価値を創造する',
+    tagline: 'ビジネスコンサルティング',
+    description: '革新的なソリューションで企業の成長をサポートし、新しい価値を創造する会社です。'
   },
   contact: {
     address: {
@@ -16,21 +18,106 @@ export const COMPANY_DATA = {
     email: 'shop@awakeinc.co.jp',
     line: '@100usiub',
     lineUrl: 'https://line.me/R/ti/p/@100usiub',
+    website: 'https://awakeinc.co.jp/',
     businessHours: {
       weekdays: '平日 9:00-18:00',
       weekend: '土日祝日：お休み'
     }
   },
-  services: [
-    'ホームページ制作',
-    'AIコンサルティング', 
-    'Amazon代理店サービス'
-  ],
+  services: {
+    list: [
+      'ホームページ制作',
+      'AIコンサルティング', 
+      'Amazon代理店サービス'
+    ],
+    details: {
+      web: {
+        title: 'ホームページ制作',
+        description: '企業の価値を最大化するプロフェッショナルなウェブサイト',
+        longDescription: '【コンバージョン率3倍改善】戦略的UX設計とニューロマーケティングで売上直結サイトを構築。プロフェッショナルなコーポレートサイトから大規模サイトまで対応。',
+        href: '/services/web',
+        pricing: {
+          standard: {
+            name: 'スタンダード',
+            price: '¥132,000',
+            features: ['5ページまで', 'レスポンシブデザイン', '基本SEO対策', 'お問い合わせフォーム', '3週間制作期間']
+          },
+          premium: {
+            name: 'プレミアム',
+            price: '¥298,000',
+            features: ['10ページまで', 'カスタムデザイン', '高度なSEO対策', 'CMS機能', '6週間制作期間']
+          },
+          enterprise: {
+            name: 'エンタープライズ',
+            price: '要相談',
+            features: ['ページ数無制限', '完全オリジナル', 'システム連携', '専属サポート', '柔軟な制作期間']
+          }
+        }
+      },
+      ai: {
+        title: 'AIコンサルティング',
+        description: '最先端AI技術による業務効率化とデジタル変革支援',
+        longDescription: '【業務効率70%向上】ChatGPT基礎からDX推進まで包括サポート。実践的コンサルティング(1ヶ月/¥298,000)で企業変革を実現。',
+        href: '/services/ai',
+        pricing: {
+          basic: {
+            name: 'AI導入コンサルティング',
+            price: '¥298,000〜',
+            duration: '1ヶ月',
+            features: ['業務プロセス効率化診断', 'AI活用による改善提案', '最適なAIツール選定・導入', '社員向け実践指導', '継続的効果測定サポート']
+          },
+          enterprise: {
+            name: '全社DX推進プログラム',
+            price: '¥1,000,000〜',
+            duration: '6-12ヶ月',
+            features: ['DX戦略の策定支援', '段階的なAI導入計画', '組織全体の変革支援', '業務プロセス改善提案', '継続的効果測定・改善']
+          }
+        }
+      },
+      ec: {
+        title: 'Amazon代理店サービス',
+        description: 'Amazon特価での代理販売とEC事業の包括的サポート',
+        longDescription: '【初期費用0円・完全成果報酬】Amazon販売のプロが商品選定から販売戦略まで全て代行。売上が上がってから手数料をいただく安心システム。',
+        href: '/services/ec',
+        pricing: {
+          commission: {
+            name: 'Amazon特価販売',
+            rate: '10%〜15%',
+            description: '売上に応じた手数料'
+          },
+          directShip: {
+            name: 'メーカー直送',
+            rate: '在庫なし',
+            description: 'メーカー様から直接発送'
+          },
+          warehouse: {
+            name: '預託在庫発送',
+            rate: '弊社管理',
+            description: '預けていただいた在庫から発送'
+          }
+        }
+      }
+    }
+  },
   consultation: {
     initialFree: true,
     responseTime: '1営業日以内',
     estimateFree: true,
-    ndaAvailable: true
+    ndaAvailable: true,
+    features: [
+      '初回のご相談は無料です',
+      '通常1営業日以内にご返信いたします', 
+      'お見積りも無料で承っております',
+      '秘密保持契約の締結も可能です'
+    ]
+  },
+  metadata: {
+    baseTitle: '株式会社Awake',
+    baseTitleSuffix: ' | 株式会社Awake',
+    baseDescription: '株式会社Awakeは、デジタルソリューションを通じて企業の成長を支援し、新しい価値を創造します。',
+    keywords: '株式会社Awake, ホームページ制作, AIコンサルティング, Amazon代理店, デジタル変革',
+    ogImage: '/assets/images/ogp.jpg',
+    ogUrl: 'https://awakeinc.co.jp/'
   }
 } as const
 
