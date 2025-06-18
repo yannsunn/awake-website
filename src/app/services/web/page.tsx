@@ -95,9 +95,9 @@ export default function WebServicePage() {
             </div>
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-              <PricingCard plan={service.pricing.standard} featured />
-              <PricingCard plan={service.pricing.premium} />
-              <PricingCard plan={service.pricing.enterprise} />
+              <PricingCard plan={{...service.pricing.standard, features: [...service.pricing.standard.features]}} featured />
+              <PricingCard plan={{...service.pricing.premium, features: [...service.pricing.premium.features]}} />
+              <PricingCard plan={{...service.pricing.enterprise, features: [...service.pricing.enterprise.features]}} />
             </div>
           </div>
         </section>

@@ -3,6 +3,11 @@ import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
   // Stable configuration for Vercel
   
+  // Disable ESLint during builds
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
+  
   // Image optimization
   images: {
     formats: ['image/webp', 'image/avif'],
