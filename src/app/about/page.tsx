@@ -52,8 +52,8 @@ export default function AboutPage() {
               会社概要・代表挨拶
             </h1>
             <p className="text-xl text-gray-600 font-light leading-relaxed">
-              革新的なソリューションで企業の成長をサポートし、<br />
-              お客様と共に新しい価値を創造する会社です。
+              弊社とつながるすべての人に感謝と繁栄を<br />
+              信頼の関係づくりで、共に成長し続ける企業です。
             </p>
           </div>
         </section>
@@ -72,13 +72,13 @@ export default function AboutPage() {
                 </h2>
                 <div className="space-y-6 text-gray-700 leading-relaxed">
                   <p>
-                    株式会社Awakeは、「目覚めよ、可能性を」をモットーに、企業様の潜在能力を最大限に引き出すソリューションを提供しています。
+                    「弊社とつながるすべての人に感謝と繁栄を」
                   </p>
                   <p>
-                    現代のビジネス環境は急速に変化しており、デジタル変革なくして企業の持続的成長はありえません。私たちは、ホームページ制作からAmazon販売支援、AIコンサルティングまで、包括的なデジタルソリューションで企業様の変革をサポートいたします。
+                    これが私たちの根本的な想いです。すべての企業に美しいコーポレートサイトを、そして社内にAIを導入していただきたい。HPは会社の顔であり、AI導入は代表のリテラシーが試される時代だからです。
                   </p>
                   <p>
-                    お客様一社一社と真摯に向き合い、ただのサービス提供者ではなく、成長を共にするパートナーとして、長期的な関係を築いてまいります。
+                    私は与え続けることで縁が太くなると信じています。まず代表である私が起き上がり、お客様との信頼の関係づくりに全力で取り組みます。ただのサービス提供者ではなく、共に成長し続けるパートナーとして、皆様の繁栄をお手伝いいたします。
                   </p>
                   <div className="pt-4">
                     <p className="font-semibold text-gray-900">代表取締役</p>
@@ -94,9 +94,9 @@ export default function AboutPage() {
                   <h3 className="text-xl font-bold text-gray-900 mb-2">田形 康貴</h3>
                   <p className="text-gray-900 font-semibold mb-4">代表取締役CEO</p>
                   <p className="text-gray-600 text-sm">
-                    東京都出身。デジタルマーケティング業界にて10年以上の経験を積み、
-                    2020年に株式会社Awakeを設立。お客様の成功を第一に、
-                    革新的なデジタルソリューションの提供を使命としている。
+                    静岡県清水区出身。トヨタの整備士を経て物販会社を起業。
+                    2020年（令和2年）に株式会社Awakeを設立し、現在5期目（令和6年度）。
+                    信頼の関係づくりを第一に、お客様の繁栄を共に目指している。
                   </p>
                 </div>
               </div>
@@ -123,8 +123,8 @@ export default function AboutPage() {
                 </div>
                 <h3 className="text-2xl font-light text-gray-900 mb-4">ミッション</h3>
                 <p className="text-gray-600 leading-relaxed">
-                  革新的なデジタルソリューションで企業の可能性を目覚めさせ、
-                  持続的な成長と新しい価値創造を実現する。
+                  すべての企業に美しいコーポレートサイトとAI導入を実現し、
+                  つながるすべての人に感謝と繁栄をもたらす。
                 </p>
               </div>
               
@@ -134,8 +134,8 @@ export default function AboutPage() {
                 </div>
                 <h3 className="text-2xl font-light text-gray-900 mb-4">ビジョン</h3>
                 <p className="text-gray-600 leading-relaxed">
-                  デジタル変革のパートナーとして、お客様と共に業界をリードし、
-                  社会により良いインパクトを与える企業となる。
+                  与え続けることで信頼の関係を築き、
+                  代表がまず起き上がり、お客様と共に繁栄する未来を創造する。
                 </p>
               </div>
             </div>
