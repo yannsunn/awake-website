@@ -68,7 +68,8 @@
       "Bash(npx next-bundle-analyzer:*)",
       "Bash(npm ls:*)",
       "Bash(git clean:*)",
-      "Bash(npx vercel:*)"
+      "Bash(npx vercel:*)",
+      "Bash(echo:*)"
     ],
     "deny": []
   }
