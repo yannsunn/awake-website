@@ -45,13 +45,13 @@ export default function AboutPage() {
       <Header />
       
       <main role="main" className="pt-16">
-        {/* Hero Section */}
-        <section className="py-20 bg-gradient-to-br from-corporate-blue-800 via-corporate-blue-700 to-corporate-blue-900">
+        {/* Hero Section - Toyota Style */}
+        <section className="py-20 bg-gradient-to-br from-gray-50 via-white to-gray-100">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              About Awake
+            <h1 className="text-4xl md:text-5xl font-light text-gray-900 mb-6 tracking-tight">
+              会社概要・代表挨拶
             </h1>
-            <p className="text-xl text-white/90 leading-relaxed">
+            <p className="text-xl text-gray-600 font-light leading-relaxed">
               革新的なソリューションで企業の成長をサポートし、<br />
               お客様と共に新しい価値を創造する会社です。
             </p>
@@ -64,8 +64,8 @@ export default function AboutPage() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div>
                 <div className="flex items-center mb-6">
-                  <User className="h-8 w-8 text-corporate-blue-800 mr-3" />
-                  <span className="text-corporate-blue-800 font-semibold">CEO Message</span>
+                  <User className="h-8 w-8 text-gray-900 mr-3" />
+                  <span className="text-gray-900 font-semibold">CEO Message</span>
                 </div>
                 <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
                   代表挨拶
@@ -82,17 +82,17 @@ export default function AboutPage() {
                   </p>
                   <div className="pt-4">
                     <p className="font-semibold text-gray-900">代表取締役</p>
-                    <p className="text-2xl font-bold text-corporate-blue-800">田形 康貴</p>
+                    <p className="text-2xl font-bold text-gray-900">田形 康貴</p>
                   </div>
                 </div>
               </div>
               <div className="lg:pl-8">
                 <div className="bg-gray-100 rounded-2xl p-8 text-center">
-                  <div className="w-32 h-32 bg-corporate-blue-800 rounded-full flex items-center justify-center mx-auto mb-6">
+                  <div className="w-32 h-32 bg-gray-900 rounded-full flex items-center justify-center mx-auto mb-6">
                     <User className="h-16 w-16 text-white" />
                   </div>
                   <h3 className="text-xl font-bold text-gray-900 mb-2">田形 康貴</h3>
-                  <p className="text-corporate-blue-800 font-semibold mb-4">代表取締役CEO</p>
+                  <p className="text-gray-900 font-semibold mb-4">代表取締役CEO</p>
                   <p className="text-gray-600 text-sm">
                     東京都出身。デジタルマーケティング業界にて10年以上の経験を積み、
                     2020年に株式会社Awakeを設立。お客様の成功を第一に、
@@ -117,23 +117,23 @@ export default function AboutPage() {
             </div>
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16">
-              <div className="text-center p-8 bg-white rounded-2xl shadow-lg">
-                <div className="w-16 h-16 bg-corporate-blue-800 rounded-full flex items-center justify-center mx-auto mb-6">
+              <div className="text-center p-8 bg-white rounded-2xl shadow-sm border hover:shadow-lg transition-shadow duration-300">
+                <div className="w-16 h-16 bg-gray-900 rounded-full flex items-center justify-center mx-auto mb-6">
                   <Target className="h-8 w-8 text-white" />
                 </div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-4">ミッション</h3>
-                <p className="text-gray-700 leading-relaxed">
+                <h3 className="text-2xl font-light text-gray-900 mb-4">ミッション</h3>
+                <p className="text-gray-600 leading-relaxed">
                   革新的なデジタルソリューションで企業の可能性を目覚めさせ、
                   持続的な成長と新しい価値創造を実現する。
                 </p>
               </div>
               
-              <div className="text-center p-8 bg-white rounded-2xl shadow-lg">
-                <div className="w-16 h-16 bg-corporate-blue-800 rounded-full flex items-center justify-center mx-auto mb-6">
+              <div className="text-center p-8 bg-white rounded-2xl shadow-sm border hover:shadow-lg transition-shadow duration-300">
+                <div className="w-16 h-16 bg-gray-900 rounded-full flex items-center justify-center mx-auto mb-6">
                   <Award className="h-8 w-8 text-white" />
                 </div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-4">ビジョン</h3>
-                <p className="text-gray-700 leading-relaxed">
+                <h3 className="text-2xl font-light text-gray-900 mb-4">ビジョン</h3>
+                <p className="text-gray-600 leading-relaxed">
                   デジタル変革のパートナーとして、お客様と共に業界をリードし、
                   社会により良いインパクトを与える企業となる。
                 </p>
@@ -158,11 +158,11 @@ export default function AboutPage() {
               {values.map((value, index) => {
                 const IconComponent = value.icon
                 return (
-                  <div key={index} className="text-center p-6 rounded-xl hover:shadow-lg transition-shadow">
-                    <div className="w-16 h-16 bg-corporate-blue-800 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <div key={index} className="text-center p-6 rounded-xl hover:shadow-lg transition-shadow duration-300">
+                    <div className="w-16 h-16 bg-gray-900 rounded-full flex items-center justify-center mx-auto mb-4">
                       <IconComponent className="h-8 w-8 text-white" />
                     </div>
-                    <h3 className="text-xl font-bold text-gray-900 mb-3">
+                    <h3 className="text-lg font-medium text-gray-900 mb-3">
                       {value.title}
                     </h3>
                     <p className="text-gray-600 text-sm leading-relaxed">
@@ -184,7 +184,7 @@ export default function AboutPage() {
               </h2>
             </div>
             
-            <div className="bg-white rounded-2xl shadow-lg p-8">
+            <div className="bg-white rounded-2xl shadow-sm border p-8">
               <dl className="grid grid-cols-1 gap-6">
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                   <dt className="text-sm font-semibold text-gray-900">会社名</dt>
