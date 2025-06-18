@@ -5,8 +5,8 @@ export const COMPANY_DATA = {
     nameEn: 'Awake Inc.',
     ceo: '田形 康貴',
     established: '2020年（令和2年）',
-    mission: '弊社とつながるすべての人に感謝と繁栄を',
-    tagline: '信頼の関係づくりで、共に成長し続ける企業',
+    mission: 'つながるすべての人に、感謝と繁栄を',
+    tagline: '信頼の絆で、共に成長し続ける企業',
     description: '静岡県清水区出身の代表がトヨタ整備士から物販企業を経て設立。HPは会社の顔、AI導入は代表のリテラシーが試される時代に、与え続けることで縁を太くする経営哲学で価値を創造します。'
   },
   contact: {
