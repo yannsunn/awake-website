@@ -50,14 +50,7 @@ const HeroSection = memo(function HeroSection() {
             </div>
           </motion.div>
           
-          {/* Company Name - Optimized */}
-          <motion.h1 
-            id="hero-title" 
-            variants={commonAnimations.fadeInUp}
-            className="text-5xl md:text-6xl lg:text-7xl font-light text-gray-900 mb-6 tracking-tight"
-          >
-            株式会社<span className="font-normal">Awake</span>
-          </motion.h1>
+          {/* Company Tagline - Optimized */}
           
           {/* Tagline - Optimized */}
           <motion.p 
