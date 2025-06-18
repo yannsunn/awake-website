@@ -2,24 +2,15 @@
 
 import { memo } from 'react'
 import { Phone, Mail, MapPin, Clock } from 'lucide-react'
-import { motion } from 'framer-motion'
+import { COMPANY_DATA, CONTACT_METHODS } from '@/lib/company-data'
 
-// アニメーション設定をローカルで定義（インポートエラー回避）
-const fadeInUp = {
-  hidden: { opacity: 0, y: 20 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.5 } }
-}
-
-// 🚀 Ultra-Optimized Contact Info Component
+// 🚀 Ultra-Optimized Contact Info - Unified Data Source
 const ContactInfo = memo(function ContactInfo() {
   return (
-    <motion.div 
-      variants={fadeInUp}
-      className="bg-white rounded-2xl p-8 shadow-sm border border-gray-100"
-    >
+    <div className="bg-white rounded-2xl p-8 shadow-sm border border-gray-100">
       <h3 className="text-2xl font-medium text-gray-900 mb-8">お気軽にお問い合わせください</h3>
       
-      {/* 公式LINE優先案内 */}
+      {/* 🎯 公式LINE優先案内 - Ultra-Optimized */}
       <div className="mb-8 p-6 bg-green-50 border border-green-200 rounded-lg">
         <div className="flex items-start">
           <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mr-4 mt-1">
@@ -29,9 +20,9 @@ const ContactInfo = memo(function ContactInfo() {
           </div>
           <div>
             <h4 className="font-medium text-green-800 mb-1">公式LINE（推奨）</h4>
-            <p className="text-green-700 text-sm mb-3">@100usiub - 最も早く対応できます</p>
+            <p className="text-green-700 text-sm mb-3">{COMPANY_DATA.contact.line} - 最も早く対応できます</p>
             <a 
-              href="https://line.me/R/ti/p/@100usiub"
+              href={COMPANY_DATA.contact.lineUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center bg-green-500 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-green-600 transition-colors"
@@ -42,14 +33,17 @@ const ContactInfo = memo(function ContactInfo() {
         </div>
       </div>
       
+      {/* 🎯 統合された連絡先情報 */}
       <div className="space-y-6">
         <div className="flex items-start">
           <div className="w-12 h-12 bg-gray-100 rounded-lg flex items-center justify-center mr-4 mt-1">
             <Phone className="w-6 h-6 text-gray-600" />
           </div>
           <div>
-            <h4 className="font-medium text-gray-900 mb-1">お電話でのお問い合わせ</h4>
-            <p className="text-gray-600">お問い合わせフォームよりご連絡ください</p>
+            <h4 className="font-medium text-gray-900 mb-1">電話番号</h4>
+            <a href={`tel:${COMPANY_DATA.contact.phone}`} className="text-gray-600 hover:text-gray-900 transition-colors">
+              {COMPANY_DATA.contact.phone}
+            </a>
           </div>
         </div>
 
@@ -58,8 +52,10 @@ const ContactInfo = memo(function ContactInfo() {
             <Mail className="w-6 h-6 text-gray-600" />
           </div>
           <div>
-            <h4 className="font-medium text-gray-900 mb-1">メールでのお問い合わせ</h4>
-            <p className="text-gray-600">フォームから送信いただいたメッセージに返信いたします</p>
+            <h4 className="font-medium text-gray-900 mb-1">メールアドレス</h4>
+            <a href={`mailto:${COMPANY_DATA.contact.email}`} className="text-gray-600 hover:text-gray-900 transition-colors">
+              {COMPANY_DATA.contact.email}
+            </a>
           </div>
         </div>
 
@@ -70,8 +66,8 @@ const ContactInfo = memo(function ContactInfo() {
           <div>
             <h4 className="font-medium text-gray-900 mb-1">所在地</h4>
             <p className="text-gray-600">
-              東京都渋谷区<br />
-              詳細はお問い合わせ時にお伝えいたします
+              {COMPANY_DATA.contact.address.postal}<br />
+              {COMPANY_DATA.contact.address.full}
             </p>
           </div>
         </div>
@@ -83,26 +79,26 @@ const ContactInfo = memo(function ContactInfo() {
           <div>
             <h4 className="font-medium text-gray-900 mb-1">営業時間</h4>
             <div className="text-gray-600 space-y-1">
-              <p>平日：9:00 - 18:00</p>
-              <p>土日祝日：お休み</p>
+              <p>{COMPANY_DATA.contact.businessHours.weekdays}</p>
+              <p>{COMPANY_DATA.contact.businessHours.weekend}</p>
             </div>
           </div>
         </div>
       </div>
 
-      {/* Additional Info */}
+      {/* 🎯 相談情報 - データ統合済み */}
       <div className="mt-8 pt-8 border-t border-gray-200">
         <div className="bg-gray-50 rounded-lg p-6">
           <h4 className="font-medium text-gray-900 mb-3">ご相談について</h4>
           <ul className="text-sm text-gray-600 space-y-2">
             <li>• 初回のご相談は無料です</li>
-            <li>• 通常1営業日以内にご返信いたします</li>
+            <li>• 通常{COMPANY_DATA.consultation.responseTime}にご返信いたします</li>
             <li>• お見積りも無料で承っております</li>
             <li>• 秘密保持契約の締結も可能です</li>
           </ul>
         </div>
       </div>
-    </motion.div>
+    </div>
   )
 })
 
