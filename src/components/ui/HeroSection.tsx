@@ -32,15 +32,15 @@ const HeroSection = memo(function HeroSection() {
             variants={commonAnimations.logoReveal}
             className="mb-12 flex justify-center"
           >
-            <div className="relative w-80 h-48 md:w-96 md:h-56">
+            <div className="relative w-96 h-60 md:w-[28rem] md:h-72 lg:w-[32rem] lg:h-80">
               <Image
                 src="/assets/images/hero-background.png"
                 alt="Awake Inc. Logo"
                 fill
                 className="object-contain"
                 priority
-                quality={85}
-                sizes="(max-width: 768px) 320px, 384px"
+                quality={90}
+                sizes="(max-width: 768px) 384px, (max-width: 1024px) 448px, 512px"
                 placeholder="blur"
                 blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q=="
               />
