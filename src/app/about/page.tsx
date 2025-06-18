@@ -123,8 +123,7 @@ export default function AboutPage() {
                 </div>
                 <h3 className="text-2xl font-light text-gray-900 mb-4">ミッション</h3>
                 <p className="text-gray-600 leading-relaxed">
-                  すべての企業に美しいコーポレートサイトとAI導入を実現し、
-                  つながるすべての人に感謝と繁栄をもたらす。
+                  弊社とつながるすべての人に感謝と繁栄を。すべての企業に美しいコーポレートサイトを、すべての会社にAI導入を実現します。HPは会社の顔であり、AI導入は代表のリテラシーが試される時代。私たちは与え続けることで信頼の縁を太くし、お客様と共に成長し続けるパートナーとして価値を創造します。
                 </p>
               </div>
               
@@ -134,8 +133,7 @@ export default function AboutPage() {
                 </div>
                 <h3 className="text-2xl font-light text-gray-900 mb-4">ビジョン</h3>
                 <p className="text-gray-600 leading-relaxed">
-                  与え続けることで信頼の関係を築き、
-                  代表がまず起き上がり、お客様と共に繁栄する未来を創造する。
+                  代表がまず起き上がる。トヨタ整備士から物販企業を経た実体験をもとに、信頼の関係づくりを第一として取り組みます。静岡県清水区出身の代表田形康貴が、令和2年の設立から5期目を迎え、与え続けることで縁を太くする経営哲学のもと、お客様と共に繁栄する持続可能な未来を創造していきます。
                 </p>
               </div>
             </div>

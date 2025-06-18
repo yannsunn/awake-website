@@ -61,7 +61,7 @@ const HeroSection = memo(function HeroSection() {
             variants={commonAnimations.fadeInUp}
             className="text-xl md:text-2xl text-gray-600 mb-12 font-light leading-relaxed"
           >
-            デジタルソリューションで、新しい価値を創造する
+            弊社とつながるすべての人に感謝と繁栄を
           </motion.p>
           
           {/* Services Grid - Ultra Optimized */}
