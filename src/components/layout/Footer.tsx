@@ -23,10 +23,18 @@ const Footer = memo(function Footer() {
             </div>
           </div>
           
-          {/* Services */}
+          {/* Services & Company */}
           <div>
-            <h3 className="text-lg font-medium text-white mb-4">サービス</h3>
+            <h3 className="text-lg font-medium text-white mb-4">サービス・会社情報</h3>
             <ul className="space-y-3">
+              <li>
+                <Link 
+                  href="/about" 
+                  className="text-gray-400 hover:text-white transition-colors text-sm"
+                >
+                  会社概要・代表挨拶
+                </Link>
+              </li>
               {Object.values(COMPANY_DATA.services.details).map((service, index) => (
                 <li key={index}>
                   <Link 

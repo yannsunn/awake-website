@@ -49,6 +49,13 @@ const Header = memo(function Header() {
           
           <nav className="hidden md:flex items-center space-x-8" role="navigation" aria-label="メインナビゲーション">
             <Link 
+              href="/about" 
+              className="text-gray-700 hover:text-gray-900 transition-colors font-medium"
+            >
+              会社概要
+            </Link>
+            
+            <Link 
               href={isHomePage ? "#company-info" : "/#company-info"} 
               className="text-gray-700 hover:text-gray-900 transition-colors font-medium"
             >
@@ -109,6 +116,14 @@ const Header = memo(function Header() {
         {isMenuOpen && (
           <div className="md:hidden border-t border-gray-200 py-4">
             <nav className="flex flex-col space-y-4">
+              <Link 
+                href="/about"
+                className="text-gray-700 hover:text-gray-900 transition-colors font-medium"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                会社概要
+              </Link>
+              
               <Link 
                 href={isHomePage ? "#company-info" : "/#company-info"}
                 className="text-gray-700 hover:text-gray-900 transition-colors font-medium"
