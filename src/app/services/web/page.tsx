@@ -120,7 +120,7 @@ const WebServicePage = memo(function WebServicePage() {
             variants={staggerContainer}
             initial="hidden"
             whileInView="visible"
-            viewport={{{ once: true, amount: 0.2 }}}
+            viewport={{ once: true, amount: 0.2 }}
           >
             <motion.div variants={fadeInUp} className="text-center mb-16">
               <h2 className="text-3xl font-light text-gray-900 mb-4">
@@ -178,7 +178,7 @@ const WebServicePage = memo(function WebServicePage() {
             variants={staggerContainer}
             initial="hidden"
             whileInView="visible"
-            viewport={{{ once: true, amount: 0.2 }}}
+            viewport={{ once: true, amount: 0.2 }}
           >
             <motion.div variants={fadeInUp} className="text-center mb-16">
               <h2 className="text-3xl font-light text-gray-900 mb-4">
@@ -236,7 +236,7 @@ const WebServicePage = memo(function WebServicePage() {
             variants={fadeIn}
             initial="hidden"
             whileInView="visible"
-            viewport={{{ once: true, amount: 0.2 }}}
+            viewport={{ once: true, amount: 0.2 }}
           >
             <h2 className="text-3xl font-light text-gray-900 mb-6">
               まずはお気軽にご相談ください

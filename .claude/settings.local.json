@@ -67,7 +67,8 @@
       "WebFetch(domain:www.toyota-battery.com)",
       "Bash(npx next-bundle-analyzer:*)",
       "Bash(npm ls:*)",
-      "Bash(git clean:*)"
+      "Bash(git clean:*)",
+      "Bash(npx vercel:*)"
     ],
     "deny": []
   }
