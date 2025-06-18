@@ -175,7 +175,7 @@ export const PricingCard = memo(function PricingCard({
   plan: {
     name: string
     price: string
-    features: readonly string[]
+    features: string[]
     duration?: string
   }
   featured?: boolean

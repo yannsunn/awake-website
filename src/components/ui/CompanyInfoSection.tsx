@@ -51,7 +51,7 @@ const CompanyInfoSection = memo(function CompanyInfoSection() {
                 <div>
                   <h4 className="font-medium text-gray-900 mb-1">事業内容</h4>
                   <p className="text-gray-600">
-                    {COMPANY_DATA.services.join('、')}
+                    {COMPANY_DATA.services.list.join('、')}
                   </p>
                 </div>
               </div>
@@ -102,7 +102,7 @@ const CompanyInfoSection = memo(function CompanyInfoSection() {
               <div className="bg-gray-50 rounded-lg p-4">
                 <h4 className="font-medium text-gray-900 mb-2">サービス範囲</h4>
                 <ul className="text-sm text-gray-600 space-y-1">
-                  {COMPANY_DATA.services.map((service, index) => (
+                  {COMPANY_DATA.services.list.map((service, index) => (
                     <li key={index}>• {service}</li>
                   ))}
                 </ul>
