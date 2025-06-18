@@ -176,7 +176,7 @@ export default function VideoServicePage() {
                   ブランド価値を高める<br />高品質動画制作
                 </h1>
                 <p className="text-xl text-white/90 mb-8 leading-relaxed">
-                  YouTube・SNS最適化で視聴者の心を残み、エンゲージメント向上。<br />
+                  弊社とつながるすべての人に感謝と繁栄を。信頼の関係づくりで共に成長し、YouTube・SNS最適化で視聴者の心を掴み、エンゲージメント向上を実現します。<br />
                   プロ品質編集で動画マーケティングを最大化。
                 </p>
                 <Link 
