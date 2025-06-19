@@ -4,7 +4,7 @@ import { memo } from 'react'
 import { ArrowRight } from 'lucide-react'
 import Link from 'next/link'
 import { COMPANY_DATA } from './company-data'
-import Button from '@/components/ui/Button'
+import AccessibleButton from '@/components/ui/AccessibleButton'
 
 // 🚀 UNIFIED COMPONENTS - 重複撲滅完了！
 
@@ -28,7 +28,7 @@ export const CTAButton = memo(function CTAButton({
     rel: 'noopener noreferrer'
   } : {}
   
-  return <Button href={href} variant={variant} showArrow className={className} {...externalLinkProps} {...props}>{children}</Button>
+  return <AccessibleButton href={href} variant={variant} showArrow className={className} {...externalLinkProps} {...props}>{children}</AccessibleButton>
 })
 
 // ✨ Service Card Component - Reusable everywhere
@@ -74,29 +74,29 @@ export const ContactMethod = memo(function ContactMethod({
   title,
   content,
   link,
-  priority = false
+  highlighted = false
 }: {
   icon: React.ReactNode
   title: string
   content: string
   link?: string
-  priority?: boolean
+  highlighted?: boolean
 }) {
   const ContentWrapper = link ? 'a' : 'div'
-  const wrapperProps = link ? { href: link, className: 'hover:text-gray-900 transition-colors' } : {}
+  const wrapperProps = link ? { href: link, className: 'hover:text-gray-900' } : {}
 
   return (
-    <div className={`flex items-start ${priority ? 'p-6 bg-green-50 border border-green-200 rounded-lg' : ''}`}>
+    <div className={`flex items-start ${highlighted ? 'p-6 bg-green-50 border border-green-200 rounded-lg' : ''}`}>
       <div className={`w-12 h-12 rounded-lg flex items-center justify-center mr-4 mt-1 ${
-        priority ? 'bg-green-100' : 'bg-gray-100'
+        highlighted ? 'bg-green-100' : 'bg-gray-100'
       }`}>
         {icon}
       </div>
       <div>
-        <h4 className={`font-medium mb-1 ${priority ? 'text-green-800' : 'text-gray-900'}`}>
+        <h4 className={`font-medium mb-1 ${highlighted ? 'text-green-800' : 'text-gray-900'}`}>
           {title}
         </h4>
-        <ContentWrapper {...wrapperProps} className={`${priority ? 'text-green-700' : 'text-gray-600'} ${link ? 'hover:text-gray-900 transition-colors' : ''}`}>
+        <ContentWrapper {...wrapperProps} className={`${highlighted ? 'text-green-700' : 'text-gray-600'} ${link ? 'hover:text-gray-900' : ''}`}>
           {content}
         </ContentWrapper>
       </div>
@@ -144,7 +144,7 @@ export const FeatureHighlight = memo(function FeatureHighlight({
   metric?: string
 }) {
   return (
-    <div className="text-center hover:shadow-lg transition-shadow duration-300 p-6 rounded-xl">
+    <div className="text-center hover:shadow-lg p-6 rounded-xl">
       <div className="w-16 h-16 bg-gray-900 rounded-full flex items-center justify-center mx-auto mb-4">
         {icon}
       </div>
@@ -172,7 +172,7 @@ export const PricingCard = memo(function PricingCard({
 }) {
   return (
     <div className={`
-      bg-white rounded-2xl p-8 shadow-sm border hover:shadow-xl transition-shadow duration-300
+      bg-white rounded-2xl p-8 shadow-sm border hover:shadow-xl
       ${featured ? 'border-gray-900 ring-2 ring-gray-900 ring-opacity-10' : 'border-gray-200'}
     `}>
       {featured && (

@@ -249,7 +249,7 @@ export default function AboutPage() {
         
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 sm:gap-6">
           {promises.map((promise, index) => (
-            <div key={index} className="text-center p-4 sm:p-6 rounded-xl hover:shadow-lg transition-shadow duration-300">
+            <div key={index} className="text-center p-4 sm:p-6 rounded-xl hover:shadow-lg">
               <div className="text-3xl sm:text-4xl mb-4">{promise.icon}</div>
               <h3 className="text-base sm:text-lg font-medium text-gray-900 mb-2">{promise.title}</h3>
               <p className="text-xs sm:text-sm text-gray-600">{promise.description}</p>
@@ -295,7 +295,7 @@ export default function AboutPage() {
           {values.map((value, index) => {
             const IconComponent = value.icon
             return (
-              <div key={index} className="flex items-start p-6 sm:p-8 bg-white rounded-xl shadow-sm hover:shadow-lg transition-shadow duration-300">
+              <div key={index} className="flex items-start p-6 sm:p-8 bg-white rounded-xl shadow-sm hover:shadow-lg">
                 <div className="w-16 h-16 bg-gray-900 rounded-full flex items-center justify-center mr-6 flex-shrink-0">
                   <IconComponent className="h-8 w-8 text-white" />
                 </div>
