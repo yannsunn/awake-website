@@ -1,9 +1,10 @@
 import type { Metadata } from 'next'
-import Header from '@/components/layout/Header'
-import Footer from '@/components/layout/Footer'
-import { User, Target, Heart, Award, Users, Zap } from 'lucide-react'
-import Image from 'next/image'
+import { User, Target, Heart, Award, Users, Zap, CheckCircle } from 'lucide-react'
 import { COMPANY_DATA } from '@/lib/company-data'
+import PageTemplate, { ContentSection, PageHeader } from '@/components/layout/PageTemplate'
+import OptimizedImage from '@/components/ui/OptimizedImage'
+import AccessibleButton from '@/components/ui/AccessibleButton'
+import { createArticleSchema } from '@/lib/enhanced-schema'
 
 export const metadata: Metadata = {
   title: "会社概要・代表挨拶 | 株式会社Awake",
@@ -17,6 +18,7 @@ export const metadata: Metadata = {
   },
 }
 
+// 🚀 企業価値観データ
 const values = [
   {
     icon: Target,
@@ -40,257 +42,304 @@ const values = [
   }
 ]
 
+// 🚀 私たちの約束データ
+const promises = [
+  {
+    icon: "💼",
+    title: "品質保証",
+    description: "高品質なサービス提供をお約束"
+  },
+  {
+    icon: "⚡",
+    title: "迅速対応",
+    description: "お客様のご要望に素早く対応"
+  },
+  {
+    icon: "🤝",
+    title: "長期サポート",
+    description: "末永くお客様をサポート"
+  },
+  {
+    icon: "📈",
+    title: "成長支援",
+    description: "お客様のビジネス成長を支援"
+  },
+  {
+    icon: "🔒",
+    title: "信頼性",
+    description: "確実で信頼できるサービス"
+  }
+]
+
+// 🚀 サービス特徴データ
+const features = [
+  {
+    title: "技術的専門性",
+    items: [
+      "最新のWeb技術とフレームワーク",
+      "AI・機械学習の実践的活用",
+      "セキュリティ対策とパフォーマンス最適化",
+      "モバイルファーストのレスポンシブデザイン"
+    ]
+  },
+  {
+    title: "ビジネス理解",
+    items: [
+      "業界特有の課題と解決策の提案",
+      "ROI最大化を意識した施策立案",
+      "競合分析と差別化戦略",
+      "長期的なビジネス成長の支援"
+    ]
+  },
+  {
+    title: "サポート体制",
+    items: [
+      "専任担当者による継続的サポート",
+      "迅速なレスポンスと問題解決",
+      "定期的な成果レポートと改善提案",
+      "24時間365日の緊急時対応"
+    ]
+  }
+]
+
 export default function AboutPage() {
+  // 構造化データ
+  const articleSchema = createArticleSchema({
+    title: "会社概要・代表挨拶 | 株式会社Awake",
+    description: "株式会社Awakeの会社概要と代表取締役からのメッセージをご紹介",
+    publishDate: "2020-01-01",
+    modifyDate: new Date().toISOString(),
+    author: COMPANY_DATA.basic.ceo,
+    image: "/assets/images/ogp.jpg"
+  })
+
+  const breadcrumbs = [
+    { name: "ホーム", url: "/" },
+    { name: "会社概要", url: "/about" }
+  ]
+
   return (
-    <>
-      <Header />
-      
-      <main role="main" className="pt-16">
-        {/* Hero Section - Toyota Style */}
-        <section className="py-12 sm:py-16 lg:py-12 sm:py-16 lg:py-20 bg-gradient-to-br from-gray-50 via-white to-gray-100">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h1 className="text-3xl sm:text-4xl md:text-5xl font-light text-gray-900 mb-6 tracking-tight">
-              会社概要
-            </h1>
-            <p className="text-lg sm:text-xl text-gray-600 font-light leading-relaxed">
-              信頼の絆で、共に成長し続ける企業<br />
-              株式会社Awakeは、美しいコーポレートサイト制作と先進的なAI導入支援を通じて、お客様企業の成長と発展を支えるテクノロジーパートナーです。
-            </p>
-          </div>
-        </section>
+    <PageTemplate
+      title="会社概要"
+      description="株式会社Awakeの企業情報と代表メッセージ"
+      breadcrumbs={breadcrumbs}
+    >
+      {/* Article Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(articleSchema)
+        }}
+      />
 
-        {/* CEO Message Section */}
-        <section className="py-12 sm:py-16 lg:py-20 bg-white">
-          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:p-8 sm:gap-12 items-center">
-              <div>
-                <div className="flex items-center mb-6">
-                  <User className="h-8 w-8 text-gray-900 mr-3" />
-                  <span className="text-gray-900 font-semibold">CEO Message</span>
+      {/* Hero Section */}
+      <PageHeader
+        title="会社概要"
+        subtitle="信頼の絆で、共に成長し続ける企業"
+        className="bg-gradient-to-br from-gray-50 via-white to-gray-100"
+      >
+        <p className="text-base sm:text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
+          株式会社Awakeは、美しいコーポレートサイト制作と先進的なAI導入支援を通じて、<br className="hidden sm:block" />
+          お客様企業の成長と発展を支えるテクノロジーパートナーです。
+        </p>
+      </PageHeader>
+
+      {/* CEO Message Section */}
+      <ContentSection ariaLabel="代表メッセージ">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12">
+          <div>
+            <div className="bg-gray-100 rounded-2xl p-6 sm:p-8 mb-8">
+              <div className="flex items-center mb-6">
+                <div className="w-10 sm:w-12 h-10 sm:h-12 bg-gray-900 rounded-full flex items-center justify-center mr-3 sm:mr-4">
+                  <User className="h-6 w-6 text-white" />
                 </div>
-                <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-                  代表挨拶
-                </h2>
-                <div className="space-y-6 text-gray-700 leading-relaxed">
-                  <div className="mb-4">
-                    <p className="font-semibold text-gray-900 mb-2">代表取締役CEO　田形 康貴</p>
-                    <p className="text-lg text-gray-600">お客様、パートナー企業の皆様、そして当社に関わるすべての方々へ</p>
-                  </div>
-                  <p>
-                    私がトヨタ系ディーラーで整備士として働いていた頃、一台一台の車に込められたお客様の想いと向き合う中で、「信頼」という価値の重みを学びました。その後、物販企業を経営する中で、ビジネスの本質は技術やサービスの提供だけでなく、人と人との信頼関係にあることを確信しました。
-                  </p>
-                  <p>
-                    2020年に株式会社Awakeを設立し、5期目を迎えた今、私たちが大切にしているのは「与え続けることで縁を太くする」という理念です。これは単なる美辞麗句ではなく、実体験から生まれた経営の核心です。
-                  </p>
-                  <p>
-                    現代は、企業ウェブサイトが会社の顔となり、AI活用が競争力を左右する時代です。しかし、どんなに技術が進化しても、その根底にあるべきは人と人との信頼関係だと私は信じています。
-                  </p>
-                  <p>
-                    私たちは、単なるサービス提供者ではありません。お客様の課題を自らの課題として捉え、共に解決策を模索し、成功を分かち合うパートナーでありたいと願っています。お客様の繁栄なくして、私たちの成長はありません。この想いを胸に、これからも誠実に、そして情熱を持って事業に取り組んでまいります。
-                  </p>
-                  <div className="pt-6 border-t border-gray-200">
-                    <p className="text-xl font-semibold text-gray-900 mb-2">つながるすべての人に、感謝と繁栄を。</p>
-                    <p className="text-gray-600">この言葉を実現するために、私たちは今日も全力で走り続けます。</p>
-                  </div>
+                <div>
+                  <h3 className="text-base sm:text-lg font-semibold text-gray-900">代表挨拶</h3>
+                  <p className="text-sm text-gray-600">Message from CEO</p>
                 </div>
               </div>
-              <div className="lg:pl-8">
-                <div className="bg-gray-100 rounded-2xl p-6 sm:p-8 text-center">
-                  <div className="w-32 h-32 bg-gray-900 rounded-full flex items-center justify-center mx-auto mb-6">
-                    <User className="h-16 w-16 text-white" />
-                  </div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-2">田形 康貴</h3>
-                  <p className="text-gray-900 font-semibold mb-4">代表取締役CEO</p>
-                  <p className="text-gray-600 text-sm">
-                    静岡県清水区出身。トヨタの整備士を経て物販会社を起業。
-                    2020年（令和2年）に株式会社Awakeを設立し、現在5期目（令和6年度）。
-                    信頼の関係づくりを第一に、お客様の繁栄を共に目指している。
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Mission & Vision Section */}
-        <section className="py-12 sm:py-16 lg:py-20 bg-gray-50">
-          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-8 sm:mb-12 lg:mb-16">
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-                ミッション・ビジョン
-              </h2>
-              <p className="text-lg sm:text-xl text-gray-600">
-                私たちが目指す未来と大切にしている価値観
-              </p>
             </div>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:p-8 sm:gap-12 mb-8 sm:mb-12 lg:mb-16">
-              <div className="text-center p-6 sm:p-8 bg-white rounded-2xl shadow-sm border hover:shadow-lg transition-shadow duration-300">
-                <div className="w-16 h-16 bg-gray-900 rounded-full flex items-center justify-center mx-auto mb-6">
-                  <Target className="h-8 w-8 text-white" />
-                </div>
-                <h3 className="text-xl sm:text-2xl font-light text-gray-900 mb-4">ミッション</h3>
-                <p className="text-lg font-semibold text-gray-800 mb-3">つながるすべての人に、感謝と繁栄を</p>
-                <p className="text-gray-600 leading-relaxed">
-                  私たちは、美しいコーポレートサイト制作と革新的なAI導入支援を通じて、すべての企業がデジタル時代に輝ける未来を創造します。技術の力で可能性を広げ、信頼の絆で成功を確かなものにします。
-                </p>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+              代表挨拶
+            </h2>
+            
+            <div className="space-y-6 text-gray-700 leading-relaxed">
+              <div className="mb-4">
+                <p className="font-semibold text-gray-900 mb-2">代表取締役CEO　{COMPANY_DATA.basic.ceo}</p>
+                <p className="text-base sm:text-lg text-gray-600">お客様、パートナー企業の皆様、そして当社に関わるすべての方々へ</p>
               </div>
               
-              <div className="text-center p-6 sm:p-8 bg-white rounded-2xl shadow-sm border hover:shadow-lg transition-shadow duration-300">
-                <div className="w-16 h-16 bg-gray-900 rounded-full flex items-center justify-center mx-auto mb-6">
-                  <Award className="h-8 w-8 text-white" />
-                </div>
-                <h3 className="text-xl sm:text-2xl font-light text-gray-900 mb-4">ビジョン</h3>
-                <p className="text-lg font-semibold text-gray-800 mb-3">技術と信頼の融合で、持続可能な共栄社会を実現する</p>
-                <p className="text-gray-600 leading-relaxed">
-                  急速に進化するデジタル社会において、私たちは最先端技術の提供者であると同時に、お客様に寄り添う伴走者でありたいと考えています。「与え続けることで縁を太くする」という理念のもと、短期的な成果よりも長期的な関係性を重視し、お客様と共に成長し続ける企業を目指します。
-                </p>
+              <p className="text-sm sm:text-base">
+                私がトヨタ系ディーラーで整備士として働いていた頃、一台一台の車に込められたお客様の想いと向き合う中で、「信頼」という価値の重みを学びました。その後、物販企業を経営する中で、ビジネスの本質は技術やサービスの提供だけでなく、人と人との信頼関係にあることを確信しました。
+              </p>
+              
+              <p className="text-sm sm:text-base">
+                2020年に株式会社Awakeを設立し、5期目を迎えた今、私たちが大切にしているのは「与え続けることで縁を太くする」という理念です。これは単なる美辞麗句ではなく、実体験から生まれた経営の核心です。
+              </p>
+              
+              <p className="text-sm sm:text-base">
+                現代は、企業ウェブサイトが会社の顔となり、AI活用が競争力を左右する時代です。しかし、どんなに技術が進化しても、その根底にあるべきは人と人との信頼関係だと私は信じています。
+              </p>
+              
+              <p className="text-sm sm:text-base">
+                私たちは、単なるサービス提供者ではありません。お客様の課題を自らの課題として捉え、共に解決策を模索し、成功を分かち合うパートナーでありたいと願っています。お客様の繁栄なくして、私たちの成長はありません。この想いを胸に、これからも誠実に、そして情熱を持って事業に取り組んでまいります。
+              </p>
+              
+              <div className="pt-6 border-t border-gray-200">
+                <p className="text-lg sm:text-xl font-semibold text-gray-900 mb-2">つながるすべての人に、感謝と繁栄を。</p>
+                <p className="text-sm sm:text-base text-gray-600">この言葉を実現するために、私たちは今日も全力で走り続けます。</p>
               </div>
             </div>
           </div>
-        </section>
-
-        {/* Our Promise */}
-        <section className="py-12 sm:py-16 lg:py-20 bg-white">
-          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-8 sm:mb-12 lg:mb-16">
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-                私たちの約束
-              </h2>
-            </div>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 sm:p-8">
-              {[
-                {
-                  number: "1",
-                  title: "真のパートナーシップ",
-                  description: "お客様の成功を自らの成功と捉え、課題解決に全力で取り組みます"
-                },
-                {
-                  number: "2", 
-                  title: "継続的な価値創造",
-                  description: "導入後も伴走し、変化する時代に合わせた最適なソリューションを提供し続けます"
-                },
-                {
-                  number: "3",
-                  title: "誠実な関係構築", 
-                  description: "透明性を保ち、約束を守り、期待を超える成果を追求します"
-                },
-                {
-                  number: "4",
-                  title: "革新への挑戦",
-                  description: "最新技術を積極的に取り入れ、お客様に新たな可能性を提案します"
-                },
-                {
-                  number: "5",
-                  title: "感謝の循環",
-                  description: "いただいた信頼に感謝し、それ以上の価値でお返しすることで、豊かな関係を築きます"
-                }
-              ].map((promise, index) => (
-                <div key={index} className="text-center p-6 rounded-xl hover:shadow-lg transition-shadow duration-300">
-                  <div className="w-16 h-16 bg-gray-900 text-white rounded-full flex items-center justify-center mx-auto mb-4 text-xl font-bold">
-                    {promise.number}
-                  </div>
-                  <h3 className="text-lg font-medium text-gray-900 mb-3">
-                    {promise.title}
-                  </h3>
-                  <p className="text-gray-600 text-sm leading-relaxed">
-                    {promise.description}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Company Values */}
-        <section className="py-12 sm:py-16 lg:py-20 bg-gray-50">
-          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-8 sm:mb-12 lg:mb-16">
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-                私たちの価値観
-              </h2>
-              <p className="text-lg sm:text-xl text-gray-600">
-                日々の業務で大切にしている4つの価値観
+          
+          <div className="lg:pl-8">
+            <div className="bg-gray-100 rounded-2xl p-6 sm:p-8 text-center">
+              <div className="w-32 h-32 bg-gray-900 rounded-full flex items-center justify-center mx-auto mb-6">
+                <User className="h-16 w-16 text-white" />
+              </div>
+              <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-2">{COMPANY_DATA.basic.ceo}</h3>
+              <p className="text-base sm:text-lg text-gray-900 font-semibold mb-4">代表取締役CEO</p>
+              <p className="text-xs sm:text-sm text-gray-600">
+                静岡県清水区出身。トヨタの整備士を経て物販会社を起業。
+                2020年（令和2年）に株式会社Awakeを設立し、現在5期目（令和6年度）。
+                信頼の関係づくりを第一に、お客様の繁栄を共に目指している。
               </p>
             </div>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 sm:p-8">
-              {values.map((value, index) => {
-                const IconComponent = value.icon
-                return (
-                  <div key={index} className="text-center p-6 rounded-xl hover:shadow-lg transition-shadow duration-300">
-                    <div className="w-16 h-16 bg-gray-900 rounded-full flex items-center justify-center mx-auto mb-4">
-                      <IconComponent className="h-8 w-8 text-white" />
-                    </div>
-                    <h3 className="text-lg font-medium text-gray-900 mb-3">
-                      {value.title}
-                    </h3>
-                    <p className="text-gray-600 text-sm leading-relaxed">
-                      {value.description}
-                    </p>
-                  </div>
-                )
-              })}
-            </div>
           </div>
-        </section>
+        </div>
+      </ContentSection>
 
-        {/* Company Overview */}
-        <section className="py-12 sm:py-16 lg:py-20 bg-gray-50">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-12">
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-                会社概要
-              </h2>
-              <p className="text-lg text-gray-600 font-medium">
-                令和2年設立 | 信頼と革新で、共に未来を創る
-              </p>
-            </div>
-            
-            <div className="bg-white rounded-2xl shadow-sm border p-6 sm:p-8">
-              <dl className="grid grid-cols-1 gap-6">
-                <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                  <dt className="text-sm font-semibold text-gray-900">会社名</dt>
-                  <dd className="sm:col-span-2 text-sm text-gray-700">{COMPANY_DATA.basic.name}（{COMPANY_DATA.basic.nameEn}）</dd>
-                </div>
-                <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                  <dt className="text-sm font-semibold text-gray-900">代表取締役</dt>
-                  <dd className="sm:col-span-2 text-sm text-gray-700">{COMPANY_DATA.basic.ceo}</dd>
-                </div>
-                <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                  <dt className="text-sm font-semibold text-gray-900">所在地</dt>
-                  <dd className="sm:col-span-2 text-sm text-gray-700">{COMPANY_DATA.contact.address.postal} {COMPANY_DATA.contact.address.full}</dd>
-                </div>
-                <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                  <dt className="text-sm font-semibold text-gray-900">電話番号</dt>
-                  <dd className="sm:col-span-2 text-sm text-gray-700">{COMPANY_DATA.contact.phone}</dd>
-                </div>
-                <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                  <dt className="text-sm font-semibold text-gray-900">メールアドレス</dt>
-                  <dd className="sm:col-span-2 text-sm text-gray-700">{COMPANY_DATA.contact.email}</dd>
-                </div>
-                <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                  <dt className="text-sm font-semibold text-gray-900">営業時間</dt>
-                  <dd className="sm:col-span-2 text-sm text-gray-700">{COMPANY_DATA.contact.businessHours.weekdays}</dd>
-                </div>
-                <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                  <dt className="text-sm font-semibold text-gray-900">事業内容</dt>
-                  <dd className="sm:col-span-2 text-sm text-gray-700">
-                    <ul className="list-disc list-inside space-y-1">
-                      {COMPANY_DATA.services.list.map((service, index) => (
-                        <li key={index}>{service}</li>
-                      ))}
-                    </ul>
-                  </dd>
-                </div>
-              </dl>
-            </div>
+      {/* Mission & Vision Section */}
+      <ContentSection className="bg-gray-50" ariaLabel="ミッション・ビジョン">
+        <div className="text-center mb-8 sm:mb-12 lg:mb-16">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            ミッション・ビジョン
+          </h2>
+        </div>
+        
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-12">
+          <div className="bg-white rounded-2xl p-6 sm:p-8 shadow-lg">
+            <h3 className="text-xl sm:text-2xl font-light text-gray-900 mb-4">
+              ミッション
+            </h3>
+            <p className="text-sm sm:text-base text-gray-700 leading-relaxed">
+              私たちは、最新のデジタル技術と人間中心の思考を融合させ、お客様の真の課題を解決することで、持続可能な価値を創造し続けます。
+            </p>
           </div>
-        </section>
-      </main>
-      
-      <Footer />
-    </>
+          
+          <div className="bg-white rounded-2xl p-6 sm:p-8 shadow-lg">
+            <h3 className="text-xl sm:text-2xl font-light text-gray-900 mb-4">
+              ビジョン
+            </h3>
+            <p className="text-sm sm:text-base text-gray-700 leading-relaxed">
+              すべての企業がデジタルの力で輝き、つながるすべての人が感謝と繁栄を共有できる、より良い社会の実現を目指します。
+            </p>
+          </div>
+        </div>
+      </ContentSection>
+
+      {/* Our Promise Section */}
+      <ContentSection ariaLabel="私たちの約束">
+        <div className="text-center mb-8 sm:mb-12 lg:mb-16">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-light text-gray-900 mb-4">
+            私たちの約束
+          </h2>
+        </div>
+        
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 sm:gap-6">
+          {promises.map((promise, index) => (
+            <div key={index} className="text-center p-4 sm:p-6 rounded-xl hover:shadow-lg transition-shadow duration-300">
+              <div className="text-3xl sm:text-4xl mb-4">{promise.icon}</div>
+              <h3 className="text-base sm:text-lg font-medium text-gray-900 mb-2">{promise.title}</h3>
+              <p className="text-xs sm:text-sm text-gray-600">{promise.description}</p>
+            </div>
+          ))}
+        </div>
+      </ContentSection>
+
+      {/* Service Features Section */}
+      <ContentSection className="bg-gray-50" ariaLabel="サービスの特徴">
+        <div className="text-center mb-8 sm:mb-12 lg:mb-16">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-light text-gray-900 mb-4">
+            サービスの特徴
+          </h2>
+        </div>
+        
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
+          {features.map((feature, index) => (
+            <div key={index} className="bg-white rounded-xl p-6 sm:p-8 shadow-sm">
+              <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-4">{feature.title}</h3>
+              <ul className="space-y-3" role="list">
+                {feature.items.map((item, idx) => (
+                  <li key={idx} className="flex items-start">
+                    <CheckCircle className="h-5 w-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" />
+                    <span className="text-xs sm:text-sm text-gray-600">{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+      </ContentSection>
+
+      {/* Company Values Section */}
+      <ContentSection ariaLabel="企業価値観">
+        <div className="text-center mb-8 sm:mb-12 lg:mb-16">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-light text-gray-900 mb-4">
+            企業価値観
+          </h2>
+        </div>
+        
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-12">
+          {values.map((value, index) => {
+            const IconComponent = value.icon
+            return (
+              <div key={index} className="flex items-start p-6 sm:p-8 bg-white rounded-xl shadow-sm hover:shadow-lg transition-shadow duration-300">
+                <div className="w-16 h-16 bg-gray-900 rounded-full flex items-center justify-center mr-6 flex-shrink-0">
+                  <IconComponent className="h-8 w-8 text-white" />
+                </div>
+                <div>
+                  <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-3">{value.title}</h3>
+                  <p className="text-sm sm:text-base text-gray-600 leading-relaxed">{value.description}</p>
+                </div>
+              </div>
+            )
+          })}
+        </div>
+      </ContentSection>
+
+      {/* Contact CTA Section */}
+      <ContentSection className="bg-gradient-to-br from-gray-900 to-gray-800 text-white">
+        <div className="text-center">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-light mb-6">
+            一緒に成長しませんか？
+          </h2>
+          <p className="text-base sm:text-lg text-gray-300 mb-8 max-w-3xl mx-auto leading-relaxed">
+            私たちは、お客様のビジネス成功を真剣に考えるパートナーです。<br className="hidden sm:block" />
+            まずはお気軽にご相談ください。
+          </p>
+          
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <AccessibleButton
+              href="/#contact"
+              variant="secondary"
+              className="bg-white text-gray-900 hover:bg-gray-100"
+              ariaLabel="お問い合わせページに移動"
+            >
+              お問い合わせ
+            </AccessibleButton>
+            <AccessibleButton
+              href="/services/web"
+              variant="outline"
+              className="border-white text-white hover:bg-white hover:text-gray-900"
+              ariaLabel="サービス詳細ページに移動"
+            >
+              サービス一覧
+            </AccessibleButton>
+          </div>
+        </div>
+      </ContentSection>
+    </PageTemplate>
   )
 }
