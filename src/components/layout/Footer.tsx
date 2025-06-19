@@ -23,16 +23,16 @@ const Footer = memo(function Footer() {
             </div>
           </div>
           
-          {/* Services & Company */}
+          {/* Services & Support */}
           <div>
-            <h3 className="text-lg font-medium text-white mb-4">サービス・会社情報</h3>
+            <h3 className="text-lg font-medium text-white mb-4">サービス・サポート</h3>
             <ul className="space-y-3">
               <li>
                 <Link 
                   href="/about" 
                   className="text-gray-400 hover:text-white transition-colors text-sm"
                 >
-                  会社概要・代表挨拶
+                  会社概要
                 </Link>
               </li>
               {Object.values(COMPANY_DATA.services.details).map((service, index) => (
@@ -45,6 +45,14 @@ const Footer = memo(function Footer() {
                   </Link>
                 </li>
               ))}
+              <li>
+                <Link 
+                  href="/faq" 
+                  className="text-gray-400 hover:text-white transition-colors text-sm"
+                >
+                  よくある質問
+                </Link>
+              </li>
             </ul>
           </div>
           
