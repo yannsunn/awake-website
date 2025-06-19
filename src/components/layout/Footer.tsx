@@ -30,7 +30,7 @@ const Footer = memo(function Footer() {
               <li>
                 <Link 
                   href="/about" 
-                  className="text-gray-400 hover:text-white transition-colors text-sm"
+                  className="text-gray-400 hover:text-white  text-sm"
                 >
                   会社概要
                 </Link>
@@ -39,7 +39,7 @@ const Footer = memo(function Footer() {
                 <li key={index}>
                   <Link 
                     href={service.href} 
-                    className="text-gray-400 hover:text-white transition-colors text-sm"
+                    className="text-gray-400 hover:text-white  text-sm"
                     {...(service.href.startsWith('http') && {
                       target: '_blank',
                       rel: 'noopener noreferrer'
@@ -52,7 +52,7 @@ const Footer = memo(function Footer() {
               <li>
                 <Link 
                   href="/faq" 
-                  className="text-gray-400 hover:text-white transition-colors text-sm"
+                  className="text-gray-400 hover:text-white  text-sm"
                 >
                   よくある質問
                 </Link>
@@ -72,7 +72,7 @@ const Footer = memo(function Footer() {
               </p>
               <Link 
                 href="/#contact"
-                className="inline-block bg-white text-gray-900 px-6 py-3 rounded-lg text-sm font-medium hover:bg-gray-100 transition-colors min-h-[44px]"
+                className="inline-block bg-white text-gray-900 px-6 py-3 rounded-lg text-sm font-medium hover:bg-gray-100  min-h-[44px]"
               >
                 お問い合わせ
               </Link>

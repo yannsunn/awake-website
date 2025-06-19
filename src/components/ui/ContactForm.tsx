@@ -47,7 +47,7 @@ const ContactForm = memo(function ContactForm() {
   }, [])
 
   return (
-    <div className="bg-white rounded-2xl p-8 shadow-sm border border-gray-100 transform transition-all duration-300 hover:shadow-lg">
+    <div className="bg-white rounded-2xl p-8 shadow-sm border border-gray-100 transform all duration-300 hover:shadow-lg">
       <h3 className="text-2xl font-medium text-gray-900 mb-6">メールでお問い合わせ</h3>
       
       <form onSubmit={handleSubmit} className="space-y-6">
@@ -63,7 +63,7 @@ const ContactForm = memo(function ContactForm() {
               value={formData.name}
               onChange={handleChange}
               required
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-500 focus:border-transparent transition-colors"
+              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-500 focus:border-transparent colors"
               placeholder="山田太郎"
             />
           </div>
@@ -79,7 +79,7 @@ const ContactForm = memo(function ContactForm() {
               value={formData.email}
               onChange={handleChange}
               required
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-500 focus:border-transparent transition-colors"
+              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-500 focus:border-transparent colors"
               placeholder="example@company.com"
             />
           </div>
@@ -96,7 +96,7 @@ const ContactForm = memo(function ContactForm() {
               name="company"
               value={formData.company}
               onChange={handleChange}
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-500 focus:border-transparent transition-colors"
+              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-500 focus:border-transparent colors"
               placeholder="株式会社◯◯"
             />
           </div>
@@ -110,7 +110,7 @@ const ContactForm = memo(function ContactForm() {
               name="service"
               value={formData.service}
               onChange={handleChange}
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-500 focus:border-transparent transition-colors"
+              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-500 focus:border-transparent colors"
             >
               <option value="">選択してください</option>
               <option value="web">ホームページ制作</option>
@@ -132,7 +132,7 @@ const ContactForm = memo(function ContactForm() {
             onChange={handleChange}
             required
             rows={5}
-            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-500 focus:border-transparent transition-colors resize-none"
+            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-500 focus:border-transparent colors resize-none"
             placeholder="プロジェクトの詳細やご質問をお聞かせください..."
           />
         </div>
@@ -161,7 +161,7 @@ const ContactForm = memo(function ContactForm() {
           disabled={isSubmitting}
           className={`
             w-full inline-flex items-center justify-center px-8 py-4 
-            font-medium rounded-lg transition-all duration-200 
+            font-medium rounded-lg all duration-200 
             ${isSubmitting 
               ? 'bg-gray-400 cursor-not-allowed' 
               : 'bg-gray-900 hover:bg-gray-800 shadow-lg hover:shadow-xl'

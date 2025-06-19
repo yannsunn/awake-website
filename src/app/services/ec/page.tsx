@@ -188,7 +188,7 @@ export default function EcServicePage() {
               time: "継続"
             }
           ].map((item, index) => (
-            <div key={index} className="text-center hover:shadow-lg transition-shadow duration-300 p-6 rounded-xl">
+            <div key={index} className="text-center hover:shadow-lg p-6 rounded-xl">
               <div className="w-16 h-16 bg-gray-900 text-white rounded-full flex items-center justify-center mx-auto mb-4 text-xl font-semibold">
                 {item.step}
               </div>

@@ -72,14 +72,14 @@ const HeroSection = memo(function HeroSection() {
               <Link
                 key={index}
                 href={service.href}
-                className="group bg-white rounded-2xl p-6 shadow-sm border border-gray-100 hover:shadow-lg hover:border-gray-200 transition-all duration-200"
+                className="group bg-white rounded-2xl p-6 shadow-sm border border-gray-100 hover:shadow-lg hover:border-gray-200"
                 {...(service.href.startsWith('http') && {
                   target: '_blank',
                   rel: 'noopener noreferrer'
                 })}
               >
                 <div className="text-3xl mb-4">{service.icon}</div>
-                <h3 className="text-lg font-medium text-gray-900 mb-3 group-hover:text-gray-700">
+                <h3 className="text-lg font-medium text-gray-900 mb-3">
                   {service.title}
                 </h3>
                 <p className="text-gray-600 text-sm leading-relaxed">
@@ -93,16 +93,16 @@ const HeroSection = memo(function HeroSection() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link 
               href="#contact" 
-              className="group inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-gray-900 to-gray-800 text-white font-medium rounded-lg hover:from-gray-800 hover:to-gray-700 transition-all duration-200 shadow-lg hover:shadow-xl transform hover:scale-105"
+              className="group inline-flex items-center justify-center px-8 py-4 bg-gray-900 text-white font-medium rounded-lg hover:bg-gray-800 shadow-lg"
             >
               <span>💬</span>
               <span className="ml-2">お問い合わせ</span>
-              <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+              <ArrowRight className="ml-2 h-5 w-5" />
             </Link>
             
             <Link 
               href="/about" 
-              className="inline-flex items-center justify-center px-8 py-4 bg-white text-gray-900 font-medium rounded-lg border border-gray-200 hover:bg-gray-50 hover:border-gray-300 transition-all duration-200"
+              className="inline-flex items-center justify-center px-8 py-4 bg-white text-gray-900 font-medium rounded-lg border border-gray-200 hover:bg-gray-50 hover:border-gray-300"
             >
               会社概要を見る
             </Link>
