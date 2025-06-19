@@ -48,9 +48,9 @@ const Header = memo(function Header() {
   
   // 🚀 ウルトラシンク最適化 - 戦略的サービス配置
   const services = [
-    { href: 'https://portfolio.awakeinc.co.jp/', title: 'ホームページ制作', priority: 1, icon: '🌐' },
-    { href: '/services/ai', title: 'AIコンサルティング', priority: 2, icon: '🤖' },
-    { href: '/services/ec', title: 'Amazon代理店', priority: 3, icon: '🛒' }
+    { href: 'https://portfolio.awakeinc.co.jp/', title: 'ホームページ制作', icon: '🌐' },
+    { href: '/services/ai', title: 'AIコンサルティング', icon: '🤖' },
+    { href: '/services/ec', title: 'Amazon代理店', icon: '🛒' }
   ]
 
   // 🚀 限界突破 - 最適化されたナビゲーション構造
@@ -61,7 +61,7 @@ const Header = memo(function Header() {
   ]
 
   return (
-    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+    <header className={`fixed top-0 left-0 right-0 z-50 ${
       isScrolled 
         ? 'bg-white/95 backdrop-blur-lg border-b border-gray-200 shadow-lg' 
         : 'bg-white border-b border-gray-200'
@@ -71,7 +71,7 @@ const Header = memo(function Header() {
           <div className="flex-shrink-0">
             <Link 
               href="/" 
-              className="text-2xl font-light text-gray-900 hover:text-gray-700 transition-colors"
+              className="text-2xl font-light text-gray-900 hover:text-gray-700"
               aria-label="株式会社Awake ホームページ"
             >
               株式会社Awake
@@ -86,12 +86,12 @@ const Header = memo(function Header() {
                   <div key={index} className="relative" ref={servicesRef}>
                     <button
                       onClick={handleServicesToggle}
-                      className="flex items-center text-gray-700 hover:text-gray-900 transition-all duration-200 font-medium py-2 group hover:scale-105"
+                      className="flex items-center text-gray-700 hover:text-gray-900 font-medium py-2 group"
                       aria-expanded={isServicesOpen}
                     >
                       <span className="mr-1">🚀</span>
                       {item.title}
-                      <ChevronDown className={`ml-1 h-4 w-4 transition-transform duration-200 group-hover:text-gray-900 ${isServicesOpen ? 'rotate-180' : ''}`} />
+                      <ChevronDown className={`ml-1 h-4 w-4 ${isServicesOpen ? 'rotate-180' : ''}`} />
                     </button>
                     
                     {isServicesOpen && (
@@ -103,17 +103,16 @@ const Header = memo(function Header() {
                           <Link
                             key={service.href}
                             href={service.href}
-                            className="flex items-center px-4 py-3 text-gray-700 hover:bg-gradient-to-r hover:from-gray-50 hover:to-blue-50 hover:text-gray-900 transition-all duration-200 group"
+                            className="flex items-center px-4 py-3 text-gray-700 hover:bg-gray-50 hover:text-gray-900 group"
                             onClick={() => setIsServicesOpen(false)}
                             {...(service.href.startsWith('http') && {
                               target: '_blank',
                               rel: 'noopener noreferrer'
                             })}
                           >
-                            <span className="text-lg mr-3 group-hover:scale-110 transition-transform">{service.icon}</span>
+                            <span className="text-lg mr-3">{service.icon}</span>
                             <div>
                               <div className="font-medium">{service.title}</div>
-                              <div className="text-xs text-gray-500">優先度: {service.priority}</div>
                             </div>
                           </Link>
                         ))}
@@ -126,7 +125,7 @@ const Header = memo(function Header() {
                   <Link 
                     key={index}
                     href={item.href} 
-                    className="text-gray-700 hover:text-gray-900 transition-colors font-medium py-2 hover:scale-105 transition-transform"
+                    className="text-gray-700 hover:text-gray-900 font-medium py-2"
                   >
                     {item.title}
                   </Link>
@@ -137,7 +136,7 @@ const Header = memo(function Header() {
             {/* 🔥 ウルトラCTAボタン */}
             <Link 
               href={isHomePage ? "#contact" : "/#contact"}
-              className="bg-gradient-to-r from-gray-900 to-gray-800 text-white px-6 py-2 rounded-lg font-medium hover:from-gray-800 hover:to-gray-700 transition-all duration-200 shadow-lg hover:shadow-xl transform hover:scale-105 flex items-center"
+              className="bg-gray-900 text-white px-6 py-2 rounded-lg font-medium hover:bg-gray-800 shadow-lg flex items-center"
             >
               <span className="mr-2">💬</span>
               お問い合わせ
@@ -148,7 +147,7 @@ const Header = memo(function Header() {
           <div className="md:hidden">
             <button
               onClick={handleMenuToggle}
-              className="text-gray-700 hover:text-gray-900 transition-all duration-200 p-2 hover:scale-110 hover:bg-gray-100 rounded-lg"
+              className="text-gray-700 hover:text-gray-900 p-2 hover:bg-gray-100 rounded-lg"
               aria-expanded={isMenuOpen}
             >
               <span className="sr-only">メニューを開く</span>
@@ -161,7 +160,7 @@ const Header = memo(function Header() {
         
         {/* 🚀 限界突破！ウルトラモバイルメニュー */}
         {isMenuOpen && (
-          <div className="md:hidden border-t border-gray-200 py-4 bg-gradient-to-b from-white to-gray-50">
+          <div className="md:hidden border-t border-gray-200 py-4 bg-white">
             <nav className="flex flex-col space-y-2">
               {navigationItems.map((item, index) => {
                 if (item.type === 'dropdown') {
@@ -175,7 +174,7 @@ const Header = memo(function Header() {
                         <Link
                           key={service.href}
                           href={service.href}
-                          className="flex items-center pl-8 pr-4 py-3 text-gray-600 hover:text-gray-900 hover:bg-gradient-to-r hover:from-blue-50 hover:to-transparent transition-all duration-200 rounded-lg mx-2"
+                          className="flex items-center pl-8 pr-4 py-3 text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-lg mx-2"
                           onClick={() => setIsMenuOpen(false)}
                           {...(service.href.startsWith('http') && {
                             target: '_blank',
@@ -185,7 +184,6 @@ const Header = memo(function Header() {
                           <span className="text-lg mr-3">{service.icon}</span>
                           <div>
                             <div className="font-medium">{service.title}</div>
-                            <div className="text-xs text-gray-500">優先度: {service.priority}</div>
                           </div>
                         </Link>
                       ))}
@@ -196,7 +194,7 @@ const Header = memo(function Header() {
                     <Link 
                       key={index}
                       href={item.href}
-                      className="text-gray-700 hover:text-gray-900 transition-colors font-medium px-4 py-3 hover:bg-gray-100 rounded-lg mx-2"
+                      className="text-gray-700 hover:text-gray-900 font-medium px-4 py-3 hover:bg-gray-100 rounded-lg mx-2"
                       onClick={() => setIsMenuOpen(false)}
                     >
                       {item.title}
@@ -208,7 +206,7 @@ const Header = memo(function Header() {
               {/* 🔥 ウルトラモバイルCTAボタン */}
               <Link 
                 href={isHomePage ? "#contact" : "/#contact"}
-                className="bg-gradient-to-r from-gray-900 to-gray-800 text-white px-6 py-4 mx-4 rounded-xl font-medium hover:from-gray-800 hover:to-gray-700 transition-all duration-200 text-center shadow-lg flex items-center justify-center mt-4"
+                className="bg-gray-900 text-white px-6 py-4 mx-4 rounded-xl font-medium hover:bg-gray-800 text-center shadow-lg flex items-center justify-center mt-4"
                 onClick={() => setIsMenuOpen(false)}
               >
                 <span className="mr-2">💬</span>
