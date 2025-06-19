@@ -1,9 +1,9 @@
 import type { Metadata } from 'next'
-import Header from '@/components/layout/Header'
-import Footer from '@/components/layout/Footer'
-import { ArrowLeft, Plus, Minus } from 'lucide-react'
-import Link from 'next/link'
+import { Plus, Minus } from 'lucide-react'
 import { COMPANY_DATA } from '@/lib/company-data'
+import PageTemplate, { ContentSection } from '@/components/layout/PageTemplate'
+import AccessibleButton from '@/components/ui/AccessibleButton'
+import { createFAQSchema } from '@/lib/enhanced-schema'
 
 export const metadata: Metadata = {
   title: `よくある質問 | ${COMPANY_DATA.basic.name}`,
@@ -11,6 +11,7 @@ export const metadata: Metadata = {
   keywords: `${COMPANY_DATA.metadata.keywords}, FAQ, よくある質問, サポート`,
 }
 
+// 🚀 FAQ データ構造
 const faqCategories = [
   {
     category: "全般",
@@ -107,138 +108,165 @@ const faqCategories = [
 ]
 
 export default function FAQPage() {
-  return (
-    <>
-      <Header />
-      
-      <main role="main" className="pt-16">
-        {/* Page Header */}
-        <section className="bg-gray-50 py-16">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <Link 
-              href="/"
-              className="inline-flex items-center text-gray-600 hover:text-gray-900 mb-8 transition-colors"
-            >
-              <ArrowLeft className="h-4 w-4 mr-2" />
-              ホームに戻る
-            </Link>
-            <h1 className="text-4xl font-light text-gray-900">よくある質問</h1>
-            <p className="text-gray-600 mt-4">
-              お客様からよくいただくご質問をまとめました。こちらにない質問は、お気軽にお問い合わせください。
-            </p>
-          </div>
-        </section>
+  // 🚀 FAQ構造化データの生成
+  const allQuestions = faqCategories.flatMap(category => 
+    category.questions.map(q => ({
+      question: q.question,
+      answer: q.answer
+    }))
+  )
+  const faqSchema = createFAQSchema(allQuestions)
 
-        {/* Quick Contact */}
-        <section className="py-8 bg-white border-b border-gray-100">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center">
-              <p className="text-gray-600 mb-4">
-                お急ぎの場合は、公式LINEでお気軽にお問い合わせください
-              </p>
-              <Link 
+  const breadcrumbs = [
+    { name: "ホーム", url: "/" },
+    { name: "よくある質問", url: "/faq" }
+  ]
+
+  return (
+    <PageTemplate
+      title="よくある質問"
+      description="株式会社Awakeのサービスに関するよくある質問"
+      breadcrumbs={breadcrumbs}
+    >
+      {/* FAQ構造化データ */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(faqSchema)
+        }}
+      />
+
+      {/* Hero Section */}
+      <ContentSection className="bg-gray-50">
+        <div className="text-center max-w-4xl mx-auto">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-light text-gray-900 mb-6">
+            よくある質問
+          </h1>
+          <p className="text-base sm:text-lg text-gray-600 leading-relaxed">
+            お客様からよくいただくご質問をまとめました。<br className="hidden sm:block" />
+            こちらにない質問は、お気軽にお問い合わせください。
+          </p>
+        </div>
+      </ContentSection>
+
+      {/* Quick Contact Section */}
+      <ContentSection className="bg-white border-b border-gray-100">
+        <div className="text-center">
+          <p className="text-sm sm:text-base text-gray-600 mb-4">
+            お急ぎの場合は、公式LINEでお気軽にお問い合わせください
+          </p>
+          <AccessibleButton
+            href={COMPANY_DATA.contact.lineUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-green-500 text-white hover:bg-green-600"
+            ariaLabel="公式LINEでお問い合わせ"
+          >
+            📱 LINE で問い合わせ（{COMPANY_DATA.contact.line}）
+          </AccessibleButton>
+        </div>
+      </ContentSection>
+
+      {/* FAQ Content */}
+      <ContentSection>
+        <div className="space-y-8 sm:space-y-12">
+          {faqCategories.map((category, categoryIndex) => (
+            <div key={categoryIndex}>
+              <h2 className="text-xl sm:text-2xl font-light text-gray-900 mb-6 sm:mb-8 pb-2 border-b border-gray-200">
+                {category.category}
+              </h2>
+              
+              <div className="space-y-4">
+                {category.questions.map((faq, faqIndex) => (
+                  <details 
+                    key={faqIndex} 
+                    className="group bg-white border border-gray-200 rounded-lg overflow-hidden hover:shadow-sm transition-shadow"
+                  >
+                    <summary className="flex items-center justify-between p-4 sm:p-6 cursor-pointer hover:bg-gray-50 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">
+                      <h3 className="text-base sm:text-lg font-medium text-gray-900 pr-4">
+                        {faq.question}
+                      </h3>
+                      <div className="flex-shrink-0">
+                        <Plus 
+                          className="h-5 w-5 text-gray-400 group-open:hidden" 
+                          aria-hidden="true"
+                        />
+                        <Minus 
+                          className="h-5 w-5 text-gray-400 hidden group-open:block" 
+                          aria-hidden="true"
+                        />
+                      </div>
+                    </summary>
+                    
+                    <div className="px-4 sm:px-6 pb-4 sm:pb-6">
+                      <div className="pt-4 border-t border-gray-100">
+                        <p className="text-sm sm:text-base text-gray-700 leading-relaxed">
+                          {faq.answer}
+                        </p>
+                      </div>
+                    </div>
+                  </details>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+      </ContentSection>
+
+      {/* Contact Section */}
+      <ContentSection className="bg-gray-50">
+        <div className="text-center">
+          <h2 className="text-2xl sm:text-3xl font-light text-gray-900 mb-6">
+            まだ疑問が解決しませんか？
+          </h2>
+          <p className="text-base sm:text-lg text-gray-600 mb-8">
+            お気軽にお問い合わせください。専門スタッフが丁寧にお答えいたします。
+          </p>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
+            <div className="bg-white p-4 sm:p-6 rounded-xl shadow-sm">
+              <h3 className="text-sm sm:text-base font-semibold text-gray-900 mb-2">📱 公式LINE</h3>
+              <p className="text-xs sm:text-sm text-gray-600 mb-4">最も早く対応できます</p>
+              <AccessibleButton 
                 href={COMPANY_DATA.contact.lineUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center bg-green-500 text-white px-6 py-3 rounded-lg font-medium hover:bg-green-600 transition-colors"
+                variant="minimal"
+                className="text-green-600 hover:text-green-700 font-medium"
+                ariaLabel="公式LINEでお問い合わせ"
               >
-                📱 LINE で問い合わせ（{COMPANY_DATA.contact.line}）
-              </Link>
+                LINEで問い合わせ
+              </AccessibleButton>
             </div>
-          </div>
-        </section>
-
-        {/* FAQ Content */}
-        <section className="py-16">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="space-y-12">
-              {faqCategories.map((category, categoryIndex) => (
-                <div key={categoryIndex}>
-                  <h2 className="text-2xl font-light text-gray-900 mb-8 pb-2 border-b border-gray-200">
-                    {category.category}
-                  </h2>
-                  <div className="space-y-4">
-                    {category.questions.map((faq, faqIndex) => (
-                      <details 
-                        key={faqIndex} 
-                        className="group bg-white border border-gray-200 rounded-lg overflow-hidden hover:shadow-sm transition-shadow"
-                      >
-                        <summary className="flex items-center justify-between p-6 cursor-pointer hover:bg-gray-50 transition-colors">
-                          <h3 className="text-lg font-medium text-gray-900 pr-4">
-                            {faq.question}
-                          </h3>
-                          <div className="flex-shrink-0">
-                            <Plus className="h-5 w-5 text-gray-400 group-open:hidden" />
-                            <Minus className="h-5 w-5 text-gray-400 hidden group-open:block" />
-                          </div>
-                        </summary>
-                        <div className="px-6 pb-6">
-                          <div className="pt-4 border-t border-gray-100">
-                            <p className="text-gray-700 leading-relaxed">
-                              {faq.answer}
-                            </p>
-                          </div>
-                        </div>
-                      </details>
-                    ))}
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Contact Section */}
-        <section className="py-16 bg-gray-50">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 className="text-3xl font-light text-gray-900 mb-6">
-              まだ疑問が解決しませんか？
-            </h2>
-            <p className="text-lg text-gray-600 mb-8">
-              お気軽にお問い合わせください。専門スタッフが丁寧にお答えいたします。
-            </p>
             
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <div className="bg-white p-6 rounded-xl shadow-sm">
-                <h3 className="font-semibold text-gray-900 mb-2">📱 公式LINE</h3>
-                <p className="text-sm text-gray-600 mb-4">最も早く対応できます</p>
-                <Link 
-                  href={COMPANY_DATA.contact.lineUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-green-600 hover:text-green-700 font-medium"
-                >
-                  LINEで問い合わせ
-                </Link>
-              </div>
-              
-              <div className="bg-white p-6 rounded-xl shadow-sm">
-                <h3 className="font-semibold text-gray-900 mb-2">📞 電話</h3>
-                <p className="text-sm text-gray-600 mb-4">{COMPANY_DATA.contact.businessHours.weekdays}</p>
-                <Link 
-                  href={`tel:${COMPANY_DATA.contact.phone}`}
-                  className="text-blue-600 hover:text-blue-700 font-medium"
-                >
-                  {COMPANY_DATA.contact.phone}
-                </Link>
-              </div>
-              
-              <div className="bg-white p-6 rounded-xl shadow-sm">
-                <h3 className="font-semibold text-gray-900 mb-2">✉️ メール</h3>
-                <p className="text-sm text-gray-600 mb-4">詳細な相談に最適</p>
-                <Link 
-                  href={`mailto:${COMPANY_DATA.contact.email}`}
-                  className="text-blue-600 hover:text-blue-700 font-medium"
-                >
-                  メールで問い合わせ
-                </Link>
-              </div>
+            <div className="bg-white p-4 sm:p-6 rounded-xl shadow-sm">
+              <h3 className="text-sm sm:text-base font-semibold text-gray-900 mb-2">📞 電話</h3>
+              <p className="text-xs sm:text-sm text-gray-600 mb-4">{COMPANY_DATA.contact.businessHours.weekdays}</p>
+              <AccessibleButton 
+                href={`tel:${COMPANY_DATA.contact.phone}`}
+                variant="minimal"
+                className="text-blue-600 hover:text-blue-700 font-medium"
+                ariaLabel="電話でお問い合わせ"
+              >
+                {COMPANY_DATA.contact.phone}
+              </AccessibleButton>
+            </div>
+            
+            <div className="bg-white p-4 sm:p-6 rounded-xl shadow-sm">
+              <h3 className="text-sm sm:text-base font-semibold text-gray-900 mb-2">✉️ メール</h3>
+              <p className="text-xs sm:text-sm text-gray-600 mb-4">詳細な相談に最適</p>
+              <AccessibleButton 
+                href={`mailto:${COMPANY_DATA.contact.email}`}
+                variant="minimal"
+                className="text-blue-600 hover:text-blue-700 font-medium"
+                ariaLabel="メールでお問い合わせ"
+              >
+                メールで問い合わせ
+              </AccessibleButton>
             </div>
           </div>
-        </section>
-      </main>
-      
-      <Footer />
-    </>
+        </div>
+      </ContentSection>
+    </PageTemplate>
   )
 }
