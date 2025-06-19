@@ -10,6 +10,13 @@ const notoSansJP = Noto_Sans_JP({
   display: "swap",
 });
 
+export const viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 5,
+  themeColor: '#111827'
+}
+
 export const metadata: Metadata = {
   metadataBase: new URL("https://awakeinc.co.jp"),
   title: "株式会社Awake | ビジネスコンサルティング",
