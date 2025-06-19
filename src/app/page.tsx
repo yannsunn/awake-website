@@ -5,7 +5,7 @@ import { ArrowRight, Globe, Brain, ShoppingCart, CheckCircle, Award, Users, Hear
 import Link from 'next/link'
 import Image from 'next/image'
 import { COMPANY_DATA } from '@/lib/company-data'
-import Button from '@/components/ui/Button'
+import AccessibleButton from '@/components/ui/AccessibleButton'
 
 export const metadata: Metadata = {
   title: `${COMPANY_DATA.basic.name} | ${COMPANY_DATA.basic.tagline}`,
@@ -119,12 +119,12 @@ export default function HomePage() {
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center px-4">
-                <Button href="#services" showArrow className="w-full sm:w-auto py-3">
+                <AccessibleButton href="#services" showArrow className="w-full sm:w-auto py-3">
                   サービス一覧を見る
-                </Button>
-                <Button href="/about" variant="secondary" className="w-full sm:w-auto py-3">
+                </AccessibleButton>
+                <AccessibleButton href="/about" variant="secondary" className="w-full sm:w-auto py-3">
                   会社概要
-                </Button>
+                </AccessibleButton>
               </div>
             </div>
           </div>
@@ -146,8 +146,8 @@ export default function HomePage() {
               {services.map((service, index) => {
                 const IconComponent = service.icon
                 return (
-                  <div key={index} className="bg-white rounded-2xl p-8 shadow-sm border border-gray-100 hover:shadow-xl transition-all duration-300 group">
-                    <div className={`w-16 h-16 bg-gradient-to-br ${service.color} rounded-xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300`}>
+                  <div key={index} className="bg-white rounded-2xl p-8 shadow-sm border border-gray-100 hover:shadow-lg">
+                    <div className={`w-16 h-16 bg-gradient-to-br ${service.color} rounded-xl flex items-center justify-center mx-auto mb-6`}>
                       <IconComponent className="h-8 w-8 text-white" />
                     </div>
                     <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-4 text-center">
@@ -161,7 +161,7 @@ export default function HomePage() {
                       <span className="text-gray-500 text-sm">〜</span>
                     </div>
                     <div className="text-center">
-                      <Button 
+                      <AccessibleButton 
                         href={service.href} 
                         variant="outline" 
                         className="w-full py-3"
@@ -171,7 +171,7 @@ export default function HomePage() {
                         })}
                       >
                         詳細を見る
-                      </Button>
+                      </AccessibleButton>
                     </div>
                   </div>
                 )
@@ -196,7 +196,7 @@ export default function HomePage() {
               {features.map((feature, index) => {
                 const IconComponent = feature.icon
                 return (
-                  <div key={index} className="text-center p-6 rounded-xl hover:shadow-lg transition-shadow duration-300">
+                  <div key={index} className="text-center p-6 rounded-xl hover:shadow-lg">
                     <div className="w-16 h-16 bg-gray-900 rounded-full flex items-center justify-center mx-auto mb-4">
                       <IconComponent className="h-8 w-8 text-white" />
                     </div>
@@ -230,9 +230,9 @@ export default function HomePage() {
                 <p className="text-base sm:text-lg text-gray-600 leading-relaxed mb-8">
                   私たちは、美しいコーポレートサイト制作と革新的なAI導入支援を通じて、すべての企業がデジタル時代に輝ける未来を創造します。技術の力で可能性を広げ、信頼の絆で成功を確かなものにします。
                 </p>
-                <Button href="/about" showArrow>
+                <AccessibleButton href="/about" showArrow>
                   詳しく見る
-                </Button>
+                </AccessibleButton>
               </div>
             </div>
           </div>
@@ -254,14 +254,14 @@ export default function HomePage() {
               <p className="text-sm sm:text-base text-green-700 mb-4">
                 お問い合わせは公式LINEが最も早く対応できます
               </p>
-              <Button 
+              <AccessibleButton 
                 href={COMPANY_DATA.contact.lineUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-green-500 text-white hover:bg-green-600 w-full sm:w-auto py-3"
               >
                 📱 LINE で問い合わせ
-              </Button>
+              </AccessibleButton>
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 mb-8">

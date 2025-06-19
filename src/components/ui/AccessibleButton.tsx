@@ -1,7 +1,7 @@
 // 🚀 WCAG 2.1 AAA準拠 アクセシブルボタンコンポーネント
 'use client'
 
-import { memo, forwardRef, KeyboardEvent, ReactNode } from 'react'
+import { memo, forwardRef, KeyboardEvent, ReactNode, useRef, useEffect } from 'react'
 import Link from 'next/link'
 import { ArrowRight, type LucideIcon } from 'lucide-react'
 import { BUTTON_STYLES } from '@/lib/constants'
@@ -19,6 +19,7 @@ interface AccessibleButtonProps {
   className?: string
   target?: string
   rel?: string
+  size?: 'small' | 'medium' | 'large'
   // アクセシビリティ拡張プロパティ
   ariaLabel?: string
   ariaDescribedBy?: string
@@ -50,7 +51,8 @@ const AccessibleButton = memo(forwardRef<
   ariaHaspopup,
   ariaPressed,
   role,
-  tabIndex
+  tabIndex,
+  size = 'medium'
 }, ref) {
   // 🛡️ 完全型安全保証
   const validVariant = (variant && variant in BUTTON_STYLES) ? variant : 'primary'
@@ -61,13 +63,16 @@ const AccessibleButton = memo(forwardRef<
     focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2
     focus:ring-offset-white focus:ring-opacity-50
     disabled:opacity-50 disabled:cursor-not-allowed disabled:pointer-events-none
-    transition-all duration-200 ease-in-out
     text-center font-medium relative overflow-hidden
-    hover:shadow-lg active:transform active:scale-95
     ${disabled ? 'opacity-50 cursor-not-allowed' : ''}
   `
   
-  const styles = `${baseStyles} ${accessibilityStyles} ${className}`
+  const sizeStyles = {
+    small: 'px-3 py-1.5 text-sm',
+    medium: '',
+    large: 'px-6 py-3 text-lg'
+  }
+  const styles = `${baseStyles} ${sizeStyles[size]} ${accessibilityStyles} ${className}`
 
   // キーボードナビゲーション強化
   const handleKeyDown = (e: KeyboardEvent<HTMLButtonElement>) => {
@@ -90,16 +95,11 @@ const AccessibleButton = memo(forwardRef<
       <span className="relative z-10">{children}</span>
       {showArrow && (
         <ArrowRight 
-          className="ml-2 h-5 w-5 flex-shrink-0 transition-transform group-hover:translate-x-1" 
+          className="ml-2 h-5 w-5 flex-shrink-0" 
           aria-hidden="true"
         />
       )}
       
-      {/* ホバーエフェクト */}
-      <span 
-        className="absolute inset-0 bg-white opacity-0 transition-opacity duration-200 group-hover:opacity-10"
-        aria-hidden="true"
-      />
     </>
   )
 

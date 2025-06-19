@@ -134,7 +134,7 @@ export default function EcServicePage() {
           {features.map((feature, index) => {
             const IconComponent = feature.icon
             return (
-              <div key={index} className="text-center hover:shadow-lg transition-shadow duration-300 p-6 rounded-xl">
+              <div key={index} className="text-center hover:shadow-lg p-6 rounded-xl">
                 <div className="w-16 h-16 bg-gray-900 rounded-full flex items-center justify-center mx-auto mb-4">
                   <IconComponent className="h-8 w-8 text-white" />
                 </div>
@@ -240,7 +240,7 @@ export default function EcServicePage() {
           ].map((item, index) => (
             <div 
               key={index} 
-              className={`bg-white p-8 rounded-2xl shadow-sm border hover:shadow-xl transition-shadow duration-300 ${ 
+              className={`bg-white p-8 rounded-2xl shadow-sm border hover:shadow-xl ${ 
                 index === 0 ? 'border-gray-900 ring-2 ring-gray-900 ring-opacity-10' : 'border-gray-200'
               }`}
             >
@@ -293,7 +293,7 @@ export default function EcServicePage() {
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <div className="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow">
+          <div className="bg-white p-6 rounded-xl shadow-sm hover:shadow-md">
             <h3 className="text-lg font-medium text-gray-900 mb-4">基本メトリクス</h3>
             <ul className="space-y-2 text-sm text-gray-600">
               <li>• 0円初期費用</li>
@@ -303,7 +303,7 @@ export default function EcServicePage() {
             </ul>
           </div>
           
-          <div className="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow">
+          <div className="bg-white p-6 rounded-xl shadow-sm hover:shadow-md">
             <h3 className="text-lg font-medium text-gray-900 mb-4">販売サポート</h3>
             <ul className="space-y-2 text-sm text-gray-600">
               <li>• 商品ページ最適化</li>
@@ -313,7 +313,7 @@ export default function EcServicePage() {
             </ul>
           </div>
           
-          <div className="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow">
+          <div className="bg-white p-6 rounded-xl shadow-sm hover:shadow-md">
             <h3 className="text-lg font-medium text-gray-900 mb-4">運用実績</h3>
             <ul className="space-y-2 text-sm text-gray-600">
               <li>• 平均売上30%向上</li>
