@@ -47,12 +47,12 @@ export default function AboutPage() {
       
       <main role="main" className="pt-16">
         {/* Hero Section - Toyota Style */}
-        <section className="py-20 bg-gradient-to-br from-gray-50 via-white to-gray-100">
+        <section className="py-12 sm:py-16 lg:py-12 sm:py-16 lg:py-20 bg-gradient-to-br from-gray-50 via-white to-gray-100">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h1 className="text-4xl md:text-5xl font-light text-gray-900 mb-6 tracking-tight">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-light text-gray-900 mb-6 tracking-tight">
               会社概要
             </h1>
-            <p className="text-xl text-gray-600 font-light leading-relaxed">
+            <p className="text-lg sm:text-xl text-gray-600 font-light leading-relaxed">
               信頼の絆で、共に成長し続ける企業<br />
               株式会社Awakeは、美しいコーポレートサイト制作と先進的なAI導入支援を通じて、お客様企業の成長と発展を支えるテクノロジーパートナーです。
             </p>
@@ -60,15 +60,15 @@ export default function AboutPage() {
         </section>
 
         {/* CEO Message Section */}
-        <section className="py-20 bg-white">
+        <section className="py-12 sm:py-16 lg:py-20 bg-white">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:p-8 sm:gap-12 items-center">
               <div>
                 <div className="flex items-center mb-6">
                   <User className="h-8 w-8 text-gray-900 mr-3" />
                   <span className="text-gray-900 font-semibold">CEO Message</span>
                 </div>
-                <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+                <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-6">
                   代表挨拶
                 </h2>
                 <div className="space-y-6 text-gray-700 leading-relaxed">
@@ -95,7 +95,7 @@ export default function AboutPage() {
                 </div>
               </div>
               <div className="lg:pl-8">
-                <div className="bg-gray-100 rounded-2xl p-8 text-center">
+                <div className="bg-gray-100 rounded-2xl p-6 sm:p-8 text-center">
                   <div className="w-32 h-32 bg-gray-900 rounded-full flex items-center justify-center mx-auto mb-6">
                     <User className="h-16 w-16 text-white" />
                   </div>
@@ -113,34 +113,34 @@ export default function AboutPage() {
         </section>
 
         {/* Mission & Vision Section */}
-        <section className="py-20 bg-gray-50">
+        <section className="py-12 sm:py-16 lg:py-20 bg-gray-50">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            <div className="text-center mb-8 sm:mb-12 lg:mb-16">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4">
                 ミッション・ビジョン
               </h2>
-              <p className="text-xl text-gray-600">
+              <p className="text-lg sm:text-xl text-gray-600">
                 私たちが目指す未来と大切にしている価値観
               </p>
             </div>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16">
-              <div className="text-center p-8 bg-white rounded-2xl shadow-sm border hover:shadow-lg transition-shadow duration-300">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:p-8 sm:gap-12 mb-8 sm:mb-12 lg:mb-16">
+              <div className="text-center p-6 sm:p-8 bg-white rounded-2xl shadow-sm border hover:shadow-lg transition-shadow duration-300">
                 <div className="w-16 h-16 bg-gray-900 rounded-full flex items-center justify-center mx-auto mb-6">
                   <Target className="h-8 w-8 text-white" />
                 </div>
-                <h3 className="text-2xl font-light text-gray-900 mb-4">ミッション</h3>
+                <h3 className="text-xl sm:text-2xl font-light text-gray-900 mb-4">ミッション</h3>
                 <p className="text-lg font-semibold text-gray-800 mb-3">つながるすべての人に、感謝と繁栄を</p>
                 <p className="text-gray-600 leading-relaxed">
                   私たちは、美しいコーポレートサイト制作と革新的なAI導入支援を通じて、すべての企業がデジタル時代に輝ける未来を創造します。技術の力で可能性を広げ、信頼の絆で成功を確かなものにします。
                 </p>
               </div>
               
-              <div className="text-center p-8 bg-white rounded-2xl shadow-sm border hover:shadow-lg transition-shadow duration-300">
+              <div className="text-center p-6 sm:p-8 bg-white rounded-2xl shadow-sm border hover:shadow-lg transition-shadow duration-300">
                 <div className="w-16 h-16 bg-gray-900 rounded-full flex items-center justify-center mx-auto mb-6">
                   <Award className="h-8 w-8 text-white" />
                 </div>
-                <h3 className="text-2xl font-light text-gray-900 mb-4">ビジョン</h3>
+                <h3 className="text-xl sm:text-2xl font-light text-gray-900 mb-4">ビジョン</h3>
                 <p className="text-lg font-semibold text-gray-800 mb-3">技術と信頼の融合で、持続可能な共栄社会を実現する</p>
                 <p className="text-gray-600 leading-relaxed">
                   急速に進化するデジタル社会において、私たちは最先端技術の提供者であると同時に、お客様に寄り添う伴走者でありたいと考えています。「与え続けることで縁を太くする」という理念のもと、短期的な成果よりも長期的な関係性を重視し、お客様と共に成長し続ける企業を目指します。
@@ -151,15 +151,15 @@ export default function AboutPage() {
         </section>
 
         {/* Our Promise */}
-        <section className="py-20 bg-white">
+        <section className="py-12 sm:py-16 lg:py-20 bg-white">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            <div className="text-center mb-8 sm:mb-12 lg:mb-16">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4">
                 私たちの約束
               </h2>
             </div>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 sm:p-8">
               {[
                 {
                   number: "1",
@@ -204,18 +204,18 @@ export default function AboutPage() {
         </section>
 
         {/* Company Values */}
-        <section className="py-20 bg-gray-50">
+        <section className="py-12 sm:py-16 lg:py-20 bg-gray-50">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            <div className="text-center mb-8 sm:mb-12 lg:mb-16">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4">
                 私たちの価値観
               </h2>
-              <p className="text-xl text-gray-600">
+              <p className="text-lg sm:text-xl text-gray-600">
                 日々の業務で大切にしている4つの価値観
               </p>
             </div>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 sm:p-8">
               {values.map((value, index) => {
                 const IconComponent = value.icon
                 return (
@@ -237,10 +237,10 @@ export default function AboutPage() {
         </section>
 
         {/* Company Overview */}
-        <section className="py-20 bg-gray-50">
+        <section className="py-12 sm:py-16 lg:py-20 bg-gray-50">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4">
                 会社概要
               </h2>
               <p className="text-lg text-gray-600 font-medium">
@@ -248,7 +248,7 @@ export default function AboutPage() {
               </p>
             </div>
             
-            <div className="bg-white rounded-2xl shadow-sm border p-8">
+            <div className="bg-white rounded-2xl shadow-sm border p-6 sm:p-8">
               <dl className="grid grid-cols-1 gap-6">
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                   <dt className="text-sm font-semibold text-gray-900">会社名</dt>

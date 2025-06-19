@@ -45,8 +45,8 @@ export default function WebServicePage() {
         {/* Features Section - Rich Content */}
         <section className="py-20 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-16">
-              <h2 className="text-3xl font-light text-gray-900 mb-4">
+            <div className="text-center mb-8 sm:mb-12 lg:mb-16">
+              <h2 className="text-2xl sm:text-3xl font-light text-gray-900 mb-4">
                 サービス特徴
               </h2>
               <p className="text-lg text-gray-600">
@@ -54,7 +54,7 @@ export default function WebServicePage() {
               </p>
             </div>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-6 sm:p-8">
               <FeatureHighlight
                 icon={<div className="text-white font-bold text-xl">¥</div>}
                 title="プロフェッショナル制作"
@@ -85,8 +85,8 @@ export default function WebServicePage() {
         {/* Pricing Section - Rich Content */}
         <section id="pricing" className="py-20 bg-gray-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-16">
-              <h2 className="text-3xl font-light text-gray-900 mb-4">
+            <div className="text-center mb-8 sm:mb-12 lg:mb-16">
+              <h2 className="text-2xl sm:text-3xl font-light text-gray-900 mb-4">
                 料金プラン
               </h2>
               <p className="text-lg text-gray-600">
@@ -94,7 +94,7 @@ export default function WebServicePage() {
               </p>
             </div>
             
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-6 sm:p-8 max-w-5xl mx-auto">
               <PricingCard plan={{...service.pricing.standard, features: [...service.pricing.standard.features]}} featured />
               <PricingCard plan={{...service.pricing.premium, features: [...service.pricing.premium.features]}} />
               <PricingCard plan={{...service.pricing.enterprise, features: [...service.pricing.enterprise.features]}} />
@@ -105,8 +105,8 @@ export default function WebServicePage() {
         {/* Service Process Section - Rich Content */}
         <section className="py-20 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-16">
-              <h2 className="text-3xl font-light text-gray-900 mb-4">
+            <div className="text-center mb-8 sm:mb-12 lg:mb-16">
+              <h2 className="text-2xl sm:text-3xl font-light text-gray-900 mb-4">
                 制作の流れ
               </h2>
               <p className="text-lg text-gray-600">
@@ -114,7 +114,7 @@ export default function WebServicePage() {
               </p>
             </div>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-6 sm:p-8">
               {[
                 { 
                   step: "01", 
@@ -156,13 +156,13 @@ export default function WebServicePage() {
         {/* Technical Specs Section - Added Rich Content */}
         <section className="py-20 bg-gray-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-16">
-              <h2 className="text-3xl font-light text-gray-900 mb-4">
+            <div className="text-center mb-8 sm:mb-12 lg:mb-16">
+              <h2 className="text-2xl sm:text-3xl font-light text-gray-900 mb-4">
                 技術仕様・対応範囲
               </h2>
             </div>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-6 sm:p-8">
               <div className="bg-white p-6 rounded-xl shadow-sm">
                 <h3 className="text-lg font-medium text-gray-900 mb-4">開発技術</h3>
                 <ul className="space-y-2 text-sm text-gray-600">
@@ -199,7 +199,7 @@ export default function WebServicePage() {
         {/* CTA Section - Rich Content */}
         <section className="py-20 bg-white">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 className="text-3xl font-light text-gray-900 mb-6">
+            <h2 className="text-2xl sm:text-3xl font-light text-gray-900 mb-6">
               まずはお気軽にご相談ください
             </h2>
             <p className="text-lg text-gray-600 mb-8">

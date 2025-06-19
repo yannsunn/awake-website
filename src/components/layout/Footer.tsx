@@ -8,12 +8,12 @@ import { COMPANY_DATA } from '@/lib/company-data'
 const Footer = memo(function Footer() {
   return (
     <footer className="bg-gray-900 text-white" role="contentinfo">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
           {/* Company Info */}
           <div>
-            <h3 className="text-xl font-light text-white mb-4">{COMPANY_DATA.basic.name}</h3>
-            <p className="text-gray-400 mb-6 leading-relaxed">
+            <h3 className="text-lg sm:text-xl font-light text-white mb-4">{COMPANY_DATA.basic.name}</h3>
+            <p className="text-sm sm:text-base text-gray-400 mb-6 leading-relaxed">
               {COMPANY_DATA.basic.mission}
             </p>
             <div className="text-gray-400 text-sm space-y-1">
@@ -25,7 +25,7 @@ const Footer = memo(function Footer() {
           
           {/* Services & Support */}
           <div>
-            <h3 className="text-lg font-medium text-white mb-4">サービス・サポート</h3>
+            <h3 className="text-base sm:text-lg font-medium text-white mb-4">サービス・サポート</h3>
             <ul className="space-y-3">
               <li>
                 <Link 
@@ -58,7 +58,7 @@ const Footer = memo(function Footer() {
           
           {/* Contact */}
           <div>
-            <h3 className="text-lg font-medium text-white mb-4">お問い合わせ</h3>
+            <h3 className="text-base sm:text-lg font-medium text-white mb-4">お問い合わせ</h3>
             <div className="space-y-3">
               <p className="text-gray-400 text-sm">
                 営業時間: {COMPANY_DATA.contact.businessHours.weekdays}
@@ -68,7 +68,7 @@ const Footer = memo(function Footer() {
               </p>
               <Link 
                 href="/#contact"
-                className="inline-block bg-white text-gray-900 px-6 py-2 rounded-lg text-sm font-medium hover:bg-gray-100 transition-colors"
+                className="inline-block bg-white text-gray-900 px-6 py-3 rounded-lg text-sm font-medium hover:bg-gray-100 transition-colors min-h-[44px]"
               >
                 お問い合わせ
               </Link>

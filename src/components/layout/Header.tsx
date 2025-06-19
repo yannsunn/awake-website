@@ -47,17 +47,17 @@ const Header = memo(function Header() {
             </Link>
           </div>
           
-          <nav className="hidden md:flex items-center space-x-8" role="navigation" aria-label="メインナビゲーション">
+          <nav className="hidden md:flex items-center space-x-6 lg:space-x-8" role="navigation" aria-label="メインナビゲーション">
             <Link 
               href="/about" 
-              className="text-gray-700 hover:text-gray-900 transition-colors font-medium"
+              className="text-gray-700 hover:text-gray-900 transition-colors font-medium py-2"
             >
               会社概要
             </Link>
             
             <Link 
               href={isHomePage ? "#company-info" : "/#company-info"} 
-              className="text-gray-700 hover:text-gray-900 transition-colors font-medium"
+              className="text-gray-700 hover:text-gray-900 transition-colors font-medium py-2"
             >
               会社情報
             </Link>
@@ -66,7 +66,7 @@ const Header = memo(function Header() {
             <div className="relative" ref={servicesRef}>
               <button
                 onClick={() => setIsServicesOpen(!isServicesOpen)}
-                className="flex items-center text-gray-700 hover:text-gray-900 transition-colors font-medium"
+                className="flex items-center text-gray-700 hover:text-gray-900 transition-colors font-medium py-2"
                 aria-expanded={isServicesOpen}
               >
                 サービス
@@ -79,7 +79,7 @@ const Header = memo(function Header() {
                     <Link
                       key={service.href}
                       href={service.href}
-                      className="block px-4 py-2 text-gray-700 hover:bg-gray-50 hover:text-gray-900 transition-colors"
+                      className="block px-4 py-3 text-gray-700 hover:bg-gray-50 hover:text-gray-900 transition-colors"
                       onClick={() => setIsServicesOpen(false)}
                     >
                       {service.title}
@@ -101,11 +101,11 @@ const Header = memo(function Header() {
           <div className="md:hidden">
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="text-gray-700 hover:text-gray-900 transition-colors"
+              className="text-gray-700 hover:text-gray-900 transition-colors p-2"
               aria-expanded={isMenuOpen}
             >
               <span className="sr-only">メニューを開く</span>
-              <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <svg className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
               </svg>
             </button>
@@ -115,10 +115,10 @@ const Header = memo(function Header() {
         {/* モバイルメニュー */}
         {isMenuOpen && (
           <div className="md:hidden border-t border-gray-200 py-4">
-            <nav className="flex flex-col space-y-4">
+            <nav className="flex flex-col space-y-2">
               <Link 
                 href="/about"
-                className="text-gray-700 hover:text-gray-900 transition-colors font-medium"
+                className="text-gray-700 hover:text-gray-900 transition-colors font-medium px-4 py-3"
                 onClick={() => setIsMenuOpen(false)}
               >
                 会社概要
@@ -126,19 +126,19 @@ const Header = memo(function Header() {
               
               <Link 
                 href={isHomePage ? "#company-info" : "/#company-info"}
-                className="text-gray-700 hover:text-gray-900 transition-colors font-medium"
+                className="text-gray-700 hover:text-gray-900 transition-colors font-medium px-4 py-3"
                 onClick={() => setIsMenuOpen(false)}
               >
                 会社情報
               </Link>
               
               <div className="space-y-2">
-                <div className="text-gray-900 font-medium">サービス</div>
+                <div className="text-gray-900 font-medium px-4 py-2">サービス</div>
                 {services.map((service) => (
                   <Link
                     key={service.href}
                     href={service.href}
-                    className="block pl-4 text-gray-600 hover:text-gray-900 transition-colors"
+                    className="block pl-8 pr-4 py-3 text-gray-600 hover:text-gray-900 transition-colors"
                     onClick={() => setIsMenuOpen(false)}
                   >
                     {service.title}
@@ -148,7 +148,7 @@ const Header = memo(function Header() {
               
               <Link 
                 href={isHomePage ? "#contact" : "/#contact"}
-                className="bg-gray-900 text-white px-6 py-2 rounded-lg font-medium hover:bg-gray-800 transition-colors text-center"
+                className="bg-gray-900 text-white px-6 py-3 mx-4 rounded-lg font-medium hover:bg-gray-800 transition-colors text-center"
                 onClick={() => setIsMenuOpen(false)}
               >
                 お問い合わせ
