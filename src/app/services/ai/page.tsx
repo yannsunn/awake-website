@@ -1,15 +1,27 @@
 import type { Metadata } from 'next'
-import Header from '@/components/layout/Header'
-import Footer from '@/components/layout/Footer'
-import { ArrowRight, Brain, TrendingUp, Users, Zap } from 'lucide-react'
-import Link from 'next/link'
+import { Brain, TrendingUp, Users, Zap } from 'lucide-react'
 import { COMPANY_DATA } from '@/lib/company-data'
-import { PricingCard, CTAButton, FeatureHighlight } from '@/lib/unified-components'
+import PageTemplate, { ContentSection } from '@/components/layout/PageTemplate'
+import AccessibleButton from '@/components/ui/AccessibleButton'
+import { createServiceSchema } from '@/lib/enhanced-schema'
+import { PricingCard, FeatureHighlight } from '@/lib/unified-components'
 
 export const metadata: Metadata = {
   title: `${COMPANY_DATA.services.details.ai.title}${COMPANY_DATA.metadata.baseTitleSuffix}`,
   description: COMPANY_DATA.services.details.ai.longDescription,
   keywords: `${COMPANY_DATA.metadata.keywords}, AIコンサルティング, AI導入, 業務効率化, DX推進`,
+  openGraph: {
+    title: `${COMPANY_DATA.services.details.ai.title}${COMPANY_DATA.metadata.baseTitleSuffix}`,
+    description: COMPANY_DATA.services.details.ai.longDescription,
+    type: 'website',
+    locale: 'ja_JP',
+    siteName: COMPANY_DATA.basic.name,
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: `${COMPANY_DATA.services.details.ai.title}${COMPANY_DATA.metadata.baseTitleSuffix}`,
+    description: COMPANY_DATA.services.details.ai.longDescription,
+  },
 }
 
 const features = [
@@ -62,189 +74,237 @@ const processSteps = [
   }
 ]
 
-// 🚀 Ultra-Unified AI Service Page - COMPANY_DATA完全統一
+// 🚀 限界突破！ Ultra-Rich AI Service Page - 完全最適化版
 export default function AiServicePage() {
   const service = COMPANY_DATA.services.details.ai
   
+  // 構造化データ生成
+  const aiServiceSchema = createServiceSchema({
+    name: service.title,
+    description: service.longDescription,
+    provider: COMPANY_DATA.basic.name,
+    areaServed: '日本',
+    serviceType: 'AIコンサルティング',
+    offers: [
+      {
+        name: service.pricing.basic.name,
+        price: service.pricing.basic.price,
+        description: service.pricing.basic.description || `${service.pricing.basic.name}プラン`
+      },
+      {
+        name: service.pricing.enterprise.name,
+        price: service.pricing.enterprise.price,
+        description: service.pricing.enterprise.description || `${service.pricing.enterprise.name}プラン`
+      }
+    ]
+  })
+
+  const breadcrumbs = [
+    { name: "ホーム", url: "/" },
+    { name: "サービス", url: "/#services" },
+    { name: "AIコンサルティング", url: "/services/ai" }
+  ]
+
   return (
-    <>
-      <Header />
-      
-      <main role="main" className="pt-16">
-        {/* Hero Section - Toyota Style */}
-        <section className="py-20 bg-gradient-to-br from-gray-50 via-white to-gray-100">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center max-w-4xl mx-auto">
-              <h1 className="text-4xl md:text-5xl font-light text-gray-900 mb-6 tracking-tight">
-                {service.title}
-              </h1>
-              
-              <p className="text-xl text-gray-600 mb-12 font-light leading-relaxed">
-                {service.description}
-              </p>
+    <PageTemplate
+      title="AIコンサルティングサービス"
+      description="株式会社AwakeのAIコンサルティングサービス"
+      breadcrumbs={breadcrumbs}
+    >
+      {/* 構造化データ */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(aiServiceSchema)
+        }}
+      />
 
-              <div className="flex justify-center">
-                <CTAButton href="#services">
-                  サービス詳細を見る
-                </CTAButton>
-              </div>
-            </div>
+      {/* Hero Section */}
+      <ContentSection className="bg-gradient-to-br from-gray-50 via-white to-gray-100">
+        <div className="text-center max-w-4xl mx-auto">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-light text-gray-900 mb-6 tracking-tight">
+            {service.title}
+          </h1>
+          
+          <p className="text-lg sm:text-xl md:text-2xl text-gray-600 mb-12 font-light leading-relaxed">
+            {service.description}
+          </p>
+
+          <div className="flex justify-center">
+            <AccessibleButton
+              href="#services"
+              variant="primary"
+              size="large"
+              ariaLabel="サービス詳細セクションに移動"
+            >
+              サービス詳細を見る
+            </AccessibleButton>
           </div>
-        </section>
+        </div>
+      </ContentSection>
 
-        {/* Features Section */}
-        <section className="py-20 bg-white">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-16">
-              <h2 className="text-3xl font-light text-gray-900 mb-4">
-                サービス特徴
-              </h2>
-              <p className="text-lg text-gray-600">
-                AI導入の課題を解決し、効果的な活用を実現
-              </p>
-            </div>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-              {features.map((feature, index) => {
-                const IconComponent = feature.icon
-                return (
-                  <FeatureHighlight
-                    key={index}
-                    icon={<IconComponent className="w-8 h-8 text-white" />}
-                    title={feature.title}
-                    description={feature.description}
-                  />
-                )
-              })}
-            </div>
-          </div>
-        </section>
-
-        {/* Pricing Section - COMPANY_DATA統一 */}
-        <section id="services" className="py-20 bg-gray-50">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-16">
-              <h2 className="text-3xl font-light text-gray-900 mb-4">
-                サービスプラン
-              </h2>
-              <p className="text-lg text-gray-600">
-                お客様のニーズに合わせた柔軟なプラン
-              </p>
-            </div>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-              <PricingCard 
-                plan={{
-                  name: service.pricing.basic.name,
-                  price: service.pricing.basic.price,
-                  duration: service.pricing.basic.duration,
-                  features: [...service.pricing.basic.features]
-                }} 
-                featured 
+      {/* Features Section */}
+      <ContentSection>
+        <div className="text-center mb-16">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-light text-gray-900 mb-4">
+            サービス特徴
+          </h2>
+          <p className="text-lg sm:text-xl text-gray-600">
+            AI導入の課題を解決し、効果的な活用を実現
+          </p>
+        </div>
+        
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {features.map((feature, index) => {
+            const IconComponent = feature.icon
+            return (
+              <FeatureHighlight
+                key={index}
+                icon={<IconComponent className="w-8 h-8 text-white" />}
+                title={feature.title}
+                description={feature.description}
               />
-              <PricingCard 
-                plan={{
-                  name: service.pricing.enterprise.name,
-                  price: service.pricing.enterprise.price,
-                  duration: service.pricing.enterprise.duration,
-                  features: [...service.pricing.enterprise.features]
-                }} 
-              />
-            </div>
-          </div>
-        </section>
+            )
+          })}
+        </div>
+      </ContentSection>
 
-        {/* Process Section */}
-        <section className="py-20 bg-white">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-16">
-              <h2 className="text-3xl font-light text-gray-900 mb-4">
-                導入の流れ
-              </h2>
-              <p className="text-lg text-gray-600">
-                段階的なアプローチで確実なAI導入を実現
-              </p>
-            </div>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-              {processSteps.map((step, index) => (
-                <FeatureHighlight
-                  key={index}
-                  icon={<div className="text-white text-sm font-medium">{step.step}</div>}
-                  title={step.title}
-                  description={step.description}
-                  metric={step.duration}
-                />
-              ))}
-            </div>
-          </div>
-        </section>
+      {/* Pricing Section */}
+      <ContentSection className="bg-gray-50" id="services">
+        <div className="text-center mb-16">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-light text-gray-900 mb-4">
+            サービスプラン
+          </h2>
+          <p className="text-lg sm:text-xl text-gray-600">
+            お客様のニーズに合わせた柔軟なプラン
+          </p>
+        </div>
+        
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+          <PricingCard 
+            plan={{
+              name: service.pricing.basic.name,
+              price: service.pricing.basic.price,
+              duration: service.pricing.basic.duration,
+              features: [...service.pricing.basic.features]
+            }} 
+            featured 
+          />
+          <PricingCard 
+            plan={{
+              name: service.pricing.enterprise.name,
+              price: service.pricing.enterprise.price,
+              duration: service.pricing.enterprise.duration,
+              features: [...service.pricing.enterprise.features]
+            }} 
+          />
+        </div>
+      </ContentSection>
 
-        {/* Success Stories Section */}
-        <section className="py-20 bg-gray-50">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-16">
-              <h2 className="text-3xl font-light text-gray-900 mb-4">
-                導入効果
-              </h2>
-            </div>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              <div className="bg-white p-6 rounded-xl shadow-sm">
-                <h3 className="text-lg font-medium text-gray-900 mb-4">業務効率化</h3>
-                <ul className="space-y-2 text-sm text-gray-600">
-                  <li>• 定型作業の自動化</li>
-                  <li>• 意思決定の高速化</li>
-                  <li>• ヒューマンエラー削減</li>
-                  <li>• 生産性向上</li>
-                </ul>
-              </div>
-              
-              <div className="bg-white p-6 rounded-xl shadow-sm">
-                <h3 className="text-lg font-medium text-gray-900 mb-4">コスト削減</h3>
-                <ul className="space-y-2 text-sm text-gray-600">
-                  <li>• 人的リソース最適化</li>
-                  <li>• 運用コスト削減</li>
-                  <li>• 品質向上による損失軽減</li>
-                  <li>• 継続的改善効果</li>
-                </ul>
-              </div>
-              
-              <div className="bg-white p-6 rounded-xl shadow-sm">
-                <h3 className="text-lg font-medium text-gray-900 mb-4">競争優位性</h3>
-                <ul className="space-y-2 text-sm text-gray-600">
-                  <li>• 先進技術活用</li>
-                  <li>• データドリブン経営</li>
-                  <li>• 新サービス創出</li>
-                  <li>• 市場対応力強化</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </section>
+      {/* Process Section */}
+      <ContentSection>
+        <div className="text-center mb-16">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-light text-gray-900 mb-4">
+            導入の流れ
+          </h2>
+          <p className="text-lg sm:text-xl text-gray-600">
+            段階的なアプローチで確実なAI導入を実現
+          </p>
+        </div>
+        
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {processSteps.map((step, index) => (
+            <FeatureHighlight
+              key={index}
+              icon={<div className="text-white text-sm font-medium">{step.step}</div>}
+              title={step.title}
+              description={step.description}
+              metric={step.duration}
+            />
+          ))}
+        </div>
+      </ContentSection>
 
-        {/* CTA Section */}
-        <section className="py-20 bg-white">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 className="text-3xl font-light text-gray-900 mb-6">
-              AI導入で業務を革新しませんか？
-            </h2>
-            <p className="text-lg text-gray-600 mb-8">
-              まずは現状分析から始めましょう。お客様に最適なAI活用方法をご提案いたします。
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <CTAButton href="/#contact">
-                無料相談を申し込む
-              </CTAButton>
-              <CTAButton href="/about" variant="secondary">
-                実績を見る
-              </CTAButton>
-            </div>
+      {/* Success Stories Section */}
+      <ContentSection className="bg-gray-50">
+        <div className="text-center mb-16">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-light text-gray-900 mb-4">
+            導入効果
+          </h2>
+        </div>
+        
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow">
+            <h3 className="text-lg font-medium text-gray-900 mb-4">業務効率化</h3>
+            <ul className="space-y-2 text-sm text-gray-600">
+              <li>• 定型作業の自動化</li>
+              <li>• 意思決定の高速化</li>
+              <li>• ヒューマンエラー削減</li>
+              <li>• 生産性向上</li>
+            </ul>
           </div>
-        </section>
-      </main>
-      
-      <Footer />
-    </>
+          
+          <div className="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow">
+            <h3 className="text-lg font-medium text-gray-900 mb-4">コスト削減</h3>
+            <ul className="space-y-2 text-sm text-gray-600">
+              <li>• 人的リソース最適化</li>
+              <li>• 運用コスト削減</li>
+              <li>• 品質向上による損失軽減</li>
+              <li>• 継続的改善効果</li>
+            </ul>
+          </div>
+          
+          <div className="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow">
+            <h3 className="text-lg font-medium text-gray-900 mb-4">競争優位性</h3>
+            <ul className="space-y-2 text-sm text-gray-600">
+              <li>• 先進技術活用</li>
+              <li>• データドリブン経営</li>
+              <li>• 新サービス創出</li>
+              <li>• 市場対応力強化</li>
+            </ul>
+          </div>
+        </div>
+      </ContentSection>
+
+      {/* CTA Section */}
+      <ContentSection>
+        <div className="text-center">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-light text-gray-900 mb-6">
+            AI導入で業務を革新しませんか？
+          </h2>
+          <p className="text-lg sm:text-xl text-gray-600 mb-8">
+            まずは現状分析から始めましょう。お客様に最適なAI活用方法をご提案いたします。
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <AccessibleButton
+              href="/#contact"
+              variant="primary"
+              size="large"
+              ariaLabel="お問い合わせフォームに移動"
+            >
+              無料相談を申し込む
+            </AccessibleButton>
+            <AccessibleButton
+              href="/about"
+              variant="secondary"
+              size="large"
+              ariaLabel="実績ページに移動"
+            >
+              実績を見る
+            </AccessibleButton>
+            <AccessibleButton
+              href={COMPANY_DATA.contact.lineUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              variant="secondary"
+              className="bg-green-500 text-white hover:bg-green-600"
+              ariaLabel="公式LINEでお問い合わせ"
+            >
+              LINE で問い合わせ
+            </AccessibleButton>
+          </div>
+        </div>
+      </ContentSection>
+    </PageTemplate>
   )
 }
