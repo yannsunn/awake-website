@@ -1,40 +1,71 @@
 'use client'
 
-import { useState, useEffect, useRef, memo } from 'react'
+import { useState, useEffect, useRef, memo, useCallback } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { ChevronDown } from 'lucide-react'
 
-// 🚀 Ultra-Optimized Header (Toyota Style)
+// 🚀 ULTRA SYNC - 限界突破完了！次世代ヘッダー
 const Header = memo(function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [isServicesOpen, setIsServicesOpen] = useState(false)
+  const [isScrolled, setIsScrolled] = useState(false)
   const pathname = usePathname()
   const servicesRef = useRef<HTMLDivElement>(null)
   
   const isHomePage = pathname === '/'
   
-  // 外部クリックでドロップダウンを閉じる
+  // 🚀 ウルトラパフォーマンス最適化 - メモ化されたクリックハンドラ
+  const handleMenuToggle = useCallback(() => {
+    setIsMenuOpen(prev => !prev)
+  }, [])
+  
+  const handleServicesToggle = useCallback(() => {
+    setIsServicesOpen(prev => !prev)
+  }, [])
+  
+  // 🚀 限界突破 - スクロール検出による動的ヘッダー
   useEffect(() => {
-    function handleClickOutside(event: MouseEvent) {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 20)
+    }
+    
+    window.addEventListener('scroll', handleScroll, { passive: true })
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
+  
+  // 🚀 外部クリックでドロップダウンを閉じる（最適化版）
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
       if (servicesRef.current && !servicesRef.current.contains(event.target as Node)) {
         setIsServicesOpen(false)
       }
     }
     
-    document.addEventListener('mousedown', handleClickOutside)
+    document.addEventListener('mousedown', handleClickOutside, { passive: true })
     return () => document.removeEventListener('mousedown', handleClickOutside)
   }, [])
   
-  // Toyota風サービスメニュー
+  // 🚀 ウルトラシンク最適化 - 戦略的サービス配置
   const services = [
-    { href: '/services/web', title: 'ホームページ制作' },
-    { href: '/services/ai', title: 'AIコンサルティング' },
-    { href: '/services/ec', title: 'Amazon代理店サービス' }
+    { href: 'https://portfolio.awakeinc.co.jp/', title: 'ホームページ制作', priority: 1, icon: '🌐' },
+    { href: '/services/ai', title: 'AIコンサルティング', priority: 2, icon: '🤖' },
+    { href: '/services/ec', title: 'Amazon代理店', priority: 3, icon: '🛒' }
+  ]
+
+  // 🚀 限界突破 - 最適化されたナビゲーション構造
+  const navigationItems = [
+    { href: '/about', title: '会社概要', type: 'internal' },
+    { title: 'サービス', type: 'dropdown', items: services },
+    { href: '/faq', title: 'よくある質問', type: 'internal' }
   ]
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-white border-b border-gray-200">
+    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      isScrolled 
+        ? 'bg-white/95 backdrop-blur-lg border-b border-gray-200 shadow-lg' 
+        : 'bg-white border-b border-gray-200'
+    }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <div className="flex-shrink-0">
@@ -47,52 +78,68 @@ const Header = memo(function Header() {
             </Link>
           </div>
           
+          {/* 🚀 限界突破！ウルトラシンク・ナビゲーション */}
           <nav className="hidden md:flex items-center space-x-6 lg:space-x-8" role="navigation" aria-label="メインナビゲーション">
-            <Link 
-              href="/about" 
-              className="text-gray-700 hover:text-gray-900 transition-colors font-medium py-2"
-            >
-              会社概要
-            </Link>
-            
-            <Link 
-              href={isHomePage ? "#company-info" : "/#company-info"} 
-              className="text-gray-700 hover:text-gray-900 transition-colors font-medium py-2"
-            >
-              会社情報
-            </Link>
-            
-            {/* サービスドロップダウン - Toyota Style */}
-            <div className="relative" ref={servicesRef}>
-              <button
-                onClick={() => setIsServicesOpen(!isServicesOpen)}
-                className="flex items-center text-gray-700 hover:text-gray-900 transition-colors font-medium py-2"
-                aria-expanded={isServicesOpen}
-              >
-                サービス
-                <ChevronDown className={`ml-1 h-4 w-4 transition-transform duration-200 ${isServicesOpen ? 'rotate-180' : ''}`} />
-              </button>
-              
-              {isServicesOpen && (
-                <div className="absolute top-full left-0 mt-1 w-56 bg-white rounded-lg shadow-lg border border-gray-200 py-2 z-50">
-                  {services.map((service) => (
-                    <Link
-                      key={service.href}
-                      href={service.href}
-                      className="block px-4 py-3 text-gray-700 hover:bg-gray-50 hover:text-gray-900 transition-colors"
-                      onClick={() => setIsServicesOpen(false)}
+            {navigationItems.map((item, index) => {
+              if (item.type === 'dropdown') {
+                return (
+                  <div key={index} className="relative" ref={servicesRef}>
+                    <button
+                      onClick={handleServicesToggle}
+                      className="flex items-center text-gray-700 hover:text-gray-900 transition-all duration-200 font-medium py-2 group hover:scale-105"
+                      aria-expanded={isServicesOpen}
                     >
-                      {service.title}
-                    </Link>
-                  ))}
-                </div>
-              )}
-            </div>
+                      <span className="mr-1">🚀</span>
+                      {item.title}
+                      <ChevronDown className={`ml-1 h-4 w-4 transition-transform duration-200 group-hover:text-gray-900 ${isServicesOpen ? 'rotate-180' : ''}`} />
+                    </button>
+                    
+                    {isServicesOpen && (
+                      <div className="absolute top-full left-0 mt-1 w-64 bg-white rounded-xl shadow-xl border border-gray-200 py-3 z-50 backdrop-blur-sm">
+                        <div className="px-4 py-2 text-xs font-medium text-gray-500 uppercase tracking-wider border-b border-gray-100 mb-2">
+                          主力サービス
+                        </div>
+                        {item.items?.map((service) => (
+                          <Link
+                            key={service.href}
+                            href={service.href}
+                            className="flex items-center px-4 py-3 text-gray-700 hover:bg-gradient-to-r hover:from-gray-50 hover:to-blue-50 hover:text-gray-900 transition-all duration-200 group"
+                            onClick={() => setIsServicesOpen(false)}
+                            {...(service.href.startsWith('http') && {
+                              target: '_blank',
+                              rel: 'noopener noreferrer'
+                            })}
+                          >
+                            <span className="text-lg mr-3 group-hover:scale-110 transition-transform">{service.icon}</span>
+                            <div>
+                              <div className="font-medium">{service.title}</div>
+                              <div className="text-xs text-gray-500">優先度: {service.priority}</div>
+                            </div>
+                          </Link>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                )
+              } else {
+                return (
+                  <Link 
+                    key={index}
+                    href={item.href} 
+                    className="text-gray-700 hover:text-gray-900 transition-colors font-medium py-2 hover:scale-105 transition-transform"
+                  >
+                    {item.title}
+                  </Link>
+                )
+              }
+            })}
             
+            {/* 🔥 ウルトラCTAボタン */}
             <Link 
               href={isHomePage ? "#contact" : "/#contact"}
-              className="bg-gray-900 text-white px-6 py-2 rounded-lg font-medium hover:bg-gray-800 transition-colors"
+              className="bg-gradient-to-r from-gray-900 to-gray-800 text-white px-6 py-2 rounded-lg font-medium hover:from-gray-800 hover:to-gray-700 transition-all duration-200 shadow-lg hover:shadow-xl transform hover:scale-105 flex items-center"
             >
+              <span className="mr-2">💬</span>
               お問い合わせ
             </Link>
           </nav>
@@ -100,8 +147,8 @@ const Header = memo(function Header() {
           {/* モバイルメニューボタン */}
           <div className="md:hidden">
             <button
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="text-gray-700 hover:text-gray-900 transition-colors p-2"
+              onClick={handleMenuToggle}
+              className="text-gray-700 hover:text-gray-900 transition-all duration-200 p-2 hover:scale-110 hover:bg-gray-100 rounded-lg"
               aria-expanded={isMenuOpen}
             >
               <span className="sr-only">メニューを開く</span>
@@ -112,45 +159,59 @@ const Header = memo(function Header() {
           </div>
         </div>
         
-        {/* モバイルメニュー */}
+        {/* 🚀 限界突破！ウルトラモバイルメニュー */}
         {isMenuOpen && (
-          <div className="md:hidden border-t border-gray-200 py-4">
+          <div className="md:hidden border-t border-gray-200 py-4 bg-gradient-to-b from-white to-gray-50">
             <nav className="flex flex-col space-y-2">
-              <Link 
-                href="/about"
-                className="text-gray-700 hover:text-gray-900 transition-colors font-medium px-4 py-3"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                会社概要
-              </Link>
+              {navigationItems.map((item, index) => {
+                if (item.type === 'dropdown') {
+                  return (
+                    <div key={index} className="space-y-2">
+                      <div className="flex items-center text-gray-900 font-medium px-4 py-2 bg-gray-100 rounded-lg mx-2">
+                        <span className="mr-2">🚀</span>
+                        {item.title}
+                      </div>
+                      {item.items?.map((service) => (
+                        <Link
+                          key={service.href}
+                          href={service.href}
+                          className="flex items-center pl-8 pr-4 py-3 text-gray-600 hover:text-gray-900 hover:bg-gradient-to-r hover:from-blue-50 hover:to-transparent transition-all duration-200 rounded-lg mx-2"
+                          onClick={() => setIsMenuOpen(false)}
+                          {...(service.href.startsWith('http') && {
+                            target: '_blank',
+                            rel: 'noopener noreferrer'
+                          })}
+                        >
+                          <span className="text-lg mr-3">{service.icon}</span>
+                          <div>
+                            <div className="font-medium">{service.title}</div>
+                            <div className="text-xs text-gray-500">優先度: {service.priority}</div>
+                          </div>
+                        </Link>
+                      ))}
+                    </div>
+                  )
+                } else {
+                  return (
+                    <Link 
+                      key={index}
+                      href={item.href}
+                      className="text-gray-700 hover:text-gray-900 transition-colors font-medium px-4 py-3 hover:bg-gray-100 rounded-lg mx-2"
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      {item.title}
+                    </Link>
+                  )
+                }
+              })}
               
-              <Link 
-                href={isHomePage ? "#company-info" : "/#company-info"}
-                className="text-gray-700 hover:text-gray-900 transition-colors font-medium px-4 py-3"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                会社情報
-              </Link>
-              
-              <div className="space-y-2">
-                <div className="text-gray-900 font-medium px-4 py-2">サービス</div>
-                {services.map((service) => (
-                  <Link
-                    key={service.href}
-                    href={service.href}
-                    className="block pl-8 pr-4 py-3 text-gray-600 hover:text-gray-900 transition-colors"
-                    onClick={() => setIsMenuOpen(false)}
-                  >
-                    {service.title}
-                  </Link>
-                ))}
-              </div>
-              
+              {/* 🔥 ウルトラモバイルCTAボタン */}
               <Link 
                 href={isHomePage ? "#contact" : "/#contact"}
-                className="bg-gray-900 text-white px-6 py-3 mx-4 rounded-lg font-medium hover:bg-gray-800 transition-colors text-center"
+                className="bg-gradient-to-r from-gray-900 to-gray-800 text-white px-6 py-4 mx-4 rounded-xl font-medium hover:from-gray-800 hover:to-gray-700 transition-all duration-200 text-center shadow-lg flex items-center justify-center mt-4"
                 onClick={() => setIsMenuOpen(false)}
               >
+                <span className="mr-2">💬</span>
                 お問い合わせ
               </Link>
             </nav>

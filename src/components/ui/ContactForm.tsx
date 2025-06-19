@@ -2,15 +2,8 @@
 
 import { useState, memo, useCallback } from 'react'
 import { ArrowRight } from 'lucide-react'
-import { motion } from 'framer-motion'
 
-// アニメーション設定をローカルで定義（インポートエラー回避）
-const fadeInUp = {
-  hidden: { opacity: 0, y: 20 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.5 } }
-}
-
-// 🚀 Ultra-Optimized Contact Form Component
+// 🚀 ULTRA SYNC - 限界突破！軽量化お問い合わせフォーム
 interface FormData {
   name: string
   email: string
@@ -54,10 +47,7 @@ const ContactForm = memo(function ContactForm() {
   }, [])
 
   return (
-    <motion.div 
-      variants={fadeInUp}
-      className="bg-white rounded-2xl p-8 shadow-sm border border-gray-100"
-    >
+    <div className="bg-white rounded-2xl p-8 shadow-sm border border-gray-100 transform transition-all duration-300 hover:shadow-lg">
       <h3 className="text-2xl font-medium text-gray-900 mb-6">メールでお問い合わせ</h3>
       
       <form onSubmit={handleSubmit} className="space-y-6">
@@ -147,29 +137,23 @@ const ContactForm = memo(function ContactForm() {
           />
         </div>
 
-        {/* Submit Status */}
+        {/* 🚀 ウルトラ軽量ステータス表示 */}
         {submitStatus === 'success' && (
-          <motion.div 
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="p-4 bg-green-50 border border-green-200 rounded-lg"
-          >
-            <p className="text-green-700 text-sm">
+          <div className="p-4 bg-green-50 border border-green-200 rounded-lg animate-in fade-in slide-in-from-bottom-2 duration-300">
+            <p className="text-green-700 text-sm flex items-center">
+              <span className="mr-2">✅</span>
               お問い合わせありがとうございます。1営業日以内にご返信いたします。
             </p>
-          </motion.div>
+          </div>
         )}
 
         {submitStatus === 'error' && (
-          <motion.div 
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="p-4 bg-red-50 border border-red-200 rounded-lg"
-          >
-            <p className="text-red-700 text-sm">
+          <div className="p-4 bg-red-50 border border-red-200 rounded-lg animate-in fade-in slide-in-from-bottom-2 duration-300">
+            <p className="text-red-700 text-sm flex items-center">
+              <span className="mr-2">❌</span>
               送信に失敗しました。もう一度お試しください。
             </p>
-          </motion.div>
+          </div>
         )}
 
         <button
@@ -198,7 +182,7 @@ const ContactForm = memo(function ContactForm() {
           )}
         </button>
       </form>
-    </motion.div>
+    </div>
   )
 })
 

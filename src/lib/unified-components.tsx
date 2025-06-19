@@ -23,7 +23,12 @@ export const CTAButton = memo(function CTAButton({
   className?: string
   [key: string]: any
 }) {
-  return <Button href={href} variant={variant} showArrow className={className} {...props}>{children}</Button>
+  const externalLinkProps = href.startsWith('http') ? {
+    target: '_blank',
+    rel: 'noopener noreferrer'
+  } : {}
+  
+  return <Button href={href} variant={variant} showArrow className={className} {...externalLinkProps} {...props}>{children}</Button>
 })
 
 // ✨ Service Card Component - Reusable everywhere
