@@ -1,9 +1,7 @@
 import type { Metadata } from 'next'
-import Header from '@/components/layout/Header'
-import Footer from '@/components/layout/Footer'
-import { ArrowLeft } from 'lucide-react'
-import Link from 'next/link'
 import { COMPANY_DATA } from '@/lib/company-data'
+import PageTemplate, { ContentSection } from '@/components/layout/PageTemplate'
+import AccessibleButton from '@/components/ui/AccessibleButton'
 
 export const metadata: Metadata = {
   title: "利用規約 | 株式会社Awake",
@@ -12,40 +10,38 @@ export const metadata: Metadata = {
 }
 
 export default function TermsPage() {
+  const breadcrumbs = [
+    { name: "ホーム", url: "/" },
+    { name: "利用規約", url: "/legal/terms" }
+  ]
+
   return (
-    <>
-      <Header />
-      
-      <main role="main" className="pt-16">
-        {/* Page Header */}
-        <section className="bg-gray-50 py-16">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <Link 
-              href="/"
-              className="inline-flex items-center text-primary-purple hover:text-primary-purple-dark mb-8 transition-colors"
-            >
-              <ArrowLeft className="h-4 w-4 mr-2" />
-              ホームに戻る
-            </Link>
-            <h1 className="text-4xl font-bold text-gray-900">利用規約</h1>
-            <p className="text-gray-600 mt-4">最終更新日: 2024年1月1日</p>
+    <PageTemplate
+      title="利用規約"
+      description="株式会社Awakeの利用規約"
+      breadcrumbs={breadcrumbs}
+    >
+      {/* Hero Section */}
+      <ContentSection className="bg-gray-50">
+        <div className="text-center max-w-4xl mx-auto">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-light text-gray-900 mb-4">利用規約</h1>
+          <p className="text-sm sm:text-base text-gray-600">最終更新日: 2024年1月1日</p>
+        </div>
+      </ContentSection>
+
+      {/* Content */}
+      <ContentSection>
+        <div className="prose prose-lg max-w-none">
+          <div className="mb-8">
+            <p className="text-sm sm:text-base text-gray-700 leading-relaxed">
+              この利用規約（以下「本規約」）は、株式会社Awake（以下「当社」）が提供するすべてのサービス（以下「本サービス」）を利用される際に適用されます。本サービスを利用されるお客様（以下「ユーザー」）は、本規約に同意したうえでご利用ください。
+            </p>
           </div>
-        </section>
 
-        {/* Terms Content */}
-        <section className="py-16">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="prose prose-lg max-w-none">
-              <div className="mb-8">
-                <p className="text-gray-700 leading-relaxed">
-                  この利用規約（以下「本規約」）は、株式会社Awake（以下「当社」）が提供するすべてのサービス（以下「本サービス」）を利用される際に適用されます。本サービスを利用されるお客様（以下「ユーザー」）は、本規約に同意したうえでご利用ください。
-                </p>
-              </div>
-
-              <div className="space-y-8">
-                <section>
-                  <h2 className="text-2xl font-bold text-gray-900 mb-4">1. 規約の適用</h2>
-                  <p className="text-gray-700 leading-relaxed">
+          <div className="space-y-8">
+            <section>
+              <h2 className="text-xl sm:text-2xl font-light text-gray-900 mb-4">1. 規約の適用</h2>
+              <p className="text-sm sm:text-base text-gray-700 leading-relaxed">
                     本規約は、ユーザーと当社との間の本サービスの利用に関わる一切の関係に適用されます。当社は本サービスに関し、本規約のほか、ご利用にあたってのルール等、各種の定めをすることがあります。これら個別規定はその名称のいかんに関わらず、本規約の一部を構成するものとします。
                   </p>
                 </section>
@@ -135,13 +131,40 @@ export default function TermsPage() {
                     <p className="text-gray-700">Email: {COMPANY_DATA.contact.email}</p>
                   </div>
                 </section>
-              </div>
-            </div>
           </div>
-        </section>
-      </main>
+        </div>
+      </ContentSection>
       
-      <Footer />
-    </>
+      {/* Contact CTA */}
+      <ContentSection className="bg-gray-50">
+        <div className="text-center">
+          <h2 className="text-xl sm:text-2xl font-light text-gray-900 mb-6">
+            利用規約に関するご質問
+          </h2>
+          <p className="text-sm sm:text-base text-gray-600 mb-8">
+            ご不明な点がございましたら、お気軽にお問い合わせください。
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <AccessibleButton
+              href="/#contact"
+              variant="primary"
+              ariaLabel="お問い合わせページに移動"
+            >
+              お問い合わせ
+            </AccessibleButton>
+            <AccessibleButton
+              href={COMPANY_DATA.contact.lineUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              variant="secondary"
+              className="bg-green-500 text-white hover:bg-green-600"
+              ariaLabel="公式LINEでお問い合わせ"
+            >
+              LINE で問い合わせ
+            </AccessibleButton>
+          </div>
+        </div>
+      </ContentSection>
+    </PageTemplate>
   )
 }
