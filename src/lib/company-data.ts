@@ -35,7 +35,7 @@ export const COMPANY_DATA = {
         title: 'ホームページ制作',
         description: '企業の価値を最大化するプロフェッショナルなウェブサイト',
         longDescription: '【コンバージョン率3倍改善】戦略的UX設計とニューロマーケティングで売上直結サイトを構築。プロフェッショナルなコーポレートサイトから大規模サイトまで対応。',
-        href: '/services/web',
+        href: 'https://portfolio.awakeinc.co.jp/',
         pricing: {
           standard: {
             name: 'スタンダード',

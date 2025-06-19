@@ -40,6 +40,10 @@ const Footer = memo(function Footer() {
                   <Link 
                     href={service.href} 
                     className="text-gray-400 hover:text-white transition-colors text-sm"
+                    {...(service.href.startsWith('http') && {
+                      target: '_blank',
+                      rel: 'noopener noreferrer'
+                    })}
                   >
                     {service.title}
                   </Link>

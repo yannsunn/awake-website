@@ -161,7 +161,15 @@ export default function HomePage() {
                       <span className="text-gray-500 text-sm">〜</span>
                     </div>
                     <div className="text-center">
-                      <Button href={service.href} variant="outline" className="w-full py-3">
+                      <Button 
+                        href={service.href} 
+                        variant="outline" 
+                        className="w-full py-3"
+                        {...(service.href.startsWith('http') && {
+                          target: '_blank',
+                          rel: 'noopener noreferrer'
+                        })}
+                      >
                         詳細を見る
                       </Button>
                     </div>
