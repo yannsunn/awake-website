@@ -1,9 +1,7 @@
 import type { Metadata } from 'next'
-import Header from '@/components/layout/Header'
-import Footer from '@/components/layout/Footer'
-import { ArrowLeft } from 'lucide-react'
-import Link from 'next/link'
 import { COMPANY_DATA } from '@/lib/company-data'
+import PageTemplate, { ContentSection } from '@/components/layout/PageTemplate'
+import AccessibleButton from '@/components/ui/AccessibleButton'
 
 export const metadata: Metadata = {
   title: "プライバシーポリシー | 株式会社Awake",
@@ -12,56 +10,54 @@ export const metadata: Metadata = {
 }
 
 export default function PrivacyPolicyPage() {
+  const breadcrumbs = [
+    { name: "ホーム", url: "/" },
+    { name: "プライバシーポリシー", url: "/legal/privacy-policy" }
+  ]
+
   return (
-    <>
-      <Header />
-      
-      <main role="main" className="pt-16">
-        {/* Page Header */}
-        <section className="bg-gray-50 py-16">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <Link 
-              href="/"
-              className="inline-flex items-center text-primary-purple hover:text-primary-purple-dark mb-8 transition-colors"
-            >
-              <ArrowLeft className="h-4 w-4 mr-2" />
-              ホームに戻る
-            </Link>
-            <h1 className="text-4xl font-bold text-gray-900">プライバシーポリシー</h1>
-            <p className="text-gray-600 mt-4">最終更新日: 2024年1月1日</p>
+    <PageTemplate
+      title="プライバシーポリシー"
+      description="株式会社Awakeのプライバシーポリシー"
+      breadcrumbs={breadcrumbs}
+    >
+      {/* Hero Section */}
+      <ContentSection className="bg-gray-50">
+        <div className="text-center max-w-4xl mx-auto">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-light text-gray-900 mb-4">プライバシーポリシー</h1>
+          <p className="text-sm sm:text-base text-gray-600">最終更新日: 2024年1月1日</p>
+        </div>
+      </ContentSection>
+
+      {/* Content */}
+      <ContentSection>
+        <div className="prose prose-lg max-w-none">
+          <div className="mb-8">
+            <p className="text-sm sm:text-base text-gray-700 leading-relaxed">
+              株式会社Awake（以下「当社」）は、当社が提供するサービスをご利用いただくお客様の個人情報を適切に保護することを社会的責務と考え、個人情報の保護に関する法律、その他関係法令等を遵守し、お客様の個人情報を適切に取り扱います。
+            </p>
           </div>
-        </section>
 
-        {/* Privacy Policy Content */}
-        <section className="py-16">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="prose prose-lg max-w-none">
-              <div className="mb-8">
-                <p className="text-gray-700 leading-relaxed">
-                  株式会社Awake（以下「当社」）は、当社が提供するサービスをご利用いただくお客様の個人情報を適切に保護することを社会的責務と考え、個人情報の保護に関する法律、その他関係法令等を遵守し、お客様の個人情報を適切に取り扱います。
-                </p>
-              </div>
-
-              <div className="space-y-8">
-                <section>
-                  <h2 className="text-2xl font-bold text-gray-900 mb-4">1. 個人情報の定義</h2>
-                  <p className="text-gray-700 leading-relaxed">
+          <div className="space-y-8">
+            <section>
+              <h2 className="text-xl sm:text-2xl font-light text-gray-900 mb-4">1. 個人情報の定義</h2>
+              <p className="text-sm sm:text-base text-gray-700 leading-relaxed">
                     本プライバシーポリシーにおいて、「個人情報」とは、個人情報の保護に関する法律にいう「個人情報」を指すものとし、生存する個人に関する情報であって、当該情報に含まれる氏名、生年月日、住所、電話番号、連絡先その他の記述等により特定の個人を識別できる情報および容貌、指紋、声紋にかかるデータ、及び健康保険証の保険者番号などの当該情報単体から特定の個人を識別できる情報（個人識別情報）を指します。
                   </p>
                 </section>
 
-                <section>
-                  <h2 className="text-2xl font-bold text-gray-900 mb-4">2. 個人情報の収集方法</h2>
-                  <p className="text-gray-700 leading-relaxed mb-4">
+            <section>
+              <h2 className="text-xl sm:text-2xl font-light text-gray-900 mb-4">2. 個人情報の収集方法</h2>
+              <p className="text-sm sm:text-base text-gray-700 leading-relaxed mb-4">
                     当社は、お客様から個人情報を収集する際は、適法かつ公正な手段により、かつお客様の意思に基づいて収集いたします。当社が個人情報を収集する場面は、主に以下の通りです。
                   </p>
-                  <ul className="list-disc list-inside text-gray-700 leading-relaxed space-y-2">
-                    <li>お問い合わせフォームのご入力時</li>
-                    <li>サービスお申込み時</li>
-                    <li>メールマガジンお申込み時</li>
-                    <li>各種キャンペーンお申込み時</li>
-                    <li>アンケートのご回答時</li>
-                  </ul>
+              <ul className="list-disc list-inside text-sm sm:text-base text-gray-700 leading-relaxed space-y-2">
+                <li>お問い合わせフォームのご入力時</li>
+                <li>サービスお申込み時</li>
+                <li>メールマガジンお申込み時</li>
+                <li>各種キャンペーンお申込み時</li>
+                <li>アンケートのご回答時</li>
+              </ul>
                 </section>
 
                 <section>
@@ -156,13 +152,40 @@ export default function PrivacyPolicyPage() {
                     <p className="text-gray-700 text-sm mt-2">営業時間: {COMPANY_DATA.contact.businessHours.weekdays}（土日祝日除く）</p>
                   </div>
                 </section>
-              </div>
-            </div>
           </div>
-        </section>
-      </main>
+        </div>
+      </ContentSection>
       
-      <Footer />
-    </>
+      {/* Contact CTA */}
+      <ContentSection className="bg-gray-50">
+        <div className="text-center">
+          <h2 className="text-xl sm:text-2xl font-light text-gray-900 mb-6">
+            プライバシーに関するご質問
+          </h2>
+          <p className="text-sm sm:text-base text-gray-600 mb-8">
+            個人情報の取扱いについてご不明な点がございましたら、お気軽にお問い合わせください。
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <AccessibleButton
+              href="/#contact"
+              variant="primary"
+              ariaLabel="お問い合わせページに移動"
+            >
+              お問い合わせ
+            </AccessibleButton>
+            <AccessibleButton
+              href={COMPANY_DATA.contact.lineUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              variant="secondary"
+              className="bg-green-500 text-white hover:bg-green-600"
+              ariaLabel="公式LINEでお問い合わせ"
+            >
+              LINE で問い合わせ
+            </AccessibleButton>
+          </div>
+        </div>
+      </ContentSection>
+    </PageTemplate>
   )
 }

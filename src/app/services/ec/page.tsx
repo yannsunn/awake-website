@@ -270,7 +270,7 @@ export default function EcServicePage() {
                         : 'border border-green-300 text-green-700 hover:bg-green-50 hover:border-green-400'
                     }`}
                   >
-                    📱 LINE で相談
+                    LINE で問い合わせ
                   </a>
                 </div>
               ))}
@@ -338,7 +338,7 @@ export default function EcServicePage() {
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center px-8 py-4 bg-green-500 text-white font-medium rounded-lg transition-all duration-200 hover:bg-green-600 shadow-lg hover:shadow-xl"
               >
-                📱 無料相談をLINEで受ける
+                LINE で問い合わせ
                 <ArrowRight className="ml-2 h-5 w-5" />
               </a>
             </div>
