@@ -73,7 +73,7 @@ export const presetConfig = {
     priority: false,
     sizes: imageSizes.cardImage,
     showLoadingPlaceholder: true,
-    className: 'group-hover:scale-105'
+    className: ''
   },
   responsive: {
     quality: 85,

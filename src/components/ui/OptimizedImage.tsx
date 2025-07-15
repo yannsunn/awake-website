@@ -166,7 +166,6 @@ const OptimizedImage = memo(function OptimizedImage({
         fill={preset === 'thumbnail' || (preset === 'responsive' && aspectRatio !== 'auto')}
         className={cn(
           isLoaded ? "opacity-100" : "opacity-0",
-          "transition-opacity duration-300",
           currentPresetConfig.className,
           className
         )}
@@ -179,7 +178,7 @@ const OptimizedImage = memo(function OptimizedImage({
 
       {/* ギャラリーホバーオーバーレイ */}
       {preset === 'gallery' && (
-        <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-opacity duration-300" />
+        <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20" />
       )}
 
       {/* 画像説明のスクリーンリーダー対応 */}
