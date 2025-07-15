@@ -4,6 +4,11 @@
 import { useState, useCallback, memo } from 'react'
 import Image, { ImageProps } from 'next/image'
 import { cn } from '@/lib/utils'
+import { presetConfig } from '@/lib/imageOptimization'
+
+type ImagePreset = 'hero' | 'thumbnail' | 'gallery' | 'responsive' | 'default'
+type AspectRatio = '16/9' | '4/3' | '1/1' | 'auto'
+type ThumbnailSize = 'sm' | 'md' | 'lg'
 
 interface OptimizedImageProps extends Omit<ImageProps, 'onLoad' | 'onError'> {
   fallbackSrc?: string
@@ -16,27 +21,60 @@ interface OptimizedImageProps extends Omit<ImageProps, 'onLoad' | 'onError'> {
   lazy?: boolean
   quality?: number
   format?: 'webp' | 'avif' | 'auto'
+  // 統合されたプロパティ
+  preset?: ImagePreset
+  aspectRatio?: AspectRatio
+  thumbnailSize?: ThumbnailSize
+  onImageClick?: () => void
 }
 
 const OptimizedImage = memo(function OptimizedImage({
   src,
   alt,
   fallbackSrc = '/assets/images/placeholder.jpg',
-  showLoadingPlaceholder = true,
+  showLoadingPlaceholder,
   loadingClassName = '',
   errorClassName = '',
   containerClassName = '',
   onLoadComplete,
   onError,
   lazy = true,
-  quality = 85,
+  quality,
   format = 'auto',
+  preset = 'default',
+  aspectRatio = 'auto',
+  thumbnailSize = 'md',
+  onImageClick,
   className,
   ...props
 }: OptimizedImageProps) {
   const [isLoaded, setIsLoaded] = useState(false)
   const [isError, setIsError] = useState(false)
   const [currentSrc, setCurrentSrc] = useState(src)
+
+  // プリセット設定の取得
+  const currentPresetConfig = presetConfig[preset]
+  
+  // サムネイルサイズの設定
+  const getThumbnailSizeClass = (size: ThumbnailSize) => {
+    switch (size) {
+      case 'sm': return 'w-16 h-16'
+      case 'md': return 'w-24 h-24'
+      case 'lg': return 'w-32 h-32'
+      default: return 'w-24 h-24'
+    }
+  }
+
+  // アスペクト比の設定
+  const getAspectRatioClass = (ratio: AspectRatio) => {
+    switch (ratio) {
+      case '16/9': return 'aspect-video'
+      case '4/3': return 'aspect-4/3'
+      case '1/1': return 'aspect-square'
+      case 'auto': return ''
+      default: return ''
+    }
+  }
 
   const handleLoad = useCallback(() => {
     setIsLoaded(true)
@@ -50,17 +88,47 @@ const OptimizedImage = memo(function OptimizedImage({
     console.warn(`Image failed to load: ${src}`)
   }, [src, fallbackSrc, onError])
 
-  // 画像形式の最適化
-  const optimizedSizes = props.sizes || 
-    "(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
+  // コンテナクラス名の決定
+  const getContainerClassName = () => {
+    let baseClass = "relative overflow-hidden"
+    
+    if (preset === 'thumbnail') {
+      baseClass += " rounded-lg " + getThumbnailSizeClass(thumbnailSize)
+    } else if (preset === 'gallery') {
+      baseClass += " group cursor-pointer rounded-lg"
+    } else if (preset === 'responsive') {
+      baseClass += " w-full " + getAspectRatioClass(aspectRatio)
+    }
+    
+    return cn(baseClass, containerClassName)
+  }
+
+  const handleImageClick = useCallback(() => {
+    if (onImageClick) {
+      onImageClick()
+    }
+  }, [onImageClick])
+
+  const handleKeyDown = useCallback((e: React.KeyboardEvent) => {
+    if (onImageClick && (e.key === 'Enter' || e.key === ' ')) {
+      e.preventDefault()
+      onImageClick()
+    }
+  }, [onImageClick])
 
   return (
-    <div className={cn("relative overflow-hidden", containerClassName)}>
+    <div 
+      className={getContainerClassName()}
+      onClick={preset === 'gallery' ? handleImageClick : undefined}
+      role={preset === 'gallery' && onImageClick ? "button" : undefined}
+      tabIndex={preset === 'gallery' && onImageClick ? 0 : undefined}
+      onKeyDown={preset === 'gallery' ? handleKeyDown : undefined}
+    >
       {/* ローディングプレースホルダー */}
-      {showLoadingPlaceholder && !isLoaded && !isError && (
+      {(showLoadingPlaceholder ?? currentPresetConfig.showLoadingPlaceholder ?? true) && !isLoaded && !isError && (
         <div 
           className={cn(
-            "absolute inset-0 bg-gradient-to-br from-gray-200 to-gray-300 animate-pulse",
+            "absolute inset-0 bg-gradient-to-br from-gray-200 to-gray-300",
             "flex items-center justify-center",
             loadingClassName
           )}
@@ -92,11 +160,14 @@ const OptimizedImage = memo(function OptimizedImage({
         onLoad={handleLoad}
         onError={handleError}
         loading={lazy ? "lazy" : "eager"}
-        quality={quality}
-        sizes={optimizedSizes}
+        quality={quality || currentPresetConfig.quality}
+        sizes={props.sizes || currentPresetConfig.sizes}
+        priority={props.priority ?? currentPresetConfig.priority}
+        fill={preset === 'thumbnail' || (preset === 'responsive' && aspectRatio !== 'auto')}
         className={cn(
-          "transition-opacity duration-300",
           isLoaded ? "opacity-100" : "opacity-0",
+          "transition-opacity duration-300",
+          currentPresetConfig.className,
           className
         )}
         // WebP/AVIF対応のための形式指定
@@ -105,6 +176,11 @@ const OptimizedImage = memo(function OptimizedImage({
         })}
         {...props}
       />
+
+      {/* ギャラリーホバーオーバーレイ */}
+      {preset === 'gallery' && (
+        <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-opacity duration-300" />
+      )}
 
       {/* 画像説明のスクリーンリーダー対応 */}
       {alt && (
@@ -118,122 +194,61 @@ const OptimizedImage = memo(function OptimizedImage({
 
 export default OptimizedImage
 
-// 🚀 レスポンシブ画像プリセット
+// 🚀 便利なプリセット関数（後方互換性のため）
 export const ResponsiveImage = memo(function ResponsiveImage({
-  src,
-  alt,
   aspectRatio = 'auto',
   ...props
 }: OptimizedImageProps & {
-  aspectRatio?: '16/9' | '4/3' | '1/1' | 'auto'
+  aspectRatio?: AspectRatio
 }) {
-  const aspectRatioClasses = {
-    '16/9': 'aspect-video',
-    '4/3': 'aspect-4/3',
-    '1/1': 'aspect-square',
-    'auto': ''
-  }
-
-  return (
-    <div className={cn(
-      "relative w-full",
-      aspectRatioClasses[aspectRatio]
-    )}>
-      <OptimizedImage
-        src={src}
-        alt={alt}
-        fill={aspectRatio !== 'auto'}
-        className="object-cover"
-        {...props}
-      />
-    </div>
-  )
-})
-
-// 🚀 ヒーロー画像専用コンポーネント
-export const HeroImage = memo(function HeroImage({
-  src,
-  alt,
-  priority = true,
-  ...props
-}: OptimizedImageProps) {
   return (
     <OptimizedImage
-      src={src}
-      alt={alt}
-      priority={priority}
-      quality={90}
-      sizes="100vw"
-      className="object-cover object-center"
-      showLoadingPlaceholder={false}
+      preset="responsive"
+      aspectRatio={aspectRatio}
       {...props}
     />
   )
 })
 
-// 🚀 サムネイル画像コンポーネント
-export const ThumbnailImage = memo(function ThumbnailImage({
-  src,
-  alt,
-  size = 'md',
+export const HeroImage = memo(function HeroImage({
+  priority = true,
   ...props
-}: OptimizedImageProps & {
-  size?: 'sm' | 'md' | 'lg'
-}) {
-  const sizeClasses = {
-    sm: 'w-16 h-16',
-    md: 'w-24 h-24', 
-    lg: 'w-32 h-32'
-  }
-
+}: OptimizedImageProps) {
   return (
-    <div className={cn(
-      "relative rounded-lg overflow-hidden",
-      sizeClasses[size]
-    )}>
-      <OptimizedImage
-        src={src}
-        alt={alt}
-        fill
-        className="object-cover"
-        sizes="(max-width: 128px) 100vw, 128px"
-        {...props}
-      />
-    </div>
+    <OptimizedImage
+      preset="hero"
+      priority={priority}
+      {...props}
+    />
   )
 })
 
-// 🚀 画像ギャラリー用コンポーネント
+export const ThumbnailImage = memo(function ThumbnailImage({
+  size = 'md',
+  ...props
+}: OptimizedImageProps & {
+  size?: ThumbnailSize
+}) {
+  return (
+    <OptimizedImage
+      preset="thumbnail"
+      thumbnailSize={size}
+      {...props}
+    />
+  )
+})
+
 export const GalleryImage = memo(function GalleryImage({
-  src,
-  alt,
   onImageClick,
   ...props
 }: OptimizedImageProps & {
   onImageClick?: () => void
 }) {
   return (
-    <div 
-      className="relative group cursor-pointer overflow-hidden rounded-lg"
-      onClick={onImageClick}
-      role={onImageClick ? "button" : undefined}
-      tabIndex={onImageClick ? 0 : undefined}
-      onKeyDown={(e) => {
-        if (onImageClick && (e.key === 'Enter' || e.key === ' ')) {
-          e.preventDefault()
-          onImageClick()
-        }
-      }}
-    >
-      <OptimizedImage
-        src={src}
-        alt={alt}
-        className="transition-transform duration-300 group-hover:scale-105"
-        {...props}
-      />
-      
-      {/* ホバーオーバーレイ */}
-      <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300" />
-    </div>
+    <OptimizedImage
+      preset="gallery"
+      onImageClick={onImageClick}
+      {...props}
+    />
   )
 })

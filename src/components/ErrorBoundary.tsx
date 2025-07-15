@@ -181,7 +181,7 @@ class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundaryState> {
 
                 <Link 
                   href="/#contact"
-                  className="block text-sm text-gray-500 hover:text-gray-700 transition-colors"
+                  className="block text-sm text-gray-500 hover:text-gray-700"
                 >
                   お問い合わせ
                 </Link>
@@ -216,7 +216,7 @@ export const SuspenseWrapper = ({
   const defaultFallback = (
     <div className="flex items-center justify-center min-h-screen">
       <div className="text-center">
-        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto mb-4"></div>
+        <div className="rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto mb-4"></div>
         <p className="text-gray-600">読み込み中...</p>
       </div>
     </div>

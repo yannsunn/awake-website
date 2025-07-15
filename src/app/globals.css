@@ -46,47 +46,10 @@ body {
   @apply focus:outline-none focus:ring-2 focus:ring-corporate-blue-300 focus:ring-offset-2;
 }
 
-/* Professional Card Hover Effects */
-.card-hover {
-  @apply transition-all duration-200 hover:shadow-corporate-hover hover:-translate-y-1;
-}
 
 /* Optimized transitions for smooth animations */
 /* Removed global transition to prevent janky animations */
 
-/* Performance-optimized animation utilities */
-.transition-base {
-  transition: color 0.15s ease, background-color 0.15s ease, border-color 0.15s ease;
-}
-
-.transition-transform {
-  transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.transition-opacity {
-  transition: opacity 0.2s ease;
-}
-
-.transition-all-fast {
-  transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-/* GPU-accelerated animations */
-.gpu-accelerated {
-  will-change: transform;
-  transform: translateZ(0);
-  backface-visibility: hidden;
-  -webkit-font-smoothing: antialiased;
-}
-
-/* Smooth hover states */
-.hover-lift {
-  transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.2s ease;
-}
-
-.hover-lift:hover {
-  transform: translateY(-2px);
-}
 
 /* Professional scrollbar */
 ::-webkit-scrollbar {
@@ -112,17 +75,4 @@ body {
   color: var(--corporate-blue-900);
 }
 
-/* Corporate-grade form styling */
-.form-input {
-  @apply w-full px-4 py-3 border border-corporate-gray-300 rounded-md focus:border-corporate-blue-500 focus:ring-1 focus:ring-corporate-blue-500 focus:outline-none transition-colors;
-}
-
-.form-textarea {
-  @apply w-full px-4 py-3 border border-corporate-gray-300 rounded-md focus:border-corporate-blue-500 focus:ring-1 focus:ring-corporate-blue-500 focus:outline-none transition-colors resize-none;
-}
-
-/* Professional loading states */
-.loading {
-  @apply animate-subtle-pulse;
-}
 /* Force cache clear: 2025-01-06 */
