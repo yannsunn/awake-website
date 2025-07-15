@@ -211,7 +211,7 @@ export default function WebServicePage() {
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <div className="bg-white p-6 rounded-xl shadow-sm hover:shadow-md">
+          <div className="bg-white p-6 rounded-xl shadow-sm">
             <h3 className="text-lg font-medium text-gray-900 mb-4">開発技術</h3>
             <ul className="space-y-2 text-sm text-gray-600">
               <li>• Next.js / React</li>
@@ -221,7 +221,7 @@ export default function WebServicePage() {
             </ul>
           </div>
           
-          <div className="bg-white p-6 rounded-xl shadow-sm hover:shadow-md">
+          <div className="bg-white p-6 rounded-xl shadow-sm">
             <h3 className="text-lg font-medium text-gray-900 mb-4">対応機能</h3>
             <ul className="space-y-2 text-sm text-gray-600">
               <li>• CMS連携</li>
@@ -231,7 +231,7 @@ export default function WebServicePage() {
             </ul>
           </div>
           
-          <div className="bg-white p-6 rounded-xl shadow-sm hover:shadow-md">
+          <div className="bg-white p-6 rounded-xl shadow-sm">
             <h3 className="text-lg font-medium text-gray-900 mb-4">保証・サポート</h3>
             <ul className="space-y-2 text-sm text-gray-600">
               <li>• 3ヶ月無料サポート</li>

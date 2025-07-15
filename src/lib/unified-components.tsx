@@ -45,7 +45,7 @@ export const ServiceCard = memo(function ServiceCard({
 }) {
   return (
     <div className={`
-      bg-white rounded-2xl p-8 shadow-sm border hover:shadow-xl
+      bg-white rounded-2xl p-8 shadow-sm border
       ${featured ? 'border-gray-900 ring-2 ring-gray-900 ring-opacity-10' : 'border-gray-100'}
     `}>
       {featured && (
@@ -144,7 +144,7 @@ export const FeatureHighlight = memo(function FeatureHighlight({
   metric?: string
 }) {
   return (
-    <div className="text-center hover:shadow-lg p-6 rounded-xl">
+    <div className="text-center p-6 rounded-xl">
       <div className="w-16 h-16 bg-gray-900 rounded-full flex items-center justify-center mx-auto mb-4">
         {icon}
       </div>
@@ -172,7 +172,7 @@ export const PricingCard = memo(function PricingCard({
 }) {
   return (
     <div className={`
-      bg-white rounded-2xl p-8 shadow-sm border hover:shadow-xl
+      bg-white rounded-2xl p-8 shadow-sm border
       ${featured ? 'border-gray-900 ring-2 ring-gray-900 ring-opacity-10' : 'border-gray-200'}
     `}>
       {featured && (

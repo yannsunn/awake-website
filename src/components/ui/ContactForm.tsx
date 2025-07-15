@@ -47,7 +47,7 @@ const ContactForm = memo(function ContactForm() {
   }, [])
 
   return (
-    <div className="bg-white rounded-2xl p-8 shadow-sm border border-gray-100 hover:shadow-lg">
+    <div className="bg-white rounded-2xl p-8 shadow-sm border border-gray-100">
       <h3 className="text-2xl font-medium text-gray-900 mb-6">メールでお問い合わせ</h3>
       
       <form onSubmit={handleSubmit} className="space-y-6">
@@ -164,7 +164,7 @@ const ContactForm = memo(function ContactForm() {
             font-medium rounded-lg 
             ${isSubmitting 
               ? 'bg-gray-400 cursor-not-allowed' 
-              : 'bg-gray-900 hover:bg-gray-800 shadow-lg hover:shadow-xl'
+              : 'bg-gray-900 hover:bg-gray-800 shadow-lg'
             } 
             text-white
           `}
