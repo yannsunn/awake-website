@@ -58,25 +58,6 @@ const config: Config = {
         '88': '22rem',
         '128': '32rem',
       },
-      animation: {
-        'fade-in': 'fadeIn 0.4s ease-in-out',
-        'slide-up': 'slideUp 0.4s ease-out',
-        'subtle-pulse': 'subtlePulse 2s ease-in-out infinite',
-      },
-      keyframes: {
-        fadeIn: {
-          '0%': { opacity: '0', transform: 'translateY(8px)' },
-          '100%': { opacity: '1', transform: 'translateY(0)' },
-        },
-        slideUp: {
-          '0%': { opacity: '0', transform: 'translateY(12px)' },
-          '100%': { opacity: '1', transform: 'translateY(0)' },
-        },
-        subtlePulse: {
-          '0%, 100%': { opacity: '1' },
-          '50%': { opacity: '0.8' },
-        },
-      },
       backdropBlur: {
         xs: '2px',
       },
