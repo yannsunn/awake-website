@@ -65,24 +65,28 @@ export const presetConfig = {
     quality: 85,
     priority: false,
     sizes: imageSizes.serviceIcon,
+    showLoadingPlaceholder: true,
     className: 'object-cover'
   },
   gallery: {
     quality: 85,
     priority: false,
     sizes: imageSizes.cardImage,
-    className: 'group-hover:scale-105 transition-transform duration-300'
+    showLoadingPlaceholder: true,
+    className: 'group-hover:scale-105'
   },
   responsive: {
     quality: 85,
     priority: false,
     sizes: imageSizes.cardImage,
+    showLoadingPlaceholder: true,
     className: 'object-cover'
   },
   default: {
     quality: 85,
     priority: false,
     sizes: "(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw",
+    showLoadingPlaceholder: true,
     className: ''
   }
 } as const

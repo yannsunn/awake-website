@@ -55,9 +55,9 @@ const Header = memo(function Header() {
 
   // 🚀 限界突破 - 最適化されたナビゲーション構造
   const navigationItems = [
-    { href: '/about', title: '会社概要', type: 'internal' },
-    { title: 'サービス', type: 'dropdown', items: services },
-    { href: '/faq', title: 'よくある質問', type: 'internal' }
+    { href: '/about', title: '会社概要', type: 'internal' as const },
+    { title: 'サービス', type: 'dropdown' as const, items: services },
+    { href: '/faq', title: 'よくある質問', type: 'internal' as const }
   ]
 
   return (
@@ -124,7 +124,7 @@ const Header = memo(function Header() {
                 return (
                   <Link 
                     key={index}
-                    href={item.href} 
+                    href={item.href || '#'} 
                     className="text-gray-700 hover:text-gray-900 font-medium py-2"
                   >
                     {item.title}
@@ -193,7 +193,7 @@ const Header = memo(function Header() {
                   return (
                     <Link 
                       key={index}
-                      href={item.href}
+                      href={item.href || '#'}
                       className="text-gray-700 hover:text-gray-900 font-medium px-4 py-3 hover:bg-gray-100 rounded-lg mx-2"
                       onClick={() => setIsMenuOpen(false)}
                     >

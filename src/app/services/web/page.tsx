@@ -38,17 +38,17 @@ export default function WebServicePage() {
       {
         name: service.pricing.standard.name,
         price: service.pricing.standard.price,
-        description: service.pricing.standard.description
+        description: `${service.pricing.standard.name}プラン`
       },
       {
         name: service.pricing.premium.name,
         price: service.pricing.premium.price,
-        description: service.pricing.premium.description
+        description: `${service.pricing.premium.name}プラン`
       },
       {
         name: service.pricing.enterprise.name,
         price: service.pricing.enterprise.price,
-        description: service.pricing.enterprise.description
+        description: `${service.pricing.enterprise.name}プラン`
       }
     ]
   })

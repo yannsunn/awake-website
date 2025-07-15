@@ -216,8 +216,16 @@ export const createFAQSchema = (faqs: Array<{ question: string; answer: string }
 export const createServiceSchema = (service: {
   name: string
   description: string
+  provider?: string
+  areaServed?: string
+  serviceType?: string
   price?: string
   duration?: string
+  offers?: Array<{
+    name: string
+    price: string
+    description: string
+  }>
 }) => ({
   "@context": "https://schema.org",
   "@type": "Service",
@@ -225,14 +233,22 @@ export const createServiceSchema = (service: {
   "description": service.description,
   "provider": {
     "@type": "Organization",
-    "name": COMPANY_DATA.basic.name,
+    "name": service.provider || COMPANY_DATA.basic.name,
     "url": COMPANY_DATA.contact.website
   },
-  "areaServed": "JP",
+  "areaServed": service.areaServed || "JP",
+  "category": service.serviceType,
   "hasOfferCatalog": {
     "@type": "OfferCatalog",
     "name": service.name,
-    "itemListElement": {
+    "itemListElement": service.offers ? service.offers.map(offer => ({
+      "@type": "Offer",
+      "name": offer.name,
+      "price": offer.price.replace('¥', '').replace(',', '').replace('〜', ''),
+      "priceCurrency": "JPY",
+      "description": offer.description,
+      "availability": "https://schema.org/InStock"
+    })) : {
       "@type": "Offer",
       "price": service.price,
       "priceCurrency": "JPY",
