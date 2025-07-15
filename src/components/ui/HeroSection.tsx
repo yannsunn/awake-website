@@ -102,7 +102,7 @@ const HeroSection = memo(function HeroSection() {
             
             <Link 
               href="/about" 
-              className="inline-flex items-center justify-center px-8 py-4 bg-white text-gray-900 font-medium rounded-lg border border-gray-200 hover:bg-gray-50 hover:border-gray-300"
+              className="inline-flex items-center justify-center px-8 py-4 bg-white text-gray-900 font-medium rounded-lg border border-gray-200 hover:bg-gray-50"
             >
               会社概要を見る
             </Link>
