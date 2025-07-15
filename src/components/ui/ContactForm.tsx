@@ -47,7 +47,7 @@ const ContactForm = memo(function ContactForm() {
   }, [])
 
   return (
-    <div className="bg-white rounded-2xl p-8 shadow-sm border border-gray-100 transform all duration-300 hover:shadow-lg">
+    <div className="bg-white rounded-2xl p-8 shadow-sm border border-gray-100 hover:shadow-lg">
       <h3 className="text-2xl font-medium text-gray-900 mb-6">メールでお問い合わせ</h3>
       
       <form onSubmit={handleSubmit} className="space-y-6">
@@ -63,7 +63,7 @@ const ContactForm = memo(function ContactForm() {
               value={formData.name}
               onChange={handleChange}
               required
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-500 focus:border-transparent colors"
+              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-500 focus:border-transparent"
               placeholder="山田太郎"
             />
           </div>
@@ -79,7 +79,7 @@ const ContactForm = memo(function ContactForm() {
               value={formData.email}
               onChange={handleChange}
               required
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-500 focus:border-transparent colors"
+              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-500 focus:border-transparent"
               placeholder="example@company.com"
             />
           </div>
@@ -96,7 +96,7 @@ const ContactForm = memo(function ContactForm() {
               name="company"
               value={formData.company}
               onChange={handleChange}
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-500 focus:border-transparent colors"
+              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-500 focus:border-transparent"
               placeholder="株式会社◯◯"
             />
           </div>
@@ -110,7 +110,7 @@ const ContactForm = memo(function ContactForm() {
               name="service"
               value={formData.service}
               onChange={handleChange}
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-500 focus:border-transparent colors"
+              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-500 focus:border-transparent"
             >
               <option value="">選択してください</option>
               <option value="web">ホームページ制作</option>
@@ -132,14 +132,14 @@ const ContactForm = memo(function ContactForm() {
             onChange={handleChange}
             required
             rows={5}
-            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-500 focus:border-transparent colors resize-none"
+            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-500 focus:border-transparent resize-none"
             placeholder="プロジェクトの詳細やご質問をお聞かせください..."
           />
         </div>
 
         {/* 🚀 ウルトラ軽量ステータス表示 */}
         {submitStatus === 'success' && (
-          <div className="p-4 bg-green-50 border border-green-200 rounded-lg animate-in fade-in slide-in-from-bottom-2 duration-300">
+          <div className="p-4 bg-green-50 border border-green-200 rounded-lg">
             <p className="text-green-700 text-sm flex items-center">
               <span className="mr-2">✅</span>
               お問い合わせありがとうございます。1営業日以内にご返信いたします。
@@ -148,7 +148,7 @@ const ContactForm = memo(function ContactForm() {
         )}
 
         {submitStatus === 'error' && (
-          <div className="p-4 bg-red-50 border border-red-200 rounded-lg animate-in fade-in slide-in-from-bottom-2 duration-300">
+          <div className="p-4 bg-red-50 border border-red-200 rounded-lg">
             <p className="text-red-700 text-sm flex items-center">
               <span className="mr-2">❌</span>
               送信に失敗しました。もう一度お試しください。
@@ -161,7 +161,7 @@ const ContactForm = memo(function ContactForm() {
           disabled={isSubmitting}
           className={`
             w-full inline-flex items-center justify-center px-8 py-4 
-            font-medium rounded-lg all duration-200 
+            font-medium rounded-lg 
             ${isSubmitting 
               ? 'bg-gray-400 cursor-not-allowed' 
               : 'bg-gray-900 hover:bg-gray-800 shadow-lg hover:shadow-xl'
@@ -171,7 +171,7 @@ const ContactForm = memo(function ContactForm() {
         >
           {isSubmitting ? (
             <>
-              <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white mr-2"></div>
+              <div className="rounded-full h-5 w-5 border-b-2 border-white mr-2"></div>
               送信中...
             </>
           ) : (

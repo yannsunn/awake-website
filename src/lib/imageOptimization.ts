@@ -52,6 +52,41 @@ export const imageConfig = {
   }
 } as const
 
+// 🚀 プリセット設定
+export const presetConfig = {
+  hero: {
+    quality: 90,
+    priority: true,
+    sizes: imageSizes.fullWidth,
+    showLoadingPlaceholder: false,
+    className: 'object-cover object-center'
+  },
+  thumbnail: {
+    quality: 85,
+    priority: false,
+    sizes: imageSizes.serviceIcon,
+    className: 'object-cover'
+  },
+  gallery: {
+    quality: 85,
+    priority: false,
+    sizes: imageSizes.cardImage,
+    className: 'group-hover:scale-105 transition-transform duration-300'
+  },
+  responsive: {
+    quality: 85,
+    priority: false,
+    sizes: imageSizes.cardImage,
+    className: 'object-cover'
+  },
+  default: {
+    quality: 85,
+    priority: false,
+    sizes: "(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw",
+    className: ''
+  }
+} as const
+
 // 🎯 WebP対応確認関数
 export const supportsWebP = (): boolean => {
   if (typeof window === 'undefined') return false
