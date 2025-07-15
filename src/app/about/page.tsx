@@ -136,11 +136,11 @@ export default function AboutPage() {
       <PageHeader
         title="会社概要"
         subtitle="信頼の絆で、共に成長し続ける企業"
-        className="bg-gradient-to-br from-gray-50 via-white to-gray-100"
+        className="bg-white"
       >
         <p className="text-base sm:text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
-          株式会社Awakeは、美しいコーポレートサイト制作と先進的なAI導入支援を通じて、<br className="hidden sm:block" />
-          お客様企業の成長と発展を支えるテクノロジーパートナーです。
+          株式会社Awakeは、2020年の設立以来、ウェブサイト制作、AIコンサルティング、<br className="hidden sm:block" />
+          EC事業支援を通じて、中小企業のデジタル変革をサポートしています。
         </p>
       </PageHeader>
 
@@ -171,24 +171,24 @@ export default function AboutPage() {
               </div>
               
               <p className="text-sm sm:text-base">
-                私がトヨタ系ディーラーで整備士として働いていた頃、一台一台の車に込められたお客様の想いと向き合う中で、「信頼」という価値の重みを学びました。その後、物販企業を経営する中で、ビジネスの本質は技術やサービスの提供だけでなく、人と人との信頼関係にあることを確信しました。
+                静岡県清水区で生まれ育ち、トヨタ系ディーラーで整備士としてキャリアをスタートしました。技術者としての経験を積む中で、お客様との信頼関係がいかに重要かを学び、その後の物販事業を通じてビジネスの本質を深く理解しました。
               </p>
               
               <p className="text-sm sm:text-base">
-                2020年に株式会社Awakeを設立し、5期目を迎えた今、私たちが大切にしているのは「与え続けることで縁を太くする」という理念です。これは単なる美辞麗句ではなく、実体験から生まれた経営の核心です。
+                2020年に株式会社Awakeを設立し、5期目を迎えました。当社の経営理念である「つながるすべての人に、感謝と繁栄を」は、これまでの人生経験から得た最も重要な価値観を表したものです。
               </p>
               
               <p className="text-sm sm:text-base">
-                現代は、企業ウェブサイトが会社の顔となり、AI活用が競争力を左右する時代です。しかし、どんなに技術が進化しても、その根底にあるべきは人と人との信頼関係だと私は信じています。
+                デジタル技術が急速に進化する現代において、ウェブサイトやAIは企業競争力の重要な要素となっています。しかし、技術はあくまで手段であり、最も大切なのはお客様との信頼関係です。
               </p>
               
               <p className="text-sm sm:text-base">
-                私たちは、単なるサービス提供者ではありません。お客様の課題を自らの課題として捉え、共に解決策を模索し、成功を分かち合うパートナーでありたいと願っています。お客様の繁栄なくして、私たちの成長はありません。この想いを胸に、これからも誠実に、そして情熱を持って事業に取り組んでまいります。
+                当社は、お客様の真のビジネスパートナーを目指しています。お客様の課題を深く理解し、最適なソリューションを提供するだけでなく、導入後も継続的にサポートし、共に成長し続ける関係を築いていきます。
               </p>
               
               <div className="pt-6 border-t border-gray-200">
-                <p className="text-lg sm:text-xl font-semibold text-gray-900 mb-2">つながるすべての人に、感謝と繁栄を。</p>
-                <p className="text-sm sm:text-base text-gray-600">この言葉を実現するために、私たちは今日も全力で走り続けます。</p>
+                <p className="text-lg sm:text-xl font-semibold text-gray-900 mb-2">お客様の成功が、私たちの成功です。</p>
+                <p className="text-sm sm:text-base text-gray-600">これからも、お客様と共に歩み、新たな価値を創造し続けることをお約束いたします。</p>
               </div>
             </div>
           </div>
@@ -219,7 +219,7 @@ export default function AboutPage() {
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-12">
-          <div className="bg-white rounded-2xl p-6 sm:p-8 shadow-lg">
+          <div className="bg-white rounded-2xl p-6 sm:p-8 border border-gray-100">
             <h3 className="text-xl sm:text-2xl font-light text-gray-900 mb-4">
               ミッション
             </h3>
@@ -228,7 +228,7 @@ export default function AboutPage() {
             </p>
           </div>
           
-          <div className="bg-white rounded-2xl p-6 sm:p-8 shadow-lg">
+          <div className="bg-white rounded-2xl p-6 sm:p-8 border border-gray-100">
             <h3 className="text-xl sm:text-2xl font-light text-gray-900 mb-4">
               ビジョン
             </h3>

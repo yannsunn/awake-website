@@ -104,7 +104,7 @@ export default function WebServicePage() {
             サービス特徴
           </h2>
           <p className="text-lg sm:text-xl text-gray-600">
-            高品質なウェブサイトを確実にお届け
+            132,000円からプロ品質のサイトを制作
           </p>
         </div>
         
@@ -112,25 +112,25 @@ export default function WebServicePage() {
           <FeatureHighlight
             icon={<div className="text-white font-bold text-xl">¥</div>}
             title="プロフェッショナル制作"
-            description="132,000円からプロ品質のサイトを制作。コストパフォーマンスに優れた価格設定"
+            description="132,000円から。大手制作会社の1/3の価格でプロ品質を実現"
           />
           
           <FeatureHighlight
             icon={<div className="text-white font-bold text-xl">S</div>}
             title="SEO最適化"
-            description="検索エンジン対策を標準実装。Googleでの上位表示をサポート"
+            description="最新のSEO対策で検索上位表示。集客力のあるサイトを構築"
           />
           
           <FeatureHighlight
             icon={<div className="text-white font-bold text-xl">↗</div>}
             title="スケーラブル設計"
-            description="企業成長に合わせて拡張可能。将来のニーズにも対応"
+            description="ページ追加やシステム連携も柔軟に対応。成長に合わせて拡張可能"
           />
           
           <FeatureHighlight
             icon={<div className="text-white font-bold text-xl">📱</div>}
             title="レスポンシブ対応"
-            description="全デバイスで最適表示を保証。PC・タブレット・スマホ完全対応"
+            description="スマホ・タブレット・PCで最適表示。どこからでも快適にアクセス"
           />
         </div>
       </ContentSection>
@@ -142,7 +142,7 @@ export default function WebServicePage() {
             料金プラン
           </h2>
           <p className="text-lg sm:text-xl text-gray-600">
-            ニーズに合わせた柔軟なプラン設計
+            明確な料金体系で安心スタート
           </p>
         </div>
         
@@ -160,7 +160,7 @@ export default function WebServicePage() {
             制作の流れ
           </h2>
           <p className="text-lg sm:text-xl text-gray-600">
-            お客様と二人三脚で進める安心の制作プロセス
+            最短3週間で公開。進捗を随時共有
           </p>
         </div>
         
@@ -169,25 +169,25 @@ export default function WebServicePage() {
             { 
               step: "01", 
               title: "ヒアリング", 
-              desc: "ご要望とサイトの目的を詳しくお聞きします。競合分析も実施",
+              desc: "目的・ターゲット・競合を分析し、最適な戦略を策定",
               time: "1週間"
             },
             { 
               step: "02", 
               title: "企画・設計", 
-              desc: "サイト構成とデザインコンセプトを策定。ワイヤーフレーム作成",
+              desc: "ユーザー動線を考慮した構成とブランドに合うデザインを提案",
               time: "1-2週間"
             },
             { 
               step: "03", 
               title: "制作・開発", 
-              desc: "デザイン作成からコーディングまで実施。SEO対策も同時進行",
+              desc: "高品質なデザインと最新技術で、速くて使いやすいサイトを構築",
               time: "2-4週間"
             },
             { 
               step: "04", 
               title: "公開・運用", 
-              desc: "テスト完了後の公開と継続的なサポート。アナリティクス設定",
+              desc: "公開後3ヶ月無料サポート。アクセス解析で改善提案も実施",
               time: "継続"
             }
           ].map((item, index) => (
@@ -250,7 +250,7 @@ export default function WebServicePage() {
             まずはお気軽にご相談ください
           </h2>
           <p className="text-lg sm:text-xl text-gray-600 mb-8">
-            お客様のご要望をお聞かせください。無料でお見積りいたします
+            制作実績100社以上。まずは無料相談から始めましょう
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <AccessibleButton

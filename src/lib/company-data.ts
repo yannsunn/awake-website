@@ -7,7 +7,7 @@ export const COMPANY_DATA = {
     established: '2020年（令和2年）',
     mission: 'つながるすべての人に、感謝と繁栄を',
     tagline: '信頼の絆で、共に成長し続ける企業',
-    description: '静岡県清水区出身の代表がトヨタ整備士から物販企業を経て設立。HPは会社の顔、AI導入は代表のリテラシーが試される時代に、与え続けることで縁を太くする経営哲学で価値を創造します。'
+    description: '中小企業のデジタル化を通じて、ビジネスの成長と発展を支援。最新技術を活用した実践的なソリューションで、お客様の課題解決に貢献します。'
   },
   contact: {
     address: {
@@ -33,8 +33,8 @@ export const COMPANY_DATA = {
     details: {
       web: {
         title: 'ホームページ制作',
-        description: '企業の価値を最大化するプロフェッショナルなウェブサイト',
-        longDescription: '【コンバージョン率3倍改善】戦略的UX設計とニューロマーケティングで売上直結サイトを構築。プロフェッショナルなコーポレートサイトから大規模サイトまで対応。',
+        description: '成果にコミットする戦略的ウェブサイト制作',
+        longDescription: 'お客様のビジネス目標を実現するウェブサイトを制作。デザインだけでなく、マーケティング視点で売上向上に貢献する戦略的なサイト構築を行います。',
         href: 'https://portfolio.awakeinc.co.jp/',
         pricing: {
           standard: {
@@ -56,8 +56,8 @@ export const COMPANY_DATA = {
       },
       ai: {
         title: 'AIコンサルティング',
-        description: '最先端AI技術による業務効率化とデジタル変革支援',
-        longDescription: '【業務効率70%向上】ChatGPT基礎からDX推進まで包括サポート。実践的コンサルティング(1ヶ月/¥298,000)で企業変革を実現。',
+        description: 'AI活用で業務効率を劇的に改善',
+        longDescription: 'ChatGPTをはじめとする最新AI技術を活用し、お客様の業務効率化を実現。導入から運用まで、実践的なサポートで確実な成果をお約束します。',
         href: '/services/ai',
         pricing: {
           basic: {
@@ -76,8 +76,8 @@ export const COMPANY_DATA = {
       },
       ec: {
         title: 'Amazon代理店サービス',
-        description: 'Amazon特価での代理販売とEC事業の包括的サポート',
-        longDescription: '【初期費用0円・完全成果報酬】Amazon販売のプロが商品選定から販売戦略まで全て代行。売上が上がってから手数料をいただく安心システム。',
+        description: 'Amazon販売を成功に導く総合支援サービス',
+        longDescription: '初期費用0円・完全成果報酬制で安心。商品選定から販売戦略まで、Amazon販売のプロフェッショナルが全面的にサポートいたします。',
         href: '/services/ec',
         pricing: {
           commission: {

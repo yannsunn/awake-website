@@ -26,7 +26,7 @@ const services = [
     description: COMPANY_DATA.services.details.web.description,
     href: COMPANY_DATA.services.details.web.href,
     price: COMPANY_DATA.services.details.web.pricing.standard.price,
-    color: "from-blue-500 to-blue-600"
+    color: "bg-blue-500"
   },
   {
     icon: Brain,
@@ -34,7 +34,7 @@ const services = [
     description: COMPANY_DATA.services.details.ai.description,
     href: COMPANY_DATA.services.details.ai.href,
     price: COMPANY_DATA.services.details.ai.pricing.basic.price,
-    color: "from-purple-500 to-purple-600"
+    color: "bg-purple-500"
   },
   {
     icon: ShoppingCart,
@@ -42,30 +42,30 @@ const services = [
     description: COMPANY_DATA.services.details.ec.description,
     href: COMPANY_DATA.services.details.ec.href,
     price: "完全成果報酬",
-    color: "from-green-500 to-green-600"
+    color: "bg-green-500"
   }
 ]
 
 const features = [
   {
     icon: CheckCircle,
-    title: "初期費用0円",
-    description: "多くのサービスで初期費用を抑えたプランをご用意。リスクを最小限に始められます。"
+    title: "成果にコミットする料金体系",
+    description: "初期費用0円プランを含む柔軟な料金設定。お客様のビジネス成長に合わせた最適な提案をいたします。"
   },
   {
     icon: Award,
-    title: "実績と信頼",
-    description: "5年間で培った豊富な実績と、お客様との継続的な信頼関係を大切にしています。"
+    title: "豊富な実績と専門性",
+    description: "様々な業界・規模のプロジェクトを成功に導いた実績。お客様の課題に最適なソリューションを提供します。"
   },
   {
     icon: Users,
-    title: "専任サポート",
-    description: "導入から運用まで、専任スタッフが責任を持って伴走いたします。"
+    title: "専任担当制による継続支援",
+    description: "プロジェクト開始から完了後まで、一貫して同じ担当者がサポート。お客様のビジネスを深く理解した提案が可能です。"
   },
   {
     icon: Heart,
-    title: "お客様第一",
-    description: "お客様の成功が私たちの成功。共に成長することを最も大切にしています。"
+    title: "「つながる」を大切にする経営",
+    description: "お客様との「縁」を大切にし、与え続けることで関係を太くする経営理念。長期的な信頼関係を築きます。"
   }
 ]
 
@@ -80,7 +80,7 @@ export default function HomePage() {
       
       <main role="main" id="main-content">
         {/* Hero Section */}
-        <section className="py-12 sm:py-16 lg:py-20 bg-gradient-to-br from-gray-50 via-white to-gray-100">
+        <section className="py-12 sm:py-16 lg:py-20 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center max-w-4xl mx-auto">
               {/* Company Logo */}
@@ -99,8 +99,7 @@ export default function HomePage() {
                       objectPosition: 'center',
                       padding: '0.5rem'
                     }}
-                    placeholder="blur"
-                    blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q=="
+                    placeholder="empty"
                   />
                 </div>
               </div>
@@ -138,7 +137,7 @@ export default function HomePage() {
                 サービス一覧
               </h2>
               <p className="text-lg sm:text-xl text-gray-600">
-                お客様のビジネス成長を支える3つのサービス
+                デジタル時代のビジネス成長を実現する専門サービス
               </p>
             </div>
             
@@ -146,8 +145,8 @@ export default function HomePage() {
               {services.map((service, index) => {
                 const IconComponent = service.icon
                 return (
-                  <div key={index} className="bg-white rounded-2xl p-8 shadow-sm border border-gray-100">
-                    <div className={`w-16 h-16 bg-gradient-to-br ${service.color} rounded-xl flex items-center justify-center mx-auto mb-6`}>
+                  <div key={index} className="bg-white rounded-2xl p-8 border border-gray-100">
+                    <div className={`w-16 h-16 ${service.color} rounded-xl flex items-center justify-center mx-auto mb-6`}>
                       <IconComponent className="h-8 w-8 text-white" />
                     </div>
                     <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-4 text-center">
@@ -279,7 +278,7 @@ export default function HomePage() {
               </div>
             </div>
 
-            <div className="bg-white rounded-xl p-6 shadow-sm">
+            <div className="bg-white rounded-xl p-6 border border-gray-100">
               <h4 className="font-medium text-gray-900 mb-3">ご相談について</h4>
               <ul className="text-sm text-gray-600 space-y-2">
                 {COMPANY_DATA.consultation.features.map((feature, index) => (
