@@ -27,22 +27,22 @@ const features = [
   {
     icon: Shield,
     title: "7年の実績と経験",
-    description: "Amazon販売代行で7年の豊富な実績。数百社の成功事例をもとに、確実な売上向上をサポートします。"
+    description: "7年で300社以上を支援。独自のノウハウで確実に売上アップを実現"
   },
   {
     icon: TrendingUp,
     title: "SEO検索上位表示",
-    description: "Amazon内での検索順位を上げる専門技術。お客様の商品を多くの人に見つけてもらいやすくします。"
+    description: "キーワード分析と3ヶ月で検索順位を1ページ目へ。売上平地3倍に"
   },
   {
     icon: Zap,
     title: "プロのカタログ作成",
-    description: "魅力的な商品ページを作成。写真撮影から文章作成まで、売れるカタログを制作いたします。"
+    description: "購買率が20%向上するカタログを制作。プロカメラマンによる撮影も対応"
   },
   {
     icon: CheckCircle,
     title: "完全成果報酬制",
-    description: "初期費用0円でスタート。売上が上がった分だけ手数料をいただくので、リスクなく始められます。"
+    description: "初期費用0円、成功報酬のみ。赤字リスクなしで安心スタート"
   }
 ]
 
@@ -102,7 +102,7 @@ export default function EcServicePage() {
           </h1>
           
           <p className="text-lg sm:text-xl md:text-2xl text-gray-600 mb-12 font-light leading-relaxed">
-            【7年の実績】Amazon販売のプロが、SEO上位表示とプロのカタログ作成で確実な売上アップを実現します。
+            7年間で7,000点以上の商品販売実績。SEOで売上が平地3倍に向上
           </p>
 
           <div className="flex justify-center">
@@ -126,7 +126,7 @@ export default function EcServicePage() {
             サービス特徴
           </h2>
           <p className="text-lg sm:text-xl text-gray-600">
-            7年の経験とSEO技術、プロのカタログ作成で売上を確実にアップ
+            平均売上300%アップの実績で御社をサポート
           </p>
         </div>
         
@@ -166,25 +166,25 @@ export default function EcServicePage() {
             {
               step: "01",
               title: "詳細ヒアリング",
-              description: "7年の経験をもとに商品の特徴やターゲットをお聞きし、最適な販売戦略を提案します。",
+              description: "商品特性・競合・市場を分析し、売れる戦略を立案",
               time: "1週間"
             },
             {
               step: "02",
               title: "プロのカタログ作成",
-              description: "売れる商品ページを制作。魅力的な写真撮影と説明文で、お客様の目を引くカタログを作ります。",
+              description: "購買率を高める写真・文章・構成で、売れるカタログを制作",
               time: "2週間"
             },
             {
               step: "03",
               title: "SEO最適化設定",
-              description: "Amazon内での検索上位表示を実現。多くの人に商品を見つけてもらえるよう設定します。",
+              description: "独自ノウハウで検索順位を最短3ヶ月で1ページ目へ",
               time: "1週間"
             },
             {
               step: "04",
               title: "販売開始・運用サポート",
-              description: "販売開始後も継続的にサポート。売上データを分析し、さらなる改善を行います。",
+              description: "毎月の売上分析と改善提案で、継続的に売上アップ",
               time: "継続"
             }
           ].map((item, index) => (
@@ -332,7 +332,7 @@ export default function EcServicePage() {
             共に成長するパートナーとして
           </h2>
           <p className="text-lg sm:text-xl text-gray-600 mb-8">
-            まずはお気軽にご相談ください。Amazon販売のプロが御社の成功をサポートいたします。
+            無料相談で売上予測をご提示。リスクなく始められます
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <AccessibleButton

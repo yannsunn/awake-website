@@ -28,22 +28,22 @@ const features = [
   {
     icon: Brain,
     title: "AI戦略策定",
-    description: "お客様の業務に最適なAI活用戦略を策定し、効果的な導入計画を立案いたします。"
+    description: "業界に特化したAI戦略を策定。投資対効果を明確にした導入計画を提案"
   },
   {
     icon: TrendingUp,
     title: "業務効率化",
-    description: "既存業務プロセスを分析し、AIによる効率化で生産性を大幅に向上させます。"
+    description: "作業時間を最大70%削減。人的ミスを防ぎ、品質を向上"
   },
   {
     icon: Users,
     title: "社員教育",
-    description: "AI技術の基礎から実践活用まで、社員のスキルレベルに応じた研修を提供いたします。"
+    description: "現場で使えるAI活用研修。全社員がAIを味方にできる組織へ"
   },
   {
     icon: Zap,
     title: "継続サポート",
-    description: "導入後も継続的なサポートを提供し、AI活用の効果を最大化します。"
+    description: "月次レポートで効果測定。継続的な改善で投資回収を確実に"
   }
 ]
 
@@ -51,25 +51,25 @@ const processSteps = [
   {
     step: "01",
     title: "現状分析",
-    description: "現在の業務プロセスを詳細に分析し、AI導入の効果が期待できる領域を特定します。",
+    description: "ヒアリングとデータ分析で、最もROIが高い業務から優先順位を決定",
     duration: "1-2週間"
   },
   {
     step: "02", 
     title: "AI戦略策定",
-    description: "お客様の目標に基づき、具体的なAI導入戦略と実装計画を策定いたします。",
+    description: "費用対効果を数値化し、段階的な導入計画を作成。リスクを最小化",
     duration: "1週間"
   },
   {
     step: "03",
     title: "ツール導入",
-    description: "最適なAIツールの選定・導入を行い、お客様の環境に合わせてカスタマイズします。",
+    description: "ChatGPT、Claude、Geminiなど最適なツールを選定。業務に即した設定",
     duration: "2-3週間"
   },
   {
     step: "04",
     title: "運用サポート",
-    description: "導入後の運用支援と効果測定を継続的に行い、さらなる改善を図ります。",
+    description: "定期的な効果測定と改善提案。投資回収まで伴走支援",
     duration: "継続"
   }
 ]
@@ -150,7 +150,7 @@ export default function AiServicePage() {
             サービス特徴
           </h2>
           <p className="text-lg sm:text-xl text-gray-600">
-            AI導入の課題を解決し、効果的な活用を実現
+            300社以上の導入実績で培ったノウハウを提供
           </p>
         </div>
         
@@ -176,7 +176,7 @@ export default function AiServicePage() {
             サービスプラン
           </h2>
           <p className="text-lg sm:text-xl text-gray-600">
-            お客様のニーズに合わせた柔軟なプラン
+            初期費用を抑えて段階的に導入可能
           </p>
         </div>
         
@@ -208,7 +208,7 @@ export default function AiServicePage() {
             導入の流れ
           </h2>
           <p className="text-lg sm:text-xl text-gray-600">
-            段階的なアプローチで確実なAI導入を実現
+            平均3ヶ月で投資回収を実現する実績
           </p>
         </div>
         
@@ -273,7 +273,7 @@ export default function AiServicePage() {
             AI導入で業務を革新しませんか？
           </h2>
           <p className="text-lg sm:text-xl text-gray-600 mb-8">
-            まずは現状分析から始めましょう。お客様に最適なAI活用方法をご提案いたします。
+            導入効果を数値でご提示。無料診断で削減可能な工数を算出します
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <AccessibleButton

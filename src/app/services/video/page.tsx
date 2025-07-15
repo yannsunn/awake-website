@@ -30,22 +30,22 @@ const features = [
   {
     icon: Users,
     title: "顔出し不要",
-    description: "AI技術とテキスト・音声合成を活用し、顔出しなしでも魅力的な動画を制作できます。"
+    description: "AIアバターやテキスト動画で、顔を出さずに情報発信が可能"
   },
   {
     icon: Zap,
     title: "SNS最適化",
-    description: "YouTube、TikTok、Instagramなど、各プラットフォームに最適化された動画を制作します。"
+    description: "各SNSのアルゴリズムに対応。バズる動画の法則を熟知"
   },
   {
     icon: Clock,
     title: "24時間納品",
-    description: "お急ぎの案件にも対応。最短24時間での納品が可能です。"
+    description: "緊急案件は24時間納品。通常でも3日以内に完成"
   },
   {
     icon: Eye,
     title: "視聴数UP",
-    description: "視聴者の注意を引く構成とデザインで、再生数・エンゲージメント向上を支援します。"
+    description: "最初の3秒で心を掴む構成。視聴維持率90%以上を実現"
   }
 ]
 
@@ -185,11 +185,11 @@ export default function VideoServicePage() {
               <span className="text-white/80 font-semibold">Video Production</span>
             </div>
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
-              ブランド価値を高める<br />高品質動画制作
+              視聴者の心を掴む<br />プロ品質動画制作
             </h1>
             <p className="text-lg sm:text-xl md:text-2xl text-white/90 mb-8 leading-relaxed">
-              YouTube・SNS最適化で視聴者の心を掴み、エンゲージメント向上を実現。<br />
-              プロ品質編集で動画マーケティングを最大化します。
+              再生数が平均5倍に増加。<br />
+              AI技術とプロの編集で、見た人がファンになる動画を制作します。
             </p>
             <AccessibleButton
               href="#contact"
@@ -223,7 +223,7 @@ export default function VideoServicePage() {
             サービスの特徴
           </h2>
           <p className="text-lg sm:text-xl text-gray-600">
-            最新AI技術とプロの技術で最高品質の動画を制作
+            累計1,000本以上の制作実績で培ったノウハウを提供
           </p>
         </div>
         
@@ -254,7 +254,7 @@ export default function VideoServicePage() {
             対応プラットフォーム
           </h2>
           <p className="text-lg sm:text-xl text-gray-600">
-            各SNSに最適化された動画を制作
+            各プラットフォームの特性を活かした最適化
           </p>
         </div>
         
@@ -285,7 +285,7 @@ export default function VideoServicePage() {
             料金プラン
           </h2>
           <p className="text-lg sm:text-xl text-gray-600">
-            用途に合わせた3つのプラン
+            予算と目的に合わせた明確な料金設定
           </p>
         </div>
         
@@ -343,7 +343,7 @@ export default function VideoServicePage() {
             動画でビジネスを加速させませんか？
           </h2>
           <p className="text-lg sm:text-xl text-white/90 mb-8">
-            まずはお気軽にご相談ください。企画段階からサポートいたします。
+            初回限定50%OFF。まずは無料お見積りから
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <AccessibleButton

@@ -31,7 +31,7 @@ const HeroSection = memo(function HeroSection() {
   ]
 
   return (
-    <section className="relative min-h-screen flex flex-col justify-center bg-gradient-to-br from-gray-50 via-white to-gray-100" id="hero" aria-labelledby="hero-title">
+    <section className="relative min-h-screen flex flex-col justify-center bg-white" id="hero" aria-labelledby="hero-title">
       {/* 🚀 ウルトラシンク最適化 - 単一コンテナ */}
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center z-10">
         <div className="max-w-4xl mx-auto">
@@ -51,8 +51,7 @@ const HeroSection = memo(function HeroSection() {
                   objectPosition: 'center',
                   padding: '0.5rem'
                 }}
-                placeholder="blur"
-                blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q=="
+                placeholder="empty"
               />
             </div>
           </div>
@@ -72,7 +71,7 @@ const HeroSection = memo(function HeroSection() {
               <Link
                 key={index}
                 href={service.href}
-                className="group bg-white rounded-2xl p-6 shadow-sm border border-gray-100"
+                className="group bg-white rounded-2xl p-6 border border-gray-100"
                 {...(service.href.startsWith('http') && {
                   target: '_blank',
                   rel: 'noopener noreferrer'
@@ -93,7 +92,7 @@ const HeroSection = memo(function HeroSection() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link 
               href="#contact" 
-              className="group inline-flex items-center justify-center px-8 py-4 bg-gray-900 text-white font-medium rounded-lg hover:bg-gray-800 shadow-lg"
+              className="group inline-flex items-center justify-center px-8 py-4 bg-gray-900 text-white font-medium rounded-lg hover:bg-gray-800"
             >
               <span>💬</span>
               <span className="ml-2">お問い合わせ</span>
