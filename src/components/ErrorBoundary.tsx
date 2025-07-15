@@ -1,7 +1,7 @@
 // 🚀 限界突破エラーハンドリング - Error Boundary Implementation
 'use client'
 
-import { Component, ReactNode, ErrorInfo } from 'react'
+import { Component, ReactNode, ErrorInfo, Suspense } from 'react'
 import { AlertTriangle, RefreshCw, Home } from 'lucide-react'
 import Link from 'next/link'
 import AccessibleButton from './ui/AccessibleButton'

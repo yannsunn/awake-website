@@ -89,12 +89,12 @@ export default function AiServicePage() {
       {
         name: service.pricing.basic.name,
         price: service.pricing.basic.price,
-        description: service.pricing.basic.description || `${service.pricing.basic.name}プラン`
+        description: `${service.pricing.basic.name}プラン`
       },
       {
         name: service.pricing.enterprise.name,
         price: service.pricing.enterprise.price,
-        description: service.pricing.enterprise.description || `${service.pricing.enterprise.name}プラン`
+        description: `${service.pricing.enterprise.name}プラン`
       }
     ]
   })
