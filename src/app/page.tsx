@@ -146,7 +146,7 @@ export default function HomePage() {
               {services.map((service, index) => {
                 const IconComponent = service.icon
                 return (
-                  <div key={index} className="bg-white rounded-2xl p-8 shadow-sm border border-gray-100 hover:shadow-lg">
+                  <div key={index} className="bg-white rounded-2xl p-8 shadow-sm border border-gray-100">
                     <div className={`w-16 h-16 bg-gradient-to-br ${service.color} rounded-xl flex items-center justify-center mx-auto mb-6`}>
                       <IconComponent className="h-8 w-8 text-white" />
                     </div>
@@ -196,7 +196,7 @@ export default function HomePage() {
               {features.map((feature, index) => {
                 const IconComponent = feature.icon
                 return (
-                  <div key={index} className="text-center p-6 rounded-xl hover:shadow-lg">
+                  <div key={index} className="text-center p-6 rounded-xl">
                     <div className="w-16 h-16 bg-gray-900 rounded-full flex items-center justify-center mx-auto mb-4">
                       <IconComponent className="h-8 w-8 text-white" />
                     </div>

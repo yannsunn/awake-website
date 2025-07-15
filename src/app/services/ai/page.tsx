@@ -234,7 +234,7 @@ export default function AiServicePage() {
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <div className="bg-white p-6 rounded-xl shadow-sm hover:shadow-md">
+          <div className="bg-white p-6 rounded-xl shadow-sm">
             <h3 className="text-lg font-medium text-gray-900 mb-4">業務効率化</h3>
             <ul className="space-y-2 text-sm text-gray-600">
               <li>• 定型作業の自動化</li>
@@ -244,7 +244,7 @@ export default function AiServicePage() {
             </ul>
           </div>
           
-          <div className="bg-white p-6 rounded-xl shadow-sm hover:shadow-md">
+          <div className="bg-white p-6 rounded-xl shadow-sm">
             <h3 className="text-lg font-medium text-gray-900 mb-4">コスト削減</h3>
             <ul className="space-y-2 text-sm text-gray-600">
               <li>• 人的リソース最適化</li>
@@ -254,7 +254,7 @@ export default function AiServicePage() {
             </ul>
           </div>
           
-          <div className="bg-white p-6 rounded-xl shadow-sm hover:shadow-md">
+          <div className="bg-white p-6 rounded-xl shadow-sm">
             <h3 className="text-lg font-medium text-gray-900 mb-4">競争優位性</h3>
             <ul className="space-y-2 text-sm text-gray-600">
               <li>• 先進技術活用</li>

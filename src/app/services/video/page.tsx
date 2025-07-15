@@ -231,7 +231,7 @@ export default function VideoServicePage() {
           {features.map((feature, index) => {
             const IconComponent = feature.icon
             return (
-              <div key={index} className="text-center hover:shadow-lg p-6 rounded-xl">
+              <div key={index} className="text-center p-6 rounded-xl">
                 <div className="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
                   <IconComponent className="h-8 w-8 text-white" />
                 </div>
@@ -260,7 +260,7 @@ export default function VideoServicePage() {
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {platforms.map((platform, index) => (
-            <div key={index} className="bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl text-center">
+            <div key={index} className="bg-white p-6 rounded-2xl shadow-lg text-center">
               <div className={`w-16 h-16 bg-gradient-to-br ${platform.color} rounded-full flex items-center justify-center mx-auto mb-4`}>
                 <Video className="h-8 w-8 text-white" />
               </div>
@@ -293,7 +293,7 @@ export default function VideoServicePage() {
           {pricing.map((plan, index) => (
             <div 
               key={index} 
-              className={`bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl ${
+              className={`bg-white p-8 rounded-2xl shadow-lg ${
                 plan.popular ? 'ring-2 ring-blue-600 relative' : ''
               }`}
             >

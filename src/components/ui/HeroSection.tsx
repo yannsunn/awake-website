@@ -72,7 +72,7 @@ const HeroSection = memo(function HeroSection() {
               <Link
                 key={index}
                 href={service.href}
-                className="group bg-white rounded-2xl p-6 shadow-sm border border-gray-100 hover:shadow-lg hover:border-gray-200"
+                className="group bg-white rounded-2xl p-6 shadow-sm border border-gray-100"
                 {...(service.href.startsWith('http') && {
                   target: '_blank',
                   rel: 'noopener noreferrer'
