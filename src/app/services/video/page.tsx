@@ -26,8 +26,98 @@ export const metadata: Metadata = {
   },
 }
 
+const features = [
+  {
+    icon: Clock,
+    title: "最短24時間納品",
+    description: "お急ぎの案件も対応可能。スピード感のある制作で機会を逃しません"
+  },
+  {
+    icon: Eye,
+    title: "視聴完了率80%達成",
+    description: "平均視聴完了率80%。最後まで見られる動画で確実にメッセージを伝達"
+  },
+  {
+    icon: Zap,
+    title: "AI技術活用",
+    description: "最新AI技術で効率化。品質を保ちながらコストを大幅削減"
+  },
+  {
+    icon: Users,
+    title: "顔出し不要",
+    description: "アニメーション・テキスト・音声のみで魅力的な動画を制作"
+  }
+]
 
+const platforms = [
+  {
+    name: "YouTube",
+    description: "長時間視聴に最適",
+    specs: "16:9 / 1080p推奨",
+    color: "from-red-500 to-red-600"
+  },
+  {
+    name: "TikTok",
+    description: "縦型ショート動画",
+    specs: "9:16 / 60秒以内",
+    color: "from-pink-500 to-pink-600"
+  },
+  {
+    name: "Instagram",
+    description: "ストーリー・リール対応",
+    specs: "1:1, 9:16 / 30秒推奨",
+    color: "from-purple-500 to-purple-600"
+  },
+  {
+    name: "X (Twitter)",
+    description: "短時間で印象的に",
+    specs: "16:9 / 140秒以内",
+    color: "from-blue-500 to-blue-600"
+  }
+]
 
+const pricing = [
+  {
+    name: "ベーシック",
+    description: "シンプルな動画制作",
+    price: "¥15,000",
+    period: "〜",
+    features: [
+      "基本的な編集",
+      "テキスト・音声挿入",
+      "1回の修正対応",
+      "最短48時間納品"
+    ]
+  },
+  {
+    name: "スタンダード",
+    description: "本格的な動画制作",
+    price: "¥45,000",
+    period: "〜",
+    popular: true,
+    features: [
+      "プロ品質の編集",
+      "アニメーション追加",
+      "3回の修正対応",
+      "最短24時間納品",
+      "SNS最適化"
+    ]
+  },
+  {
+    name: "プレミアム",
+    description: "完全オリジナル制作",
+    price: "¥165,000",
+    period: "〜",
+    features: [
+      "完全オリジナル制作",
+      "プロナレーション",
+      "無制限修正対応",
+      "最短12時間納品",
+      "全プラットフォーム対応",
+      "専任ディレクター"
+    ]
+  }
+]
 
 const videoServiceSchema = {
   "@context": "https://schema.org",

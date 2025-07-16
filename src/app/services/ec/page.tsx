@@ -327,7 +327,7 @@ export default function EcServicePage() {
 
       <ContentSection>
         <div className="text-center">
-          <h2 className={STYLES.heading.h2}>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-light text-gray-900 mb-4">
             共に成長するパートナーとして
           </h2>
           <p className="text-lg sm:text-xl text-gray-600 mb-8 mt-4">
