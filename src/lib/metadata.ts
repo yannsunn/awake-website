@@ -23,15 +23,15 @@ export function generateMetadata(options: GenerateMetadataOptions): Metadata {
     ? `${title}${COMPANY_DATA.metadata.baseTitleSuffix}`
     : COMPANY_DATA.metadata.baseTitle
 
-  const url = `${COMPANY_DATA.metadata.baseUrl}${path}`
+  const url = `${COMPANY_DATA.metadata.ogUrl}${path}`
 
   return {
     title: fullTitle,
     description: description || COMPANY_DATA.metadata.baseDescription,
     keywords: [...COMPANY_DATA.metadata.keywords, ...keywords],
-    authors: [{ name: COMPANY_DATA.name }],
-    creator: COMPANY_DATA.name,
-    publisher: COMPANY_DATA.name,
+    authors: [{ name: COMPANY_DATA.basic.name }],
+    creator: COMPANY_DATA.basic.name,
+    publisher: COMPANY_DATA.basic.name,
     formatDetection: {
       email: false,
       address: false,
@@ -41,15 +41,15 @@ export function generateMetadata(options: GenerateMetadataOptions): Metadata {
       title: fullTitle,
       description: description || COMPANY_DATA.metadata.baseDescription,
       url,
-      siteName: COMPANY_DATA.name,
+      siteName: COMPANY_DATA.basic.name,
       locale: 'ja_JP',
       type: 'website',
       images: [
         {
-          url: `${COMPANY_DATA.metadata.baseUrl}/assets/images/ogp.jpg`,
+          url: `${COMPANY_DATA.metadata.ogUrl}/assets/images/ogp.jpg`,
           width: 1200,
           height: 630,
-          alt: COMPANY_DATA.name,
+          alt: COMPANY_DATA.basic.name,
         },
       ],
     },
@@ -57,7 +57,7 @@ export function generateMetadata(options: GenerateMetadataOptions): Metadata {
       card: 'summary_large_image',
       title: fullTitle,
       description: description || COMPANY_DATA.metadata.baseDescription,
-      images: [`${COMPANY_DATA.metadata.baseUrl}/assets/images/ogp.jpg`],
+      images: [`${COMPANY_DATA.metadata.ogUrl}/assets/images/ogp.jpg`],
     },
     robots: noindex
       ? { index: false, follow: false }
