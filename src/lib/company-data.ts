@@ -5,9 +5,9 @@ export const COMPANY_DATA = {
     nameEn: 'Awake Inc.',
     ceo: '田形 康貴',
     established: '2020年（令和2年）',
-    mission: 'つながるすべての人に、感謝と繁栄を',
-    tagline: '信頼の絆で、共に成長し続ける企業',
-    description: '中小企業のデジタル化を通じて、ビジネスの成長と発展を支援。最新技術を活用した実践的なソリューションで、お客様の課題解決に貢献します。'
+    mission: '適正コストで最大の価値を',
+    tagline: '大手の半額で同等以上の成果を実現',
+    description: '限られた経営資源を最適配分し、本質的な成長を支援。無駄を削ぎ、必要な投資に集中できる環境を提供します。'
   },
   contact: {
     address: {
@@ -33,8 +33,8 @@ export const COMPANY_DATA = {
     details: {
       web: {
         title: 'ホームページ制作',
-        description: '成果にコミットする戦略的ウェブサイト制作',
-        longDescription: 'お客様のビジネス目標を実現するウェブサイトを制作。デザインだけでなく、マーケティング視点で売上向上に貢献する戦略的なサイト構築を行います。',
+        description: '大手の50%のコストで同等以上の成果を実現',
+        longDescription: '大手制作会社の半額以下で、同等以上の品質を提供。無駄な機能を削ぎ、本当に必要な投資に集中できる環境を提供します。',
         href: 'https://portfolio.awakeinc.co.jp/',
         pricing: {
           standard: {
@@ -56,8 +56,8 @@ export const COMPANY_DATA = {
       },
       ai: {
         title: 'AIコンサルティング',
-        description: 'AI活用で業務効率を劇的に改善',
-        longDescription: 'ChatGPTをはじめとする最新AI技術を活用し、お客様の業務効率化を実現。導入から運用まで、実践的なサポートで確実な成果をお約束します。',
+        description: '平均3か月で投資回収。業務時間を最大70%削減',
+        longDescription: '無駄なAIツールは導入せず、確実に成果が出るものだけを選定。平均3か月で投資回収を実現し、成果が出なければ3か月以内に解約可能です。',
         href: '/services/ai',
         pricing: {
           basic: {
@@ -76,7 +76,7 @@ export const COMPANY_DATA = {
       },
       ec: {
         title: 'Amazon代理店サービス',
-        description: 'Amazon販売を成功に導く総合支援サービス',
+        description: '初期費用0円・完全成果報酬でリスクゼロ',
         longDescription: '初期費用0円・完全成果報酬制で安心。商品選定から販売戦略まで、Amazon販売のプロフェッショナルが全面的にサポートいたします。',
         href: '/services/ec',
         pricing: {
