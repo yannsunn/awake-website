@@ -4,6 +4,11 @@ import { COMPANY_DATA } from '@/lib/company-data'
 import PageTemplate, { ContentSection } from '@/components/layout/PageTemplate'
 import AccessibleButton from '@/components/ui/AccessibleButton'
 import { createServiceSchema } from '@/lib/enhanced-schema'
+import { generateServiceMetadata } from '@/lib/metadata'
+import { ServiceHero } from '@/components/sections/ServiceHero'
+import { ProcessSteps } from '@/components/sections/ProcessSteps'
+import { FeatureGrid } from '@/components/sections/FeatureGrid'
+import { STYLES } from '@/lib/constants'
 
 export const metadata: Metadata = {
   title: "Amazon代理販売サービス | 株式会社Awake",
@@ -327,7 +332,7 @@ export default function EcServicePage() {
 
       <ContentSection>
         <div className="text-center">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-light text-gray-900 mb-4">
+          <h2 className={STYLES.heading.h2}>
             共に成長するパートナーとして
           </h2>
           <p className="text-lg sm:text-xl text-gray-600 mb-8 mt-4">
