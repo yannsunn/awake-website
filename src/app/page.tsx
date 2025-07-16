@@ -49,23 +49,23 @@ const services = [
 const features = [
   {
     icon: CheckCircle,
-    title: "成果にコミットする料金体系",
-    description: "初期費用0円プランを含む柔軟な料金設定。お客様のビジネス成長に合わせた最適な提案をいたします。"
+    title: "大手の50%のコスト",
+    description: "同等以上の品質を半額で提供。削減したコストを、本当に必要な投資に回せます。"
   },
   {
     icon: Award,
-    title: "豊富な実績と専門性",
-    description: "様々な業界・規模のプロジェクトを成功に導いた実績。お客様の課題に最適なソリューションを提供します。"
+    title: "3か月で投資回収",
+    description: "平均で3か月で投資を回収できる実績。成果が出なければ2回目からは無料でサポート。"
   },
   {
     icon: Users,
-    title: "専任担当制による継続支援",
-    description: "プロジェクト開始から完了後まで、一貫して同じ担当者がサポート。お客様のビジネスを深く理解した提案が可能です。"
+    title: "完全成果報酬制",
+    description: "初期費用0円プランを含む柔軟な料金体系。リスクなく始められる安心設計。"
   },
   {
     icon: Heart,
-    title: "「つながる」を大切にする経営",
-    description: "お客様との「縁」を大切にし、与え続けることで関係を太くする経営理念。長期的な信頼関係を築きます。"
+    title: "継続率95%以上",
+    description: "一度ご利用いただいたお客様の95%が継続。確実な成果で信頼関係を構築。"
   }
 ]
 
@@ -137,7 +137,7 @@ export default function HomePage() {
                 サービス一覧
               </h2>
               <p className="text-lg sm:text-xl text-gray-600">
-                デジタル時代のビジネス成長を実現する専門サービス
+                コストを抑えながら、確実な成果を出す専門サービス
               </p>
             </div>
             
@@ -187,7 +187,7 @@ export default function HomePage() {
                 選ばれる理由
               </h2>
               <p className="text-lg sm:text-xl text-gray-600">
-                お客様に選ばれ続ける4つの特徴
+                大手にはできないコストパフォーマンス
               </p>
             </div>
             
@@ -227,7 +227,7 @@ export default function HomePage() {
                   {COMPANY_DATA.basic.mission}
                 </h3>
                 <p className="text-base sm:text-lg text-gray-600 leading-relaxed mb-8">
-                  私たちは、美しいコーポレートサイト制作と革新的なAI導入支援を通じて、すべての企業がデジタル時代に輝ける未来を創造します。技術の力で可能性を広げ、信頼の絆で成功を確かなものにします。
+                  高額なIT投資で失敗する企業が多い中、私たちは適正価格で確実な成果を出します。必要最小限の投資で最大の効果を生み出し、浮いたコストを本業の成長に投資できる環境を提供します。
                 </p>
                 <AccessibleButton href="/about" showArrow>
                   詳しく見る

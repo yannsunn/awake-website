@@ -26,100 +26,8 @@ export const metadata: Metadata = {
   },
 }
 
-const features = [
-  {
-    icon: Users,
-    title: "顔出し不要",
-    description: "AIアバターやテキスト動画で、顔を出さずに情報発信が可能"
-  },
-  {
-    icon: Zap,
-    title: "SNS最適化",
-    description: "各SNSのアルゴリズムに対応。バズる動画の法則を熟知"
-  },
-  {
-    icon: Clock,
-    title: "24時間納品",
-    description: "緊急案件は24時間納品。通常でも3日以内に完成"
-  },
-  {
-    icon: Eye,
-    title: "視聴数UP",
-    description: "最初の3秒で心を掴む構成。視聴維持率90%以上を実現"
-  }
-]
 
-const platforms = [
-  {
-    name: "YouTube",
-    description: "長尺動画・ショート動画",
-    specs: "16:9、9:16対応",
-    color: "from-red-500 to-red-600"
-  },
-  {
-    name: "TikTok",
-    description: "バイラル動画制作",
-    specs: "9:16縦型動画",
-    color: "from-gray-800 to-gray-900"
-  },
-  {
-    name: "Instagram",
-    description: "リール・ストーリー",
-    specs: "1:1、9:16対応",
-    color: "from-purple-500 to-pink-500"
-  },
-  {
-    name: "Twitter/X",
-    description: "ショート動画",
-    specs: "16:9、1:1対応",
-    color: "from-blue-400 to-blue-600"
-  }
-]
 
-const pricing = [
-  {
-    name: "ベーシック",
-    price: "1.5万円〜",
-    period: "/本",
-    description: "シンプルな動画編集",
-    features: [
-      "動画編集（〜3分）",
-      "テキスト・字幕追加",
-      "BGM・効果音",
-      "基本的なエフェクト",
-      "2回までの修正"
-    ]
-  },
-  {
-    name: "スタンダード",
-    price: "5万円〜",
-    period: "/本",
-    description: "プロフェッショナル動画",
-    features: [
-      "動画編集（〜10分）",
-      "アニメーション追加",
-      "プロ音声ナレーション",
-      "高度なエフェクト",
-      "サムネイル制作",
-      "5回までの修正"
-    ],
-    popular: true
-  },
-  {
-    name: "SNS運用代行",
-    price: "16.5万円",
-    period: "/月",
-    description: "SNS運用を完全サポート",
-    features: [
-      "各SNSへの動画投稿",
-      "投稿スケジュール管理",
-      "コンテンツ企画・戦略",
-      "エンゲージメント分析",
-      "コメント対応サポート",
-      "月次レポート提供"
-    ]
-  }
-]
 
 const videoServiceSchema = {
   "@context": "https://schema.org",
@@ -343,7 +251,7 @@ export default function VideoServicePage() {
             動画でビジネスを加速させませんか？
           </h2>
           <p className="text-lg sm:text-xl text-white/90 mb-8">
-            初回限定50%OFF。まずは無料お見積りから
+            成果が出なければ2回目の制作費用は無料。成果保証付き
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <AccessibleButton

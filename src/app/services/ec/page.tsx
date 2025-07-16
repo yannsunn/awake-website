@@ -102,7 +102,7 @@ export default function EcServicePage() {
           </h1>
           
           <p className="text-lg sm:text-xl md:text-2xl text-gray-600 mb-12 font-light leading-relaxed">
-            7年間で7,000点以上の商品販売実績。SEOで売上が平地3倍に向上
+            初期費用0円、在庫リスク0、売れなけれグコスト0。完全成果報酬で安心
           </p>
 
           <div className="flex justify-center">
@@ -126,7 +126,7 @@ export default function EcServicePage() {
             サービス特徴
           </h2>
           <p className="text-lg sm:text-xl text-gray-600">
-            平均売上300%アップの実績で御社をサポート
+            成功報酬10-15%のみ。リスクゼロで新規チャネル開拓
           </p>
         </div>
         
@@ -325,14 +325,13 @@ export default function EcServicePage() {
         </div>
       </ContentSection>
 
-      {/* CTA Section */}
       <ContentSection>
         <div className="text-center">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-light text-gray-900 mb-6">
+          <h2 className={STYLES.heading.h2}>
             共に成長するパートナーとして
           </h2>
-          <p className="text-lg sm:text-xl text-gray-600 mb-8">
-            無料相談で売上予測をご提示。リスクなく始められます
+          <p className="text-lg sm:text-xl text-gray-600 mb-8 mt-4">
+            3か月で検索上位表示を実現。売上が出なけれど7手数料ゼロ
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <AccessibleButton
@@ -341,11 +340,10 @@ export default function EcServicePage() {
               rel="noopener noreferrer"
               variant="primary"
               size="large"
-              className="bg-green-500 text-white hover:bg-green-600"
+              className="bg-green-500 text-white"
               ariaLabel="公式LINEで無料相談"
             >
               LINE で問い合わせ
-              <ArrowRight className="ml-2 h-5 w-5" />
             </AccessibleButton>
             <AccessibleButton
               href="/#contact"
