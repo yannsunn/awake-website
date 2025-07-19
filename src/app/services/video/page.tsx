@@ -28,8 +28,8 @@ const features = [
   },
   {
     icon: Eye,
-    title: "視聴完了率80%達成",
-    description: "平均視聴完了率80%。最後まで見られる動画で確実にメッセージを伝達"
+    title: "高い視聴完了率",
+    description: "最後まで見られる動画で確実にメッセージを伝達"
   },
   {
     icon: Zap,
@@ -180,7 +180,7 @@ export default function VideoServicePage() {
               視聴者の心を掴む<br />プロ品質動画制作
             </h1>
             <p className="text-lg sm:text-xl md:text-2xl text-white/90 mb-8 leading-relaxed">
-              再生数が平均5倍に増加。<br />
+              再生数を大幅に増加。<br />
               AI技術とプロの編集で、見た人がファンになる動画を制作します。
             </p>
             <AccessibleButton
@@ -215,7 +215,7 @@ export default function VideoServicePage() {
             サービスの特徴
           </h2>
           <p className="text-lg sm:text-xl text-gray-600">
-            累計1,000本以上の制作実績で培ったノウハウを提供
+            豊富な制作実績で培ったノウハウを提供
           </p>
         </div>
         
