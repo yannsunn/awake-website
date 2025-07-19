@@ -82,7 +82,7 @@ export default function AiServicePage() {
           {
             icon: <div className="text-white font-bold text-xl">効</div>,
             title: "業務効率化",
-            description: "作業時間を最大70%削減。人的ミスを防ぎ、品質を向上"
+            description: "作業時間を大幅削減。人的ミスを防ぎ、品質を向上"
           },
           {
             icon: <div className="text-white font-bold text-xl">教</div>,
@@ -190,7 +190,7 @@ export default function AiServicePage() {
             AI導入で業務を革新しませんか？
           </h2>
           <p className="text-lg sm:text-xl text-gray-600 mb-8 mt-4">
-            無料診断で貴社の削減可能時間を計算。成果が出なければ3か月以内に解約可能
+            無料診断で貴社の削減可能時間を計算。成果が出なければ解約可能
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <AccessibleButton

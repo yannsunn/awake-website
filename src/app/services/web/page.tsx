@@ -83,7 +83,7 @@ export default function WebServicePage() {
           {
             icon: <div className="text-white font-bold text-xl">¥</div>,
             title: "プロフェッショナル制作",
-            description: "132,000円から。大手制作会社の1/3の価格でプロ品質を実現"
+            description: "132,000円から。大手制作会社より低価格でプロ品質を実現"
           },
           {
             icon: <div className="text-white font-bold text-xl">S</div>,
@@ -145,7 +145,7 @@ export default function WebServicePage() {
           { 
             step: "04", 
             title: "公開・運用", 
-            description: "公開後3ヶ月無料サポート。アクセス解析で改善提案も実施",
+            description: "公開後も安心のサポート体制。アクセス解析で改善提案も実施",
             duration: "継続"
           }
         ]}
@@ -182,7 +182,7 @@ export default function WebServicePage() {
           <div className={STYLES.card.compact}>
             <h3 className={STYLES.heading.h4}>保証・サポート</h3>
             <ul className="space-y-2 text-sm text-gray-600 mt-4">
-              <li>• 3ヶ月無料サポート</li>
+              <li>• 充実のサポート体制</li>
               <li>• バックアップ対応</li>
               <li>• SSL証明書設定</li>
               <li>• セキュリティ対策</li>
@@ -197,7 +197,7 @@ export default function WebServicePage() {
             まずはお気軽にご相談ください
           </h2>
           <p className="text-lg sm:text-xl text-gray-600 mb-8 mt-4">
-            制作実績100社以上。まずは無料相談から始めましょう
+            まずは無料相談から始めましょう
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <AccessibleButton

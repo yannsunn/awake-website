@@ -12,11 +12,11 @@ import { STYLES } from '@/lib/constants'
 
 export const metadata: Metadata = {
   title: "Amazon代理販売サービス | 株式会社Awake",
-  description: "【7年の実績】Amazon代理販売でSEO上位表示を実現。完全成果報酬型でリスクゼロ。カタログ作成から販売まで全てお任せ。",
-  keywords: "Amazon代理販売, SEO上位表示, カタログ作成, 7年経験, 株式会社Awake",
+  description: "Amazon代理販売でSEO上位表示を実現。完全成果報酬型でリスクゼロ。カタログ作成から販売まで全てお任せ。",
+  keywords: "Amazon代理販売, SEO上位表示, カタログ作成, 株式会社Awake",
   openGraph: {
     title: "Amazon代理販売サービス | 株式会社Awake",
-    description: "【7年の実績】Amazon代理販売でSEO上位表示を実現。完全成果報酬型でリスクゼロ。",
+    description: "Amazon代理販売でSEO上位表示を実現。完全成果報酬型でリスクゼロ。",
     type: 'website',
     locale: 'ja_JP',
     siteName: COMPANY_DATA.basic.name,
@@ -24,25 +24,25 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: "Amazon代理販売サービス | 株式会社Awake",
-    description: "【7年の実績】Amazon代理販売でSEO上位表示を実現。完全成果報酬型でリスクゼロ。",
+    description: "Amazon代理販売でSEO上位表示を実現。完全成果報酬型でリスクゼロ。",
   },
 }
 
 const features = [
   {
     icon: Shield,
-    title: "7年の実績と経験",
-    description: "7年で300社以上を支援。独自のノウハウで確実に売上アップを実現"
+    title: "実績と経験",
+    description: "独自のノウハウで確実に売上アップを実現"
   },
   {
     icon: TrendingUp,
     title: "SEO検索上位表示",
-    description: "キーワード分析と3ヶ月で検索順位を1ページ目へ。売上平地3倍に"
+    description: "キーワード分析で検索順位を向上。売上アップに貢献"
   },
   {
     icon: Zap,
     title: "プロのカタログ作成",
-    description: "購買率が20%向上するカタログを制作。プロカメラマンによる撮影も対応"
+    description: "購買率向上を目指したカタログを制作。プロカメラマンによる撮影も対応"
   },
   {
     icon: CheckCircle,
@@ -56,7 +56,7 @@ export default function EcServicePage() {
   // 構造化データ生成
   const ecServiceSchema = createServiceSchema({
     name: "Amazon代理販売サービス",
-    description: "完全成果報酬型のAmazon販売代行サービス。7年の実績でSEO上位表示を実現。",
+    description: "完全成果報酬型のAmazon販売代行サービス。SEO上位表示を実現。",
     provider: COMPANY_DATA.basic.name,
     areaServed: '日本',
     serviceType: 'EC販売代行',
@@ -183,7 +183,7 @@ export default function EcServicePage() {
             {
               step: "03",
               title: "SEO最適化設定",
-              description: "独自ノウハウで検索順位を最短3ヶ月で1ページ目へ",
+              description: "独自ノウハウで検索順位を向上",
               time: "1週間"
             },
             {
@@ -303,7 +303,7 @@ export default function EcServicePage() {
             <ul className="space-y-2 text-sm text-gray-600">
               <li>• 0円初期費用</li>
               <li>• 10-15%成果報酬</li>
-              <li>• 3日最短開始</li>
+              <li>• 迅速な開始</li>
               <li>• 継続的サポート</li>
             </ul>
           </div>
@@ -321,10 +321,10 @@ export default function EcServicePage() {
           <div className="bg-white p-6 rounded-xl shadow-sm">
             <h3 className="text-lg font-medium text-gray-900 mb-4">運用実績</h3>
             <ul className="space-y-2 text-sm text-gray-600">
-              <li>• 平均売上30%向上</li>
+              <li>• 売上向上実績あり</li>
               <li>• 在庫回転率改善</li>
               <li>• 顧客満足度向上</li>
-              <li>• 継続率90%以上</li>
+              <li>• 高い継続率</li>
             </ul>
           </div>
         </div>
@@ -336,7 +336,7 @@ export default function EcServicePage() {
             共に成長するパートナーとして
           </h2>
           <p className="text-lg sm:text-xl text-gray-600 mb-8 mt-4">
-            3か月で検索上位表示を実現。売上が出なけれど7手数料ゼロ
+            検索上位表示を実現。売上が出なければ手数料ゼロ
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <AccessibleButton

@@ -6,20 +6,8 @@ export const COMPANY_DATA = {
     ceo: '田形 康貴',
     established: '2020年（令和2年）',
     mission: '適正コストで最大の価値を',
-    tagline: '7年300社の失敗事例から生まれた、確実に成果を出すIT投資の新常識',
-    description: '多くの企業がIT投資で失敗する理由を知り尽くした私たちだからこそ、確実に成果が出る方法をお伝えできます。大手の半額で実現できる秘密は、無駄を徹底的に排除し、本当に必要な投資だけに集中するシステムにあります。',
-    uniqueValue: {
-      whyHalfPrice: '大手は営業費、広告費、管理費で総コストの60%を占めます。私たちは技術力で勝負し、これらの無駄を排除。お客様が本当に必要な価値にのみ投資いただけます。',
-      guaranteedResults: '300社以上の失敗事例を分析し、成果が出る条件を完全に体系化。3か月で投資回収できなければ、無料でサポートを延長します。',
-      continuityRate: '95%の継続率が証明する圧倒的な満足度。一度利用すれば手放せない品質と効果を実感いただけます。'
-    },
-    achievements: {
-      companies: '300社以上',
-      continuityRate: '95%',
-      roiPeriod: '平均3か月',
-      costReduction: '平均50%',
-      yearlySupported: '7年間'
-    }
+    tagline: '大手の半額で同等以上の成果を実現',
+    description: '限られた経営資源を最適配分し、本質的な成長を支援。無駄を削ぎ、必要な投資に集中できる環境を提供します。'
   },
   contact: {
     address: {
@@ -46,11 +34,9 @@ export const COMPANY_DATA = {
     details: {
       web: {
         title: 'ホームページ制作',
-        description: '300万円の見積もりに驚愕した経営者が、132,000円で同等サイトを手に入れた理由',
-        longDescription: '「なぜこんなに高いのか？」多くの経営者が制作会社の見積もりを見て感じる疑問。私たちは7年間で100社以上の制作を手がけ、大手が高額な理由を解明しました。営業費60%、広告費20%、管理費20%。実際の制作は全体の30%以下。だからこそ、132,000円で大手と同等のサイトを制作できるのです。',
+        description: '大手の50%のコストで同等以上の成果を実現',
+        longDescription: '大手制作会社の半額以下で、同等以上の品質を提供。無駄な機能を削ぎ、本当に必要な投資に集中できる環境を提供します。',
         href: 'https://portfolio.awakeinc.co.jp/',
-        emotionalHook: '高額な見積もりを見て諦めていた経営者が、予算内で理想のサイトを手に入れた瞬間の喜び',
-        problemSolving: '大手制作会社の高額見積もりの正体を暴き、本当に必要な投資だけに集中',
         pricing: {
           standard: {
             name: 'スタンダード',
@@ -71,11 +57,9 @@ export const COMPANY_DATA = {
       },
       ai: {
         title: 'AIコンサルティング',
-        description: '月40時間のムダ作業で疲弊していた社員が、AIで自動化して本業に集中できた秘密',
-        longDescription: '「また今日も残業...」ルーティンワークに追われる社員の姿を見て、心を痛めている経営者の方へ。私たちは50社以上のAI導入で、平均70%の業務効率化を実現してきました。単純作業を自動化し、人間にしかできないクリエイティブな仕事に集中できる環境を作り上げます。',
+        description: '業務効率化から売上アップまでAIで実現',
+        longDescription: '生成AIを活用した業務効率化で、人件費を大幅削減。ChatGPTをはじめとした最新AI技術を導入し、確実に成果を出します。',
         href: '/services/ai',
-        emotionalHook: '残業続きで疲弊していた社員が、AIで業務が自動化され、定時退社できるようになった感動',
-        problemSolving: 'ルーティンワークによる人材の疲弊と、本来の価値創造業務への集中不足を解決',
         pricing: {
           basic: {
             name: 'AI導入コンサルティング',
@@ -93,11 +77,9 @@ export const COMPANY_DATA = {
       },
       ec: {
         title: 'Amazon代理店サービス',
-        description: '在庫リスクに怯える経営者が、初期費用0円でAmazon売上300%を達成した奇跡',
-        longDescription: '「在庫が売れなかったらどうしよう...」EC参入への不安を抱える経営者の方へ。私たちは7年間で100社以上のAmazon販売を成功させ、平均売上300%増を実現してきました。初期費用0円、在庫リスクゼロで、完全成果報酬制だから安心してスタートできます。',
+        description: '初期費用0円・完全成果報酬制',
+        longDescription: '初期費用0円・完全成果報酬制で安心。商品選定から販売戦略まで、Amazon販売のプロフェッショナルが全面的にサポートいたします。',
         href: '/services/ec',
-        emotionalHook: '在庫リスクに怯えていた経営者が、安心してEC事業を拡大できた安堵感',
-        problemSolving: '在庫リスクと初期投資への不安を解消し、確実に売上を増やす仕組みを提供',
         pricing: {
           commission: {
             name: 'Amazon特価販売',
@@ -118,11 +100,9 @@ export const COMPANY_DATA = {
       },
       video: {
         title: '動画編集制作サービス',
-        description: '月100万円の広告費で結果が出ない経営者が、動画マーケティングで売上300%を達成した秘密',
-        longDescription: '「広告費をかけても売上が上がらない...」デジタルマーケティングに悩む経営者の方へ。私たちは最新のAI技術と7年間の動画制作経験を組み合わせ、視聴完了率80%を実現する動画を最短24時間で制作します。顔出し不要で、ブランド価値を向上させる動画マーケティングを提供します。',
+        description: 'AI技術でプロ品質の動画を短納期で制作',
+        longDescription: '最新のAI技術を活用し、プロ品質の動画を最短24時間で制作。YouTube・TikTok・Instagram等、各SNSに最適化した動画でエンゲージメントを向上させます。',
         href: '/services/video',
-        emotionalHook: '高額な広告費に悩んでいた経営者が、動画マーケティングで確実に売上を増やせた安心感',
-        problemSolving: '効果の見えない広告費の無駄遣いを解消し、確実に成果が出る動画マーケティングを実現',
         pricing: {
           basic: {
             name: 'ベーシック',
@@ -148,20 +128,12 @@ export const COMPANY_DATA = {
     responseTime: '1営業日以内',
     estimateFree: true,
     ndaAvailable: true,
-    limitedSlots: '月3社限定',
     features: [
-      '【今月限定】初回相談完全無料（通常22,000円相当）',
-      '300社分析から生まれた「失敗しないIT投資診断」を実施',
-      '現在の課題を3か月で解決する具体的プランを提示',
-      '投資回収シミュレーションを数値で明確化',
-      '秘密保持契約締結で安心してご相談いただけます'
-    ],
-    urgencyElements: {
-      monthlyLimit: '月3社限定の丁寧なサポート',
-      freeConsultation: '今月限定：初回相談無料',
-      guaranteedResponse: '24時間以内の必ず返信保証',
-      exclusiveOffer: '相談者限定特典：追加機能無料'
-    }
+      '初回のご相談は無料です',
+      '通常1営業日以内にご返信いたします',
+      'お見積りも無料で承っております',
+      '秘密保持契約の締結も可能です'
+    ]
   },
   metadata: {
     baseTitle: '株式会社Awake',
