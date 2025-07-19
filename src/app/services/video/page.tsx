@@ -4,27 +4,21 @@ import { COMPANY_DATA } from '@/lib/company-data'
 import PageTemplate, { ContentSection } from '@/components/layout/PageTemplate'
 import AccessibleButton from '@/components/ui/AccessibleButton'
 import OptimizedImage from '@/components/ui/OptimizedImage'
+import { generateServiceMetadata } from '@/lib/metadata'
+import { ServiceHero } from '@/components/sections/ServiceHero'
+import { ProcessSteps } from '@/components/sections/ProcessSteps'
+import { FeatureGrid } from '@/components/sections/FeatureGrid'
 
-export const metadata: Metadata = {
-  title: "ブランド価値向上動画編集制作サービス | 株式会社Awake",
-  description: "YouTube・SNS最適化でエンゲージメント向上。プロ品質編集で視聴者の心を残む。最短24時間納品。",
-  keywords: "動画編集, 動画制作, YouTube, TikTok, Instagram, SNS動画, AI動画編集, 株式会社Awake",
-  openGraph: {
-    title: "動画編集・制作サービス | 株式会社Awake",
-    description: "AI技術活用で顔出し不要・SNS最適化。YouTube・TikTok・Instagram等のプロ動画制作。",
-    images: ["/assets/images/video-editing.jpg"],
-    url: "https://awake-website.netlify.app/services/video/",
-    type: 'website',
-    locale: 'ja_JP',
-    siteName: COMPANY_DATA.basic.name,
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "動画編集・制作サービス | 株式会社Awake",
-    description: "AI技術活用で顔出し不要・SNS最適化。YouTube・TikTok・Instagram等のプロ動画制作",
-    images: ["/assets/images/video-editing.jpg"],
-  },
-}
+const service = COMPANY_DATA.services.details.video
+
+export const metadata: Metadata = generateServiceMetadata({
+  id: 'video',
+  title: service.title,
+  description: service.description,
+  longDescription: service.longDescription,
+  href: service.href,
+  pricing: service.pricing
+})
 
 const features = [
   {
