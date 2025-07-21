@@ -6,7 +6,7 @@ export const COMPANY_DATA = {
     ceo: '田形 康貴',
     established: '2020年（令和2年）',
     mission: '適正コストで最大の価値を',
-    tagline: '大手の半額で同等以上の成果を実現',
+    tagline: '大手の50%のコストで成果を実現',
     description: '限られた経営資源を最適配分し、本質的な成長を支援。無駄を削ぎ、必要な投資に集中できる環境を提供します。'
   },
   contact: {

@@ -67,9 +67,6 @@ const Footer = memo(function Footer() {
               <p className="text-gray-400 text-sm">
                 営業時間: {COMPANY_DATA.contact.businessHours.weekdays}
               </p>
-              <p className="text-gray-400 text-sm">
-                初回相談は無料です
-              </p>
               <Link 
                 href="/#contact"
                 className="inline-block bg-white text-gray-900 px-6 py-3 rounded-lg text-sm font-medium hover:bg-gray-100  min-h-[44px]"
