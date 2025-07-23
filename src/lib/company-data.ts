@@ -28,8 +28,7 @@ export const COMPANY_DATA = {
     list: [
       'ホームページ制作',
       'AIコンサルティング', 
-      'Amazon代理店サービス',
-      '動画編集制作サービス'
+      'Amazon代理店サービス'
     ],
     details: {
       web: {
@@ -95,29 +94,6 @@ export const COMPANY_DATA = {
             name: '預託在庫発送',
             rate: '弊社管理',
             description: '預けていただいた在庫から発送'
-          }
-        }
-      },
-      video: {
-        title: '動画編集制作サービス',
-        description: 'AI技術でプロ品質の動画を短納期で制作',
-        longDescription: '最新のAI技術を活用し、プロ品質の動画を最短24時間で制作。YouTube・TikTok・Instagram等、各SNSに最適化した動画でエンゲージメントを向上させます。',
-        href: '/services/video',
-        pricing: {
-          basic: {
-            name: 'ベーシック',
-            price: '¥50,000',
-            features: ['YouTube最適化', '基本編集', '24時間納品', 'AI技術活用']
-          },
-          standard: {
-            name: 'スタンダード',
-            price: '¥100,000',
-            features: ['全SNS対応', '高度編集', '12時間納品', 'エンゲージメント保証']
-          },
-          premium: {
-            name: 'プレミアム',
-            price: '¥200,000',
-            features: ['オリジナルコンテンツ', '専属サポート', '6時間納品', 'ブランド価値向上']
           }
         }
       }
