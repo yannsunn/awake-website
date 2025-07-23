@@ -162,7 +162,7 @@ export default function FAQPage() {
             className="bg-green-500 text-white hover:bg-green-600"
             ariaLabel="公式LINEでお問い合わせ"
           >
-            📱 LINE で問い合わせ（{COMPANY_DATA.contact.line}）
+            📱 LINE で問い合わせ
           </AccessibleButton>
         </div>
       </ContentSection>
