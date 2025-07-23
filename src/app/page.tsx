@@ -49,13 +49,13 @@ const services = [
 const features = [
   {
     icon: CheckCircle,
-    title: "大手の50%のコスト",
-    description: "同等以上の品質を半額で提供。削減したコストを、本当に必要な投資に回せます。"
+    title: "コストパフォーマンス",
+    description: "必要最小限の投資で最大の成果を実現。無駄を削ぎ、本質的な価値に集中します。"
   },
   {
     icon: Award,
-    title: "3か月で投資回収",
-    description: "平均で3か月で投資を回収できる実績。成果が出なければ2回目からは無料でサポート。"
+    title: "明確な料金体系",
+    description: "追加費用なしの透明な価格設定。予算に合わせた最適なプランをご提案。"
   },
   {
     icon: Users,
@@ -64,8 +64,8 @@ const features = [
   },
   {
     icon: Heart,
-    title: "継続率95%以上",
-    description: "一度ご利用いただいたお客様の95%が継続。確実な成果で信頼関係を構築。"
+    title: "継続的なサポート",
+    description: "導入後も安心の伴走支援。お客様の成長に合わせた最適化を継続的に実施。"
   }
 ]
 
