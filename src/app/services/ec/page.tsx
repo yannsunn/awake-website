@@ -12,11 +12,11 @@ import { STYLES } from '@/lib/constants'
 
 export const metadata: Metadata = {
   title: "Amazon代理販売サービス | 株式会社Awake",
-  description: "Amazon代理販売でSEO上位表示を実現。完全成果報酬型でリスクゼロ。カタログ作成から販売まで全てお任せ。",
-  keywords: "Amazon代理販売, SEO上位表示, カタログ作成, 株式会社Awake",
+  description: "売れてから手数料をいただく完全成果報酬制。商品ページ作成・SEO対策・広告運用まで全てお任せ。初期費用0円でリスクなし。",
+  keywords: "Amazon代理販売, 成果報酬, SEO対策, 広告運用, 商品ページ作成, 株式会社Awake",
   openGraph: {
     title: "Amazon代理販売サービス | 株式会社Awake",
-    description: "Amazon代理販売でSEO上位表示を実現。完全成果報酬型でリスクゼロ。",
+    description: "売れてから手数料をいただく完全成果報酬制。商品ページ作成・SEO対策・広告運用まで全てお任せ。",
     type: 'website',
     locale: 'ja_JP',
     siteName: COMPANY_DATA.basic.name,
@@ -24,30 +24,30 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: "Amazon代理販売サービス | 株式会社Awake",
-    description: "Amazon代理販売でSEO上位表示を実現。完全成果報酬型でリスクゼロ。",
+    description: "売れてから手数料をいただく完全成果報酬制。商品ページ作成・SEO対策・広告運用まで全てお任せ。",
   },
 }
 
 const features = [
   {
-    icon: Shield,
-    title: "実績と経験",
-    description: "独自のノウハウで確実に売上アップを実現"
-  },
-  {
-    icon: TrendingUp,
-    title: "SEO検索上位表示",
-    description: "キーワード分析で検索順位を向上。売上アップに貢献"
+    icon: CheckCircle,
+    title: "完全成果報酬制",
+    description: "売上が発生してから手数料をいただくので、赤字リスクゼロ。安心してスタートできます"
   },
   {
     icon: Zap,
-    title: "プロのカタログ作成",
-    description: "購買率向上を目指したカタログを制作。プロカメラマンによる撮影も対応"
+    title: "プロの商品ページ作成",
+    description: "売れる商品説明・魅力的な画像構成・購買心理に基づいたレイアウトで転換率向上"
   },
   {
-    icon: CheckCircle,
-    title: "完全成果報酬制",
-    description: "初期費用0円、成功報酬のみ。赤字リスクなしで安心スタート"
+    icon: TrendingUp,
+    title: "SEO対策・広告運用",
+    description: "適切なキーワード選定と効果的な広告運用で、商品の露出を最大化"
+  },
+  {
+    icon: Shield,
+    title: "運用まで完全サポート",
+    description: "在庫管理・受注処理・カスタマー対応まで。販売に関わる全ての業務を代行"
   }
 ]
 
@@ -56,7 +56,7 @@ export default function EcServicePage() {
   // 構造化データ生成
   const ecServiceSchema = createServiceSchema({
     name: "Amazon代理販売サービス",
-    description: "完全成果報酬型のAmazon販売代行サービス。SEO上位表示を実現。",
+    description: "売れてから手数料をいただく完全成果報酬制のAmazon販売代行。商品ページ作成・SEO対策・広告運用まで全て代行。",
     provider: COMPANY_DATA.basic.name,
     areaServed: '日本',
     serviceType: 'EC販売代行',
@@ -103,11 +103,13 @@ export default function EcServicePage() {
       <ContentSection className="bg-gradient-to-br from-gray-50 via-white to-gray-100">
         <div className="text-center max-w-4xl mx-auto">
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-light text-gray-900 mb-6 tracking-tight">
-            Amazon代理販売サービス
+            売れてから手数料をいただく<br />
+            Amazon販売代行サービス
           </h1>
           
           <p className="text-lg sm:text-xl md:text-2xl text-gray-600 mb-12 font-light leading-relaxed">
-            初期費用0円、在庫リスク0、売れなけれグコスト0。完全成果報酬で安心
+            初期費用0円。商品が売れるまで一切費用はかかりません。<br />
+            商品ページ作成・SEO対策・広告運用まで全てプロにお任せ
           </p>
 
           <div className="flex justify-center">
@@ -128,10 +130,11 @@ export default function EcServicePage() {
       <ContentSection>
         <div className="text-center mb-16">
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-light text-gray-900 mb-4">
-            サービス特徴
+            なぜ私たちが選ばれるのか
           </h2>
           <p className="text-lg sm:text-xl text-gray-600">
-            成功報酬10-15%のみ。リスクゼロで新規チャネル開拓
+            売れない商品からは一切費用をいただきません。<br />
+            だからこそ、本気で売れる商品ページを作ります
           </p>
         </div>
         
@@ -170,27 +173,27 @@ export default function EcServicePage() {
           {[
             {
               step: "01",
-              title: "詳細ヒアリング",
-              description: "商品特性・競合・市場を分析し、売れる戦略を立案",
-              time: "1週間"
+              title: "無料相談・商品分析",
+              description: "商品の強み・ターゲット層・競合状況を分析。売れる可能性を正直にお伝えします",
+              time: "即日〜3日"
             },
             {
               step: "02",
-              title: "プロのカタログ作成",
-              description: "購買率を高める写真・文章・構成で、売れるカタログを制作",
-              time: "2週間"
+              title: "商品ページ制作",
+              description: "購買心理を考慮した商品説明・画像構成・キーワード設定で訴求力の高いページを作成",
+              time: "1〜2週間"
             },
             {
               step: "03",
-              title: "SEO最適化設定",
-              description: "独自ノウハウで検索順位を向上",
-              time: "1週間"
+              title: "SEO対策・広告設定",
+              description: "適切なキーワード選定とスポンサー広告の最適化で商品の露出を増やします",
+              time: "随時調整"
             },
             {
               step: "04",
-              title: "販売開始・運用サポート",
-              description: "毎月の売上分析と改善提案で、継続的に売上アップ",
-              time: "継続"
+              title: "販売開始・改善運用",
+              description: "売上データを分析し、ページ改善・価格調整・広告最適化を継続的に実施",
+              time: "毎月レポート"
             }
           ].map((item, index) => (
             <div key={index} className="text-center p-6 rounded-xl">
@@ -215,32 +218,33 @@ export default function EcServicePage() {
       <ContentSection id="pricing">
         <div className="text-center mb-16">
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-light text-gray-900 mb-4">
-            料金プラン
+            料金体系
           </h2>
           <p className="text-lg sm:text-xl text-gray-600">
-            完全成果報酬型でリスクなし
+            売上が発生してから手数料をいただく完全成果報酬制<br />
+            初期費用・月額費用は一切かかりません
           </p>
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
           {[
             {
-              platform: "Amazon特価販売",
-              rate: "10%〜15%",
-              description: "売上に応じた手数料",
-              features: ["Amazon特価での販売", "在庫管理サポート", "継続的な運用支援", "売上レポート提供"]
+              platform: "スタンダードプラン",
+              rate: "売上の10%〜15%",
+              description: "売れた分だけの成果報酬",
+              features: ["商品ページ作成", "SEOキーワード最適化", "基本的な広告運用", "月次売上レポート"]
             },
             {
-              platform: "メーカー直送",
-              rate: "在庫なし",
-              description: "メーカー様から直接発送",
-              features: ["在庫リスクゼロ", "倉庫費用不要", "配送費最適化", "迅速な発送対応"]
+              platform: "プレミアムプラン",
+              rate: "要相談",
+              description: "大口販売・独占販売対応",
+              features: ["専任担当者配置", "高度な広告戦略", "ブランドストア構築", "競合分析・戦略立案"]
             },
             {
-              platform: "預託在庫発送",
-              rate: "弊社管理",
-              description: "預けていただいた在庫から発送",
-              features: ["柔軟な在庫管理", "迅速な出荷対応", "品質管理徹底", "詳細な在庫レポート"]
+              platform: "FBA活用プラン",
+              rate: "売上の12%〜",
+              description: "Amazon倉庫活用で配送最適化",
+              features: ["FBA設定・管理代行", "在庫補充アドバイス", "プライム対応", "配送コスト最適化"]
             }
           ].map((item, index) => (
             <div 
@@ -293,38 +297,38 @@ export default function EcServicePage() {
       <ContentSection className="bg-gray-50">
         <div className="text-center mb-16">
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-light text-gray-900 mb-4">
-            導入実績
+            こんな方におすすめです
           </h2>
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           <div className="bg-white p-6 rounded-xl shadow-sm">
-            <h3 className="text-lg font-medium text-gray-900 mb-4">基本メトリクス</h3>
+            <h3 className="text-lg font-medium text-gray-900 mb-4">成果報酬の仕組み</h3>
             <ul className="space-y-2 text-sm text-gray-600">
-              <li>• 0円初期費用</li>
-              <li>• 10-15%成果報酬</li>
-              <li>• 迅速な開始</li>
-              <li>• 継続的サポート</li>
+              <li>• 初期費用0円</li>
+              <li>• 月額費用0円</li>
+              <li>• 売上発生時のみ手数料</li>
+              <li>• 透明性の高い料金体系</li>
             </ul>
           </div>
           
           <div className="bg-white p-6 rounded-xl shadow-sm">
-            <h3 className="text-lg font-medium text-gray-900 mb-4">販売サポート</h3>
+            <h3 className="text-lg font-medium text-gray-900 mb-4">代行業務内容</h3>
             <ul className="space-y-2 text-sm text-gray-600">
-              <li>• 商品ページ最適化</li>
-              <li>• 在庫管理システム</li>
-              <li>• 売上分析レポート</li>
-              <li>• 顧客対応サポート</li>
+              <li>• 商品ページ作成・改善</li>
+              <li>• SEOキーワード選定</li>
+              <li>• スポンサー広告運用</li>
+              <li>• 売上データ分析</li>
             </ul>
           </div>
           
           <div className="bg-white p-6 rounded-xl shadow-sm">
-            <h3 className="text-lg font-medium text-gray-900 mb-4">運用実績</h3>
+            <h3 className="text-lg font-medium text-gray-900 mb-4">安心の理由</h3>
             <ul className="space-y-2 text-sm text-gray-600">
-              <li>• 売上向上実績あり</li>
-              <li>• 在庫回転率改善</li>
-              <li>• 顧客満足度向上</li>
-              <li>• 高い継続率</li>
+              <li>• 売れなければ費用0円</li>
+              <li>• 契約期間の縛りなし</li>
+              <li>• いつでも解約可能</li>
+              <li>• 明確な成果レポート</li>
             </ul>
           </div>
         </div>
@@ -333,10 +337,11 @@ export default function EcServicePage() {
       <ContentSection>
         <div className="text-center">
           <h2 className={STYLES.heading.h2}>
-            共に成長するパートナーとして
+            売れるまで費用はいただきません
           </h2>
           <p className="text-lg sm:text-xl text-gray-600 mb-8 mt-4">
-            検索上位表示を実現。売上が出なければ手数料ゼロ
+            私たちの報酬はお客様の成功と直結しています。<br />
+            だからこそ、本気で売れる仕組みを作ります
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <AccessibleButton
