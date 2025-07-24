@@ -73,7 +73,8 @@
       "WebFetch(domain:my-website-9yn7nmels-yasuus-projects.vercel.app)",
       "Bash(npx tsc:*)",
       "Bash(./git_commit.sh)",
-      "Bash(bash:*)"
+      "Bash(bash:*)",
+      "WebFetch(domain:www.awakeinc.co.jp)"
     ],
     "deny": []
   }

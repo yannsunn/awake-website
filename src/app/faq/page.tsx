@@ -150,23 +150,6 @@ export default function FAQPage() {
         </div>
       </ContentSection>
 
-      {/* Quick Contact Section */}
-      <ContentSection className="bg-white border-b border-gray-100">
-        <div className="text-center">
-          <p className={STYLES.text.description.medium + " text-gray-600 mb-4"}>
-            お急ぎの場合は、公式LINEでお気軽にお問い合わせください
-          </p>
-          <AccessibleButton
-            href={COMPANY_DATA.contact.lineUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="bg-green-500 text-white hover:bg-green-600"
-            ariaLabel="公式LINEでお問い合わせ"
-          >
-            📱 LINE で問い合わせ
-          </AccessibleButton>
-        </div>
-      </ContentSection>
 
       {/* FAQ Content */}
       <ContentSection>
@@ -224,21 +207,7 @@ export default function FAQPage() {
             お気軽にお問い合わせください。専門スタッフが丁寧にお答えいたします。
           </p>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
-            <div className="bg-white p-4 sm:p-6 rounded-xl shadow-sm">
-              <h3 className={STYLES.heading.h3.emphasis + " mb-2"}>📱 公式LINE</h3>
-              <p className={STYLES.text.description.small + " text-gray-600 mb-4"}>最も早く対応できます</p>
-              <AccessibleButton 
-                href={COMPANY_DATA.contact.lineUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                variant="minimal"
-                className="text-green-600 hover:text-green-700 font-medium"
-                ariaLabel="公式LINEでお問い合わせ"
-              >
-                LINEで問い合わせ
-              </AccessibleButton>
-            </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
             
             <div className="bg-white p-4 sm:p-6 rounded-xl shadow-sm">
               <h3 className={STYLES.heading.h3.emphasis + " mb-2"}>📞 電話</h3>

@@ -3,7 +3,7 @@
 import { memo } from 'react'
 import { Phone, Mail, MapPin, Clock } from 'lucide-react'
 import { COMPANY_DATA } from '@/lib/company-data'
-import { LineContactHighlight, ContactMethod } from '@/lib/unified-components'
+import { ContactMethod } from '@/lib/unified-components'
 
 // 🚀 Ultra-Optimized Contact Info - Unified Data Source
 const ContactInfo = memo(function ContactInfo() {
@@ -11,7 +11,6 @@ const ContactInfo = memo(function ContactInfo() {
     <div className="bg-white rounded-2xl p-8 shadow-sm border border-gray-100">
       <h3 className="text-2xl font-medium text-gray-900 mb-8">連絡先・アクセス</h3>
       
-      <LineContactHighlight />
       
       {/* 🎯 統合された連絡先情報 */}
       <div className="space-y-6">
