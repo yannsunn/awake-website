@@ -10,19 +10,80 @@ export const metadata: Metadata = {
   keywords: `${COMPANY_DATA.metadata.keywords}, パートナー企業, 提携企業, 協業`,
 }
 
-// パートナー企業データ（後で更新予定）
+// パートナー企業データ
 const partners = [
   {
-    category: "テクノロジーパートナー",
-    companies: []
+    category: "ビジネス支援パートナー",
+    description: "お客様の事業成長を多角的にサポート",
+    companies: [
+      {
+        name: "経営支援",
+        description: "経営戦略の立案から実行まで、経験豊富なコンサルタントが伴走支援",
+        icon: "📊"
+      },
+      {
+        name: "営業支援",
+        description: "営業プロセスの改善、営業人材の育成、新規開拓の支援",
+        icon: "💼"
+      },
+      {
+        name: "SNS運用",
+        description: "効果的なSNSマーケティング戦略の立案と運用代行",
+        icon: "📱"
+      },
+      {
+        name: "AIコンサルティング",
+        description: "最新のAI技術を活用した業務改善・自動化支援",
+        icon: "🤖"
+      }
+    ]
   },
   {
-    category: "ソリューションパートナー",
-    companies: []
+    category: "ライフスタイル支援パートナー",
+    description: "従業員の生活の質向上をサポート",
+    companies: [
+      {
+        name: "カーシェア",
+        description: "法人向け優待価格でのカーシェアリングサービス",
+        icon: "🚗"
+      },
+      {
+        name: "不動産",
+        description: "オフィス移転、社宅手配、投資物件のご紹介",
+        icon: "🏢"
+      },
+      {
+        name: "保険見直し",
+        description: "法人保険・個人保険の最適化提案",
+        icon: "🛡️"
+      },
+      {
+        name: "パーソナルジム",
+        description: "従業員の健康管理・福利厚生プログラム",
+        icon: "💪"
+      }
+    ]
   },
   {
-    category: "アライアンスパートナー",
-    companies: []
+    category: "人材・キャリア支援パートナー",
+    description: "人材の確保と成長をサポート",
+    companies: [
+      {
+        name: "人材派遣",
+        description: "即戦力となる優秀な人材の紹介・派遣",
+        icon: "👥"
+      },
+      {
+        name: "副業紹介",
+        description: "スキルを活かした副業マッチングサービス",
+        icon: "💡"
+      },
+      {
+        name: "出版",
+        description: "企業ブランディングのための書籍出版支援",
+        icon: "📚"
+      }
+    ]
   }
 ]
 
@@ -103,7 +164,7 @@ export default function PartnersPage() {
         </div>
       </ContentSection>
 
-      {/* Partner Categories Section - プレースホルダー */}
+      {/* Partner Categories Section */}
       <ContentSection className="bg-gray-50">
         <div className="text-center mb-8 sm:mb-12 lg:mb-16">
           <h2 className={STYLES.heading.h2.section + " mb-4"}>
@@ -114,13 +175,44 @@ export default function PartnersPage() {
           </p>
         </div>
 
-        <div className="max-w-3xl mx-auto">
-          <div className="bg-white rounded-2xl p-8 sm:p-12 text-center border border-gray-100">
-            <p className={STYLES.text.description.large + " text-gray-600 mb-6"}>
-              パートナー企業の情報は準備中です。<br />
-              詳細については、お問い合わせください。
-            </p>
-          </div>
+        <div className="space-y-12">
+          {partners.map((category, categoryIndex) => (
+            <div key={categoryIndex}>
+              <div className="text-center mb-8">
+                <h3 className={STYLES.heading.h2.subsection + " mb-2"}>
+                  {category.category}
+                </h3>
+                <p className={STYLES.text.description.medium + " text-gray-600"}>
+                  {category.description}
+                </p>
+              </div>
+              
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                {category.companies.map((company, companyIndex) => (
+                  <div 
+                    key={companyIndex} 
+                    className="bg-white rounded-xl p-6 border border-gray-100 hover:border-gray-200 hover:shadow-lg transition-all duration-300"
+                  >
+                    <div className="text-3xl mb-4 text-center">
+                      {company.icon}
+                    </div>
+                    <h4 className={STYLES.heading.h3.emphasis + " mb-3 text-center"}>
+                      {company.name}
+                    </h4>
+                    <p className={STYLES.text.description.small + " text-gray-600 text-center"}>
+                      {company.description}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <div className="mt-12 text-center">
+          <p className={STYLES.text.description.medium + " text-gray-600"}>
+            ※ 各サービスの詳細については、お問い合わせください
+          </p>
         </div>
       </ContentSection>
 
