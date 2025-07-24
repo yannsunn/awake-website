@@ -58,7 +58,8 @@ const Header = memo(function Header() {
   const navigationItems = [
     { href: '/about', title: '会社概要', type: 'internal' as const },
     { title: 'サービス', type: 'dropdown' as const, items: services },
-    { href: '/faq', title: 'よくある質問', type: 'internal' as const }
+    { href: '/faq', title: 'よくある質問', type: 'internal' as const },
+    { href: '/partners', title: 'パートナー企業', type: 'internal' as const }
   ]
 
   return (
