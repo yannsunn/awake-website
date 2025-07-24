@@ -35,16 +35,27 @@ const ContactForm = memo(function ContactForm() {
     setSubmitStatus('idle')
 
     try {
-      // Simulate API call
-      await new Promise(resolve => setTimeout(resolve, 1000))
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      })
+
+      if (!response.ok) {
+        throw new Error('送信に失敗しました')
+      }
+
       setSubmitStatus('success')
       setFormData({ name: '', email: '', company: '', service: '', message: '' })
     } catch (error) {
+      console.error('Contact form error:', error)
       setSubmitStatus('error')
     } finally {
       setIsSubmitting(false)
     }
-  }, [])
+  }, [formData])
 
   return (
     <div className="bg-white rounded-2xl p-8 shadow-sm border border-gray-100">

@@ -8,28 +8,7 @@ import AccessibleButton from '@/components/ui/AccessibleButton'
 
 // 🚀 UNIFIED COMPONENTS - 重複撲滅完了！
 
-// ✨ 統一Button使用推奨 - CTAButtonは非推奨 (Button使用を推奨)
-// 後方互換性のため残存
-export const CTAButton = memo(function CTAButton({
-  href,
-  children,
-  variant = 'primary',
-  className = '',
-  ...props
-}: {
-  href: string
-  children: React.ReactNode
-  variant?: 'primary' | 'secondary' | 'outline'
-  className?: string
-  [key: string]: any
-}) {
-  const externalLinkProps = href.startsWith('http') ? {
-    target: '_blank',
-    rel: 'noopener noreferrer'
-  } : {}
-  
-  return <AccessibleButton href={href} variant={variant} showArrow className={className} {...externalLinkProps} {...props}>{children}</AccessibleButton>
-})
+// ✨ CTAButton has been removed - Use AccessibleButton directly
 
 // ✨ Service Card Component - Reusable everywhere
 export const ServiceCard = memo(function ServiceCard({
@@ -61,9 +40,9 @@ export const ServiceCard = memo(function ServiceCard({
       <p className="text-gray-600 mb-8 leading-relaxed">
         {service.description}
       </p>
-      <CTAButton href={service.href} variant={featured ? 'primary' : 'secondary'}>
+      <AccessibleButton href={service.href} variant={featured ? 'primary' : 'secondary'} showArrow>
         詳細を見る
-      </CTAButton>
+      </AccessibleButton>
     </div>
   )
 })
@@ -195,13 +174,14 @@ export const PricingCard = memo(function PricingCard({
           </li>
         ))}
       </ul>
-      <CTAButton 
+      <AccessibleButton 
         href="/#contact" 
         variant={featured ? 'primary' : 'secondary'}
         className="w-full"
+        showArrow
       >
         お問い合わせ
-      </CTAButton>
+      </AccessibleButton>
     </div>
   )
 })

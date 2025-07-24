@@ -32,29 +32,29 @@ const HeroSection = memo(function HeroSection() {
 
   return (
     <section className="relative min-h-screen flex flex-col justify-center bg-white" id="hero" aria-labelledby="hero-title">
+      {/* 背景ロゴ */}
+      <div className="absolute inset-0 flex items-center justify-center opacity-10">
+        <div className="relative w-full max-w-4xl mx-auto" style={{ aspectRatio: '4/3' }}>
+          <Image
+            src="/assets/images/hero-background.png"
+            alt=""
+            fill
+            className="object-contain"
+            priority
+            quality={90}
+            sizes="(max-width: 1024px) 768px, 1024px"
+            style={{ 
+              objectFit: 'contain',
+              objectPosition: 'center'
+            }}
+            placeholder="empty"
+          />
+        </div>
+      </div>
+      
       {/* 🚀 ウルトラシンク最適化 - 単一コンテナ */}
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center z-10">
         <div className="max-w-4xl mx-auto">
-          {/* 🚀 軽量化ロゴセクション */}
-          <div className="mb-12 flex justify-center">
-            <div className="relative w-full max-w-lg md:max-w-xl lg:max-w-2xl mx-auto" style={{ aspectRatio: '4/3', minHeight: '280px' }}>
-              <Image
-                src="/assets/images/hero-background.png"
-                alt="Awake Inc. ロゴ - 株式会社Awake"
-                fill
-                className="object-contain object-center"
-                priority
-                quality={90}
-                sizes="(max-width: 768px) 512px, (max-width: 1024px) 640px, 768px"
-                style={{ 
-                  objectFit: 'contain',
-                  objectPosition: 'center',
-                  padding: '0.5rem'
-                }}
-                placeholder="empty"
-              />
-            </div>
-          </div>
           
           {/* 🚀 限界突破 - 感情的訴求 + ストーリーテリング */}
           <h1 className="text-2xl md:text-3xl lg:text-4xl font-light text-gray-900 mb-6 tracking-tight">
