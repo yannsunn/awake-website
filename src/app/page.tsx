@@ -137,7 +137,7 @@ export default function HomePage() {
                 サービス一覧
               </h2>
               <p className="text-lg sm:text-xl text-gray-600">
-                コストを抑えながら、確実な成果を出す専門サービス
+                あなたのビジネスの成長を加速させる3つのソリューション
               </p>
             </div>
             
@@ -187,7 +187,7 @@ export default function HomePage() {
                 選ばれる理由
               </h2>
               <p className="text-lg sm:text-xl text-gray-600">
-                大手にはできないコストパフォーマンス
+                投資を成果に変える、4つの約束
               </p>
             </div>
             

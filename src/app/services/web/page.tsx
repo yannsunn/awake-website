@@ -83,7 +83,7 @@ export default function WebServicePage() {
           {
             icon: <div className="text-white font-bold text-xl">¥</div>,
             title: "プロフェッショナル制作",
-            description: "132,000円から。大手制作会社より低価格でプロ品質を実現"
+            description: "お客様の予算内で最大の効果を実現。必要な機能だけに投資し、無駄なコストを削減"
           },
           {
             icon: <div className="text-white font-bold text-xl">S</div>,
