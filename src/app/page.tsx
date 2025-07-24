@@ -7,6 +7,8 @@ import Image from 'next/image'
 import { COMPANY_DATA } from '@/lib/company-data'
 import AccessibleButton from '@/components/ui/AccessibleButton'
 import { STYLES } from '@/lib/constants'
+import ContactForm from '@/components/ui/ContactForm'
+import ContactInfo from '@/components/ui/ContactInfo'
 
 export const metadata: Metadata = {
   title: `${COMPANY_DATA.basic.name} | ${COMPANY_DATA.basic.tagline}`,
@@ -240,52 +242,19 @@ export default function HomePage() {
 
         {/* Contact Section */}
         <section id="contact" className="py-12 sm:py-16 lg:py-20 bg-gray-50">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 className={STYLES.heading.h2.section + " mb-6"}>
-              お問い合わせ
-            </h2>
-            <p className={STYLES.text.body.large + " mb-8"}>
-              プロジェクトに関するご質問やご相談がございましたら、お気軽にお問い合わせください。
-            </p>
-            
-            {/* 公式LINE案内 */}
-            <div className="mb-8 p-4 sm:p-6 bg-green-50 border border-green-200 rounded-xl block sm:inline-block">
-              <h3 className={STYLES.heading.h3.emphasis + " text-green-800 mb-2"}>📱 公式LINEでお問い合わせ</h3>
-              <p className={STYLES.text.description.medium + " text-green-700 mb-4"}>
-                お問い合わせは公式LINEが最も早く対応できます
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-8 sm:mb-12 lg:mb-16">
+              <h2 className={STYLES.heading.h2.section + " mb-6"}>
+                お問い合わせ
+              </h2>
+              <p className={STYLES.text.body.large}>
+                プロジェクトに関するご質問やご相談がございましたら、お気軽にお問い合わせください。
               </p>
-              <AccessibleButton 
-                href={COMPANY_DATA.contact.lineUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-green-500 text-white hover:bg-green-600 w-full sm:w-auto py-3"
-              >
-                📱 LINE で問い合わせ
-              </AccessibleButton>
             </div>
-
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 mb-8">
-              <div className="text-center">
-                <h4 className={STYLES.text.label.primary + " mb-2"}>電話番号</h4>
-                <p className={STYLES.text.description.medium + " text-gray-600"}>{COMPANY_DATA.contact.phone}</p>
-              </div>
-              <div className="text-center">
-                <h4 className={STYLES.text.label.primary + " mb-2"}>メールアドレス</h4>
-                <p className={STYLES.text.description.medium + " text-gray-600"}>{COMPANY_DATA.contact.email}</p>
-              </div>
-              <div className="text-center">
-                <h4 className={STYLES.text.label.primary + " mb-2"}>営業時間</h4>
-                <p className={STYLES.text.description.medium + " text-gray-600"}>{COMPANY_DATA.contact.businessHours.weekdays}</p>
-              </div>
-            </div>
-
-            <div className="bg-white rounded-xl p-6 border border-gray-100">
-              <h4 className={STYLES.heading.h4 + " mb-3"}>ご相談について</h4>
-              <ul className={STYLES.text.description.small + " space-y-2"}>
-                {COMPANY_DATA.consultation.features.map((feature, index) => (
-                  <li key={index}>• {feature}</li>
-                ))}
-              </ul>
+            
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+              <ContactForm />
+              <ContactInfo />
             </div>
           </div>
         </section>
