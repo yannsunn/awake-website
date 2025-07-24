@@ -5,6 +5,8 @@ import { ProcessSteps } from '@/components/sections/ProcessSteps'
 import { FeatureGrid } from '@/components/sections/FeatureGrid'
 import PageTemplate from '@/components/layout/PageTemplate'
 import { COMPANY_DATA } from '@/lib/company-data'
+import { STYLES } from '@/lib/constants'
+import { cn } from '@/lib/utils'
 
 // 動的ルートのパラメータ型
 type Params = Promise<{ slug: string }>
@@ -204,7 +206,7 @@ export default async function ServicePage(
       
       <section className="py-16 md:py-24 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-light text-gray-900 text-center mb-12">
+          <h2 className={cn(STYLES.heading.h2.section, "text-center mb-12")}>
             サービスの特徴
           </h2>
           <FeatureGrid features={service.features} />
@@ -213,7 +215,7 @@ export default async function ServicePage(
       
       <section className="py-16 md:py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-light text-gray-900 text-center mb-12">
+          <h2 className={cn(STYLES.heading.h2.section, "text-center mb-12")}>
             導入までの流れ
           </h2>
           <ProcessSteps steps={service.process} />
@@ -222,7 +224,7 @@ export default async function ServicePage(
       
       <section className="py-16 md:py-24 bg-gray-50">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-light text-gray-900 mb-8">
+          <h2 className={cn(STYLES.heading.h2.section, "mb-8")}>
             まずはお気軽にご相談ください
           </h2>
           <p className="text-lg text-gray-600 mb-8">

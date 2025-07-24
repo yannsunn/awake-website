@@ -1,5 +1,6 @@
 import React from 'react'
 import { cn } from '@/lib/utils'
+import { STYLES } from '@/lib/constants'
 
 interface ProcessStep {
   step: string
@@ -18,7 +19,7 @@ export function ProcessSteps({ title, steps, className }: ProcessStepsProps) {
   return (
     <section className={cn('py-12 sm:py-16 lg:py-20', className)}>
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <h2 className="mb-12 text-center text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+        <h2 className={cn(STYLES.heading.h2.section, "mb-12 text-center")}>
           {title}
         </h2>
         <div className="mx-auto max-w-3xl">
