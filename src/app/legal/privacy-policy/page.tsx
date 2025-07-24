@@ -2,6 +2,8 @@ import type { Metadata } from 'next'
 import { COMPANY_DATA } from '@/lib/company-data'
 import PageTemplate, { ContentSection } from '@/components/layout/PageTemplate'
 import AccessibleButton from '@/components/ui/AccessibleButton'
+import { STYLES } from '@/lib/constants'
+import { cn } from '@/lib/utils'
 
 export const metadata: Metadata = {
   title: "プライバシーポリシー | 株式会社Awake",
@@ -61,7 +63,7 @@ export default function PrivacyPolicyPage() {
                 </section>
 
                 <section>
-                  <h2 className="text-2xl font-bold text-gray-900 mb-4">3. 収集する個人情報の項目</h2>
+                  <h2 className={cn(STYLES.heading.h2.subsection, "mb-4")}>3. 収集する個人情報の項目</h2>
                   <p className="text-gray-700 leading-relaxed mb-4">
                     当社では、お客様から以下の個人情報を収集することがあります。
                   </p>
@@ -76,7 +78,7 @@ export default function PrivacyPolicyPage() {
                 </section>
 
                 <section>
-                  <h2 className="text-2xl font-bold text-gray-900 mb-4">4. 個人情報の利用目的</h2>
+                  <h2 className={cn(STYLES.heading.h2.subsection, "mb-4")}>4. 個人情報の利用目的</h2>
                   <p className="text-gray-700 leading-relaxed mb-4">
                     当社は、お客様からお預かりした個人情報を、以下の目的で利用いたします。
                   </p>
@@ -94,7 +96,7 @@ export default function PrivacyPolicyPage() {
                 </section>
 
                 <section>
-                  <h2 className="text-2xl font-bold text-gray-900 mb-4">5. 個人情報の第三者提供</h2>
+                  <h2 className={cn(STYLES.heading.h2.subsection, "mb-4")}>5. 個人情報の第三者提供</h2>
                   <p className="text-gray-700 leading-relaxed mb-4">
                     当社は、お客様の同意を得ることなく、第三者に個人情報を提供することはありません。ただし、個人情報保護法その他の法令で認められる場合を除きます。
                   </p>
@@ -104,42 +106,42 @@ export default function PrivacyPolicyPage() {
                 </section>
 
                 <section>
-                  <h2 className="text-2xl font-bold text-gray-900 mb-4">6. 個人情報の開示・訂正・削除</h2>
+                  <h2 className={cn(STYLES.heading.h2.subsection, "mb-4")}>6. 個人情報の開示・訂正・削除</h2>
                   <p className="text-gray-700 leading-relaxed">
                     お客様は、当社の保有する自己の個人情報について、開示・訂正・削除・利用停止等を求めることができます。これらのお申し出をいただく際には、お客様ご本人を確認させていただいたうえで、法令に従い対応させていただきます。お申し出は、下記のお問い合わせ先までご連絡ください。
                   </p>
                 </section>
 
                 <section>
-                  <h2 className="text-2xl font-bold text-gray-900 mb-4">7. 個人情報の安全管理</h2>
+                  <h2 className={cn(STYLES.heading.h2.subsection, "mb-4")}>7. 個人情報の安全管理</h2>
                   <p className="text-gray-700 leading-relaxed">
                     当社は、お客様の個人情報を適切に管理し、不正アクセス・紛失・破壊・改ざん・漏洩などを防止するため、セキュリティシステムの維持・管理体制の整備・社員教育の徹底等の必要な措置を講じ、安全対策を実施し個人情報の厳重な管理を行います。
                   </p>
                 </section>
 
                 <section>
-                  <h2 className="text-2xl font-bold text-gray-900 mb-4">8. Cookie（クッキー）について</h2>
+                  <h2 className={cn(STYLES.heading.h2.subsection, "mb-4")}>8. Cookie（クッキー）について</h2>
                   <p className="text-gray-700 leading-relaxed">
                     当社のウェブサイトでは、お客様により良いサービスを提供するため、Cookie（クッキー）を使用することがあります。Cookieを使用することで、お客様のサイト閲覧履歴を把握し、より便利で個人に適したサービスを提供することができます。Cookieの使用を希望されない場合は、お客様のブラウザでCookieを無効にすることができます。
                   </p>
                 </section>
 
                 <section>
-                  <h2 className="text-2xl font-bold text-gray-900 mb-4">9. アクセス解析ツールについて</h2>
+                  <h2 className={cn(STYLES.heading.h2.subsection, "mb-4")}>9. アクセス解析ツールについて</h2>
                   <p className="text-gray-700 leading-relaxed">
                     当社では、ウェブサイトの分析のためにGoogle Analyticsを利用しています。Google Analyticsは、トラフィックデータの収集のためにCookieを使用しています。このトラフィックデータは匿名で収集されており、個人を特定するものではありません。この機能はCookieを無効にすることで収集を拒否することができますので、お使いのブラウザの設定をご確認ください。
                   </p>
                 </section>
 
                 <section>
-                  <h2 className="text-2xl font-bold text-gray-900 mb-4">10. プライバシーポリシーの変更</h2>
+                  <h2 className={cn(STYLES.heading.h2.subsection, "mb-4")}>10. プライバシーポリシーの変更</h2>
                   <p className="text-gray-700 leading-relaxed">
                     当社は、個人情報に関して適用される日本の法令を遵守するとともに、本ポリシーの内容を適宜見直しその改善に努めます。修正された最新のプライバシーポリシーは常に本ページにて開示されます。
                   </p>
                 </section>
 
                 <section>
-                  <h2 className="text-2xl font-bold text-gray-900 mb-4">11. お問い合わせ</h2>
+                  <h2 className={cn(STYLES.heading.h2.subsection, "mb-4")}>11. お問い合わせ</h2>
                   <p className="text-gray-700 leading-relaxed">
                     本プライバシーポリシーに関するお問い合わせは、下記の連絡先までお願いいたします。
                   </p>
