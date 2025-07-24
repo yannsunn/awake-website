@@ -61,10 +61,10 @@ const Header = memo(function Header() {
   ]
 
   return (
-    <header className={`fixed top-0 left-0 right-0 z-50 ${
+    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
       isScrolled 
-        ? 'bg-white/95 backdrop-blur-lg border-b border-gray-200 shadow-lg' 
-        : 'bg-white border-b border-gray-200'
+        ? 'bg-white/80 backdrop-blur-md border-b border-gray-100/50 shadow-xl' 
+        : 'bg-white/90 backdrop-blur-sm border-b border-gray-100'
     }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
@@ -86,7 +86,7 @@ const Header = memo(function Header() {
                   <div key={index} className="relative" ref={servicesRef}>
                     <button
                       onClick={handleServicesToggle}
-                      className="flex items-center text-gray-700 hover:text-gray-900 font-medium py-2 group"
+                      className="flex items-center text-gray-700 hover:text-indigo-600 font-medium py-2 group transition-colors duration-200"
                       aria-expanded={isServicesOpen}
                     >
                       <span className="mr-1">🚀</span>
@@ -95,7 +95,7 @@ const Header = memo(function Header() {
                     </button>
                     
                     {isServicesOpen && (
-                      <div className="absolute top-full left-0 mt-1 w-64 bg-white rounded-xl shadow-xl border border-gray-200 py-3 z-50 backdrop-blur-sm">
+                      <div className="absolute top-full left-0 mt-2 w-64 bg-white/95 backdrop-blur-md rounded-2xl shadow-2xl border border-gray-100 py-3 z-50 animate-slide-up">
                         <div className="px-4 py-2 text-xs font-medium text-gray-500 uppercase tracking-wider border-b border-gray-100 mb-2">
                           主力サービス
                         </div>
@@ -103,7 +103,7 @@ const Header = memo(function Header() {
                           <Link
                             key={service.href}
                             href={service.href}
-                            className="flex items-center px-4 py-3 text-gray-700 hover:bg-gray-50 hover:text-gray-900 group"
+                            className="flex items-center px-4 py-3 text-gray-700 hover:bg-indigo-50 hover:text-indigo-600 group transition-all duration-200 rounded-lg"
                             onClick={() => setIsServicesOpen(false)}
                             {...(service.href.startsWith('http') && {
                               target: '_blank',
@@ -125,7 +125,7 @@ const Header = memo(function Header() {
                   <Link 
                     key={index}
                     href={item.href || '#'} 
-                    className="text-gray-700 hover:text-gray-900 font-medium py-2"
+                    className="text-gray-700 hover:text-indigo-600 font-medium py-2 transition-colors duration-200"
                   >
                     {item.title}
                   </Link>
@@ -136,7 +136,7 @@ const Header = memo(function Header() {
             {/* 🔥 ウルトラCTAボタン */}
             <Link 
               href={isHomePage ? "#contact" : "/#contact"}
-              className="bg-gray-900 text-white px-6 py-2 rounded-lg font-medium hover:bg-gray-800 shadow-lg flex items-center"
+              className="bg-gradient-to-r from-indigo-600 to-indigo-700 text-white px-6 py-2.5 rounded-xl font-medium hover:shadow-lg shadow-md shadow-indigo-500/25 transition-all duration-200 flex items-center transform hover:scale-105"
             >
               <span className="mr-2">💬</span>
               お問い合わせ
@@ -206,7 +206,7 @@ const Header = memo(function Header() {
               {/* 🔥 ウルトラモバイルCTAボタン */}
               <Link 
                 href={isHomePage ? "#contact" : "/#contact"}
-                className="bg-gray-900 text-white px-6 py-4 mx-4 rounded-xl font-medium hover:bg-gray-800 text-center shadow-lg flex items-center justify-center mt-4"
+                className="bg-gradient-to-r from-indigo-600 to-indigo-700 text-white px-6 py-4 mx-4 rounded-xl font-medium hover:shadow-xl shadow-lg shadow-indigo-500/25 text-center flex items-center justify-center mt-4 transition-all duration-200"
                 onClick={() => setIsMenuOpen(false)}
               >
                 <span className="mr-2">💬</span>

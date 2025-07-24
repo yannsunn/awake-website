@@ -58,12 +58,13 @@ const AccessibleButton = memo(forwardRef<
   const validVariant = (variant && variant in BUTTON_STYLES) ? variant : 'primary'
   const baseStyles = BUTTON_STYLES[validVariant as keyof typeof BUTTON_STYLES]
   
-  // アクセシビリティ強化スタイル
+  // モダンUIスタイル
   const accessibilityStyles = `
-    focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2
+    focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:ring-offset-2
     focus:ring-offset-white focus:ring-opacity-50
     disabled:opacity-50 disabled:cursor-not-allowed disabled:pointer-events-none
     text-center font-medium relative overflow-hidden
+    transition-all duration-200 transform active:scale-95
     ${disabled ? 'opacity-50 cursor-not-allowed' : ''}
   `
   
@@ -99,7 +100,8 @@ const AccessibleButton = memo(forwardRef<
           aria-hidden="true"
         />
       )}
-      
+      {/* モダンホバーエフェクト */}
+      <span className="absolute inset-0 bg-white opacity-0 group-hover:opacity-10 transition-opacity duration-200" />
     </>
   )
 
