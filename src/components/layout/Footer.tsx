@@ -58,6 +58,14 @@ const Footer = memo(function Footer() {
                   よくある質問
                 </Link>
               </li>
+              <li>
+                <Link 
+                  href="/partners" 
+                  className={STYLES.text.description.small + " text-gray-400 hover:text-white"}
+                >
+                  パートナー企業
+                </Link>
+              </li>
             </ul>
           </div>
           
