@@ -4,6 +4,7 @@ import { COMPANY_DATA } from '@/lib/company-data'
 import PageTemplate, { ContentSection, PageHeader } from '@/components/layout/PageTemplate'
 import OptimizedImage from '@/components/ui/OptimizedImage'
 import AccessibleButton from '@/components/ui/AccessibleButton'
+import { STYLES } from '@/lib/constants'
 import { createArticleSchema } from '@/lib/enhanced-schema'
 
 export const metadata: Metadata = {
@@ -138,7 +139,7 @@ export default function AboutPage() {
         subtitle="信頼の絆で、共に成長し続ける企業"
         className="bg-white"
       >
-        <p className="text-base sm:text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
+        <p className={STYLES.text.body.medium + " max-w-3xl mx-auto"}>
           限られた経営資源を最適配分し、<br className="hidden sm:block" />
           お客様の本質的な成長を支援する、コストパフォーマンス重視の経営パートナーです。
         </p>
@@ -154,41 +155,41 @@ export default function AboutPage() {
                   <User className="h-6 w-6 text-white" />
                 </div>
                 <div>
-                  <h3 className="text-base sm:text-lg font-semibold text-gray-900">代表挨拶</h3>
-                  <p className="text-sm text-gray-600">Message from CEO</p>
+                  <h3 className={STYLES.heading.h3.emphasis}>代表挨拶</h3>
+                  <p className={STYLES.text.label.secondary + " text-gray-600"}>Message from CEO</p>
                 </div>
               </div>
             </div>
             
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+            <h2 className={STYLES.heading.h2.section + " mb-6"}>
               代表挨拶
             </h2>
             
             <div className="space-y-6 text-gray-700 leading-relaxed">
               <div className="mb-4">
-                <p className="font-semibold text-gray-900 mb-2">代表取締役CEO　{COMPANY_DATA.basic.ceo}</p>
-                <p className="text-base sm:text-lg text-gray-600">お客様、パートナー企業の皆様、そして当社に関わるすべての方々へ</p>
+                <p className={STYLES.text.emphasis.strong + " mb-2"}>代表取締役CEO　{COMPANY_DATA.basic.ceo}</p>
+                <p className={STYLES.text.body.medium}>お客様、パートナー企業の皆様、そして当社に関わるすべての方々へ</p>
               </div>
               
-              <p className="text-sm sm:text-base">
+              <p className={STYLES.text.description.medium}>
                 静岡県清水区で生まれ育ちました。幼稚園から中学校まで不登校を経験し、ゲームやネットコミュニティに没頭する日々でした。その中で、情報技術の可能性と、人と人とのつながりの大切さを学びました。
               </p>
               
-              <p className="text-sm sm:text-base">
+              <p className={STYLES.text.description.medium}>
                 高校卒業後はトヨタ系ディーラーで整備士として、「お客様のために最善を尽くす」というプロフェッショナルの姿勢を学びました。その後物販事業を経て、2020年に株式会社Awakeを設立。これまでの多様な経験が、今の経営哲学の根幹となっています。
               </p>
               
-              <p className="text-sm sm:text-base">
+              <p className={STYLES.text.description.medium}>
                 現在の事業を始めたきっかけは、多くの中小企業が100万円以上もかけてホームページを作ったのに、活用できずに死蔵させてしまっている現実でした。その資金があれば、業務効率化や人材育成に投資できたはず。そんな無駄をなくし、お客様の経営資源を最適配分するお手伝いがしたいと思いました。
               </p>
               
-              <p className="text-sm sm:text-base">
+              <p className={STYLES.text.description.medium}>
                 私たちの強みは、コストパフォーマンスの高いサービスを提供すること。そして、削減したコストを、お客様が本当に必要とする投資に回していただくことです。これは、私自身が多様な経験を通じて学んだ「無駄を削ぎ、本質に集中する」という哲学から生まれました。
               </p>
               
               <div className="pt-6 border-t border-gray-200">
-                <p className="text-lg sm:text-xl font-semibold text-gray-900 mb-2">つながるすべての人に、感謝と繁栄を。</p>
-                <p className="text-sm sm:text-base text-gray-600">お客様の成功が、私たちの成功です。これからも、お客様のビジネスの成長を心から支援し、共に歩み続けてまいります。</p>
+                <p className={STYLES.text.emphasis.strong + " text-lg sm:text-xl mb-2"}>つながるすべての人に、感謝と繁栄を。</p>
+                <p className={STYLES.text.description.medium + " text-gray-600"}>お客様の成功が、私たちの成功です。これからも、お客様のビジネスの成長を心から支援し、共に歩み続けてまいります。</p>
               </div>
             </div>
           </div>
@@ -198,12 +199,12 @@ export default function AboutPage() {
               <div className="w-32 h-32 bg-gray-900 rounded-full flex items-center justify-center mx-auto mb-6">
                 <User className="h-16 w-16 text-white" />
               </div>
-              <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-2">{COMPANY_DATA.basic.ceo}</h3>
-              <p className="text-base sm:text-lg text-gray-900 font-semibold mb-4">代表取締役CEO</p>
-              <p className="text-xs sm:text-sm text-gray-600">
+              <h3 className={STYLES.heading.h3.card + " mb-2"}>{COMPANY_DATA.basic.ceo}</h3>
+              <p className={STYLES.text.emphasis.medium + " text-lg mb-4"}>代表取締役CEO</p>
+              <p className={STYLES.text.description.small + " text-gray-600"}>
                 静岡県清水区出身。トヨタの整備士を経て物販会社を起業。
                 2020年（令和2年）に株式会社Awakeを設立し、現在5期目（令和6年度）。
-                信頼の関係づくりを第一に、お客様の繁栄を共に目指している。
+              <br />信頼の関係づくりを第一に、お客様の繁栄を共に目指している。
               </p>
             </div>
           </div>
@@ -213,26 +214,26 @@ export default function AboutPage() {
       {/* Mission & Vision Section */}
       <ContentSection className="bg-gray-50" ariaLabel="ミッション・ビジョン">
         <div className="text-center mb-8 sm:mb-12 lg:mb-16">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          <h2 className={STYLES.heading.h2.section + " mb-4"}>
             ミッション・ビジョン
           </h2>
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-12">
           <div className="bg-white rounded-2xl p-6 sm:p-8 border border-gray-100">
-            <h3 className="text-xl sm:text-2xl font-light text-gray-900 mb-4">
+            <h3 className={STYLES.heading.h2.subsection + " mb-4"}>
               ミッション
             </h3>
-            <p className="text-sm sm:text-base text-gray-700 leading-relaxed">
+            <p className={STYLES.text.description.medium}>
               お客様の経営資源を最適配分し、真の成果を生み出すパートナーとして、適正なコストで最大の価値を提供し続けます。
             </p>
           </div>
           
           <div className="bg-white rounded-2xl p-6 sm:p-8 border border-gray-100">
-            <h3 className="text-xl sm:text-2xl font-light text-gray-900 mb-4">
+            <h3 className={STYLES.heading.h2.subsection + " mb-4"}>
               ビジョン
             </h3>
-            <p className="text-sm sm:text-base text-gray-700 leading-relaxed">
+            <p className={STYLES.text.description.medium}>
               適正なコストで最大の価値を得られる経営環境の実現。そして、関わるすべての人々が相互に繁栄できる社会を創造します。
             </p>
           </div>
@@ -242,7 +243,7 @@ export default function AboutPage() {
       {/* Our Promise Section */}
       <ContentSection ariaLabel="私たちの約束">
         <div className="text-center mb-8 sm:mb-12 lg:mb-16">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-light text-gray-900 mb-4">
+          <h2 className={STYLES.heading.h2.section + " mb-4"}>
             私たちの約束
           </h2>
         </div>
@@ -251,8 +252,8 @@ export default function AboutPage() {
           {promises.map((promise, index) => (
             <div key={index} className="text-center p-4 sm:p-6 rounded-xl">
               <div className="text-3xl sm:text-4xl mb-4">{promise.icon}</div>
-              <h3 className="text-base sm:text-lg font-medium text-gray-900 mb-2">{promise.title}</h3>
-              <p className="text-xs sm:text-sm text-gray-600">{promise.description}</p>
+              <h3 className={STYLES.heading.h3.emphasis + " mb-2"}>{promise.title}</h3>
+              <p className={STYLES.text.description.small + " text-gray-600"}>{promise.description}</p>
             </div>
           ))}
         </div>
@@ -261,7 +262,7 @@ export default function AboutPage() {
       {/* Service Features Section */}
       <ContentSection className="bg-gray-50" ariaLabel="サービスの特徴">
         <div className="text-center mb-8 sm:mb-12 lg:mb-16">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-light text-gray-900 mb-4">
+          <h2 className={STYLES.heading.h2.section + " mb-4"}>
             サービスの特徴
           </h2>
         </div>
@@ -269,12 +270,12 @@ export default function AboutPage() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
           {features.map((feature, index) => (
             <div key={index} className="bg-white rounded-xl p-6 sm:p-8 shadow-sm">
-              <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-4">{feature.title}</h3>
+              <h3 className={STYLES.heading.h3.card + " mb-4"}>{feature.title}</h3>
               <ul className="space-y-3" role="list">
                 {feature.items.map((item, idx) => (
                   <li key={idx} className="flex items-start">
                     <CheckCircle className="h-5 w-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" />
-                    <span className="text-xs sm:text-sm text-gray-600">{item}</span>
+                    <span className={STYLES.text.description.small + " text-gray-600"}>{item}</span>
                   </li>
                 ))}
               </ul>
@@ -286,7 +287,7 @@ export default function AboutPage() {
       {/* Company Values Section */}
       <ContentSection ariaLabel="企業価値観">
         <div className="text-center mb-8 sm:mb-12 lg:mb-16">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-light text-gray-900 mb-4">
+          <h2 className={STYLES.heading.h2.section + " mb-4"}>
             企業価値観
           </h2>
         </div>
@@ -300,8 +301,8 @@ export default function AboutPage() {
                   <IconComponent className="h-8 w-8 text-white" />
                 </div>
                 <div>
-                  <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-3">{value.title}</h3>
-                  <p className="text-sm sm:text-base text-gray-600 leading-relaxed">{value.description}</p>
+                  <h3 className={STYLES.heading.h3.card + " mb-3"}>{value.title}</h3>
+                  <p className={STYLES.text.description.medium + " text-gray-600"}>{value.description}</p>
                 </div>
               </div>
             )
@@ -312,10 +313,10 @@ export default function AboutPage() {
       {/* Contact CTA Section */}
       <ContentSection className="bg-gradient-to-br from-gray-900 to-gray-800 text-white">
         <div className="text-center">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-light mb-6">
+          <h2 className={STYLES.heading.h2.section + " text-white mb-6"}>
             一緒に成長しませんか？
           </h2>
-          <p className="text-base sm:text-lg text-gray-300 mb-8 max-w-3xl mx-auto leading-relaxed">
+          <p className={STYLES.text.body.medium + " text-gray-300 mb-8 max-w-3xl mx-auto"}>
             私たちは、お客様のビジネス成功を真剣に考えるパートナーです。<br className="hidden sm:block" />
             まずはお気軽にご相談ください。
           </p>

@@ -100,10 +100,10 @@ export default function AiServicePage() {
 
       <ContentSection className={STYLES.section.pricing} id="services">
         <div className="text-center mb-16">
-          <h2 className={STYLES.heading.h2}>
+          <h2 className={STYLES.heading.h2.section}>
             サービスプラン
           </h2>
-          <p className="text-lg sm:text-xl text-gray-600 mt-4">
+          <p className={STYLES.text.body.large + " mt-4"}>
             無駄なAIツールは導入せず、確実に成果が出るものだけを選定
           </p>
         </div>
@@ -146,39 +146,39 @@ export default function AiServicePage() {
 
       <ContentSection className={STYLES.section.features}>
         <div className="text-center mb-16">
-          <h2 className={STYLES.heading.h2}>
+          <h2 className={STYLES.heading.h2.section}>
             導入効果
           </h2>
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           <div className={STYLES.card.compact}>
-            <h3 className={STYLES.heading.h4}>業務効率化</h3>
-            <ul className="space-y-2 text-sm text-gray-600 mt-4">
-              <li>• 定型作業の自動化</li>
-              <li>• 意思決定の高速化</li>
-              <li>• ヒューマンエラー削減</li>
-              <li>• 生産性向上</li>
+            <h3 className={STYLES.heading.h3.card}>業務効率化</h3>
+            <ul className="space-y-2 mt-4">
+              <li className={STYLES.text.description.small + " text-gray-600"}>• 定型作業の自動化</li>
+              <li className={STYLES.text.description.small + " text-gray-600"}>• 意思決定の高速化</li>
+              <li className={STYLES.text.description.small + " text-gray-600"}>• ヒューマンエラー削減</li>
+              <li className={STYLES.text.description.small + " text-gray-600"}>• 生産性向上</li>
             </ul>
           </div>
           
           <div className={STYLES.card.compact}>
-            <h3 className={STYLES.heading.h4}>コスト削減</h3>
-            <ul className="space-y-2 text-sm text-gray-600 mt-4">
-              <li>• 人的リソース最適化</li>
-              <li>• 運用コスト削減</li>
-              <li>• 品質向上による損失軽減</li>
-              <li>• 継続的改善効果</li>
+            <h3 className={STYLES.heading.h3.card}>コスト削減</h3>
+            <ul className="space-y-2 mt-4">
+              <li className={STYLES.text.description.small + " text-gray-600"}>• 人的リソース最適化</li>
+              <li className={STYLES.text.description.small + " text-gray-600"}>• 運用コスト削減</li>
+              <li className={STYLES.text.description.small + " text-gray-600"}>• 品質向上による損失軽減</li>
+              <li className={STYLES.text.description.small + " text-gray-600"}>• 継続的改善効果</li>
             </ul>
           </div>
           
           <div className={STYLES.card.compact}>
-            <h3 className={STYLES.heading.h4}>競争優位性</h3>
-            <ul className="space-y-2 text-sm text-gray-600 mt-4">
-              <li>• 先進技術活用</li>
-              <li>• データドリブン経営</li>
-              <li>• 新サービス創出</li>
-              <li>• 市場対応力強化</li>
+            <h3 className={STYLES.heading.h3.card}>競争優位性</h3>
+            <ul className="space-y-2 mt-4">
+              <li className={STYLES.text.description.small + " text-gray-600"}>• 先進技術活用</li>
+              <li className={STYLES.text.description.small + " text-gray-600"}>• データドリブン経営</li>
+              <li className={STYLES.text.description.small + " text-gray-600"}>• 新サービス創出</li>
+              <li className={STYLES.text.description.small + " text-gray-600"}>• 市場対応力強化</li>
             </ul>
           </div>
         </div>
@@ -186,10 +186,10 @@ export default function AiServicePage() {
 
       <ContentSection>
         <div className="text-center">
-          <h2 className={STYLES.heading.h2}>
+          <h2 className={STYLES.heading.h2.section}>
             AI導入で業務を革新しませんか？
           </h2>
-          <p className="text-lg sm:text-xl text-gray-600 mb-8 mt-4">
+          <p className={STYLES.text.body.large + " mb-8 mt-4"}>
             無料診断で貴社の削減可能時間を計算。成果が出なければ解約可能
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">

@@ -27,12 +27,52 @@ export const STYLES = {
     compact: 'bg-white rounded-xl p-6 shadow-sm hover:shadow-md border border-gray-100 transition-all duration-300'
   },
   
-  // Modern Typography
+  // Modern Typography - 統一されたフォントシステム
   heading: {
-    h1: 'text-4xl font-bold tracking-tight bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent sm:text-5xl lg:text-6xl',
-    h2: 'text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl',
-    h3: 'text-2xl font-semibold text-gray-900 sm:text-3xl',
-    h4: 'text-xl font-semibold text-gray-900'
+    // メインヘッダー（ページタイトル）
+    h1: {
+      primary: 'text-4xl sm:text-5xl md:text-6xl font-light text-gray-900 tracking-tight leading-tight',
+      hero: 'text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-light text-gray-900 tracking-tight leading-tight'
+    },
+    // セクションヘッダー
+    h2: {
+      section: 'text-2xl sm:text-3xl md:text-4xl font-light text-gray-900 tracking-tight',
+      subsection: 'text-xl sm:text-2xl md:text-3xl font-light text-gray-900'
+    },
+    // サブヘッダー
+    h3: {
+      card: 'text-lg sm:text-xl font-medium text-gray-900',
+      emphasis: 'text-base sm:text-lg font-semibold text-gray-900'
+    },
+    // 小見出し
+    h4: 'text-base sm:text-lg font-medium text-gray-900'
+  },
+  
+  // 本文テキスト統一システム
+  text: {
+    // メイン本文
+    body: {
+      large: 'text-lg sm:text-xl text-gray-600 leading-relaxed',
+      medium: 'text-base sm:text-lg text-gray-600 leading-relaxed',
+      small: 'text-sm sm:text-base text-gray-600 leading-relaxed'
+    },
+    // 説明文
+    description: {
+      large: 'text-base sm:text-lg text-gray-700 leading-relaxed',
+      medium: 'text-sm sm:text-base text-gray-700 leading-relaxed',
+      small: 'text-xs sm:text-sm text-gray-700 leading-relaxed'
+    },
+    // 強調テキスト
+    emphasis: {
+      strong: 'font-semibold text-gray-900',
+      medium: 'font-medium text-gray-900',
+      subtle: 'font-medium text-gray-700'
+    },
+    // ラベル・キャプション
+    label: {
+      primary: 'text-sm font-medium text-gray-900',
+      secondary: 'text-xs font-medium text-gray-600 uppercase tracking-wider'
+    }
   },
   
   // Modern Form elements
