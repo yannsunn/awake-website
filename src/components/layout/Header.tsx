@@ -4,6 +4,7 @@ import { useState, useEffect, useRef, memo, useCallback } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { ChevronDown } from 'lucide-react'
+import { STYLES } from '@/lib/constants'
 
 // 🚀 ULTRA SYNC - 限界突破完了！次世代ヘッダー
 const Header = memo(function Header() {
@@ -71,7 +72,7 @@ const Header = memo(function Header() {
           <div className="flex-shrink-0">
             <Link 
               href="/" 
-              className="text-2xl font-light text-gray-900 hover:text-gray-700"
+              className={STYLES.heading.h2.subsection + " hover:text-gray-700"}
               aria-label="株式会社Awake ホームページ"
             >
               株式会社Awake
@@ -86,7 +87,7 @@ const Header = memo(function Header() {
                   <div key={index} className="relative" ref={servicesRef}>
                     <button
                       onClick={handleServicesToggle}
-                      className="flex items-center text-gray-700 hover:text-indigo-600 font-medium py-2 group transition-colors duration-200"
+                      className={"flex items-center text-gray-700 hover:text-indigo-600 py-2 group transition-colors duration-200 " + STYLES.text.emphasis.medium}
                       aria-expanded={isServicesOpen}
                     >
                       <span className="mr-1">🚀</span>
@@ -96,7 +97,7 @@ const Header = memo(function Header() {
                     
                     {isServicesOpen && (
                       <div className="absolute top-full left-0 mt-2 w-64 bg-white/95 backdrop-blur-md rounded-2xl shadow-2xl border border-gray-100 py-3 z-50 animate-slide-up">
-                        <div className="px-4 py-2 text-xs font-medium text-gray-500 uppercase tracking-wider border-b border-gray-100 mb-2">
+                        <div className={"px-4 py-2 border-b border-gray-100 mb-2 " + STYLES.text.label.secondary + " text-gray-500"}>
                           主力サービス
                         </div>
                         {item.items?.map((service) => (
@@ -112,7 +113,7 @@ const Header = memo(function Header() {
                           >
                             <span className="text-lg mr-3">{service.icon}</span>
                             <div>
-                              <div className="font-medium">{service.title}</div>
+                              <div className={STYLES.text.emphasis.medium}>{service.title}</div>
                             </div>
                           </Link>
                         ))}
@@ -125,7 +126,7 @@ const Header = memo(function Header() {
                   <Link 
                     key={index}
                     href={item.href || '#'} 
-                    className="text-gray-700 hover:text-indigo-600 font-medium py-2 transition-colors duration-200"
+                    className={"text-gray-700 hover:text-indigo-600 py-2 transition-colors duration-200 " + STYLES.text.emphasis.medium}
                   >
                     {item.title}
                   </Link>
@@ -166,7 +167,7 @@ const Header = memo(function Header() {
                 if (item.type === 'dropdown') {
                   return (
                     <div key={index} className="space-y-2">
-                      <div className="flex items-center text-gray-900 font-medium px-4 py-2 bg-gray-100 rounded-lg mx-2">
+                      <div className={"flex items-center text-gray-900 px-4 py-2 bg-gray-100 rounded-lg mx-2 " + STYLES.text.emphasis.medium}>
                         <span className="mr-2">🚀</span>
                         {item.title}
                       </div>
@@ -194,7 +195,7 @@ const Header = memo(function Header() {
                     <Link 
                       key={index}
                       href={item.href || '#'}
-                      className="text-gray-700 hover:text-gray-900 font-medium px-4 py-3 hover:bg-gray-100 rounded-lg mx-2"
+                      className={"text-gray-700 hover:text-gray-900 px-4 py-3 hover:bg-gray-100 rounded-lg mx-2 " + STYLES.text.emphasis.medium}
                       onClick={() => setIsMenuOpen(false)}
                     >
                       {item.title}
@@ -206,7 +207,7 @@ const Header = memo(function Header() {
               {/* 🔥 ウルトラモバイルCTAボタン */}
               <Link 
                 href={isHomePage ? "#contact" : "/#contact"}
-                className="bg-gradient-to-r from-indigo-600 to-indigo-700 text-white px-6 py-4 mx-4 rounded-xl font-medium hover:shadow-xl shadow-lg shadow-indigo-500/25 text-center flex items-center justify-center mt-4 transition-all duration-200"
+                className={"bg-gradient-to-r from-indigo-600 to-indigo-700 text-white px-6 py-4 mx-4 rounded-xl hover:shadow-xl shadow-lg shadow-indigo-500/25 text-center flex items-center justify-center mt-4 transition-all duration-200 " + STYLES.text.emphasis.medium}
                 onClick={() => setIsMenuOpen(false)}
               >
                 <span className="mr-2">💬</span>

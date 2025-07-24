@@ -102,12 +102,12 @@ export default function EcServicePage() {
       {/* Hero Section */}
       <ContentSection className="bg-gradient-to-br from-gray-50 via-white to-gray-100">
         <div className="text-center max-w-4xl mx-auto">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-light text-gray-900 mb-6 tracking-tight">
+          <h1 className={STYLES.heading.h1.hero + " mb-6"}>
             売れてから手数料をいただく<br />
             Amazon販売代行サービス
           </h1>
           
-          <p className="text-lg sm:text-xl md:text-2xl text-gray-600 mb-12 font-light leading-relaxed">
+          <p className={STYLES.text.body.large + " mb-12"}>
             初期費用0円。商品が売れるまで一切費用はかかりません。<br />
             商品ページ作成・SEO対策・広告運用まで全てプロにお任せ
           </p>
@@ -129,10 +129,10 @@ export default function EcServicePage() {
       {/* Features Section */}
       <ContentSection>
         <div className="text-center mb-16">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-light text-gray-900 mb-4">
+          <h2 className={STYLES.heading.h2.section + " mb-4"}>
             なぜ私たちが選ばれるのか
           </h2>
-          <p className="text-lg sm:text-xl text-gray-600">
+          <p className={STYLES.text.body.large}>
             売れない商品からは一切費用をいただきません。<br />
             だからこそ、本気で売れる商品ページを作ります
           </p>
@@ -146,10 +146,10 @@ export default function EcServicePage() {
                 <div className="w-16 h-16 bg-gray-900 rounded-full flex items-center justify-center mx-auto mb-4">
                   <IconComponent className="h-8 w-8 text-white" />
                 </div>
-                <h3 className="text-lg font-medium text-gray-900 mb-3">
+                <h3 className={STYLES.heading.h3.emphasis + " mb-3"}>
                   {feature.title}
                 </h3>
-                <p className="text-gray-600 text-sm">
+                <p className={STYLES.text.description.small + " text-gray-600"}>
                   {feature.description}
                 </p>
               </div>
@@ -161,10 +161,10 @@ export default function EcServicePage() {
       {/* Process Section */}
       <ContentSection className="bg-gray-50">
         <div className="text-center mb-16">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-light text-gray-900 mb-4">
+          <h2 className={STYLES.heading.h2.section + " mb-4"}>
             サービスの流れ
           </h2>
-          <p className="text-lg sm:text-xl text-gray-600">
+          <p className={STYLES.text.body.large}>
             シンプルな4ステップで販売開始
           </p>
         </div>
@@ -200,13 +200,13 @@ export default function EcServicePage() {
               <div className="w-16 h-16 bg-gray-900 text-white rounded-full flex items-center justify-center mx-auto mb-4 text-xl font-semibold">
                 {item.step}
               </div>
-              <h3 className="text-xl font-medium text-gray-900 mb-3">
+              <h3 className={STYLES.heading.h3.card + " mb-3"}>
                 {item.title}
               </h3>
-              <p className="text-gray-600 text-sm mb-2">
+              <p className={STYLES.text.description.small + " text-gray-600 mb-2"}>
                 {item.description}
               </p>
-              <div className="text-xs text-gray-500 font-medium">
+              <div className={STYLES.text.label.secondary + " text-gray-500"}>
                 期間: {item.time}
               </div>
             </div>
@@ -217,10 +217,10 @@ export default function EcServicePage() {
       {/* Pricing Section */}
       <ContentSection id="pricing">
         <div className="text-center mb-16">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-light text-gray-900 mb-4">
+          <h2 className={STYLES.heading.h2.section + " mb-4"}>
             料金体系
           </h2>
-          <p className="text-lg sm:text-xl text-gray-600">
+          <p className={STYLES.text.body.large}>
             売上が発生してから手数料をいただく完全成果報酬制<br />
             初期費用・月額費用は一切かかりません
           </p>
@@ -260,16 +260,16 @@ export default function EcServicePage() {
                   </span>
                 </div>
               )}
-              <h3 className="text-xl font-medium text-gray-900 mb-2">
+              <h3 className={STYLES.heading.h3.card + " mb-2"}>
                 {item.platform}
               </h3>
-              <div className="text-3xl font-light text-gray-900 mb-6">
+              <div className={STYLES.text.emphasis.strong + " text-3xl mb-6"}>
                 {item.rate}
               </div>
-              <p className="text-gray-600 mb-6">{item.description}</p>
+              <p className={STYLES.text.description.medium + " text-gray-600 mb-6"}>{item.description}</p>
               <ul className="space-y-3 mb-8">
                 {item.features.map((feature, featureIndex) => (
-                  <li key={featureIndex} className="text-gray-600 text-sm flex items-center">
+                  <li key={featureIndex} className={STYLES.text.description.small + " text-gray-600 flex items-center"}>
                     <span className="w-2 h-2 bg-gray-900 rounded-full mr-3"></span>
                     {feature}
                   </li>
@@ -296,39 +296,39 @@ export default function EcServicePage() {
       {/* Success Stories Section */}
       <ContentSection className="bg-gray-50">
         <div className="text-center mb-16">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-light text-gray-900 mb-4">
+          <h2 className={STYLES.heading.h2.section + " mb-4"}>
             こんな方におすすめです
           </h2>
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           <div className="bg-white p-6 rounded-xl shadow-sm">
-            <h3 className="text-lg font-medium text-gray-900 mb-4">成果報酬の仕組み</h3>
-            <ul className="space-y-2 text-sm text-gray-600">
-              <li>• 初期費用0円</li>
-              <li>• 月額費用0円</li>
-              <li>• 売上発生時のみ手数料</li>
-              <li>• 透明性の高い料金体系</li>
+            <h3 className={STYLES.heading.h3.emphasis + " mb-4"}>成果報酬の仕組み</h3>
+            <ul className="space-y-2">
+              <li className={STYLES.text.description.small + " text-gray-600"}>• 初期費用0円</li>
+              <li className={STYLES.text.description.small + " text-gray-600"}>• 月額費用0円</li>
+              <li className={STYLES.text.description.small + " text-gray-600"}>• 売上発生時のみ手数料</li>
+              <li className={STYLES.text.description.small + " text-gray-600"}>• 透明性の高い料金体系</li>
             </ul>
           </div>
           
           <div className="bg-white p-6 rounded-xl shadow-sm">
-            <h3 className="text-lg font-medium text-gray-900 mb-4">代行業務内容</h3>
-            <ul className="space-y-2 text-sm text-gray-600">
-              <li>• 商品ページ作成・改善</li>
-              <li>• SEOキーワード選定</li>
-              <li>• スポンサー広告運用</li>
-              <li>• 売上データ分析</li>
+            <h3 className={STYLES.heading.h3.emphasis + " mb-4"}>代行業務内容</h3>
+            <ul className="space-y-2">
+              <li className={STYLES.text.description.small + " text-gray-600"}>• 商品ページ作成・改善</li>
+              <li className={STYLES.text.description.small + " text-gray-600"}>• SEOキーワード選定</li>
+              <li className={STYLES.text.description.small + " text-gray-600"}>• スポンサー広告運用</li>
+              <li className={STYLES.text.description.small + " text-gray-600"}>• 売上データ分析</li>
             </ul>
           </div>
           
           <div className="bg-white p-6 rounded-xl shadow-sm">
-            <h3 className="text-lg font-medium text-gray-900 mb-4">安心の理由</h3>
-            <ul className="space-y-2 text-sm text-gray-600">
-              <li>• 売れなければ費用0円</li>
-              <li>• 契約期間の縛りなし</li>
-              <li>• いつでも解約可能</li>
-              <li>• 明確な成果レポート</li>
+            <h3 className={STYLES.heading.h3.emphasis + " mb-4"}>安心の理由</h3>
+            <ul className="space-y-2">
+              <li className={STYLES.text.description.small + " text-gray-600"}>• 売れなければ費用0円</li>
+              <li className={STYLES.text.description.small + " text-gray-600"}>• 契約期間の縛りなし</li>
+              <li className={STYLES.text.description.small + " text-gray-600"}>• いつでも解約可能</li>
+              <li className={STYLES.text.description.small + " text-gray-600"}>• 明確な成果レポート</li>
             </ul>
           </div>
         </div>
@@ -336,10 +336,10 @@ export default function EcServicePage() {
 
       <ContentSection>
         <div className="text-center">
-          <h2 className={STYLES.heading.h2}>
+          <h2 className={STYLES.heading.h2.section}>
             売れるまで費用はいただきません
           </h2>
-          <p className="text-lg sm:text-xl text-gray-600 mb-8 mt-4">
+          <p className={STYLES.text.body.large + " mb-8 mt-4"}>
             私たちの報酬はお客様の成功と直結しています。<br />
             だからこそ、本気で売れる仕組みを作ります
           </p>

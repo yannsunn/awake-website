@@ -3,6 +3,7 @@ import { Plus, Minus } from 'lucide-react'
 import { COMPANY_DATA } from '@/lib/company-data'
 import PageTemplate, { ContentSection } from '@/components/layout/PageTemplate'
 import AccessibleButton from '@/components/ui/AccessibleButton'
+import { STYLES } from '@/lib/constants'
 import { createFAQSchema } from '@/lib/enhanced-schema'
 
 export const metadata: Metadata = {
@@ -139,10 +140,10 @@ export default function FAQPage() {
       {/* Hero Section */}
       <ContentSection className="bg-gray-50">
         <div className="text-center max-w-4xl mx-auto">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-light text-gray-900 mb-6">
+          <h1 className={STYLES.heading.h1.primary + " mb-6"}>
             よくある質問
           </h1>
-          <p className="text-base sm:text-lg text-gray-600 leading-relaxed">
+          <p className={STYLES.text.body.medium}>
             お客様からよくいただくご質問をまとめました。<br className="hidden sm:block" />
             こちらにない質問は、お気軽にお問い合わせください。
           </p>
@@ -152,7 +153,7 @@ export default function FAQPage() {
       {/* Quick Contact Section */}
       <ContentSection className="bg-white border-b border-gray-100">
         <div className="text-center">
-          <p className="text-sm sm:text-base text-gray-600 mb-4">
+          <p className={STYLES.text.description.medium + " text-gray-600 mb-4"}>
             お急ぎの場合は、公式LINEでお気軽にお問い合わせください
           </p>
           <AccessibleButton
@@ -172,7 +173,7 @@ export default function FAQPage() {
         <div className="space-y-8 sm:space-y-12">
           {faqCategories.map((category, categoryIndex) => (
             <div key={categoryIndex}>
-              <h2 className="text-xl sm:text-2xl font-light text-gray-900 mb-6 sm:mb-8 pb-2 border-b border-gray-200">
+              <h2 className={STYLES.heading.h2.subsection + " mb-6 sm:mb-8 pb-2 border-b border-gray-200"}>
                 {category.category}
               </h2>
               
@@ -183,7 +184,7 @@ export default function FAQPage() {
                     className="group bg-white border border-gray-200 rounded-lg overflow-hidden"
                   >
                     <summary className="flex items-center justify-between p-4 sm:p-6 cursor-pointer hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">
-                      <h3 className="text-base sm:text-lg font-medium text-gray-900 pr-4">
+                      <h3 className={STYLES.heading.h3.emphasis + " pr-4"}>
                         {faq.question}
                       </h3>
                       <div className="flex-shrink-0">
@@ -200,7 +201,7 @@ export default function FAQPage() {
                     
                     <div className="px-4 sm:px-6 pb-4 sm:pb-6">
                       <div className="pt-4 border-t border-gray-100">
-                        <p className="text-sm sm:text-base text-gray-700 leading-relaxed">
+                        <p className={STYLES.text.description.medium + " text-gray-700"}>
                           {faq.answer}
                         </p>
                       </div>
@@ -216,17 +217,17 @@ export default function FAQPage() {
       {/* Contact Section */}
       <ContentSection className="bg-gray-50">
         <div className="text-center">
-          <h2 className="text-2xl sm:text-3xl font-light text-gray-900 mb-6">
+          <h2 className={STYLES.heading.h2.section + " mb-6"}>
             まだ疑問が解決しませんか？
           </h2>
-          <p className="text-base sm:text-lg text-gray-600 mb-8">
+          <p className={STYLES.text.body.medium + " mb-8"}>
             お気軽にお問い合わせください。専門スタッフが丁寧にお答えいたします。
           </p>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
             <div className="bg-white p-4 sm:p-6 rounded-xl shadow-sm">
-              <h3 className="text-sm sm:text-base font-semibold text-gray-900 mb-2">📱 公式LINE</h3>
-              <p className="text-xs sm:text-sm text-gray-600 mb-4">最も早く対応できます</p>
+              <h3 className={STYLES.heading.h3.emphasis + " mb-2"}>📱 公式LINE</h3>
+              <p className={STYLES.text.description.small + " text-gray-600 mb-4"}>最も早く対応できます</p>
               <AccessibleButton 
                 href={COMPANY_DATA.contact.lineUrl}
                 target="_blank"
@@ -240,8 +241,8 @@ export default function FAQPage() {
             </div>
             
             <div className="bg-white p-4 sm:p-6 rounded-xl shadow-sm">
-              <h3 className="text-sm sm:text-base font-semibold text-gray-900 mb-2">📞 電話</h3>
-              <p className="text-xs sm:text-sm text-gray-600 mb-4">{COMPANY_DATA.contact.businessHours.weekdays}</p>
+              <h3 className={STYLES.heading.h3.emphasis + " mb-2"}>📞 電話</h3>
+              <p className={STYLES.text.description.small + " text-gray-600 mb-4"}>{COMPANY_DATA.contact.businessHours.weekdays}</p>
               <AccessibleButton 
                 href={`tel:${COMPANY_DATA.contact.phone}`}
                 variant="minimal"
@@ -253,8 +254,8 @@ export default function FAQPage() {
             </div>
             
             <div className="bg-white p-4 sm:p-6 rounded-xl shadow-sm">
-              <h3 className="text-sm sm:text-base font-semibold text-gray-900 mb-2">✉️ メール</h3>
-              <p className="text-xs sm:text-sm text-gray-600 mb-4">詳細な相談に最適</p>
+              <h3 className={STYLES.heading.h3.emphasis + " mb-2"}>✉️ メール</h3>
+              <p className={STYLES.text.description.small + " text-gray-600 mb-4"}>詳細な相談に最適</p>
               <AccessibleButton 
                 href={`mailto:${COMPANY_DATA.contact.email}`}
                 variant="minimal"

@@ -6,6 +6,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { COMPANY_DATA } from '@/lib/company-data'
 import AccessibleButton from '@/components/ui/AccessibleButton'
+import { STYLES } from '@/lib/constants'
 
 export const metadata: Metadata = {
   title: `${COMPANY_DATA.basic.name} | ${COMPANY_DATA.basic.tagline}`,
@@ -105,15 +106,15 @@ export default function HomePage() {
               </div>
               
               {/* Company Tagline */}
-              <h1 className="text-3xl sm:text-4xl md:text-5xl font-light text-gray-900 mb-6 tracking-tight">
+              <h1 className={STYLES.heading.h1.hero + " mb-6"}>
                 {COMPANY_DATA.basic.tagline}
               </h1>
               
-              <p className="text-lg sm:text-xl text-gray-600 mb-8 font-light leading-relaxed">
+              <p className={STYLES.text.body.large + " mb-8"}>
                 {COMPANY_DATA.basic.mission}
               </p>
 
-              <p className="text-base sm:text-lg text-gray-600 mb-8 sm:mb-12 leading-relaxed max-w-3xl mx-auto">
+              <p className={STYLES.text.body.medium + " mb-8 sm:mb-12 max-w-3xl mx-auto"}>
                 {COMPANY_DATA.basic.description}
               </p>
 
@@ -133,10 +134,10 @@ export default function HomePage() {
         <section id="services" className="py-12 sm:py-16 lg:py-20 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-8 sm:mb-12 lg:mb-16">
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-light text-gray-900 mb-4">
+              <h2 className={STYLES.heading.h2.section + " mb-4"}>
                 サービス一覧
               </h2>
-              <p className="text-lg sm:text-xl text-gray-600">
+              <p className={STYLES.text.body.large}>
                 あなたのビジネスの成長を加速させる3つのソリューション
               </p>
             </div>
@@ -149,15 +150,15 @@ export default function HomePage() {
                     <div className={`w-16 h-16 ${service.color} rounded-xl flex items-center justify-center mx-auto mb-6`}>
                       <IconComponent className="h-8 w-8 text-white" />
                     </div>
-                    <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-4 text-center">
+                    <h3 className={STYLES.heading.h3.card + " mb-4 text-center"}>
                       {service.title}
                     </h3>
-                    <p className="text-sm sm:text-base text-gray-600 text-center mb-6 leading-relaxed">
+                    <p className={STYLES.text.description.medium + " text-center mb-6"}>
                       {service.description}
                     </p>
                     <div className="text-center mb-6">
-                      <span className="text-xl sm:text-2xl font-bold text-gray-900">{service.price}</span>
-                      <span className="text-gray-500 text-sm">〜</span>
+                      <span className={STYLES.text.emphasis.strong + " text-xl sm:text-2xl"}>{service.price}</span>
+                      <span className={STYLES.text.description.small + " text-gray-500"}>〜</span>
                     </div>
                     <div className="text-center">
                       <AccessibleButton 
@@ -183,10 +184,10 @@ export default function HomePage() {
         <section className="py-12 sm:py-16 lg:py-20 bg-gray-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-8 sm:mb-12 lg:mb-16">
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-light text-gray-900 mb-4">
+              <h2 className={STYLES.heading.h2.section + " mb-4"}>
                 選ばれる理由
               </h2>
-              <p className="text-lg sm:text-xl text-gray-600">
+              <p className={STYLES.text.body.large}>
                 投資を成果に変える、4つの約束
               </p>
             </div>
@@ -199,10 +200,10 @@ export default function HomePage() {
                     <div className="w-16 h-16 bg-gray-900 rounded-full flex items-center justify-center mx-auto mb-4">
                       <IconComponent className="h-8 w-8 text-white" />
                     </div>
-                    <h3 className="text-lg font-medium text-gray-900 mb-3">
+                    <h3 className={STYLES.heading.h3.emphasis + " mb-3"}>
                       {feature.title}
                     </h3>
-                    <p className="text-sm sm:text-base text-gray-600 leading-relaxed">
+                    <p className={STYLES.text.description.medium}>
                       {feature.description}
                     </p>
                   </div>
@@ -216,17 +217,17 @@ export default function HomePage() {
         <section className="py-12 sm:py-16 lg:py-20 bg-white">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-8 sm:mb-12 lg:mb-16">
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-light text-gray-900 mb-4">
+              <h2 className={STYLES.heading.h2.section + " mb-4"}>
                 私たちの想い
               </h2>
             </div>
             
             <div className="bg-gray-50 rounded-2xl p-8 md:p-12">
               <div className="max-w-4xl mx-auto text-center">
-                <h3 className="text-xl sm:text-2xl font-light text-gray-900 mb-6">
+                <h3 className={STYLES.heading.h2.subsection + " mb-6"}>
                   {COMPANY_DATA.basic.mission}
                 </h3>
-                <p className="text-base sm:text-lg text-gray-600 leading-relaxed mb-8">
+                <p className={STYLES.text.body.medium + " mb-8"}>
                   高額なIT投資で失敗する企業が多い中、私たちは適正価格で確実な成果を出します。必要最小限の投資で最大の効果を生み出し、浮いたコストを本業の成長に投資できる環境を提供します。
                 </p>
                 <AccessibleButton href="/about" showArrow>
@@ -240,17 +241,17 @@ export default function HomePage() {
         {/* Contact Section */}
         <section id="contact" className="py-12 sm:py-16 lg:py-20 bg-gray-50">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-light text-gray-900 mb-6">
+            <h2 className={STYLES.heading.h2.section + " mb-6"}>
               お問い合わせ
             </h2>
-            <p className="text-base sm:text-lg lg:text-xl text-gray-600 mb-8">
+            <p className={STYLES.text.body.large + " mb-8"}>
               プロジェクトに関するご質問やご相談がございましたら、お気軽にお問い合わせください。
             </p>
             
             {/* 公式LINE案内 */}
             <div className="mb-8 p-4 sm:p-6 bg-green-50 border border-green-200 rounded-xl block sm:inline-block">
-              <h3 className="text-base sm:text-lg font-medium text-green-800 mb-2">📱 公式LINEでお問い合わせ</h3>
-              <p className="text-sm sm:text-base text-green-700 mb-4">
+              <h3 className={STYLES.heading.h3.emphasis + " text-green-800 mb-2"}>📱 公式LINEでお問い合わせ</h3>
+              <p className={STYLES.text.description.medium + " text-green-700 mb-4"}>
                 お問い合わせは公式LINEが最も早く対応できます
               </p>
               <AccessibleButton 
@@ -265,22 +266,22 @@ export default function HomePage() {
 
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 mb-8">
               <div className="text-center">
-                <h4 className="text-sm sm:text-base font-medium text-gray-900 mb-2">電話番号</h4>
-                <p className="text-sm sm:text-base text-gray-600">{COMPANY_DATA.contact.phone}</p>
+                <h4 className={STYLES.text.label.primary + " mb-2"}>電話番号</h4>
+                <p className={STYLES.text.description.medium + " text-gray-600"}>{COMPANY_DATA.contact.phone}</p>
               </div>
               <div className="text-center">
-                <h4 className="text-sm sm:text-base font-medium text-gray-900 mb-2">メールアドレス</h4>
-                <p className="text-sm sm:text-base text-gray-600">{COMPANY_DATA.contact.email}</p>
+                <h4 className={STYLES.text.label.primary + " mb-2"}>メールアドレス</h4>
+                <p className={STYLES.text.description.medium + " text-gray-600"}>{COMPANY_DATA.contact.email}</p>
               </div>
               <div className="text-center">
-                <h4 className="text-sm sm:text-base font-medium text-gray-900 mb-2">営業時間</h4>
-                <p className="text-sm sm:text-base text-gray-600">{COMPANY_DATA.contact.businessHours.weekdays}</p>
+                <h4 className={STYLES.text.label.primary + " mb-2"}>営業時間</h4>
+                <p className={STYLES.text.description.medium + " text-gray-600"}>{COMPANY_DATA.contact.businessHours.weekdays}</p>
               </div>
             </div>
 
             <div className="bg-white rounded-xl p-6 border border-gray-100">
-              <h4 className="font-medium text-gray-900 mb-3">ご相談について</h4>
-              <ul className="text-sm text-gray-600 space-y-2">
+              <h4 className={STYLES.heading.h4 + " mb-3"}>ご相談について</h4>
+              <ul className={STYLES.text.description.small + " space-y-2"}>
                 {COMPANY_DATA.consultation.features.map((feature, index) => (
                   <li key={index}>• {feature}</li>
                 ))}
