@@ -32,24 +32,22 @@ const HeroSection = memo(function HeroSection() {
 
   return (
     <section className="relative min-h-screen flex flex-col justify-center bg-white" id="hero" aria-labelledby="hero-title">
-      {/* 背景ロゴ */}
-      <div className="absolute inset-0 flex items-center justify-center opacity-10">
-        <div className="relative w-full max-w-4xl mx-auto" style={{ aspectRatio: '4/3' }}>
-          <Image
-            src="/assets/images/hero-background.png"
-            alt=""
-            fill
-            className="object-contain"
-            priority
-            quality={90}
-            sizes="(max-width: 1024px) 768px, 1024px"
-            style={{ 
-              objectFit: 'contain',
-              objectPosition: 'center'
-            }}
-            placeholder="empty"
-          />
-        </div>
+      {/* 背景画像 */}
+      <div className="absolute inset-0 opacity-5">
+        <Image
+          src="/assets/images/hero-background.png"
+          alt=""
+          fill
+          className="object-cover object-center"
+          priority
+          quality={60}
+          sizes="100vw"
+          style={{ 
+            objectFit: 'cover',
+            objectPosition: 'center'
+          }}
+          placeholder="empty"
+        />
       </div>
       
       {/* 🚀 ウルトラシンク最適化 - 単一コンテナ */}
