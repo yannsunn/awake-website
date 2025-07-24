@@ -30,7 +30,7 @@ export function ServiceHero({
     <section className={cn(backgroundClasses[backgroundVariant], 'relative overflow-hidden', className)}>
       <div className={cn(STYLES.container, 'py-12 sm:py-16 lg:py-20')}>
         <div className="mx-auto max-w-3xl text-center">
-          <h1 className="mb-6 text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl lg:text-6xl">
+          <h1 className={cn(STYLES.heading.h1.hero, "mb-6")}>
             {title}
           </h1>
           <p className="mb-8 text-lg sm:text-xl text-gray-600 leading-relaxed">

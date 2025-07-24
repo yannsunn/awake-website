@@ -1,5 +1,6 @@
 import React from 'react'
 import { cn } from '@/lib/utils'
+import { STYLES } from '@/lib/constants'
 
 interface Feature {
   icon: React.ReactNode
@@ -30,7 +31,7 @@ export function FeatureGrid({
     <section className={cn('py-12 sm:py-16 lg:py-20', className)}>
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         {title && (
-          <h2 className="mb-12 text-center text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+          <h2 className={cn(STYLES.heading.h2.section, "mb-12 text-center")}>
             {title}
           </h2>
         )}
