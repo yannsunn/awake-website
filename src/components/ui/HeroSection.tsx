@@ -31,23 +31,21 @@ const HeroSection = memo(function HeroSection() {
   ]
 
   return (
-    <section className="relative min-h-screen flex flex-col justify-center bg-white" id="hero" aria-labelledby="hero-title">
+    <section className="relative min-h-screen flex flex-col justify-center overflow-hidden" id="hero" aria-labelledby="hero-title">
       {/* 背景画像 */}
-      <div className="absolute inset-0 opacity-5">
+      <div className="absolute inset-0 -z-10">
         <Image
           src="/assets/images/hero-background.png"
           alt=""
           fill
-          className="object-cover object-center"
+          className="object-cover"
           priority
           quality={60}
           sizes="100vw"
-          style={{ 
-            objectFit: 'cover',
-            objectPosition: 'center'
-          }}
           placeholder="empty"
         />
+        {/* オーバーレイ */}
+        <div className="absolute inset-0 bg-white/85" />
       </div>
       
       {/* 🚀 ウルトラシンク最適化 - 単一コンテナ */}
