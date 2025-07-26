@@ -11,6 +11,12 @@ import ProblemSection from '@/components/sections/ProblemSection'
 import UseCases from '@/components/sections/UseCases'
 import AIFaq from '@/components/sections/AIFaq'
 import WhyNowCTA from '@/components/sections/WhyNowCTA'
+import WhyAmazon from '@/components/sections/WhyAmazon'
+import RiskFree from '@/components/sections/RiskFree'
+import AmazonSupport from '@/components/sections/AmazonSupport'
+import SuccessStories from '@/components/sections/SuccessStories'
+import AmazonFAQ from '@/components/sections/AmazonFAQ'
+import AmazonCTA from '@/components/sections/AmazonCTA'
 
 // 動的ルートのパラメータ型
 type Params = Promise<{ slug: string }>
@@ -111,47 +117,48 @@ const serviceData = {
   },
   ec: {
     title: COMPANY_DATA.services.details.ec.title,
-    subtitle: COMPANY_DATA.services.details.ec.subtitle,
-    description: COMPANY_DATA.services.details.ec.description,
+    subtitle: '初期費用0円。売れてから払う、新しい販路開拓',
+    description: 'Amazonで月商1,000万円を目指す、完全成果報酬型サービス',
+    subDescription: '在庫リスクなし。広告費の持ち出しなし。売れた分だけお支払い。',
     icon: '🛒',
     features: [
       {
-        title: '商品登録代行',
-        description: '魅力的な商品ページの作成から登録まで一括サポート',
-        icon: '📝'
-      },
-      {
-        title: '売上分析・改善',
-        description: 'データに基づいた売上向上施策の提案と実行',
+        title: 'データに基づく確実な売上アップ',
+        description: '勘や経験ではなく、Amazonのビッグデータを活用した科学的アプローチ',
         icon: '📊'
       },
       {
-        title: '広告運用',
-        description: 'Amazon広告の最適化で効果的な集客を実現',
-        icon: '📢'
+        title: '売れる商品ページの作成',
+        description: '購買心理を理解した、「買いたくなる」商品ページを制作',
+        icon: '🎯'
       },
       {
-        title: 'カスタマーサポート',
-        description: 'お客様対応から評価管理まで包括的にサポート',
-        icon: '💬'
+        title: '最適な価格戦略',
+        description: '競合分析と需要予測で、売上と利益を最大化する価格設定',
+        icon: '💡'
+      },
+      {
+        title: '高評価を維持する運営',
+        description: 'レビュー対策とカスタマーサポートで、ブランド価値を向上',
+        icon: '⭐'
       }
     ],
     process: [
       {
-        title: 'アカウント診断',
-        description: '現状の課題を分析し、改善ポイントを明確化'
+        title: '無料診断（即日）',
+        description: '商品の市場性とポテンシャルを分析'
       },
       {
-        title: '戦略立案',
-        description: '商品特性に合わせた最適な販売戦略を策定'
+        title: '戦略立案（3日）',
+        description: '競合分析と販売戦略の策定'
       },
       {
-        title: '施策実行',
-        description: '商品ページ改善、広告運用など具体的な施策を実行'
+        title: '出品準備（1週間）',
+        description: '商品ページ作成と各種設定'
       },
       {
-        title: '成果検証',
-        description: '定期的なレポートで成果を可視化し、次の施策へ'
+        title: '販売開始（2週間〜）',
+        description: 'テスト販売から本格展開へ'
       }
     ]
   }
@@ -240,6 +247,55 @@ export default async function ServicePage(
         <UseCases />
         <AIFaq />
         <WhyNowCTA />
+      </PageTemplate>
+    )
+  }
+
+  // Amazon代理店サービスページのカスタマイズ
+  if (slug === 'ec') {
+    return (
+      <PageTemplate>
+        <ServiceHero
+          title={service.subtitle || service.title}
+          description={service.description}
+          ctaText="無料相談を予約する"
+          ctaHref="/#contact"
+          secondaryCtaText="サービス詳細を見る"
+          secondaryCtaHref="#support"
+          subDescription={service.subDescription}
+        />
+        
+        <WhyAmazon />
+        <RiskFree />
+        
+        <section className="py-16 md:py-24 bg-gray-50">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 className={cn(STYLES.heading.h2.section, "text-center mb-12")}>
+              私たちが選ばれる4つの理由
+            </h2>
+            <FeatureGrid features={service.features} />
+          </div>
+        </section>
+        
+        <AmazonSupport />
+        
+        <section className="py-16 md:py-24 bg-white">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-12">
+              <h2 className={cn(STYLES.heading.h2.section, "mb-4")}>
+                導入の流れ
+              </h2>
+              <p className={STYLES.text.body.large}>
+                最短2週間で販売開始
+              </p>
+            </div>
+            <ProcessSteps steps={service.process} />
+          </div>
+        </section>
+        
+        <SuccessStories />
+        <AmazonFAQ />
+        <AmazonCTA />
       </PageTemplate>
     )
   }

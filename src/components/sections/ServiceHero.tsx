@@ -6,6 +6,7 @@ import { STYLES } from '@/lib/constants'
 interface ServiceHeroProps {
   title: string
   description: string
+  subDescription?: string
   ctaText: string
   ctaHref: string
   secondaryCtaText?: string
@@ -17,6 +18,7 @@ interface ServiceHeroProps {
 export function ServiceHero({
   title,
   description,
+  subDescription,
   ctaText,
   ctaHref,
   secondaryCtaText,
@@ -40,9 +42,11 @@ export function ServiceHero({
           <p className="mb-8 text-lg sm:text-xl text-gray-600 leading-relaxed">
             {description}
           </p>
-          <p className="mb-8 text-base sm:text-lg text-gray-500">
-            月間50時間の業務時間削減。それは、新しい価値創造への投資時間です。
-          </p>
+          {subDescription && (
+            <p className="mb-8 text-base sm:text-lg text-gray-500">
+              {subDescription}
+            </p>
+          )}
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href={ctaHref}
