@@ -7,6 +7,10 @@ import PageTemplate from '@/components/layout/PageTemplate'
 import { COMPANY_DATA } from '@/lib/company-data'
 import { STYLES } from '@/lib/constants'
 import { cn } from '@/lib/utils'
+import ProblemSection from '@/components/sections/ProblemSection'
+import UseCases from '@/components/sections/UseCases'
+import AIFaq from '@/components/sections/AIFaq'
+import WhyNowCTA from '@/components/sections/WhyNowCTA'
 
 // 動的ルートのパラメータ型
 type Params = Promise<{ slug: string }>
@@ -61,47 +65,47 @@ const serviceData = {
   },
   ai: {
     title: COMPANY_DATA.services.details.ai.title,
-    subtitle: COMPANY_DATA.services.details.ai.subtitle,
-    description: COMPANY_DATA.services.details.ai.description,
+    subtitle: 'AIで、あなたの会社はどう変わるか？',
+    description: '単純作業から解放され、創造的な仕事に集中できる組織へ',
     icon: '🤖',
     features: [
       {
-        title: 'AI戦略立案',
-        description: '貴社のビジネスに最適なAI活用戦略を策定',
+        title: 'あなたの会社専用の戦略設計',
+        description: '汎用的なAI導入ではなく、あなたのビジネスに最適化された活用戦略を策定',
         icon: '🎯'
       },
       {
-        title: 'プロトタイプ開発',
-        description: '実際に動くAIシステムのプロトタイプを短期間で開発',
-        icon: '🔧'
+        title: '最短2週間で効果を実感',
+        description: '小さく始めて、効果を確認しながら拡大。リスクを最小限に抑えた導入',
+        icon: '🚀'
       },
       {
-        title: '社内研修・教育',
-        description: 'AI活用に必要な知識とスキルを社内に浸透',
-        icon: '📚'
+        title: '初期投資を抑えた料金体系',
+        description: '¥298,000〜の明確な価格設定。隠れたコストは一切ありません',
+        icon: '💰'
       },
       {
-        title: '継続的な改善',
-        description: 'AIモデルの精度向上と最新技術への対応',
-        icon: '📈'
+        title: '導入後も安心の伴走支援',
+        description: '使い方の研修から、継続的な改善提案まで。AI活用を成功に導きます',
+        icon: '🤝'
       }
     ],
     process: [
       {
-        title: '現状分析',
-        description: '業務プロセスを分析し、AI活用の可能性を探ります'
+        title: '現状分析（1週間）',
+        description: '業務フローの可視化、AI活用ポイントの特定、期待効果の試算'
       },
       {
-        title: 'PoC開発',
-        description: '小規模な実証実験で効果を検証'
+        title: '実証実験（2-3週間）',
+        description: '小規模なPoC開発、実際の業務での検証、効果測定とフィードバック'
       },
       {
-        title: '本格導入',
-        description: '検証結果を基に、本格的なシステムを構築'
+        title: '本格導入（1ヶ月）',
+        description: 'システムの構築、社内体制の整備、運用ルールの策定'
       },
       {
-        title: '運用・改善',
-        description: '継続的な改善でAIの精度と効果を最大化'
+        title: '継続改善（永続的）',
+        description: '精度向上の取り組み、新技術への対応、活用範囲の拡大'
       }
     ]
   },
@@ -195,6 +199,52 @@ export default async function ServicePage(
     notFound()
   }
 
+  // AIコンサルティングページのカスタマイズ
+  if (slug === 'ai') {
+    return (
+      <PageTemplate>
+        <ServiceHero
+          title={service.subtitle || service.title}
+          description={service.description}
+          ctaText="無料診断を受ける"
+          ctaHref="/#contact"
+          secondaryCtaText="導入事例を見る"
+          secondaryCtaHref="#use-cases"
+        />
+        
+        <ProblemSection />
+        
+        <section className="py-16 md:py-24 bg-white">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 className={cn(STYLES.heading.h2.section, "text-center mb-12")}>
+              Awakeが選ばれる4つの理由
+            </h2>
+            <FeatureGrid features={service.features} />
+          </div>
+        </section>
+        
+        <section className="py-16 md:py-24 bg-gray-50">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-12">
+              <h2 className={cn(STYLES.heading.h2.section, "mb-4")}>
+                導入プロセス
+              </h2>
+              <p className={STYLES.text.body.large}>
+                たった4ステップで、業務が劇的に変わる
+              </p>
+            </div>
+            <ProcessSteps steps={service.process} />
+          </div>
+        </section>
+        
+        <UseCases />
+        <AIFaq />
+        <WhyNowCTA />
+      </PageTemplate>
+    )
+  }
+
+  // その他のサービスページ（既存のレイアウト）
   return (
     <PageTemplate>
       <ServiceHero
