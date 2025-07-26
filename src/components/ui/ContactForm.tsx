@@ -62,79 +62,75 @@ const ContactForm = memo(function ContactForm() {
       <h3 className="text-2xl font-medium text-gray-900 mb-6">メールでお問い合わせ</h3>
       
       <form onSubmit={handleSubmit} className="space-y-6">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div>
-            <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
-              お名前 <span className="text-red-500">*</span>
-            </label>
-            <input
-              type="text"
-              id="name"
-              name="name"
-              value={formData.name}
-              onChange={handleChange}
-              required
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-500 focus:border-transparent"
-              placeholder="山田太郎"
-            />
-          </div>
-          
-          <div>
-            <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
-              メールアドレス <span className="text-red-500">*</span>
-            </label>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              value={formData.email}
-              onChange={handleChange}
-              required
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-500 focus:border-transparent"
-              placeholder="example@company.com"
-            />
-          </div>
+        <div>
+          <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
+            お名前 <span className="text-red-500">**</span>
+          </label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            value={formData.name}
+            onChange={handleChange}
+            required
+            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-500 focus:border-transparent"
+            placeholder="山田太郎"
+          />
+        </div>
+        
+        <div>
+          <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+            メールアドレス <span className="text-red-500">**</span>
+          </label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            value={formData.email}
+            onChange={handleChange}
+            required
+            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-500 focus:border-transparent"
+            placeholder="example@company.com"
+          />
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div>
-            <label htmlFor="company" className="block text-sm font-medium text-gray-700 mb-2">
-              会社名
-            </label>
-            <input
-              type="text"
-              id="company"
-              name="company"
-              value={formData.company}
-              onChange={handleChange}
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-500 focus:border-transparent"
-              placeholder="株式会社◯◯"
-            />
-          </div>
-          
-          <div>
-            <label htmlFor="service" className="block text-sm font-medium text-gray-700 mb-2">
-              ご希望のサービス
-            </label>
-            <select
-              id="service"
-              name="service"
-              value={formData.service}
-              onChange={handleChange}
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-500 focus:border-transparent"
-            >
-              <option value="">選択してください</option>
-              <option value="web">ホームページ制作</option>
-              <option value="ai">AIコンサルティング</option>
-              <option value="ec">Amazon代理店サービス</option>
-              <option value="other">その他</option>
-            </select>
-          </div>
+        <div>
+          <label htmlFor="company" className="block text-sm font-medium text-gray-700 mb-2">
+            会社名
+          </label>
+          <input
+            type="text"
+            id="company"
+            name="company"
+            value={formData.company}
+            onChange={handleChange}
+            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-500 focus:border-transparent"
+            placeholder="株式会社◯◯"
+          />
+        </div>
+        
+        <div>
+          <label htmlFor="service" className="block text-sm font-medium text-gray-700 mb-2">
+            ご希望のサービス
+          </label>
+          <select
+            id="service"
+            name="service"
+            value={formData.service}
+            onChange={handleChange}
+            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-500 focus:border-transparent"
+          >
+            <option value="">選択してください</option>
+            <option value="web">ホームページ制作</option>
+            <option value="ai">AIコンサルティング</option>
+            <option value="ec">Amazon代理店サービス</option>
+            <option value="other">その他</option>
+          </select>
         </div>
 
         <div>
           <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
-            メッセージ <span className="text-red-500">*</span>
+            メッセージ <span className="text-red-500">**</span>
           </label>
           <textarea
             id="message"

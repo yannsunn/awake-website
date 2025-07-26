@@ -6,8 +6,9 @@ export const COMPANY_DATA = {
     ceo: '田形 康貴',
     established: '2020年（令和2年）',
     mission: '適正コストで最大の価値を',
-    tagline: '投資を成果に変える経営パートナー',
-    description: '限られた経営資源を最適配分し、本質的な成長を支援。無駄を削ぎ、必要な投資に集中できる環境を提供します。'
+    tagline: '高額なIT投資に、もう悩まない。',
+    description: '必要最小限の投資で、最大の成果を引き出す経営パートナー',
+    subMessage: '無駄を削ぎ落とし、本当に価値のある投資だけに集中。あなたのビジネスに、新しい成長の道筋を作ります。'
   },
   contact: {
     address: {
@@ -31,8 +32,8 @@ export const COMPANY_DATA = {
     details: {
       web: {
         title: 'ホームページ制作',
-        description: '売上に貢献するHPを13万円から。コストを成長投資に変える',
-        longDescription: '現状の課題を解決し、売上アップに直結するホームページを制作。お客様が本業に集中できるよう、運用まで完全サポートします。',
+        description: '売上に直結するウェブサイトを、適正価格で',
+        longDescription: 'あなたの商品・サービスの価値を、お客様に正しく伝える。24時間働く営業ツールとして機能するホームページを制作します。',
         href: 'https://portfolio.awakeinc.co.jp/',
         pricing: {
           standard: {
@@ -54,8 +55,8 @@ export const COMPANY_DATA = {
       },
       ai: {
         title: 'AIコンサルティング',
-        description: '人件費削減と生産性向上を同時に実現するAI導入',
-        longDescription: '社員がAIを使いこなせるようになることで、定型業務から解放。空いた時間を付加価値の高い業務に集中でき、企業の競争力が向上します。',
+        description: '業務効率化と生産性向上を同時に実現',
+        longDescription: '繰り返し作業から解放され、より創造的な仕事に時間を使えるように。あなたの会社に最適なAI活用方法をご提案します。',
         href: '/services/ai',
         pricing: {
           basic: {
@@ -74,8 +75,8 @@ export const COMPANY_DATA = {
       },
       ec: {
         title: 'Amazon代理店サービス',
-        description: '売れるまで費用0円。リスクなしで新しい販路を開拓',
-        longDescription: '在庫リスク・初期費用・運用コストを一切抴えずにAmazon販売を開始。プロが作る商品ページと広告運用で、眼る商品も売れる商品に変えます。',
+        description: '新しい販路を、リスクなく開拓',
+        longDescription: '初期費用0円、在庫リスクなし。売れてから手数料をいただく完全成果報酬制で、新しい販売チャネルに挑戦できます。',
         href: '/services/ec',
         pricing: {
           commission: {

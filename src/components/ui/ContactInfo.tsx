@@ -9,7 +9,7 @@ import { ContactMethod } from '@/lib/unified-components'
 const ContactInfo = memo(function ContactInfo() {
   return (
     <div className="bg-white rounded-2xl p-8 shadow-sm border border-gray-100">
-      <h3 className="text-2xl font-medium text-gray-900 mb-8">連絡先・アクセス</h3>
+      <h3 className="text-2xl font-medium text-gray-900 mb-8">お問い合わせ</h3>
       
       
       {/* 🎯 統合された連絡先情報 */}
@@ -41,10 +41,14 @@ const ContactInfo = memo(function ContactInfo() {
         />
       </div>
 
-      {/* 🎯 相談情報 - データ統合済み */}
+      {/* 🎯 会社情報 */}
       <div className="mt-8 pt-8 border-t border-gray-200">
-        <div className="bg-gray-50 rounded-lg p-6">
-          <h4 className="font-medium text-gray-900 mb-3">ご相談について</h4>
+        <div className="mb-4">
+          <h4 className="font-bold text-gray-900">{COMPANY_DATA.basic.name}</h4>
+          <p className="text-sm text-gray-600 mt-1">{COMPANY_DATA.basic.mission}</p>
+        </div>
+        
+        <div className="bg-gray-50 rounded-lg p-6 mt-6">
           <ul className="text-sm text-gray-600 space-y-2">
             {COMPANY_DATA.consultation.features.map((feature, index) => (
               <li key={index}>• {feature}</li>
