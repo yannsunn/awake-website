@@ -74,7 +74,8 @@
       "Bash(npx tsc:*)",
       "Bash(./git_commit.sh)",
       "Bash(bash:*)",
-      "WebFetch(domain:www.awakeinc.co.jp)"
+      "WebFetch(domain:www.awakeinc.co.jp)",
+      "Bash(git remote get-url:*)"
     ],
     "deny": []
   }
