@@ -57,8 +57,12 @@ const HeroSection = memo(function HeroSection() {
             {COMPANY_DATA.basic.tagline}
           </h1>
           
-          <p className="text-lg md:text-xl text-gray-600 mb-8 font-light leading-relaxed">
+          <p className="text-lg md:text-xl text-gray-600 mb-4 font-light leading-relaxed">
             {COMPANY_DATA.basic.description}
+          </p>
+          
+          <p className="text-base md:text-lg text-gray-500 mb-8 font-light leading-relaxed">
+            {COMPANY_DATA.basic.subMessage}
           </p>
           
           
@@ -91,16 +95,15 @@ const HeroSection = memo(function HeroSection() {
               href="#contact" 
               className="group inline-flex items-center justify-center px-8 py-4 bg-gray-900 text-white font-medium rounded-lg hover:bg-gray-800"
             >
-              <span>💬</span>
-              <span className="ml-2">お問い合わせ</span>
+              <span>無料相談を始める</span>
               <ArrowRight className="ml-2 h-5 w-5" />
             </Link>
             
             <Link 
-              href="/about" 
+              href="#services" 
               className="inline-flex items-center justify-center px-8 py-4 bg-white text-gray-900 font-medium rounded-lg border border-gray-200 hover:bg-gray-50"
             >
-              会社概要を見る
+              サービス詳細を見る
             </Link>
           </div>
         </div>
