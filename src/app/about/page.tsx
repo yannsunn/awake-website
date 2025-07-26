@@ -47,58 +47,45 @@ const values = [
 const promises = [
   {
     icon: "💼",
-    title: "結果保証",
-    description: "3か月以内に成果を出す"
+    title: "結果にコミット",
+    description: "3ヶ月以内に必ず成果を出します。出なければ費用はいただきません。"
   },
   {
     icon: "⚡",
-    title: "48時間対応",
-    description: "問い合わせから2営業日以内"
+    title: "スピード対応",
+    description: "お問い合わせから48時間以内に必ずご返答。ビジネスのスピードを止めません。"
   },
   {
     icon: "🤝",
-    title: "透明性",
-    description: "すべてのコストを明確に提示"
-  },
-  {
-    icon: "📈",
-    title: "継続最適化",
-    description: "常に最新・最適な状態を維持"
-  },
-  {
-    icon: "🔒",
-    title: "成果報酬",
-    description: "結果が出なければ費用不要"
+    title: "完全な透明性",
+    description: "隠れたコストは一切なし。すべての費用を最初に明確にお伝えします。"
   }
 ]
 
 // 🚀 サービス特徴データ
 const features = [
   {
-    title: "コストパフォーマンス",
+    title: "必要最小限の投資で開始",
     items: [
-      "必要最小限の投資で最大の成果を実現",
-      "コストを抑えて高品質なサービスを提供",
-      "無駄な機能を省き、本質的な価値に集中",
-      "ランニングコストの最適化"
+      "小さく始めて、成果を見ながら拡大",
+      "無駄な機能は省き、本質的な価値に集中",
+      "段階的な導入でリスクを最小化"
     ]
   },
   {
-    title: "実績に基づく確実性",
+    title: "実績に基づく確実な提案",
     items: [
-      "豊富な導入実績とノウハウ",
-      "投資効果を最大化する提案",
-      "業界別・規模別の成功パターンを熟知",
-      "失敗リスクを最小化する段階的導入"
+      "業界別・規模別の成功パターンを活用",
+      "投資効果を最大化する設計",
+      "失敗しない導入プロセス"
     ]
   },
   {
-    title: "継続的な成長支援",
+    title: "継続的な最適化",
     items: [
-      "初期導入後も月額コストを抑制",
-      "必要に応じた段階的な機能追加",
-      "成果に応じた最適化提案",
-      "長期パートナーとしての伴走"
+      "導入後も月額コストを抑制",
+      "成果に応じた改善提案",
+      "長期的な成長を支援"
     ]
   }
 ]
@@ -135,13 +122,13 @@ export default function AboutPage() {
 
       {/* Hero Section */}
       <PageHeader
-        title="会社概要"
-        subtitle="信頼の絆で、共に成長し続ける企業"
+        title="私たちが、お客様に選ばれる理由"
+        subtitle="「高すぎるIT投資」を、「適正な成長投資」に変える"
         className="bg-white"
       >
         <p className={STYLES.text.body.medium + " max-w-3xl mx-auto"}>
-          限られた経営資源を最適配分し、<br className="hidden sm:block" />
-          お客様の本質的な成長を支援する、コストパフォーマンス重視の経営パートナーです。
+          株式会社Awakeは、無駄を削ぎ落とし、<br className="hidden sm:block" />
+          本当に価値のある投資だけに集中できる環境を創ります。
         </p>
       </PageHeader>
 
@@ -162,35 +149,37 @@ export default function AboutPage() {
             </div>
             
             <h2 className={STYLES.heading.h2.section + " mb-6"}>
-              代表挨拶
+              代表メッセージ
             </h2>
             
             <div className="space-y-6 text-gray-700 leading-relaxed">
               <div className="mb-4">
-                <p className={STYLES.text.emphasis.strong + " mb-2"}>代表取締役CEO　{COMPANY_DATA.basic.ceo}</p>
-                <p className={STYLES.text.body.medium}>お客様、パートナー企業の皆様、そして当社に関わるすべての方々へ</p>
+                <p className={STYLES.text.emphasis.strong + " text-xl mb-4"}>お客様の成功が、私たちの成功です</p>
+                <p className={STYLES.text.emphasis.medium}>代表取締役CEO　{COMPANY_DATA.basic.ceo}</p>
               </div>
               
               <p className={STYLES.text.description.medium}>
-                静岡県清水区で生まれ育ちました。幼稚園から中学校まで不登校を経験し、ゲームやネットコミュニティに没頭する日々でした。その中で、情報技術の可能性と、人と人とのつながりの大切さを学びました。
+                100万円以上かけて作ったホームページが、活用されずに眠っている。<br />
+                そんな中小企業の現実を目の当たりにして、私は決意しました。<br />
+                「この無駄をなくし、本当に必要な投資に資金を回せる仕組みを作ろう」と。
               </p>
               
               <p className={STYLES.text.description.medium}>
-                高校卒業後はトヨタ系ディーラーで整備士として、「お客様のために最善を尽くす」というプロフェッショナルの姿勢を学びました。その後物販事業を経て、2020年に株式会社Awakeを設立。これまでの多様な経験が、今の経営哲学の根幹となっています。
+                静岡県清水区で育ち、不登校を経験した私は、ゲームやネットの世界で「つながり」の大切さを学びました。トヨタ系ディーラーで整備士として働き、「お客様のために最善を尽くす」プロフェッショナルの姿勢を身につけました。
               </p>
               
               <p className={STYLES.text.description.medium}>
-                現在の事業を始めたきっかけは、多くの中小企業が100万円以上もかけてホームページを作ったのに、活用できずに死蔵させてしまっている現実でした。その資金があれば、業務効率化や人材育成に投資できたはず。そんな無駄をなくし、お客様の経営資源を最適配分するお手伝いがしたいと思いました。
+                これらすべての経験が、今の経営理念につながっています。
               </p>
               
-              <p className={STYLES.text.description.medium}>
-                私たちの強みは、コストパフォーマンスの高いサービスを提供すること。そして、削減したコストを、お客様が本当に必要とする投資に回していただくことです。これは、私自身が多様な経験を通じて学んだ「無駄を削ぎ、本質に集中する」という哲学から生まれました。
-              </p>
-              
-              <div className="pt-6 border-t border-gray-200">
-                <p className={STYLES.text.emphasis.strong + " text-lg sm:text-xl mb-2"}>つながるすべての人に、感謝と繁栄を。</p>
-                <p className={STYLES.text.description.medium + " text-gray-600"}>お客様の成功が、私たちの成功です。これからも、お客様のビジネスの成長を心から支援し、共に歩み続けてまいります。</p>
+              <div className="bg-gray-50 rounded-lg p-6 my-6">
+                <p className={STYLES.text.emphasis.strong + " text-lg sm:text-xl mb-2 text-center"}>「つながるすべての人に、感謝と繁栄を」</p>
               </div>
+              
+              <p className={STYLES.text.description.medium}>
+                お客様の経営資源を最適に配分し、共に成長していく。<br />
+                それが、私たちAwakeの使命です。
+              </p>
             </div>
           </div>
           
@@ -244,16 +233,19 @@ export default function AboutPage() {
       <ContentSection ariaLabel="私たちの約束">
         <div className="text-center mb-8 sm:mb-12 lg:mb-16">
           <h2 className={STYLES.heading.h2.section + " mb-4"}>
-            私たちの約束
+            なぜAwakeなのか
           </h2>
+          <p className={STYLES.text.body.large}>
+            私たちの3つの約束
+          </p>
         </div>
         
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 sm:gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
           {promises.map((promise, index) => (
-            <div key={index} className="text-center p-4 sm:p-6 rounded-xl">
-              <div className="text-3xl sm:text-4xl mb-4">{promise.icon}</div>
-              <h3 className={STYLES.heading.h3.emphasis + " mb-2"}>{promise.title}</h3>
-              <p className={STYLES.text.description.small + " text-gray-600"}>{promise.description}</p>
+            <div key={index} className="bg-white rounded-2xl p-8 shadow-sm border border-gray-100">
+              <div className="text-4xl mb-4">{promise.icon}</div>
+              <h3 className={STYLES.heading.h3.emphasis + " mb-3"}>{promise.title}</h3>
+              <p className={STYLES.text.description.medium}>{promise.description}</p>
             </div>
           ))}
         </div>
@@ -265,6 +257,9 @@ export default function AboutPage() {
           <h2 className={STYLES.heading.h2.section + " mb-4"}>
             サービスの特徴
           </h2>
+          <p className={STYLES.text.body.large}>
+            コストを抑えながら、成果を最大化する仕組み
+          </p>
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
@@ -285,11 +280,14 @@ export default function AboutPage() {
       </ContentSection>
 
       {/* Company Values Section */}
-      <ContentSection ariaLabel="企業価値観">
+      <ContentSection ariaLabel="私たちの価値観">
         <div className="text-center mb-8 sm:mb-12 lg:mb-16">
           <h2 className={STYLES.heading.h2.section + " mb-4"}>
-            企業価値観
+            私たちの価値観
           </h2>
+          <p className={STYLES.text.body.large}>
+            お客様と共に成長し続けるために
+          </p>
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-12">
@@ -297,8 +295,8 @@ export default function AboutPage() {
             const IconComponent = value.icon
             return (
               <div key={index} className="flex items-start p-6 sm:p-8 bg-white rounded-xl shadow-sm">
-                <div className="w-16 h-16 bg-gray-900 rounded-full flex items-center justify-center mr-6 flex-shrink-0">
-                  <IconComponent className="h-8 w-8 text-white" />
+                <div className="text-3xl mr-4 mt-1">
+                  {value.icon === Target ? "🎯" : value.icon === Zap ? "📚" : value.icon === Heart ? "🤝" : "🌱"}
                 </div>
                 <div>
                   <h3 className={STYLES.heading.h3.card + " mb-3"}>{value.title}</h3>
@@ -314,11 +312,14 @@ export default function AboutPage() {
       <ContentSection className="bg-gradient-to-br from-gray-900 to-gray-800 text-white">
         <div className="text-center">
           <h2 className={STYLES.heading.h2.section + " text-white mb-6"}>
-            一緒に成長しませんか？
+            次のステップへ
           </h2>
+          <p className={STYLES.text.body.large + " text-white mb-4"}>
+            まずは、お話を聞かせてください
+          </p>
           <p className={STYLES.text.body.medium + " text-gray-300 mb-8 max-w-3xl mx-auto"}>
-            私たちは、お客様のビジネス成功を真剣に考えるパートナーです。<br className="hidden sm:block" />
-            まずはお気軽にご相談ください。
+            あなたのビジネスの課題と理想の姿。<br className="hidden sm:block" />
+            無料相談で、最適な解決策を一緒に考えましょう。
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -326,17 +327,17 @@ export default function AboutPage() {
               href="/#contact"
               variant="secondary"
               className="bg-white text-gray-900 hover:bg-gray-100"
-              ariaLabel="お問い合わせページに移動"
+              ariaLabel="無料相談を予約する"
             >
-              お問い合わせ
+              無料相談を予約する
             </AccessibleButton>
             <AccessibleButton
-              href="/services/web"
+              href="/#services"
               variant="outline"
               className="border-white text-white hover:bg-white hover:text-gray-900"
-              ariaLabel="サービス詳細ページに移動"
+              ariaLabel="サービス一覧を見る"
             >
-              サービス一覧
+              サービス一覧を見る
             </AccessibleButton>
           </div>
         </div>
