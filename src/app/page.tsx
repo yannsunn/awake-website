@@ -202,13 +202,13 @@ export default function HomePage() {
                       <span className={STYLES.text.description.small + " text-gray-500"}>〜</span>
                     </div>
                     
-                    <div className="flex flex-col sm:flex-row gap-3">
+                    <div className="flex flex-row gap-3">
                       {service.buttons.map((button, btnIdx) => (
                         <AccessibleButton
                           key={btnIdx}
                           href={button.href}
                           variant={btnIdx === 0 ? "primary" : "outline"}
-                          className="flex-1"
+                          className="flex-1 text-sm sm:text-base"
                           {...(button.href.startsWith('http') && {
                             target: '_blank',
                             rel: 'noopener noreferrer'
