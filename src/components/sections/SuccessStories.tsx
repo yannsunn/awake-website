@@ -42,7 +42,7 @@ const SuccessStories = memo(function SuccessStories() {
             <div key={index} className="bg-gray-50 rounded-xl p-8 text-center">
               <div className="text-4xl mb-4">{story.icon}</div>
               <h3 className={STYLES.heading.h3.emphasis + " mb-2"}>
-                "{story.title}"
+                &ldquo;{story.title}&rdquo;
               </h3>
               <p className={STYLES.text.body.medium + " text-gray-700 mb-3"}>
                 {story.company}

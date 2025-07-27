@@ -1,6 +1,7 @@
 'use client'
 
 import { memo } from 'react'
+import Link from 'next/link'
 import { STYLES } from '@/lib/constants'
 
 const WhyNowCTA = memo(function WhyNowCTA() {
@@ -71,12 +72,12 @@ const WhyNowCTA = memo(function WhyNowCTA() {
             診断後の押し売りは一切ありません
           </p>
           
-          <a
+          <Link
             href="/#contact"
             className="inline-flex items-center justify-center px-8 py-4 bg-white text-gray-900 font-medium rounded-lg hover:bg-gray-100 transition-colors"
           >
             今すぐ無料診断を申し込む
-          </a>
+          </Link>
           
           <p className={STYLES.text.description.medium + " text-gray-300 mt-6"}>
             お電話でのご相談も承ります<br />

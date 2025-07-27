@@ -20,9 +20,7 @@ export const enhancedOrganizationSchema = {
     "width": 1200,
     "height": 630
   },
-  "sameAs": [
-    COMPANY_DATA.contact.lineUrl
-  ],
+  "sameAs": [],
   "foundingDate": "2020-01-01",
   "founder": {
     "@type": "Person",

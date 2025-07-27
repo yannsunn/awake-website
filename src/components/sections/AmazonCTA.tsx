@@ -1,6 +1,7 @@
 'use client'
 
 import { memo } from 'react'
+import Link from 'next/link'
 import { STYLES } from '@/lib/constants'
 
 const AmazonCTA = memo(function AmazonCTA() {
@@ -56,12 +57,12 @@ const AmazonCTA = memo(function AmazonCTA() {
             具体的な数値でお示しします。
           </p>
           
-          <a
+          <Link
             href="/#contact"
             className="inline-flex items-center justify-center px-8 py-4 bg-white text-gray-900 font-medium rounded-lg hover:bg-gray-100 transition-colors"
           >
             30秒で申し込み完了
-          </a>
+          </Link>
           
           <p className={STYLES.text.description.medium + " text-gray-300 mt-6"}>
             お急ぎの方はお電話でも<br />

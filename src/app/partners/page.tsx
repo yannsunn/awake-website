@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Link from 'next/link'
 import { COMPANY_DATA } from '@/lib/company-data'
 import PageTemplate, { ContentSection } from '@/components/layout/PageTemplate'
 import { STYLES } from '@/lib/constants'
@@ -227,12 +228,12 @@ export default function PartnersPage() {
             お気軽にお問い合わせください。
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a
+            <Link
               href="/#contact"
               className={STYLES.button.primary}
             >
               お問い合わせ
-            </a>
+            </Link>
           </div>
         </div>
       </ContentSection>

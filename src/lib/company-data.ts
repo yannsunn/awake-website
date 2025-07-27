@@ -117,7 +117,8 @@ export const COMPANY_DATA = {
     keywords: '株式会社Awake, ホームページ制作, AIコンサルティング, Amazon代理店, デジタル変革',
     ogImage: '/assets/images/ogp.jpg',
     ogUrl: 'https://awakeinc.co.jp/'
-  }
+  },
+  url: 'https://awakeinc.co.jp'
 } as const
 
 // 🚀 Contact Methods - Prioritized by Response Speed
