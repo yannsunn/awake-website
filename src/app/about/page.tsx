@@ -152,34 +152,97 @@ export default function AboutPage() {
               代表メッセージ
             </h2>
             
-            <div className="space-y-6 text-gray-700 leading-relaxed">
-              <div className="mb-4">
-                <p className={STYLES.text.emphasis.strong + " text-xl mb-4"}>お客様の成功が、私たちの成功です</p>
-                <p className={STYLES.text.emphasis.medium}>代表取締役CEO　{COMPANY_DATA.basic.ceo}</p>
+            <div className="space-y-8 text-gray-700 leading-relaxed">
+              <div className="mb-6">
+                <h3 className={STYLES.text.emphasis.strong + " text-xl mb-2"}>お客様と共に成長し続ける企業を目指して</h3>
+                <p className={STYLES.text.emphasis.medium + " mb-4"}>代表取締役CEO　{COMPANY_DATA.basic.ceo}</p>
+                
+                <p className={STYLES.text.description.medium + " mb-4"}>
+                  株式会社Awakeの田形でございます。
+                </p>
+                
+                <p className={STYLES.text.description.medium + " mb-4"}>
+                  私がこの事業を立ち上げたきっかけは、ある経営者様との出会いでした。「100万円以上投資してホームページを制作したが、期待した成果が得られない」というお悩みをお聞きし、強い問題意識を抱きました。
+                </p>
+                
+                <p className={STYLES.text.description.medium}>
+                  その投資額があれば、人材育成や設備投資など、より直接的な事業成長に活用できたはずです。このような経営資源の非効率な配分を解決したい。その想いが、現在の事業の原点となっています。
+                </p>
               </div>
               
-              <p className={STYLES.text.description.medium}>
-                100万円以上かけて作ったホームページが、活用されずに眠っている。<br />
-                そんな中小企業の現実を目の当たりにして、私は決意しました。<br />
-                「この無駄をなくし、本当に必要な投資に資金を回せる仕組みを作ろう」と。
-              </p>
-              
-              <p className={STYLES.text.description.medium}>
-                静岡県清水区で育ち、不登校を経験した私は、ゲームやネットの世界で「つながり」の大切さを学びました。トヨタ系ディーラーで整備士として働き、「お客様のために最善を尽くす」プロフェッショナルの姿勢を身につけました。
-              </p>
-              
-              <p className={STYLES.text.description.medium}>
-                これらすべての経験が、今の経営理念につながっています。
-              </p>
-              
-              <div className="bg-gray-50 rounded-lg p-6 my-6">
-                <p className={STYLES.text.emphasis.strong + " text-lg sm:text-xl mb-2 text-center"}>「つながるすべての人に、感謝と繁栄を」</p>
+              <div>
+                <h3 className={STYLES.heading.h3.emphasis + " mb-4"}>多様な経験が育んだ経営理念</h3>
+                
+                <p className={STYLES.text.description.medium + " mb-4"}>
+                  静岡県清水区で生まれ育った私は、幼少期から中学時代にかけて不登校を経験しました。その期間、オンラインコミュニティでの交流を通じて、物理的な距離を超えた「信頼関係」の大切さを学びました。
+                </p>
+                
+                <p className={STYLES.text.description.medium + " mb-4"}>
+                  高校卒業後は、トヨタ系ディーラーで自動車整備士として勤務。「お客様の安全を預かる責任」と「見えない部分にこそ誠実に取り組む姿勢」を、プロフェッショナルの先輩方から学びました。
+                </p>
+                
+                <p className={STYLES.text.description.medium}>
+                  その後、物販事業での起業を経て、2020年に株式会社Awakeを設立。これまでの多様な経験すべてが、現在の経営理念の礎となっています。
+                </p>
               </div>
               
-              <p className={STYLES.text.description.medium}>
-                お客様の経営資源を最適に配分し、共に成長していく。<br />
-                それが、私たちAwakeの使命です。
-              </p>
+              <div>
+                <h3 className={STYLES.heading.h3.emphasis + " mb-4"}>私たちが提供する価値</h3>
+                
+                <div className="bg-gray-50 rounded-lg p-6 mb-4">
+                  <p className={STYLES.text.emphasis.strong + " text-lg text-center mb-2"}>「適正コストで最大の価値を」</p>
+                </div>
+                
+                <p className={STYLES.text.description.medium + " mb-4"}>
+                  これは単なるスローガンではありません。<br />
+                  お客様の限られた経営資源を最適に配分し、本質的な成長を実現するという、私たちの約束です。
+                </p>
+                
+                <p className={STYLES.text.description.medium + " mb-4"}>
+                  高額な初期投資や、不透明な追加費用。<br />
+                  そういった従来のIT業界の慣習を変えたい。
+                </p>
+                
+                <p className={STYLES.text.description.medium}>
+                  必要最小限のコストで最大の成果を生み出し、削減できた資金を次の成長投資に充てていただく。<br />
+                  それが、私たちの考える真の支援です。
+                </p>
+              </div>
+              
+              <div>
+                <h3 className={STYLES.heading.h3.emphasis + " mb-4"}>つながるすべての人に、感謝と繁栄を</h3>
+                
+                <p className={STYLES.text.description.medium + " mb-4"}>
+                  この言葉には、私たちの根本的な価値観が込められています。
+                </p>
+                
+                <p className={STYLES.text.description.medium + " mb-4"}>
+                  お客様の成功は、私たちの成功。<br />
+                  パートナー企業の発展は、私たちの発展。<br />
+                  社員の成長は、会社の成長。
+                </p>
+                
+                <p className={STYLES.text.description.medium}>
+                  関わるすべての方々と共に成長し、繁栄を分かち合える関係を築いていく。それが、株式会社Awakeの目指す姿です。
+                </p>
+              </div>
+              
+              <div>
+                <h3 className={STYLES.heading.h3.emphasis + " mb-4"}>最後に</h3>
+                
+                <p className={STYLES.text.description.medium + " mb-4"}>
+                  私たちは決して大きな会社ではありません。<br />
+                  しかし、お客様一社一社と真摯に向き合い、確実な成果をお届けする姿勢においては、どこにも負けない自信があります。
+                </p>
+                
+                <p className={STYLES.text.description.medium + " mb-4"}>
+                  もし現在、IT投資やコスト削減でお悩みでしたら、ぜひ一度ご相談ください。お客様のビジネスに最適なソリューションを、共に考えさせていただければ幸いです。
+                </p>
+                
+                <p className={STYLES.text.description.medium}>
+                  皆様との新たな出会いを、心よりお待ちしております。
+                </p>
+              </div>
             </div>
           </div>
           
@@ -190,11 +253,23 @@ export default function AboutPage() {
               </div>
               <h3 className={STYLES.heading.h3.card + " mb-2"}>{COMPANY_DATA.basic.ceo}</h3>
               <p className={STYLES.text.emphasis.medium + " text-lg mb-4"}>代表取締役CEO</p>
-              <p className={STYLES.text.description.small + " text-gray-600"}>
-                静岡県清水区出身。トヨタの整備士を経て物販会社を起業。
-                2020年（令和2年）に株式会社Awakeを設立し、現在5期目（令和6年度）。
-              <br />信頼の関係づくりを第一に、お客様の繁栄を共に目指している。
-              </p>
+              <div className="space-y-4">
+                <div>
+                  <h4 className={STYLES.text.emphasis.medium + " mb-2"}>略歴</h4>
+                  <ul className={STYLES.text.description.small + " text-gray-600 space-y-1"}>
+                    <li>静岡県清水区出身</li>
+                    <li>トヨタ系ディーラー 自動車整備士</li>
+                    <li>物販会社起業を経て、2020年 株式会社Awake設立</li>
+                    <li>現在、5期目（令和6年度）</li>
+                  </ul>
+                </div>
+                <div>
+                  <h4 className={STYLES.text.emphasis.medium + " mb-2"}>経営理念</h4>
+                  <p className={STYLES.text.description.small + " text-gray-600"}>
+                    「つながるすべての人に、感謝と繁栄を」
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
