@@ -17,6 +17,7 @@ export const COMPANY_DATA = {
     },
     phone: '050-7115-4948',
     email: 'shop@awakeinc.co.jp',
+    line: '@awakeinc',
     website: 'https://awakeinc.co.jp/',
     businessHours: {
       weekdays: '平日 9:00-18:00',
@@ -123,6 +124,19 @@ export const COMPANY_DATA = {
 
 // 🚀 Contact Methods - Prioritized by Response Speed
 export const CONTACT_METHODS = [
+  {
+    id: 'line',
+    name: '公式LINE',
+    icon: 'message-circle',
+    priority: 1,
+    description: '最速で返信！まずはLINEでお気軽に',
+    action: {
+      type: 'link',
+      url: 'https://lin.ee/awakeinc',
+      text: 'LINEで相談する'
+    },
+    color: 'green'
+  },
   {
     id: 'phone', 
     name: '電話',

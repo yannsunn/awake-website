@@ -448,12 +448,23 @@ export default function PartnersPage() {
             無料相談で、ベストな解決策をご提案します。
           </p>
           
-          <Link
-            href="/#contact"
-            className="inline-flex items-center justify-center px-8 py-4 bg-white text-gray-900 font-medium rounded-lg hover:bg-gray-100 transition-colors mb-6"
-          >
-            無料相談を予約する
-          </Link>
+          <div className="flex flex-col gap-4 items-center mb-6">
+            <Link
+              href="https://lin.ee/awakeinc"
+              className="inline-flex items-center justify-center px-8 py-4 bg-green-500 text-white font-medium rounded-lg hover:bg-green-600 transition-colors"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              LINEで相談する
+            </Link>
+            
+            <Link
+              href="/#contact"
+              className="inline-flex items-center justify-center px-8 py-4 bg-white text-gray-900 font-medium rounded-lg hover:bg-gray-100 transition-colors"
+            >
+              無料相談を予約する
+            </Link>
+          </div>
           
           <p className={STYLES.text.body.medium + " text-gray-300"}>
             お電話でのご相談<br />

@@ -207,7 +207,22 @@ export default function FAQPage() {
             お気軽にお問い合わせください。専門スタッフが丁寧にお答えいたします。
           </p>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
+            
+            <div className="bg-white p-4 sm:p-6 rounded-xl shadow-sm">
+              <h3 className={STYLES.heading.h3.emphasis + " mb-2"}>💬 公式LINE</h3>
+              <p className={STYLES.text.description.small + " text-gray-600 mb-4"}>最速返信！お気軽に</p>
+              <AccessibleButton 
+                href="https://lin.ee/awakeinc"
+                variant="minimal"
+                className="text-green-600 hover:text-green-700 font-medium"
+                ariaLabel="LINEでお問い合わせ"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                LINEで相談する
+              </AccessibleButton>
+            </div>
             
             <div className="bg-white p-4 sm:p-6 rounded-xl shadow-sm">
               <h3 className={STYLES.heading.h3.emphasis + " mb-2"}>📞 電話</h3>
