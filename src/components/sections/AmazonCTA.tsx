@@ -57,12 +57,23 @@ const AmazonCTA = memo(function AmazonCTA() {
             具体的な数値でお示しします。
           </p>
           
-          <Link
-            href="/#contact"
-            className="inline-flex items-center justify-center px-8 py-4 bg-white text-gray-900 font-medium rounded-lg hover:bg-gray-100 transition-colors"
-          >
-            30秒で申し込み完了
-          </Link>
+          <div className="flex flex-col md:flex-row gap-4 justify-center items-center">
+            <Link
+              href="https://lin.ee/awakeinc"
+              className="inline-flex items-center justify-center px-8 py-4 bg-green-500 text-white font-medium rounded-lg hover:bg-green-600 transition-colors"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              LINEで相談する
+            </Link>
+            
+            <Link
+              href="/#contact"
+              className="inline-flex items-center justify-center px-8 py-4 bg-white text-gray-900 font-medium rounded-lg hover:bg-gray-100 transition-colors"
+            >
+              30秒で申し込み完了
+            </Link>
+          </div>
           
           <p className={STYLES.text.description.medium + " text-gray-300 mt-6"}>
             お急ぎの方はお電話でも<br />
