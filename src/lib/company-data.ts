@@ -33,7 +33,7 @@ export const COMPANY_DATA = {
     details: {
       web: {
         title: 'ホームページ制作',
-        description: '売上に直結するウェブサイトを、適正価格で',
+        description: '売上に直結するウェブサイトを適正価格で',
         longDescription: 'あなたの商品・サービスの価値を、お客様に正しく伝える。24時間働く営業ツールとして機能するホームページを制作します。',
         href: 'https://portfolio.awakeinc.co.jp/',
         pricing: {
