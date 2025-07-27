@@ -40,7 +40,7 @@ const services = [
     ],
     buttons: [
       { text: '詳しく見る', href: COMPANY_DATA.services.details.web.href },
-      { text: '制作事例を見る', href: COMPANY_DATA.services.details.web.href }
+      { text: '事例を見る', href: COMPANY_DATA.services.details.web.href }
     ]
   },
   {
@@ -58,7 +58,7 @@ const services = [
     ],
     buttons: [
       { text: '詳しく見る', href: COMPANY_DATA.services.details.ai.href },
-      { text: '活用例を見る', href: COMPANY_DATA.services.details.ai.href }
+      { text: '活用例', href: COMPANY_DATA.services.details.ai.href }
     ]
   },
   {
@@ -76,7 +76,7 @@ const services = [
     ],
     buttons: [
       { text: '詳しく見る', href: COMPANY_DATA.services.details.ec.href },
-      { text: '無料診断を受ける', href: COMPANY_DATA.services.details.ec.href }
+      { text: '無料診断', href: COMPANY_DATA.services.details.ec.href }
     ]
   }
 ]
@@ -202,13 +202,13 @@ export default function HomePage() {
                       <span className={STYLES.text.description.small + " text-gray-500"}>〜</span>
                     </div>
                     
-                    <div className="flex flex-row gap-3">
+                    <div className="flex flex-row gap-2">
                       {service.buttons.map((button, btnIdx) => (
                         <AccessibleButton
                           key={btnIdx}
                           href={button.href}
                           variant={btnIdx === 0 ? "primary" : "outline"}
-                          className="flex-1 text-sm sm:text-base"
+                          className="flex-1 text-xs sm:text-sm lg:text-base px-3 py-2 whitespace-nowrap"
                           {...(button.href.startsWith('http') && {
                             target: '_blank',
                             rel: 'noopener noreferrer'
