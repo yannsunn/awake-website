@@ -1,4 +1,5 @@
 import { Metadata } from 'next'
+import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { ServiceHero } from '@/components/sections/ServiceHero'
 import { ProcessSteps } from '@/components/sections/ProcessSteps'
@@ -25,8 +26,9 @@ type Params = Promise<{ slug: string }>
 const serviceData = {
   web: {
     title: COMPANY_DATA.services.details.web.title,
-    subtitle: COMPANY_DATA.services.details.web.subtitle,
+    subtitle: '',
     description: COMPANY_DATA.services.details.web.description,
+    subDescription: '',
     icon: '🌐',
     features: [
       {
@@ -52,18 +54,22 @@ const serviceData = {
     ],
     process: [
       {
+        step: '1',
         title: 'ヒアリング',
         description: 'お客様のビジネスや目標を詳しくお聞きし、最適な提案を行います'
       },
       {
+        step: '2',
         title: 'デザイン提案',
         description: 'ブランドイメージに合わせた魅力的なデザインをご提案'
       },
       {
+        step: '3',
         title: '開発・実装',
         description: '最新技術を活用し、高品質なWebサイトを構築'
       },
       {
+        step: '4',
         title: '納品・運用開始',
         description: 'テスト完了後、本番環境へ公開し運用をスタート'
       }
@@ -98,18 +104,22 @@ const serviceData = {
     ],
     process: [
       {
+        step: '1',
         title: '現状分析（1週間）',
         description: '業務フローの可視化、AI活用ポイントの特定、期待効果の試算'
       },
       {
+        step: '2',
         title: '実証実験（2-3週間）',
         description: '小規模なPoC開発、実際の業務での検証、効果測定とフィードバック'
       },
       {
+        step: '3',
         title: '本格導入（1ヶ月）',
         description: 'システムの構築、社内体制の整備、運用ルールの策定'
       },
       {
+        step: '4',
         title: '継続改善（永続的）',
         description: '精度向上の取り組み、新技術への対応、活用範囲の拡大'
       }
@@ -145,18 +155,22 @@ const serviceData = {
     ],
     process: [
       {
+        step: '1',
         title: '無料診断（即日）',
         description: '商品の市場性とポテンシャルを分析'
       },
       {
+        step: '2',
         title: '戦略立案（3日）',
         description: '競合分析と販売戦略の策定'
       },
       {
+        step: '3',
         title: '出品準備（1週間）',
         description: '商品ページ作成と各種設定'
       },
       {
+        step: '4',
         title: '販売開始（2週間〜）',
         description: 'テスト販売から本格展開へ'
       }
@@ -240,7 +254,7 @@ export default async function ServicePage(
                 たった4ステップで、業務が劇的に変わる
               </p>
             </div>
-            <ProcessSteps steps={service.process} />
+            <ProcessSteps title="" steps={service.process} />
           </div>
         </section>
         
@@ -262,7 +276,7 @@ export default async function ServicePage(
           ctaHref="/#contact"
           secondaryCtaText="サービス詳細を見る"
           secondaryCtaHref="#support"
-          subDescription={service.subDescription}
+          subDescription={'subDescription' in service ? service.subDescription : undefined}
         />
         
         <WhyAmazon />
@@ -289,7 +303,7 @@ export default async function ServicePage(
                 最短2週間で販売開始
               </p>
             </div>
-            <ProcessSteps steps={service.process} />
+            <ProcessSteps title="" steps={service.process} />
           </div>
         </section>
         
@@ -324,7 +338,7 @@ export default async function ServicePage(
           <h2 className={cn(STYLES.heading.h2.section, "text-center mb-12")}>
             導入までの流れ
           </h2>
-          <ProcessSteps steps={service.process} />
+          <ProcessSteps title="" steps={service.process} />
         </div>
       </section>
       
@@ -336,12 +350,12 @@ export default async function ServicePage(
           <p className="text-lg text-gray-600 mb-8">
             お客様のビジネスに最適なソリューションをご提案いたします
           </p>
-          <a
+          <Link
             href="/#contact"
             className="inline-flex items-center justify-center px-8 py-4 bg-gray-900 text-white font-medium rounded-lg hover:bg-gray-800"
           >
             お問い合わせはこちら
-          </a>
+          </Link>
         </div>
       </section>
     </PageTemplate>
