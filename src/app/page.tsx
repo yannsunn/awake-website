@@ -156,7 +156,7 @@ export default function HomePage() {
                 <AccessibleButton 
                   href="https://lin.ee/fIaLAjy" 
                   showArrow 
-                  className="w-full sm:w-auto py-3 bg-green-600 hover:bg-green-700 text-white"
+                  className="w-full sm:w-auto py-3 !bg-green-600 hover:!bg-green-700 text-white bg-gradient-to-r from-green-600 to-green-600"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
