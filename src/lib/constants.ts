@@ -27,51 +27,51 @@ export const STYLES = {
     compact: 'bg-white/30 backdrop-blur-none rounded-xl p-6 shadow-sm hover:shadow-md border border-gray-200 transition-all duration-300'
   },
   
-  // Modern Typography - 統一されたフォントシステム（可読性強化）
+  // Modern Typography - 統一されたフォントシステム（超可読性強化）
   heading: {
     // メインヘッダー（ページタイトル）
     h1: {
-      primary: 'text-4xl sm:text-5xl md:text-6xl font-light text-gray-900 tracking-tight leading-tight text-shadow-lg heading-emphasis',
-      hero: 'text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-light text-gray-900 tracking-tight leading-tight text-shadow-lg heading-emphasis'
+      primary: 'text-4xl sm:text-5xl md:text-6xl font-bold text-black tracking-tight leading-tight text-shadow-lg heading-emphasis',
+      hero: 'text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-black tracking-tight leading-tight text-shadow-lg heading-emphasis'
     },
     // セクションヘッダー
     h2: {
-      section: 'text-2xl sm:text-3xl md:text-4xl font-light text-gray-900 tracking-tight text-shadow-lg heading-emphasis',
-      subsection: 'text-xl sm:text-2xl md:text-3xl font-light text-gray-900 text-shadow-md'
+      section: 'text-2xl sm:text-3xl md:text-4xl font-bold text-black tracking-tight text-shadow-lg heading-emphasis',
+      subsection: 'text-xl sm:text-2xl md:text-3xl font-bold text-black text-shadow-md'
     },
     // サブヘッダー
     h3: {
-      card: 'text-lg sm:text-xl font-medium text-gray-900 text-shadow-md',
-      emphasis: 'text-base sm:text-lg font-semibold text-gray-900 text-shadow-md'
+      card: 'text-lg sm:text-xl font-bold text-black text-shadow-md',
+      emphasis: 'text-base sm:text-lg font-bold text-black text-shadow-md'
     },
     // 小見出し
-    h4: 'text-base sm:text-lg font-medium text-gray-900 text-shadow-sm'
+    h4: 'text-base sm:text-lg font-bold text-black text-shadow-sm'
   },
   
-  // 本文テキスト統一システム（可読性強化）
+  // 本文テキスト統一システム（超可読性強化）
   text: {
     // メイン本文
     body: {
-      large: 'text-lg sm:text-xl text-gray-700 leading-relaxed text-shadow-sm',
-      medium: 'text-base sm:text-lg text-gray-700 leading-relaxed text-shadow-sm',
-      small: 'text-sm sm:text-base text-gray-700 leading-relaxed text-shadow-sm'
+      large: 'text-lg sm:text-xl text-black leading-relaxed text-shadow-md font-medium',
+      medium: 'text-base sm:text-lg text-black leading-relaxed text-shadow-md font-medium',
+      small: 'text-sm sm:text-base text-black leading-relaxed text-shadow-sm font-medium'
     },
     // 説明文
     description: {
-      large: 'text-base sm:text-lg text-gray-800 leading-relaxed text-shadow-sm',
-      medium: 'text-sm sm:text-base text-gray-800 leading-relaxed text-shadow-sm',
-      small: 'text-xs sm:text-sm text-gray-800 leading-relaxed'
+      large: 'text-base sm:text-lg text-gray-900 leading-relaxed text-shadow-md font-medium',
+      medium: 'text-sm sm:text-base text-gray-900 leading-relaxed text-shadow-md font-medium',
+      small: 'text-xs sm:text-sm text-gray-900 leading-relaxed text-shadow-sm font-medium'
     },
     // 強調テキスト
     emphasis: {
-      strong: 'font-semibold text-gray-900 text-shadow-md',
-      medium: 'font-medium text-gray-900 text-shadow-sm',
-      subtle: 'font-medium text-gray-800 text-shadow-sm'
+      strong: 'font-bold text-black text-shadow-md',
+      medium: 'font-bold text-black text-shadow-md',
+      subtle: 'font-bold text-gray-900 text-shadow-sm'
     },
     // ラベル・キャプション
     label: {
-      primary: 'text-sm font-medium text-gray-900 text-shadow-sm',
-      secondary: 'text-xs font-medium text-gray-700 uppercase tracking-wider'
+      primary: 'text-sm font-bold text-black text-shadow-sm',
+      secondary: 'text-xs font-bold text-gray-900 uppercase tracking-wider text-shadow-sm'
     }
   },
   

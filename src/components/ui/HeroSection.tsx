@@ -53,15 +53,15 @@ const HeroSection = memo(function HeroSection() {
         <div className="max-w-4xl mx-auto">
           
           {/* 🚀 限界突破 - 感情的訴求 + ストーリーテリング */}
-          <h1 className="text-2xl md:text-3xl lg:text-4xl font-light text-gray-900 mb-6 tracking-tight">
+          <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-black mb-6 tracking-tight text-ultra-readable">
             {COMPANY_DATA.basic.tagline}
           </h1>
           
-          <p className="text-lg md:text-xl text-gray-600 mb-4 font-light leading-relaxed">
+          <p className="text-lg md:text-xl text-black mb-4 font-bold leading-relaxed text-shadow-lg">
             {COMPANY_DATA.basic.description}
           </p>
           
-          <p className="text-base md:text-lg text-gray-500 mb-8 font-light leading-relaxed">
+          <p className="text-base md:text-lg text-black mb-8 font-bold leading-relaxed text-shadow-md">
             {COMPANY_DATA.basic.subMessage}
           </p>
           
@@ -79,10 +79,10 @@ const HeroSection = memo(function HeroSection() {
                 })}
               >
                 <div className="text-3xl mb-4">{service.icon}</div>
-                <h3 className="text-lg font-medium text-gray-900 mb-3">
+                <h3 className="text-lg font-bold text-black mb-3 text-shadow-md">
                   {service.title}
                 </h3>
-                <p className="text-gray-600 text-sm leading-relaxed">
+                <p className="text-black text-sm leading-relaxed font-medium text-shadow-sm">
                   {service.description}
                 </p>
               </Link>
