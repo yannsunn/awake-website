@@ -125,7 +125,7 @@ export default function AboutPage() {
       <PageHeader
         title="私たちが、お客様に選ばれる理由"
         subtitle="「高すぎるIT投資」を、「適正な成長投資」に変える"
-        className="bg-white"
+        className="bg-transparent"
       >
         <p className={STYLES.text.body.medium + " max-w-3xl mx-auto"}>
           株式会社Awakeは、無駄を削ぎ落とし、<br className="hidden sm:block" />
@@ -311,7 +311,7 @@ export default function AboutPage() {
       </ContentSection>
 
       {/* Mission & Vision Section */}
-      <ContentSection className="bg-gray-50" ariaLabel="ミッション・ビジョン">
+      <ContentSection className="bg-gray-overlay" ariaLabel="ミッション・ビジョン">
         <div className="text-center mb-8 sm:mb-12 lg:mb-16">
           <h2 className={STYLES.heading.h2.section + " mb-4"}>
             ミッション・ビジョン
@@ -362,7 +362,7 @@ export default function AboutPage() {
       </ContentSection>
 
       {/* Service Features Section */}
-      <ContentSection className="bg-gray-50" ariaLabel="サービスの特徴">
+      <ContentSection className="bg-gray-overlay" ariaLabel="サービスの特徴">
         <div className="text-center mb-8 sm:mb-12 lg:mb-16">
           <h2 className={STYLES.heading.h2.section + " mb-4"}>
             サービスの特徴
@@ -419,7 +419,7 @@ export default function AboutPage() {
       </ContentSection>
 
       {/* Contact CTA Section */}
-      <ContentSection className="bg-gradient-to-br from-gray-900 to-gray-800 text-white">
+      <ContentSection className="bg-dark-overlay text-white">
         <div className="text-center">
           <h2 className={STYLES.heading.h2.section + " text-white mb-6"}>
             次のステップへ

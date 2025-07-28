@@ -139,7 +139,7 @@ export default function FAQPage() {
       />
 
       {/* Hero Section */}
-      <ContentSection className="bg-gray-50">
+      <ContentSection className="bg-gray-overlay">
         <div className="text-center max-w-4xl mx-auto">
           <h1 className={STYLES.heading.h1.primary + " mb-6"}>
             よくある質問
@@ -199,7 +199,7 @@ export default function FAQPage() {
       </ContentSection>
 
       {/* Contact Section */}
-      <ContentSection className="bg-gray-50">
+      <ContentSection className="bg-gray-overlay">
         <div className="text-center">
           <h2 className={STYLES.heading.h2.section + " mb-6"}>
             まだ疑問が解決しませんか？

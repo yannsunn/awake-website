@@ -3,7 +3,6 @@ import Header from '@/components/layout/Header'
 import Footer from '@/components/layout/Footer'
 import { ArrowRight, Globe, Brain, ShoppingCart, CheckCircle, Award, Users, Heart } from 'lucide-react'
 import Link from 'next/link'
-import Image from 'next/image'
 import { COMPANY_DATA } from '@/lib/company-data'
 import AccessibleButton from '@/components/ui/AccessibleButton'
 import { STYLES } from '@/lib/constants'
@@ -116,30 +115,9 @@ export default function HomePage() {
       
       <main role="main" id="main-content">
         {/* Hero Section */}
-        <section className="py-12 sm:py-16 lg:py-20 bg-white">
+        <section className="py-24 sm:py-32 lg:py-40">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center max-w-4xl mx-auto">
-              {/* Company Logo */}
-              <div className="mb-8 sm:mb-12 flex justify-center">
-                <div className="relative w-full max-w-lg md:max-w-xl lg:max-w-2xl mx-auto" style={{ aspectRatio: '4/3', minHeight: '200px' }}>
-                  <Image
-                    src="/assets/images/hero-background.png"
-                    alt="Awake Inc. ロゴ - 株式会社Awake"
-                    fill
-                    className="object-contain object-center"
-                    priority
-                    quality={85}
-                    sizes="(max-width: 768px) 512px, (max-width: 1024px) 640px, 768px"
-                    style={{ 
-                      objectFit: 'contain',
-                      objectPosition: 'center',
-                      padding: '0.5rem'
-                    }}
-                    placeholder="empty"
-                  />
-                </div>
-              </div>
-              
               {/* Company Tagline */}
               <h1 className={STYLES.heading.h1.hero + " mb-6"}>
                 {COMPANY_DATA.basic.tagline}
@@ -167,7 +145,7 @@ export default function HomePage() {
         </section>
 
         {/* Services Section */}
-        <section id="services" className="py-12 sm:py-16 lg:py-20 bg-white">
+        <section id="services" className="py-12 sm:py-16 lg:py-20 bg-white-overlay">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-8 sm:mb-12 lg:mb-16">
               <h2 className={STYLES.heading.h2.section + " mb-4"}>
@@ -179,7 +157,7 @@ export default function HomePage() {
               {services.map((service, index) => {
                 const IconComponent = service.icon
                 return (
-                  <div key={index} className="bg-gray-50 rounded-2xl p-8">
+                  <div key={index} className="bg-white rounded-2xl p-8 shadow-sm hover:shadow-lg transition-shadow">
                     <h3 className={STYLES.heading.h3.card + " mb-2"}>
                       {service.title}
                     </h3>
@@ -231,7 +209,7 @@ export default function HomePage() {
         <ValueProposition />
 
         {/* Company Mission Section */}
-        <section className="py-12 sm:py-16 lg:py-20 bg-white">
+        <section className="py-12 sm:py-16 lg:py-20 bg-white-overlay">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-8 sm:mb-12 lg:mb-16">
               <h2 className={STYLES.heading.h2.section + " mb-4"}>
@@ -239,7 +217,7 @@ export default function HomePage() {
               </h2>
             </div>
             
-            <div className="bg-gray-50 rounded-2xl p-8 md:p-12">
+            <div className="bg-white rounded-2xl p-8 md:p-12 shadow-sm">
               <div className="max-w-4xl mx-auto text-center">
                 <h3 className={STYLES.heading.h2.subsection + " mb-6"}>
                   {COMPANY_DATA.basic.mission}
@@ -259,7 +237,7 @@ export default function HomePage() {
         <FAQ />
         
         {/* Contact Section */}
-        <section id="contact" className="py-12 sm:py-16 lg:py-20 bg-gray-50">
+        <section id="contact" className="py-12 sm:py-16 lg:py-20 bg-gray-overlay">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-8 sm:mb-12 lg:mb-16">
               <h2 className={STYLES.heading.h2.section + " mb-6"}>

@@ -146,7 +146,7 @@ export default function PartnersPage() {
   return (
     <PageTemplate breadcrumbs={breadcrumbs}>
       {/* Hero Section */}
-      <ContentSection className="bg-white">
+      <ContentSection className="bg-transparent">
         <div className="text-center max-w-5xl mx-auto">
           <h1 className={STYLES.heading.h1.primary + " mb-4"}>
             1社では解決できない課題も、一緒なら解決できる
@@ -175,7 +175,7 @@ export default function PartnersPage() {
       </ContentSection>
 
       {/* Why Partnership Section */}
-      <ContentSection className="bg-gray-50">
+      <ContentSection className="bg-gray-overlay">
         <div className="text-center mb-8 sm:mb-12 lg:mb-16">
           <h2 className={STYLES.heading.h2.section + " mb-4"}>
             なぜ、パートナーシップが必要なのか
@@ -275,7 +275,7 @@ export default function PartnersPage() {
       </ContentSection>
 
       {/* Partner Services Section */}
-      <ContentSection className="bg-gray-50" id="services">
+      <ContentSection className="bg-gray-overlay" id="services">
         <div className="space-y-20">
           {partners.map((category, categoryIndex) => (
             <div key={categoryIndex}>
@@ -358,7 +358,7 @@ export default function PartnersPage() {
       </ContentSection>
 
       {/* FAQ Section */}
-      <ContentSection className="bg-gray-50">
+      <ContentSection className="bg-gray-overlay">
         <div className="text-center mb-12">
           <h2 className={STYLES.heading.h2.section + " mb-4"}>
             よくあるご質問
@@ -436,7 +436,7 @@ export default function PartnersPage() {
       </ContentSection>
 
       {/* CTA Section */}
-      <ContentSection className="bg-gray-900 text-white">
+      <ContentSection className="bg-dark-overlay text-white">
         <div className="text-center">
           <h2 className={STYLES.heading.h2.section + " text-white mb-4"}>
             次のステップ

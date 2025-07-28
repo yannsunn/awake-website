@@ -24,7 +24,7 @@ export default function PrivacyPolicyPage() {
       breadcrumbs={breadcrumbs}
     >
       {/* Hero Section */}
-      <ContentSection className="bg-gray-50">
+      <ContentSection className="bg-gray-overlay">
         <div className="text-center max-w-4xl mx-auto">
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-light text-gray-900 mb-4">プライバシーポリシー</h1>
           <p className="text-sm sm:text-base text-gray-600">最終更新日: 2024年1月1日</p>
@@ -159,7 +159,7 @@ export default function PrivacyPolicyPage() {
       </ContentSection>
       
       {/* Contact CTA */}
-      <ContentSection className="bg-gray-50">
+      <ContentSection className="bg-gray-overlay">
         <div className="text-center">
           <h2 className="text-xl sm:text-2xl font-light text-gray-900 mb-6">
             プライバシーに関するご質問
