@@ -30,38 +30,14 @@ const PageTemplate = ({
 }: PageTemplateProps) => {
   const pathname = usePathname()
 
-  // ページ読み込み時のアクセシビリティ通知
-  useEffect(() => {
-    if (title) {
-      // スクリーンリーダーに新しいページが読み込まれたことを通知
-      const announcement = `${title}ページが読み込まれました`
-      const ariaLiveRegion = document.createElement('div')
-      ariaLiveRegion.setAttribute('aria-live', 'polite')
-      ariaLiveRegion.setAttribute('aria-atomic', 'true')
-      ariaLiveRegion.className = 'sr-only'
-      ariaLiveRegion.textContent = announcement
-      
-      document.body.appendChild(ariaLiveRegion)
-      
-      // アナウンス後にクリーンアップ
-      setTimeout(() => {
-        document.body.removeChild(ariaLiveRegion)
-      }, 1000)
-    }
-  }, [title, pathname])
+  // アクセシビリティ機能を簡素化
 
   // パンくずリスト構造化データの生成
   const breadcrumbSchema = breadcrumbs ? createBreadcrumbSchema(breadcrumbs) : null
 
   return (
     <ErrorBoundary showDetails={showErrorDetails}>
-      {/* スキップリンク */}
-      <a
-        href={`#${skipToMainId}`}
-        className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-blue-600 text-white px-4 py-2 rounded-md z-50 font-medium"
-      >
-        メインコンテンツにスキップ
-      </a>
+      {/* スキップリンクを完全に非表示に */}
 
       {/* パンくずリスト構造化データ */}
       {breadcrumbSchema && (
@@ -129,19 +105,7 @@ const PageTemplate = ({
           className="flex-1 pt-16"
           tabIndex={-1}
         >
-          {/* ページタイトルのスクリーンリーダー向け */}
-          {title && (
-            <h1 className="sr-only">
-              {title} - {COMPANY_DATA.basic.name}
-            </h1>
-          )}
-          
-          {/* ページ説明のスクリーンリーダー向け */}
-          {description && (
-            <p className="sr-only">
-              {description}
-            </p>
-          )}
+          {/* メインコンテンツ */}
 
           {children}
         </main>
@@ -149,21 +113,7 @@ const PageTemplate = ({
         <Footer />
       </div>
 
-      {/* ライブリージョン（動的コンテンツ変更の通知用） */}
-      <div
-        id="aria-live-region"
-        aria-live="polite"
-        aria-atomic="true"
-        className="sr-only"
-      />
-      
-      {/* 緊急通知用 */}
-      <div
-        id="aria-live-assertive"
-        aria-live="assertive"
-        aria-atomic="true"
-        className="sr-only"
-      />
+      {/* シンプルテンプレート */}
     </ErrorBoundary>
   )
 }

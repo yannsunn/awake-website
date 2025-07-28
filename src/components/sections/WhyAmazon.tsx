@@ -23,7 +23,7 @@ const WhyAmazon = memo(function WhyAmazon() {
   ]
 
   return (
-    <section className="py-16 md:py-24 bg-gray-50">
+    <section className="py-16 md:py-24 bg-gray-overlay">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h2 className={STYLES.heading.h2.section + " mb-4"}>
@@ -36,7 +36,7 @@ const WhyAmazon = memo(function WhyAmazon() {
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
           {facts.map((fact, index) => (
-            <div key={index} className="bg-white rounded-xl p-8 shadow-sm">
+            <div key={index} className="bg-white-overlay rounded-xl p-8 shadow-sm">
               <div className="text-4xl mb-4">{fact.icon}</div>
               <h3 className={STYLES.heading.h3.emphasis + " mb-3"}>
                 {fact.title}

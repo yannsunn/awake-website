@@ -165,9 +165,9 @@ export default function FAQPage() {
                 {category.questions.map((faq, faqIndex) => (
                   <details 
                     key={faqIndex} 
-                    className="group bg-white border border-gray-200 rounded-lg overflow-hidden"
+                    className="group bg-white-overlay border border-gray-200 rounded-lg overflow-hidden"
                   >
-                    <summary className="flex items-center justify-between p-4 sm:p-6 cursor-pointer hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">
+                    <summary className="flex items-center justify-between p-4 sm:p-6 cursor-pointer hover:bg-gray-overlay focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">
                       <h3 className={STYLES.heading.h3.emphasis + " pr-4"}>
                         {faq.question}
                       </h3>

@@ -260,7 +260,7 @@ export default function PartnersPage() {
               description: "各サービスが連携し、1+1が3になる成果を実現"
             }
           ].map((value, index) => (
-            <div key={index} className="text-center p-6 bg-gray-50 rounded-xl">
+            <div key={index} className="text-center p-6 bg-gray-overlay rounded-xl">
               <div className="text-3xl mb-2">{value.emoji}</div>
               <div className="text-2xl font-bold text-gray-900 mb-3">{value.number}</div>
               <h3 className={STYLES.heading.h3.emphasis + " mb-3"}>
@@ -292,7 +292,7 @@ export default function PartnersPage() {
                 {category.companies.map((company, companyIndex) => (
                   <div 
                     key={companyIndex} 
-                    className="bg-white rounded-xl p-6 border border-gray-100 hover:border-gray-300 hover:shadow-lg transition-all duration-300"
+                    className="bg-white-overlay rounded-xl p-6 border border-gray-100 hover:border-gray-300 hover:shadow-lg transition-all duration-300"
                   >
                     <div className="text-3xl mb-4 text-center">
                       {company.icon}
@@ -342,7 +342,7 @@ export default function PartnersPage() {
               company: "小売業 E社様"
             }
           ].map((story, index) => (
-            <div key={index} className="bg-gray-50 rounded-xl p-8">
+            <div key={index} className="bg-gray-overlay rounded-xl p-8">
               <h3 className={STYLES.heading.h3.emphasis + " mb-4"}>
                 {story.title}
               </h3>
@@ -380,7 +380,7 @@ export default function PartnersPage() {
               a: "基本的に私たちが窓口となり、全体をコーディネートします。"
             }
           ].map((faq, index) => (
-            <div key={index} className="bg-white rounded-xl p-6">
+            <div key={index} className="bg-white-overlay rounded-xl p-6">
               <h3 className={STYLES.heading.h3.normal + " mb-3"}>
                 Q: {faq.q}
               </h3>
@@ -407,7 +407,7 @@ export default function PartnersPage() {
           </p>
         </div>
         
-        <div className="bg-gray-50 rounded-xl p-8 max-w-2xl mx-auto mb-12">
+        <div className="bg-gray-overlay rounded-xl p-8 max-w-2xl mx-auto mb-12">
           <h3 className={STYLES.heading.h3.emphasis + " mb-6 text-center"}>
             こんな企業様を求めています：
           </h3>
@@ -454,7 +454,7 @@ export default function PartnersPage() {
             
             <Link
               href="/#contact"
-              className="inline-flex items-center justify-center px-8 py-4 bg-white text-gray-900 font-medium rounded-lg hover:bg-gray-100 transition-colors"
+              className="inline-flex items-center justify-center px-8 py-4 bg-white-overlay text-gray-900 font-medium rounded-lg hover:bg-gray-overlay transition-colors"
             >
               無料相談を予約する
             </Link>

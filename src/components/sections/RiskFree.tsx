@@ -5,7 +5,7 @@ import { STYLES } from '@/lib/constants'
 
 const RiskFree = memo(function RiskFree() {
   return (
-    <section className="py-16 md:py-24 bg-white">
+    <section className="py-16 md:py-24 bg-white-overlay">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h2 className={STYLES.heading.h2.section + " mb-4"}>
@@ -16,7 +16,7 @@ const RiskFree = memo(function RiskFree() {
           </p>
         </div>
         
-        <div className="bg-gray-50 rounded-2xl p-12">
+        <div className="bg-gray-overlay rounded-2xl p-12">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
             <div className="space-y-4">
               <div className="flex items-center">

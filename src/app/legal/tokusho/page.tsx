@@ -43,7 +43,7 @@ export default function TokushoPage() {
               <div className="space-y-8">
                 <section>
                   <h2 className={cn(STYLES.heading.h2.subsection, "mb-4")}>販売業者</h2>
-                  <div className="bg-gray-50 rounded-lg p-6">
+                  <div className="bg-gray-overlay rounded-lg p-6">
                     <dl className="grid grid-cols-1 gap-4">
                       <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                         <dt className="text-sm font-semibold text-gray-900">会社名</dt>
@@ -88,7 +88,7 @@ export default function TokushoPage() {
                     <p>
                       各サービスの料金は、弊社ウェブサイトの各サービスページに記載された金額となります。
                     </p>
-                    <div className="bg-gray-50 rounded-lg p-6">
+                    <div className="bg-gray-overlay rounded-lg p-6">
                       <h3 className="font-semibold text-gray-900 mb-3">主要サービス料金</h3>
                       <ul className="space-y-2 text-sm">
                         <li>• ホームページ制作: {COMPANY_DATA.services.details.web.pricing.standard.price}〜</li>
@@ -190,7 +190,7 @@ export default function TokushoPage() {
                   <p className="text-gray-700 leading-relaxed">
                     特定商取引法に基づく表記に関するお問い合わせは、下記の連絡先までお願いいたします。
                   </p>
-                  <div className="mt-4 p-6 bg-gray-50 rounded-lg">
+                  <div className="mt-4 p-6 bg-gray-overlay rounded-lg">
                     <p className="font-bold text-gray-900">{COMPANY_DATA.basic.name}</p>
                     <p className="text-gray-700">担当者: {COMPANY_DATA.basic.ceo}</p>
                     <p className="text-gray-700">{COMPANY_DATA.contact.address.postal} {COMPANY_DATA.contact.address.full}</p>

@@ -44,7 +44,7 @@ const UseCases = memo(function UseCases() {
   ]
 
   return (
-    <section className="py-16 md:py-24 bg-white">
+    <section className="py-16 md:py-24 bg-white-overlay">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h2 className={STYLES.heading.h2.section + " mb-4"}>
@@ -57,7 +57,7 @@ const UseCases = memo(function UseCases() {
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {industries.map((industry, index) => (
-            <div key={index} className="bg-gray-50 rounded-xl p-6">
+            <div key={index} className="bg-gray-overlay rounded-xl p-6">
               <div className="text-3xl mb-4">{industry.icon}</div>
               <h3 className={STYLES.heading.h3.card + " mb-4"}>
                 {industry.title}

@@ -27,9 +27,9 @@ export function ServiceHero({
   className
 }: ServiceHeroProps) {
   const backgroundClasses = {
-    gradient: 'bg-gradient-to-r from-gray-50 to-white',
-    solid: 'bg-gray-50',
-    image: 'bg-gray-100'
+    gradient: 'bg-gradient-to-r from-gray-overlay to-white-overlay',
+    solid: 'bg-gray-overlay',
+    image: 'bg-gray-overlay'
   }
 
   return (
