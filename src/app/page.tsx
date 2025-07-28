@@ -154,7 +154,7 @@ export default function HomePage() {
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center px-4">
                 <AccessibleButton 
-                  href="https://lin.ee/awakeinc" 
+                  href="https://lin.ee/fIaLAjy" 
                   showArrow 
                   className="w-full sm:w-auto py-3 bg-green-600 hover:bg-green-700 text-white"
                   target="_blank"

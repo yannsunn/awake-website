@@ -212,7 +212,7 @@ export default function FAQPage() {
               <h3 className={STYLES.heading.h2.subsection + " mb-4 text-center"}>💬 公式LINEでお気軽に</h3>
               <p className={STYLES.text.body.medium + " text-center mb-6"}>最速返信！まずはLINEでお話をお聞かせください</p>
               <AccessibleButton 
-                href="https://lin.ee/awakeinc"
+                href="https://lin.ee/fIaLAjy"
                 variant="primary"
                 className="w-full bg-green-600 hover:bg-green-700 text-white font-medium py-4"
                 ariaLabel="LINEでお問い合わせ"

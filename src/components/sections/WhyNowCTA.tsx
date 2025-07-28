@@ -74,7 +74,7 @@ const WhyNowCTA = memo(function WhyNowCTA() {
           
           <div className="flex flex-col md:flex-row gap-4 justify-center items-center">
             <Link
-              href="https://lin.ee/awakeinc"
+              href="https://lin.ee/fIaLAjy"
               className="inline-flex items-center justify-center px-8 py-4 bg-green-500 text-white font-medium rounded-lg hover:bg-green-600 transition-colors"
               target="_blank"
               rel="noopener noreferrer"
