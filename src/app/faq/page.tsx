@@ -214,7 +214,7 @@ export default function FAQPage() {
               <AccessibleButton 
                 href="https://lin.ee/fIaLAjy"
                 variant="primary"
-                className="w-full bg-green-600 hover:bg-green-700 text-white font-medium py-4"
+                className="w-full !bg-green-600 hover:!bg-green-700 text-white font-medium py-4 bg-gradient-to-r from-green-600 to-green-600"
                 ariaLabel="LINEでお問い合わせ"
                 target="_blank"
                 rel="noopener noreferrer"

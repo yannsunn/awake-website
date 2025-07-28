@@ -435,7 +435,7 @@ export default function AboutPage() {
             <AccessibleButton
               href="https://lin.ee/fIaLAjy"
               variant="secondary"
-              className="bg-green-600 text-white hover:bg-green-700 border-green-600"
+              className="!bg-green-600 text-white hover:!bg-green-700 border-green-600 bg-gradient-to-r from-green-600 to-green-600"
               ariaLabel="LINEで相談する"
               showArrow
               target="_blank"
