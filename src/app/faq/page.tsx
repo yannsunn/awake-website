@@ -207,47 +207,24 @@ export default function FAQPage() {
             お気軽にお問い合わせください。専門スタッフが丁寧にお答えいたします。
           </p>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
-            
-            <div className="bg-white p-4 sm:p-6 rounded-xl shadow-sm">
-              <h3 className={STYLES.heading.h3.emphasis + " mb-2"}>💬 公式LINE</h3>
-              <p className={STYLES.text.description.small + " text-gray-600 mb-4"}>最速返信！お気軽に</p>
+          <div className="max-w-md mx-auto">
+            <div className="bg-green-50 p-6 sm:p-8 rounded-xl shadow-sm border border-green-100">
+              <h3 className={STYLES.heading.h2.subsection + " mb-4 text-center"}>💬 公式LINEでお気軽に</h3>
+              <p className={STYLES.text.body.medium + " text-center mb-6"}>最速返信！まずはLINEでお話をお聞かせください</p>
               <AccessibleButton 
                 href="https://lin.ee/awakeinc"
-                variant="minimal"
-                className="text-green-600 hover:text-green-700 font-medium"
+                variant="primary"
+                className="w-full bg-green-600 hover:bg-green-700 text-white font-medium py-4"
                 ariaLabel="LINEでお問い合わせ"
                 target="_blank"
                 rel="noopener noreferrer"
+                showArrow
               >
                 LINEで相談する
               </AccessibleButton>
-            </div>
-            
-            <div className="bg-white p-4 sm:p-6 rounded-xl shadow-sm">
-              <h3 className={STYLES.heading.h3.emphasis + " mb-2"}>📞 電話</h3>
-              <p className={STYLES.text.description.small + " text-gray-600 mb-4"}>{COMPANY_DATA.contact.businessHours.weekdays}</p>
-              <AccessibleButton 
-                href={`tel:${COMPANY_DATA.contact.phone}`}
-                variant="minimal"
-                className="text-blue-600 hover:text-blue-700 font-medium"
-                ariaLabel="電話でお問い合わせ"
-              >
-                {COMPANY_DATA.contact.phone}
-              </AccessibleButton>
-            </div>
-            
-            <div className="bg-white p-4 sm:p-6 rounded-xl shadow-sm">
-              <h3 className={STYLES.heading.h3.emphasis + " mb-2"}>✉️ メール</h3>
-              <p className={STYLES.text.description.small + " text-gray-600 mb-4"}>詳細な相談に最適</p>
-              <AccessibleButton 
-                href={`mailto:${COMPANY_DATA.contact.email}`}
-                variant="minimal"
-                className="text-blue-600 hover:text-blue-700 font-medium"
-                ariaLabel="メールでお問い合わせ"
-              >
-                メールで問い合わせ
-              </AccessibleButton>
+              <p className={STYLES.text.description.small + " text-gray-600 mt-4 text-center"}>
+                ID検索: @awakeinc
+              </p>
             </div>
           </div>
         </div>

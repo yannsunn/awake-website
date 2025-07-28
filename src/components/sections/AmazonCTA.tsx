@@ -75,10 +75,6 @@ const AmazonCTA = memo(function AmazonCTA() {
             </Link>
           </div>
           
-          <p className={STYLES.text.description.medium + " text-gray-300 mt-6"}>
-            お急ぎの方はお電話でも<br />
-            📞 050-7115-4948（平日9:00-18:00）
-          </p>
         </div>
       </div>
     </section>
