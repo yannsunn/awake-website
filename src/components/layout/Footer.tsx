@@ -2,96 +2,192 @@
 
 import Link from 'next/link'
 import { memo } from 'react'
+import { MapPin, Clock, Phone, Mail, ArrowUpRight } from 'lucide-react'
 import { COMPANY_DATA } from '@/lib/company-data'
 import { STYLES } from '@/lib/constants'
+import LineButton from '@/components/ui/LineButton'
 
-// 🚀 Ultra-Optimized Footer (Toyota Style) - Data Unified
+// 🚀 最適化されたフッター
 const Footer = memo(function Footer() {
+  const currentYear = new Date().getFullYear()
+  
+  // サービスリンク
+  const serviceLinks = [
+    { 
+      href: COMPANY_DATA.services.details.web.href, 
+      title: COMPANY_DATA.services.details.web.title,
+      external: true
+    },
+    { 
+      href: COMPANY_DATA.services.details.ai.href, 
+      title: COMPANY_DATA.services.details.ai.title 
+    },
+    { 
+      href: COMPANY_DATA.services.details.ec.href, 
+      title: COMPANY_DATA.services.details.ec.title 
+    }
+  ]
+  
+  // 会社情報リンク
+  const companyLinks = [
+    { href: '/about', title: '会社概要' },
+    { href: '/partners', title: 'パートナー企業' },
+    { href: '/faq', title: 'よくある質問' }
+  ]
+  
+  // 法務情報リンク
+  const legalLinks = [
+    { href: '/legal/privacy-policy', title: 'プライバシーポリシー' },
+    { href: '/legal/terms', title: '利用規約' },
+    { href: '/legal/tokusho', title: '特定商取引法に基づく表記' }
+  ]
+
   return (
-    <footer className="bg-gray-900 text-white" role="contentinfo">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
-          {/* Company Info */}
-          <div>
-            <h3 className={STYLES.heading.h3.card + " text-white mb-4"}>{COMPANY_DATA.basic.name}</h3>
-            <p className={STYLES.text.description.medium + " text-gray-400 mb-6"}>
+    <footer className="bg-gray-900" role="contentinfo">
+      {/* メインコンテンツ */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
+          
+          {/* 会社情報 */}
+          <div className="lg:col-span-1">
+            <h2 className={`${STYLES.heading.h3.card} text-white mb-6`}>
+              {COMPANY_DATA.basic.name}
+            </h2>
+            <p className={`${STYLES.text.body.medium} text-gray-400 mb-6`}>
               {COMPANY_DATA.basic.mission}
             </p>
-            <div className="text-gray-400 text-sm space-y-1">
-              <p>{COMPANY_DATA.contact.address.postal}</p>
-              <p>{COMPANY_DATA.contact.address.full}</p>
-              <p className="mt-3">TEL: {COMPANY_DATA.contact.phone}</p>
+            
+            {/* 連絡先情報 */}
+            <div className="space-y-3">
+              <div className="flex items-start">
+                <MapPin className="w-5 h-5 text-gray-500 mr-3 mt-0.5 flex-shrink-0" />
+                <div>
+                  <p className={`${STYLES.text.description.small} text-gray-400`}>
+                    {COMPANY_DATA.contact.address.postal}
+                  </p>
+                  <p className={`${STYLES.text.description.small} text-gray-400`}>
+                    {COMPANY_DATA.contact.address.full}
+                  </p>
+                </div>
+              </div>
+              
+              <div className="flex items-center">
+                <Phone className="w-5 h-5 text-gray-500 mr-3 flex-shrink-0" />
+                <a 
+                  href={`tel:${COMPANY_DATA.contact.phone}`}
+                  className={`${STYLES.text.description.small} text-gray-400 hover:text-white transition-colors`}
+                >
+                  {COMPANY_DATA.contact.phone}
+                </a>
+              </div>
+              
+              <div className="flex items-start">
+                <Clock className="w-5 h-5 text-gray-500 mr-3 mt-0.5 flex-shrink-0" />
+                <div>
+                  <p className={`${STYLES.text.description.small} text-gray-400`}>
+                    {COMPANY_DATA.contact.businessHours.weekdays}
+                  </p>
+                  <p className={`${STYLES.text.description.small} text-gray-400`}>
+                    {COMPANY_DATA.contact.businessHours.weekend}
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
           
-          {/* Services & Support */}
+          {/* サービス */}
           <div>
-            <h3 className={STYLES.heading.h3.emphasis + " text-white mb-4"}>サービス・サポート</h3>
+            <h3 className={`${STYLES.heading.h4} text-white mb-6`}>
+              サービス
+            </h3>
             <ul className="space-y-3">
-              <li>
-                <Link 
-                  href="/about" 
-                  className={STYLES.text.description.small + " text-gray-400 hover:text-white"}
-                >
-                  会社概要
-                </Link>
-              </li>
-              {Object.values(COMPANY_DATA.services.details).map((service, index) => (
-                <li key={index}>
+              {serviceLinks.map((link) => (
+                <li key={link.href}>
                   <Link 
-                    href={service.href} 
-                    className={STYLES.text.description.small + " text-gray-400 hover:text-white"}
-                    {...(service.href.startsWith('http') && {
+                    href={link.href}
+                    className={`${STYLES.text.body.small} text-gray-400 hover:text-white transition-colors inline-flex items-center group`}
+                    {...(link.external && {
                       target: '_blank',
                       rel: 'noopener noreferrer'
                     })}
                   >
-                    {service.title}
+                    {link.title}
+                    {link.external && (
+                      <ArrowUpRight className="w-4 h-4 ml-1 opacity-50 group-hover:opacity-100 transition-opacity" />
+                    )}
                   </Link>
                 </li>
               ))}
-              <li>
-                <Link 
-                  href="/faq" 
-                  className={STYLES.text.description.small + " text-gray-400 hover:text-white"}
-                >
-                  よくある質問
-                </Link>
-              </li>
-              <li>
-                <Link 
-                  href="/partners" 
-                  className={STYLES.text.description.small + " text-gray-400 hover:text-white"}
-                >
-                  パートナー企業
-                </Link>
-              </li>
             </ul>
           </div>
           
-          {/* Contact */}
+          {/* 会社情報 */}
           <div>
-            <h3 className={STYLES.heading.h3.emphasis + " text-white mb-4"}>お問い合わせ</h3>
-            <div className="space-y-3">
-              <p className={STYLES.text.description.small + " text-gray-400"}>
-                営業時間: {COMPANY_DATA.contact.businessHours.weekdays}
-              </p>
-              <Link 
-                href="/#contact"
-                className={"inline-block bg-white text-gray-900 px-6 py-3 rounded-lg hover:bg-gray-100 min-h-[44px] " + STYLES.text.emphasis.medium}
-              >
-                お問い合わせ
-              </Link>
-            </div>
+            <h3 className={`${STYLES.heading.h4} text-white mb-6`}>
+              会社情報
+            </h3>
+            <ul className="space-y-3">
+              {companyLinks.map((link) => (
+                <li key={link.href}>
+                  <Link 
+                    href={link.href}
+                    className={`${STYLES.text.body.small} text-gray-400 hover:text-white transition-colors`}
+                  >
+                    {link.title}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+          
+          {/* お問い合わせ */}
+          <div>
+            <h3 className={`${STYLES.heading.h4} text-white mb-6`}>
+              お問い合わせ
+            </h3>
+            <p className={`${STYLES.text.body.small} text-gray-400 mb-6`}>
+              お気軽にご相談ください。
+              LINEなら最速で返信いたします。
+            </p>
+            <LineButton 
+              className="w-full" 
+              size="medium"
+            />
           </div>
         </div>
         
-        <div className="border-t border-gray-800 mt-8 pt-8 text-center">
-          <p className={STYLES.text.description.small + " text-gray-400"}>
-            © 2024 {COMPANY_DATA.basic.name}. All rights reserved.
-          </p>
+        {/* 法務情報 */}
+        <div className="mt-12 pt-8 border-t border-gray-800">
+          <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+            <div className="flex flex-wrap justify-center md:justify-start gap-4 text-sm">
+              {legalLinks.map((link, index) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className={`${STYLES.text.description.small} text-gray-500 hover:text-gray-300 transition-colors`}
+                >
+                  {link.title}
+                </Link>
+              ))}
+            </div>
+            
+            <p className={`${STYLES.text.description.small} text-gray-500`}>
+              © {currentYear} {COMPANY_DATA.basic.name}. All rights reserved.
+            </p>
+          </div>
         </div>
       </div>
+      
+      {/* トップへ戻るボタン */}
+      <button
+        onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+        className="fixed bottom-6 right-6 p-3 bg-gray-800 hover:bg-gray-700 text-white rounded-full shadow-lg transition-all duration-200 opacity-90 hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-gray-600 focus:ring-offset-2"
+        aria-label="ページトップへ戻る"
+      >
+        <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 10l7-7m0 0l7 7m-7-7v18" />
+        </svg>
+      </button>
     </footer>
   )
 })
