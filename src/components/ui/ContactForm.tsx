@@ -9,7 +9,7 @@ import LineButton from '@/components/ui/LineButton'
 const ContactForm = memo(function ContactForm() {
 
   return (
-    <div className="bg-green-50 rounded-2xl p-8 sm:p-12 shadow-sm border border-green-100">
+    <div className="bg-transparent-overlay rounded-2xl p-8 sm:p-12 shadow-sm border border-green-100">
       <div className="text-center">
         <div className="inline-flex items-center justify-center w-16 h-16 bg-green-100 rounded-full mb-6">
           <MessageCircle className="w-8 h-8 text-green-600" />
@@ -28,7 +28,7 @@ const ContactForm = memo(function ContactForm() {
           
         </div>
         
-        <div className="mt-8 p-4 bg-white rounded-lg">
+        <div className="mt-8 p-4 bg-white-overlay rounded-lg">
           <h4 className={STYLES.heading.h3.emphasis + " mb-3"}>
             こんなご相談ができます
           </h4>

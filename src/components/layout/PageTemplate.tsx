@@ -79,7 +79,7 @@ const PageTemplate = ({
         {/* パンくずリストナビゲーション */}
         {breadcrumbs && breadcrumbs.length > 1 && (
           <nav
-            className="bg-gray-50 border-b border-gray-200"
+            className="bg-transparent-overlay border-b border-gray-200"
             aria-label="パンくずリスト"
           >
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
