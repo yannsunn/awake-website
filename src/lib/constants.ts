@@ -20,11 +20,11 @@ export const STYLES = {
     pricing: 'py-12 sm:py-16 lg:py-20'
   },
   
-  // Modern Card styles
+  // Modern Card styles - 高透明度で背景を見えるように
   card: {
-    default: 'bg-white/90 backdrop-blur-sm rounded-2xl p-8 shadow-sm hover:shadow-lg border border-gray-100 transition-shadow duration-300',
-    featured: 'bg-gradient-to-br from-indigo-50 to-white rounded-2xl p-8 border border-indigo-200 shadow-xl shadow-indigo-500/10',
-    compact: 'bg-white/90 backdrop-blur-sm rounded-xl p-6 shadow-sm hover:shadow-md border border-gray-100 transition-all duration-300'
+    default: 'bg-white/30 backdrop-blur-none rounded-2xl p-8 shadow-sm hover:shadow-lg border border-gray-200 transition-shadow duration-300',
+    featured: 'bg-white/35 rounded-2xl p-8 border border-gray-200 shadow-xl',
+    compact: 'bg-white/30 backdrop-blur-none rounded-xl p-6 shadow-sm hover:shadow-md border border-gray-200 transition-all duration-300'
   },
   
   // Modern Typography - 統一されたフォントシステム（可読性強化）
