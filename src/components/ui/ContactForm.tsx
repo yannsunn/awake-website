@@ -34,9 +34,6 @@ const ContactForm = memo(function ContactForm() {
             LINEで相談する
           </Link>
           
-          <p className={STYLES.text.description.small + " text-gray-600 mt-4"}>
-            ID検索: @awakeinc
-          </p>
         </div>
         
         <div className="mt-8 p-4 bg-white rounded-lg">
