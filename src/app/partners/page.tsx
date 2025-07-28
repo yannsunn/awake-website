@@ -450,7 +450,7 @@ export default function PartnersPage() {
           
           <div className="flex flex-col gap-4 items-center mb-6">
             <Link
-              href="https://lin.ee/awakeinc"
+              href="https://lin.ee/fIaLAjy"
               className="inline-flex items-center justify-center px-8 py-4 bg-green-500 text-white font-medium rounded-lg hover:bg-green-600 transition-colors"
               target="_blank"
               rel="noopener noreferrer"

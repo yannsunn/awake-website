@@ -25,7 +25,7 @@ const ContactForm = memo(function ContactForm() {
         
         <div className="space-y-4">
           <Link
-            href="https://lin.ee/awakeinc"
+            href="https://lin.ee/fIaLAjy"
             target="_blank"
             rel="noopener noreferrer"
             className="w-full inline-flex items-center justify-center px-8 py-4 bg-green-600 text-white font-medium rounded-lg hover:bg-green-700 transition-colors shadow-lg"

@@ -433,7 +433,7 @@ export default function AboutPage() {
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <AccessibleButton
-              href="https://lin.ee/awakeinc"
+              href="https://lin.ee/fIaLAjy"
               variant="secondary"
               className="bg-green-500 text-white hover:bg-green-600 border-green-500"
               ariaLabel="LINEで相談する"

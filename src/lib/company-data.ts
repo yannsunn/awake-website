@@ -132,7 +132,7 @@ export const CONTACT_METHODS = [
     description: '最速で返信！まずはLINEでお気軽に',
     action: {
       type: 'link',
-      url: 'https://lin.ee/awakeinc',
+      url: 'https://lin.ee/fIaLAjy',
       text: 'LINEで相談する'
     },
     color: 'green'
