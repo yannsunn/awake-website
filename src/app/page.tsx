@@ -157,7 +157,7 @@ export default function HomePage() {
               {services.map((service, index) => {
                 const IconComponent = service.icon
                 return (
-                  <div key={index} className="bg-white rounded-2xl p-8 shadow-sm hover:shadow-lg transition-shadow">
+                  <div key={index} className="bg-white/90 backdrop-blur-sm rounded-2xl p-8 shadow-sm hover:shadow-lg transition-shadow">
                     <h3 className={STYLES.heading.h3.card + " mb-2"}>
                       {service.title}
                     </h3>
@@ -217,7 +217,7 @@ export default function HomePage() {
               </h2>
             </div>
             
-            <div className="bg-white rounded-2xl p-8 md:p-12 shadow-sm">
+            <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-8 md:p-12 shadow-sm">
               <div className="max-w-4xl mx-auto text-center">
                 <h3 className={STYLES.heading.h2.subsection + " mb-6"}>
                   {COMPANY_DATA.basic.mission}
