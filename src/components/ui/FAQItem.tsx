@@ -14,7 +14,7 @@ interface FAQItemProps {
 const FAQItem = memo(function FAQItem({ question, answer, index }: FAQItemProps) {
   return (
     <details 
-      className="group bg-white border border-gray-200 rounded-lg overflow-hidden"
+      className="group bg-white/90 backdrop-blur-sm border border-gray-200 rounded-lg overflow-hidden"
     >
       <summary className="flex items-center justify-between p-4 sm:p-6 cursor-pointer hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">
         <h3 className={`${STYLES.heading.h3.emphasis} pr-4`}>

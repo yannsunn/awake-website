@@ -8,7 +8,7 @@ import { ContactMethod } from '@/lib/unified-components'
 // 🚀 Ultra-Optimized Contact Info - Unified Data Source
 const ContactInfo = memo(function ContactInfo() {
   return (
-    <div className="bg-white rounded-2xl p-8 shadow-sm border border-gray-100">
+    <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-8 shadow-sm border border-gray-100">
       <h3 className="text-2xl font-medium text-gray-900 mb-8">お問い合わせ</h3>
       
       
