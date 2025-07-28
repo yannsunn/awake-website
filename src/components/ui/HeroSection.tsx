@@ -32,21 +32,6 @@ const HeroSection = memo(function HeroSection() {
 
   return (
     <section className="relative min-h-screen flex flex-col justify-center overflow-hidden" id="hero" aria-labelledby="hero-title">
-      {/* 背景画像 */}
-      <div className="absolute inset-0 -z-10">
-        <Image
-          src="/assets/images/hero-background.png"
-          alt=""
-          fill
-          className="object-cover"
-          priority
-          quality={60}
-          sizes="100vw"
-          placeholder="empty"
-        />
-        {/* オーバーレイ */}
-        <div className="absolute inset-0 bg-white/85" />
-      </div>
       
       {/* 🚀 ウルトラシンク最適化 - 単一コンテナ */}
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center z-10">
@@ -101,7 +86,7 @@ const HeroSection = memo(function HeroSection() {
             
             <Link 
               href="#services" 
-              className="inline-flex items-center justify-center px-8 py-4 bg-white text-gray-900 font-medium rounded-lg border border-gray-200 hover:bg-gray-50"
+              className="inline-flex items-center justify-center px-8 py-4 bg-white-overlay text-gray-900 font-medium rounded-lg border border-gray-200 hover:bg-gray-overlay"
             >
               サービス詳細を見る
             </Link>
