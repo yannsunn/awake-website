@@ -222,9 +222,6 @@ export default function FAQPage() {
               >
                 LINEで相談する
               </AccessibleButton>
-              <p className={STYLES.text.description.small + " text-gray-600 mt-4 text-center"}>
-                ID検索: @awakeinc
-              </p>
             </div>
           </div>
         </div>
