@@ -34,21 +34,9 @@ const ContactForm = memo(function ContactForm() {
             LINEで相談する
           </Link>
           
-          <div className="mt-6">
-            <p className={STYLES.text.description.small + " text-gray-600 mb-4"}>
-              QRコードをスキャンしてお友達追加
-            </p>
-            
-            <div className="bg-white p-4 rounded-lg inline-block">
-              <div className="w-32 h-32 bg-gray-200 rounded flex items-center justify-center">
-                <span className="text-gray-500 text-xs text-center">QRコード表示エリア</span>
-              </div>
-            </div>
-            
-            <p className={STYLES.text.description.small + " text-gray-600 mt-4"}>
-              ID検索: @awakeinc
-            </p>
-          </div>
+          <p className={STYLES.text.description.small + " text-gray-600 mt-4"}>
+            ID検索: @awakeinc
+          </p>
         </div>
         
         <div className="mt-8 p-4 bg-white rounded-lg">
