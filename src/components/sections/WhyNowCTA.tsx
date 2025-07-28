@@ -22,7 +22,7 @@ const WhyNowCTA = memo(function WhyNowCTA() {
   ]
 
   return (
-    <section className="py-16 md:py-24 bg-white">
+    <section className="py-16 md:py-24 bg-white-overlay">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h2 className={STYLES.heading.h2.section + " mb-4"}>
@@ -78,7 +78,7 @@ const WhyNowCTA = memo(function WhyNowCTA() {
             
             <Link
               href="/#contact"
-              className="inline-flex items-center justify-center px-8 py-4 bg-white text-gray-900 font-medium rounded-lg hover:bg-gray-100 transition-colors"
+              className="inline-flex items-center justify-center px-8 py-4 bg-white-overlay text-gray-900 font-medium rounded-lg hover:bg-gray-overlay transition-colors"
             >
               今すぐ無料診断を申し込む
             </Link>

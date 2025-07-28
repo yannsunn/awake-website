@@ -12,7 +12,7 @@ const ProblemSection = memo(function ProblemSection() {
   ]
 
   return (
-    <section className="py-16 md:py-24 bg-gray-50">
+    <section className="py-16 md:py-24 bg-gray-overlay">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h2 className={STYLES.heading.h2.section + " mb-4"}>
@@ -23,7 +23,7 @@ const ProblemSection = memo(function ProblemSection() {
           </p>
         </div>
         
-        <div className="bg-white rounded-2xl p-8 shadow-sm">
+        <div className="bg-white-overlay rounded-2xl p-8 shadow-sm">
           <ul className="space-y-4">
             {problems.map((problem, index) => (
               <li key={index} className="flex items-start">
@@ -33,7 +33,7 @@ const ProblemSection = memo(function ProblemSection() {
             ))}
           </ul>
           
-          <div className="mt-8 p-6 bg-gray-50 rounded-lg text-center">
+          <div className="mt-8 p-6 bg-gray-overlay rounded-lg text-center">
             <p className={STYLES.text.emphasis.strong + " text-xl"}>
               これらすべて、AIが解決します。
             </p>

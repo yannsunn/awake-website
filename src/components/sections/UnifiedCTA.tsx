@@ -23,7 +23,7 @@ const UnifiedCTA = memo(function UnifiedCTA({
   showContactButton = true,
   className = ''
 }: UnifiedCTAProps) {
-  const bgClass = theme === 'dark' ? 'bg-gray-900 text-white' : 'bg-gray-50'
+  const bgClass = theme === 'dark' ? 'bg-gray-900 text-white' : 'bg-gray-overlay'
   const textClass = theme === 'dark' ? 'text-white' : 'text-gray-900'
   const subtitleClass = theme === 'dark' ? 'text-gray-300' : 'text-gray-600'
   
@@ -54,7 +54,7 @@ const UnifiedCTA = memo(function UnifiedCTA({
               <AccessibleButton
                 href="/#contact"
                 className={theme === 'dark' ? 
-                  "bg-white text-gray-900 hover:bg-gray-100" : 
+                  "bg-white-overlay text-gray-900 hover:bg-gray-overlay" : 
                   "bg-gray-900 text-white hover:bg-gray-800"
                 }
               >

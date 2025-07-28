@@ -137,7 +137,7 @@ export default function AboutPage() {
       <ContentSection ariaLabel="代表メッセージ">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12">
           <div>
-            <div className="bg-gray-100 rounded-2xl p-6 sm:p-8 mb-8">
+            <div className="bg-gray-overlay rounded-2xl p-6 sm:p-8 mb-8">
               <div className="flex items-center mb-6">
                 <div className="w-10 sm:w-12 h-10 sm:h-12 bg-gray-900 rounded-full flex items-center justify-center mr-3 sm:mr-4">
                   <User className="h-6 w-6 text-white" />
@@ -246,7 +246,7 @@ export default function AboutPage() {
               <div>
                 <h3 className={STYLES.heading.h3.emphasis + " mb-4"}>私たちの信念</h3>
                 
-                <div className="bg-gray-50 rounded-lg p-6 mb-4">
+                <div className="bg-gray-overlay rounded-lg p-6 mb-4">
                   <p className={STYLES.text.emphasis.strong + " text-lg text-center mb-2"}>「つながるすべての人に、感謝と繁栄を」</p>
                 </div>
                 
@@ -280,7 +280,7 @@ export default function AboutPage() {
           </div>
           
           <div className="lg:pl-8">
-            <div className="bg-gray-100 rounded-2xl p-6 sm:p-8 text-center">
+            <div className="bg-gray-overlay rounded-2xl p-6 sm:p-8 text-center">
               <div className="w-32 h-32 bg-gray-900 rounded-full flex items-center justify-center mx-auto mb-6">
                 <User className="h-16 w-16 text-white" />
               </div>
@@ -319,7 +319,7 @@ export default function AboutPage() {
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-12">
-          <div className="bg-white rounded-2xl p-6 sm:p-8 border border-gray-100">
+          <div className="bg-white-overlay rounded-2xl p-6 sm:p-8 border border-gray-100">
             <h3 className={STYLES.heading.h2.subsection + " mb-4"}>
               ミッション
             </h3>
@@ -328,7 +328,7 @@ export default function AboutPage() {
             </p>
           </div>
           
-          <div className="bg-white rounded-2xl p-6 sm:p-8 border border-gray-100">
+          <div className="bg-white-overlay rounded-2xl p-6 sm:p-8 border border-gray-100">
             <h3 className={STYLES.heading.h2.subsection + " mb-4"}>
               ビジョン
             </h3>
@@ -352,7 +352,7 @@ export default function AboutPage() {
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
           {promises.map((promise, index) => (
-            <div key={index} className="bg-white rounded-2xl p-8 shadow-sm border border-gray-100">
+            <div key={index} className="bg-white-overlay rounded-2xl p-8 shadow-sm border border-gray-100">
               <div className="text-4xl mb-4">{promise.icon}</div>
               <h3 className={STYLES.heading.h3.emphasis + " mb-3"}>{promise.title}</h3>
               <p className={STYLES.text.description.medium}>{promise.description}</p>
@@ -374,7 +374,7 @@ export default function AboutPage() {
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
           {features.map((feature, index) => (
-            <div key={index} className="bg-white rounded-xl p-6 sm:p-8 shadow-sm">
+            <div key={index} className="bg-white-overlay rounded-xl p-6 sm:p-8 shadow-sm">
               <h3 className={STYLES.heading.h3.card + " mb-4"}>{feature.title}</h3>
               <ul className="space-y-3" role="list">
                 {feature.items.map((item, idx) => (
@@ -404,7 +404,7 @@ export default function AboutPage() {
           {values.map((value, index) => {
             const IconComponent = value.icon
             return (
-              <div key={index} className="flex items-start p-6 sm:p-8 bg-white rounded-xl shadow-sm">
+              <div key={index} className="flex items-start p-6 sm:p-8 bg-white-overlay rounded-xl shadow-sm">
                 <div className="text-3xl mr-4 mt-1">
                   {value.icon === Target ? "🎯" : value.icon === Zap ? "📚" : value.icon === Heart ? "🤝" : "🌱"}
                 </div>
@@ -437,7 +437,7 @@ export default function AboutPage() {
             <AccessibleButton
               href="/#contact"
               variant="secondary"
-              className="bg-white text-gray-900 hover:bg-gray-100"
+              className="bg-white-overlay text-gray-900 hover:bg-gray-overlay"
               ariaLabel="無料相談を予約する"
             >
               無料相談を予約する
@@ -445,7 +445,7 @@ export default function AboutPage() {
             <AccessibleButton
               href="/#services"
               variant="outline"
-              className="border-white text-white hover:bg-white hover:text-gray-900"
+              className="border-white text-white hover:bg-white-overlay hover:text-gray-900"
               ariaLabel="サービス一覧を見る"
             >
               サービス一覧を見る

@@ -26,7 +26,7 @@ const SuccessStories = memo(function SuccessStories() {
   ]
 
   return (
-    <section className="py-16 md:py-24 bg-white">
+    <section className="py-16 md:py-24 bg-white-overlay">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h2 className={STYLES.heading.h2.section + " mb-4"}>
@@ -39,7 +39,7 @@ const SuccessStories = memo(function SuccessStories() {
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {stories.map((story, index) => (
-            <div key={index} className="bg-gray-50 rounded-xl p-8 text-center">
+            <div key={index} className="bg-gray-overlay rounded-xl p-8 text-center">
               <div className="text-4xl mb-4">{story.icon}</div>
               <h3 className={STYLES.heading.h3.emphasis + " mb-2"}>
                 &ldquo;{story.title}&rdquo;

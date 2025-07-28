@@ -145,7 +145,7 @@ export default function PrivacyPolicyPage() {
                   <p className="text-gray-700 leading-relaxed">
                     本プライバシーポリシーに関するお問い合わせは、下記の連絡先までお願いいたします。
                   </p>
-                  <div className="mt-4 p-6 bg-gray-50 rounded-lg">
+                  <div className="mt-4 p-6 bg-gray-overlay rounded-lg">
                     <p className="font-bold text-gray-900">{COMPANY_DATA.basic.name}</p>
                     <p className="text-gray-700">個人情報保護責任者: {COMPANY_DATA.basic.ceo}</p>
                     <p className="text-gray-700">{COMPANY_DATA.contact.address.postal} {COMPANY_DATA.contact.address.full}</p>
