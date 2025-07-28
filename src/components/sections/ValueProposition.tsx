@@ -25,10 +25,10 @@ const ValueProposition = memo(function ValueProposition() {
     <section className="py-20 bg-gray-overlay">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-gray-900 mb-4">
+          <h2 className="text-3xl font-bold text-black mb-4 text-ultra-readable">
             なぜ、私たちが選ばれるのか
           </h2>
-          <p className="text-xl text-gray-600">
+          <p className="text-xl text-black font-bold text-shadow-lg">
             投資を「コスト」から「成長エンジン」に変える
           </p>
         </div>
@@ -37,10 +37,10 @@ const ValueProposition = memo(function ValueProposition() {
           {reasons.map((reason, index) => (
             <div key={index} className="bg-white-overlay rounded-lg p-8 shadow-sm">
               <div className="text-4xl mb-4">{reason.icon}</div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-3">
+              <h3 className="text-xl font-bold text-black mb-3 text-shadow-md">
                 {reason.title}
               </h3>
-              <p className="text-gray-600 leading-relaxed">
+              <p className="text-black leading-relaxed font-medium text-shadow-sm">
                 {reason.description}
               </p>
             </div>
