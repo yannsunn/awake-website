@@ -466,10 +466,6 @@ export default function PartnersPage() {
             </Link>
           </div>
           
-          <p className={STYLES.text.body.medium + " text-gray-300"}>
-            お電話でのご相談<br />
-            📞 050-7115-4948（平日9:00-18:00）
-          </p>
         </div>
       </ContentSection>
     </PageTemplate>
