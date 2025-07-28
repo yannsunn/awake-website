@@ -154,7 +154,7 @@ export default function AboutPage() {
             
             <div className="space-y-8 text-gray-700 leading-relaxed">
               <div className="mb-6">
-                <h3 className={STYLES.text.emphasis.strong + " text-xl mb-2"}>お客様と共に成長し続ける企業を目指して</h3>
+                <h3 className={STYLES.text.emphasis.strong + " text-xl mb-2"}>挫折から這い上がり、学んだこと</h3>
                 <p className={STYLES.text.emphasis.medium + " mb-4"}>代表取締役CEO　{COMPANY_DATA.basic.ceo}</p>
                 
                 <p className={STYLES.text.description.medium + " mb-4"}>
@@ -171,78 +171,110 @@ export default function AboutPage() {
               </div>
               
               <div>
-                <h3 className={STYLES.heading.h3.emphasis + " mb-4"}>多様な経験が育んだ経営理念</h3>
+                <h3 className={STYLES.heading.h3.emphasis + " mb-4"}>不登校からトップへ。私の転機</h3>
                 
                 <p className={STYLES.text.description.medium + " mb-4"}>
-                  静岡県清水区で生まれ育った私は、幼少期から中学時代にかけて不登校を経験しました。その期間、オンラインコミュニティでの交流を通じて、物理的な距離を超えた「信頼関係」の大切さを学びました。
+                  静岡県清水区で育った私は、幼稚園から中学まで不登校でした。<br />
+                  学校に行かず、ずっとゲームをしていました。
                 </p>
                 
                 <p className={STYLES.text.description.medium + " mb-4"}>
-                  高校卒業後は、トヨタ系ディーラーで自動車整備士として勤務。「お客様の安全を預かる責任」と「見えない部分にこそ誠実に取り組む姿勢」を、プロフェッショナルの先輩方から学びました。
+                  しかし高校で、人生が変わりました。<br />
+                  なんと生徒会長になったのです。
+                </p>
+                
+                <p className={STYLES.text.description.medium + " mb-4"}>
+                  その勢いでトヨタの自動車専門学校に進学。<br />
+                  そこで私は、本気で打ち込むことの楽しさを知りました。
+                </p>
+                
+                <ul className={STYLES.text.description.medium + " mb-4 space-y-2 ml-6"}>
+                  <li className="flex items-start">
+                    <span className="text-green-600 mr-2">•</span>
+                    <span>実技の歴代記録を複数更新</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-green-600 mr-2">•</span>
+                    <span>2年間、全国の学年代表を務める</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-green-600 mr-2">•</span>
+                    <span>整備の技術で、誰にも負けない自信を得る</span>
+                  </li>
+                </ul>
+                
+                <p className={STYLES.text.description.medium + " mb-4"}>
+                  地元静岡のトヨタ系ディーラーに就職後も、その姿勢は変わりませんでした。<br />
+                  4年間の勤務で新人賞を受賞。
                 </p>
                 
                 <p className={STYLES.text.description.medium}>
-                  その後、物販事業での起業を経て、2020年に株式会社Awakeを設立。これまでの多様な経験すべてが、現在の経営理念の礎となっています。
+                  しかし、そこで気づいたのです。<br />
+                  「技術だけでは、お客様の本当の課題は解決できない」
                 </p>
               </div>
               
               <div>
-                <h3 className={STYLES.heading.h3.emphasis + " mb-4"}>私たちが提供する価値</h3>
+                <h3 className={STYLES.heading.h3.emphasis + " mb-4"}>なぜ、Awakeを立ち上げたのか</h3>
+                
+                <p className={STYLES.text.description.medium + " mb-4"}>
+                  整備士時代、多くの経営者の方とお話する機会がありました。<br />
+                  そこで聞いたのが、冒頭の言葉です。
+                </p>
+                
+                <p className={STYLES.text.description.medium + " mb-4"}>
+                  高額なIT投資で失敗し、本業に投資できない。<br />
+                  技術はあるのに、活用できていない。
+                </p>
+                
+                <p className={STYLES.text.description.medium + " mb-4"}>
+                  これは、私の過去と重なりました。<br />
+                  能力はあったのに、不登校で活かせなかった自分。
+                </p>
+                
+                <p className={STYLES.text.description.medium + " mb-4"}>
+                  でも、環境と機会があれば、人は変われる。
+                </p>
+                
+                <p className={STYLES.text.description.medium}>
+                  だから決めました。<br />
+                  「適正なコストで最大の価値を提供し、お客様の可能性を引き出す会社を作ろう」と。
+                </p>
+              </div>
+              
+              <div>
+                <h3 className={STYLES.heading.h3.emphasis + " mb-4"}>私たちの信念</h3>
                 
                 <div className="bg-gray-50 rounded-lg p-6 mb-4">
-                  <p className={STYLES.text.emphasis.strong + " text-lg text-center mb-2"}>「適正コストで最大の価値を」</p>
+                  <p className={STYLES.text.emphasis.strong + " text-lg text-center mb-2"}>「つながるすべての人に、感謝と繁栄を」</p>
                 </div>
                 
                 <p className={STYLES.text.description.medium + " mb-4"}>
-                  これは単なるスローガンではありません。<br />
-                  お客様の限られた経営資源を最適に配分し、本質的な成長を実現するという、私たちの約束です。
+                  不登校だった私が、生徒会長になれた。<br />
+                  ゲームばかりしていた私が、全国代表になれた。
                 </p>
                 
                 <p className={STYLES.text.description.medium + " mb-4"}>
-                  高額な初期投資や、不透明な追加費用。<br />
-                  そういった従来のIT業界の慣習を変えたい。
+                  それは、信じてくれる人がいたからです。
+                </p>
+                
+                <p className={STYLES.text.description.medium + " mb-4"}>
+                  今度は私たちが、お客様の可能性を信じる番です。
                 </p>
                 
                 <p className={STYLES.text.description.medium}>
-                  必要最小限のコストで最大の成果を生み出し、削減できた資金を次の成長投資に充てていただく。<br />
-                  それが、私たちの考える真の支援です。
+                  高額な投資は必要ありません。<br />
+                  必要なのは、一歩踏み出す勇気だけ。
                 </p>
               </div>
               
-              <div>
-                <h3 className={STYLES.heading.h3.emphasis + " mb-4"}>つながるすべての人に、感謝と繁栄を</h3>
-                
                 <p className={STYLES.text.description.medium + " mb-4"}>
-                  この言葉には、私たちの根本的な価値観が込められています。
-                </p>
-                
-                <p className={STYLES.text.description.medium + " mb-4"}>
-                  お客様の成功は、私たちの成功。<br />
-                  パートナー企業の発展は、私たちの発展。<br />
-                  社員の成長は、会社の成長。
+                  もし今、IT投資でお悩みなら、ぜひお話をお聞かせください。
                 </p>
                 
                 <p className={STYLES.text.description.medium}>
-                  関わるすべての方々と共に成長し、繁栄を分かち合える関係を築いていく。それが、株式会社Awakeの目指す姿です。
+                  あなたのビジネスの、本当の可能性を一緒に見つけましょう。
                 </p>
-              </div>
-              
-              <div>
-                <h3 className={STYLES.heading.h3.emphasis + " mb-4"}>最後に</h3>
-                
-                <p className={STYLES.text.description.medium + " mb-4"}>
-                  私たちは決して大きな会社ではありません。<br />
-                  しかし、お客様一社一社と真摯に向き合い、確実な成果をお届けする姿勢においては、どこにも負けない自信があります。
-                </p>
-                
-                <p className={STYLES.text.description.medium + " mb-4"}>
-                  もし現在、IT投資やコスト削減でお悩みでしたら、ぜひ一度ご相談ください。お客様のビジネスに最適なソリューションを、共に考えさせていただければ幸いです。
-                </p>
-                
-                <p className={STYLES.text.description.medium}>
-                  皆様との新たな出会いを、心よりお待ちしております。
-                </p>
-              </div>
             </div>
           </div>
           
@@ -258,9 +290,11 @@ export default function AboutPage() {
                   <h4 className={STYLES.text.emphasis.medium + " mb-2"}>略歴</h4>
                   <ul className={STYLES.text.description.small + " text-gray-600 space-y-1"}>
                     <li>静岡県清水区出身</li>
-                    <li>トヨタ系ディーラー 自動車整備士</li>
-                    <li>物販会社起業を経て、2020年 株式会社Awake設立</li>
-                    <li>現在、5期目（令和6年度）</li>
+                    <li>幼稚園〜中学：不登校</li>
+                    <li>高校：生徒会長</li>
+                    <li>トヨタ自動車専門学校：実技歴代記録更新、全国学年代表（2年間）</li>
+                    <li>静岡トヨペット：整備士（4年間）、新人賞受賞</li>
+                    <li>2020年：株式会社Awake設立（現在5期目）</li>
                   </ul>
                 </div>
                 <div>
