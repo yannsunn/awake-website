@@ -128,7 +128,7 @@ const OptimizedImage = memo(function OptimizedImage({
       {(showLoadingPlaceholder ?? currentPresetConfig.showLoadingPlaceholder ?? true) && !isLoaded && !isError && (
         <div 
           className={cn(
-            "absolute inset-0 bg-gradient-to-br from-gray-200 to-gray-300",
+            "absolute inset-0 bg-gradient-to-br from-gray-200/60 to-gray-300/60 backdrop-blur-sm",
             "flex items-center justify-center",
             loadingClassName
           )}
@@ -142,7 +142,7 @@ const OptimizedImage = memo(function OptimizedImage({
       {isError && (
         <div 
           className={cn(
-            "absolute inset-0 bg-gray-100 flex items-center justify-center",
+            "absolute inset-0 bg-gray-overlay flex items-center justify-center",
             "text-gray-400 text-sm",
             errorClassName
           )}

@@ -24,7 +24,7 @@ export const ServiceCard = memo(function ServiceCard({
 }) {
   return (
     <div className={`
-      bg-white rounded-2xl p-8 shadow-sm border
+      bg-white-overlay rounded-2xl p-8 shadow-sm border
       ${featured ? 'border-gray-900 ring-2 ring-gray-900 ring-opacity-10' : 'border-gray-100'}
     `}>
       {featured && (
@@ -65,9 +65,9 @@ export const ContactMethod = memo(function ContactMethod({
   const wrapperProps = link ? { href: link, className: 'hover:text-gray-900' } : {}
 
   return (
-    <div className={`flex items-start ${highlighted ? 'p-6 bg-green-50 border border-green-200 rounded-lg' : ''}`}>
+    <div className={`flex items-start ${highlighted ? 'p-6 bg-green-50/80 backdrop-blur-sm border border-green-200 rounded-lg' : ''}`}>
       <div className={`w-12 h-12 rounded-lg flex items-center justify-center mr-4 mt-1 ${
-        highlighted ? 'bg-green-100' : 'bg-gray-100'
+        highlighted ? 'bg-green-100/80 backdrop-blur-sm' : 'bg-gray-overlay'
       }`}>
         {icon}
       </div>
@@ -97,7 +97,7 @@ export const CompanyInfoGrid = memo(function CompanyInfoGrid({
     <div className="space-y-6">
       {items.map((item, index) => (
         <div key={index} className="flex items-start">
-          <div className="w-12 h-12 bg-gray-100 rounded-lg flex items-center justify-center mr-4 mt-1">
+          <div className="w-12 h-12 bg-gray-overlay rounded-lg flex items-center justify-center mr-4 mt-1">
             {item.icon}
           </div>
           <div>
@@ -151,7 +151,7 @@ export const PricingCard = memo(function PricingCard({
 }) {
   return (
     <div className={`
-      bg-white rounded-2xl p-8 shadow-sm border
+      bg-white-overlay rounded-2xl p-8 shadow-sm border
       ${featured ? 'border-gray-900 ring-2 ring-gray-900 ring-opacity-10' : 'border-gray-200'}
     `}>
       {featured && (

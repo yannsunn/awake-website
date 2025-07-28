@@ -37,7 +37,7 @@ const UnifiedCard = memo(function UnifiedCard({
           {typeof icon === 'string' ? (
             <div className="text-3xl">{icon}</div>
           ) : (
-            <div className="w-12 h-12 bg-gray-100 rounded-lg flex items-center justify-center">
+            <div className="w-12 h-12 bg-gray-overlay rounded-lg flex items-center justify-center">
               {icon && <icon.constructor className="w-6 h-6 text-gray-700" />}
             </div>
           )}
