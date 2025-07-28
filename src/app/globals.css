@@ -149,4 +149,49 @@
   }
 }
 
+/* 固定背景スタイル */
+.fixed-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  overflow: hidden;
+}
+
+/* メインコンテンツの背景を透明に */
+main {
+  position: relative;
+  background: transparent;
+}
+
+/* セクション背景の調整 */
+section {
+  position: relative;
+}
+
+/* 白背景セクション */
+.bg-white-overlay {
+  background-color: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+/* グレー背景セクション */
+.bg-gray-overlay {
+  background-color: rgba(249, 250, 251, 0.95);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+/* ダーク背景セクション */
+.bg-dark-overlay {
+  background-color: rgba(17, 24, 39, 0.95);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
 /* Force cache clear: 2025-01-28 */

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Noto_Sans_JP } from "next/font/google";
 import "./globals.css";
 import { enhancedOrganizationSchema } from "@/lib/enhanced-schema";
+import FixedBackground from "@/components/layout/FixedBackground";
 
 const notoSansJP = Noto_Sans_JP({
   variable: "--font-noto-sans-jp",
@@ -46,6 +47,7 @@ export default function RootLayout({
   return (
     <html lang="ja" suppressHydrationWarning>
       <body className={`${notoSansJP.variable} font-sans antialiased`} suppressHydrationWarning>
+        <FixedBackground />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
