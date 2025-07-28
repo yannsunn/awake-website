@@ -119,12 +119,12 @@ class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundaryState> {
 
       // デフォルトエラーUI
       return (
-        <div className="min-h-screen flex items-center justify-center bg-gray-50 px-4">
+        <div className="min-h-screen flex items-center justify-center bg-gray-overlay px-4">
           <div className="max-w-md w-full text-center">
-            <div className="bg-white rounded-2xl p-8 shadow-xl">
+            <div className="bg-white-overlay rounded-2xl p-8 shadow-xl">
               {/* エラーアイコン */}
               <div className="flex justify-center mb-6">
-                <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center">
+                <div className="w-16 h-16 bg-red-100/80 backdrop-blur-sm rounded-full flex items-center justify-center">
                   <AlertTriangle className="w-8 h-8 text-red-600" />
                 </div>
               </div>
@@ -141,7 +141,7 @@ class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundaryState> {
 
               {/* エラー詳細（開発環境のみ） */}
               {this.props.showDetails && process.env.NODE_ENV === 'development' && this.state.error && (
-                <details className="text-left mb-6 p-4 bg-gray-100 rounded-lg">
+                <details className="text-left mb-6 p-4 bg-gray-overlay rounded-lg">
                   <summary className="font-medium text-gray-700 cursor-pointer">
                     技術的な詳細
                   </summary>
