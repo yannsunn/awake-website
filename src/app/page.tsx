@@ -9,6 +9,7 @@ import AccessibleButton from '@/components/ui/AccessibleButton'
 import { STYLES } from '@/lib/constants'
 import ContactForm from '@/components/ui/ContactForm'
 import ContactInfo from '@/components/ui/ContactInfo'
+import LineButton from '@/components/ui/LineButton'
 import ValueProposition from '@/components/sections/ValueProposition'
 import FAQ from '@/components/sections/FAQ'
 
@@ -153,15 +154,7 @@ export default function HomePage() {
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center px-4">
-                <AccessibleButton 
-                  href="https://lin.ee/fIaLAjy" 
-                  showArrow 
-                  className="w-full sm:w-auto py-3 !bg-green-600 hover:!bg-green-700 text-white bg-gradient-to-r from-green-600 to-green-600"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  LINEで相談する
-                </AccessibleButton>
+                <LineButton className="w-full sm:w-auto" />
                 <AccessibleButton href="#contact" showArrow className="w-full sm:w-auto py-3">
                   無料相談を始める
                 </AccessibleButton>

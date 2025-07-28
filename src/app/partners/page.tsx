@@ -4,6 +4,7 @@ import { COMPANY_DATA } from '@/lib/company-data'
 import PageTemplate, { ContentSection } from '@/components/layout/PageTemplate'
 import { STYLES } from '@/lib/constants'
 import { Handshake, Award, Globe, Shield } from 'lucide-react'
+import LineButton from '@/components/ui/LineButton'
 
 export const metadata: Metadata = {
   title: `パートナー企業 | ${COMPANY_DATA.basic.name}`,
@@ -449,14 +450,7 @@ export default function PartnersPage() {
           </p>
           
           <div className="flex flex-col gap-4 items-center mb-6">
-            <Link
-              href="https://lin.ee/fIaLAjy"
-              className="inline-flex items-center justify-center px-8 py-4 bg-green-600 text-white font-medium rounded-lg hover:bg-green-700 transition-colors"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              LINEで相談する
-            </Link>
+            <LineButton />
             
             <Link
               href="/#contact"

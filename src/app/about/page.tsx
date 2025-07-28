@@ -6,6 +6,7 @@ import OptimizedImage from '@/components/ui/OptimizedImage'
 import AccessibleButton from '@/components/ui/AccessibleButton'
 import { STYLES } from '@/lib/constants'
 import { createArticleSchema } from '@/lib/enhanced-schema'
+import LineButton from '@/components/ui/LineButton'
 
 export const metadata: Metadata = {
   title: "会社概要・代表挨拶 | 株式会社Awake",
@@ -432,17 +433,7 @@ export default function AboutPage() {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <AccessibleButton
-              href="https://lin.ee/fIaLAjy"
-              variant="secondary"
-              className="!bg-green-600 text-white hover:!bg-green-700 border-green-600 bg-gradient-to-r from-green-600 to-green-600"
-              ariaLabel="LINEで相談する"
-              showArrow
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              LINEで相談する
-            </AccessibleButton>
+            <LineButton />
             <AccessibleButton
               href="/#contact"
               variant="secondary"

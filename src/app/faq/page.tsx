@@ -5,6 +5,7 @@ import PageTemplate, { ContentSection } from '@/components/layout/PageTemplate'
 import AccessibleButton from '@/components/ui/AccessibleButton'
 import { STYLES } from '@/lib/constants'
 import { createFAQSchema } from '@/lib/enhanced-schema'
+import LineButton from '@/components/ui/LineButton'
 
 export const metadata: Metadata = {
   title: `よくある質問 | ${COMPANY_DATA.basic.name}`,
@@ -211,17 +212,7 @@ export default function FAQPage() {
             <div className="bg-green-50 p-6 sm:p-8 rounded-xl shadow-sm border border-green-100">
               <h3 className={STYLES.heading.h2.subsection + " mb-4 text-center"}>💬 公式LINEでお気軽に</h3>
               <p className={STYLES.text.body.medium + " text-center mb-6"}>最速返信！まずはLINEでお話をお聞かせください</p>
-              <AccessibleButton 
-                href="https://lin.ee/fIaLAjy"
-                variant="primary"
-                className="w-full !bg-green-600 hover:!bg-green-700 text-white font-medium py-4 bg-gradient-to-r from-green-600 to-green-600"
-                ariaLabel="LINEでお問い合わせ"
-                target="_blank"
-                rel="noopener noreferrer"
-                showArrow
-              >
-                LINEで相談する
-              </AccessibleButton>
+              <LineButton className="w-full" size="large" />
             </div>
           </div>
         </div>

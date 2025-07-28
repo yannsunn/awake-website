@@ -3,6 +3,7 @@
 import { memo } from 'react'
 import Link from 'next/link'
 import { STYLES } from '@/lib/constants'
+import LineButton from '@/components/ui/LineButton'
 
 const AmazonCTA = memo(function AmazonCTA() {
   const reasons = [
@@ -58,14 +59,7 @@ const AmazonCTA = memo(function AmazonCTA() {
           </p>
           
           <div className="flex flex-col md:flex-row gap-4 justify-center items-center">
-            <Link
-              href="https://lin.ee/fIaLAjy"
-              className="inline-flex items-center justify-center px-8 py-4 bg-green-600 text-white font-medium rounded-lg hover:bg-green-700 transition-colors"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              LINEで相談する
-            </Link>
+            <LineButton />
             
             <Link
               href="/#contact"

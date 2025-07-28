@@ -2,8 +2,8 @@
 
 import { memo } from 'react'
 import { MessageCircle } from 'lucide-react'
-import Link from 'next/link'
 import { STYLES } from '@/lib/constants'
+import LineButton from '@/components/ui/LineButton'
 
 // 🚀 LINEお問い合わせCTA
 const ContactForm = memo(function ContactForm() {
@@ -24,15 +24,7 @@ const ContactForm = memo(function ContactForm() {
         </p>
         
         <div className="space-y-4">
-          <Link
-            href="https://lin.ee/fIaLAjy"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="w-full inline-flex items-center justify-center px-8 py-4 bg-green-600 text-white font-medium rounded-lg hover:bg-green-700 transition-colors shadow-lg"
-          >
-            <MessageCircle className="mr-2 h-5 w-5" />
-            LINEで相談する
-          </Link>
+          <LineButton className="w-full" />
           
         </div>
         
