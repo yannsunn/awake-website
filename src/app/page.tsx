@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Header from '@/components/layout/Header'
 import Footer from '@/components/layout/Footer'
+import FixedBackground from '@/components/layout/FixedBackground'
 import { ArrowRight, Globe, Brain, ShoppingCart, CheckCircle, Award, Users, Heart } from 'lucide-react'
 import Link from 'next/link'
 import { COMPANY_DATA } from '@/lib/company-data'
@@ -107,10 +108,7 @@ const features = [
 export default function HomePage() {
   return (
     <>
-      <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-gray-900 text-white px-4 py-2 rounded-md z-50">
-        メインコンテンツにスキップ
-      </a>
-      
+      <FixedBackground />
       <Header />
       
       <main role="main" id="main-content">
@@ -132,13 +130,13 @@ export default function HomePage() {
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center px-4">
-                <LineButton className="w-full sm:w-auto" />
                 <AccessibleButton href="#contact" showArrow className="w-full sm:w-auto py-3">
                   無料相談を始める
                 </AccessibleButton>
                 <AccessibleButton href="#services" variant="secondary" className="w-full sm:w-auto py-3">
                   サービス詳細を見る
                 </AccessibleButton>
+                <LineButton className="w-full sm:w-auto" size="medium" />
               </div>
             </div>
           </div>
@@ -157,7 +155,7 @@ export default function HomePage() {
               {services.map((service, index) => {
                 const IconComponent = service.icon
                 return (
-                  <div key={index} className="bg-white/90 backdrop-blur-sm rounded-2xl p-8 shadow-sm hover:shadow-lg transition-shadow">
+                  <div key={index} className="bg-white-overlay rounded-2xl p-8 shadow-sm hover:shadow-lg transition-shadow">
                     <h3 className={STYLES.heading.h3.card + " mb-2"}>
                       {service.title}
                     </h3>
@@ -217,7 +215,7 @@ export default function HomePage() {
               </h2>
             </div>
             
-            <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-8 md:p-12 shadow-sm">
+            <div className="bg-white-overlay rounded-2xl p-8 md:p-12 shadow-sm">
               <div className="max-w-4xl mx-auto text-center">
                 <h3 className={STYLES.heading.h2.subsection + " mb-6"}>
                   {COMPANY_DATA.basic.mission}
