@@ -13,6 +13,7 @@ import ContactInfo from '@/components/ui/ContactInfo'
 import LineButton from '@/components/ui/LineButton'
 import ValueProposition from '@/components/sections/ValueProposition'
 import FAQ from '@/components/sections/FAQ'
+import LazyLoad from '@/components/ui/LazyLoad'
 
 const services = [
   {
@@ -180,7 +181,9 @@ export default function HomePageContent() {
         </section>
 
         {/* Value Proposition Section */}
-        <ValueProposition />
+        <LazyLoad offset={300}>
+          <ValueProposition />
+        </LazyLoad>
 
         {/* Company Mission Section */}
         <section className="py-12 sm:py-16 lg:py-20 bg-white-overlay">
@@ -208,7 +211,9 @@ export default function HomePageContent() {
         </section>
 
         {/* FAQ Section */}
-        <FAQ />
+        <LazyLoad offset={300}>
+          <FAQ />
+        </LazyLoad>
         
         {/* Contact Section */}
         <section id="contact" className="py-12 sm:py-16 lg:py-20 bg-gray-overlay">
@@ -228,8 +233,12 @@ export default function HomePageContent() {
             </div>
             
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-              <ContactForm />
-              <ContactInfo />
+              <LazyLoad>
+                <ContactForm />
+              </LazyLoad>
+              <LazyLoad>
+                <ContactInfo />
+              </LazyLoad>
             </div>
           </div>
         </section>

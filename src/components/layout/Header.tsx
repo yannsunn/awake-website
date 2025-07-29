@@ -131,7 +131,7 @@ const Header = memo(function Header() {
             </div>
             
             {/* デスクトップナビゲーション */}
-            <nav className="hidden md:flex items-center space-x-1" aria-label="メインナビゲーション">
+            <nav className="hidden md:flex items-center space-x-1" aria-label="メインナビゲーション" role="navigation">
               {navigationItems.map((item, index) => {
                 const isActive = pathname === item.href
                 
@@ -185,7 +185,8 @@ const Header = memo(function Header() {
                       isActive 
                         ? 'text-gray-900 bg-gray-100' 
                         : 'text-gray-700 hover:bg-gray-100'
-                    }`}
+                    } ultra-smooth`}
+                    aria-current={isActive ? 'page' : undefined}
                   >
                     {item.title}
                   </Link>
@@ -205,6 +206,7 @@ const Header = memo(function Header() {
               className="md:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors"
               aria-expanded={isMenuOpen}
               aria-label={isMenuOpen ? 'メニューを閉じる' : 'メニューを開く'}
+              aria-controls="mobile-menu"
             >
               {isMenuOpen ? (
                 <X className="h-6 w-6 text-gray-700" />
@@ -231,10 +233,13 @@ const Header = memo(function Header() {
         
         {/* メニューパネル */}
         <nav 
+          id="mobile-menu"
           className={`absolute right-0 top-0 h-full w-full max-w-sm bg-white/35 backdrop-blur-none shadow-2xl transform transition-transform duration-300 ${
             isMenuOpen ? 'translate-x-0' : 'translate-x-full'
           }`}
           aria-label="モバイルナビゲーション"
+          role="navigation"
+          aria-hidden={!isMenuOpen}
         >
           <div className="flex flex-col h-full">
             {/* ヘッダー */}

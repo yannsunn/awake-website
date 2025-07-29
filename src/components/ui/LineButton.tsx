@@ -29,9 +29,9 @@ const LineButton = memo(function LineButton({
   }, [])
   
   const sizeClasses = {
-    small: 'px-5 py-2.5 text-sm min-h-[44px]',
-    medium: 'px-8 py-4 text-base min-h-[52px]',
-    large: 'px-10 py-5 text-lg min-h-[60px]'
+    small: 'px-6 py-3 text-sm min-h-[48px]',
+    medium: 'px-8 py-4 text-base min-h-[56px]',
+    large: 'px-10 py-5 text-lg min-h-[64px]'
   }
   
   const variantClasses = {
@@ -46,8 +46,9 @@ const LineButton = memo(function LineButton({
     inline-flex items-center justify-center
     font-bold rounded-xl transition-all duration-300
     focus:outline-none focus:ring-4 focus:ring-green-500 focus:ring-offset-2
-    line-button-smooth transform hover:scale-105 active:scale-95
-    text-shadow-md
+    line-button-smooth transform hover:scale-105 active:scale-98
+    text-shadow-md ultra-smooth glow-on-hover
+    relative overflow-hidden
   `
   
   return (
@@ -57,8 +58,11 @@ const LineButton = memo(function LineButton({
       rel="noopener noreferrer"
       className={`${baseClasses} ${sizeClasses[size]} ${variantClasses[variant]} ${visibilityClass} ${className}`}
     >
-      {showIcon && <MessageCircle className="mr-2 h-5 w-5" />}
-      LINEで相談する
+      <span className="relative z-10 flex items-center">
+        {showIcon && <MessageCircle className="mr-2 h-5 w-5 animate-bounce" />}
+        LINEで相談する
+      </span>
+      <span className="absolute inset-0 bg-gradient-to-r from-green-400 to-green-600 opacity-0 hover:opacity-20 transition-opacity duration-300" />
     </Link>
   )
 })
