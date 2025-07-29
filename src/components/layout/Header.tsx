@@ -111,8 +111,8 @@ const Header = memo(function Header() {
       <header 
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           isScrolled 
-            ? 'bg-white/30 backdrop-blur-none shadow-lg' 
-            : 'bg-white/25 backdrop-blur-none'
+            ? 'bg-white/70 backdrop-blur-md shadow-2xl border-b-2 border-gray-200' 
+            : 'bg-white/60 backdrop-blur-sm border-b border-gray-100'
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -149,13 +149,13 @@ const Header = memo(function Header() {
                       </button>
                       
                       {isServicesOpen && (
-                        <div className="absolute top-full left-0 mt-2 w-80 bg-white/35 backdrop-blur-none rounded-xl shadow-2xl border border-gray-200 overflow-hidden">
+                        <div className="absolute top-full left-0 mt-2 w-80 bg-white/90 backdrop-blur-md rounded-xl shadow-3xl border-2 border-gray-300 overflow-hidden animate-slide-up">
                           {item.items?.map((service, serviceIndex) => (
                             <Link
                               key={service.href}
                               href={service.href}
-                              className={`block px-6 py-4 hover:bg-gray-50 transition-colors ${
-                                serviceIndex !== item.items.length - 1 ? 'border-b border-gray-100' : ''
+                              className={`block px-6 py-4 hover:bg-indigo-50/80 transition-all duration-200 ${
+                                serviceIndex !== item.items.length - 1 ? 'border-b-2 border-gray-200' : ''
                               }`}
                               onClick={() => setIsServicesOpen(false)}
                               {...(service.href.startsWith('http') && {

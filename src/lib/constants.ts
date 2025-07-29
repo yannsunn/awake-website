@@ -3,12 +3,12 @@ export const STYLES = {
   // Container
   container: 'mx-auto max-w-7xl px-6 lg:px-8',
   
-  // Modern Button styles
+  // 視認性最優先のボタンスタイル
   button: {
-    primary: 'inline-flex items-center justify-center bg-gradient-to-r from-indigo-600 to-indigo-700 text-white px-6 py-3 rounded-xl font-medium shadow-lg shadow-indigo-500/25 hover:shadow-xl hover:shadow-indigo-500/30 transition-all duration-200 min-h-[44px] focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2',
-    secondary: 'inline-flex items-center justify-center bg-white border border-gray-200 text-gray-700 px-6 py-3 rounded-xl font-medium shadow-sm hover:shadow-md hover:border-gray-300 transition-all duration-200 min-h-[44px] focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2',
-    outline: 'inline-flex items-center justify-center border-2 border-indigo-600 text-indigo-600 px-6 py-3 rounded-xl font-medium hover:bg-indigo-50 transition-all duration-200 min-h-[44px] focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2',
-    minimal: 'inline-flex items-center justify-center text-gray-700 px-4 py-2 font-medium hover:text-indigo-600 transition-colors duration-200 min-h-[44px] focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2'
+    primary: 'inline-flex items-center justify-center bg-gradient-to-r from-indigo-600 to-indigo-700 text-white px-6 py-3 rounded-xl font-bold text-shadow-lg shadow-2xl shadow-indigo-500/30 hover:shadow-3xl hover:shadow-indigo-500/40 hover:from-indigo-700 hover:to-indigo-800 transition-all duration-300 min-h-[48px] border-2 border-indigo-700 focus:outline-none focus:ring-4 focus:ring-indigo-500 focus:ring-offset-2',
+    secondary: 'inline-flex items-center justify-center bg-white-overlay border-2 border-gray-300 text-black font-bold px-6 py-3 rounded-xl shadow-xl hover:shadow-2xl hover:border-gray-400 hover:bg-gray-overlay transition-all duration-300 min-h-[48px] focus:outline-none focus:ring-4 focus:ring-gray-500 focus:ring-offset-2',
+    outline: 'inline-flex items-center justify-center border-3 border-indigo-600 text-indigo-700 font-bold px-6 py-3 rounded-xl hover:bg-indigo-50/80 hover:text-indigo-800 hover:border-indigo-700 transition-all duration-300 min-h-[48px] shadow-lg hover:shadow-xl focus:outline-none focus:ring-4 focus:ring-indigo-500 focus:ring-offset-2',
+    minimal: 'inline-flex items-center justify-center text-black font-bold px-4 py-2 hover:text-indigo-700 hover:bg-gray-50/50 rounded-lg transition-all duration-300 min-h-[44px] focus:outline-none focus:ring-4 focus:ring-indigo-500 focus:ring-offset-2'
   },
   
   // Section spacing
@@ -20,11 +20,11 @@ export const STYLES = {
     pricing: 'py-12 sm:py-16 lg:py-20'
   },
   
-  // Modern Card styles - 高透明度で背景を見えるように
+  // 視認性と美しさを両立するカードスタイル
   card: {
-    default: 'bg-white/30 backdrop-blur-none rounded-2xl p-8 shadow-sm hover:shadow-lg border border-gray-200 transition-shadow duration-300',
-    featured: 'bg-white/35 rounded-2xl p-8 border border-gray-200 shadow-xl',
-    compact: 'bg-white/30 backdrop-blur-none rounded-xl p-6 shadow-sm hover:shadow-md border border-gray-200 transition-all duration-300'
+    default: 'bg-white/40 backdrop-blur-sm rounded-2xl p-8 shadow-2xl hover:shadow-3xl border-2 border-gray-300 transition-all duration-300 hover:bg-white/50 hover:border-gray-400',
+    featured: 'bg-gradient-to-br from-white/50 to-white/40 rounded-2xl p-8 border-2 border-indigo-300 shadow-2xl shadow-indigo-500/20 hover:shadow-3xl hover:from-white/60 hover:to-white/50 transition-all duration-300',
+    compact: 'bg-white/40 backdrop-blur-sm rounded-xl p-6 shadow-xl hover:shadow-2xl border-2 border-gray-300 transition-all duration-300 hover:bg-white/50'
   },
   
   // Modern Typography - 統一されたフォントシステム（超可読性強化）
