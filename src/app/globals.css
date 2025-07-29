@@ -277,4 +277,14 @@ section {
   font-weight: 700 !important;
 }
 
-/* Force cache clear: 2025-01-28-v2 */
+/* ページ読み込み時の緑色フラッシュ防止 */
+.line-button-smooth {
+  transition: opacity 0.3s ease-out;
+}
+
+/* 初期表示時の緑色要素を非表示 */
+body:not(.loaded) .bg-green-600 {
+  opacity: 0 !important;
+}
+
+/* Force cache clear: 2025-01-28-v3 */
