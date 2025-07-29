@@ -91,7 +91,7 @@ export default function HomePageContent() {
       
       <main role="main" id="main-content">
         {/* Hero Section - 視認性最大化 */}
-        <section className="py-16 sm:py-24 md:py-32 lg:py-40">
+        <section className="py-20 sm:py-28 md:py-36 lg:py-44">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center max-w-4xl mx-auto">
               {/* Company Tagline */}
@@ -107,7 +107,7 @@ export default function HomePageContent() {
                 {COMPANY_DATA.basic.subMessage}
               </p>
 
-              <div className="flex flex-col sm:flex-row gap-4 justify-center px-2 sm:px-4">
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <AccessibleButton href="#contact" showArrow className="w-full sm:w-auto" size="large">
                   今すぐ無料相談
                 </AccessibleButton>
@@ -121,7 +121,7 @@ export default function HomePageContent() {
         </section>
 
         {/* Services Section */}
-        <section id="services" className="py-12 sm:py-16 lg:py-20 bg-white-overlay">
+        <section id="services" className="py-16 sm:py-20 lg:py-24 bg-white-overlay">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-8 sm:mb-12 lg:mb-16">
               <h2 className={STYLES.heading.h2.section + " mb-4"}>
@@ -186,7 +186,7 @@ export default function HomePageContent() {
         </LazyLoad>
 
         {/* Company Mission Section */}
-        <section className="py-12 sm:py-16 lg:py-20 bg-white-overlay">
+        <section className="py-16 sm:py-20 lg:py-24 bg-white-overlay">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-8 sm:mb-12 lg:mb-16">
               <h2 className={STYLES.heading.h2.section + " mb-4"}>
@@ -216,7 +216,7 @@ export default function HomePageContent() {
         </LazyLoad>
         
         {/* Contact Section */}
-        <section id="contact" className="py-12 sm:py-16 lg:py-20 bg-gray-overlay">
+        <section id="contact" className="py-16 sm:py-20 lg:py-24 bg-gray-overlay">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-8 sm:mb-12 lg:mb-16">
               <h2 className={STYLES.heading.h2.section + " mb-6"}>

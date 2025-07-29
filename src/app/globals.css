@@ -188,14 +188,14 @@ section {
 
 /* 白背景セクション */
 .bg-white-overlay {
-  background-color: rgba(255, 255, 255, 0.4);
+  background-color: rgba(255, 255, 255, 0.6);
   backdrop-filter: blur(1px);
   -webkit-backdrop-filter: blur(1px);
 }
 
 /* グレー背景セクション */
 .bg-gray-overlay {
-  background-color: rgba(249, 250, 251, 0.4);
+  background-color: rgba(249, 250, 251, 0.6);
   backdrop-filter: blur(1px);
   -webkit-backdrop-filter: blur(1px);
 }
@@ -209,7 +209,7 @@ section {
 
 /* 透明背景 */
 .bg-transparent-overlay {
-  background-color: rgba(255, 255, 255, 0.3);
+  background-color: rgba(255, 255, 255, 0.4);
   backdrop-filter: none;
   -webkit-backdrop-filter: none;
 }
@@ -437,4 +437,37 @@ body:not(.loaded) .bg-green-600 {
   100% { background-position: -200% 0; }
 }
 
-/* Force cache clear: 2025-01-28-v4-ULTRA */
+/* ボタンとリンクのホバー状態最適化 */
+button, a {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+}
+
+button:hover, a:hover {
+  transform: translateY(-1px);
+}
+
+/* リンクのアンダーラインアニメーション */
+a:not(.no-underline)::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -2px;
+  left: 50%;
+  background-color: currentColor;
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+
+a:not(.no-underline):hover::after {
+  width: 100%;
+}
+
+/* フォーカス状態の改善 */
+button:focus-visible, a:focus-visible {
+  outline: 3px solid #22c55e;
+  outline-offset: 3px;
+}
+
+/* Force cache clear: 2025-01-28-v5-UIUX */

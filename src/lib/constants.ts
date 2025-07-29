@@ -52,15 +52,15 @@ export const STYLES = {
   text: {
     // メイン本文
     body: {
-      large: 'text-lg sm:text-xl text-black leading-relaxed text-shadow-md font-medium',
+      large: 'text-lg sm:text-xl text-black leading-loose text-shadow-md font-medium',
       medium: 'text-base sm:text-lg text-black leading-relaxed text-shadow-md font-medium',
-      small: 'text-sm sm:text-base text-black leading-relaxed text-shadow-sm font-medium'
+      small: 'text-sm sm:text-base text-black leading-normal text-shadow-sm font-medium'
     },
     // 説明文
     description: {
-      large: 'text-base sm:text-lg text-gray-900 leading-relaxed text-shadow-md font-medium',
+      large: 'text-base sm:text-lg text-gray-900 leading-loose text-shadow-md font-medium',
       medium: 'text-sm sm:text-base text-gray-900 leading-relaxed text-shadow-md font-medium',
-      small: 'text-xs sm:text-sm text-gray-900 leading-relaxed text-shadow-sm font-medium'
+      small: 'text-xs sm:text-sm text-gray-900 leading-normal text-shadow-sm font-medium'
     },
     // 強調テキスト
     emphasis: {
