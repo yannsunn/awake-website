@@ -3,11 +3,21 @@
 import Link from 'next/link'
 import { ArrowRight } from 'lucide-react'
 import Image from 'next/image'
-import { memo } from 'react'
+import { memo, useEffect } from 'react'
 import { COMPANY_DATA } from '@/lib/company-data'
 
 // 🚀 ULTRA SYNC - 限界突破完了！軽量化ヒーローセクション
 const HeroSection = memo(function HeroSection() {
+  // 🚀 ULTRA OPTIMIZATION - スクロールアニメーション
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollY = window.scrollY
+      document.documentElement.style.setProperty('--scroll-y', `${scrollY}px`)
+    }
+    
+    window.addEventListener('scroll', handleScroll, { passive: true })
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
   // 🚀 限界突破 - 戦略的サービス定義（データ統一）
   const heroServices = [
     {
@@ -31,7 +41,7 @@ const HeroSection = memo(function HeroSection() {
   ]
 
   return (
-    <section className="relative min-h-screen flex flex-col justify-center overflow-hidden" id="hero" aria-labelledby="hero-title">
+    <section className="relative min-h-screen flex flex-col justify-center overflow-hidden gpu-accelerated" id="hero" aria-labelledby="hero-title">
       
       {/* 🚀 ウルトラシンク最適化 - 単一コンテナ */}
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center z-10">
@@ -57,7 +67,7 @@ const HeroSection = memo(function HeroSection() {
               <Link
                 key={index}
                 href={service.href}
-                className="group bg-white-overlay rounded-2xl p-6 border border-gray-100"
+                className="group neo-card rounded-2xl p-6 border border-gray-100 bounce-on-hover"
                 {...(service.href.startsWith('http') && {
                   target: '_blank',
                   rel: 'noopener noreferrer'
