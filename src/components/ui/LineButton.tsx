@@ -29,14 +29,14 @@ const LineButton = memo(function LineButton({
   }, [])
   
   const sizeClasses = {
-    small: 'px-4 py-2 text-sm',
-    medium: 'px-8 py-4',
-    large: 'px-10 py-5 text-lg'
+    small: 'px-5 py-2.5 text-sm min-h-[44px]',
+    medium: 'px-8 py-4 text-base min-h-[52px]',
+    large: 'px-10 py-5 text-lg min-h-[60px]'
   }
   
   const variantClasses = {
-    filled: 'bg-green-600 text-white hover:bg-green-700 shadow-lg',
-    outline: 'border-2 border-green-600 text-green-600 hover:bg-green-50'
+    filled: 'bg-gradient-to-r from-green-600 to-green-700 text-white hover:from-green-700 hover:to-green-800 shadow-2xl hover:shadow-3xl border-2 border-green-700 font-bold',
+    outline: 'border-3 border-green-600 text-green-700 hover:bg-green-50/80 hover:border-green-700 shadow-lg hover:shadow-xl font-bold'
   }
   
   // 初期表示時の透明度制御
@@ -44,9 +44,10 @@ const LineButton = memo(function LineButton({
   
   const baseClasses = `
     inline-flex items-center justify-center
-    font-medium rounded-lg transition-all duration-300
-    focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2
-    line-button-smooth
+    font-bold rounded-xl transition-all duration-300
+    focus:outline-none focus:ring-4 focus:ring-green-500 focus:ring-offset-2
+    line-button-smooth transform hover:scale-105 active:scale-95
+    text-shadow-md
   `
   
   return (

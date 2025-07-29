@@ -89,8 +89,8 @@ export default function HomePageContent() {
       <Header />
       
       <main role="main" id="main-content">
-        {/* Hero Section */}
-        <section className="py-24 sm:py-32 lg:py-40">
+        {/* Hero Section - 視認性最大化 */}
+        <section className="py-16 sm:py-24 md:py-32 lg:py-40">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center max-w-4xl mx-auto">
               {/* Company Tagline */}
@@ -106,14 +106,14 @@ export default function HomePageContent() {
                 {COMPANY_DATA.basic.subMessage}
               </p>
 
-              <div className="flex flex-col sm:flex-row gap-4 justify-center px-4">
-                <AccessibleButton href="#contact" showArrow className="w-full sm:w-auto py-3">
-                  無料相談を始める
+              <div className="flex flex-col sm:flex-row gap-4 justify-center px-2 sm:px-4">
+                <AccessibleButton href="#contact" showArrow className="w-full sm:w-auto" size="large">
+                  今すぐ無料相談
                 </AccessibleButton>
-                <AccessibleButton href="#services" variant="secondary" className="w-full sm:w-auto py-3">
-                  サービス詳細を見る
+                <AccessibleButton href="#services" variant="secondary" className="w-full sm:w-auto" size="medium">
+                  サービスを見る
                 </AccessibleButton>
-                <LineButton className="w-full sm:w-auto" size="medium" />
+                <LineButton className="w-full sm:w-auto animate-pulse" size="medium" />
               </div>
             </div>
           </div>
@@ -131,7 +131,7 @@ export default function HomePageContent() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
               {services.map((service, index) => {
                 return (
-                  <div key={index} className="bg-white-overlay rounded-2xl p-8 shadow-sm hover:shadow-lg transition-shadow">
+                  <div key={index} className="bg-white/50 backdrop-blur-sm rounded-2xl p-6 sm:p-8 shadow-2xl hover:shadow-3xl transition-all duration-300 border-2 border-gray-200 hover:border-indigo-300 hover:bg-white/60 transform hover:scale-105">
                     <h3 className={STYLES.heading.h3.card + " mb-2"}>
                       {service.title}
                     </h3>
@@ -145,15 +145,15 @@ export default function HomePageContent() {
                     <ul className="space-y-2 mb-6">
                       {service.features.map((feature, idx) => (
                         <li key={idx} className="flex items-start">
-                          <span className="text-green-600 mr-2">✓</span>
-                          <span className={STYLES.text.description.medium}>{feature}</span>
+                          <span className="text-green-600 mr-2 text-xl font-bold">✓</span>
+                          <span className={STYLES.text.description.medium + " font-semibold"}>{feature}</span>
                         </li>
                       ))}
                     </ul>
                     
-                    <div className="mb-6">
-                      <span className={STYLES.text.emphasis.strong + " text-2xl"}>{service.price}</span>
-                      <span className={STYLES.text.description.small + " text-gray-500"}>〜</span>
+                    <div className="mb-6 bg-indigo-50/80 rounded-lg p-3 border-2 border-indigo-200">
+                      <span className={STYLES.text.emphasis.strong + " text-2xl text-indigo-700"}>{service.price}</span>
+                      <span className={STYLES.text.description.small + " text-indigo-600"}>〜</span>
                     </div>
                     
                     <div className="flex flex-row gap-2">

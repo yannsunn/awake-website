@@ -14,19 +14,19 @@ interface FAQItemProps {
 const FAQItem = memo(function FAQItem({ question, answer, index }: FAQItemProps) {
   return (
     <details 
-      className="group bg-white/90 backdrop-blur-sm border border-gray-200 rounded-lg overflow-hidden"
+      className="group bg-white/60 backdrop-blur-sm border-2 border-gray-300 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300"
     >
-      <summary className="flex items-center justify-between p-4 sm:p-6 cursor-pointer hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">
-        <h3 className={`${STYLES.heading.h3.emphasis} pr-4`}>
+      <summary className="flex items-center justify-between p-4 sm:p-6 cursor-pointer hover:bg-indigo-50/80 focus:outline-none focus:ring-4 focus:ring-indigo-500 focus:ring-offset-2 transition-all duration-200">
+        <h3 className={`${STYLES.heading.h3.emphasis} pr-4 text-lg sm:text-xl`}>
           {question}
         </h3>
         <div className="flex-shrink-0">
           <Plus 
-            className="h-5 w-5 text-gray-400 group-open:hidden" 
+            className="h-6 w-6 text-indigo-600 group-open:hidden transition-all duration-300" 
             aria-hidden="true"
           />
           <Minus 
-            className="h-5 w-5 text-gray-400 hidden group-open:block" 
+            className="h-6 w-6 text-indigo-600 hidden group-open:block transition-all duration-300" 
             aria-hidden="true"
           />
         </div>

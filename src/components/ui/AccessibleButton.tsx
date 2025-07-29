@@ -58,20 +58,21 @@ const AccessibleButton = memo(forwardRef<
   const validVariant = (variant && variant in BUTTON_STYLES) ? variant : 'primary'
   const baseStyles = BUTTON_STYLES[validVariant as keyof typeof BUTTON_STYLES]
   
-  // モダンUIスタイル
+  // 視認性重視のモダンUIスタイル
   const accessibilityStyles = `
-    focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2
-    focus:ring-offset-white focus:ring-opacity-50
+    focus:outline-none focus:ring-4 focus:ring-indigo-500 focus:ring-offset-2
+    focus:ring-offset-white focus:ring-opacity-70
     disabled:opacity-50 disabled:cursor-not-allowed disabled:pointer-events-none
-    text-center font-medium relative overflow-hidden
-    transition-all duration-200 transform active:scale-95
+    text-center font-bold relative overflow-hidden
+    transition-all duration-300 transform hover:scale-105 active:scale-95
+    text-shadow-md shadow-xl hover:shadow-2xl
     ${disabled ? 'opacity-50 cursor-not-allowed' : ''}
   `
   
   const sizeStyles = {
-    small: 'px-3 py-1.5 text-sm',
-    medium: '',
-    large: 'px-6 py-3 text-lg'
+    small: 'px-4 py-2 text-sm min-h-[40px]',
+    medium: 'px-6 py-3 text-base min-h-[48px]',
+    large: 'px-8 py-4 text-lg min-h-[56px]'
   }
   const styles = `${baseStyles} ${sizeStyles[size]} ${accessibilityStyles} ${className}`
 
@@ -100,8 +101,8 @@ const AccessibleButton = memo(forwardRef<
           aria-hidden="true"
         />
       )}
-      {/* モダンホバーエフェクト */}
-      <span className="absolute inset-0 bg-white opacity-0 group-hover:opacity-10 transition-opacity duration-200" />
+      {/* 強化されたホバーエフェクト */}
+      <span className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
     </>
   )
 
