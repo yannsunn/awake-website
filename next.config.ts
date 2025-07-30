@@ -47,10 +47,10 @@ const nextConfig: NextConfig = {
             value: `
               default-src 'self';
               script-src 'self' 'unsafe-eval' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com https://line.me;
-              style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
+              style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://www.awakeinc.co.jp;
               img-src 'self' data: https: blob:;
               font-src 'self' https://fonts.gstatic.com;
-              connect-src 'self' https://www.google-analytics.com https://api.line.me https://vitals.vercel-insights.com;
+              connect-src 'self' https://www.google-analytics.com https://api.line.me https://vitals.vercel-insights.com https://www.awakeinc.co.jp;
               frame-src 'none';
               object-src 'none';
               base-uri 'self';
@@ -84,15 +84,7 @@ const nextConfig: NextConfig = {
             value: 'camera=(), microphone=(), geolocation=(), payment=(), usb=(), interest-cohort=()',
           },
           {
-            key: 'Cross-Origin-Embedder-Policy',
-            value: 'require-corp'
-          },
-          {
             key: 'Cross-Origin-Opener-Policy',
-            value: 'same-origin'
-          },
-          {
-            key: 'Cross-Origin-Resource-Policy',
             value: 'same-origin'
           }
         ],
