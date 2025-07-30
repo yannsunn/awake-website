@@ -40,14 +40,14 @@ const nextConfig: NextConfig = {
   async headers() {
     return [
       {
-        source: '/(.*)',
+        source: '/:path((?!_next/static|_next/image|favicon.ico).*)',
         headers: [
           {
             key: 'Content-Security-Policy',
             value: `
               default-src 'self';
               script-src 'self' 'unsafe-eval' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com https://line.me;
-              style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://www.awakeinc.co.jp;
+              style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
               img-src 'self' data: https: blob:;
               font-src 'self' https://fonts.gstatic.com;
               connect-src 'self' https://www.google-analytics.com https://api.line.me https://vitals.vercel-insights.com https://www.awakeinc.co.jp;

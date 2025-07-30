@@ -3,7 +3,6 @@
 import { useEffect } from 'react'
 import Header from '@/components/layout/Header'
 import Footer from '@/components/layout/Footer'
-import FixedBackground from '@/components/layout/FixedBackground'
 import { Globe, Brain, ShoppingCart, CheckCircle, Award, Users, Heart } from 'lucide-react'
 import { COMPANY_DATA } from '@/lib/company-data'
 import AccessibleButton from '@/components/ui/AccessibleButton'
@@ -86,14 +85,13 @@ export default function HomePageContent() {
   
   return (
     <>
-      <FixedBackground />
       <Header />
       
       <main role="main" id="main-content">
         {/* Hero Section - 視認性最大化 */}
         <section className="py-20 sm:py-28 md:py-36 lg:py-44">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center max-w-4xl mx-auto">
+          <div className="w-full px-4 sm:px-6 lg:px-8">
+            <div className="text-center">
               {/* Company Tagline */}
               <h1 className={STYLES.heading.h1.hero + " mb-6"}>
                 {COMPANY_DATA.basic.tagline}
@@ -103,7 +101,7 @@ export default function HomePageContent() {
                 {COMPANY_DATA.basic.description}
               </p>
 
-              <p className={STYLES.text.body.medium + " mb-8 sm:mb-12 max-w-3xl mx-auto"}>
+              <p className={STYLES.text.body.medium + " mb-8 sm:mb-12"}>
                 {COMPANY_DATA.basic.subMessage}
               </p>
 
@@ -122,7 +120,7 @@ export default function HomePageContent() {
 
         {/* Services Section */}
         <section id="services" className="py-16 sm:py-20 lg:py-24 bg-white-overlay">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="w-full px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-8 sm:mb-12 lg:mb-16">
               <h2 className={STYLES.heading.h2.section + " mb-4"}>
                 あなたの課題を解決する3つのソリューション
@@ -187,7 +185,7 @@ export default function HomePageContent() {
 
         {/* Company Mission Section */}
         <section className="py-16 sm:py-20 lg:py-24 bg-white-overlay">
-          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="w-full px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-8 sm:mb-12 lg:mb-16">
               <h2 className={STYLES.heading.h2.section + " mb-4"}>
                 私たちの想い
@@ -195,7 +193,7 @@ export default function HomePageContent() {
             </div>
             
             <div className="bg-white-overlay rounded-2xl p-8 md:p-12 shadow-sm">
-              <div className="max-w-4xl mx-auto text-center">
+              <div className="text-center">
                 <h3 className={STYLES.heading.h2.subsection + " mb-6"}>
                   {COMPANY_DATA.basic.mission}
                 </h3>
@@ -217,7 +215,7 @@ export default function HomePageContent() {
         
         {/* Contact Section */}
         <section id="contact" className="py-16 sm:py-20 lg:py-24 bg-gray-overlay">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="w-full px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-8 sm:mb-12 lg:mb-16">
               <h2 className={STYLES.heading.h2.section + " mb-6"}>
                 まずは、お話を聞かせてください
