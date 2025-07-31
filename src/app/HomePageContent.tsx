@@ -12,6 +12,7 @@ import LineButton from '@/components/ui/LineButton'
 import ValueProposition from '@/components/sections/ValueProposition'
 import FAQ from '@/components/sections/FAQ'
 import LazyLoad from '@/components/ui/LazyLoad'
+import { useScrollReveal } from '@/hooks/useScrollReveal'
 
 const services = [
   {
@@ -71,94 +72,142 @@ const services = [
 ]
 
 export default function HomePageContent() {
+  useScrollReveal()
   
   return (
     <>
       <Header />
       
       <main role="main" id="main-content">
-        {/* Hero Section - 視認性最大化 */}
-        <section className="py-20 sm:py-28 md:py-36 lg:py-44">
-          <div className="w-full px-4 sm:px-6 lg:px-8">
-            <div className="text-center">
-              {/* Company Tagline */}
-              <h1 className={STYLES.heading.h1.hero + " mb-6"}>
-                {COMPANY_DATA.basic.tagline}
+        {/* Hero Section - Creative & Bold */}
+        <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+          {/* Animated Blob Background */}
+          <div className="absolute inset-0 overflow-hidden">
+            <div className="blob" />
+          </div>
+          
+          <div className="relative z-10 w-full px-4 sm:px-6 lg:px-8">
+            <div className="text-center max-w-6xl mx-auto">
+              {/* Animated Tagline */}
+              <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold mb-8 leading-tight">
+                <span className="text-gradient animate-gradient">
+                  {COMPANY_DATA.basic.tagline.split('を')[0]}
+                </span>
+                <br />
+                <span className="text-gradient-subtle">
+                  を{COMPANY_DATA.basic.tagline.split('を')[1]}
+                </span>
               </h1>
               
-              <p className={STYLES.text.body.large + " mb-4"}>
+              <p className="text-xl sm:text-2xl text-gray-600 mb-4 animate-fade-in" style={{ animationDelay: '0.2s' }}>
                 {COMPANY_DATA.basic.description}
               </p>
 
-              <p className={STYLES.text.body.medium + " mb-8 sm:mb-12"}>
+              <p className="text-lg sm:text-xl text-gray-500 mb-12 animate-fade-in" style={{ animationDelay: '0.4s' }}>
                 {COMPANY_DATA.basic.subMessage}
               </p>
 
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <AccessibleButton href="#contact" showArrow className="w-full sm:w-auto btn-glow" size="large">
+              <div className="flex flex-col sm:flex-row gap-6 justify-center animate-fade-in" style={{ animationDelay: '0.6s' }}>
+                <AccessibleButton 
+                  href="#contact" 
+                  showArrow 
+                  className="btn-modern neon-glow glass text-white border-none" 
+                  size="large"
+                >
                   今すぐ無料相談
                 </AccessibleButton>
-                <AccessibleButton href="#services" variant="secondary" className="w-full sm:w-auto" size="medium">
+                <AccessibleButton 
+                  href="#services" 
+                  variant="secondary" 
+                  className="glass border-gray-300 hover:border-primary-500" 
+                  size="large"
+                >
                   サービスを見る
                 </AccessibleButton>
-                <LineButton className="w-full sm:w-auto" size="medium" />
+              </div>
+              
+              {/* Floating LINE Button */}
+              <div className="mt-8 animate-float">
+                <LineButton className="glass-dark text-white border-none" size="medium" variant="filled" />
               </div>
             </div>
           </div>
+          
+          {/* Scroll Indicator */}
+          <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <svg className="w-6 h-6 text-gray-400" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor">
+              <path d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+            </svg>
+          </div>
         </section>
 
-        {/* Services Section */}
-        <section id="services" className="py-16 sm:py-20 lg:py-24 bg-white-overlay">
+        {/* Services Section - Bento Grid */}
+        <section id="services" className="py-16 sm:py-20 lg:py-24 relative">
           <div className="w-full px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-8 sm:mb-12 lg:mb-16">
-              <h2 className={STYLES.heading.h2.section + " mb-4"}>
-                あなたの課題を解決する3つのソリューション
+            <div className="text-center mb-12 lg:mb-16 reveal">
+              <h2 className="text-4xl sm:text-5xl font-bold mb-4">
+                <span className="text-gradient">あなたの課題を解決する</span>
               </h2>
+              <p className="text-xl text-gray-600">3つのクリエイティブソリューション</p>
             </div>
             
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
+            <div className="bento-grid max-w-7xl mx-auto">
               {services.map((service, index) => {
+                const gridClass = index === 0 ? 'bento-item-large' : index === 1 ? 'bento-item-wide' : 'bento-item-tall'
+                const Icon = service.icon
                 return (
-                  <div key={index} className="neuro-focus-card bg-white rounded-2xl p-6 sm:p-8 transition-all duration-250">
-                    <h3 className={STYLES.heading.h3.card + " mb-2"}>
-                      {service.title}
-                    </h3>
-                    <p className={STYLES.text.body.medium + " text-gray-600 mb-4"}>
-                      {service.description}
-                    </p>
-                    <p className={STYLES.text.description.medium + " mb-6"}>
-                      {service.longDescription}
-                    </p>
-                    
-                    <ul className="space-y-2 mb-6">
-                      {service.features.map((feature, idx) => (
-                        <li key={idx} className="flex items-start">
-                          <span className="text-blue-600 mr-2 text-xl font-bold">✓</span>
-                          <span className={STYLES.text.description.medium + " font-semibold"}>{feature}</span>
-                        </li>
-                      ))}
-                    </ul>
-                    
-                    <div className="mb-6 bg-primary-50 rounded-lg p-4 border border-primary-200">
-                      <span className={STYLES.text.emphasis.strong + " text-2xl text-primary-700"}>{service.price}</span>
-                      <span className={STYLES.text.description.small + " text-primary-600 ml-1"}>〜</span>
+                  <div 
+                    key={index} 
+                    className={`${gridClass} glass card-3d rounded-3xl p-8 flex flex-col justify-between hover:scale-105 transition-all duration-300 reveal`}
+                    style={{ animationDelay: `${index * 0.2}s` }}
+                  >
+                    <div>
+                      {/* Icon with gradient background */}
+                      <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-primary-500 to-neon-purple flex items-center justify-center mb-6 animate-float" style={{ animationDelay: `${index * 0.3}s` }}>
+                        <Icon className="w-10 h-10 text-white" />
+                      </div>
+                      
+                      <h3 className="text-2xl font-bold mb-4 text-gray-800">
+                        {service.title}
+                      </h3>
+                      <p className="text-gray-600 mb-4">
+                        {service.description}
+                      </p>
+                      <p className="text-sm text-gray-500 mb-6">
+                        {service.longDescription}
+                      </p>
+                      
+                      <ul className="space-y-3 mb-6">
+                        {service.features.map((feature, idx) => (
+                          <li key={idx} className="flex items-start">
+                            <span className="text-neon-blue mr-2 mt-1">•</span>
+                            <span className="text-sm">{feature}</span>
+                          </li>
+                        ))}
+                      </ul>
                     </div>
                     
-                    <div className="flex flex-row gap-2">
-                      {service.buttons.map((button, btnIdx) => (
-                        <AccessibleButton
-                          key={btnIdx}
-                          href={button.href}
-                          variant={btnIdx === 0 ? "primary" : "outline"}
-                          className="flex-1 text-xs sm:text-sm lg:text-base px-3 py-2 whitespace-nowrap"
-                          {...(button.href.startsWith('http') && {
-                            target: '_blank',
-                            rel: 'noopener noreferrer'
-                          })}
-                        >
-                          {button.text}
-                        </AccessibleButton>
-                      ))}
+                    <div>
+                      <div className="glass-dark rounded-xl p-4 mb-6 text-center">
+                        <span className="text-3xl font-bold text-white">{service.price}</span>
+                        {service.price !== "完全成果報酬" && <span className="text-white/70 ml-1">〜</span>}
+                      </div>
+                      
+                      <div className="grid grid-cols-2 gap-2">
+                        {service.buttons.map((button, btnIdx) => (
+                          <AccessibleButton
+                            key={btnIdx}
+                            href={button.href}
+                            className={btnIdx === 0 ? "btn-modern neon-glow text-white border-none" : "glass border-white/20 text-gray-800 hover:bg-white/20"}
+                            {...(button.href.startsWith('http') && {
+                              target: '_blank',
+                              rel: 'noopener noreferrer'
+                            })}
+                          >
+                            {button.text}
+                          </AccessibleButton>
+                        ))}
+                      </div>
                     </div>
                   </div>
                 )
