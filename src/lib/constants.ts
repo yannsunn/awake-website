@@ -20,11 +20,11 @@ export const STYLES = {
     pricing: 'py-12 sm:py-16 lg:py-20'
   },
   
-  // 視認性と美しさを両立するカードスタイル
+  // 背景透過性を重視したカードスタイル
   card: {
-    default: 'bg-white/90 backdrop-blur-md rounded-2xl p-8 shadow-2xl hover:shadow-3xl border border-gray-200 transition-all duration-300 hover:bg-white/95',
-    featured: 'bg-gradient-to-br from-white/95 to-white/90 rounded-2xl p-8 border-2 border-indigo-300 shadow-2xl shadow-indigo-500/20 hover:shadow-3xl hover:from-white hover:to-white/95 transition-all duration-300',
-    compact: 'bg-white/90 backdrop-blur-md rounded-xl p-6 shadow-xl hover:shadow-2xl border border-gray-200 transition-all duration-300 hover:bg-white/95'
+    default: 'bg-white/60 backdrop-blur-md rounded-2xl p-8 shadow-2xl hover:shadow-3xl border border-gray-200/50 transition-all duration-300 hover:bg-white/70',
+    featured: 'bg-gradient-to-br from-white/70 to-white/60 rounded-2xl p-8 border-2 border-indigo-300/60 shadow-2xl shadow-indigo-500/20 hover:shadow-3xl hover:from-white/80 hover:to-white/70 transition-all duration-300',
+    compact: 'bg-white/60 backdrop-blur-md rounded-xl p-6 shadow-xl hover:shadow-2xl border border-gray-200/50 transition-all duration-300 hover:bg-white/70'
   },
   
   // Modern Typography - 統一されたフォントシステム（超可読性強化）
