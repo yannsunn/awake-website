@@ -418,7 +418,7 @@ export default function PartnersPage() {
               "長期的な関係を築ける"
             ].map((item, index) => (
               <li key={index} className="flex items-center justify-center">
-                <span className="text-green-500 mr-3">✓</span>
+                <span className="text-blue-500 mr-3">✓</span>
                 <span className={STYLES.text.body.medium}>{item}</span>
               </li>
             ))}

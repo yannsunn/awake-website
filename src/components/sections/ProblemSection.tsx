@@ -27,7 +27,7 @@ const ProblemSection = memo(function ProblemSection() {
           <ul className="space-y-4">
             {problems.map((problem, index) => (
               <li key={index} className="flex items-start">
-                <span className="text-green-600 text-xl mr-3 flex-shrink-0">✓</span>
+                <span className="text-blue-600 text-xl mr-3 flex-shrink-0">✓</span>
                 <span className={STYLES.text.body.medium}>{problem}</span>
               </li>
             ))}
