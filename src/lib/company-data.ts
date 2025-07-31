@@ -135,7 +135,7 @@ export const CONTACT_METHODS = [
       url: 'https://lin.ee/fIaLAjy',
       text: 'LINEで相談する'
     },
-    color: 'gray'
+    color: 'green'
   },
   {
     id: 'phone', 

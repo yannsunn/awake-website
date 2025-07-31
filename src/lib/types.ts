@@ -61,4 +61,4 @@ export type ButtonVariant = 'primary' | 'secondary' | 'outline' | 'minimal'
 export type SubmitStatus = 'idle' | 'loading' | 'success' | 'error'
 
 // Color scheme types
-export type ColorScheme = 'purple' | 'blue' | 'orange' | 'pink'
+export type ColorScheme = 'purple' | 'green' | 'orange' | 'pink'
