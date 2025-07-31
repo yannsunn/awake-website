@@ -19,16 +19,12 @@ const LineButton = memo(function LineButton({
   size = 'medium',
   variant = 'filled'
 }: LineButtonProps) {
-  const [isVisible, setIsVisible] = useState(false)
+  const [isMounted, setIsMounted] = useState(false)
   const LINE_URL = COMPANY_DATA.contact.line ? 'https://lin.ee/fIaLAjy' : '#'
   
-  // 緑色フラッシュ防止のため遅延表示
+  // クライアントサイドでのみレンダリング
   useEffect(() => {
-    // 次のフレームまで待つ
-    requestAnimationFrame(() => {
-      const timer = setTimeout(() => setIsVisible(true), 100)
-      return () => clearTimeout(timer)
-    })
+    setIsMounted(true)
   }, [])
   
   const sizeClasses = {
@@ -38,12 +34,14 @@ const LineButton = memo(function LineButton({
   }
   
   const variantClasses = {
-    filled: isVisible ? 'bg-gradient-to-r from-green-600 to-green-700 text-white hover:from-green-700 hover:to-green-800 shadow-2xl hover:shadow-3xl border-2 border-green-700 font-bold' : '',
-    outline: isVisible ? 'border-3 border-green-600 text-green-700 hover:bg-green-50/80 hover:border-green-700 shadow-lg hover:shadow-xl font-bold' : ''
+    filled: 'bg-gradient-to-r from-green-600 to-green-700 text-white hover:from-green-700 hover:to-green-800 shadow-2xl hover:shadow-3xl border-2 border-green-700 font-bold',
+    outline: 'border-3 border-green-600 text-green-700 hover:bg-green-50/80 hover:border-green-700 shadow-lg hover:shadow-xl font-bold'
   }
   
-  // 初期表示時の完全非表示制御
-  const visibilityClass = isVisible ? 'opacity-100 visible' : 'opacity-0 invisible'
+  // SSRとのハイドレーション問題を回避
+  if (!isMounted) {
+    return null
+  }
   
   const baseClasses = `
     inline-flex items-center justify-center
@@ -59,10 +57,10 @@ const LineButton = memo(function LineButton({
       href={LINE_URL}
       target="_blank"
       rel="noopener noreferrer"
-      className={`${baseClasses} ${sizeClasses[size]} ${variantClasses[variant]} ${visibilityClass} ${className}`}
+      className={`${baseClasses} ${sizeClasses[size]} ${variantClasses[variant]} ${className}`}
     >
       <span className="relative z-10 flex items-center">
-        {showIcon && <MessageCircle className="mr-2 h-5 w-5 animate-bounce" />}
+        {showIcon && <MessageCircle className="mr-2 h-5 w-5" />}
         LINEで相談する
       </span>
       <span className="absolute inset-0 bg-gradient-to-r from-green-400 to-green-600 opacity-0 hover:opacity-20 transition-opacity duration-300" />
