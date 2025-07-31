@@ -11,7 +11,7 @@ const ContactForm = memo(function ContactForm() {
   return (
     <div className="bg-gradient-to-br from-green-50/70 to-indigo-50/70 backdrop-blur-sm rounded-2xl p-8 sm:p-12 shadow-2xl border-2 border-green-200 hover:shadow-3xl transition-all duration-300">
       <div className="text-center">
-        <div className="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br from-green-100 to-green-200 rounded-full mb-6 shadow-xl animate-bounce">
+        <div className="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br from-green-100 to-green-200 rounded-full mb-6 shadow-xl">
           <MessageCircle className="w-10 h-10 text-green-700" />
         </div>
         

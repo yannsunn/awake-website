@@ -112,7 +112,7 @@ export default function HomePageContent() {
                 <AccessibleButton href="#services" variant="secondary" className="w-full sm:w-auto" size="medium">
                   サービスを見る
                 </AccessibleButton>
-                <LineButton className="w-full sm:w-auto pulse-soft" size="medium" />
+                <LineButton className="w-full sm:w-auto" size="medium" />
               </div>
             </div>
           </div>
