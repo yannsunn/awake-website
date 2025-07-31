@@ -43,7 +43,7 @@ const Footer = memo(function Footer() {
   ]
 
   return (
-    <footer className="relative bg-gray-900/98 backdrop-filter backdrop-blur-md z-20" role="contentinfo">
+    <footer className="relative bg-gray-900/98 backdrop-blur-md z-20" role="contentinfo">
       <div className="absolute inset-0 bg-gray-900/95" />
       {/* メインコンテンツ */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
