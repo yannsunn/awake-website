@@ -46,7 +46,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ja" suppressHydrationWarning>
-      <body className={`${notoSansJP.variable} font-sans antialiased`} suppressHydrationWarning>
+      <body className={`${notoSansJP.variable} font-sans antialiased bg-gray-50`} suppressHydrationWarning>
         <FixedBackground />
         <script
           type="application/ld+json"
