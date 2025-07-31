@@ -1,8 +1,7 @@
 // 🚀 限界突破ページテンプレート - SEO & アクセシビリティ最適化
 'use client'
 
-import { ReactNode, useEffect } from 'react'
-import { usePathname } from 'next/navigation'
+import { ReactNode } from 'react'
 import Header from './Header'
 import Footer from './Footer'
 import ErrorBoundary from '../ErrorBoundary'
@@ -28,17 +27,12 @@ const PageTemplate = ({
   skipToMainId = 'main-content',
   showErrorDetails = false
 }: PageTemplateProps) => {
-  const pathname = usePathname()
-
-  // アクセシビリティ機能を簡素化
 
   // パンくずリスト構造化データの生成
   const breadcrumbSchema = breadcrumbs ? createBreadcrumbSchema(breadcrumbs) : null
 
   return (
     <ErrorBoundary showDetails={showErrorDetails}>
-      {/* スキップリンクを完全に非表示に */}
-
       {/* パンくずリスト構造化データ */}
       {breadcrumbSchema && (
         <script
@@ -105,15 +99,12 @@ const PageTemplate = ({
           className="flex-1 pt-16"
           tabIndex={-1}
         >
-          {/* メインコンテンツ */}
-
           {children}
         </main>
 
         <Footer />
       </div>
 
-      {/* シンプルテンプレート */}
     </ErrorBoundary>
   )
 }
