@@ -209,7 +209,7 @@ export default function FAQPage() {
           </p>
           
           <div className="">
-            <div className="bg-green-50 p-6 sm:p-8 rounded-xl shadow-sm border border-green-100">
+            <div className="bg-blue-50 p-6 sm:p-8 rounded-xl shadow-sm border border-blue-100">
               <h3 className={STYLES.heading.h2.subsection + " mb-4 text-center"}>💬 公式LINEでお気軽に</h3>
               <p className={STYLES.text.body.medium + " text-center mb-6"}>最速返信！まずはLINEでお話をお聞かせください</p>
               <LineButton className="w-full" size="large" />

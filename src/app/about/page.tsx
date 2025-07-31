@@ -191,15 +191,15 @@ export default function AboutPage() {
                 
                 <ul className={STYLES.text.description.medium + " mb-4 space-y-2 ml-6"}>
                   <li className="flex items-start">
-                    <span className="text-green-600 mr-2">•</span>
+                    <span className="text-blue-600 mr-2">•</span>
                     <span>実技の歴代記録を複数更新</span>
                   </li>
                   <li className="flex items-start">
-                    <span className="text-green-600 mr-2">•</span>
+                    <span className="text-blue-600 mr-2">•</span>
                     <span>2年間、全国の学年代表を務める</span>
                   </li>
                   <li className="flex items-start">
-                    <span className="text-green-600 mr-2">•</span>
+                    <span className="text-blue-600 mr-2">•</span>
                     <span>整備の技術で、誰にも負けない自信を得る</span>
                   </li>
                 </ul>
@@ -379,7 +379,7 @@ export default function AboutPage() {
               <ul className="space-y-3" role="list">
                 {feature.items.map((item, idx) => (
                   <li key={idx} className="flex items-start">
-                    <CheckCircle className="h-5 w-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" />
+                    <CheckCircle className="h-5 w-5 text-blue-500 mr-2 flex-shrink-0 mt-0.5" />
                     <span className={STYLES.text.description.small + " text-gray-600"}>{item}</span>
                   </li>
                 ))}

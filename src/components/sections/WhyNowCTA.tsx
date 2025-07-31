@@ -56,15 +56,15 @@ const WhyNowCTA = memo(function WhyNowCTA() {
           
           <div className="flex flex-col md:flex-row gap-4 justify-center items-center mb-8">
             <div className="flex items-center">
-              <span className="text-green-400 mr-2">✓</span>
+              <span className="text-blue-400 mr-2">✓</span>
               <span>現在の業務分析</span>
             </div>
             <div className="flex items-center">
-              <span className="text-green-400 mr-2">✓</span>
+              <span className="text-blue-400 mr-2">✓</span>
               <span>AI導入効果の試算</span>
             </div>
             <div className="flex items-center">
-              <span className="text-green-400 mr-2">✓</span>
+              <span className="text-blue-400 mr-2">✓</span>
               <span>最適な導入プランのご提案</span>
             </div>
           </div>

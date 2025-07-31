@@ -69,7 +69,7 @@ const AmazonSupport = memo(function AmazonSupport() {
               <ul className="space-y-2">
                 {support.items.map((item, idx) => (
                   <li key={idx} className="flex items-start">
-                    <span className="text-green-500 mr-2 mt-1">•</span>
+                    <span className="text-blue-500 mr-2 mt-1">•</span>
                     <span className={STYLES.text.description.small}>{item}</span>
                   </li>
                 ))}
