@@ -232,16 +232,16 @@ section {
 
 /* 白背景セクション */
 .bg-white-overlay {
-  background-color: rgba(255, 255, 255, 0.8);
-  backdrop-filter: blur(2px);
-  -webkit-backdrop-filter: blur(2px);
+  background-color: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
 }
 
 /* グレー背景セクション */
 .bg-gray-overlay {
-  background-color: rgba(249, 250, 251, 0.85);
-  backdrop-filter: blur(2px);
-  -webkit-backdrop-filter: blur(2px);
+  background-color: rgba(249, 250, 251, 0.95);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
 }
 
 /* ダーク背景セクション */

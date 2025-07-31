@@ -31,18 +31,18 @@ export const STYLES = {
   heading: {
     // メインヘッダー（ページタイトル）
     h1: {
-      primary: 'text-4xl sm:text-5xl md:text-6xl font-extrabold text-gray-900 tracking-tight leading-tight',
-      hero: 'text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-gray-900 tracking-tight leading-tight'
+      primary: 'text-4xl sm:text-5xl md:text-6xl font-extrabold text-gray-900 tracking-tight leading-tight drop-shadow-lg',
+      hero: 'text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-gray-900 tracking-tight leading-tight drop-shadow-lg'
     },
     // セクションヘッダー
     h2: {
-      section: 'text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 tracking-tight',
-      subsection: 'text-xl sm:text-2xl md:text-3xl font-bold text-gray-900'
+      section: 'text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 tracking-tight drop-shadow-md',
+      subsection: 'text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 drop-shadow'
     },
     // サブヘッダー
     h3: {
-      card: 'text-lg sm:text-xl font-bold text-gray-900',
-      emphasis: 'text-base sm:text-lg font-bold text-gray-900'
+      card: 'text-lg sm:text-xl font-bold text-gray-900 drop-shadow',
+      emphasis: 'text-base sm:text-lg font-bold text-gray-900 drop-shadow'
     },
     // 小見出し
     h4: 'text-base sm:text-lg font-semibold text-gray-900'

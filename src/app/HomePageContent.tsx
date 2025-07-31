@@ -87,7 +87,7 @@ export default function HomePageContent() {
           </div>
           
           {/* コンテンツ背景 - 視認性を優先 */}
-          <div className="absolute inset-0 bg-white/60 backdrop-blur-md" />
+          <div className="absolute inset-0 bg-white/85 backdrop-blur-lg" />
           
           <div className="relative z-10 w-full px-4 sm:px-6 lg:px-8">
             <div className="text-center max-w-6xl mx-auto">
@@ -102,11 +102,11 @@ export default function HomePageContent() {
                 </span>
               </h1>
               
-              <p className="text-xl sm:text-2xl text-gray-900 font-semibold mb-4 animate-fade-in bg-white/90 backdrop-blur-md rounded-lg px-6 py-3 inline-block shadow-xl border border-white/50" style={{ animationDelay: '0.2s' }}>
+              <p className="text-xl sm:text-2xl text-gray-900 font-semibold mb-4 animate-fade-in bg-white rounded-lg px-6 py-4 inline-block shadow-2xl border-2 border-gray-200" style={{ animationDelay: '0.2s' }}>
                 {COMPANY_DATA.basic.description}
               </p>
 
-              <p className="text-lg sm:text-xl text-gray-800 font-medium mb-12 animate-fade-in bg-white/70 backdrop-blur-sm rounded-lg px-4 py-2 inline-block" style={{ animationDelay: '0.4s' }}>
+              <p className="text-lg sm:text-xl text-gray-800 font-medium mb-12 animate-fade-in bg-white/95 rounded-lg px-6 py-3 inline-block shadow-lg" style={{ animationDelay: '0.4s' }}>
                 {COMPANY_DATA.basic.subMessage}
               </p>
 
@@ -122,7 +122,7 @@ export default function HomePageContent() {
                 <AccessibleButton 
                   href="#services" 
                   variant="secondary" 
-                  className="bg-white/90 border-2 border-gray-300 hover:border-indigo-500 shadow-lg" 
+                  className="bg-white border-2 border-gray-300 hover:border-indigo-500 shadow-xl" 
                   size="large"
                 >
                   サービスを見る
@@ -145,7 +145,7 @@ export default function HomePageContent() {
         </section>
 
         {/* Services Section - Bento Grid */}
-        <section id="services" className="py-16 sm:py-20 lg:py-24 relative bg-gray-50/90">
+        <section id="services" className="py-16 sm:py-20 lg:py-24 relative bg-white/95">
           <div className="w-full px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12 lg:mb-16 reveal">
               <h2 className="text-4xl sm:text-5xl font-extrabold mb-4">
@@ -225,7 +225,7 @@ export default function HomePageContent() {
         </LazyLoad>
 
         {/* Company Mission Section */}
-        <section className="py-16 sm:py-20 lg:py-24 bg-white">
+        <section className="py-16 sm:py-20 lg:py-24 bg-white/95">
           <div className="w-full px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-8 sm:mb-12 lg:mb-16">
               <h2 className="text-4xl sm:text-5xl font-bold mb-4">
@@ -233,7 +233,7 @@ export default function HomePageContent() {
               </h2>
             </div>
             
-            <div className="max-w-4xl mx-auto glass rounded-3xl p-8 md:p-12 shadow-xl">
+            <div className="max-w-4xl mx-auto bg-white rounded-3xl p-8 md:p-12 shadow-2xl border border-gray-200">
               <div className="text-center">
                 <h3 className="text-2xl sm:text-3xl font-bold mb-6 text-gray-900">
                   {COMPANY_DATA.basic.mission}
@@ -259,7 +259,7 @@ export default function HomePageContent() {
         </LazyLoad>
         
         {/* Contact Section */}
-        <section id="contact" className="py-16 sm:py-20 lg:py-24 bg-gray-50">
+        <section id="contact" className="py-16 sm:py-20 lg:py-24 bg-white/95">
           <div className="w-full px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-8 sm:mb-12 lg:mb-16">
               <h2 className="text-4xl sm:text-5xl font-bold mb-6">
