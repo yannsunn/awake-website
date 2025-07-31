@@ -332,12 +332,12 @@ export default function PartnersPage() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {[
             {
-              title: "&ldquo;3つの課題を同時に解決できた&rdquo;",
+              title: "「3つの課題を同時に解決できた」",
               description: "ホームページ制作と同時に、SNS運用と営業支援を導入。\n各サービスが連携し、問い合わせが5倍に増加しました。",
               company: "製造業 D社様"
             },
             {
-              title: "&ldquo;コスト削減と売上アップを両立&rdquo;",
+              title: "「コスト削減と売上アップを両立」",
               description: "AI導入で業務効率化を図りながら、Amazon出店で新規売上を創出。\n削減したコストを成長投資に回せる好循環が生まれました。",
               company: "小売業 E社様"
             }
