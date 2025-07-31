@@ -24,8 +24,11 @@ const LineButton = memo(function LineButton({
   
   // 緑色フラッシュ防止のため遅延表示
   useEffect(() => {
-    const timer = setTimeout(() => setIsVisible(true), 300)
-    return () => clearTimeout(timer)
+    // 次のフレームまで待つ
+    requestAnimationFrame(() => {
+      const timer = setTimeout(() => setIsVisible(true), 100)
+      return () => clearTimeout(timer)
+    })
   }, [])
   
   const sizeClasses = {
@@ -35,12 +38,12 @@ const LineButton = memo(function LineButton({
   }
   
   const variantClasses = {
-    filled: 'bg-gradient-to-r from-green-600 to-green-700 text-white hover:from-green-700 hover:to-green-800 shadow-2xl hover:shadow-3xl border-2 border-green-700 font-bold',
-    outline: 'border-3 border-green-600 text-green-700 hover:bg-green-50/80 hover:border-green-700 shadow-lg hover:shadow-xl font-bold'
+    filled: isVisible ? 'bg-gradient-to-r from-green-600 to-green-700 text-white hover:from-green-700 hover:to-green-800 shadow-2xl hover:shadow-3xl border-2 border-green-700 font-bold' : '',
+    outline: isVisible ? 'border-3 border-green-600 text-green-700 hover:bg-green-50/80 hover:border-green-700 shadow-lg hover:shadow-xl font-bold' : ''
   }
   
-  // 初期表示時の透明度制御
-  const visibilityClass = isVisible ? 'opacity-100' : 'opacity-0'
+  // 初期表示時の完全非表示制御
+  const visibilityClass = isVisible ? 'opacity-100 visible' : 'opacity-0 invisible'
   
   const baseClasses = `
     inline-flex items-center justify-center
