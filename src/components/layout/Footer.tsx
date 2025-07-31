@@ -60,34 +60,34 @@ const Footer = memo(function Footer() {
             {/* 連絡先情報 */}
             <div className="space-y-3">
               <div className="flex items-start">
-                <MapPin className="w-5 h-5 text-gray-500 mr-3 mt-0.5 flex-shrink-0" />
+                <MapPin className="w-5 h-5 text-gray-300 mr-3 mt-0.5 flex-shrink-0" />
                 <div>
-                  <p className={`${STYLES.text.description.small} text-gray-400`}>
+                  <p className={`${STYLES.text.description.small} text-gray-200`}>
                     {COMPANY_DATA.contact.address.postal}
                   </p>
-                  <p className={`${STYLES.text.description.small} text-gray-400`}>
+                  <p className={`${STYLES.text.description.small} text-gray-200`}>
                     {COMPANY_DATA.contact.address.full}
                   </p>
                 </div>
               </div>
               
               <div className="flex items-center">
-                <Phone className="w-5 h-5 text-gray-500 mr-3 flex-shrink-0" />
+                <Phone className="w-5 h-5 text-gray-300 mr-3 flex-shrink-0" />
                 <a 
                   href={`tel:${COMPANY_DATA.contact.phone}`}
-                  className={`${STYLES.text.description.small} text-gray-400 hover:text-white transition-colors`}
+                  className={`${STYLES.text.description.small} text-gray-200 hover:text-white transition-colors`}
                 >
                   {COMPANY_DATA.contact.phone}
                 </a>
               </div>
               
               <div className="flex items-start">
-                <Clock className="w-5 h-5 text-gray-500 mr-3 mt-0.5 flex-shrink-0" />
+                <Clock className="w-5 h-5 text-gray-300 mr-3 mt-0.5 flex-shrink-0" />
                 <div>
-                  <p className={`${STYLES.text.description.small} text-gray-400`}>
+                  <p className={`${STYLES.text.description.small} text-gray-200`}>
                     {COMPANY_DATA.contact.businessHours.weekdays}
                   </p>
-                  <p className={`${STYLES.text.description.small} text-gray-400`}>
+                  <p className={`${STYLES.text.description.small} text-gray-200`}>
                     {COMPANY_DATA.contact.businessHours.weekend}
                   </p>
                 </div>
@@ -131,7 +131,7 @@ const Footer = memo(function Footer() {
                 <li key={link.href}>
                   <Link 
                     href={link.href}
-                    className={`${STYLES.text.body.small} text-gray-400 hover:text-white transition-colors`}
+                    className={`${STYLES.text.body.small} text-gray-200 hover:text-white transition-colors`}
                   >
                     {link.title}
                   </Link>
@@ -164,14 +164,14 @@ const Footer = memo(function Footer() {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className={`${STYLES.text.description.small} text-gray-500 hover:text-gray-300 transition-colors`}
+                  className={`${STYLES.text.description.small} text-gray-300 hover:text-white transition-colors`}
                 >
                   {link.title}
                 </Link>
               ))}
             </div>
             
-            <p className={`${STYLES.text.description.small} text-gray-500`}>
+            <p className={`${STYLES.text.description.small} text-gray-300`}>
               © {currentYear} {COMPANY_DATA.basic.name}. All rights reserved.
             </p>
           </div>
