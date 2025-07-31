@@ -5,10 +5,10 @@ export const STYLES = {
   
   // 視認性最優先のボタンスタイル
   button: {
-    primary: 'inline-flex items-center justify-center bg-gradient-to-r from-indigo-600 to-indigo-700 text-white px-6 py-3 rounded-xl font-bold text-shadow-lg shadow-2xl shadow-indigo-500/30 hover:shadow-3xl hover:shadow-indigo-500/40 hover:from-indigo-700 hover:to-indigo-800 transition-all duration-300 min-h-[48px] border-2 border-indigo-700 focus:outline-none focus:ring-4 focus:ring-indigo-500 focus:ring-offset-2',
-    secondary: 'inline-flex items-center justify-center bg-white-overlay border-2 border-gray-300 text-black font-bold px-6 py-3 rounded-xl shadow-xl hover:shadow-2xl hover:border-gray-400 hover:bg-gray-overlay transition-all duration-300 min-h-[48px] focus:outline-none focus:ring-4 focus:ring-gray-500 focus:ring-offset-2',
-    outline: 'inline-flex items-center justify-center border-3 border-indigo-600 text-indigo-700 font-bold px-6 py-3 rounded-xl hover:bg-indigo-50/80 hover:text-indigo-800 hover:border-indigo-700 transition-all duration-300 min-h-[48px] shadow-lg hover:shadow-xl focus:outline-none focus:ring-4 focus:ring-indigo-500 focus:ring-offset-2',
-    minimal: 'inline-flex items-center justify-center text-black font-bold px-4 py-2 hover:text-indigo-700 hover:bg-gray-50/50 rounded-lg transition-all duration-300 min-h-[44px] focus:outline-none focus:ring-4 focus:ring-indigo-500 focus:ring-offset-2'
+    primary: 'inline-flex items-center justify-center bg-gradient-to-r from-indigo-600 to-indigo-700 text-white px-6 py-3 rounded-xl font-bold text-shadow-lg shadow-2xl shadow-indigo-500/30 hover:shadow-3xl hover:shadow-indigo-500/40 hover:from-indigo-700 hover:to-indigo-800 transition-all duration-300 min-h-[48px] border-2 border-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2',
+    secondary: 'inline-flex items-center justify-center bg-white-overlay border-2 border-gray-300 text-black font-bold px-6 py-3 rounded-xl shadow-xl hover:shadow-2xl hover:border-gray-400 hover:bg-gray-overlay transition-all duration-300 min-h-[48px] focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2',
+    outline: 'inline-flex items-center justify-center border-3 border-indigo-600 text-indigo-700 font-bold px-6 py-3 rounded-xl hover:bg-indigo-50/80 hover:text-indigo-800 hover:border-indigo-700 transition-all duration-300 min-h-[48px] shadow-lg hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2',
+    minimal: 'inline-flex items-center justify-center text-black font-bold px-4 py-2 hover:text-indigo-700 hover:bg-gray-50/50 rounded-lg transition-all duration-300 min-h-[44px] focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2'
   },
   
   // Section spacing

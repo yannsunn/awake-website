@@ -60,7 +60,7 @@ const AccessibleButton = memo(forwardRef<
   
   // 🚀 ULTRA 視認性重視のモダンUIスタイル
   const accessibilityStyles = `
-    focus:outline-none focus:ring-4 focus:ring-indigo-500 focus:ring-offset-2
+    focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2
     focus:ring-offset-white focus:ring-opacity-70
     disabled:opacity-50 disabled:cursor-not-allowed disabled:pointer-events-none
     text-center font-bold relative overflow-hidden

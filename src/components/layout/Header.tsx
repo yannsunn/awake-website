@@ -234,7 +234,7 @@ const Header = memo(function Header() {
         {/* メニューパネル */}
         <nav 
           id="mobile-menu"
-          className={`absolute right-0 top-0 h-full w-full max-w-sm bg-white/35 backdrop-blur-none shadow-2xl transform transition-transform duration-300 ${
+          className={`absolute right-0 top-0 h-full w-full max-w-sm bg-white/95 backdrop-blur-md shadow-2xl transform transition-transform duration-300 ${
             isMenuOpen ? 'translate-x-0' : 'translate-x-full'
           }`}
           aria-label="モバイルナビゲーション"
