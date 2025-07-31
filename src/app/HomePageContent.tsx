@@ -119,7 +119,7 @@ export default function HomePageContent() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
               {services.map((service, index) => {
                 return (
-                  <div key={index} className="bg-white/50 backdrop-blur-sm rounded-2xl p-6 sm:p-8 shadow-2xl hover:shadow-3xl transition-all duration-300 border-2 border-gray-200 hover:border-indigo-300 hover:bg-white/60 transform hover:scale-105 hover-lift gradient-border">
+                  <div key={index} className="neuro-focus-card bg-white rounded-2xl p-6 sm:p-8 transition-all duration-250">
                     <h3 className={STYLES.heading.h3.card + " mb-2"}>
                       {service.title}
                     </h3>
@@ -139,9 +139,9 @@ export default function HomePageContent() {
                       ))}
                     </ul>
                     
-                    <div className="mb-6 bg-indigo-50/80 rounded-lg p-3 border-2 border-indigo-200">
-                      <span className={STYLES.text.emphasis.strong + " text-2xl text-indigo-700"}>{service.price}</span>
-                      <span className={STYLES.text.description.small + " text-indigo-600"}>〜</span>
+                    <div className="mb-6 bg-primary-50 rounded-lg p-4 border border-primary-200">
+                      <span className={STYLES.text.emphasis.strong + " text-2xl text-primary-700"}>{service.price}</span>
+                      <span className={STYLES.text.description.small + " text-primary-600 ml-1"}>〜</span>
                     </div>
                     
                     <div className="flex flex-row gap-2">
@@ -181,12 +181,12 @@ export default function HomePageContent() {
               </h2>
             </div>
             
-            <div className="bg-white-overlay rounded-2xl p-8 md:p-12 shadow-sm">
-              <div className="text-center">
+            <div className="neuro-focus-card bg-white rounded-2xl p-8 md:p-12">
+              <div className="text-center max-w-3xl mx-auto">
                 <h3 className={STYLES.heading.h2.subsection + " mb-6"}>
                   {COMPANY_DATA.basic.mission}
                 </h3>
-                <p className={STYLES.text.body.medium + " mb-8"}>
+                <p className={STYLES.text.body.medium + " mb-8 leading-relaxed"}>
                   高額なIT投資で失敗する企業が多い中、私たちは適正価格で確実な成果を出します。必要最小限の投資で最大の効果を生み出し、浮いたコストを本業の成長に投資できる環境を提供します。
                 </p>
                 <AccessibleButton href="/about" showArrow>
