@@ -26,8 +26,8 @@ export default function TokushoPage() {
       {/* Hero Section */}
       <ContentSection className="bg-gray-overlay">
         <div className="text-center max-w-4xl mx-auto">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-light text-gray-900 mb-4">特定商取引法に基づく表記</h1>
-          <p className="text-sm sm:text-base text-gray-600">最終更新日: 2024年6月18日</p>
+          <h1 className={STYLES.heading.h1.primary + " mb-4"}>特定商取引法に基づく表記</h1>
+          <p className={STYLES.text.description.small + " text-gray-600"}>最終更新日: 2024年6月18日</p>
         </div>
       </ContentSection>
 
@@ -35,7 +35,7 @@ export default function TokushoPage() {
       <ContentSection>
         <div className="prose prose-lg max-w-none">
           <div className="mb-8">
-            <p className="text-sm sm:text-base text-gray-700 leading-relaxed">
+            <p className={STYLES.text.body.medium + " text-gray-700"}>
               {COMPANY_DATA.basic.name}は、特定商取引法に基づき、以下の事項を明示いたします。
             </p>
           </div>
@@ -46,8 +46,8 @@ export default function TokushoPage() {
                   <div className="bg-gray-overlay rounded-lg p-6">
                     <dl className="grid grid-cols-1 gap-4">
                       <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                        <dt className="text-sm font-semibold text-gray-900">会社名</dt>
-                        <dd className="sm:col-span-2 text-sm text-gray-700">{COMPANY_DATA.basic.name}（{COMPANY_DATA.basic.nameEn}）</dd>
+                        <dt className={STYLES.text.label.primary}>会社名</dt>
+                        <dd className={"sm:col-span-2 " + STYLES.text.description.medium + " text-gray-700"}>{COMPANY_DATA.basic.name}（{COMPANY_DATA.basic.nameEn}）</dd>
                       </div>
                       <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                         <dt className="text-sm font-semibold text-gray-900">代表者</dt>
