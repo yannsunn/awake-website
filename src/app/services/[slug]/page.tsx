@@ -236,7 +236,7 @@ export default async function ServicePage(
         <ProblemSection />
         
         <section className="py-16 md:py-24 bg-white-overlay">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="w-full px-4 sm:px-6 lg:px-8">
             <h2 className={cn(STYLES.heading.h2.section, "text-center mb-12")}>
               Awakeが選ばれる4つの理由
             </h2>
@@ -245,7 +245,7 @@ export default async function ServicePage(
         </section>
         
         <section className="py-16 md:py-24 bg-gray-overlay">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="w-full px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
               <h2 className={cn(STYLES.heading.h2.section, "mb-4")}>
                 導入プロセス
@@ -283,7 +283,7 @@ export default async function ServicePage(
         <RiskFree />
         
         <section className="py-16 md:py-24 bg-gray-overlay">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="w-full px-4 sm:px-6 lg:px-8">
             <h2 className={cn(STYLES.heading.h2.section, "text-center mb-12")}>
               私たちが選ばれる4つの理由
             </h2>
@@ -294,7 +294,7 @@ export default async function ServicePage(
         <AmazonSupport />
         
         <section className="py-16 md:py-24 bg-white-overlay">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="w-full px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
               <h2 className={cn(STYLES.heading.h2.section, "mb-4")}>
                 導入の流れ
@@ -325,7 +325,7 @@ export default async function ServicePage(
       />
       
       <section className="py-16 md:py-24 bg-gray-overlay">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="w-full px-4 sm:px-6 lg:px-8">
           <h2 className={cn(STYLES.heading.h2.section, "text-center mb-12")}>
             サービスの特徴
           </h2>
@@ -334,7 +334,7 @@ export default async function ServicePage(
       </section>
       
       <section className="py-16 md:py-24 bg-white-overlay">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="w-full px-4 sm:px-6 lg:px-8">
           <h2 className={cn(STYLES.heading.h2.section, "text-center mb-12")}>
             導入までの流れ
           </h2>
@@ -343,7 +343,7 @@ export default async function ServicePage(
       </section>
       
       <section className="py-16 md:py-24 bg-gray-overlay">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div className="w-full px-4 sm:px-6 lg:px-8 text-center">
           <h2 className={cn(STYLES.heading.h2.section, "mb-8")}>
             まずはお気軽にご相談ください
           </h2>

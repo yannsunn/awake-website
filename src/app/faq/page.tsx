@@ -140,7 +140,7 @@ export default function FAQPage() {
 
       {/* Hero Section */}
       <ContentSection className="bg-gray-overlay">
-        <div className="text-center max-w-4xl mx-auto">
+        <div className="text-center">
           <h1 className={STYLES.heading.h1.primary + " mb-6"}>
             よくある質問
           </h1>
@@ -208,7 +208,7 @@ export default function FAQPage() {
             お気軽にお問い合わせください。専門スタッフが丁寧にお答えいたします。
           </p>
           
-          <div className="max-w-md mx-auto">
+          <div className="">
             <div className="bg-green-50 p-6 sm:p-8 rounded-xl shadow-sm border border-green-100">
               <h3 className={STYLES.heading.h2.subsection + " mb-4 text-center"}>💬 公式LINEでお気軽に</h3>
               <p className={STYLES.text.body.medium + " text-center mb-6"}>最速返信！まずはLINEでお話をお聞かせください</p>
