@@ -1,9 +1,8 @@
 'use client'
 
-import { useEffect } from 'react'
 import Header from '@/components/layout/Header'
 import Footer from '@/components/layout/Footer'
-import { Globe, Brain, ShoppingCart, CheckCircle, Award, Users, Heart } from 'lucide-react'
+import { Globe, Brain, ShoppingCart } from 'lucide-react'
 import { COMPANY_DATA } from '@/lib/company-data'
 import AccessibleButton from '@/components/ui/AccessibleButton'
 import { STYLES } from '@/lib/constants'
@@ -72,16 +71,6 @@ const services = [
 ]
 
 export default function HomePageContent() {
-  // ページ読み込み完了時にloadedクラスを追加
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      document.body.classList.add('loaded')
-    }, 200)
-    return () => {
-      clearTimeout(timer)
-      document.body.classList.remove('loaded')
-    }
-  }, [])
   
   return (
     <>
