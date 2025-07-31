@@ -96,7 +96,7 @@ const PageTemplate = ({
         <main
           role="main"
           id={skipToMainId}
-          className="flex-1 pt-16"
+          className="flex-1"
           tabIndex={-1}
         >
           {children}
@@ -157,7 +157,7 @@ export const PageHeader = ({
 }) => {
   return (
     <header
-      className={`relative py-16 sm:py-24 lg:py-32 ${className}`}
+      className={`relative pt-24 pb-16 sm:pt-32 sm:pb-24 lg:pt-40 lg:pb-32 ${className}`}
       style={backgroundImage ? {
         backgroundImage: `linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url(${backgroundImage})`,
         backgroundSize: 'cover',

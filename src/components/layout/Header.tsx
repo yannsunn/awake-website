@@ -309,8 +309,7 @@ const Header = memo(function Header() {
         </nav>
       </div>
       
-      {/* スペーサー - レイアウトシフト防止 */}
-      <div className="h-16 md:h-20" aria-hidden="true" />
+      {/* スペーサー - レイアウトシフト防止 - 削除（HomePageでは不要） */}
     </>
   )
 })
