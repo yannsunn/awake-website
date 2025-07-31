@@ -181,7 +181,7 @@ const Footer = memo(function Footer() {
       {/* トップへ戻るボタン */}
       <button
         onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-        className="fixed bottom-6 right-6 p-3 bg-gray-800 hover:bg-gray-700 text-white rounded-full shadow-lg transition-all duration-200 opacity-90 hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-gray-600 focus:ring-offset-2"
+        className="fixed bottom-6 right-6 p-3 bg-gray-800 hover:bg-gray-700 text-white rounded-full shadow-lg transition-all duration-200 opacity-90 hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-gray-600 focus:ring-offset-2 z-40"
         aria-label="ページトップへ戻る"
       >
         <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
