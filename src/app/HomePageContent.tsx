@@ -154,14 +154,13 @@ export default function HomePageContent() {
               <p className="text-xl text-gray-800 font-semibold">3つのクリエイティブソリューション</p>
             </div>
             
-            <div className="bento-grid max-w-7xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
               {services.map((service, index) => {
-                const gridClass = index === 0 ? 'bento-item-large' : index === 1 ? 'bento-item-wide' : 'bento-item-tall'
                 const Icon = service.icon
                 return (
                   <div 
                     key={index} 
-                    className={`${gridClass} glass rounded-3xl p-8 flex flex-col justify-between hover:shadow-2xl transition-all duration-300 reveal`}
+                    className="glass rounded-3xl p-6 md:p-8 flex flex-col justify-between hover:shadow-2xl transition-all duration-300 reveal h-full"
                     style={{ animationDelay: `${index * 0.2}s` }}
                   >
                     <div>
@@ -180,10 +179,10 @@ export default function HomePageContent() {
                         {service.longDescription}
                       </p>
                       
-                      <ul className="space-y-3 mb-6">
+                      <ul className="space-y-2 mb-6">
                         {service.features.map((feature, idx) => (
                           <li key={idx} className="flex items-start">
-                            <span className="text-indigo-600 mr-2 mt-1 font-bold">✓</span>
+                            <span className="text-indigo-600 mr-2 mt-0.5 font-bold flex-shrink-0">✓</span>
                             <span className="text-sm text-gray-700">{feature}</span>
                           </li>
                         ))}
@@ -196,12 +195,13 @@ export default function HomePageContent() {
                         {service.price !== "完全成果報酬" && <span className="text-white/80 ml-1">〜</span>}
                       </div>
                       
-                      <div className="grid grid-cols-2 gap-2">
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                         {service.buttons.map((button, btnIdx) => (
                           <AccessibleButton
                             key={btnIdx}
                             href={button.href}
-                            className={btnIdx === 0 ? "bg-gray-900 text-white hover:bg-gray-800 shadow-md" : "bg-white border-2 border-gray-300 text-gray-700 hover:border-gray-400"}
+                            className={btnIdx === 0 ? "bg-gray-900 text-white hover:bg-gray-800 shadow-md text-sm" : "bg-white border-2 border-gray-300 text-gray-700 hover:border-gray-400 text-sm"}
+                            size="small"
                             {...(button.href.startsWith('http') && {
                               target: '_blank',
                               rel: 'noopener noreferrer'

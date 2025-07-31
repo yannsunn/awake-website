@@ -660,13 +660,15 @@ button:focus-visible, a:focus-visible {
 .bento-grid {
   display: grid;
   gap: 1.5rem;
-  grid-auto-rows: minmax(250px, auto);
+  grid-auto-rows: minmax(350px, auto);
 }
 
 /* モバイルでは1カラム */
 @media (max-width: 767px) {
   .bento-grid {
     grid-template-columns: 1fr;
+    grid-auto-rows: auto;
+    gap: 1rem;
   }
   
   .bento-item-large,
@@ -677,23 +679,33 @@ button:focus-visible, a:focus-visible {
   }
 }
 
-/* デスクトップでは4カラムグリッド */
-@media (min-width: 768px) {
+/* タブレットでは2カラム */
+@media (min-width: 768px) and (max-width: 1023px) {
   .bento-grid {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: minmax(300px, auto);
   }
   
-  .bento-item-large {
-    grid-column: span 2;
-    grid-row: span 2;
-  }
-  
-  .bento-item-wide {
-    grid-column: span 2;
-  }
-  
+  .bento-item-large,
+  .bento-item-wide,
   .bento-item-tall {
-    grid-row: span 2;
+    grid-column: span 1;
+    grid-row: span 1;
+  }
+}
+
+/* デスクトップでは3カラムグリッド */
+@media (min-width: 1024px) {
+  .bento-grid {
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: minmax(400px, auto);
+  }
+  
+  .bento-item-large,
+  .bento-item-wide,
+  .bento-item-tall {
+    grid-column: span 1;
+    grid-row: span 1;
   }
 }
 
