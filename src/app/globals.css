@@ -5,19 +5,6 @@
 /* 🎨 CREATIVE DESIGN SYSTEM - Lovart-inspired */
 @layer base {
   :root {
-    /* Primary Gradient Colors */
-    --gradient-start: #667eea;
-    --gradient-mid: #764ba2;
-    --gradient-end: #f093fb;
-    
-    /* Neon Accents */
-    --neon-purple: #a855f7;
-    --neon-blue: #3b82f6;
-    --neon-pink: #ec4899;
-    
-    /* Glass Effect Colors */
-    --glass-white: rgba(255, 255, 255, 0.1);
-    --glass-border: rgba(255, 255, 255, 0.2);
     
     /* Enhanced Primary */
     --primary-50: #f5f3ff;
@@ -128,26 +115,6 @@
   }
 }
 
-/* アニメーション定義 */
-@keyframes slideUp {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
 
 /* カスタムスクロールバー */
 @supports (scrollbar-width: thin) {
@@ -461,21 +428,6 @@ html {
   h3 { font-size: clamp(1.25rem, 4vw, 1.5rem); }
 }
 
-/* 🎨 グラデーションテキスト */
-.gradient-text {
-  background: linear-gradient(135deg, #111827 0%, #374151 50%, #111827 100%);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-size: 200% auto;
-  animation: gradient-shift 3s ease infinite;
-}
-
-@keyframes gradient-shift {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
 
 /* 🚀 パフォーマンス最適化 */
 .gpu-accelerated {
@@ -506,17 +458,6 @@ html {
   }
 }
 
-/* 🎯 スケルトンローディング */
-.skeleton {
-  animation: skeleton-loading 1.5s infinite ease-in-out;
-  background: linear-gradient(90deg, #f3f4f6 25%, #e5e7eb 50%, #f3f4f6 75%);
-  background-size: 200% 100%;
-}
-
-@keyframes skeleton-loading {
-  0% { background-position: 200% 0; }
-  100% { background-position: -200% 0; }
-}
 
 /* ボタンとリンクのホバー状態最適化 */
 button, a {
@@ -595,39 +536,6 @@ button:focus-visible, a:focus-visible {
   border-radius: 12px;
 }
 
-/* グローイングボタン */
-.btn-glow {
-  position: relative;
-  overflow: hidden;
-}
-
-.btn-glow::before {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 0;
-  height: 0;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.5);
-  transform: translate(-50%, -50%);
-  transition: width 0.6s, height 0.6s;
-}
-
-.btn-glow:active::before {
-  width: 300px;
-  height: 300px;
-}
-
-/* パルスアニメーション */
-@keyframes pulse-soft {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.8; }
-}
-
-.pulse-soft {
-  animation: pulse-soft 2s ease-in-out infinite;
-}
 
 /* 🧠 科学的根拠: プライマリカラーユーティリティ */
 .bg-primary-50 {
@@ -669,135 +577,7 @@ button:focus-visible, a:focus-visible {
   outline-offset: 2px;
 }
 
-/* 🎨 Creative Bento Grid */
-.bento-grid {
-  display: grid;
-  gap: 1.5rem;
-  grid-auto-rows: minmax(350px, auto);
-}
 
-/* モバイルでは1カラム */
-@media (max-width: 767px) {
-  .bento-grid {
-    grid-template-columns: 1fr;
-    grid-auto-rows: auto;
-    gap: 1rem;
-  }
-  
-  .bento-item-large,
-  .bento-item-wide,
-  .bento-item-tall {
-    grid-column: span 1;
-    grid-row: span 1;
-  }
-}
-
-/* タブレットでは2カラム */
-@media (min-width: 768px) and (max-width: 1023px) {
-  .bento-grid {
-    grid-template-columns: repeat(2, 1fr);
-    grid-auto-rows: minmax(300px, auto);
-  }
-  
-  .bento-item-large,
-  .bento-item-wide,
-  .bento-item-tall {
-    grid-column: span 1;
-    grid-row: span 1;
-  }
-}
-
-/* デスクトップでは3カラムグリッド */
-@media (min-width: 1024px) {
-  .bento-grid {
-    grid-template-columns: repeat(3, 1fr);
-    grid-auto-rows: minmax(400px, auto);
-  }
-  
-  .bento-item-large,
-  .bento-item-wide,
-  .bento-item-tall {
-    grid-column: span 1;
-    grid-row: span 1;
-  }
-}
-
-/* 3D Card Effects */
-.card-3d {
-  position: relative;
-  transform-style: preserve-3d;
-  transition: transform 0.6s;
-}
-
-.card-3d:hover {
-  transform: rotateY(10deg) rotateX(10deg);
-}
-
-.card-3d::before {
-  content: '';
-  position: absolute;
-  inset: -2px;
-  border-radius: inherit;
-  padding: 2px;
-  background: linear-gradient(135deg, var(--neon-purple), var(--neon-blue), var(--neon-pink));
-  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-  -webkit-mask-composite: exclude;
-  mask-composite: exclude;
-  opacity: 0;
-  transition: opacity 0.3s;
-}
-
-.card-3d:hover::before {
-  opacity: 1;
-}
-
-/* Neon Glow Effects */
-.neon-glow {
-  position: relative;
-  overflow: hidden;
-}
-
-.neon-glow::before {
-  content: '';
-  position: absolute;
-  top: -2px;
-  left: -2px;
-  right: -2px;
-  bottom: -2px;
-  background: linear-gradient(45deg, var(--neon-purple), var(--neon-blue), var(--neon-pink), var(--neon-purple));
-  border-radius: inherit;
-  z-index: -1;
-  opacity: 0;
-  transition: opacity 0.3s;
-  filter: blur(10px);
-}
-
-.neon-glow:hover::before {
-  opacity: 0.7;
-}
-
-/* Floating Animation */
-@keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-20px); }
-}
-
-.animate-float {
-  animation: float 6s ease-in-out infinite;
-}
-
-/* Gradient Animations */
-@keyframes gradient-shift {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
-
-.animate-gradient {
-  background-size: 200% 200%;
-  animation: gradient-shift 4s ease infinite;
-}
 
 /* Parallax Scrolling */
 .parallax {
@@ -817,51 +597,4 @@ button:focus-visible, a:focus-visible {
   transform: translateY(0);
 }
 
-/* Modern Button Styles */
-.btn-modern {
-  position: relative;
-  overflow: hidden;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
 
-.btn-modern::before {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 0;
-  height: 0;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.5);
-  transform: translate(-50%, -50%);
-  transition: width 0.6s, height 0.6s;
-}
-
-.btn-modern:hover::before {
-  width: 300px;
-  height: 300px;
-}
-
-/* Morphing Blob Background - 視認性優先で調整 */
-.blob {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 400px;
-  height: 400px;
-  background: linear-gradient(135deg, var(--gradient-start), var(--gradient-mid), var(--gradient-end));
-  border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
-  filter: blur(100px);
-  opacity: 0.1;
-  animation: morph 8s ease-in-out infinite;
-  z-index: -1;
-}
-
-@keyframes morph {
-  0% { border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; }
-  50% { border-radius: 70% 30% 30% 70% / 70% 70% 30% 30%; }
-  100% { border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; }
-}
-
-/* Force cache clear: 2025-01-31-v8-CREATIVE */
