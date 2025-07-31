@@ -43,9 +43,10 @@ const Footer = memo(function Footer() {
   ]
 
   return (
-    <footer className="bg-gray-900 backdrop-blur-none" role="contentinfo">
+    <footer className="relative bg-gray-900/98 backdrop-filter backdrop-blur-md z-20" role="contentinfo">
+      <div className="absolute inset-0 bg-gray-900/95" />
       {/* メインコンテンツ */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
           
           {/* 会社情報 */}
@@ -53,41 +54,41 @@ const Footer = memo(function Footer() {
             <h2 className={`${STYLES.heading.h3.card} text-white mb-6`}>
               {COMPANY_DATA.basic.name}
             </h2>
-            <p className={`${STYLES.text.body.medium} text-gray-400 mb-6`}>
+            <p className={`${STYLES.text.body.medium} text-white mb-6`}>
               {COMPANY_DATA.basic.mission}
             </p>
             
             {/* 連絡先情報 */}
             <div className="space-y-3">
               <div className="flex items-start">
-                <MapPin className="w-5 h-5 text-gray-300 mr-3 mt-0.5 flex-shrink-0" />
+                <MapPin className="w-5 h-5 text-white mr-3 mt-0.5 flex-shrink-0" />
                 <div>
-                  <p className={`${STYLES.text.description.small} text-gray-200`}>
+                  <p className={`${STYLES.text.description.small} text-white`}>
                     {COMPANY_DATA.contact.address.postal}
                   </p>
-                  <p className={`${STYLES.text.description.small} text-gray-200`}>
+                  <p className={`${STYLES.text.description.small} text-white`}>
                     {COMPANY_DATA.contact.address.full}
                   </p>
                 </div>
               </div>
               
               <div className="flex items-center">
-                <Phone className="w-5 h-5 text-gray-300 mr-3 flex-shrink-0" />
+                <Phone className="w-5 h-5 text-white mr-3 flex-shrink-0" />
                 <a 
                   href={`tel:${COMPANY_DATA.contact.phone}`}
-                  className={`${STYLES.text.description.small} text-gray-200 hover:text-white transition-colors`}
+                  className={`${STYLES.text.description.small} text-white hover:text-gray-200 transition-colors`}
                 >
                   {COMPANY_DATA.contact.phone}
                 </a>
               </div>
               
               <div className="flex items-start">
-                <Clock className="w-5 h-5 text-gray-300 mr-3 mt-0.5 flex-shrink-0" />
+                <Clock className="w-5 h-5 text-white mr-3 mt-0.5 flex-shrink-0" />
                 <div>
-                  <p className={`${STYLES.text.description.small} text-gray-200`}>
+                  <p className={`${STYLES.text.description.small} text-white`}>
                     {COMPANY_DATA.contact.businessHours.weekdays}
                   </p>
-                  <p className={`${STYLES.text.description.small} text-gray-200`}>
+                  <p className={`${STYLES.text.description.small} text-white`}>
                     {COMPANY_DATA.contact.businessHours.weekend}
                   </p>
                 </div>
@@ -131,7 +132,7 @@ const Footer = memo(function Footer() {
                 <li key={link.href}>
                   <Link 
                     href={link.href}
-                    className={`${STYLES.text.body.small} text-gray-200 hover:text-white transition-colors`}
+                    className={`${STYLES.text.body.small} text-white hover:text-gray-200 transition-colors`}
                   >
                     {link.title}
                   </Link>
@@ -145,7 +146,7 @@ const Footer = memo(function Footer() {
             <h3 className={`${STYLES.heading.h4} text-white mb-6`}>
               お問い合わせ
             </h3>
-            <p className={`${STYLES.text.body.small} text-gray-400 mb-6`}>
+            <p className={`${STYLES.text.body.small} text-white mb-6`}>
               お気軽にご相談ください。
               LINEなら最速で返信いたします。
             </p>
@@ -164,14 +165,14 @@ const Footer = memo(function Footer() {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className={`${STYLES.text.description.small} text-gray-300 hover:text-white transition-colors`}
+                  className={`${STYLES.text.description.small} text-white hover:text-gray-200 transition-colors`}
                 >
                   {link.title}
                 </Link>
               ))}
             </div>
             
-            <p className={`${STYLES.text.description.small} text-gray-300`}>
+            <p className={`${STYLES.text.description.small} text-white`}>
               © {currentYear} {COMPANY_DATA.basic.name}. All rights reserved.
             </p>
           </div>
@@ -188,6 +189,7 @@ const Footer = memo(function Footer() {
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 10l7-7m0 0l7 7m-7-7v18" />
         </svg>
       </button>
+      </div>
     </footer>
   )
 })
