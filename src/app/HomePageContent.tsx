@@ -86,8 +86,8 @@ export default function HomePageContent() {
             <div className="blob" />
           </div>
           
-          {/* コンテンツ背景 - 透明度を下げて背景を見せる */}
-          <div className="absolute inset-0 bg-white/20 backdrop-blur-sm" />
+          {/* コンテンツ背景 - 視認性を優先 */}
+          <div className="absolute inset-0 bg-white/60 backdrop-blur-md" />
           
           <div className="relative z-10 w-full px-4 sm:px-6 lg:px-8">
             <div className="text-center max-w-6xl mx-auto">
@@ -102,11 +102,11 @@ export default function HomePageContent() {
                 </span>
               </h1>
               
-              <p className="text-xl sm:text-2xl text-gray-800 font-semibold mb-4 animate-fade-in bg-white/50 backdrop-blur-sm rounded-lg px-6 py-3 inline-block shadow-lg" style={{ animationDelay: '0.2s' }}>
+              <p className="text-xl sm:text-2xl text-gray-900 font-semibold mb-4 animate-fade-in bg-white/90 backdrop-blur-md rounded-lg px-6 py-3 inline-block shadow-xl border border-white/50" style={{ animationDelay: '0.2s' }}>
                 {COMPANY_DATA.basic.description}
               </p>
 
-              <p className="text-lg sm:text-xl text-gray-700 font-medium mb-12 animate-fade-in drop-shadow-sm" style={{ animationDelay: '0.4s' }}>
+              <p className="text-lg sm:text-xl text-gray-800 font-medium mb-12 animate-fade-in bg-white/70 backdrop-blur-sm rounded-lg px-4 py-2 inline-block" style={{ animationDelay: '0.4s' }}>
                 {COMPANY_DATA.basic.subMessage}
               </p>
 
@@ -145,7 +145,7 @@ export default function HomePageContent() {
         </section>
 
         {/* Services Section - Bento Grid */}
-        <section id="services" className="py-16 sm:py-20 lg:py-24 relative bg-gray-50/50">
+        <section id="services" className="py-16 sm:py-20 lg:py-24 relative bg-gray-50/90">
           <div className="w-full px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12 lg:mb-16 reveal">
               <h2 className="text-4xl sm:text-5xl font-extrabold mb-4">
