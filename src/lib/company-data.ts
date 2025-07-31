@@ -6,7 +6,7 @@ export const COMPANY_DATA = {
     ceo: '田形 康貴',
     established: '2020年（令和2年）',
     mission: '適正コストで最大の価値を',
-    tagline: '高額なIT投資に、もう悩まない。',
+    tagline: '高額なIT投資に、もう悩まない',
     description: '必要最小限の投資で、最大の成果を引き出す経営パートナー',
     subMessage: '無駄を削ぎ落とし、本当に価値のある投資だけに集中。あなたのビジネスに、新しい成長の道筋を作ります。'
   },

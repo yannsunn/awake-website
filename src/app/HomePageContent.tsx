@@ -94,11 +94,11 @@ export default function HomePageContent() {
               {/* Animated Tagline */}
               <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold mb-8 leading-tight">
                 <span className="bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent drop-shadow-md">
-                  {COMPANY_DATA.basic.tagline.split('を')[0]}
+                  高額なIT投資に、
                 </span>
                 <br />
                 <span className="text-gray-900 drop-shadow-md">
-                  を{COMPANY_DATA.basic.tagline.split('を')[1]}
+                  もう悩まない
                 </span>
               </h1>
               
