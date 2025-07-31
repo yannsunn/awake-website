@@ -58,7 +58,7 @@ const PageTemplate = ({
             className="bg-transparent-overlay border-b border-gray-200"
             aria-label="パンくずリスト"
           >
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
+            <div className="w-full px-4 sm:px-6 lg:px-8 py-3">
               <ol className="flex items-center space-x-2 text-sm">
                 {breadcrumbs.map((crumb, index) => (
                   <li key={index} className="flex items-center">
@@ -143,7 +143,7 @@ export const ContentSection = ({
       aria-label={ariaLabel}
       aria-labelledby={ariaLabelledBy}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="w-full px-4 sm:px-6 lg:px-8">
         {children}
       </div>
     </Component>
@@ -173,7 +173,7 @@ export const PageHeader = ({
         backgroundPosition: 'center'
       } : undefined}
     >
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div className="w-full px-4 sm:px-6 lg:px-8 text-center">
         <h1 className={`text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight mb-6 ${
           backgroundImage ? 'text-white' : 'text-gray-900'
         }`}>

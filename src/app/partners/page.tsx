@@ -147,7 +147,7 @@ export default function PartnersPage() {
     <PageTemplate breadcrumbs={breadcrumbs}>
       {/* Hero Section */}
       <ContentSection className="bg-transparent">
-        <div className="text-center max-w-5xl mx-auto">
+        <div className="text-center">
           <h1 className={STYLES.heading.h1.primary + " mb-4"}>
             1社では解決できない課題も、一緒なら解決できる
           </h1>
@@ -329,7 +329,7 @@ export default function PartnersPage() {
           </p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {[
             {
               title: "&ldquo;3つの課題を同時に解決できた&rdquo;",
@@ -365,7 +365,7 @@ export default function PartnersPage() {
           </h2>
         </div>
         
-        <div className="max-w-4xl mx-auto space-y-6">
+        <div className="w-full space-y-6">
           {[
             {
               q: "パートナーサービスも成果報酬ですか？",
@@ -407,7 +407,7 @@ export default function PartnersPage() {
           </p>
         </div>
         
-        <div className="bg-gray-overlay rounded-xl p-8 max-w-2xl mx-auto mb-12">
+        <div className="bg-gray-overlay rounded-xl p-8 mb-12">
           <h3 className={STYLES.heading.h3.emphasis + " mb-6 text-center"}>
             こんな企業様を求めています：
           </h3>
