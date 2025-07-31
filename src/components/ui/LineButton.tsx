@@ -28,14 +28,14 @@ const LineButton = memo(function LineButton({
   }
   
   const variantClasses = {
-    filled: 'bg-gray-800 text-white hover:bg-gray-900 border-2 border-transparent',
-    outline: 'bg-white border-2 border-gray-800 text-gray-800 hover:bg-gray-100'
+    filled: 'bg-green-600 text-white hover:bg-green-700 border-2 border-transparent',
+    outline: 'bg-white border-2 border-green-600 text-green-600 hover:bg-green-50'
   }
   
   const baseClasses = `
     inline-flex items-center justify-center
     font-bold rounded-xl transition-colors duration-200
-    focus:outline-none focus:ring-2 focus:ring-gray-600 focus:ring-offset-2
+    focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2
     relative overflow-hidden shadow-lg hover:shadow-xl
   `
   

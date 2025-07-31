@@ -53,12 +53,14 @@ export const ContactMethod = memo(function ContactMethod({
   title,
   content,
   link,
+  linkText,
   highlighted = false
 }: {
   icon: React.ReactNode
   title: string
   content: string
   link?: string
+  linkText?: string
   highlighted?: boolean
 }) {
   const ContentWrapper = link ? 'a' : 'div'
@@ -75,9 +77,19 @@ export const ContactMethod = memo(function ContactMethod({
         <h4 className={`font-medium mb-1 ${highlighted ? 'text-green-800' : 'text-gray-900'}`}>
           {title}
         </h4>
-        <ContentWrapper {...wrapperProps} className={`${highlighted ? 'text-green-700' : 'text-gray-600'} ${link ? 'hover:text-gray-900' : ''}`}>
+        <p className={`${highlighted ? 'text-green-700' : 'text-gray-600'} mb-2`}>
           {content}
-        </ContentWrapper>
+        </p>
+        {link && linkText && (
+          <a 
+            href={link}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center px-4 py-2 bg-green-600 text-white text-sm font-medium rounded-lg hover:bg-green-700 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2"
+          >
+            {linkText}
+          </a>
+        )}
       </div>
     </div>
   )
