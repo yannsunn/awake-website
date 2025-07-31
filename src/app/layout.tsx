@@ -47,6 +47,10 @@ export default function RootLayout({
   return (
     <html lang="ja" suppressHydrationWarning>
       <body className={`${notoSansJP.variable} font-sans antialiased bg-gray-50`} suppressHydrationWarning>
+        {/* スキップナビゲーション - アクセシビリティ向上 */}
+        <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:top-0 focus:left-0 z-50 bg-gray-900 text-white px-4 py-2 m-2 rounded-md">
+          メインコンテンツへスキップ
+        </a>
         <FixedBackground />
         <script
           type="application/ld+json"

@@ -16,7 +16,7 @@ const FAQItem = memo(function FAQItem({ question, answer, index }: FAQItemProps)
     <details 
       className="group bg-white/60 backdrop-blur-sm border-2 border-gray-300 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300"
     >
-      <summary className="flex items-center justify-between p-4 sm:p-6 cursor-pointer hover:bg-indigo-50/80 focus:outline-none focus:ring-4 focus:ring-indigo-500 focus:ring-offset-2 transition-all duration-200">
+      <summary className="flex items-center justify-between p-4 sm:p-6 cursor-pointer hover:bg-indigo-50/80 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 transition-all duration-200">
         <h3 className={`${STYLES.heading.h3.emphasis} pr-4 text-lg sm:text-xl`}>
           {question}
         </h3>

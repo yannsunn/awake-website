@@ -658,6 +658,21 @@ button:focus-visible, a:focus-visible {
   grid-auto-rows: minmax(250px, auto);
 }
 
+/* モバイルでは1カラム */
+@media (max-width: 767px) {
+  .bento-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .bento-item-large,
+  .bento-item-wide,
+  .bento-item-tall {
+    grid-column: span 1;
+    grid-row: span 1;
+  }
+}
+
+/* デスクトップでは4カラムグリッド */
 @media (min-width: 768px) {
   .bento-grid {
     grid-template-columns: repeat(4, 1fr);
