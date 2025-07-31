@@ -79,13 +79,13 @@
     @apply transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5;
   }
 
-  /* グラスモーフィズム - 視認性優先 */
+  /* グラスモーフィズム - 背景を活かしつつ視認性確保 */
   .glass {
-    background: rgba(255, 255, 255, 0.9);
-    backdrop-filter: blur(10px) saturate(180%);
-    -webkit-backdrop-filter: blur(10px) saturate(180%);
-    border: 1px solid rgba(255, 255, 255, 0.5);
-    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.12);
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(8px) saturate(160%);
+    -webkit-backdrop-filter: blur(8px) saturate(160%);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.1);
   }
   
   .glass-dark {
@@ -232,16 +232,16 @@ section {
 
 /* 白背景セクション */
 .bg-white-overlay {
-  background-color: rgba(255, 255, 255, 0.85);
-  backdrop-filter: blur(3px);
-  -webkit-backdrop-filter: blur(3px);
+  background-color: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
 }
 
 /* グレー背景セクション */
 .bg-gray-overlay {
-  background-color: rgba(249, 250, 251, 0.85);
-  backdrop-filter: blur(3px);
-  -webkit-backdrop-filter: blur(3px);
+  background-color: rgba(249, 250, 251, 0.75);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
 }
 
 /* ダーク背景セクション */

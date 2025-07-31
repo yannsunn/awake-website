@@ -16,8 +16,8 @@ const FixedBackground = memo(function FixedBackground() {
         className="object-contain object-center"
         sizes="100vw"
       />
-      {/* オーバーレイ - 背景ロゴを見せつつ視認性確保 */}
-      <div className="absolute inset-0 bg-gradient-to-b from-white/50 to-white/65" />
+      {/* オーバーレイ - 背景ロゴを活かす軽いオーバーレイ */}
+      <div className="absolute inset-0 bg-gradient-to-b from-white/30 to-white/45" />
     </div>
   )
 })
