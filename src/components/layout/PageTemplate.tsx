@@ -96,7 +96,7 @@ const PageTemplate = ({
         <main
           role="main"
           id={skipToMainId}
-          className="flex-1"
+          className="flex-1 pt-16 md:pt-20"
           tabIndex={-1}
         >
           {children}

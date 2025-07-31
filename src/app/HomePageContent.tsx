@@ -80,7 +80,7 @@ export default function HomePageContent() {
       
       <main role="main" id="main-content">
         {/* Hero Section - Creative & Bold */}
-        <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-32 pb-20">
+        <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 sm:pt-24 md:pt-32 pb-20">
           {/* Animated Blob Background */}
           <div className="absolute inset-0 overflow-hidden pointer-events-none">
             <div className="blob" />
