@@ -294,12 +294,23 @@ section {
 
 /* ページ読み込み時の緑色フラッシュ防止 */
 .line-button-smooth {
-  transition: opacity 0.3s ease-out;
+  transition: opacity 0.3s ease-out, visibility 0.3s ease-out;
 }
 
-/* 初期表示時の緑色要素を非表示 */
-body:not(.loaded) .bg-green-600 {
+/* 初期表示時のLINEボタンを完全非表示 */
+.line-button-smooth:not(.visible) {
   opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
+
+/* LINEボタンの緑色背景を初期状態で非表示 */
+[class*='from-green-']:not(.visible),
+[class*='to-green-']:not(.visible),
+[class*='bg-green-']:not(.visible),
+[class*='border-green-']:not(.visible) {
+  background: transparent !important;
+  border-color: transparent !important;
 }
 
 /* 🚀 ULTRA OPTIMIZATION - 限界突破UI/UX改善 v2 */
