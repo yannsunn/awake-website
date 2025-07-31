@@ -86,27 +86,27 @@ export default function HomePageContent() {
             <div className="blob" />
           </div>
           
-          {/* コンテンツ背景 - 視認性向上 */}
-          <div className="absolute inset-0 bg-white/40 backdrop-blur-sm" />
+          {/* コンテンツ背景 - 透明度を下げて背景を見せる */}
+          <div className="absolute inset-0 bg-white/20 backdrop-blur-sm" />
           
           <div className="relative z-10 w-full px-4 sm:px-6 lg:px-8">
             <div className="text-center max-w-6xl mx-auto">
               {/* Animated Tagline */}
-              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-8 leading-tight">
-                <span className="bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
+              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold mb-8 leading-tight">
+                <span className="bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent drop-shadow-md">
                   {COMPANY_DATA.basic.tagline.split('を')[0]}
                 </span>
                 <br />
-                <span className="text-gray-900">
+                <span className="text-gray-900 drop-shadow-md">
                   を{COMPANY_DATA.basic.tagline.split('を')[1]}
                 </span>
               </h1>
               
-              <p className="text-xl sm:text-2xl text-gray-700 font-medium mb-4 animate-fade-in bg-white/60 rounded-lg px-6 py-3 inline-block" style={{ animationDelay: '0.2s' }}>
+              <p className="text-xl sm:text-2xl text-gray-800 font-semibold mb-4 animate-fade-in bg-white/50 backdrop-blur-sm rounded-lg px-6 py-3 inline-block shadow-lg" style={{ animationDelay: '0.2s' }}>
                 {COMPANY_DATA.basic.description}
               </p>
 
-              <p className="text-lg sm:text-xl text-gray-600 mb-12 animate-fade-in" style={{ animationDelay: '0.4s' }}>
+              <p className="text-lg sm:text-xl text-gray-700 font-medium mb-12 animate-fade-in drop-shadow-sm" style={{ animationDelay: '0.4s' }}>
                 {COMPANY_DATA.basic.subMessage}
               </p>
 
@@ -145,13 +145,13 @@ export default function HomePageContent() {
         </section>
 
         {/* Services Section - Bento Grid */}
-        <section id="services" className="py-16 sm:py-20 lg:py-24 relative bg-gray-50/80">
+        <section id="services" className="py-16 sm:py-20 lg:py-24 relative bg-gray-50/50">
           <div className="w-full px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12 lg:mb-16 reveal">
-              <h2 className="text-4xl sm:text-5xl font-bold mb-4">
-                <span className="bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">あなたの課題を解決する</span>
+              <h2 className="text-4xl sm:text-5xl font-extrabold mb-4">
+                <span className="bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent drop-shadow-md">あなたの課題を解決する</span>
               </h2>
-              <p className="text-xl text-gray-700 font-medium">3つのクリエイティブソリューション</p>
+              <p className="text-xl text-gray-800 font-semibold">3つのクリエイティブソリューション</p>
             </div>
             
             <div className="bento-grid max-w-7xl mx-auto">
@@ -173,10 +173,10 @@ export default function HomePageContent() {
                       <h3 className="text-2xl font-bold mb-4 text-gray-900">
                         {service.title}
                       </h3>
-                      <p className="text-gray-700 mb-4 font-medium">
+                      <p className="text-gray-800 mb-4 font-medium">
                         {service.description}
                       </p>
-                      <p className="text-sm text-gray-600 mb-6">
+                      <p className="text-sm text-gray-700 mb-6">
                         {service.longDescription}
                       </p>
                       
