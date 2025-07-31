@@ -26,8 +26,8 @@ export default function TermsPage() {
       {/* Hero Section */}
       <ContentSection className="bg-gray-overlay">
         <div className="text-center max-w-4xl mx-auto">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-light text-gray-900 mb-4">利用規約</h1>
-          <p className="text-sm sm:text-base text-gray-600">最終更新日: 2024年1月1日</p>
+          <h1 className={STYLES.heading.h1.primary + " mb-4"}>利用規約</h1>
+          <p className={STYLES.text.description.small + " text-gray-600"}>最終更新日: 2024年1月1日</p>
         </div>
       </ContentSection>
 
@@ -35,15 +35,15 @@ export default function TermsPage() {
       <ContentSection>
         <div className="prose prose-lg max-w-none">
           <div className="mb-8">
-            <p className="text-sm sm:text-base text-gray-700 leading-relaxed">
+            <p className="STYLES.text.body.medium + " text-gray-700"">
               この利用規約（以下「本規約」）は、株式会社Awake（以下「当社」）が提供するすべてのサービス（以下「本サービス」）を利用される際に適用されます。本サービスを利用されるお客様（以下「ユーザー」）は、本規約に同意したうえでご利用ください。
             </p>
           </div>
 
           <div className="space-y-8">
             <section>
-              <h2 className="text-xl sm:text-2xl font-light text-gray-900 mb-4">1. 規約の適用</h2>
-              <p className="text-sm sm:text-base text-gray-700 leading-relaxed">
+              <h2 className={STYLES.heading.h2.subsection + " mb-4"}>1. 規約の適用</h2>
+              <p className={STYLES.text.body.medium + " text-gray-700"}>
                     本規約は、ユーザーと当社との間の本サービスの利用に関わる一切の関係に適用されます。当社は本サービスに関し、本規約のほか、ご利用にあたってのルール等、各種の定めをすることがあります。これら個別規定はその名称のいかんに関わらず、本規約の一部を構成するものとします。
                   </p>
                 </section>

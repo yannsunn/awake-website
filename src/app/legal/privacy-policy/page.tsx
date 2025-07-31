@@ -26,8 +26,8 @@ export default function PrivacyPolicyPage() {
       {/* Hero Section */}
       <ContentSection className="bg-gray-overlay">
         <div className="text-center max-w-4xl mx-auto">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-light text-gray-900 mb-4">プライバシーポリシー</h1>
-          <p className="text-sm sm:text-base text-gray-600">最終更新日: 2024年1月1日</p>
+          <h1 className={STYLES.heading.h1.primary + " mb-4"}>プライバシーポリシー</h1>
+          <p className={STYLES.text.description.small + " text-gray-600"}>最終更新日: 2024年1月1日</p>
         </div>
       </ContentSection>
 
@@ -35,15 +35,15 @@ export default function PrivacyPolicyPage() {
       <ContentSection>
         <div className="prose prose-lg max-w-none">
           <div className="mb-8">
-            <p className="text-sm sm:text-base text-gray-700 leading-relaxed">
+            <p className={STYLES.text.body.medium + " text-gray-700"}>
               株式会社Awake（以下「当社」）は、当社が提供するサービスをご利用いただくお客様の個人情報を適切に保護することを社会的責務と考え、個人情報の保護に関する法律、その他関係法令等を遵守し、お客様の個人情報を適切に取り扱います。
             </p>
           </div>
 
           <div className="space-y-8">
             <section>
-              <h2 className="text-xl sm:text-2xl font-light text-gray-900 mb-4">1. 個人情報の定義</h2>
-              <p className="text-sm sm:text-base text-gray-700 leading-relaxed">
+              <h2 className={STYLES.heading.h2.subsection + " mb-4"}>1. 個人情報の定義</h2>
+              <p className={STYLES.text.body.medium + " text-gray-700"}>
                     本プライバシーポリシーにおいて、「個人情報」とは、個人情報の保護に関する法律にいう「個人情報」を指すものとし、生存する個人に関する情報であって、当該情報に含まれる氏名、生年月日、住所、電話番号、連絡先その他の記述等により特定の個人を識別できる情報および容貌、指紋、声紋にかかるデータ、及び健康保険証の保険者番号などの当該情報単体から特定の個人を識別できる情報（個人識別情報）を指します。
                   </p>
                 </section>
