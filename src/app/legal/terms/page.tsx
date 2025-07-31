@@ -35,7 +35,7 @@ export default function TermsPage() {
       <ContentSection>
         <div className="prose prose-lg max-w-none">
           <div className="mb-8">
-            <p className="STYLES.text.body.medium + " text-gray-700"">
+            <p className={STYLES.text.body.medium + " text-gray-700"}>
               この利用規約（以下「本規約」）は、株式会社Awake（以下「当社」）が提供するすべてのサービス（以下「本サービス」）を利用される際に適用されます。本サービスを利用されるお客様（以下「ユーザー」）は、本規約に同意したうえでご利用ください。
             </p>
           </div>
