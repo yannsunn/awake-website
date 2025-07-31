@@ -111,8 +111,8 @@ const Header = memo(function Header() {
       <header 
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           isScrolled 
-            ? 'bg-white/95 backdrop-blur-md shadow-lg border-b-2 border-gray-200' 
-            : 'bg-white/90 backdrop-blur-sm border-b border-gray-100'
+            ? 'bg-white/60 backdrop-blur-md shadow-lg border-b-2 border-gray-200' 
+            : 'bg-white/60 backdrop-blur-sm border-b border-gray-100'
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -149,7 +149,7 @@ const Header = memo(function Header() {
                       </button>
                       
                       {isServicesOpen && (
-                        <div className="absolute top-full left-0 mt-2 w-80 bg-white/90 backdrop-blur-md rounded-xl shadow-3xl border-2 border-gray-300 overflow-hidden animate-slide-up">
+                        <div className="absolute top-full left-0 mt-2 w-80 bg-white/60 backdrop-blur-md rounded-xl shadow-3xl border-2 border-gray-300 overflow-hidden animate-slide-up">
                           {item.items?.map((service, serviceIndex) => (
                             <Link
                               key={service.href}
@@ -234,7 +234,7 @@ const Header = memo(function Header() {
         {/* メニューパネル */}
         <nav 
           id="mobile-menu"
-          className={`absolute right-0 top-0 h-full w-full max-w-sm bg-white/95 backdrop-blur-md shadow-2xl transform transition-transform duration-300 ${
+          className={`absolute right-0 top-0 h-full w-full max-w-sm bg-white/60 backdrop-blur-md shadow-2xl transform transition-transform duration-300 ${
             isMenuOpen ? 'translate-x-0' : 'translate-x-full'
           }`}
           aria-label="モバイルナビゲーション"
