@@ -40,7 +40,7 @@ const nextConfig: NextConfig = {
   async headers() {
     return [
       {
-        source: '/:path((?!_next/static|_next/image|favicon.ico).*)',
+        source: '/:path((?!_next/static|_next/image|favicon.ico|.*\.js|.*\.css).*)',
         headers: [
           {
             key: 'Content-Security-Policy',
@@ -53,7 +53,7 @@ const nextConfig: NextConfig = {
               connect-src 'self' https://www.google-analytics.com https://api.line.me https://vitals.vercel-insights.com https://www.awakeinc.co.jp;
               frame-src 'none';
               object-src 'none';
-              base-uri 'self';
+              base-uri 'self' https://awakeinc.co.jp https://www.awakeinc.co.jp;
               form-action 'self';
               frame-ancestors 'none';
               upgrade-insecure-requests;
