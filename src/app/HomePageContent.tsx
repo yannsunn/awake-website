@@ -87,7 +87,7 @@ export default function HomePageContent() {
           </div>
           
           {/* コンテンツ背景 - 背景を透かせてテキストは背景付きで対応 */}
-          <div className="absolute inset-0 bg-white/40 backdrop-blur-sm" />
+          <div className="absolute inset-0 bg-white/60 backdrop-blur-sm" />
           
           <div className="relative z-10 w-full px-4 sm:px-6 lg:px-8">
             <div className="text-center max-w-6xl mx-auto">
@@ -145,7 +145,7 @@ export default function HomePageContent() {
         </section>
 
         {/* Services Section - Bento Grid */}
-        <section id="services" className="py-16 sm:py-20 lg:py-24 relative bg-white/40">
+        <section id="services" className="py-16 sm:py-20 lg:py-24 relative bg-white/60">
           <div className="w-full px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12 lg:mb-16 reveal">
               <h2 className="text-4xl sm:text-5xl font-extrabold mb-4">
@@ -225,7 +225,7 @@ export default function HomePageContent() {
         </LazyLoad>
 
         {/* Company Mission Section */}
-        <section className="py-16 sm:py-20 lg:py-24 bg-white/40">
+        <section className="py-16 sm:py-20 lg:py-24 bg-white/60">
           <div className="w-full px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-8 sm:mb-12 lg:mb-16">
               <h2 className="text-4xl sm:text-5xl font-bold mb-4">
@@ -259,7 +259,7 @@ export default function HomePageContent() {
         </LazyLoad>
         
         {/* Contact Section */}
-        <section id="contact" className="py-16 sm:py-20 lg:py-24 bg-white/40">
+        <section id="contact" className="py-16 sm:py-20 lg:py-24 bg-white/60">
           <div className="w-full px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-8 sm:mb-12 lg:mb-16">
               <h2 className="text-4xl sm:text-5xl font-bold mb-6">
