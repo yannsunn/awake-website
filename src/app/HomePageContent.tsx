@@ -106,13 +106,13 @@ export default function HomePageContent() {
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <AccessibleButton href="#contact" showArrow className="w-full sm:w-auto" size="large">
+                <AccessibleButton href="#contact" showArrow className="w-full sm:w-auto btn-glow" size="large">
                   今すぐ無料相談
                 </AccessibleButton>
                 <AccessibleButton href="#services" variant="secondary" className="w-full sm:w-auto" size="medium">
                   サービスを見る
                 </AccessibleButton>
-                <LineButton className="w-full sm:w-auto animate-pulse" size="medium" />
+                <LineButton className="w-full sm:w-auto pulse-soft" size="medium" />
               </div>
             </div>
           </div>
@@ -130,7 +130,7 @@ export default function HomePageContent() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
               {services.map((service, index) => {
                 return (
-                  <div key={index} className="bg-white/50 backdrop-blur-sm rounded-2xl p-6 sm:p-8 shadow-2xl hover:shadow-3xl transition-all duration-300 border-2 border-gray-200 hover:border-indigo-300 hover:bg-white/60 transform hover:scale-105">
+                  <div key={index} className="bg-white/50 backdrop-blur-sm rounded-2xl p-6 sm:p-8 shadow-2xl hover:shadow-3xl transition-all duration-300 border-2 border-gray-200 hover:border-indigo-300 hover:bg-white/60 transform hover:scale-105 hover-lift gradient-border">
                     <h3 className={STYLES.heading.h3.card + " mb-2"}>
                       {service.title}
                     </h3>

@@ -149,7 +149,7 @@
   }
 }
 
-/* 固定背景スタイル - パララックス効果追加 */
+/* 固定背景スタイル - パフォーマンス最適化 */
 .fixed-background {
   position: fixed;
   top: 0;
@@ -161,7 +161,9 @@
   z-index: -1;
   overflow: hidden;
   transform: translateZ(0);
-  will-change: transform;
+  /* will-changeは必要時のみ適用 */
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
 }
 
 /* パララックススクロール効果 */
@@ -300,7 +302,37 @@ body:not(.loaded) .bg-green-600 {
   opacity: 0 !important;
 }
 
-/* 🚀 ULTRA OPTIMIZATION - 限界突破UI/UX改善 */
+/* 🚀 ULTRA OPTIMIZATION - 限界突破UI/UX改善 v2 */
+
+/* パフォーマンス最適化 - will-change削減 */
+* {
+  /* will-changeの乱用を防ぐ */
+  will-change: auto;
+}
+
+/* アニメーション要素のみwill-change適用 */
+.will-change-transform {
+  will-change: transform;
+}
+
+.will-change-opacity {
+  will-change: opacity;
+}
+
+/* レイアウトシフト防止 */
+img, video, iframe {
+  aspect-ratio: attr(width) / attr(height);
+  height: auto;
+}
+
+/* フォントの最適化 */
+@font-display swap;
+
+/* スムーズスクロール改善 */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px; /* ヘッダー分のオフセット */
+}
 
 /* モバイルタッチ最適化 */
 @media (hover: none) and (pointer: coarse) {
@@ -321,7 +353,9 @@ body:not(.loaded) .bg-green-600 {
 /* 🔥 ウルトラスムースアニメーション */
 @layer utilities {
   .ultra-smooth {
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), 
+                opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+                box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
   
   .bounce-on-hover {
@@ -470,4 +504,81 @@ button:focus-visible, a:focus-visible {
   outline-offset: 3px;
 }
 
-/* Force cache clear: 2025-01-28-v5-UIUX */
+/* 🎯 ウルトラインタラクティブUI */
+@media (hover: hover) {
+  /* ホバー可能デバイスのみ */
+  .hover-lift {
+    transition: transform 0.2s ease;
+  }
+  
+  .hover-lift:hover {
+    transform: translateY(-4px);
+  }
+  
+  /* カードの3Dホバー効果 */
+  .card-3d {
+    transform-style: preserve-3d;
+    transition: transform 0.3s ease;
+  }
+  
+  .card-3d:hover {
+    transform: perspective(1000px) rotateY(5deg) translateZ(10px);
+  }
+}
+
+/* スクロールアニメーション */
+.fade-in-up {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.fade-in-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* グラデーションボーダー */
+.gradient-border {
+  position: relative;
+  background: linear-gradient(#fff, #fff) padding-box,
+              linear-gradient(135deg, #22c55e, #3b82f6) border-box;
+  border: 2px solid transparent;
+  border-radius: 12px;
+}
+
+/* グローイングボタン */
+.btn-glow {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-glow::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}
+
+.btn-glow:active::before {
+  width: 300px;
+  height: 300px;
+}
+
+/* パルスアニメーション */
+@keyframes pulse-soft {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.8; }
+}
+
+.pulse-soft {
+  animation: pulse-soft 2s ease-in-out infinite;
+}
+
+/* Force cache clear: 2025-01-28-v6-ULTRA */
