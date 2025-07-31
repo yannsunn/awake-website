@@ -57,7 +57,7 @@ const services = [
     longDescription: COMPANY_DATA.services.details.ec.longDescription,
     href: COMPANY_DATA.services.details.ec.href,
     price: "完全成果報酬",
-    color: "bg-green-500",
+    color: "bg-gray-500",
     features: [
       '商品登録から販売戦略まで完全代行',
       '売れるまで費用は一切不要',
@@ -133,7 +133,7 @@ export default function HomePageContent() {
                     <ul className="space-y-2 mb-6">
                       {service.features.map((feature, idx) => (
                         <li key={idx} className="flex items-start">
-                          <span className="text-green-600 mr-2 text-xl font-bold">✓</span>
+                          <span className="text-blue-600 mr-2 text-xl font-bold">✓</span>
                           <span className={STYLES.text.description.medium + " font-semibold"}>{feature}</span>
                         </li>
                       ))}

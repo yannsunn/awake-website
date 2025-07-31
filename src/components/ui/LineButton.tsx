@@ -1,6 +1,6 @@
 'use client'
 
-import { memo, useEffect, useState } from 'react'
+import { memo } from 'react'
 import Link from 'next/link'
 import { MessageCircle } from 'lucide-react'
 import { COMPANY_DATA } from '@/lib/company-data'
@@ -12,21 +12,14 @@ interface LineButtonProps {
   variant?: 'filled' | 'outline'
 }
 
-// 🧠 ニューロデザイン最適化LINEボタン
+// LINEボタンコンポーネント
 const LineButton = memo(function LineButton({ 
   className = '',
   showIcon = true,
   size = 'medium',
   variant = 'filled'
 }: LineButtonProps) {
-  const [isVisible, setIsVisible] = useState(false)
   const LINE_URL = COMPANY_DATA.contact.line ? 'https://lin.ee/fIaLAjy' : '#'
-  
-  useEffect(() => {
-    // 科学的根拠: 遅延レンダリングで視覚的ちらつき防止
-    const timer = setTimeout(() => setIsVisible(true), 100)
-    return () => clearTimeout(timer)
-  }, [])
   
   const sizeClasses = {
     small: 'px-6 py-3 text-sm min-h-[48px]',
@@ -34,23 +27,17 @@ const LineButton = memo(function LineButton({
     large: 'px-10 py-5 text-lg min-h-[64px]'
   }
   
-  // 科学的根拠: LINEブランドカラーは#00B900をベースに最適化
   const variantClasses = {
-    filled: 'bg-[#00B900] text-white hover:bg-[#009900] border-2 border-transparent',
-    outline: 'bg-white border-2 border-[#00B900] text-[#00B900] hover:bg-[#00B900] hover:text-white'
+    filled: 'bg-gray-800 text-white hover:bg-gray-900 border-2 border-transparent',
+    outline: 'bg-white border-2 border-gray-800 text-gray-800 hover:bg-gray-100'
   }
   
   const baseClasses = `
     inline-flex items-center justify-center
-    font-bold rounded-xl transition-all duration-250
-    focus:outline-none focus:ring-2 focus:ring-[#00B900] focus:ring-offset-2
-    neuro-hover relative overflow-hidden
-    shadow-md hover:shadow-lg
+    font-bold rounded-xl transition-colors duration-200
+    focus:outline-none focus:ring-2 focus:ring-gray-600 focus:ring-offset-2
+    relative overflow-hidden shadow-lg hover:shadow-xl
   `
-  
-  if (!isVisible) {
-    return <div className={`${sizeClasses[size]} rounded-xl bg-gray-100 animate-pulse`} />
-  }
   
   return (
     <Link
