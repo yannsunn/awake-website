@@ -15,7 +15,7 @@ const ContactInfo = memo(function ContactInfo() {
       {/* 🎯 統合された連絡先情報 */}
       <div className="space-y-6">
         <ContactMethod
-          icon={<MessageCircle className="w-6 h-6 text-gray-600" />}
+          icon={<MessageCircle className="w-6 h-6 text-green-600" />}
           title="公式LINE"
           content="最速で返信！お気軽にご相談ください"
           link="https://lin.ee/fIaLAjy"

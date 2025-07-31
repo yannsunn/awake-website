@@ -1,14 +1,14 @@
 // 🎨 統一されたスタイルシステム
 export const COLORS = {
   // Primary Brand Colors
-  primary: {
-    50: 'bg-gray-50',
-    100: 'bg-gray-100',
-    600: 'bg-gray-600',
-    700: 'bg-gray-700',
-    hover: 'hover:bg-gray-700',
-    text: 'text-gray-600',
-    border: 'border-gray-600'
+  green: {
+    50: 'bg-green-50',
+    100: 'bg-green-100',
+    600: 'bg-green-600',
+    700: 'bg-green-700',
+    hover: 'hover:bg-green-700',
+    text: 'text-green-600',
+    border: 'border-green-600'
   },
   
   // Grayscale
@@ -28,17 +28,17 @@ export const BUTTON_CLASSES = {
   line: {
     filled: `
       inline-flex items-center justify-center
-      px-8 py-4 ${COLORS.gray[900]} text-white 
-      font-medium rounded-lg hover:bg-gray-800
+      px-8 py-4 ${COLORS.green[600]} text-white 
+      font-medium rounded-lg ${COLORS.green.hover}
       transition-all duration-200 shadow-lg
-      focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2
+      focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2
     `,
     outline: `
       inline-flex items-center justify-center
-      px-8 py-4 border-2 border-gray-600 text-gray-600
-      font-medium rounded-lg hover:bg-gray-50
+      px-8 py-4 border-2 ${COLORS.green.border} ${COLORS.green.text}
+      font-medium rounded-lg hover:bg-green-50
       transition-all duration-200
-      focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2
+      focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2
     `
   },
   

@@ -58,7 +58,7 @@ const UnifiedCard = memo(function UnifiedCard({
         <ul className="space-y-2 mb-4">
           {features.map((feature, idx) => (
             <li key={idx} className="flex items-start">
-              <span className="text-blue-600 mr-2">✓</span>
+              <span className="text-green-600 mr-2">✓</span>
               <span className={STYLES.text.description.small}>{feature}</span>
             </li>
           ))}
