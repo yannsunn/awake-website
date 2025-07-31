@@ -344,7 +344,13 @@ img, video, iframe {
 /* スムーズスクロール改善 */
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 80px; /* ヘッダー分のオフセット */
+  scroll-padding-top: 64px; /* モバイル: 16px * 4 */
+}
+
+@media (min-width: 768px) {
+  html {
+    scroll-padding-top: 80px; /* デスクトップ: 20px * 4 */
+  }
 }
 
 /* モバイルタッチ最適化 */
