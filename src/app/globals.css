@@ -292,10 +292,6 @@ section {
   font-weight: 700 !important;
 }
 
-/* ページ読み込み時のフラッシュ防止 */
-.line-button-smooth {
-  transition: opacity 0.3s ease-out;
-}
 
 /* 🚀 ULTRA OPTIMIZATION - 限界突破UI/UX改善 v2 */
 
