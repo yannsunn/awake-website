@@ -103,15 +103,15 @@ export default function HomePageContent() {
                 </h1>
               </ParallaxElement>
               
-              <p className="text-xl sm:text-2xl text-white font-semibold mb-4 animate-fade-in bg-gray-800/90 rounded-lg px-6 py-4 inline-block shadow-2xl border-2 border-gray-700" style={{ animationDelay: '0.2s' }}>
+              <p className="text-xl sm:text-2xl text-white font-semibold mb-4 bg-gray-800/90 rounded-lg px-6 py-4 inline-block shadow-2xl border-2 border-gray-700">
                 {COMPANY_DATA.basic.description}
               </p>
 
-              <p className="text-lg sm:text-xl text-gray-200 font-medium mb-12 animate-fade-in bg-gray-800/90 rounded-lg px-6 py-3 inline-block shadow-xl border border-gray-700" style={{ animationDelay: '0.4s' }}>
+              <p className="text-lg sm:text-xl text-gray-200 font-medium mb-12 bg-gray-800/90 rounded-lg px-6 py-3 inline-block shadow-xl border border-gray-700">
                 {COMPANY_DATA.basic.subMessage}
               </p>
 
-              <div className="flex flex-col sm:flex-row gap-6 justify-center animate-fade-in" style={{ animationDelay: '0.6s' }}>
+              <div className="flex flex-col sm:flex-row gap-6 justify-center">
                 <BreathingButton 
                   href="#contact" 
                   showArrow 
