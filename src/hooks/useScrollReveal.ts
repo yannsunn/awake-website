@@ -150,6 +150,7 @@ export const useParallaxScroll = (multiplier: number = 0.5) => {
       window.addEventListener('scroll', handleScroll, { passive: true })
       return () => window.removeEventListener('scroll', handleScroll)
     }
+    return undefined
   }, [handleScroll])
   
   return elementRef

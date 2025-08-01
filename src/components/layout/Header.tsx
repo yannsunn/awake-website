@@ -78,6 +78,7 @@ const Header = memo(function Header() {
       document.addEventListener('mousedown', handleClickOutside)
       return () => document.removeEventListener('mousedown', handleClickOutside)
     }
+    return undefined
   }, [isServicesOpen])
 
   // ESCキーでメニューを閉じる

@@ -8,26 +8,26 @@ import { BUTTON_STYLES } from '@/lib/constants'
 import type { ButtonVariant } from '@/lib/types'
 
 interface AccessibleButtonProps {
-  href?: string
-  variant?: ButtonVariant
-  icon?: LucideIcon
-  showArrow?: boolean
+  href?: string | undefined
+  variant?: ButtonVariant | undefined
+  icon?: LucideIcon | undefined
+  showArrow?: boolean | undefined
   children: ReactNode
-  onClick?: (e: React.MouseEvent<HTMLButtonElement>) => void
-  type?: 'button' | 'submit' | 'reset'
-  disabled?: boolean
-  className?: string
-  target?: string
-  rel?: string
-  size?: 'small' | 'medium' | 'large'
+  onClick?: ((e: React.MouseEvent<HTMLButtonElement>) => void) | undefined
+  type?: 'button' | 'submit' | 'reset' | undefined
+  disabled?: boolean | undefined
+  className?: string | undefined
+  target?: string | undefined
+  rel?: string | undefined
+  size?: 'small' | 'medium' | 'large' | undefined
   // アクセシビリティ拡張プロパティ
-  ariaLabel?: string
-  ariaDescribedBy?: string
-  ariaExpanded?: boolean
-  ariaHaspopup?: boolean
-  ariaPressed?: boolean
-  role?: string
-  tabIndex?: number
+  ariaLabel?: string | undefined
+  ariaDescribedBy?: string | undefined
+  ariaExpanded?: boolean | undefined
+  ariaHaspopup?: boolean | undefined
+  ariaPressed?: boolean | undefined
+  role?: string | undefined
+  tabIndex?: number | undefined
 }
 
 const AccessibleButton = memo(forwardRef<

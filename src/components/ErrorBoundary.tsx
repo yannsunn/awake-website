@@ -8,9 +8,9 @@ import AccessibleButton from './ui/AccessibleButton'
 
 interface ErrorBoundaryState {
   hasError: boolean
-  error?: Error
-  errorInfo?: ErrorInfo
-  errorId?: string
+  error?: Error | undefined
+  errorInfo?: ErrorInfo | undefined
+  errorId?: string | undefined
 }
 
 interface ErrorBoundaryProps {
@@ -27,6 +27,8 @@ class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundaryState> {
     super(props)
     this.state = { 
       hasError: false,
+      error: undefined,
+      errorInfo: undefined,
       errorId: undefined
     }
   }
@@ -42,7 +44,7 @@ class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundaryState> {
     }
   }
 
-  componentDidCatch(error: Error, errorInfo: ErrorInfo) {
+  override componentDidCatch(error: Error, errorInfo: ErrorInfo) {
     // エラー情報をstate に保存
     this.setState({ errorInfo })
 
@@ -62,7 +64,7 @@ class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundaryState> {
     this.reportError(error, errorInfo)
   }
 
-  componentWillUnmount() {
+  override componentWillUnmount() {
     if (this.retryTimeoutId) {
       window.clearTimeout(this.retryTimeoutId)
     }
@@ -110,7 +112,7 @@ class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundaryState> {
     window.location.href = '/'
   }
 
-  render() {
+  override render() {
     if (this.state.hasError) {
       // カスタムフォールバックが提供されている場合
       if (this.props.fallback) {

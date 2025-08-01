@@ -30,6 +30,7 @@ const HeroSection = memo(function HeroSection() {
       window.addEventListener('scroll', handleScroll, { passive: true })
       return () => window.removeEventListener('scroll', handleScroll)
     }
+    return undefined
   }, [])
   // 🚀 限界突破 - 戦略的サービス定義（データ統一）
   const heroServices = [

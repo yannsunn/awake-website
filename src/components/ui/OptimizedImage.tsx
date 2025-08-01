@@ -25,7 +25,7 @@ interface OptimizedImageProps extends Omit<ImageProps, 'onLoad' | 'onError'> {
   preset?: ImagePreset
   aspectRatio?: AspectRatio
   thumbnailSize?: ThumbnailSize
-  onImageClick?: () => void
+  onImageClick?: (() => void) | undefined
 }
 
 const OptimizedImage = memo(function OptimizedImage({
@@ -263,7 +263,7 @@ export const GalleryImage = memo(function GalleryImage({
   onImageClick,
   ...props
 }: OptimizedImageProps & {
-  onImageClick?: () => void
+  onImageClick?: (() => void) | undefined
 }) {
   return (
     <OptimizedImage

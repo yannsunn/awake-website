@@ -6,12 +6,12 @@ import AccessibleButton from '@/components/ui/AccessibleButton'
 
 interface BreathingButtonProps {
   children: ReactNode
-  href?: string
-  onClick?: () => void
-  className?: string
-  variant?: 'primary' | 'secondary'
-  size?: 'small' | 'medium' | 'large'
-  showArrow?: boolean
+  href?: string | undefined
+  onClick?: (() => void) | undefined
+  className?: string | undefined
+  variant?: 'primary' | 'secondary' | undefined
+  size?: 'small' | 'medium' | 'large' | undefined
+  showArrow?: boolean | undefined
 }
 
 export default function BreathingButton({
