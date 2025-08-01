@@ -112,8 +112,8 @@ const Header = memo(function Header() {
       <header 
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 will-change-transform ${
           isScrolled 
-            ? 'bg-white/85 backdrop-blur-lg shadow-xl border-b-2 border-gray-200/80' 
-            : 'bg-white/75 backdrop-blur-md border-b border-gray-100/60'
+            ? 'bg-gray-900/90 backdrop-blur-lg shadow-xl border-b-2 border-gray-700/80' 
+            : 'bg-gray-900/85 backdrop-blur-md border-b border-gray-700/60'
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -125,7 +125,7 @@ const Header = memo(function Header() {
                 className="flex items-center group"
                 aria-label={`${COMPANY_DATA.basic.name} ホーム`}
               >
-                <span className={`${STYLES.heading.h2.subsection} group-hover:text-gray-600 transition-colors`}>
+                <span className={`${STYLES.heading.h2.subsection} text-white group-hover:text-gray-300 transition-colors`}>
                   {COMPANY_DATA.basic.name}
                 </span>
               </Link>
@@ -238,7 +238,7 @@ const Header = memo(function Header() {
         {/* メニューパネル */}
         <nav 
           id="mobile-menu"
-          className={`absolute right-0 top-0 h-full w-full max-w-sm bg-white/98 backdrop-blur-xl shadow-2xl transform transition-transform duration-300 ease-out before:absolute before:inset-0 before:bg-gradient-to-b before:from-white/10 before:to-transparent before:pointer-events-none ${
+          className={`absolute right-0 top-0 h-full w-full max-w-sm bg-gray-900/98 backdrop-blur-xl shadow-2xl transform transition-transform duration-300 ease-out before:absolute before:inset-0 before:bg-gradient-to-b before:from-gray-800/10 before:to-transparent before:pointer-events-none ${
             isMenuOpen ? 'translate-x-0' : 'translate-x-full'
           }`}
           aria-label="モバイルナビゲーション"
@@ -247,15 +247,15 @@ const Header = memo(function Header() {
         >
           <div className="flex flex-col h-full">
             {/* ヘッダー */}
-            <div className="flex items-center justify-between px-4 py-4 border-b border-gray-100">
-              <span className={STYLES.heading.h3.card}>メニュー</span>
+            <div className="flex items-center justify-between px-4 py-4 border-b border-gray-700">
+              <span className={STYLES.heading.h3.card + " text-white"}>メニュー</span>
               <button
                 onClick={toggleMenu}
-                className="p-3 min-h-[48px] min-w-[48px] rounded-lg hover:bg-gray-100 transition-all duration-300 ease-out hover:scale-[1.05] active:scale-[0.95] focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-blue-500 focus-visible:ring-offset-3"
+                className="p-3 min-h-[48px] min-w-[48px] rounded-lg hover:bg-gray-700 transition-all duration-300 ease-out hover:scale-[1.05] active:scale-[0.95] focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-blue-500 focus-visible:ring-offset-3"
                 aria-label="メニューを閉じる"
                 type="button"
               >
-                <X className="h-6 w-6 text-gray-700" />
+                <X className="h-6 w-6 text-gray-300" />
               </button>
             </div>
             
@@ -265,7 +265,7 @@ const Header = memo(function Header() {
                 if (item.type === 'dropdown') {
                   return (
                     <div key={index} className="px-4 py-2">
-                      <div className={`${STYLES.text.label.primary} text-gray-500 mb-2`}>
+                      <div className={`${STYLES.text.label.primary} text-gray-400 mb-2`}>
                         {item.title}
                       </div>
                       <div className="space-y-1">
@@ -273,7 +273,7 @@ const Header = memo(function Header() {
                           <Link
                             key={service.href}
                             href={service.href}
-                            className="block px-4 py-3 min-h-[56px] rounded-lg hover:bg-gray-50 transition-all duration-300 ease-out focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-blue-500 focus-visible:ring-offset-3"
+                            className="block px-4 py-3 min-h-[56px] rounded-lg hover:bg-gray-700 transition-all duration-300 ease-out focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-blue-500 focus-visible:ring-offset-3"
                             onClick={toggleMenu}
                             {...(service.href.startsWith('http') && {
                               target: '_blank',
@@ -281,10 +281,10 @@ const Header = memo(function Header() {
                               'aria-label': `${service.title} - 新しいウィンドウで開きます`
                             })}
                           >
-                            <div className={STYLES.text.emphasis.medium}>
+                            <div className={STYLES.text.emphasis.medium + " text-white"}>
                               {service.title}
                             </div>
-                            <div className={`${STYLES.text.description.small} text-gray-600 mt-1`}>
+                            <div className={`${STYLES.text.description.small} text-gray-400 mt-1`}>
                               {service.description}
                             </div>
                           </Link>
@@ -298,7 +298,7 @@ const Header = memo(function Header() {
                   <Link 
                     key={index}
                     href={item.href}
-                    className={`block px-8 py-3 min-h-[56px] ${STYLES.text.body.medium} text-gray-700 hover:bg-gray-50 transition-all duration-300 ease-out focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-blue-500 focus-visible:ring-offset-3`}
+                    className={`block px-8 py-3 min-h-[56px] ${STYLES.text.body.medium} text-gray-300 hover:bg-gray-700 transition-all duration-300 ease-out focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-blue-500 focus-visible:ring-offset-3`}
                     onClick={toggleMenu}
                   >
                     {item.title}

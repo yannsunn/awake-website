@@ -76,7 +76,7 @@ export default function HomePageContent() {
   return (
     <PageLayout>
         {/* Hero Section - Creative & Bold */}
-        <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 sm:pt-24 md:pt-32 pb-20">
+        <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16 sm:pt-24 md:pt-32 pb-16 sm:pb-20">
           
           {/* コンテンツ背景をフッターと同じダーク設定に */}
           <div className="absolute inset-0 bg-gray-900/95 backdrop-blur-md" />
@@ -84,7 +84,7 @@ export default function HomePageContent() {
           <div className="relative z-10 w-full px-4 sm:px-6 lg:px-8">
             <div className="text-center max-w-6xl mx-auto">
               {/* Animated Tagline */}
-              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold mb-8 leading-tight">
+              <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold mb-6 sm:mb-8 leading-tight">
                 <span className="bg-gradient-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent drop-shadow-md">
                   高額なIT投資に、
                 </span>
@@ -94,15 +94,15 @@ export default function HomePageContent() {
                 </span>
               </h1>
               
-              <p className="text-xl sm:text-2xl text-white font-semibold mb-4 bg-gray-800/90 rounded-lg px-6 py-4 inline-block shadow-2xl border-2 border-gray-700">
+              <p className="text-lg sm:text-2xl text-white font-semibold mb-3 sm:mb-4 bg-gray-800/90 rounded-lg px-4 sm:px-6 py-3 sm:py-4 inline-block shadow-2xl border-2 border-gray-700 mx-2 sm:mx-0">
                 {COMPANY_DATA.basic.description}
               </p>
 
-              <p className="text-lg sm:text-xl text-gray-200 font-medium mb-12 bg-gray-800/90 rounded-lg px-6 py-3 inline-block shadow-xl border border-gray-700">
+              <p className="text-base sm:text-xl text-gray-200 font-medium mb-8 sm:mb-12 bg-gray-800/90 rounded-lg px-4 sm:px-6 py-2 sm:py-3 inline-block shadow-xl border border-gray-700 mx-2 sm:mx-0">
                 {COMPANY_DATA.basic.subMessage}
               </p>
 
-              <div className="flex flex-col sm:flex-row gap-6 justify-center">
+              <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center px-4 sm:px-0">
                 <BreathingButton 
                   href="#contact" 
                   showArrow 
