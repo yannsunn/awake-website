@@ -60,15 +60,18 @@ export default function RootLayout({
             ナビゲーションへスキップ
           </a>
         </div>
-        <FixedBackground />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(enhancedOrganizationSchema),
-          }}
-        />
-        {/* WCAG 2.1 AAA準拠 高コントラスト・アニメーション軽減対応 */}
-        <div id="main-content" className="relative z-10" role="main">
+        {/* 固定背景 */}
+        <div className="fixed inset-0 z-0">
+          <FixedBackground />
+        </div>
+        {/* メインコンテンツ */}
+        <div className="relative z-10">
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify(enhancedOrganizationSchema),
+            }}
+          />
           {children}
         </div>
         {/* Core Web Vitals最適化: リソースヒント */}
