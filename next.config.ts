@@ -12,12 +12,14 @@ const nextConfig: NextConfig = {
     ignoreBuildErrors: true,
   },
   
-  // Image optimization
+  // Core Web Vitals 最適化 - 限界突破パフォーマンス
   images: {
-    formats: ['image/webp', 'image/avif'],
+    formats: ['image/avif', 'image/webp'],
     minimumCacheTTL: 31536000, // 1 year
     deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
+    dangerouslyAllowSVG: false,
+    contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
     remotePatterns: [
       {
         protocol: 'https',
@@ -25,16 +27,94 @@ const nextConfig: NextConfig = {
         pathname: '/item/detail/orig/photos/**',
       },
     ],
+    // 遅延読み込み最適化
+    loader: 'default',
+    quality: 85,
+    placeholder: 'blur',
   },
   
-  // Compiler optimizations
+  // Core Web Vitals 最適化 - コンパイラ最適化
   compiler: {
     removeConsole: process.env.NODE_ENV === 'production',
+    reactRemoveProperties: process.env.NODE_ENV === 'production',
+    removeComments: process.env.NODE_ENV === 'production',
+    // SWC 最適化
+    styledComponents: true,
   },
   
-  // Performance optimizations
+  // Core Web Vitals 限界突破最適化
   poweredByHeader: false,
   compress: true,
+  
+  // バンドルサイズ最適化
+  webpack: (config: any, { dev, isServer }: any) => {
+    // プロダクションビルドの最適化
+    if (!dev && !isServer) {
+      config.optimization = {
+        ...config.optimization,
+        splitChunks: {
+          chunks: 'all',
+          cacheGroups: {
+            default: false,
+            vendors: false,
+            // フレームワークチャンク
+            framework: {
+              chunks: 'all',
+              name: 'framework',
+              test: /(?<!node_modules.*)[\\/]node_modules[\\/](react|react-dom|next)[\\/]/,
+              priority: 40,
+              enforce: true,
+            },
+            // ライブラリチャンク
+            lib: {
+              test(module: any) {
+                return (
+                  module.size() > 160000 &&
+                  /node_modules[\\/]/.test(module.identifier())
+                )
+              },
+              name(module: any) {
+                const hash = require('crypto')
+                  .createHash('sha1')
+                  .update(module.identifier())
+                  .digest('hex')
+                  .substring(0, 8)
+                return `lib-${hash}`
+              },
+              priority: 30,
+              minChunks: 1,
+              reuseExistingChunk: true,
+              chunks: 'all',
+            },
+            // 共通チャンク
+            commons: {
+              name: 'commons',
+              minChunks: 2,
+              priority: 20,
+              chunks: 'all',
+              reuseExistingChunk: true,
+            },
+          },
+        },
+      }
+    }
+    
+    return config
+  },
+  
+  // パフォーマンスメトリクス設定
+  experimental: {
+    optimizeCss: true,
+    turbo: {
+      rules: {
+        '*.svg': {
+          loaders: ['@svgr/webpack'],
+          as: '*.js',
+        },
+      },
+    },
+    webVitalsAttribution: ['CLS', 'LCP', 'FCP', 'FID', 'TTFB'],
+  },
   
   // Enhanced Security headers - 限界突破セキュリティ対応
   async headers() {
@@ -92,22 +172,13 @@ const nextConfig: NextConfig = {
     ];
   },
   
-  // Bundle analyzer (development only)
+  // Bundle analyzer (開発時のみ)
   ...(process.env.ANALYZE === 'true' && {
-    webpack: (config: any) => {
-      if (process.env.NODE_ENV === 'development') {
-        config.module.rules.push({
-          test: /\.(js|jsx|ts|tsx)$/,
-          use: {
-            loader: 'webpack-bundle-analyzer/lib/BundleAnalyzerPlugin',
-            options: {
-              analyzerMode: 'server',
-              openAnalyzer: false,
-            },
-          },
-        });
-      }
-      return config;
+    bundleAnalyzer: {
+      enabled: true,
+      analyzerMode: 'server',
+      analyzerPort: 8888,
+      openAnalyzer: false,
     },
   }),
 };

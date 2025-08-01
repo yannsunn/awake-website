@@ -115,40 +115,62 @@ const OptimizedImage = memo(function OptimizedImage({
       onImageClick()
     }
   }, [onImageClick])
+  
+  // アクセシビリティ向上のためのaria属性計算
+  const getAriaProps = useCallback(() => {
+    const props: Record<string, any> = {}
+    
+    if (preset === 'gallery' && onImageClick) {
+      props.role = 'button'
+      props.tabIndex = 0
+      props['aria-label'] = alt ? `${alt} - クリックで拡大` : '画像をクリックで拡大'
+    } else {
+      props.role = 'img'
+      props['aria-label'] = alt || '装飾用画像'
+    }
+    
+    return props
+  }, [preset, onImageClick, alt])
 
   return (
     <div 
       className={getContainerClassName()}
       onClick={preset === 'gallery' ? handleImageClick : undefined}
-      role={preset === 'gallery' && onImageClick ? "button" : undefined}
-      tabIndex={preset === 'gallery' && onImageClick ? 0 : undefined}
       onKeyDown={preset === 'gallery' ? handleKeyDown : undefined}
+      {...getAriaProps()}
     >
-      {/* ローディングプレースホルダー */}
+      {/* WCAG準拠 ローディングプレースホルダー */}
       {(showLoadingPlaceholder ?? currentPresetConfig.showLoadingPlaceholder ?? true) && !isLoaded && !isError && (
         <div 
           className={cn(
-            "absolute inset-0 bg-gradient-to-br from-gray-200/60 to-gray-300/60 backdrop-blur-sm",
+            "absolute inset-0 bg-gradient-to-br from-gray-200/80 to-gray-300/80 backdrop-blur-sm",
             "flex items-center justify-center",
             loadingClassName
           )}
           aria-hidden="true"
+          role="status"
+          aria-label="画像読み込み中"
         >
-          <div className="w-8 h-8 bg-gray-400 rounded opacity-30" />
+          <div className="w-8 h-8 bg-gray-400 rounded-full animate-pulse" />
+          <span className="sr-only">画像を読み込んでいます...</span>
         </div>
       )}
 
-      {/* エラー表示 */}
+      {/* WCAG準拠 エラー表示 */}
       {isError && (
         <div 
           className={cn(
-            "absolute inset-0 bg-gray-overlay flex items-center justify-center",
-            "text-gray-400 text-sm",
+            "absolute inset-0 bg-red-50 border-2 border-red-200 flex flex-col items-center justify-center",
+            "text-red-600 text-sm font-medium p-4",
             errorClassName
           )}
-          role="img"
-          aria-label="画像を読み込めませんでした"
+          role="alert"
+          aria-live="polite"
+          aria-label="画像読み込みエラー"
         >
+          <svg className="w-8 h-8 mb-2 text-red-400" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+            <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clipRule="evenodd" />
+          </svg>
           <span>画像を読み込めませんでした</span>
         </div>
       )}
@@ -176,13 +198,13 @@ const OptimizedImage = memo(function OptimizedImage({
         {...props}
       />
 
-      {/* ギャラリーホバーオーバーレイ */}
+      {/* WCAG準拠 ギャラリーホバーオーバーレイ */}
       {preset === 'gallery' && (
-        <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20" />
+        <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300 ease-out focus-within:bg-opacity-10" />
       )}
 
-      {/* 画像説明のスクリーンリーダー対応 */}
-      {alt && (
+      {/* WCAG AAA準拠 画像説明のスクリーンリーダー対応 */}
+      {alt && preset !== 'gallery' && (
         <span className="sr-only">
           {alt}
         </span>

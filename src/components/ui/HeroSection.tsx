@@ -8,15 +8,28 @@ import { COMPANY_DATA } from '@/lib/company-data'
 
 // 🚀 ULTRA SYNC - 限界突破完了！軽量化ヒーローセクション
 const HeroSection = memo(function HeroSection() {
-  // 🚀 ULTRA OPTIMIZATION - スクロールアニメーション
+  // Core Web Vitals最適化 + マイクロインタラクション強化
   useEffect(() => {
+    let ticking = false
+    
     const handleScroll = () => {
-      const scrollY = window.scrollY
-      document.documentElement.style.setProperty('--scroll-y', `${scrollY}px`)
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          const scrollY = window.scrollY
+          document.documentElement.style.setProperty('--scroll-y', `${scrollY}px`)
+          ticking = false
+        })
+        ticking = true
+      }
     }
     
-    window.addEventListener('scroll', handleScroll, { passive: true })
-    return () => window.removeEventListener('scroll', handleScroll)
+    // prefers-reduced-motionの確認
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    
+    if (!prefersReducedMotion) {
+      window.addEventListener('scroll', handleScroll, { passive: true })
+      return () => window.removeEventListener('scroll', handleScroll)
+    }
   }, [])
   // 🚀 限界突破 - 戦略的サービス定義（データ統一）
   const heroServices = [
@@ -41,7 +54,12 @@ const HeroSection = memo(function HeroSection() {
   ]
 
   return (
-    <section className="relative min-h-screen flex flex-col justify-center overflow-hidden gpu-accelerated" id="hero" aria-labelledby="hero-title">
+    <section 
+      className="relative min-h-screen flex flex-col justify-center overflow-hidden" 
+      id="hero" 
+      aria-labelledby="hero-title"
+      role="banner"
+    >
       
       {/* 🚀 ウルトラシンク最適化 - 単一コンテナ */}
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center z-10">
@@ -67,11 +85,14 @@ const HeroSection = memo(function HeroSection() {
               <Link
                 key={index}
                 href={service.href}
-                className="group neo-card rounded-2xl p-6 border border-gray-100 bounce-on-hover"
+                className="group neo-card rounded-2xl p-6 border border-gray-100 transition-all duration-300 ease-out hover:scale-[1.02] hover:shadow-xl active:scale-[0.98] focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-blue-500 focus-visible:ring-offset-3"
                 {...(service.href.startsWith('http') && {
                   target: '_blank',
-                  rel: 'noopener noreferrer'
+                  rel: 'noopener noreferrer',
+                  'aria-label': `${service.title} - 新しいウィンドウで開きます`
                 })}
+                role="button"
+                tabIndex={0}
               >
                 <div className="text-3xl mb-4">{service.icon}</div>
                 <h3 className="text-lg font-bold text-black mb-3 text-shadow-md">
@@ -88,15 +109,19 @@ const HeroSection = memo(function HeroSection() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link 
               href="#contact" 
-              className="group inline-flex items-center justify-center px-8 py-4 bg-gray-900 text-white font-medium rounded-lg hover:bg-gray-800"
+              className="group inline-flex items-center justify-center px-8 py-4 min-h-[56px] bg-gray-900 text-white font-bold rounded-lg transition-all duration-300 ease-out hover:bg-gray-800 hover:scale-[1.02] active:scale-[0.98] focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-blue-500 focus-visible:ring-offset-3 shadow-lg hover:shadow-xl"
+              role="button"
+              aria-label="無料相談を始める - お問い合わせセクションへ移動"
             >
               <span>無料相談を始める</span>
-              <ArrowRight className="ml-2 h-5 w-5" />
+              <ArrowRight className="ml-2 h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" aria-hidden="true" />
             </Link>
             
             <Link 
               href="#services" 
-              className="inline-flex items-center justify-center px-8 py-4 bg-white-overlay text-gray-900 font-medium rounded-lg border border-gray-200 hover:bg-gray-overlay"
+              className="inline-flex items-center justify-center px-8 py-4 min-h-[56px] bg-white-overlay text-gray-900 font-bold rounded-lg border border-gray-200 transition-all duration-300 ease-out hover:bg-gray-overlay hover:scale-[1.02] active:scale-[0.98] focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-blue-500 focus-visible:ring-offset-3 shadow-lg hover:shadow-xl"
+              role="button"
+              aria-label="サービス詳細を見る - サービスセクションへ移動"
             >
               サービス詳細を見る
             </Link>

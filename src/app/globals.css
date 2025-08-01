@@ -353,19 +353,28 @@ html {
   }
 }
 
-/* モバイルタッチ最適化 */
+/* WCAG AAA準拠 モバイルタッチ最適化 */
 @media (hover: none) and (pointer: coarse) {
   /* タッチターゲット最小48px確保 */
-  button, a, .clickable {
+  button, a, .clickable, input[type="button"], input[type="submit"], label {
     min-height: 48px;
     min-width: 48px;
     position: relative;
+    /* タッチターゲット間のスペース確保 */
+    margin: 4px;
   }
   
-  /* タッチフィードバック */
+  /* タッチフィードバック最適化 */
   button:active, a:active {
     transform: scale(0.98);
     transition: transform 0.1s ease;
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+  
+  /* タッチデバイス用のスクロール最適化 */
+  body {
+    -webkit-overflow-scrolling: touch;
+    touch-action: manipulation;
   }
 }
 
@@ -417,28 +426,78 @@ html {
   transform: translateY(-2px);
 }
 
-/* 📱 モバイル最適化フォント */
+/* WCAG AAA準拠 モバイル最適化フォント */
 @media (max-width: 640px) {
   html {
-    font-size: 16px; /* 拡大防止 */
+    font-size: 16px; /* iOS拡大防止 */
   }
   
   body {
     -webkit-text-size-adjust: 100%;
     -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    /* 読みやすさ向上 */
+    line-height: 1.6;
+    letter-spacing: 0.01em;
   }
   
-  /* モバイル見出し最適化 */
-  h1 { font-size: clamp(1.75rem, 6vw, 2.5rem); }
-  h2 { font-size: clamp(1.5rem, 5vw, 2rem); }
-  h3 { font-size: clamp(1.25rem, 4vw, 1.5rem); }
+  /* WCAG準拠 見出しサイズ最適化 */
+  h1 { 
+    font-size: clamp(1.75rem, 6vw, 2.5rem);
+    line-height: 1.2;
+    font-weight: 700;
+  }
+  h2 { 
+    font-size: clamp(1.5rem, 5vw, 2rem);
+    line-height: 1.3;
+    font-weight: 600;
+  }
+  h3 { 
+    font-size: clamp(1.25rem, 4vw, 1.5rem);
+    line-height: 1.4;
+    font-weight: 600;
+  }
+  
+  /* 本文の可読性向上 */
+  p, li {
+    font-size: clamp(0.9rem, 4vw, 1.1rem);
+    line-height: 1.6;
+  }
 }
 
 
-/* 🚀 パフォーマンス最適化 */
+/* WCAG AAA準拠 パフォーマンス最適化 */
 .gpu-accelerated {
   transform: translateZ(0);
   will-change: transform;
+}
+
+/* 色覚障害対応 */
+.color-blind-safe {
+  /* 青と黄色の組み合わせで色覚障害に配慮 */
+  --safe-blue: #0066cc;
+  --safe-yellow: #ffcc00;
+  --safe-red: #cc0000;
+  --safe-green: #009900;
+}
+
+/* エラー・成功状態の視覚強化 */
+.error-state {
+  border: 2px solid #dc2626;
+  background-color: #fef2f2;
+  color: #991b1b;
+}
+
+.success-state {
+  border: 2px solid #059669;
+  background-color: #f0fdf4;
+  color: #065f46;
+}
+
+.warning-state {
+  border: 2px solid #d97706;
+  background-color: #fffbeb;
+  color: #92400e;
 }
 
 /* スクロールパフォーマンス */
@@ -447,20 +506,62 @@ html {
   overscroll-behavior: contain;
 }
 
-/* 🌈 フォーカス状態の美化 */
+/* WCAG 2.1 AAA準拠 フォーカス状態の強化 */
 :focus-visible {
-  outline: 2px solid #22c55e;
-  outline-offset: 2px;
+  outline: 3px solid #2563eb;
+  outline-offset: 3px;
   border-radius: 4px;
+  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.3);
 }
 
-/* ダークモード対応準備 */
+/* 動作軽減設定対応の強化 */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  
+  .parallax {
+    transform: none !important;
+  }
+  
+  .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
+/* WCAG AAA準拠 ダークモード対応 */
 @media (prefers-color-scheme: dark) {
   :root {
-    --text-primary: #f9fafb;
+    --text-primary: #ffffff;
     --text-secondary: #e5e7eb;
-    --bg-primary: #111827;
+    --bg-primary: #000000;
     --bg-secondary: #1f2937;
+    --border-primary: #ffffff;
+    --focus-color: #60a5fa;
+  }
+  
+  body {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+  }
+  
+  /* ダークモード時のフォーカススタイル */
+  :focus-visible {
+    outline: 3px solid var(--focus-color);
+    outline-offset: 3px;
+    box-shadow: 0 0 0 2px rgba(96, 165, 250, 0.3);
+  }
+  
+  /* ダークモード時のコントラスト確保 */
+  .glass {
+    background: rgba(31, 41, 55, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.2);
   }
 }
 
@@ -492,10 +593,27 @@ a:not(.no-underline):hover::after {
   width: 100%;
 }
 
-/* フォーカス状態の改善 */
-button:focus-visible, a:focus-visible {
-  outline: 3px solid #22c55e;
+/* WCAG AAA準拠 フォーカス状態の最適化 */
+button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible {
+  outline: 3px solid #2563eb;
   outline-offset: 3px;
+  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.3);
+  border-radius: 4px;
+}
+
+/* 高コントラスト対応 */
+@media (prefers-contrast: high) {
+  :root {
+    --text-primary: #000000;
+    --bg-primary: #ffffff;
+    --border-primary: #000000;
+  }
+  
+  button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible {
+    outline: 4px solid #000000;
+    outline-offset: 2px;
+    box-shadow: none;
+  }
 }
 
 /* 🎯 ウルトラインタラクティブUI */
@@ -568,19 +686,20 @@ button:focus-visible, a:focus-visible {
   border-color: var(--primary-500);
 }
 
-/* 🧠 科学的根拠: ボタンサイズは最小44px（Apple HIG・Google Material Design） */
+/* 🧠 WCAG 2.1 AAA準拠: タッチターゲット最小48px */
 .neuro-button {
-  min-height: 44px;
-  min-width: 44px;
+  min-height: 48px;
+  min-width: 48px;
   padding: 0.75rem 1.5rem;
   font-weight: 600;
   border-radius: 0.5rem;
   transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.neuro-button:focus {
-  outline: 2px solid var(--primary-500);
-  outline-offset: 2px;
+.neuro-button:focus-visible {
+  outline: 3px solid #2563eb;
+  outline-offset: 3px;
+  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.3);
 }
 
 

@@ -15,7 +15,9 @@ export const viewport = {
   width: 'device-width',
   initialScale: 1,
   maximumScale: 5,
-  themeColor: '#111827'
+  userScalable: true,
+  themeColor: '#111827',
+  colorScheme: 'light dark'
 }
 
 export const metadata: Metadata = {
@@ -47,10 +49,15 @@ export default function RootLayout({
   return (
     <html lang="ja" suppressHydrationWarning>
       <body className={`${notoSansJP.variable} font-sans antialiased bg-gray-50`} suppressHydrationWarning>
-        {/* スキップナビゲーション - アクセシビリティ向上 */}
-        <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:top-0 focus:left-0 z-50 bg-gray-900 text-white px-4 py-2 m-2 rounded-md">
-          メインコンテンツへスキップ
-        </a>
+        {/* WCAG 2.1 AAA準拠 スキップナビゲーション強化 */}
+        <div className="sr-only focus-within:not-sr-only focus-within:fixed focus-within:top-0 focus-within:left-0 focus-within:z-50 focus-within:bg-gray-900 focus-within:p-4">
+          <a href="#main-content" className="inline-block bg-white text-gray-900 font-bold px-6 py-3 rounded-lg border-2 border-gray-900 focus:outline-none focus:ring-4 focus:ring-blue-500 focus:ring-offset-2">
+            メインコンテンツへスキップ
+          </a>
+          <a href="#navigation" className="ml-2 inline-block bg-white text-gray-900 font-bold px-6 py-3 rounded-lg border-2 border-gray-900 focus:outline-none focus:ring-4 focus:ring-blue-500 focus:ring-offset-2">
+            ナビゲーションへスキップ
+          </a>
+        </div>
         <FixedBackground />
         <script
           type="application/ld+json"
