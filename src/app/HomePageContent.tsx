@@ -85,8 +85,8 @@ export default function HomePageContent() {
         {/* Hero Section - Creative & Bold */}
         <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 sm:pt-24 md:pt-32 pb-20">
           
-          {/* コンテンツ背景 - 視認性重視 */}
-          <div className="absolute inset-0 bg-white/90 backdrop-blur-md" />
+          {/* コンテンツ背景をヘッダーと同じ設定に */}
+          <div className="absolute inset-0 bg-white/85 backdrop-blur-lg" />
           
           <div className="relative z-10 w-full px-4 sm:px-6 lg:px-8">
             <div className="text-center max-w-6xl mx-auto">
@@ -152,8 +152,9 @@ export default function HomePageContent() {
         </section>
 
         {/* Services Section - Bento Grid */}
-        <section id="services" className="py-16 sm:py-20 lg:py-24 relative bg-white-overlay">
-          <div className="w-full px-4 sm:px-6 lg:px-8">
+        <section id="services" className="py-16 sm:py-20 lg:py-24 relative">
+          <div className="absolute inset-0 bg-white/85 backdrop-blur-lg" />
+          <div className="relative z-10 w-full px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12 lg:mb-16 reveal">
               <h2 className="text-4xl sm:text-5xl font-extrabold mb-4">
                 <span className="bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent drop-shadow-md">あなたの課題を解決する</span>
@@ -232,8 +233,9 @@ export default function HomePageContent() {
         </LazyLoad>
 
         {/* Company Mission Section */}
-        <section className="py-16 sm:py-20 lg:py-24 bg-gray-overlay">
-          <div className="w-full px-4 sm:px-6 lg:px-8">
+        <section className="py-16 sm:py-20 lg:py-24 relative">
+          <div className="absolute inset-0 bg-gray-50/85 backdrop-blur-lg" />
+          <div className="relative z-10 w-full px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-8 sm:mb-12 lg:mb-16">
               <h2 className="text-4xl sm:text-5xl font-bold mb-4">
                 <span className="bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">私たちの想い</span>
@@ -266,8 +268,9 @@ export default function HomePageContent() {
         </LazyLoad>
         
         {/* Contact Section */}
-        <section id="contact" className="py-16 sm:py-20 lg:py-24 bg-white-overlay">
-          <div className="w-full px-4 sm:px-6 lg:px-8">
+        <section id="contact" className="py-16 sm:py-20 lg:py-24 relative">
+          <div className="absolute inset-0 bg-white/85 backdrop-blur-lg" />
+          <div className="relative z-10 w-full px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-8 sm:mb-12 lg:mb-16">
               <h2 className="text-4xl sm:text-5xl font-bold mb-6">
                 <span className="bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">まずは、お話を聞かせてください</span>

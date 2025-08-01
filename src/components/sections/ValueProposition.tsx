@@ -22,8 +22,9 @@ const ValueProposition = memo(function ValueProposition() {
   ]
 
   return (
-    <section className="py-20 bg-gray-overlay">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-20 relative">
+      <div className="absolute inset-0 bg-gray-50/85 backdrop-blur-lg" />
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold text-black mb-4 text-gray-900">
             なぜ、私たちが選ばれるのか
@@ -35,7 +36,7 @@ const ValueProposition = memo(function ValueProposition() {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {reasons.map((reason, index) => (
-            <div key={index} className="bg-white-overlay rounded-lg p-8 shadow-sm">
+            <div key={index} className="bg-white/90 backdrop-blur-md rounded-lg p-8 shadow-sm">
               <div className="text-4xl mb-4">{reason.icon}</div>
               <h3 className="text-xl font-bold text-black mb-3 text-shadow-md">
                 {reason.title}
