@@ -1,21 +1,13 @@
 'use client'
 
-import { ReactNode, useState, useEffect } from 'react'
-import dynamic from 'next/dynamic'
+import { ReactNode } from 'react'
 import Header from '@/components/layout/Header'
 import Footer from '@/components/layout/Footer'
 import { useScrollRevealGlobal } from '@/hooks/useScrollReveal'
 import type { Breadcrumb } from '@/lib/types'
 
-// 重いエフェクトは動的インポート
-const CursorLight = dynamic(() => import('@/components/effects/CursorLight'), {
-  ssr: false,
-  loading: () => null
-})
-const FloatingParticles = dynamic(() => import('@/components/effects/FloatingParticles'), {
-  ssr: false,
-  loading: () => null
-})
+import CursorLight from '@/components/effects/CursorLight'
+import FloatingParticles from '@/components/effects/FloatingParticles'
 
 interface PageLayoutProps {
   children: ReactNode
@@ -33,20 +25,11 @@ export default function PageLayout({
   breadcrumbs 
 }: PageLayoutProps) {
   useScrollRevealGlobal()
-  const [effectsLoaded, setEffectsLoaded] = useState(false)
-  
-  useEffect(() => {
-    if (showEffects) {
-      // エフェクトを即座に読み込む
-      setEffectsLoaded(true)
-    }
-    return undefined
-  }, [showEffects])
   
   return (
     <>
-      {/* 水平思考エフェクト - 遅延読み込み */}
-      {showEffects && effectsLoaded && (
+      {/* 水平思考エフェクト */}
+      {showEffects && (
         <>
           <CursorLight />
           <FloatingParticles />
