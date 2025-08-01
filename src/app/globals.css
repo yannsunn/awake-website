@@ -66,12 +66,12 @@
     @apply transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5;
   }
 
-  /* グラスモーフィズム - 背景透過性を重視 */
+  /* グラスモーフィズム - 視認性を重視 */
   .glass {
-    background: rgba(255, 255, 255, 0.60);
-    backdrop-filter: blur(6px) saturate(140%);
-    -webkit-backdrop-filter: blur(6px) saturate(140%);
-    border: 1px solid rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(8px) saturate(140%);
+    -webkit-backdrop-filter: blur(8px) saturate(140%);
+    border: 1px solid rgba(255, 255, 255, 0.5);
     box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.08);
   }
   
@@ -207,75 +207,45 @@ section {
   position: relative;
 }
 
-/* 白背景セクション - 背景透過性向上 */
+/* 統一された背景オーバーレイシステム - 視認性重視 */
 .bg-white-overlay {
-  background-color: rgba(255, 255, 255, 0.60);
-  backdrop-filter: blur(1px);
-  -webkit-backdrop-filter: blur(1px);
-}
-
-/* グレー背景セクション - 背景透過性向上 */
-.bg-gray-overlay {
-  background-color: rgba(249, 250, 251, 0.60);
-  backdrop-filter: blur(1px);
-  -webkit-backdrop-filter: blur(1px);
-}
-
-/* ダーク背景セクション */
-.bg-dark-overlay {
-  background-color: rgba(17, 24, 39, 0.95);
+  background-color: rgba(255, 255, 255, 0.92);
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
 }
 
-/* 透明背景 */
-.bg-transparent-overlay {
-  background-color: rgba(255, 255, 255, 0.5);
-  backdrop-filter: blur(1px);
-  -webkit-backdrop-filter: blur(1px);
+/* グレー背景セクション - 視認性向上 */
+.bg-gray-overlay {
+  background-color: rgba(249, 250, 251, 0.95);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
 }
 
-/* テキストの可読性向上 - 強化版 */
+/* ダーク背景セクション */
+.bg-dark-overlay {
+  background-color: rgba(17, 24, 39, 0.98);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
+/* 透明背景 - 最小限の使用を推奨 */
+.bg-transparent-overlay {
+  background-color: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+/* テキストの可読性向上 - シンプル化 */
 .text-shadow-sm {
-  text-shadow: 
-    0 1px 3px rgba(0, 0, 0, 0.5),
-    0 0 8px rgba(255, 255, 255, 0.8);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
 }
 
 .text-shadow-md {
-  text-shadow: 
-    0 2px 6px rgba(0, 0, 0, 0.6),
-    0 0 12px rgba(255, 255, 255, 0.9),
-    1px 1px 0px rgba(255, 255, 255, 0.9);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
 }
 
 .text-shadow-lg {
-  text-shadow: 
-    0 3px 8px rgba(0, 0, 0, 0.7),
-    0 0 16px rgba(255, 255, 255, 1),
-    1px 1px 0px rgba(255, 255, 255, 1),
-    -1px -1px 0px rgba(255, 255, 255, 1);
-}
-
-.text-shadow-white {
-  text-shadow: 
-    0 0 12px rgba(255, 255, 255, 1),
-    0 0 24px rgba(255, 255, 255, 0.8),
-    0 0 36px rgba(255, 255, 255, 0.6),
-    2px 2px 0px rgba(255, 255, 255, 1),
-    -2px -2px 0px rgba(255, 255, 255, 1);
-}
-
-/* 見出し用の強調スタイル - 超強化 */
-.heading-emphasis {
-  text-shadow: 
-    0 3px 8px rgba(0, 0, 0, 0.8),
-    0 0 20px rgba(255, 255, 255, 1),
-    2px 2px 0px rgba(255, 255, 255, 1),
-    -2px -2px 0px rgba(255, 255, 255, 1),
-    2px -2px 0px rgba(255, 255, 255, 1),
-    -2px 2px 0px rgba(255, 255, 255, 1);
-  font-weight: 700;
+  text-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 }
 
 /* カード内のテキスト */
@@ -286,21 +256,7 @@ section {
 
 /* 削除 - パフォーマンス改善のため */
 
-/* 絶対に読めるテキスト */
-.text-ultra-readable {
-  color: #000000 !important;
-  text-shadow: 
-    0 0 8px rgba(255, 255, 255, 1),
-    0 0 16px rgba(255, 255, 255, 0.8),
-    2px 2px 0px rgba(255, 255, 255, 1),
-    -2px -2px 0px rgba(255, 255, 255, 1),
-    2px -2px 0px rgba(255, 255, 255, 1),
-    -2px 2px 0px rgba(255, 255, 255, 1),
-    0 4px 8px rgba(0, 0, 0, 0.5) !important;
-  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.7);
-  text-stroke: 1px rgba(255, 255, 255, 0.7);
-  font-weight: 700 !important;
-}
+/* 削除 - シンプルな背景で視認性を確保 */
 
 /* フッター専用視認性強化 */
 .footer-high-contrast {

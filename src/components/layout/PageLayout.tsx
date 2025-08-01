@@ -11,10 +11,6 @@ const CursorLight = dynamic(() => import('@/components/effects/CursorLight'), {
   ssr: false,
   loading: () => null
 })
-const TimeGradient = dynamic(() => import('@/components/effects/TimeGradient'), {
-  ssr: false,
-  loading: () => null
-})
 const FloatingParticles = dynamic(() => import('@/components/effects/FloatingParticles'), {
   ssr: false,
   loading: () => null
@@ -44,7 +40,6 @@ export default function PageLayout({ children, showEffects = true }: PageLayoutP
       {/* 水平思考エフェクト - 遅延読み込み */}
       {showEffects && effectsLoaded && (
         <>
-          <TimeGradient />
           <CursorLight />
           <FloatingParticles />
         </>

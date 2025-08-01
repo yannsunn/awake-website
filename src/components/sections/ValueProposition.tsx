@@ -25,10 +25,10 @@ const ValueProposition = memo(function ValueProposition() {
     <section className="py-20 bg-gray-overlay">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-black mb-4 text-ultra-readable">
+          <h2 className="text-3xl font-bold text-black mb-4 text-gray-900">
             なぜ、私たちが選ばれるのか
           </h2>
-          <p className="text-xl text-black font-bold text-shadow-lg">
+          <p className="text-xl text-gray-800 font-semibold">
             投資を「コスト」から「成長エンジン」に変える
           </p>
         </div>

@@ -121,7 +121,7 @@ export default function AboutPage() {
 
       {/* Hero Section */}
       <section className="relative min-h-[50vh] flex items-center justify-center overflow-hidden pt-20 sm:pt-24 md:pt-32 pb-20">
-        <div className="absolute inset-0 bg-gradient-to-br from-purple-50 via-white to-blue-50 opacity-80" />
+        <div className="absolute inset-0 bg-gradient-to-br from-purple-50/90 via-white/95 to-blue-50/90" />
         <div className="relative z-10 w-full px-4 sm:px-6 lg:px-8 text-center">
           <ParallaxElement speed={0.3}>
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold mb-6">
