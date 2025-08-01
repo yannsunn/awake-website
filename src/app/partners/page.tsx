@@ -147,15 +147,15 @@ export default function PartnersPage() {
   return (
     <PageLayout>
       {/* Hero Section */}
-      <ContentSection className="bg-transparent">
+      <ContentSection className="bg-gray-900/95">
         <div className="text-center">
-          <h1 className={STYLES.heading.h1.primary + " mb-4"}>
+          <h1 className={STYLES.heading.h1.primary + " text-white mb-4"}>
             1社では解決できない課題も、一緒なら解決できる
           </h1>
-          <p className={STYLES.text.body.large + " mb-4"}>
+          <p className={STYLES.text.body.large + " text-gray-300 mb-4"}>
             各分野のプロフェッショナルと連携し、あらゆるビジネス課題にワンストップで対応
           </p>
-          <p className={STYLES.text.body.medium + " text-gray-600 mb-8"}>
+          <p className={STYLES.text.body.medium + " text-gray-400 mb-8"}>
             単独では限界がある。だから私たちは、信頼できるパートナーと手を組みました。
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -176,12 +176,12 @@ export default function PartnersPage() {
       </ContentSection>
 
       {/* Why Partnership Section */}
-      <ContentSection className="bg-gray-overlay">
+      <ContentSection className="bg-gray-800/90">
         <div className="text-center mb-8 sm:mb-12 lg:mb-16">
-          <h2 className={STYLES.heading.h2.section + " mb-4"}>
+          <h2 className={STYLES.heading.h2.section + " text-white mb-4"}>
             なぜ、パートナーシップが必要なのか
           </h2>
-          <p className={STYLES.text.body.large}>
+          <p className={STYLES.text.body.large + " text-gray-300"}>
             お客様の「本当の成功」は、1つのサービスだけでは実現できない
           </p>
         </div>
@@ -206,10 +206,10 @@ export default function PartnersPage() {
           ].map((item, index) => (
             <div key={index} className="text-center">
               <div className="text-4xl mb-4">{item.icon}</div>
-              <h3 className={STYLES.heading.h3.emphasis + " mb-3"}>
+              <h3 className={STYLES.heading.h3.emphasis + " text-white mb-3"}>
                 {item.title}
               </h3>
-              <p className={STYLES.text.description.medium}>
+              <p className={STYLES.text.description.medium + " text-gray-300"}>
                 {item.description}
               </p>
             </div>
@@ -217,19 +217,19 @@ export default function PartnersPage() {
         </div>
         
         <div className="text-center">
-          <p className={STYLES.text.body.large + " text-gray-700"}>
+          <p className={STYLES.text.body.large + " text-gray-300"}>
             だから、ワンストップで解決できる体制を整えました。
           </p>
         </div>
       </ContentSection>
 
       {/* Partnership Value Section */}
-      <ContentSection>
+      <ContentSection className="bg-gray-900/95">
         <div className="text-center mb-8 sm:mb-12 lg:mb-16">
-          <h2 className={STYLES.heading.h2.section + " mb-4"}>
+          <h2 className={STYLES.heading.h2.section + " text-white mb-4"}>
             パートナーシップがもたらす4つの価値
           </h2>
-          <p className={STYLES.text.body.medium}>
+          <p className={STYLES.text.body.medium + " text-gray-300"}>
             お客様にとっての、本当のメリット
           </p>
         </div>
@@ -261,13 +261,13 @@ export default function PartnersPage() {
               description: "各サービスが連携し、1+1が3になる成果を実現"
             }
           ].map((value, index) => (
-            <div key={index} className="text-center p-6 bg-gray-overlay rounded-xl">
+            <div key={index} className="text-center p-6 bg-gray-800/80 rounded-xl">
               <div className="text-3xl mb-2">{value.emoji}</div>
-              <div className="text-2xl font-bold text-gray-900 mb-3">{value.number}</div>
-              <h3 className={STYLES.heading.h3.emphasis + " mb-3"}>
+              <div className="text-2xl font-bold text-white mb-3">{value.number}</div>
+              <h3 className={STYLES.heading.h3.emphasis + " text-white mb-3"}>
                 {value.title}
               </h3>
-              <p className={STYLES.text.description.small + " text-gray-600"}>
+              <p className={STYLES.text.description.small + " text-gray-300"}>
                 {value.description}
               </p>
             </div>
@@ -276,15 +276,15 @@ export default function PartnersPage() {
       </ContentSection>
 
       {/* Partner Services Section */}
-      <ContentSection className="bg-gray-overlay" id="services">
+      <ContentSection className="bg-gray-800/90" id="services">
         <div className="space-y-20">
           {partners.map((category, categoryIndex) => (
             <div key={categoryIndex}>
               <div className="text-center mb-12">
-                <h2 className={STYLES.heading.h2.section + " mb-4"}>
+                <h2 className={STYLES.heading.h2.section + " text-white mb-4"}>
                   {category.category}
                 </h2>
-                <p className={STYLES.text.body.large}>
+                <p className={STYLES.text.body.large + " text-gray-300"}>
                   {category.description}
                 </p>
               </div>
@@ -293,19 +293,19 @@ export default function PartnersPage() {
                 {category.companies.map((company, companyIndex) => (
                   <div 
                     key={companyIndex} 
-                    className="bg-white-overlay rounded-xl p-6 border border-gray-100 hover:border-gray-300 hover:shadow-lg transition-all duration-300"
+                    className="bg-gray-700/80 rounded-xl p-6 border border-gray-600 hover:border-gray-500 hover:shadow-lg transition-all duration-300"
                   >
                     <div className="text-3xl mb-4 text-center">
                       {company.icon}
                     </div>
-                    <h3 className={STYLES.heading.h3.emphasis + " mb-4 text-center"}>
+                    <h3 className={STYLES.heading.h3.emphasis + " text-white mb-4 text-center"}>
                       {company.name}
                     </h3>
                     <ul className="space-y-2">
                       {company.services.map((service, serviceIndex) => (
                         <li key={serviceIndex} className="flex items-start">
                           <span className="text-gray-400 mr-2">•</span>
-                          <span className={STYLES.text.description.small}>
+                          <span className={STYLES.text.description.small + " text-gray-300"}>
                             {service}
                           </span>
                         </li>
@@ -320,12 +320,12 @@ export default function PartnersPage() {
       </ContentSection>
 
       {/* Success Stories Section */}
-      <ContentSection>
+      <ContentSection className="bg-gray-900/95">
         <div className="text-center mb-12">
-          <h2 className={STYLES.heading.h2.section + " mb-4"}>
+          <h2 className={STYLES.heading.h2.section + " text-white mb-4"}>
             実際の成功事例
           </h2>
-          <p className={STYLES.text.body.large}>
+          <p className={STYLES.text.body.large + " text-gray-300"}>
             パートナーシップが生んだ相乗効果
           </p>
         </div>
@@ -343,14 +343,14 @@ export default function PartnersPage() {
               company: "小売業 E社様"
             }
           ].map((story, index) => (
-            <div key={index} className="bg-gray-overlay rounded-xl p-8">
-              <h3 className={STYLES.heading.h3.emphasis + " mb-4"}>
+            <div key={index} className="bg-gray-800/80 rounded-xl p-8">
+              <h3 className={STYLES.heading.h3.emphasis + " text-white mb-4"}>
                 {story.title}
               </h3>
-              <p className={STYLES.text.body.medium + " mb-4 whitespace-pre-line"}>
+              <p className={STYLES.text.body.medium + " text-gray-300 mb-4 whitespace-pre-line"}>
                 {story.description}
               </p>
-              <p className={STYLES.text.description.medium + " text-gray-600"}>
+              <p className={STYLES.text.description.medium + " text-gray-400"}>
                 {story.company}
               </p>
             </div>
@@ -359,9 +359,9 @@ export default function PartnersPage() {
       </ContentSection>
 
       {/* FAQ Section */}
-      <ContentSection className="bg-gray-overlay">
+      <ContentSection className="bg-gray-800/90">
         <div className="text-center mb-12">
-          <h2 className={STYLES.heading.h2.section + " mb-4"}>
+          <h2 className={STYLES.heading.h2.section + " text-white mb-4"}>
             よくあるご質問
           </h2>
         </div>
@@ -381,11 +381,11 @@ export default function PartnersPage() {
               a: "基本的に私たちが窓口となり、全体をコーディネートします。"
             }
           ].map((faq, index) => (
-            <div key={index} className="bg-white-overlay rounded-xl p-6">
-              <h3 className={STYLES.heading.h3.card + " mb-3"}>
+            <div key={index} className="bg-gray-700/80 rounded-xl p-6">
+              <h3 className={STYLES.heading.h3.card + " text-white mb-3"}>
                 Q: {faq.q}
               </h3>
-              <p className={STYLES.text.body.medium}>
+              <p className={STYLES.text.body.medium + " text-gray-300"}>
                 A: {faq.a}
               </p>
             </div>
@@ -394,22 +394,22 @@ export default function PartnersPage() {
       </ContentSection>
 
       {/* Partner Recruitment Section */}
-      <ContentSection>
+      <ContentSection className="bg-gray-900/95">
         <div className="text-center mb-12">
-          <h2 className={STYLES.heading.h2.section + " mb-4"}>
+          <h2 className={STYLES.heading.h2.section + " text-white mb-4"}>
             新しいパートナーも募集中
           </h2>
-          <p className={STYLES.text.body.large + " mb-8"}>
+          <p className={STYLES.text.body.large + " text-gray-300 mb-8"}>
             一緒に、お客様の成功を支援しませんか？
           </p>
-          <p className={STYLES.text.body.medium + " mb-8"}>
+          <p className={STYLES.text.body.medium + " text-gray-400 mb-8"}>
             私たちは、お客様により大きな価値を提供できる<br />
             パートナー企業を常に探しています。
           </p>
         </div>
         
-        <div className="bg-gray-overlay rounded-xl p-8 mb-12">
-          <h3 className={STYLES.heading.h3.emphasis + " mb-6 text-center"}>
+        <div className="bg-gray-800/80 rounded-xl p-8 mb-12">
+          <h3 className={STYLES.heading.h3.emphasis + " text-white mb-6 text-center"}>
             こんな企業様を求めています：
           </h3>
           <ul className="space-y-4">
@@ -420,7 +420,7 @@ export default function PartnersPage() {
             ].map((item, index) => (
               <li key={index} className="flex items-center justify-center">
                 <span className="text-green-500 mr-3">✓</span>
-                <span className={STYLES.text.body.medium}>{item}</span>
+                <span className={STYLES.text.body.medium + " text-gray-300"}>{item}</span>
               </li>
             ))}
           </ul>
@@ -455,7 +455,7 @@ export default function PartnersPage() {
             
             <Link
               href="/#contact"
-              className="inline-flex items-center justify-center px-8 py-4 bg-white-overlay text-gray-900 font-medium rounded-lg hover:bg-gray-overlay transition-colors"
+              className="inline-flex items-center justify-center px-8 py-4 bg-white text-gray-900 font-medium rounded-lg hover:bg-gray-200 transition-colors"
             >
               無料相談を予約する
             </Link>
