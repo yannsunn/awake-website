@@ -37,11 +37,8 @@ export default function PageLayout({
   
   useEffect(() => {
     if (showEffects) {
-      const timer = setTimeout(() => {
-        setEffectsLoaded(true)
-      }, 500)
-      
-      return () => clearTimeout(timer)
+      // エフェクトを即座に読み込む
+      setEffectsLoaded(true)
     }
     return undefined
   }, [showEffects])
