@@ -66,15 +66,15 @@ const HeroSection = memo(function HeroSection() {
         <div className="max-w-4xl mx-auto">
           
           {/* 🚀 限界突破 - 感情的訴求 + ストーリーテリング */}
-          <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-black mb-6 tracking-tight text-ultra-readable">
+          <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-6 tracking-tight">
             {COMPANY_DATA.basic.tagline}
           </h1>
           
-          <p className="text-lg md:text-xl text-black mb-4 font-bold leading-relaxed text-shadow-lg">
+          <p className="text-lg md:text-xl text-gray-800 mb-4 font-semibold leading-relaxed">
             {COMPANY_DATA.basic.description}
           </p>
           
-          <p className="text-base md:text-lg text-black mb-8 font-bold leading-relaxed text-shadow-md">
+          <p className="text-base md:text-lg text-gray-700 mb-8 font-medium leading-relaxed">
             {COMPANY_DATA.basic.subMessage}
           </p>
           
