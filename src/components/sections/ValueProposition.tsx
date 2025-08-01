@@ -23,25 +23,25 @@ const ValueProposition = memo(function ValueProposition() {
 
   return (
     <section className="py-20 relative">
-      <div className="absolute inset-0 bg-gray-50/85 backdrop-blur-lg" />
+      <div className="absolute inset-0 bg-gray-800/95 backdrop-blur-md" />
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-black mb-4 text-gray-900">
+          <h2 className="text-3xl font-bold text-white mb-4">
             なぜ、私たちが選ばれるのか
           </h2>
-          <p className="text-xl text-gray-800 font-semibold">
+          <p className="text-xl text-gray-200 font-semibold">
             投資を「コスト」から「成長エンジン」に変える
           </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {reasons.map((reason, index) => (
-            <div key={index} className="bg-white/90 backdrop-blur-md rounded-lg p-8 shadow-sm">
+            <div key={index} className="bg-gray-700/90 backdrop-blur-md rounded-lg p-8 shadow-sm border border-gray-600">
               <div className="text-4xl mb-4">{reason.icon}</div>
-              <h3 className="text-xl font-bold text-black mb-3 text-shadow-md">
+              <h3 className="text-xl font-bold text-white mb-3">
                 {reason.title}
               </h3>
-              <p className="text-black leading-relaxed font-medium text-shadow-sm">
+              <p className="text-gray-300 leading-relaxed font-medium">
                 {reason.description}
               </p>
             </div>
