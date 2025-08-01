@@ -43,7 +43,7 @@
   body {
     @apply bg-white text-gray-900 antialiased;
     font-feature-settings: "palt" 1;
-    font-weight: 500;
+    font-weight: 400; /* 500から400に変更 */
     letter-spacing: 0.02em;
     line-height: 1.7;
   }
@@ -284,16 +284,7 @@ section {
   z-index: 1;
 }
 
-/* 超強力白縁効果 - 背景に負けないテキスト */
-.text-stroke-white {
-  -webkit-text-stroke: 2px rgba(255, 255, 255, 0.9);
-  text-stroke: 2px rgba(255, 255, 255, 0.9);
-}
-
-.text-stroke-heavy {
-  -webkit-text-stroke: 3px rgba(255, 255, 255, 1);
-  text-stroke: 3px rgba(255, 255, 255, 1);
-}
+/* 削除 - パフォーマンス改善のため */
 
 /* 絶対に読めるテキスト */
 .text-ultra-readable {

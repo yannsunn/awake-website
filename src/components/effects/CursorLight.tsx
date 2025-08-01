@@ -61,23 +61,22 @@ export default function CursorLight() {
         }
       }
       
-      // パーティクル効果
+      // パーティクル効果 - 最適化
       const time = Date.now() * 0.001
-      for (let i = 0; i < 20; i++) {
-        const angle = (i / 20) * Math.PI * 2
+      ctx.save()
+      for (let i = 0; i < 10; i++) { // 20から10に削減
+        const angle = (i / 10) * Math.PI * 2
         const radius = 80 + Math.sin(time + i) * 20
         const x = cursorPosition.x + Math.cos(angle) * radius
         const y = cursorPosition.y + Math.sin(angle) * radius
         
-        const particleGradient = ctx.createRadialGradient(x, y, 0, x, y, 5)
-        particleGradient.addColorStop(0, 'rgba(147, 51, 234, 0.8)')
-        particleGradient.addColorStop(1, 'rgba(147, 51, 234, 0)')
-        
-        ctx.fillStyle = particleGradient
+        // グラデーションを毎回作成せず、透明度で表現
+        ctx.fillStyle = `rgba(147, 51, 234, ${0.4 - (i * 0.03)})`
         ctx.beginPath()
         ctx.arc(x, y, 5, 0, Math.PI * 2)
         ctx.fill()
       }
+      ctx.restore()
       
       animationId = requestAnimationFrame(draw)
     }

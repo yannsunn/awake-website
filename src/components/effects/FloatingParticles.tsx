@@ -21,9 +21,9 @@ export default function FloatingParticles() {
     const ctx = canvas.getContext('2d')
     if (!ctx) return
     
-    // パーティクルの初期化
+    // パーティクルの初期化 - 数を削減
     const particles: Particle[] = []
-    const particleCount = 50
+    const particleCount = 20 // 50から20に削減
     
     const resizeCanvas = () => {
       canvas.width = window.innerWidth
@@ -61,7 +61,7 @@ export default function FloatingParticles() {
     const animate = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height)
       
-      particles.forEach((particle) => {
+      particles.forEach((particle, i) => {
         // マウスとの距離を計算
         const dx = mouseX - particle.x
         const dy = mouseY - particle.y
@@ -98,10 +98,9 @@ export default function FloatingParticles() {
         ctx.fillStyle = `rgba(147, 51, 234, ${particle.opacity})`
         ctx.fill()
         
-        // 近くのパーティクルと線を描く
-        particles.forEach((otherParticle) => {
-          if (particle === otherParticle) return
-          
+        // 近くのパーティクルと線を描く - 最適化
+        for (let j = i + 1; j < particles.length; j++) {
+          const otherParticle = particles[j]
           const dx = otherParticle.x - particle.x
           const dy = otherParticle.y - particle.y
           const distance = Math.sqrt(dx * dx + dy * dy)
@@ -114,7 +113,7 @@ export default function FloatingParticles() {
             ctx.lineWidth = 0.5
             ctx.stroke()
           }
-        })
+        }
       })
       
       animationId = requestAnimationFrame(animate)
