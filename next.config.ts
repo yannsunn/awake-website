@@ -27,19 +27,12 @@ const nextConfig: NextConfig = {
         pathname: '/item/detail/orig/photos/**',
       },
     ],
-    // 遅延読み込み最適化
-    loader: 'default',
-    quality: 85,
-    placeholder: 'blur',
   },
   
   // Core Web Vitals 最適化 - コンパイラ最適化
   compiler: {
     removeConsole: process.env.NODE_ENV === 'production',
     reactRemoveProperties: process.env.NODE_ENV === 'production',
-    removeComments: process.env.NODE_ENV === 'production',
-    // SWC 最適化
-    styledComponents: true,
   },
   
   // Core Web Vitals 限界突破最適化
@@ -104,16 +97,17 @@ const nextConfig: NextConfig = {
   
   // パフォーマンスメトリクス設定
   experimental: {
-    optimizeCss: true,
-    turbo: {
-      rules: {
-        '*.svg': {
-          loaders: ['@svgr/webpack'],
-          as: '*.js',
-        },
+    webVitalsAttribution: ['CLS', 'LCP', 'FCP', 'FID', 'TTFB'],
+  },
+  
+  // Turbopack設定（Turbopackが安定版になったため移動）
+  turbopack: {
+    rules: {
+      '*.svg': {
+        loaders: ['@svgr/webpack'],
+        as: '*.js',
       },
     },
-    webVitalsAttribution: ['CLS', 'LCP', 'FCP', 'FID', 'TTFB'],
   },
   
   // Enhanced Security headers - 限界突破セキュリティ対応
