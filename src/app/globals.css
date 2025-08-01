@@ -295,8 +295,7 @@ img, video, iframe {
   height: auto;
 }
 
-/* フォントの最適化 */
-@font-display swap;
+/* フォントの最適化はfont-faceで定義済み */
 
 /* スムーズスクロール改善 */
 html {
