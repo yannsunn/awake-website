@@ -75,6 +75,7 @@ export default function RootLayout({
           {children}
         </div>
         {/* Core Web Vitals最適化: リソースヒント */}
+        <link rel="preload" href="/assets/images/hero-background.png" as="image" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
         <link rel="dns-prefetch" href="https://lin.ee" />
