@@ -13,14 +13,7 @@ import FAQ from '@/components/sections/FAQ'
 import LazyLoad from '@/components/ui/LazyLoad'
 import RippleContainer from '@/components/effects/RippleContainer'
 import BreathingButton from '@/components/effects/BreathingButton'
-import ParallaxElement from '@/components/effects/ParallaxElement'
-
-import dynamic from 'next/dynamic'
-
-const SoundWave = dynamic(() => import('@/components/effects/SoundWave'), {
-  ssr: false,
-  loading: () => null
-})
+import SoundWave from '@/components/effects/SoundWave'
 
 const services = [
   {
@@ -91,17 +84,15 @@ export default function HomePageContent() {
           <div className="relative z-10 w-full px-4 sm:px-6 lg:px-8">
             <div className="text-center max-w-6xl mx-auto">
               {/* Animated Tagline */}
-              <ParallaxElement speed={0.3}>
-                <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold mb-8 leading-tight">
-                  <span className="bg-gradient-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent drop-shadow-md">
-                    高額なIT投資に、
-                  </span>
-                  <br />
-                  <span className="text-white drop-shadow-md">
-                    もう悩まない
-                  </span>
-                </h1>
-              </ParallaxElement>
+              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold mb-8 leading-tight">
+                <span className="bg-gradient-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent drop-shadow-md">
+                  高額なIT投資に、
+                </span>
+                <br />
+                <span className="text-white drop-shadow-md">
+                  もう悩まない
+                </span>
+              </h1>
               
               <p className="text-xl sm:text-2xl text-white font-semibold mb-4 bg-gray-800/90 rounded-lg px-6 py-4 inline-block shadow-2xl border-2 border-gray-700">
                 {COMPANY_DATA.basic.description}
