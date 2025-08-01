@@ -67,17 +67,17 @@ export const ContactMethod = memo(function ContactMethod({
   const wrapperProps = link ? { href: link, className: 'hover:text-gray-900' } : {}
 
   return (
-    <div className={`flex items-start ${highlighted ? 'p-6 bg-green-50/80 backdrop-blur-sm border border-green-200 rounded-lg' : ''}`}>
+    <div className={`flex items-start ${highlighted ? 'p-6 bg-green-900/20 backdrop-blur-sm border border-green-700 rounded-lg' : ''}`}>
       <div className={`w-12 h-12 rounded-lg flex items-center justify-center mr-4 mt-1 ${
-        highlighted ? 'bg-green-100/80 backdrop-blur-sm' : 'bg-gray-overlay'
+        highlighted ? 'bg-green-800/50 backdrop-blur-sm' : 'bg-gray-700/50'
       }`}>
         {icon}
       </div>
       <div>
-        <h4 className={`font-medium mb-1 ${highlighted ? 'text-green-800' : 'text-gray-900'}`}>
+        <h4 className={`font-medium mb-1 ${highlighted ? 'text-green-400' : 'text-white'}`}>
           {title}
         </h4>
-        <p className={`${highlighted ? 'text-green-700' : 'text-gray-600'} mb-2`}>
+        <p className={`${highlighted ? 'text-green-300' : 'text-gray-300'} mb-2`}>
           {content}
         </p>
         {link && linkText && (
