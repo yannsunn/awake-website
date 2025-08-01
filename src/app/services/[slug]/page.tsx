@@ -235,22 +235,22 @@ export default async function ServicePage(
         
         <ProblemSection />
         
-        <section className="py-16 md:py-24 bg-white-overlay">
+        <section className="py-16 md:py-24 bg-gray-900/95">
           <div className="w-full px-4 sm:px-6 lg:px-8">
-            <h2 className={cn(STYLES.heading.h2.section, "text-center mb-12")}>
+            <h2 className={cn(STYLES.heading.h2.section, "text-white text-center mb-12")}>
               Awakeが選ばれる4つの理由
             </h2>
             <FeatureGrid features={service.features} />
           </div>
         </section>
         
-        <section className="py-16 md:py-24 bg-gray-overlay">
+        <section className="py-16 md:py-24 bg-gray-800/90">
           <div className="w-full px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
-              <h2 className={cn(STYLES.heading.h2.section, "mb-4")}>
+              <h2 className={cn(STYLES.heading.h2.section, "text-white mb-4")}>
                 導入プロセス
               </h2>
-              <p className={STYLES.text.body.large}>
+              <p className={STYLES.text.body.large + " text-gray-300"}>
                 たった4ステップで、業務が劇的に変わる
               </p>
             </div>
@@ -282,9 +282,9 @@ export default async function ServicePage(
         <WhyAmazon />
         <RiskFree />
         
-        <section className="py-16 md:py-24 bg-gray-overlay">
+        <section className="py-16 md:py-24 bg-gray-800/90">
           <div className="w-full px-4 sm:px-6 lg:px-8">
-            <h2 className={cn(STYLES.heading.h2.section, "text-center mb-12")}>
+            <h2 className={cn(STYLES.heading.h2.section, "text-white text-center mb-12")}>
               私たちが選ばれる4つの理由
             </h2>
             <FeatureGrid features={service.features} />
@@ -293,13 +293,13 @@ export default async function ServicePage(
         
         <AmazonSupport />
         
-        <section className="py-16 md:py-24 bg-white-overlay">
+        <section className="py-16 md:py-24 bg-gray-900/95">
           <div className="w-full px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
-              <h2 className={cn(STYLES.heading.h2.section, "mb-4")}>
+              <h2 className={cn(STYLES.heading.h2.section, "text-white mb-4")}>
                 導入の流れ
               </h2>
-              <p className={STYLES.text.body.large}>
+              <p className={STYLES.text.body.large + " text-gray-300"}>
                 最短2週間で販売開始
               </p>
             </div>
@@ -324,35 +324,35 @@ export default async function ServicePage(
         ctaHref="/#contact"
       />
       
-      <section className="py-16 md:py-24 bg-gray-overlay">
+      <section className="py-16 md:py-24 bg-gray-800/90">
         <div className="w-full px-4 sm:px-6 lg:px-8">
-          <h2 className={cn(STYLES.heading.h2.section, "text-center mb-12")}>
+          <h2 className={cn(STYLES.heading.h2.section, "text-white text-center mb-12")}>
             サービスの特徴
           </h2>
           <FeatureGrid features={service.features} />
         </div>
       </section>
       
-      <section className="py-16 md:py-24 bg-white-overlay">
+      <section className="py-16 md:py-24 bg-gray-900/95">
         <div className="w-full px-4 sm:px-6 lg:px-8">
-          <h2 className={cn(STYLES.heading.h2.section, "text-center mb-12")}>
+          <h2 className={cn(STYLES.heading.h2.section, "text-white text-center mb-12")}>
             導入までの流れ
           </h2>
           <ProcessSteps title="" steps={service.process} />
         </div>
       </section>
       
-      <section className="py-16 md:py-24 bg-gray-overlay">
+      <section className="py-16 md:py-24 bg-gray-800/90">
         <div className="w-full px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className={cn(STYLES.heading.h2.section, "mb-8")}>
+          <h2 className={cn(STYLES.heading.h2.section, "text-white mb-8")}>
             まずはお気軽にご相談ください
           </h2>
-          <p className="text-lg text-gray-600 mb-8">
+          <p className="text-lg text-gray-300 mb-8">
             お客様のビジネスに最適なソリューションをご提案いたします
           </p>
           <Link
             href="/#contact"
-            className="inline-flex items-center justify-center px-8 py-4 bg-gray-900 text-white font-medium rounded-lg hover:bg-gray-800"
+            className="inline-flex items-center justify-center px-8 py-4 bg-white text-gray-900 font-medium rounded-lg hover:bg-gray-200"
           >
             お問い合わせはこちら
           </Link>

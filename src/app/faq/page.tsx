@@ -136,12 +136,12 @@ export default function FAQPage() {
       />
 
       {/* Hero Section */}
-      <ContentSection className="bg-gray-overlay">
+      <ContentSection className="bg-gray-900/95">
         <div className="text-center">
-          <h1 className={STYLES.heading.h1.primary + " mb-6"}>
+          <h1 className={STYLES.heading.h1.primary + " text-white mb-6"}>
             よくある質問
           </h1>
-          <p className={STYLES.text.body.medium}>
+          <p className={STYLES.text.body.medium + " text-gray-300"}>
             お客様からよくいただくご質問をまとめました。<br className="hidden sm:block" />
             こちらにない質問は、お気軽にお問い合わせください。
           </p>
@@ -150,11 +150,11 @@ export default function FAQPage() {
 
 
       {/* FAQ Content */}
-      <ContentSection>
+      <ContentSection className="bg-gray-800/90">
         <div className="space-y-8 sm:space-y-12">
           {faqCategories.map((category, categoryIndex) => (
             <div key={categoryIndex}>
-              <h2 className={STYLES.heading.h2.subsection + " mb-6 sm:mb-8 pb-2 border-b border-gray-200"}>
+              <h2 className={STYLES.heading.h2.subsection + " text-white mb-6 sm:mb-8 pb-2 border-b border-gray-600"}>
                 {category.category}
               </h2>
               
@@ -162,27 +162,27 @@ export default function FAQPage() {
                 {category.questions.map((faq, faqIndex) => (
                   <details 
                     key={faqIndex} 
-                    className="group bg-white-overlay border border-gray-200 rounded-lg overflow-hidden"
+                    className="group bg-gray-700/80 border border-gray-600 rounded-lg overflow-hidden"
                   >
-                    <summary className="flex items-center justify-between p-4 sm:p-6 cursor-pointer hover:bg-gray-overlay focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">
-                      <h3 className={STYLES.heading.h3.emphasis + " pr-4"}>
+                    <summary className="flex items-center justify-between p-4 sm:p-6 cursor-pointer hover:bg-gray-600/50 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2">
+                      <h3 className={STYLES.heading.h3.emphasis + " text-white pr-4"}>
                         {faq.question}
                       </h3>
                       <div className="flex-shrink-0">
                         <Plus 
-                          className="h-5 w-5 text-gray-400 group-open:hidden" 
+                          className="h-5 w-5 text-gray-300 group-open:hidden" 
                           aria-hidden="true"
                         />
                         <Minus 
-                          className="h-5 w-5 text-gray-400 hidden group-open:block" 
+                          className="h-5 w-5 text-gray-300 hidden group-open:block" 
                           aria-hidden="true"
                         />
                       </div>
                     </summary>
                     
                     <div className="px-4 sm:px-6 pb-4 sm:pb-6">
-                      <div className="pt-4 border-t border-gray-100">
-                        <p className={STYLES.text.description.medium + " text-gray-700"}>
+                      <div className="pt-4 border-t border-gray-600">
+                        <p className={STYLES.text.description.medium + " text-gray-300"}>
                           {faq.answer}
                         </p>
                       </div>
@@ -196,19 +196,19 @@ export default function FAQPage() {
       </ContentSection>
 
       {/* Contact Section */}
-      <ContentSection className="bg-gray-overlay">
+      <ContentSection className="bg-gray-900/95">
         <div className="text-center">
-          <h2 className={STYLES.heading.h2.section + " mb-6"}>
+          <h2 className={STYLES.heading.h2.section + " text-white mb-6"}>
             まだ疑問が解決しませんか？
           </h2>
-          <p className={STYLES.text.body.medium + " mb-8"}>
+          <p className={STYLES.text.body.medium + " text-gray-300 mb-8"}>
             お気軽にお問い合わせください。専門スタッフが丁寧にお答えいたします。
           </p>
           
           <div className="">
-            <div className="bg-green-50 p-6 sm:p-8 rounded-xl shadow-sm border border-green-100">
-              <h3 className={STYLES.heading.h2.subsection + " mb-4 text-center"}>💬 公式LINEでお気軽に</h3>
-              <p className={STYLES.text.body.medium + " text-center mb-6"}>最速返信！まずはLINEでお話をお聞かせください</p>
+            <div className="bg-gray-800/80 p-6 sm:p-8 rounded-xl shadow-sm border border-gray-600">
+              <h3 className={STYLES.heading.h2.subsection + " text-white mb-4 text-center"}>💬 公式LINEでお気軽に</h3>
+              <p className={STYLES.text.body.medium + " text-gray-300 text-center mb-6"}>最速返信！まずはLINEでお話をお聞かせください</p>
               <LineButton className="w-full" size="large" />
             </div>
           </div>
