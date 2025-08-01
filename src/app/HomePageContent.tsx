@@ -79,7 +79,7 @@ export default function HomePageContent() {
         <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16 sm:pt-24 md:pt-32 pb-16 sm:pb-20">
           
           {/* コンテンツ背景をフッターと同じダーク設定に */}
-          <div className="absolute inset-0 bg-gray-900/95 backdrop-blur-md" />
+          <div className="absolute inset-0 bg-gray-900/98 backdrop-blur-md" />
           
           <div className="relative z-10 w-full px-4 sm:px-6 lg:px-8">
             <div className="text-center max-w-6xl mx-auto">
@@ -106,7 +106,7 @@ export default function HomePageContent() {
                 <BreathingButton 
                   href="#contact" 
                   showArrow 
-                  className="btn-modern bg-gradient-to-r from-indigo-500 to-purple-500 text-white hover:from-indigo-600 hover:to-purple-600 shadow-xl" 
+                  className="btn-modern bg-gradient-to-r from-indigo-600 to-purple-600 text-white hover:from-indigo-700 hover:to-purple-700 shadow-xl border-2 border-indigo-400/50" 
                   size="large"
                 >
                   今すぐ無料相談
@@ -114,7 +114,7 @@ export default function HomePageContent() {
                 <BreathingButton 
                   href="#services" 
                   variant="secondary" 
-                  className="bg-gray-800 border-2 border-gray-600 text-white hover:border-indigo-400 shadow-xl" 
+                  className="bg-gray-700 border-2 border-gray-500 text-white hover:bg-gray-600 hover:border-indigo-400 shadow-xl" 
                   size="large"
                 >
                   サービスを見る

@@ -15,7 +15,7 @@ const ContactInfo = memo(function ContactInfo() {
       {/* 🎯 統合された連絡先情報 */}
       <div className="space-y-6">
         <ContactMethod
-          icon={<MessageCircle className="w-6 h-6 text-green-600" />}
+          icon={<MessageCircle className="w-6 h-6 text-green-400" />}
           title="公式LINE"
           content="最速で返信！お気軽にご相談ください"
           link="https://lin.ee/fIaLAjy"
@@ -23,13 +23,13 @@ const ContactInfo = memo(function ContactInfo() {
         />
 
         <ContactMethod
-          icon={<MapPin className="w-6 h-6 text-gray-600" />}
+          icon={<MapPin className="w-6 h-6 text-gray-400" />}
           title="所在地"
           content={`${COMPANY_DATA.contact.address.postal}\n${COMPANY_DATA.contact.address.full}`}
         />
 
         <ContactMethod
-          icon={<Clock className="w-6 h-6 text-gray-600" />}
+          icon={<Clock className="w-6 h-6 text-gray-400" />}
           title="営業時間"
           content={`${COMPANY_DATA.contact.businessHours.weekdays}\n${COMPANY_DATA.contact.businessHours.weekend}`}
         />
