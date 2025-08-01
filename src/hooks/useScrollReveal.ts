@@ -114,7 +114,8 @@ export const useScrollRevealGlobal = () => {
     // クリーンアップ
     return () => {
       observer.current?.disconnect()
-      elementsRef.current.clear()
+      const elements = elementsRef.current
+      elements.clear()
     }
   }, [initIntersectionObserver])
 }

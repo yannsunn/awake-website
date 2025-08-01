@@ -18,10 +18,10 @@ const Container = memo(function Container({
   className = ''
 }: ContainerProps) {
   const sizeClasses = {
-    default: 'max-w-7xl',
+    default: 'w-full', // max-w-7xlを削除してフル幅に
     narrow: 'max-w-4xl',
-    wide: 'max-w-screen-2xl',
-    full: 'max-w-full'
+    wide: 'w-full',
+    full: 'w-full'
   }
   
   const paddingClasses = {

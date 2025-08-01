@@ -1,7 +1,9 @@
 import type { Metadata } from 'next'
 import { User, Target, Heart, Award, Users, Zap, CheckCircle } from 'lucide-react'
 import { COMPANY_DATA } from '@/lib/company-data'
-import PageTemplate, { ContentSection, PageHeader } from '@/components/layout/PageTemplate'
+import PageLayout from '@/components/layout/PageLayout'
+import { ContentSection } from '@/components/layout/PageTemplate'
+import ParallaxElement from '@/components/effects/ParallaxElement'
 import OptimizedImage from '@/components/ui/OptimizedImage'
 import AccessibleButton from '@/components/ui/AccessibleButton'
 import { STYLES } from '@/lib/constants'
@@ -108,11 +110,7 @@ export default function AboutPage() {
   ]
 
   return (
-    <PageTemplate
-      title="会社概要"
-      description="株式会社Awakeの企業情報と代表メッセージ"
-      breadcrumbs={breadcrumbs}
-    >
+    <PageLayout>
       {/* Article Schema */}
       <script
         type="application/ld+json"
@@ -122,16 +120,25 @@ export default function AboutPage() {
       />
 
       {/* Hero Section */}
-      <PageHeader
-        title="私たちが、お客様に選ばれる理由"
-        subtitle="「高すぎるIT投資」を、「適正な成長投資」に変える"
-        className="bg-transparent"
-      >
-        <p className={STYLES.text.body.medium + " max-w-3xl mx-auto"}>
+      <section className="relative min-h-[50vh] flex items-center justify-center overflow-hidden pt-20 sm:pt-24 md:pt-32 pb-20">
+        <div className="absolute inset-0 bg-gradient-to-br from-purple-50 via-white to-blue-50 opacity-80" />
+        <div className="relative z-10 w-full px-4 sm:px-6 lg:px-8 text-center">
+          <ParallaxElement speed={0.3}>
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold mb-6">
+              <span className="bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
+                私たちが、お客様に選ばれる理由
+              </span>
+            </h1>
+          </ParallaxElement>
+          <p className="text-xl sm:text-2xl text-gray-800 font-semibold mb-4">
+            「高すぎるIT投資」を、「適正な成長投資」に変える
+          </p>
+        <p className={STYLES.text.body.medium + " w-full"}>
           株式会社Awakeは、無駄を削ぎ落とし、<br className="hidden sm:block" />
           本当に価値のある投資だけに集中できる環境を創ります。
         </p>
-      </PageHeader>
+        </div>
+      </section>
 
       {/* CEO Message Section */}
       <ContentSection ariaLabel="代表メッセージ">
@@ -453,6 +460,6 @@ export default function AboutPage() {
           </div>
         </div>
       </ContentSection>
-    </PageTemplate>
+    </PageLayout>
   )
 }

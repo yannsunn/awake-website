@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { COMPANY_DATA } from '@/lib/company-data'
-import PageTemplate, { ContentSection } from '@/components/layout/PageTemplate'
+import PageLayout from '@/components/layout/PageLayout'
+import { ContentSection } from '@/components/layout/PageTemplate'
 import AccessibleButton from '@/components/ui/AccessibleButton'
 import { STYLES } from '@/lib/constants'
 import { cn } from '@/lib/utils'
@@ -18,7 +19,7 @@ export default function TermsPage() {
   ]
 
   return (
-    <PageTemplate
+    <PageLayout
       title="利用規約"
       description="株式会社Awakeの利用規約"
       breadcrumbs={breadcrumbs}
@@ -157,6 +158,6 @@ export default function TermsPage() {
           </div>
         </div>
       </ContentSection>
-    </PageTemplate>
+    </PageLayout>
   )
 }
