@@ -69,7 +69,8 @@ const Footer = memo(function Footer() {
                 <Phone className="w-5 h-5 text-white mr-3 flex-shrink-0" />
                 <a 
                   href={`tel:${COMPANY_DATA.contact.phone}`}
-                  className={`${STYLES.text.description.small} text-white hover:text-gray-200 transition-colors`}
+                  className={`${STYLES.text.description.small} text-white hover:text-gray-200 transition-all duration-300 ease-out hover:scale-[1.02] focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-blue-400 focus-visible:ring-offset-3`}
+                  aria-label="電話でお問い合わせ"
                 >
                   {COMPANY_DATA.contact.phone}
                 </a>
@@ -98,10 +99,11 @@ const Footer = memo(function Footer() {
                 <li key={link.href}>
                   <Link 
                     href={link.href}
-                    className={`${STYLES.text.body.small} text-white hover:text-gray-200 transition-colors inline-flex items-center group`}
+                    className={`${STYLES.text.body.small} text-white hover:text-gray-200 transition-all duration-300 ease-out hover:scale-[1.02] focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-blue-400 focus-visible:ring-offset-3 inline-flex items-center group`}
                     {...(link.external && {
                       target: '_blank',
-                      rel: 'noopener noreferrer'
+                      rel: 'noopener noreferrer',
+                      'aria-label': `${link.title} - 新しいウィンドウで開きます`
                     })}
                   >
                     {link.title}
@@ -123,7 +125,7 @@ const Footer = memo(function Footer() {
                 <li key={link.href}>
                   <Link 
                     href={link.href}
-                    className={`${STYLES.text.body.small} text-white hover:text-gray-200 transition-colors`}
+                    className={`${STYLES.text.body.small} text-white hover:text-gray-200 transition-all duration-300 ease-out hover:scale-[1.02] focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-blue-400 focus-visible:ring-offset-3`}
                   >
                     {link.title}
                   </Link>
@@ -154,7 +156,7 @@ const Footer = memo(function Footer() {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className={`${STYLES.text.description.small} text-white hover:text-gray-200 transition-colors`}
+                  className={`${STYLES.text.description.small} text-white hover:text-gray-200 transition-all duration-300 ease-out hover:scale-[1.02] focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-blue-400 focus-visible:ring-offset-3`}
                 >
                   {link.title}
                 </Link>
@@ -170,8 +172,9 @@ const Footer = memo(function Footer() {
       
       <button
         onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-        className="fixed bottom-6 right-6 p-3 bg-gray-800 hover:bg-gray-700 text-white rounded-full shadow-lg transition-all duration-200 opacity-90 hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-gray-600 focus:ring-offset-2 z-40"
+        className="fixed bottom-6 right-6 p-4 min-h-[56px] min-w-[56px] bg-gray-800 hover:bg-gray-700 text-white rounded-full shadow-lg transition-all duration-300 ease-out opacity-90 hover:opacity-100 hover:scale-[1.1] active:scale-[0.9] focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-blue-500 focus-visible:ring-offset-3 z-40"
         aria-label="ページトップへ戻る"
+        type="button"
       >
         <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 10l7-7m0 0l7 7m-7-7v18" />

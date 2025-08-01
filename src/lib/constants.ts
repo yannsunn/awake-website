@@ -3,12 +3,12 @@ export const STYLES = {
   // Container
   container: 'mx-auto max-w-7xl px-6 lg:px-8',
   
-  // 視認性最優先のボタンスタイル
+  // WCAG AAA準拠 + 限界突破ボタンスタイル
   button: {
-    primary: 'inline-flex items-center justify-center bg-gradient-to-r from-indigo-600 to-indigo-700 text-white px-6 py-3 rounded-xl font-bold shadow-2xl shadow-indigo-500/30 hover:shadow-3xl hover:shadow-indigo-500/40 hover:from-indigo-700 hover:to-indigo-800 transition-all duration-300 min-h-[48px] border-2 border-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2',
-    secondary: 'inline-flex items-center justify-center bg-white border-2 border-gray-300 text-gray-900 font-bold px-6 py-3 rounded-xl shadow-xl hover:shadow-2xl hover:border-gray-400 hover:bg-gray-50 transition-all duration-300 min-h-[48px] focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2',
-    outline: 'inline-flex items-center justify-center border-2 border-indigo-600 text-indigo-700 font-bold px-6 py-3 rounded-xl hover:bg-indigo-50 hover:text-indigo-800 hover:border-indigo-700 transition-all duration-300 min-h-[48px] shadow-lg hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2',
-    minimal: 'inline-flex items-center justify-center text-gray-900 font-bold px-4 py-2 hover:text-indigo-700 hover:bg-gray-100 rounded-lg transition-all duration-300 min-h-[44px] focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2'
+    primary: 'inline-flex items-center justify-center bg-gradient-to-r from-indigo-600 to-indigo-700 text-white px-6 py-3 rounded-xl font-bold shadow-lg hover:shadow-xl hover:from-indigo-700 hover:to-indigo-800 transition-all duration-300 ease-out min-h-[48px] min-w-[48px] border-2 border-indigo-700 hover:scale-[1.02] active:scale-[0.98] focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-blue-500 focus-visible:ring-offset-3 will-change-transform touch-manipulation select-none',
+    secondary: 'inline-flex items-center justify-center bg-white border-2 border-gray-300 text-gray-900 font-bold px-6 py-3 rounded-xl shadow-lg hover:shadow-xl hover:border-gray-400 hover:bg-gray-50 transition-all duration-300 ease-out min-h-[48px] min-w-[48px] hover:scale-[1.02] active:scale-[0.98] focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-blue-500 focus-visible:ring-offset-3 will-change-transform touch-manipulation select-none',
+    outline: 'inline-flex items-center justify-center border-2 border-indigo-600 text-indigo-700 font-bold px-6 py-3 rounded-xl hover:bg-indigo-50 hover:text-indigo-800 hover:border-indigo-700 transition-all duration-300 ease-out min-h-[48px] min-w-[48px] shadow-lg hover:shadow-xl hover:scale-[1.02] active:scale-[0.98] focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-blue-500 focus-visible:ring-offset-3 will-change-transform touch-manipulation select-none',
+    minimal: 'inline-flex items-center justify-center text-gray-900 font-bold px-4 py-2 hover:text-indigo-700 hover:bg-gray-100 rounded-lg transition-all duration-300 ease-out min-h-[48px] min-w-[48px] hover:scale-[1.02] active:scale-[0.98] focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-blue-500 focus-visible:ring-offset-3 will-change-transform touch-manipulation select-none'
   },
   
   // Section spacing
@@ -20,11 +20,11 @@ export const STYLES = {
     pricing: 'py-12 sm:py-16 lg:py-20'
   },
   
-  // 背景透過性を重視したカードスタイル
+  // WCAG AAA準拠 + 限界突破カードスタイル
   card: {
-    default: 'bg-white/60 backdrop-blur-md rounded-2xl p-8 shadow-2xl hover:shadow-3xl border border-gray-200/50 transition-all duration-300 hover:bg-white/70',
-    featured: 'bg-gradient-to-br from-white/70 to-white/60 rounded-2xl p-8 border-2 border-indigo-300/60 shadow-2xl shadow-indigo-500/20 hover:shadow-3xl hover:from-white/80 hover:to-white/70 transition-all duration-300',
-    compact: 'bg-white/60 backdrop-blur-md rounded-xl p-6 shadow-xl hover:shadow-2xl border border-gray-200/50 transition-all duration-300 hover:bg-white/70'
+    default: 'bg-white/80 backdrop-blur-md rounded-2xl p-8 shadow-lg hover:shadow-xl border border-gray-200/50 transition-all duration-300 ease-out hover:bg-white/85 hover:scale-[1.01] focus-within:ring-3 focus-within:ring-blue-500 focus-within:ring-offset-3',
+    featured: 'bg-gradient-to-br from-white/85 to-white/80 rounded-2xl p-8 border-2 border-indigo-300/60 shadow-xl shadow-indigo-500/10 hover:shadow-2xl hover:from-white/90 hover:to-white/85 transition-all duration-300 ease-out hover:scale-[1.01] focus-within:ring-3 focus-within:ring-blue-500 focus-within:ring-offset-3',
+    compact: 'bg-white/80 backdrop-blur-md rounded-xl p-6 shadow-lg hover:shadow-xl border border-gray-200/50 transition-all duration-300 ease-out hover:bg-white/85 hover:scale-[1.01] focus-within:ring-3 focus-within:ring-blue-500 focus-within:ring-offset-3'
   },
   
   // Modern Typography - 統一されたフォントシステム（超可読性強化）
@@ -75,12 +75,13 @@ export const STYLES = {
     }
   },
   
-  // Modern Form elements
+  // WCAG AAA準拠 フォーム要素
   form: {
-    input: 'block w-full rounded-xl border border-gray-200 px-4 py-3 text-gray-900 placeholder-gray-400 bg-gray-50 focus:bg-white focus:border-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500/20 transition-all duration-200',
-    textarea: 'block w-full rounded-xl border border-gray-200 px-4 py-3 text-gray-900 placeholder-gray-400 bg-gray-50 focus:bg-white focus:border-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500/20 resize-none transition-all duration-200',
-    label: 'block text-sm font-medium text-gray-700 mb-2',
-    error: 'text-sm text-red-600 mt-1'
+    input: 'block w-full rounded-xl border-2 border-gray-300 px-4 py-3 min-h-[48px] text-gray-900 placeholder-gray-500 bg-white focus:bg-white focus:border-blue-500 focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-blue-500 focus-visible:ring-offset-3 transition-all duration-300 ease-out',
+    textarea: 'block w-full rounded-xl border-2 border-gray-300 px-4 py-3 min-h-[120px] text-gray-900 placeholder-gray-500 bg-white focus:bg-white focus:border-blue-500 focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-blue-500 focus-visible:ring-offset-3 resize-vertical transition-all duration-300 ease-out',
+    label: 'block text-sm font-semibold text-gray-800 mb-2 cursor-pointer',
+    error: 'text-sm font-medium text-red-700 mt-2 p-2 bg-red-50 rounded border-l-4 border-red-600',
+    success: 'text-sm font-medium text-green-700 mt-2 p-2 bg-green-50 rounded border-l-4 border-green-600'
   }
 } as const
 

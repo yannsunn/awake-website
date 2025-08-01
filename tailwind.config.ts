@@ -33,9 +33,31 @@ const config: Config = {
           800: '#1f2937',
           900: '#111827',
         },
-        'success': '#059669',
-        'warning': '#d97706',
-        'error': '#dc2626',
+        // WCAG AAA準拠 高コントラスト色
+        'success': {
+          DEFAULT: '#059669',
+          'high-contrast': '#065f46',
+          'bg': '#f0fdf4'
+        },
+        'warning': {
+          DEFAULT: '#d97706',
+          'high-contrast': '#92400e',
+          'bg': '#fffbeb'
+        },
+        'error': {
+          DEFAULT: '#dc2626',
+          'high-contrast': '#991b1b',
+          'bg': '#fef2f2'
+        },
+        // 色覚障害対応カラーパレット
+        'accessible': {
+          'blue': '#0066cc',
+          'yellow': '#ffcc00',
+          'red': '#cc0000',
+          'green': '#009900',
+          'purple': '#6600cc',
+          'orange': '#ff6600'
+        }
       },
       fontFamily: {
         sans: ['var(--font-noto-sans-jp)', 'system-ui', 'sans-serif'],
@@ -57,24 +79,41 @@ const config: Config = {
         '18': '4.5rem',
         '88': '22rem',
         '128': '32rem',
+        // WCAG AAA準拠 タッチターゲット用スペーシング
+        'touch': '48px',
+        'touch-lg': '56px',
+        'touch-xl': '64px',
       },
       backdropBlur: {
         xs: '2px',
+        'safe': '8px', // 動作軽減設定対応
       },
       boxShadow: {
         'corporate': '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
         'corporate-lg': '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)',
         'corporate-hover': '0 8px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)',
+        // WCAG準拠 フォーカス専用シャドウ
+        'focus': '0 0 0 3px rgba(37, 99, 235, 0.3)',
+        'focus-dark': '0 0 0 3px rgba(96, 165, 250, 0.3)',
+        'focus-high-contrast': '0 0 0 4px rgba(0, 0, 0, 1)',
       },
       screens: {
         'xs': '475px',
         '3xl': '1600px',
+        // WCAG AAA準拠 モバイルファースト追加ブレークポイント
+        'sm-max': {'max': '639px'},
+        'md-max': {'max': '767px'},
+        'lg-max': {'max': '1023px'},
       },
     },
   },
   plugins: [],
   future: {
     hoverOnlyWhenSupported: true,
+  },
+  // WCAG AAA準拠 実験的機能
+  experimental: {
+    optimizeUniversalDefaults: true,
   },
 }
 

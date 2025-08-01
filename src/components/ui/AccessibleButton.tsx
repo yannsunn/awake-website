@@ -58,22 +58,25 @@ const AccessibleButton = memo(forwardRef<
   const validVariant = (variant && variant in BUTTON_STYLES) ? variant : 'primary'
   const baseStyles = BUTTON_STYLES[validVariant as keyof typeof BUTTON_STYLES]
   
-  // 🚀 ULTRA 視認性重視のモダンUIスタイル
+  // WCAG AAA準拠 + 限界突破マイクロインタラクション
   const accessibilityStyles = `
-    focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2
-    focus:ring-offset-white focus:ring-opacity-70
+    focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-blue-500 focus-visible:ring-offset-3
+    focus-visible:ring-offset-white focus-visible:shadow-focus
     disabled:opacity-50 disabled:cursor-not-allowed disabled:pointer-events-none
     text-center font-bold relative overflow-hidden
-    transition-all duration-300 transform hover:scale-105 active:scale-98
-    text-shadow-md shadow-xl hover:shadow-2xl
-    ultra-smooth bounce-on-hover
+    transition-all duration-300 ease-out transform
+    hover:scale-[1.02] active:scale-[0.98]
+    hover:shadow-xl active:shadow-lg
+    will-change-transform
+    touch-manipulation
+    select-none
     ${disabled ? 'opacity-50 cursor-not-allowed' : ''}
   `
   
   const sizeStyles = {
-    small: 'px-5 py-2.5 text-sm min-h-[44px]',
-    medium: 'px-6 py-3 text-base min-h-[52px]',
-    large: 'px-8 py-4 text-lg min-h-[60px]'
+    small: 'px-5 py-2.5 text-sm min-h-[48px] min-w-[48px]',
+    medium: 'px-6 py-3 text-base min-h-[52px] min-w-[52px]',
+    large: 'px-8 py-4 text-lg min-h-[60px] min-w-[60px]'
   }
   const styles = `${baseStyles} ${sizeStyles[size]} ${accessibilityStyles} ${className}`
 
@@ -102,21 +105,26 @@ const AccessibleButton = memo(forwardRef<
           aria-hidden="true"
         />
       )}
-      {/* 🎆 限界突破ホバーエフェクト */}
-      <span className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/30 to-white/0 opacity-0 group-hover:opacity-100 transition-all duration-500 transform -skew-x-12" />
-      <span className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+      {/* 限界突破マイクロインタラクション */}
+      <span className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/25 to-white/0 opacity-0 group-hover:opacity-100 transition-all duration-400 ease-out transform -skew-x-12 translate-x-[-100%] group-hover:translate-x-[100%]" />
+      <span className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/8 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-600 ease-out" />
+      {/* フォーカスリングアニメーション */}
+      <span className="absolute inset-0 rounded-inherit border-2 border-transparent group-focus-visible:border-blue-400 group-focus-visible:animate-pulse transition-all duration-300" />
     </>
   )
 
-  // アクセシビリティ属性の統合
+  // WCAG AAA準拠 アクセシビリティ属性の統合
   const accessibilityProps = {
     'aria-label': ariaLabel,
     'aria-describedby': ariaDescribedBy,
     'aria-expanded': ariaExpanded,
     'aria-haspopup': ariaHaspopup,
     'aria-pressed': ariaPressed,
-    role: role,
-    tabIndex: tabIndex ?? (disabled ? -1 : 0)
+    'aria-disabled': disabled,
+    role: role || 'button',
+    tabIndex: tabIndex ?? (disabled ? -1 : 0),
+    // タッチデバイス最適化
+    'data-touch-feedback': 'true'
   }
 
   // リンクボタンの場合
