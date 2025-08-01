@@ -6,13 +6,13 @@ import { STYLES } from '@/lib/constants'
 interface ServiceHeroProps {
   title: string
   description: string
-  subDescription?: string
+  subDescription?: string | undefined
   ctaText: string
   ctaHref: string
-  secondaryCtaText?: string
-  secondaryCtaHref?: string
-  backgroundVariant?: 'gradient' | 'solid' | 'image'
-  className?: string
+  secondaryCtaText?: string | undefined
+  secondaryCtaHref?: string | undefined
+  backgroundVariant?: 'gradient' | 'solid' | 'image' | undefined
+  className?: string | undefined
 }
 
 export function ServiceHero({

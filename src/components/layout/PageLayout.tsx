@@ -5,6 +5,7 @@ import dynamic from 'next/dynamic'
 import Header from '@/components/layout/Header'
 import Footer from '@/components/layout/Footer'
 import { useScrollRevealGlobal } from '@/hooks/useScrollReveal'
+import type { Breadcrumb } from '@/lib/types'
 
 // 重いエフェクトは動的インポート
 const CursorLight = dynamic(() => import('@/components/effects/CursorLight'), {
@@ -19,9 +20,18 @@ const FloatingParticles = dynamic(() => import('@/components/effects/FloatingPar
 interface PageLayoutProps {
   children: ReactNode
   showEffects?: boolean
+  title?: string
+  description?: string
+  breadcrumbs?: Breadcrumb[]
 }
 
-export default function PageLayout({ children, showEffects = true }: PageLayoutProps) {
+export default function PageLayout({ 
+  children, 
+  showEffects = true, 
+  title, 
+  description, 
+  breadcrumbs 
+}: PageLayoutProps) {
   useScrollRevealGlobal()
   const [effectsLoaded, setEffectsLoaded] = useState(false)
   
@@ -33,6 +43,7 @@ export default function PageLayout({ children, showEffects = true }: PageLayoutP
       
       return () => clearTimeout(timer)
     }
+    return undefined
   }, [showEffects])
   
   return (

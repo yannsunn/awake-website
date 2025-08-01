@@ -3,13 +3,13 @@ import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
   // Stable configuration for Vercel
   
-  // Disable ESLint and TypeScript checking during builds for faster deployment
+  // Enhanced type safety - enable proper TypeScript checking during builds
   eslint: {
-    ignoreDuringBuilds: true,
+    ignoreDuringBuilds: false,
   },
   
   typescript: {
-    ignoreBuildErrors: true,
+    ignoreBuildErrors: false,
   },
   
   // Core Web Vitals 最適化 - 限界突破パフォーマンス

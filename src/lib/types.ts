@@ -62,3 +62,16 @@ export type SubmitStatus = 'idle' | 'loading' | 'success' | 'error'
 
 // Color scheme types
 export type ColorScheme = 'purple' | 'green' | 'orange' | 'pink'
+
+// Breadcrumb navigation
+export interface Breadcrumb {
+  name: string
+  url: string
+}
+
+// Page metadata
+export interface PageMeta {
+  title?: string
+  description?: string
+  breadcrumbs?: Breadcrumb[]
+}
