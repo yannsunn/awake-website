@@ -13,7 +13,7 @@ const FixedBackground = memo(function FixedBackground() {
         fill
         quality={100}
         priority
-        className="object-contain object-center"
+        className="object-cover object-center"
         sizes="100vw"
       />
       {/* オーバーレイ - 視認性向上のため不透明度を上げる */}
