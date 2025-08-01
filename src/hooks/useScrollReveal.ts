@@ -1,21 +1,82 @@
 'use client'
 
-import { useEffect, useCallback, useRef } from 'react'
+import { useEffect, useCallback, useRef, useState } from 'react'
 
-// Core Web Vitals最適化 - 限界突破スクロールパフォーマンス
-export const useScrollReveal = () => {
+interface UseScrollRevealOptions {
+  threshold?: number
+  triggerOnce?: boolean
+}
+
+interface UseScrollRevealReturn<T extends HTMLElement> {
+  elementRef: React.MutableRefObject<T | null>
+  isVisible: boolean
+}
+
+// 🚀 WCAG 2.1 AAA準拠 スクロールリビール最適化 - 汎用版
+export const useScrollReveal = <T extends HTMLElement = HTMLDivElement>(
+  options: UseScrollRevealOptions = {}
+): UseScrollRevealReturn<T> => {
+  const { threshold = 0.1, triggerOnce = true } = options
+  const elementRef = useRef<T | null>(null)
+  const [isVisible, setIsVisible] = useState(false)
+  const observerRef = useRef<IntersectionObserver | null>(null)
+  
+  useEffect(() => {
+    const element = elementRef.current
+    if (!element) return
+    
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    
+    if (prefersReducedMotion) {
+      setIsVisible(true)
+      return
+    }
+    
+    observerRef.current = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true)
+          if (triggerOnce) {
+            observerRef.current?.disconnect()
+          }
+        } else if (!triggerOnce) {
+          setIsVisible(false)
+        }
+      },
+      { threshold }
+    )
+    
+    observerRef.current.observe(element)
+    
+    return () => {
+      observerRef.current?.disconnect()
+    }
+  }, [threshold, triggerOnce])
+  
+  return { elementRef, isVisible }
+}
+
+// 🚀 WCAG 2.1 AAA準拠 スクロールリビール最適化 - グローバル版
+export const useScrollRevealGlobal = () => {
   const ticking = useRef(false)
   const observer = useRef<IntersectionObserver | null>(null)
   
-  // パフォーマンス最適化版 - Intersection Observer API使用
+  // WCAG準拠 - 動作軽減設定対応のIntersection Observer
   const initIntersectionObserver = useCallback(() => {
-    // モダンブラウザの場合はIntersection Observer APIを使用
+    // prefers-reduced-motionの確認
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    
     if ('IntersectionObserver' in window) {
       observer.current = new IntersectionObserver(
         (entries) => {
           entries.forEach((entry) => {
             if (entry.isIntersecting) {
-              entry.target.classList.add('active')
+              // 動作軽減設定の場合は即座に表示
+              if (prefersReducedMotion) {
+                entry.target.classList.add('active', 'no-animation')
+              } else {
+                entry.target.classList.add('active')
+              }
               // 一度表示されたら監視を停止（パフォーマンス向上）
               observer.current?.unobserve(entry.target)
             }
@@ -23,8 +84,8 @@ export const useScrollReveal = () => {
         },
         {
           // より精密な閾値設定
-          threshold: [0, 0.25, 0.5, 0.75, 1],
-          rootMargin: '0px 0px -100px 0px' // 100px早めにトリガー
+          threshold: [0, 0.1, 0.25, 0.5],
+          rootMargin: '0px 0px -50px 0px' // 50px早めにトリガー
         }
       )
       

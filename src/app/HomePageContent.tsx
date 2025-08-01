@@ -12,7 +12,14 @@ import LineButton from '@/components/ui/LineButton'
 import ValueProposition from '@/components/sections/ValueProposition'
 import FAQ from '@/components/sections/FAQ'
 import LazyLoad from '@/components/ui/LazyLoad'
-import { useScrollReveal } from '@/hooks/useScrollReveal'
+import { useScrollRevealGlobal } from '@/hooks/useScrollReveal'
+import CursorLight from '@/components/effects/CursorLight'
+import TimeGradient from '@/components/effects/TimeGradient'
+import RippleContainer from '@/components/effects/RippleContainer'
+import BreathingButton from '@/components/effects/BreathingButton'
+import SoundWave from '@/components/effects/SoundWave'
+import FloatingParticles from '@/components/effects/FloatingParticles'
+import ParallaxElement from '@/components/effects/ParallaxElement'
 
 const services = [
   {
@@ -72,10 +79,15 @@ const services = [
 ]
 
 export default function HomePageContent() {
-  useScrollReveal()
+  useScrollRevealGlobal()
   
   return (
     <>
+      {/* 水平思考エフェクト */}
+      <TimeGradient />
+      <CursorLight />
+      <FloatingParticles />
+      
       <Header />
       
       <main role="main" id="main-content">
@@ -92,15 +104,17 @@ export default function HomePageContent() {
           <div className="relative z-10 w-full px-4 sm:px-6 lg:px-8">
             <div className="text-center max-w-6xl mx-auto">
               {/* Animated Tagline */}
-              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold mb-8 leading-tight">
-                <span className="bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent drop-shadow-md">
-                  高額なIT投資に、
-                </span>
-                <br />
-                <span className="text-gray-900 drop-shadow-md">
-                  もう悩まない
-                </span>
-              </h1>
+              <ParallaxElement speed={0.3}>
+                <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold mb-8 leading-tight">
+                  <span className="bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent drop-shadow-md">
+                    高額なIT投資に、
+                  </span>
+                  <br />
+                  <span className="text-gray-900 drop-shadow-md">
+                    もう悩まない
+                  </span>
+                </h1>
+              </ParallaxElement>
               
               <p className="text-xl sm:text-2xl text-gray-900 font-semibold mb-4 animate-fade-in bg-white rounded-lg px-6 py-4 inline-block shadow-2xl border-2 border-gray-200" style={{ animationDelay: '0.2s' }}>
                 {COMPANY_DATA.basic.description}
@@ -111,27 +125,33 @@ export default function HomePageContent() {
               </p>
 
               <div className="flex flex-col sm:flex-row gap-6 justify-center animate-fade-in" style={{ animationDelay: '0.6s' }}>
-                <AccessibleButton 
+                <BreathingButton 
                   href="#contact" 
                   showArrow 
                   className="btn-modern bg-gradient-to-r from-indigo-600 to-purple-600 text-white hover:from-indigo-700 hover:to-purple-700 shadow-xl" 
                   size="large"
                 >
                   今すぐ無料相談
-                </AccessibleButton>
-                <AccessibleButton 
+                </BreathingButton>
+                <BreathingButton 
                   href="#services" 
                   variant="secondary" 
                   className="bg-white border-2 border-gray-300 hover:border-indigo-500 shadow-xl" 
                   size="large"
                 >
                   サービスを見る
-                </AccessibleButton>
+                </BreathingButton>
               </div>
               
               {/* Floating LINE Button */}
               <div className="mt-8">
                 <LineButton className="shadow-xl" size="medium" variant="filled" />
+              </div>
+              
+              {/* サウンドビジュアライザー */}
+              <div className="mt-12 flex justify-center items-center gap-4">
+                <span className="text-sm text-gray-600 font-medium">リズムを感じる</span>
+                <SoundWave />
               </div>
             </div>
           </div>
@@ -158,9 +178,9 @@ export default function HomePageContent() {
               {services.map((service, index) => {
                 const Icon = service.icon
                 return (
-                  <div 
-                    key={index} 
-                    className="glass rounded-3xl p-6 md:p-8 flex flex-col justify-between hover:shadow-2xl transition-all duration-300 reveal h-full"
+                  <RippleContainer
+                    key={index}
+                    className="glass rounded-3xl p-6 md:p-8 flex flex-col justify-between hover:shadow-2xl transition-all duration-300 reveal h-full cursor-pointer"
                     style={{ animationDelay: `${index * 0.2}s` }}
                   >
                     <div>
@@ -212,7 +232,7 @@ export default function HomePageContent() {
                         ))}
                       </div>
                     </div>
-                  </div>
+                  </RippleContainer>
                 )
               })}
             </div>
