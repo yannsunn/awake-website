@@ -58,8 +58,8 @@ export const useScrollReveal = <T extends HTMLElement = HTMLDivElement>(
 
 // 🚀 WCAG 2.1 AAA準拠 スクロールリビール最適化 - グローバル版
 export const useScrollRevealGlobal = () => {
-  const ticking = useRef(false)
   const observer = useRef<IntersectionObserver | null>(null)
+  const elementsRef = useRef<Set<Element>>(new Set())
   
   // WCAG準拠 - 動作軽減設定対応のIntersection Observer
   const initIntersectionObserver = useCallback(() => {
@@ -69,28 +69,34 @@ export const useScrollRevealGlobal = () => {
     if ('IntersectionObserver' in window) {
       observer.current = new IntersectionObserver(
         (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              // 動作軽減設定の場合は即座に表示
-              if (prefersReducedMotion) {
-                entry.target.classList.add('active', 'no-animation')
-              } else {
-                entry.target.classList.add('active')
+          // requestAnimationFrameでバッチ処理
+          requestAnimationFrame(() => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                // 動作軽減設定の場合は即座に表示
+                if (prefersReducedMotion) {
+                  entry.target.classList.add('active', 'no-animation')
+                } else {
+                  entry.target.classList.add('active')
+                }
+                // 一度表示されたら監視を停止（パフォーマンス向上）
+                observer.current?.unobserve(entry.target)
+                elementsRef.current.delete(entry.target)
               }
-              // 一度表示されたら監視を停止（パフォーマンス向上）
-              observer.current?.unobserve(entry.target)
-            }
+            })
           })
         },
         {
-          // より精密な閾値設定
-          threshold: [0, 0.1, 0.25, 0.5],
+          // 閾値を簡略化
+          threshold: 0.1,
           rootMargin: '0px 0px -50px 0px' // 50px早めにトリガー
         }
       )
       
       // 既存の.reveal要素を監視
-      document.querySelectorAll('.reveal').forEach((reveal) => {
+      const reveals = document.querySelectorAll('.reveal')
+      reveals.forEach((reveal) => {
+        elementsRef.current.add(reveal)
         observer.current?.observe(reveal)
       })
       
@@ -99,45 +105,18 @@ export const useScrollRevealGlobal = () => {
     return false
   }, [])
   
-  // フォールバック用スクロールハンドラー（パフォーマンス最適化版）
-  const handleScrollOptimized = useCallback(() => {
-    if (!ticking.current) {
-      requestAnimationFrame(() => {
-        const reveals = document.querySelectorAll('.reveal:not(.active)')
-        const windowHeight = window.innerHeight
-        
-        reveals.forEach((reveal) => {
-          const elementTop = reveal.getBoundingClientRect().top
-          const elementVisible = 100
-          
-          if (elementTop < windowHeight - elementVisible) {
-            reveal.classList.add('active')
-          }
-        })
-        
-        ticking.current = false
-      })
-      ticking.current = true
-    }
-  }, [])
+  // フォールバック用 - 削除（現代のブラウザは全てIntersectionObserverをサポート）
   
   useEffect(() => {
-    // モダンブラウザではIntersection Observer APIを優先使用
-    if (!initIntersectionObserver()) {
-      // フォールバック: 最適化されたスクロールイベント
-      handleScrollOptimized() // 初期チェック
-      window.addEventListener('scroll', handleScrollOptimized, { passive: true })
-      
-      return () => {
-        window.removeEventListener('scroll', handleScrollOptimized)
-      }
-    }
+    // Intersection Observer APIを使用
+    initIntersectionObserver()
     
     // クリーンアップ
     return () => {
       observer.current?.disconnect()
+      elementsRef.current.clear()
     }
-  }, [initIntersectionObserver, handleScrollOptimized])
+  }, [initIntersectionObserver])
 }
 
 // 新機能: パララックス効果用の最適化されたスクロールフック

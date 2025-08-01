@@ -7,8 +7,10 @@ import FixedBackground from "@/components/layout/FixedBackground";
 const notoSansJP = Noto_Sans_JP({
   variable: "--font-noto-sans-jp",
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
+  weight: ["400", "700"], // 必要最小限のweightのみ使用
   display: "swap",
+  preload: true, // プリロード有効化
+  fallback: ["system-ui", "sans-serif"], // フォールバック
 });
 
 export const viewport = {

@@ -1,5 +1,6 @@
 'use client'
 
+import { useState, useEffect } from 'react'
 import Header from '@/components/layout/Header'
 import Footer from '@/components/layout/Footer'
 import { Globe, Brain, ShoppingCart } from 'lucide-react'
@@ -13,13 +14,28 @@ import ValueProposition from '@/components/sections/ValueProposition'
 import FAQ from '@/components/sections/FAQ'
 import LazyLoad from '@/components/ui/LazyLoad'
 import { useScrollRevealGlobal } from '@/hooks/useScrollReveal'
-import CursorLight from '@/components/effects/CursorLight'
-import TimeGradient from '@/components/effects/TimeGradient'
+import dynamic from 'next/dynamic'
 import RippleContainer from '@/components/effects/RippleContainer'
 import BreathingButton from '@/components/effects/BreathingButton'
-import SoundWave from '@/components/effects/SoundWave'
-import FloatingParticles from '@/components/effects/FloatingParticles'
 import ParallaxElement from '@/components/effects/ParallaxElement'
+
+// 重いエフェクトは動的インポート
+const CursorLight = dynamic(() => import('@/components/effects/CursorLight'), {
+  ssr: false,
+  loading: () => null
+})
+const TimeGradient = dynamic(() => import('@/components/effects/TimeGradient'), {
+  ssr: false,
+  loading: () => null
+})
+const SoundWave = dynamic(() => import('@/components/effects/SoundWave'), {
+  ssr: false,
+  loading: () => null
+})
+const FloatingParticles = dynamic(() => import('@/components/effects/FloatingParticles'), {
+  ssr: false,
+  loading: () => null
+})
 
 const services = [
   {
@@ -80,23 +96,33 @@ const services = [
 
 export default function HomePageContent() {
   useScrollRevealGlobal()
+  const [showEffects, setShowEffects] = useState(false)
+  
+  useEffect(() => {
+    // エフェクトを遅延表示
+    const timer = setTimeout(() => {
+      setShowEffects(true)
+    }, 1000)
+    
+    return () => clearTimeout(timer)
+  }, [])
   
   return (
     <>
-      {/* 水平思考エフェクト */}
-      <TimeGradient />
-      <CursorLight />
-      <FloatingParticles />
+      {/* 水平思考エフェクト - 遅延読み込み */}
+      {showEffects && (
+        <>
+          <TimeGradient />
+          <CursorLight />
+          <FloatingParticles />
+        </>
+      )}
       
       <Header />
       
       <main role="main" id="main-content">
         {/* Hero Section - Creative & Bold */}
         <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 sm:pt-24 md:pt-32 pb-20">
-          {/* Animated Blob Background */}
-          <div className="absolute inset-0 overflow-hidden pointer-events-none">
-            <div className="blob" />
-          </div>
           
           {/* コンテンツ背景 - 背景を透かせてテキストは背景付きで対応 */}
           <div className="absolute inset-0 bg-white/60 backdrop-blur-sm" />
