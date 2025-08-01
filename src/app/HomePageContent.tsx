@@ -1,8 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
-import Header from '@/components/layout/Header'
-import Footer from '@/components/layout/Footer'
+import PageLayout from '@/components/layout/PageLayout'
 import { Globe, Brain, ShoppingCart } from 'lucide-react'
 import { COMPANY_DATA } from '@/lib/company-data'
 import AccessibleButton from '@/components/ui/AccessibleButton'
@@ -13,26 +11,13 @@ import LineButton from '@/components/ui/LineButton'
 import ValueProposition from '@/components/sections/ValueProposition'
 import FAQ from '@/components/sections/FAQ'
 import LazyLoad from '@/components/ui/LazyLoad'
-import { useScrollRevealGlobal } from '@/hooks/useScrollReveal'
-import dynamic from 'next/dynamic'
 import RippleContainer from '@/components/effects/RippleContainer'
 import BreathingButton from '@/components/effects/BreathingButton'
 import ParallaxElement from '@/components/effects/ParallaxElement'
 
-// 重いエフェクトは動的インポート
-const CursorLight = dynamic(() => import('@/components/effects/CursorLight'), {
-  ssr: false,
-  loading: () => null
-})
-const TimeGradient = dynamic(() => import('@/components/effects/TimeGradient'), {
-  ssr: false,
-  loading: () => null
-})
+import dynamic from 'next/dynamic'
+
 const SoundWave = dynamic(() => import('@/components/effects/SoundWave'), {
-  ssr: false,
-  loading: () => null
-})
-const FloatingParticles = dynamic(() => import('@/components/effects/FloatingParticles'), {
   ssr: false,
   loading: () => null
 })
@@ -95,32 +80,8 @@ const services = [
 ]
 
 export default function HomePageContent() {
-  useScrollRevealGlobal()
-  const [showEffects, setShowEffects] = useState(false)
-  
-  useEffect(() => {
-    // エフェクトを遅延表示
-    const timer = setTimeout(() => {
-      setShowEffects(true)
-    }, 1000)
-    
-    return () => clearTimeout(timer)
-  }, [])
-  
   return (
-    <>
-      {/* 水平思考エフェクト - 遅延読み込み */}
-      {showEffects && (
-        <>
-          <TimeGradient />
-          <CursorLight />
-          <FloatingParticles />
-        </>
-      )}
-      
-      <Header />
-      
-      <main role="main" id="main-content">
+    <PageLayout>
         {/* Hero Section - Creative & Bold */}
         <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 sm:pt-24 md:pt-32 pb-20">
           
@@ -331,9 +292,6 @@ export default function HomePageContent() {
             </div>
           </div>
         </section>
-      </main>
-      
-      <Footer />
-    </>
+    </PageLayout>
   )
 }

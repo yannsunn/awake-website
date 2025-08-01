@@ -4,7 +4,7 @@ import { notFound } from 'next/navigation'
 import { ServiceHero } from '@/components/sections/ServiceHero'
 import { ProcessSteps } from '@/components/sections/ProcessSteps'
 import { FeatureGrid } from '@/components/sections/FeatureGrid'
-import PageTemplate from '@/components/layout/PageTemplate'
+import PageLayout from '@/components/layout/PageLayout'
 import { COMPANY_DATA } from '@/lib/company-data'
 import { STYLES } from '@/lib/constants'
 import { cn } from '@/lib/utils'
@@ -223,7 +223,7 @@ export default async function ServicePage(
   // AIコンサルティングページのカスタマイズ
   if (slug === 'ai') {
     return (
-      <PageTemplate>
+      <PageLayout>
         <ServiceHero
           title={service.subtitle || service.title}
           description={service.description}
@@ -261,14 +261,14 @@ export default async function ServicePage(
         <UseCases />
         <AIFaq />
         <WhyNowCTA />
-      </PageTemplate>
+      </PageLayout>
     )
   }
 
   // Amazon代理店サービスページのカスタマイズ
   if (slug === 'ec') {
     return (
-      <PageTemplate>
+      <PageLayout>
         <ServiceHero
           title={service.subtitle || service.title}
           description={service.description}
@@ -310,13 +310,13 @@ export default async function ServicePage(
         <SuccessStories />
         <AmazonFAQ />
         <AmazonCTA />
-      </PageTemplate>
+      </PageLayout>
     )
   }
 
   // その他のサービスページ（既存のレイアウト）
   return (
-    <PageTemplate>
+    <PageLayout>
       <ServiceHero
         title={service.title}
         description={service.description}
@@ -358,6 +358,6 @@ export default async function ServicePage(
           </Link>
         </div>
       </section>
-    </PageTemplate>
+    </PageLayout>
   )
 }

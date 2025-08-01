@@ -58,7 +58,7 @@ export const useCursorEffect = () => {
         cancelAnimationFrame(animationRef.current)
       }
     }
-  }, [isPointerDevice, updateCursorPosition])
+  }, [isPointerDevice, updateCursorPosition, prefersReducedMotion])
   
   return {
     cursorPosition,

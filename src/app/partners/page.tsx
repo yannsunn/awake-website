@@ -1,7 +1,8 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { COMPANY_DATA } from '@/lib/company-data'
-import PageTemplate, { ContentSection } from '@/components/layout/PageTemplate'
+import PageLayout from '@/components/layout/PageLayout'
+import { ContentSection } from '@/components/layout/PageTemplate'
 import { STYLES } from '@/lib/constants'
 import { Handshake, Award, Globe, Shield } from 'lucide-react'
 import LineButton from '@/components/ui/LineButton'
@@ -144,7 +145,7 @@ export default function PartnersPage() {
   ]
 
   return (
-    <PageTemplate breadcrumbs={breadcrumbs}>
+    <PageLayout>
       {/* Hero Section */}
       <ContentSection className="bg-transparent">
         <div className="text-center">
@@ -381,7 +382,7 @@ export default function PartnersPage() {
             }
           ].map((faq, index) => (
             <div key={index} className="bg-white-overlay rounded-xl p-6">
-              <h3 className={STYLES.heading.h3.normal + " mb-3"}>
+              <h3 className={STYLES.heading.h3.card + " mb-3"}>
                 Q: {faq.q}
               </h3>
               <p className={STYLES.text.body.medium}>
@@ -462,6 +463,6 @@ export default function PartnersPage() {
           
         </div>
       </ContentSection>
-    </PageTemplate>
+    </PageLayout>
   )
 }

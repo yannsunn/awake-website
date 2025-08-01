@@ -1,7 +1,8 @@
 import type { Metadata } from 'next'
 import { Plus, Minus } from 'lucide-react'
 import { COMPANY_DATA } from '@/lib/company-data'
-import PageTemplate, { ContentSection } from '@/components/layout/PageTemplate'
+import PageLayout from '@/components/layout/PageLayout'
+import { ContentSection } from '@/components/layout/PageTemplate'
 import AccessibleButton from '@/components/ui/AccessibleButton'
 import { STYLES } from '@/lib/constants'
 import { createFAQSchema } from '@/lib/enhanced-schema'
@@ -125,11 +126,7 @@ export default function FAQPage() {
   ]
 
   return (
-    <PageTemplate
-      title="よくある質問"
-      description="株式会社Awakeのサービスに関するよくある質問"
-      breadcrumbs={breadcrumbs}
-    >
+    <PageLayout>
       {/* FAQ構造化データ */}
       <script
         type="application/ld+json"
@@ -217,6 +214,6 @@ export default function FAQPage() {
           </div>
         </div>
       </ContentSection>
-    </PageTemplate>
+    </PageLayout>
   )
 }

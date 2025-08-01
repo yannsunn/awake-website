@@ -38,7 +38,10 @@ const UnifiedCard = memo(function UnifiedCard({
             <div className="text-3xl">{icon}</div>
           ) : (
             <div className="w-12 h-12 bg-gray-overlay rounded-lg flex items-center justify-center">
-              {icon && <icon.constructor className="w-6 h-6 text-gray-700" />}
+              {(() => {
+                const IconComponent = icon as LucideIcon;
+                return <IconComponent className="w-6 h-6 text-gray-700" />;
+              })()}
             </div>
           )}
         </div>
