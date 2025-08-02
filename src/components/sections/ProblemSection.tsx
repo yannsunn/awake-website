@@ -12,29 +12,30 @@ const ProblemSection = memo(function ProblemSection() {
   ]
 
   return (
-    <section className="py-16 md:py-24 bg-gray-overlay">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-16 md:py-24 relative">
+      <div className="absolute inset-0 bg-gray-900/60 backdrop-blur-sm" />
+      <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <h2 className={STYLES.heading.h2.section + " mb-4"}>
+          <h2 className={STYLES.heading.h2.section + " mb-4"} style={{ textShadow: '0 2px 4px rgba(0, 0, 0, 0.8)' }}>
             こんな課題を抱えていませんか？
           </h2>
-          <p className={STYLES.text.body.large}>
+          <p className={STYLES.text.body.large + " bg-gray-800/90 rounded-lg px-6 py-3 inline-block shadow-xl"} style={{ textShadow: '0 1px 2px rgba(0, 0, 0, 0.8)' }}>
             毎日の業務に、こんな「もったいない」が潜んでいる
           </p>
         </div>
         
-        <div className="bg-white-overlay rounded-2xl p-8 shadow-sm">
+        <div className="bg-gray-800/80 backdrop-blur-sm rounded-2xl p-8 shadow-lg border border-gray-700">
           <ul className="space-y-4">
             {problems.map((problem, index) => (
               <li key={index} className="flex items-start">
-                <span className="text-green-600 text-xl mr-3 flex-shrink-0">✓</span>
-                <span className={STYLES.text.body.medium}>{problem}</span>
+                <span className="text-indigo-400 text-xl mr-3 flex-shrink-0">✓</span>
+                <span className={STYLES.text.body.medium + " text-gray-100"}>{problem}</span>
               </li>
             ))}
           </ul>
           
-          <div className="mt-8 p-6 bg-gray-overlay rounded-lg text-center">
-            <p className={STYLES.text.emphasis.strong + " text-xl"}>
+          <div className="mt-8 p-6 bg-indigo-600/20 rounded-lg text-center border border-indigo-500/30">
+            <p className={STYLES.text.emphasis.strong + " text-xl text-white"} style={{ textShadow: '0 1px 2px rgba(0, 0, 0, 0.8)' }}>
               これらすべて、AIが解決します。
             </p>
           </div>
