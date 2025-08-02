@@ -55,16 +55,6 @@
     line-height: 1.7;
   }
   
-  /* 背景画像の事前読み込み - 限界突破 */
-  body::before {
-    content: '';
-    position: fixed;
-    top: -9999px;
-    left: -9999px;
-    background-image: url('/assets/images/hero-background.png');
-    width: 1px;
-    height: 1px;
-  }
 
   h1, h2, h3, h4, h5, h6 {
     @apply font-bold tracking-tight;

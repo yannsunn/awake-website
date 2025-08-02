@@ -50,18 +50,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ja" suppressHydrationWarning>
-      <head>
-        <link rel="preload" href="/assets/images/hero-background.png" as="image" />
-        <style dangerouslySetInnerHTML={{ __html: `
-          /* 限界突破: 背景画像を即座に表示 */
-          .fixed-background {
-            background-image: url('/assets/images/hero-background.png') !important;
-            background-size: contain !important;
-            background-position: center !important;
-            background-repeat: no-repeat !important;
-          }
-        ` }} />
-      </head>
       <body className={`${notoSansJP.variable} font-sans antialiased bg-gray-50`} suppressHydrationWarning>
         {/* WCAG 2.1 AAA準拠 スキップナビゲーション強化 */}
         <div className="sr-only focus-within:not-sr-only focus-within:fixed focus-within:top-0 focus-within:left-0 focus-within:z-50 focus-within:bg-gray-900 focus-within:p-4">
