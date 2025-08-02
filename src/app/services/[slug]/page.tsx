@@ -324,35 +324,38 @@ export default async function ServicePage(
         ctaHref="/#contact"
       />
       
-      <section className="py-16 md:py-24 bg-gray-800/30">
-        <div className="w-full px-4 sm:px-6 lg:px-8">
-          <h2 className={cn(STYLES.heading.h2.section, "text-white text-center mb-12")}>
+      <section className="py-16 md:py-24 relative">
+        <div className="absolute inset-0 bg-gray-800/30 backdrop-blur-sm" />
+        <div className="relative z-10 w-full px-4 sm:px-6 lg:px-8">
+          <h2 className={cn(STYLES.heading.h2.section, "text-white text-center mb-12")} style={{ textShadow: '0 2px 4px rgba(0, 0, 0, 0.8)' }}>
             サービスの特徴
           </h2>
           <FeatureGrid features={service.features} />
         </div>
       </section>
       
-      <section className="py-16 md:py-24 bg-gray-900/60">
-        <div className="w-full px-4 sm:px-6 lg:px-8">
-          <h2 className={cn(STYLES.heading.h2.section, "text-white text-center mb-12")}>
+      <section className="py-16 md:py-24 relative">
+        <div className="absolute inset-0 bg-gray-900/60 backdrop-blur-sm" />
+        <div className="relative z-10 w-full px-4 sm:px-6 lg:px-8">
+          <h2 className={cn(STYLES.heading.h2.section, "text-white text-center mb-12")} style={{ textShadow: '0 2px 4px rgba(0, 0, 0, 0.8)' }}>
             導入までの流れ
           </h2>
           <ProcessSteps title="" steps={service.process} />
         </div>
       </section>
       
-      <section className="py-16 md:py-24 bg-gray-800/30">
-        <div className="w-full px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className={cn(STYLES.heading.h2.section, "text-white mb-8")}>
+      <section className="py-16 md:py-24 relative">
+        <div className="absolute inset-0 bg-gray-800/30 backdrop-blur-sm" />
+        <div className="relative z-10 w-full px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className={cn(STYLES.heading.h2.section, "text-white mb-8")} style={{ textShadow: '0 2px 4px rgba(0, 0, 0, 0.8)' }}>
             まずはお気軽にご相談ください
           </h2>
-          <p className="text-lg text-gray-200 mb-8">
+          <p className="text-lg text-white mb-8 bg-gray-800/90 rounded-lg px-6 py-3 inline-block shadow-xl" style={{ textShadow: '0 1px 2px rgba(0, 0, 0, 0.8)' }}>
             お客様のビジネスに最適なソリューションをご提案いたします
           </p>
           <Link
             href="/#contact"
-            className="inline-flex items-center justify-center px-8 py-4 bg-white text-gray-900 font-medium rounded-lg hover:bg-gray-200"
+            className="inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-indigo-600 to-purple-600 text-white hover:from-indigo-700 hover:to-purple-700 shadow-xl font-bold rounded-lg transition-all"
           >
             お問い合わせはこちら
           </Link>
