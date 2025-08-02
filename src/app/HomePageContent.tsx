@@ -227,17 +227,15 @@ export default function HomePageContent() {
         </section>
 
         {/* Value Proposition Section */}
-        <LazyLoad offset={300}>
-          <ValueProposition />
-        </LazyLoad>
+        <ValueProposition />
 
         {/* Company Mission Section */}
         <section className="py-16 sm:py-20 lg:py-24 relative">
           <div className="absolute inset-0 bg-gray-800/95 backdrop-blur-md" />
           <div className="relative z-10 w-full px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-8 sm:mb-12 lg:mb-16">
-              <h2 className="text-4xl sm:text-5xl font-bold mb-4">
-                <span className="bg-gradient-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent">私たちの想い</span>
+              <h2 className="text-4xl sm:text-5xl font-bold mb-4 text-white">
+                私たちの想い
               </h2>
             </div>
             
@@ -262,17 +260,15 @@ export default function HomePageContent() {
         </section>
 
         {/* FAQ Section */}
-        <LazyLoad offset={300}>
-          <FAQ />
-        </LazyLoad>
+        <FAQ />
         
         {/* Contact Section */}
         <section id="contact" className="py-16 sm:py-20 lg:py-24 relative">
           <div className="absolute inset-0 bg-gray-900/95 backdrop-blur-md" />
           <div className="relative z-10 w-full px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-8 sm:mb-12 lg:mb-16">
-              <h2 className="text-4xl sm:text-5xl font-bold mb-6">
-                <span className="bg-gradient-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent">まずは、お話を聞かせてください</span>
+              <h2 className="text-4xl sm:text-5xl font-bold mb-6 text-white">
+                まずは、お話を聞かせてください
               </h2>
               <p className="text-xl text-gray-100 font-medium mb-4">
                 無料相談で、あなたのビジネスの可能性を探る
