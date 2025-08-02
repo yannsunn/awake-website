@@ -78,8 +78,6 @@ export default function HomePageContent() {
         {/* Hero Section - Creative & Bold */}
         <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16 sm:pt-24 md:pt-32 pb-16 sm:pb-20">
           
-          {/* コンテンツ背景をフッターと同じダーク設定に */}
-          <div className="absolute inset-0 bg-gray-900/95 backdrop-blur-md" />
           
           <div className={cn('relative z-10 w-full', SPACING.section.container)}>
             <div className="text-center max-w-6xl mx-auto">
@@ -144,7 +142,7 @@ export default function HomePageContent() {
 
         {/* Services Section - Bento Grid */}
         <section id="services" className={cn(SPACING.section.padding, 'relative')}>
-          <div className="absolute inset-0 bg-gray-900/95 backdrop-blur-md" />
+          <div className="absolute inset-0 bg-gray-900/30 backdrop-blur-sm" />
           <div className={cn('relative z-10 w-full', SPACING.section.container)}>
             <div className="text-center mb-12 lg:mb-16 reveal">
               <h2 className="text-4xl sm:text-5xl font-extrabold mb-4">
@@ -229,7 +227,7 @@ export default function HomePageContent() {
 
         {/* Company Mission Section */}
         <section className="py-16 sm:py-20 lg:py-24 relative">
-          <div className="absolute inset-0 bg-gray-800/95 backdrop-blur-md" />
+          <div className="absolute inset-0 bg-gray-800/30 backdrop-blur-sm" />
           <div className="relative z-10 w-full px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-8 sm:mb-12 lg:mb-16">
               <h2 className="text-4xl sm:text-5xl font-bold mb-4 text-white">
@@ -262,7 +260,7 @@ export default function HomePageContent() {
         
         {/* Contact Section */}
         <section id="contact" className="py-16 sm:py-20 lg:py-24 relative">
-          <div className="absolute inset-0 bg-gray-900/95 backdrop-blur-md" />
+          <div className="absolute inset-0 bg-gray-900/30 backdrop-blur-sm" />
           <div className="relative z-10 w-full px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-8 sm:mb-12 lg:mb-16">
               <h2 className="text-4xl sm:text-5xl font-bold mb-6 text-white">
