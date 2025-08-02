@@ -51,7 +51,16 @@ export default function RootLayout({
   return (
     <html lang="ja" suppressHydrationWarning>
       <head>
-        <link rel="preload" href="/assets/images/hero-background.png" as="image" />
+        <link rel="preload" href="/assets/images/hero-background.png" as="image" fetchpriority="high" />
+        <style dangerouslySetInnerHTML={{ __html: `
+          /* 限界突破: 背景画像を即座に表示 */
+          .fixed-background {
+            background-image: url('/assets/images/hero-background.png') !important;
+            background-size: contain !important;
+            background-position: center !important;
+            background-repeat: no-repeat !important;
+          }
+        ` }} />
       </head>
       <body className={`${notoSansJP.variable} font-sans antialiased bg-gray-50`} suppressHydrationWarning>
         {/* WCAG 2.1 AAA準拠 スキップナビゲーション強化 */}
