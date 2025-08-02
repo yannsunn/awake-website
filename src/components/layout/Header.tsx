@@ -112,8 +112,8 @@ const Header = memo(function Header() {
       <header 
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 will-change-transform ${
           isScrolled 
-            ? 'bg-gray-900/90 backdrop-blur-lg shadow-xl border-b-2 border-gray-700/80' 
-            : 'bg-gray-900/85 backdrop-blur-md border-b border-gray-700/60'
+            ? 'bg-gray-900/80 backdrop-blur-md shadow-xl border-b border-gray-700' 
+            : 'bg-gray-900/60 backdrop-blur-sm border-b border-gray-700/50'
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -125,7 +125,7 @@ const Header = memo(function Header() {
                 className="flex items-center group"
                 aria-label={`${COMPANY_DATA.basic.name} ホーム`}
               >
-                <span className={`${STYLES.heading.h2.subsection} text-white group-hover:text-gray-100 transition-colors`}>
+                <span className={`${STYLES.heading.h2.subsection} text-white group-hover:text-indigo-300 transition-colors`} style={{ textShadow: '0 2px 4px rgba(0, 0, 0, 0.8)' }}>
                   {COMPANY_DATA.basic.name}
                 </span>
               </Link>
@@ -141,7 +141,7 @@ const Header = memo(function Header() {
                     <div key={index} className="relative" ref={servicesRef}>
                       <button
                         onClick={toggleServices}
-                        className={`flex items-center px-4 py-2 min-h-[48px] rounded-lg text-white hover:bg-gray-100 transition-all duration-300 ease-out hover:scale-[1.02] focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-blue-500 focus-visible:ring-offset-3 ${STYLES.text.body.medium}`}
+                        className={`flex items-center px-4 py-2 min-h-[48px] rounded-lg text-white hover:bg-gray-800/50 transition-all duration-300 ease-out hover:scale-[1.02] focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-blue-500 focus-visible:ring-offset-3 ${STYLES.text.body.medium}`} style={{ textShadow: '0 1px 2px rgba(0, 0, 0, 0.8)' }}
                         aria-expanded={isServicesOpen}
                         aria-haspopup="true"
                         type="button"
@@ -151,13 +151,13 @@ const Header = memo(function Header() {
                       </button>
                       
                       {isServicesOpen && (
-                        <div className="absolute top-full left-0 mt-2 w-80 bg-white/95 backdrop-blur-xl rounded-xl shadow-2xl border border-gray-200/60 overflow-hidden animate-slide-up z-50 before:absolute before:inset-0 before:bg-gradient-to-br before:from-white/20 before:to-transparent before:pointer-events-none">
+                        <div className="absolute top-full left-0 mt-2 w-80 bg-gray-800/95 backdrop-blur-xl rounded-xl shadow-2xl border border-gray-700 overflow-hidden animate-slide-up z-50">
                           {item.items?.map((service, serviceIndex) => (
                             <Link
                               key={service.href}
                               href={service.href}
-                              className={`block px-6 py-4 min-h-[56px] hover:bg-indigo-50/80 transition-all duration-300 ease-out focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-blue-500 focus-visible:ring-offset-3 ${
-                                serviceIndex !== item.items.length - 1 ? 'border-b border-gray-200' : ''
+                              className={`block px-6 py-4 min-h-[56px] hover:bg-gray-700/50 transition-all duration-300 ease-out focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-blue-500 focus-visible:ring-offset-3 ${
+                                serviceIndex !== item.items.length - 1 ? 'border-b border-gray-700' : ''
                               }`}
                               onClick={() => setIsServicesOpen(false)}
                               {...(service.href.startsWith('http') && {
@@ -166,10 +166,10 @@ const Header = memo(function Header() {
                                 'aria-label': `${service.title} - 新しいウィンドウで開きます`
                               })}
                             >
-                              <div className={`${STYLES.text.emphasis.medium} mb-1`}>
+                              <div className={`${STYLES.text.emphasis.medium} mb-1 text-white`} style={{ textShadow: '0 1px 2px rgba(0, 0, 0, 0.5)' }}>
                                 {service.title}
                               </div>
-                              <div className={`${STYLES.text.description.small} text-gray-200`}>
+                              <div className={`${STYLES.text.description.small} text-gray-300`}>
                                 {service.description}
                               </div>
                             </Link>
@@ -186,9 +186,9 @@ const Header = memo(function Header() {
                     href={item.href} 
                     className={`px-4 py-2 min-h-[48px] rounded-lg transition-all duration-300 ease-out hover:scale-[1.02] focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-blue-500 focus-visible:ring-offset-3 ${STYLES.text.body.medium} ${
                       isActive 
-                        ? 'text-white bg-gray-100 font-bold' 
-                        : 'text-white hover:bg-gray-100'
-                    }`}
+                        ? 'text-white bg-gray-800/80 font-bold border border-gray-700' 
+                        : 'text-white hover:bg-gray-800/50'
+                    }`} style={{ textShadow: '0 1px 2px rgba(0, 0, 0, 0.8)' }}
                     aria-current={isActive ? 'page' : undefined}
                   >
                     {item.title}
