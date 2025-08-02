@@ -43,7 +43,7 @@ export default function TokushoPage() {
               <div className="space-y-8">
                 <section>
                   <h2 className={cn(STYLES.heading.h2.subsection, "text-white mb-4")} style={TEXT_SHADOW.body}>販売業者</h2>
-                  <div className={CARD_STYLES.standard} p-6">
+                  <div className={CARD_STYLES.standard + " p-6"}>
                     <dl className="grid grid-cols-1 gap-4">
                       <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                         <dt className={STYLES.text.label.primary + " text-white"} style={TEXT_SHADOW.body}>会社名</dt>
@@ -88,7 +88,7 @@ export default function TokushoPage() {
                     <p style={TEXT_SHADOW.body}>
                       各サービスの料金は、弊社ウェブサイトの各サービスページに記載された金額となります。
                     </p>
-                    <div className={CARD_STYLES.standard} p-6">
+                    <div className={CARD_STYLES.standard + " p-6"}>
                       <h3 className="font-semibold text-white mb-3" style={TEXT_SHADOW.body}>主要サービス料金</h3>
                       <ul className="space-y-2 text-sm" style={TEXT_SHADOW.body}>
                         <li>• ホームページ制作: {COMPANY_DATA.services.details.web.pricing.standard.price}〜</li>
@@ -141,7 +141,7 @@ export default function TokushoPage() {
                 <section>
                   <h2 className={cn(STYLES.heading.h2.subsection, "text-white mb-4")} style={TEXT_SHADOW.body}>返品・交換・キャンセルについて</h2>
                   <div className="text-gray-200 leading-relaxed space-y-4">
-                    <div className={CARD_STYLES.standard} p-6">
+                    <div className={CARD_STYLES.standard + " p-6"}>
                       <h3 className="font-semibold text-white mb-3" style={TEXT_SHADOW.body}>重要事項</h3>
                       <p className="text-sm" style={TEXT_SHADOW.body}>
                         弊社が提供するサービスは、お客様の個別要件に基づくオーダーメイドサービスのため、
@@ -190,7 +190,7 @@ export default function TokushoPage() {
                   <p className="text-gray-200 leading-relaxed" style={TEXT_SHADOW.body}>
                     特定商取引法に基づく表記に関するお問い合わせは、下記の連絡先までお願いいたします。
                   </p>
-                  <div className="mt-4 p-6 ${CARD_STYLES.standard}">
+                  <div className={`mt-4 p-6 ${CARD_STYLES.standard}`}>
                     <p className="font-bold text-white" style={TEXT_SHADOW.body}>{COMPANY_DATA.basic.name}</p>
                     <p className="text-gray-200" style={TEXT_SHADOW.body}>担当者: {COMPANY_DATA.basic.ceo}</p>
                     <p className="text-gray-200" style={TEXT_SHADOW.body}>{COMPANY_DATA.contact.address.postal} {COMPANY_DATA.contact.address.full}</p>
