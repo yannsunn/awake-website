@@ -7,7 +7,7 @@ import AccessibleButton from '@/components/ui/AccessibleButton'
 import { STYLES } from '@/lib/constants'
 import { createFAQSchema } from '@/lib/enhanced-schema'
 import LineButton from '@/components/ui/LineButton'
-import { UltraHero, UltraSection, UltraCTA } from '@/components/ui/UltraSection'
+import UltraSection, { UltraHero, UltraCTA } from '@/components/ui/UltraSection'
 import { TEXT_SHADOW, CARD_STYLES } from '@/lib/ultra-styles'
 
 export const metadata: Metadata = {
