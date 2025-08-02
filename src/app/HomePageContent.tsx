@@ -85,13 +85,11 @@ export default function HomePageContent() {
             <div className="text-center max-w-6xl mx-auto">
               {/* Animated Tagline */}
               <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold mb-6 sm:mb-8 leading-tight">
-                <NeonGlow variant="purple" animate intensity="light">
-                  <span className="text-white font-extrabold drop-shadow-lg">
-                    高額なIT投資に、
-                  </span>
-                </NeonGlow>
+                <span className="text-white font-extrabold">
+                  高額なIT投資に、
+                </span>
                 <br />
-                <span className="text-white drop-shadow-md">
+                <span className="text-white">
                   もう悩まない
                 </span>
               </h1>
