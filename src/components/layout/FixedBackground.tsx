@@ -29,7 +29,7 @@ const FixedBackground = memo(function FixedBackground() {
         alt=""
         style={{ display: 'none' }}
         decoding="sync"
-        fetchPriority="high"
+        fetchpriority="high"
       />
     </>
   )
