@@ -235,22 +235,24 @@ export default async function ServicePage(
         
         <ProblemSection />
         
-        <section className="py-16 md:py-24 bg-gray-900/60">
-          <div className="w-full px-4 sm:px-6 lg:px-8">
-            <h2 className={cn(STYLES.heading.h2.section, "text-white text-center mb-12")}>
+        <section className="py-16 md:py-24 relative">
+          <div className="absolute inset-0 bg-gray-900/60 backdrop-blur-sm" />
+          <div className="relative z-10 w-full px-4 sm:px-6 lg:px-8">
+            <h2 className={cn(STYLES.heading.h2.section, "text-white text-center mb-12")} style={{ textShadow: '0 2px 4px rgba(0, 0, 0, 0.8)' }}>
               Awakeが選ばれる4つの理由
             </h2>
             <FeatureGrid features={service.features} />
           </div>
         </section>
         
-        <section className="py-16 md:py-24 bg-gray-800/30">
-          <div className="w-full px-4 sm:px-6 lg:px-8">
+        <section className="py-16 md:py-24 relative">
+          <div className="absolute inset-0 bg-gray-800/30 backdrop-blur-sm" />
+          <div className="relative z-10 w-full px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
-              <h2 className={cn(STYLES.heading.h2.section, "text-white mb-4")}>
+              <h2 className={cn(STYLES.heading.h2.section, "text-white mb-4")} style={{ textShadow: '0 2px 4px rgba(0, 0, 0, 0.8)' }}>
                 導入プロセス
               </h2>
-              <p className={STYLES.text.body.large + " text-gray-200"}>
+              <p className={STYLES.text.body.large + " text-white bg-gray-800/90 rounded-lg px-6 py-3 inline-block shadow-xl"} style={{ textShadow: '0 1px 2px rgba(0, 0, 0, 0.8)' }}>
                 たった4ステップで、業務が劇的に変わる
               </p>
             </div>
@@ -282,9 +284,10 @@ export default async function ServicePage(
         <WhyAmazon />
         <RiskFree />
         
-        <section className="py-16 md:py-24 bg-gray-800/30">
-          <div className="w-full px-4 sm:px-6 lg:px-8">
-            <h2 className={cn(STYLES.heading.h2.section, "text-white text-center mb-12")}>
+        <section className="py-16 md:py-24 relative">
+          <div className="absolute inset-0 bg-gray-800/30 backdrop-blur-sm" />
+          <div className="relative z-10 w-full px-4 sm:px-6 lg:px-8">
+            <h2 className={cn(STYLES.heading.h2.section, "text-white text-center mb-12")} style={{ textShadow: '0 2px 4px rgba(0, 0, 0, 0.8)' }}>
               私たちが選ばれる4つの理由
             </h2>
             <FeatureGrid features={service.features} />
@@ -293,13 +296,14 @@ export default async function ServicePage(
         
         <AmazonSupport />
         
-        <section className="py-16 md:py-24 bg-gray-900/60">
-          <div className="w-full px-4 sm:px-6 lg:px-8">
+        <section className="py-16 md:py-24 relative">
+          <div className="absolute inset-0 bg-gray-900/60 backdrop-blur-sm" />
+          <div className="relative z-10 w-full px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
-              <h2 className={cn(STYLES.heading.h2.section, "text-white mb-4")}>
+              <h2 className={cn(STYLES.heading.h2.section, "text-white mb-4")} style={{ textShadow: '0 2px 4px rgba(0, 0, 0, 0.8)' }}>
                 導入の流れ
               </h2>
-              <p className={STYLES.text.body.large + " text-gray-200"}>
+              <p className={STYLES.text.body.large + " text-white bg-gray-800/90 rounded-lg px-6 py-3 inline-block shadow-xl"} style={{ textShadow: '0 1px 2px rgba(0, 0, 0, 0.8)' }}>
                 最短2週間で販売開始
               </p>
             </div>
