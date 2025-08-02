@@ -22,7 +22,7 @@ export default function HolographicCard({
   const baseStyles = {
     default: STYLES.card.default,
     featured: STYLES.card.featured,
-    minimal: 'bg-white/60 backdrop-blur-sm rounded-xl p-6 border border-gray-200/30'
+    minimal: 'bg-gray-800/80 backdrop-blur-sm rounded-xl p-6 border border-gray-700 shadow-lg'
   }
 
   return (

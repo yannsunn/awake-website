@@ -37,14 +37,14 @@ export function FeatureGrid({
         )}
         <div className={cn('grid gap-8', gridColumns[columns])}>
           {features.map((feature, index) => (
-            <div key={index} className="text-center">
-              <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-2xl bg-gray-900 text-white">
+            <div key={index} className="text-center bg-gray-800/80 backdrop-blur-sm rounded-xl p-6 shadow-lg border border-gray-700">
+              <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-2xl bg-indigo-600/20 text-indigo-300 border border-indigo-500/30">
                 {feature.icon}
               </div>
-              <h3 className="mb-2 text-xl font-semibold text-white">
+              <h3 className="mb-2 text-xl font-semibold text-white" style={{ textShadow: '0 1px 2px rgba(0, 0, 0, 0.5)' }}>
                 {feature.title}
               </h3>
-              <p className="text-gray-300 leading-relaxed">
+              <p className="text-gray-200 leading-relaxed">
                 {feature.description}
               </p>
             </div>
