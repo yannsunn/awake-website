@@ -159,45 +159,43 @@ export default function HomePageContent() {
                 return (
                   <HolographicCard
                     key={index}
-                    className="p-6 md:p-8 flex flex-col justify-between h-full cursor-pointer bg-gray-800/90 backdrop-blur-md border-gray-700"
-                    glowOnHover
+                    className="p-8 md:p-10 flex flex-col justify-between h-full cursor-pointer"
+                    variant="featured"
                   >
                     <div>
                       {/* Icon with gradient background */}
                       <div className="relative">
-                        <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-indigo-600 to-purple-700 flex items-center justify-center mb-6 shadow-xl relative z-10" style={{ animationDelay: `${index * 0.3}s` }}>
-                          <Icon className="w-10 h-10 text-white drop-shadow-lg" />
+                        <div className="w-24 h-24 rounded-3xl bg-gradient-to-br from-indigo-500/20 to-purple-600/20 border-2 border-indigo-500/30 flex items-center justify-center mb-8 shadow-2xl relative z-10 backdrop-blur-sm">
+                          <Icon className="w-12 h-12 text-indigo-300" />
                         </div>
-                        <div className={cn(
-                          "absolute inset-0 rounded-2xl blur-xl opacity-30 -z-10",
-                          index === 0 ? 'bg-cyan-500' : index === 1 ? 'bg-purple-500' : 'bg-pink-500'
-                        )} style={{ transform: 'scale(1.2)' }} />
                       </div>
                       
-                      <h3 className="text-2xl font-bold mb-4 text-white">
+                      <h3 className="text-2xl font-bold mb-4 text-white" style={{ textShadow: '0 2px 4px rgba(0, 0, 0, 0.5)' }}>
                         {service.title}
                       </h3>
-                      <p className="text-gray-200 mb-4 font-medium">
+                      <p className="text-gray-100 mb-4 font-medium leading-relaxed">
                         {service.description}
                       </p>
-                      <p className="text-sm text-gray-300 mb-6">
+                      <p className="text-sm text-gray-200 mb-6 leading-relaxed">
                         {service.longDescription}
                       </p>
                       
                       <ul className="space-y-2 mb-6">
                         {service.features.map((feature, idx) => (
                           <li key={idx} className="flex items-start">
-                            <span className="text-indigo-400 mr-2 mt-0.5 font-bold flex-shrink-0">✓</span>
-                            <span className="text-sm text-gray-200">{feature}</span>
+                            <svg className="w-5 h-5 text-green-400 mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                              <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                            </svg>
+                            <span className="text-sm text-gray-100 leading-relaxed">{feature}</span>
                           </li>
                         ))}
                       </ul>
                     </div>
                     
                     <div>
-                      <div className="bg-gradient-to-r from-indigo-500 to-purple-500 rounded-xl p-4 mb-6 text-center shadow-lg">
-                        <span className="text-3xl font-bold text-white">{service.price}</span>
-                        {service.price !== "完全成果報酬" && <span className="text-white/80 ml-1">〜</span>}
+                      <div className="bg-gradient-to-r from-indigo-600/30 to-purple-600/30 rounded-2xl p-5 mb-6 text-center shadow-xl border border-indigo-500/50 backdrop-blur-sm">
+                        <span className="text-3xl font-bold text-white" style={{ textShadow: '0 2px 4px rgba(0, 0, 0, 0.5)' }}>{service.price}</span>
+                        {service.price !== "完全成果報酬" && <span className="text-white/90 ml-1">〜</span>}
                       </div>
                       
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
@@ -205,8 +203,8 @@ export default function HomePageContent() {
                           <AccessibleButton
                             key={btnIdx}
                             href={button.href}
-                            className={btnIdx === 0 ? "bg-indigo-600 text-white hover:bg-indigo-700 shadow-md text-sm" : "bg-gray-700 border-2 border-gray-600 text-gray-200 hover:border-gray-500 text-sm"}
-                            size="small"
+                            className={btnIdx === 0 ? "bg-gradient-to-r from-indigo-600 to-purple-600 text-white hover:from-indigo-700 hover:to-purple-700 shadow-lg font-semibold" : "bg-gray-700/50 backdrop-blur-sm border-2 border-gray-600 text-white hover:bg-gray-700/70 hover:border-gray-500 font-medium"}
+                            size="medium"
                             {...(button.href.startsWith('http') && {
                               target: '_blank',
                               rel: 'noopener noreferrer'
