@@ -170,13 +170,13 @@ export default function HomePageContent() {
                         </div>
                       </div>
                       
-                      <h3 className="text-2xl font-bold mb-4 text-white" style={{ textShadow: '0 2px 4px rgba(0, 0, 0, 0.5)' }}>
+                      <h3 className="text-2xl font-bold mb-4 text-white" style={{ textShadow: '0 2px 4px rgba(0, 0, 0, 0.8)' }}>
                         {service.title}
                       </h3>
-                      <p className="text-gray-100 mb-4 font-medium leading-relaxed">
+                      <p className="text-white mb-4 font-medium leading-relaxed" style={{ textShadow: '0 1px 3px rgba(0, 0, 0, 0.8)' }}>
                         {service.description}
                       </p>
-                      <p className="text-sm text-gray-200 mb-6 leading-relaxed">
+                      <p className="text-sm text-gray-100 mb-6 leading-relaxed" style={{ textShadow: '0 1px 2px rgba(0, 0, 0, 0.8)' }}>
                         {service.longDescription}
                       </p>
                       
@@ -186,7 +186,7 @@ export default function HomePageContent() {
                             <svg className="w-5 h-5 text-green-400 mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                               <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                             </svg>
-                            <span className="text-sm text-gray-100 leading-relaxed">{feature}</span>
+                            <span className="text-sm text-white leading-relaxed" style={{ textShadow: '0 1px 2px rgba(0, 0, 0, 0.7)' }}>{feature}</span>
                           </li>
                         ))}
                       </ul>
@@ -194,7 +194,7 @@ export default function HomePageContent() {
                     
                     <div>
                       <div className="bg-gradient-to-r from-indigo-600/30 to-purple-600/30 rounded-2xl p-5 mb-6 text-center shadow-xl border border-indigo-500/50 backdrop-blur-sm">
-                        <span className="text-3xl font-bold text-white" style={{ textShadow: '0 2px 4px rgba(0, 0, 0, 0.5)' }}>{service.price}</span>
+                        <span className="text-3xl font-bold text-white" style={{ textShadow: '0 2px 4px rgba(0, 0, 0, 0.8)' }}>{service.price}</span>
                         {service.price !== "完全成果報酬" && <span className="text-white/90 ml-1">〜</span>}
                       </div>
                       
