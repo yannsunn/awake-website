@@ -20,9 +20,9 @@ export default function NeonGlow({
   className
 }: NeonGlowProps) {
   const intensityMap = {
-    light: 'opacity-70',
-    medium: 'opacity-100',
-    strong: 'opacity-100 saturate-150'
+    light: 'opacity-30',
+    medium: 'opacity-50',
+    strong: 'opacity-70'
   }
 
   const variantMap = {
@@ -33,9 +33,6 @@ export default function NeonGlow({
 
   const glowClasses = cn(
     'relative',
-    EFFECTS.glow[variant],
-    intensityMap[intensity],
-    animate && EFFECTS.animation.glow,
     className
   )
 
@@ -44,14 +41,20 @@ export default function NeonGlow({
       {animate && (
         <div 
           className={cn(
-            'absolute inset-0 -z-10 blur-xl',
+            'absolute inset-0 -z-20 blur-2xl',
             variantMap[variant],
-            EFFECTS.animation.gradient
+            intensityMap[intensity],
+            animate && EFFECTS.animation.gradient
           )}
-          style={{ backgroundSize: '300% 300%' }}
+          style={{ 
+            backgroundSize: '300% 300%',
+            transform: 'scale(1.2)'
+          }}
         />
       )}
-      {children}
+      <div className="relative z-10">
+        {children}
+      </div>
     </div>
   )
 }

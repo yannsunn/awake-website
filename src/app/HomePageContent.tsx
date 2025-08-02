@@ -85,8 +85,8 @@ export default function HomePageContent() {
             <div className="text-center max-w-6xl mx-auto">
               {/* Animated Tagline */}
               <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold mb-6 sm:mb-8 leading-tight">
-                <NeonGlow variant="purple" animate>
-                  <span className={cn(EFFECTS.gradient.neon.purple, 'bg-clip-text text-transparent drop-shadow-md', EFFECTS.animation.gradient)} style={{ backgroundSize: '300% 300%' }}>
+                <NeonGlow variant="purple" animate intensity="light">
+                  <span className="text-white font-extrabold drop-shadow-lg">
                     高額なIT投資に、
                   </span>
                 </NeonGlow>
@@ -166,11 +166,15 @@ export default function HomePageContent() {
                   >
                     <div>
                       {/* Icon with gradient background */}
-                      <NeonGlow variant={index === 0 ? 'cyan' : index === 1 ? 'purple' : 'pink'} intensity="strong">
-                        <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center mb-6 shadow-lg" style={{ animationDelay: `${index * 0.3}s` }}>
-                          <Icon className="w-10 h-10 text-white" />
+                      <div className="relative">
+                        <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-indigo-600 to-purple-700 flex items-center justify-center mb-6 shadow-xl relative z-10" style={{ animationDelay: `${index * 0.3}s` }}>
+                          <Icon className="w-10 h-10 text-white drop-shadow-lg" />
                         </div>
-                      </NeonGlow>
+                        <div className={cn(
+                          "absolute inset-0 rounded-2xl blur-xl opacity-30 -z-10",
+                          index === 0 ? 'bg-cyan-500' : index === 1 ? 'bg-purple-500' : 'bg-pink-500'
+                        )} style={{ transform: 'scale(1.2)' }} />
+                      </div>
                       
                       <h3 className="text-2xl font-bold mb-4 text-white">
                         {service.title}
