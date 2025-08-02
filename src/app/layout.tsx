@@ -51,7 +51,7 @@ export default function RootLayout({
   return (
     <html lang="ja" suppressHydrationWarning>
       <head>
-        <link rel="preload" href="/assets/images/hero-background.png" as="image" fetchpriority="high" />
+        <link rel="preload" href="/assets/images/hero-background.png" as="image" />
         <style dangerouslySetInnerHTML={{ __html: `
           /* 限界突破: 背景画像を即座に表示 */
           .fixed-background {
