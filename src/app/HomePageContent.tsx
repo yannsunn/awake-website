@@ -147,10 +147,10 @@ export default function HomePageContent() {
           <div className="absolute inset-0 bg-gray-900/30 backdrop-blur-sm" />
           <div className={cn('relative z-10 w-full', SPACING.section.container)}>
             <div className="text-center mb-12 lg:mb-16 reveal">
-              <h2 className="text-4xl sm:text-5xl font-extrabold mb-4">
-                <span className={cn(EFFECTS.gradient.neon.purple, 'bg-clip-text text-transparent drop-shadow-md')}>あなたの課題を解決する</span>
+              <h2 className="text-4xl sm:text-5xl font-extrabold mb-4 text-white" style={{ textShadow: '0 2px 4px rgba(0, 0, 0, 0.8)' }}>
+                あなたの課題を解決する
               </h2>
-              <p className="text-xl text-gray-100 font-semibold">3つのクリエイティブソリューション</p>
+              <p className="text-xl text-white font-semibold bg-gray-800/90 rounded-lg px-6 py-3 inline-block shadow-xl" style={{ textShadow: '0 1px 2px rgba(0, 0, 0, 0.8)' }}>3つのクリエイティブソリューション</p>
             </div>
             
             <div className={cn(SPACING.grid.cols['3'], SPACING.grid.gap.md, SPACING.section.maxWidth)}>
