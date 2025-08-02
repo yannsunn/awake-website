@@ -4,16 +4,16 @@ import PageLayout from '@/components/layout/PageLayout'
 import { Globe, Brain, ShoppingCart } from 'lucide-react'
 import { COMPANY_DATA } from '@/lib/company-data'
 import AccessibleButton from '@/components/ui/AccessibleButton'
-import { STYLES } from '@/lib/constants'
+import { STYLES, SPACING, EFFECTS } from '@/lib/constants'
+import { cn } from '@/lib/utils'
 import ContactForm from '@/components/ui/ContactForm'
 import ContactInfo from '@/components/ui/ContactInfo'
 import LineButton from '@/components/ui/LineButton'
 import ValueProposition from '@/components/sections/ValueProposition'
 import FAQ from '@/components/sections/FAQ'
 import LazyLoad from '@/components/ui/LazyLoad'
-import RippleContainer from '@/components/effects/RippleContainer'
-import BreathingButton from '@/components/effects/BreathingButton'
-import SoundWave from '@/components/effects/SoundWave'
+import { RippleContainer, BreathingButton, SoundWave, NeonGlow } from '@/components/effects/DynamicEffects'
+import HolographicCard from '@/components/ui/HolographicCard'
 
 const services = [
   {
@@ -81,13 +81,15 @@ export default function HomePageContent() {
           {/* コンテンツ背景をフッターと同じダーク設定に */}
           <div className="absolute inset-0 bg-gray-900/98 backdrop-blur-md" />
           
-          <div className="relative z-10 w-full px-4 sm:px-6 lg:px-8">
+          <div className={cn('relative z-10 w-full', SPACING.section.container)}>
             <div className="text-center max-w-6xl mx-auto">
               {/* Animated Tagline */}
               <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold mb-6 sm:mb-8 leading-tight">
-                <span className="bg-gradient-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent drop-shadow-md">
-                  高額なIT投資に、
-                </span>
+                <NeonGlow variant="purple" animate>
+                  <span className={cn(EFFECTS.gradient.neon.purple, 'bg-clip-text text-transparent drop-shadow-md', EFFECTS.animation.gradient)} style={{ backgroundSize: '300% 300%' }}>
+                    高額なIT投資に、
+                  </span>
+                </NeonGlow>
                 <br />
                 <span className="text-white drop-shadow-md">
                   もう悩まない
@@ -143,38 +145,40 @@ export default function HomePageContent() {
         </section>
 
         {/* Services Section - Bento Grid */}
-        <section id="services" className="py-16 sm:py-20 lg:py-24 relative">
+        <section id="services" className={cn(SPACING.section.padding, 'relative')}>
           <div className="absolute inset-0 bg-gray-900/95 backdrop-blur-md" />
-          <div className="relative z-10 w-full px-4 sm:px-6 lg:px-8">
+          <div className={cn('relative z-10 w-full', SPACING.section.container)}>
             <div className="text-center mb-12 lg:mb-16 reveal">
               <h2 className="text-4xl sm:text-5xl font-extrabold mb-4">
-                <span className="bg-gradient-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent drop-shadow-md">あなたの課題を解決する</span>
+                <span className={cn(EFFECTS.gradient.neon.purple, 'bg-clip-text text-transparent drop-shadow-md')}>あなたの課題を解決する</span>
               </h2>
-              <p className="text-xl text-gray-200 font-semibold">3つのクリエイティブソリューション</p>
+              <p className="text-xl text-gray-100 font-semibold">3つのクリエイティブソリューション</p>
             </div>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
+            <div className={cn(SPACING.grid.cols['3'], SPACING.grid.gap.md, SPACING.section.maxWidth)}>
               {services.map((service, index) => {
                 const Icon = service.icon
                 return (
-                  <RippleContainer
+                  <HolographicCard
                     key={index}
-                    className="bg-gray-800/90 backdrop-blur-md rounded-3xl p-6 md:p-8 flex flex-col justify-between hover:shadow-2xl transition-all duration-300 reveal h-full cursor-pointer border border-gray-700"
-                    style={{ animationDelay: `${index * 0.2}s` }}
+                    className="p-6 md:p-8 flex flex-col justify-between h-full cursor-pointer bg-gray-800/90 backdrop-blur-md border-gray-700"
+                    glowOnHover
                   >
                     <div>
                       {/* Icon with gradient background */}
-                      <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center mb-6 shadow-lg" style={{ animationDelay: `${index * 0.3}s` }}>
-                        <Icon className="w-10 h-10 text-white" />
-                      </div>
+                      <NeonGlow variant={index === 0 ? 'cyan' : index === 1 ? 'purple' : 'pink'} intensity="strong">
+                        <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center mb-6 shadow-lg" style={{ animationDelay: `${index * 0.3}s` }}>
+                          <Icon className="w-10 h-10 text-white" />
+                        </div>
+                      </NeonGlow>
                       
                       <h3 className="text-2xl font-bold mb-4 text-white">
                         {service.title}
                       </h3>
-                      <p className="text-gray-300 mb-4 font-medium">
+                      <p className="text-gray-200 mb-4 font-medium">
                         {service.description}
                       </p>
-                      <p className="text-sm text-gray-400 mb-6">
+                      <p className="text-sm text-gray-300 mb-6">
                         {service.longDescription}
                       </p>
                       
@@ -182,7 +186,7 @@ export default function HomePageContent() {
                         {service.features.map((feature, idx) => (
                           <li key={idx} className="flex items-start">
                             <span className="text-indigo-400 mr-2 mt-0.5 font-bold flex-shrink-0">✓</span>
-                            <span className="text-sm text-gray-300">{feature}</span>
+                            <span className="text-sm text-gray-200">{feature}</span>
                           </li>
                         ))}
                       </ul>
@@ -211,7 +215,7 @@ export default function HomePageContent() {
                         ))}
                       </div>
                     </div>
-                  </RippleContainer>
+                  </HolographicCard>
                 )
               })}
             </div>
@@ -238,7 +242,7 @@ export default function HomePageContent() {
                 <h3 className="text-2xl sm:text-3xl font-bold mb-6 text-white">
                   {COMPANY_DATA.basic.mission}
                 </h3>
-                <p className="text-lg text-gray-300 mb-8 leading-relaxed">
+                <p className="text-lg text-gray-200 mb-8 leading-relaxed">
                   高額なIT投資で失敗する企業が多い中、私たちは適正価格で確実な成果を出します。必要最小限の投資で最大の効果を生み出し、削減したコストを本業の成長に投資できる環境を提供します。
                 </p>
                 <AccessibleButton 
@@ -266,10 +270,10 @@ export default function HomePageContent() {
               <h2 className="text-4xl sm:text-5xl font-bold mb-6">
                 <span className="bg-gradient-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent">まずは、お話を聞かせてください</span>
               </h2>
-              <p className="text-xl text-gray-200 font-medium mb-4">
+              <p className="text-xl text-gray-100 font-medium mb-4">
                 無料相談で、あなたのビジネスの可能性を探る
               </p>
-              <p className="text-lg text-gray-400">
+              <p className="text-lg text-gray-300">
                 押し売りは一切いたしません。<br />
                 まずは現状の課題と、理想の姿をお聞かせください。<br />
                 最適な解決策を一緒に考えます。

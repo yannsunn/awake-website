@@ -152,10 +152,10 @@ export default function PartnersPage() {
           <h1 className={STYLES.heading.h1.primary + " text-white mb-4"}>
             1社では解決できない課題も、一緒なら解決できる
           </h1>
-          <p className={STYLES.text.body.large + " text-gray-300 mb-4"}>
+          <p className={STYLES.text.body.large + " text-gray-200 mb-4"}>
             各分野のプロフェッショナルと連携し、あらゆるビジネス課題にワンストップで対応
           </p>
-          <p className={STYLES.text.body.medium + " text-gray-400 mb-8"}>
+          <p className={STYLES.text.body.medium + " text-gray-300 mb-8"}>
             単独では限界がある。だから私たちは、信頼できるパートナーと手を組みました。
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -181,7 +181,7 @@ export default function PartnersPage() {
           <h2 className={STYLES.heading.h2.section + " text-white mb-4"}>
             なぜ、パートナーシップが必要なのか
           </h2>
-          <p className={STYLES.text.body.large + " text-gray-300"}>
+          <p className={STYLES.text.body.large + " text-gray-200"}>
             お客様の「本当の成功」は、1つのサービスだけでは実現できない
           </p>
         </div>
@@ -209,7 +209,7 @@ export default function PartnersPage() {
               <h3 className={STYLES.heading.h3.emphasis + " text-white mb-3"}>
                 {item.title}
               </h3>
-              <p className={STYLES.text.description.medium + " text-gray-300"}>
+              <p className={STYLES.text.description.medium + " text-gray-200"}>
                 {item.description}
               </p>
             </div>
@@ -217,7 +217,7 @@ export default function PartnersPage() {
         </div>
         
         <div className="text-center">
-          <p className={STYLES.text.body.large + " text-gray-300"}>
+          <p className={STYLES.text.body.large + " text-gray-200"}>
             だから、ワンストップで解決できる体制を整えました。
           </p>
         </div>
@@ -229,7 +229,7 @@ export default function PartnersPage() {
           <h2 className={STYLES.heading.h2.section + " text-white mb-4"}>
             パートナーシップがもたらす4つの価値
           </h2>
-          <p className={STYLES.text.body.medium + " text-gray-300"}>
+          <p className={STYLES.text.body.medium + " text-gray-200"}>
             お客様にとっての、本当のメリット
           </p>
         </div>
@@ -267,7 +267,7 @@ export default function PartnersPage() {
               <h3 className={STYLES.heading.h3.emphasis + " text-white mb-3"}>
                 {value.title}
               </h3>
-              <p className={STYLES.text.description.small + " text-gray-300"}>
+              <p className={STYLES.text.description.small + " text-gray-200"}>
                 {value.description}
               </p>
             </div>
@@ -284,7 +284,7 @@ export default function PartnersPage() {
                 <h2 className={STYLES.heading.h2.section + " text-white mb-4"}>
                   {category.category}
                 </h2>
-                <p className={STYLES.text.body.large + " text-gray-300"}>
+                <p className={STYLES.text.body.large + " text-gray-200"}>
                   {category.description}
                 </p>
               </div>
@@ -304,8 +304,8 @@ export default function PartnersPage() {
                     <ul className="space-y-2">
                       {company.services.map((service, serviceIndex) => (
                         <li key={serviceIndex} className="flex items-start">
-                          <span className="text-gray-400 mr-2">•</span>
-                          <span className={STYLES.text.description.small + " text-gray-300"}>
+                          <span className="text-gray-300 mr-2">•</span>
+                          <span className={STYLES.text.description.small + " text-gray-200"}>
                             {service}
                           </span>
                         </li>
@@ -325,7 +325,7 @@ export default function PartnersPage() {
           <h2 className={STYLES.heading.h2.section + " text-white mb-4"}>
             実際の成功事例
           </h2>
-          <p className={STYLES.text.body.large + " text-gray-300"}>
+          <p className={STYLES.text.body.large + " text-gray-200"}>
             パートナーシップが生んだ相乗効果
           </p>
         </div>
@@ -347,10 +347,10 @@ export default function PartnersPage() {
               <h3 className={STYLES.heading.h3.emphasis + " text-white mb-4"}>
                 {story.title}
               </h3>
-              <p className={STYLES.text.body.medium + " text-gray-300 mb-4 whitespace-pre-line"}>
+              <p className={STYLES.text.body.medium + " text-gray-200 mb-4 whitespace-pre-line"}>
                 {story.description}
               </p>
-              <p className={STYLES.text.description.medium + " text-gray-400"}>
+              <p className={STYLES.text.description.medium + " text-gray-300"}>
                 {story.company}
               </p>
             </div>
@@ -385,7 +385,7 @@ export default function PartnersPage() {
               <h3 className={STYLES.heading.h3.card + " text-white mb-3"}>
                 Q: {faq.q}
               </h3>
-              <p className={STYLES.text.body.medium + " text-gray-300"}>
+              <p className={STYLES.text.body.medium + " text-gray-200"}>
                 A: {faq.a}
               </p>
             </div>
@@ -399,10 +399,10 @@ export default function PartnersPage() {
           <h2 className={STYLES.heading.h2.section + " text-white mb-4"}>
             新しいパートナーも募集中
           </h2>
-          <p className={STYLES.text.body.large + " text-gray-300 mb-8"}>
+          <p className={STYLES.text.body.large + " text-gray-200 mb-8"}>
             一緒に、お客様の成功を支援しませんか？
           </p>
-          <p className={STYLES.text.body.medium + " text-gray-400 mb-8"}>
+          <p className={STYLES.text.body.medium + " text-gray-300 mb-8"}>
             私たちは、お客様により大きな価値を提供できる<br />
             パートナー企業を常に探しています。
           </p>
@@ -420,7 +420,7 @@ export default function PartnersPage() {
             ].map((item, index) => (
               <li key={index} className="flex items-center justify-center">
                 <span className="text-green-500 mr-3">✓</span>
-                <span className={STYLES.text.body.medium + " text-gray-300"}>{item}</span>
+                <span className={STYLES.text.body.medium + " text-gray-200"}>{item}</span>
               </li>
             ))}
           </ul>
@@ -445,7 +445,7 @@ export default function PartnersPage() {
           <p className={STYLES.text.body.large + " text-white mb-4"}>
             まずは、あなたの課題をお聞かせください
           </p>
-          <p className={STYLES.text.body.medium + " text-gray-300 mb-8"}>
+          <p className={STYLES.text.body.medium + " text-gray-200 mb-8"}>
             どんなサービスの組み合わせが最適か。<br />
             無料相談で、ベストな解決策をご提案します。
           </p>

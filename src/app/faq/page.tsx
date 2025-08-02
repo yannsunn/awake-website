@@ -141,7 +141,7 @@ export default function FAQPage() {
           <h1 className={STYLES.heading.h1.primary + " text-white mb-6"}>
             よくある質問
           </h1>
-          <p className={STYLES.text.body.medium + " text-gray-300"}>
+          <p className={STYLES.text.body.medium + " text-gray-200"}>
             お客様からよくいただくご質問をまとめました。<br className="hidden sm:block" />
             こちらにない質問は、お気軽にお問い合わせください。
           </p>
@@ -170,11 +170,11 @@ export default function FAQPage() {
                       </h3>
                       <div className="flex-shrink-0">
                         <Plus 
-                          className="h-5 w-5 text-gray-300 group-open:hidden" 
+                          className="h-5 w-5 text-gray-200 group-open:hidden" 
                           aria-hidden="true"
                         />
                         <Minus 
-                          className="h-5 w-5 text-gray-300 hidden group-open:block" 
+                          className="h-5 w-5 text-gray-200 hidden group-open:block" 
                           aria-hidden="true"
                         />
                       </div>
@@ -182,7 +182,7 @@ export default function FAQPage() {
                     
                     <div className="px-4 sm:px-6 pb-4 sm:pb-6">
                       <div className="pt-4 border-t border-gray-600">
-                        <p className={STYLES.text.description.medium + " text-gray-300"}>
+                        <p className={STYLES.text.description.medium + " text-gray-200"}>
                           {faq.answer}
                         </p>
                       </div>
@@ -201,14 +201,14 @@ export default function FAQPage() {
           <h2 className={STYLES.heading.h2.section + " text-white mb-6"}>
             まだ疑問が解決しませんか？
           </h2>
-          <p className={STYLES.text.body.medium + " text-gray-300 mb-8"}>
+          <p className={STYLES.text.body.medium + " text-gray-200 mb-8"}>
             お気軽にお問い合わせください。専門スタッフが丁寧にお答えいたします。
           </p>
           
           <div className="">
             <div className="bg-gray-800/80 p-6 sm:p-8 rounded-xl shadow-sm border border-gray-600">
               <h3 className={STYLES.heading.h2.subsection + " text-white mb-4 text-center"}>💬 公式LINEでお気軽に</h3>
-              <p className={STYLES.text.body.medium + " text-gray-300 text-center mb-6"}>最速返信！まずはLINEでお話をお聞かせください</p>
+              <p className={STYLES.text.body.medium + " text-gray-200 text-center mb-6"}>最速返信！まずはLINEでお話をお聞かせください</p>
               <LineButton className="w-full" size="large" />
             </div>
           </div>

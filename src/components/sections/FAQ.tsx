@@ -41,14 +41,14 @@ const FAQ = memo(function FAQ() {
               >
                 <span className="font-medium text-white">Q: {faq.question}</span>
                 <ChevronDown 
-                  className={`h-5 w-5 text-gray-400 transition-transform ${
+                  className={`h-5 w-5 text-gray-200 transition-transform ${
                     openIndex === index ? 'rotate-180' : ''
                   }`}
                 />
               </button>
               {openIndex === index && (
                 <div className="px-6 py-4 border-t border-gray-600">
-                  <p className="text-gray-300">A: {faq.answer}</p>
+                  <p className="text-gray-200">A: {faq.answer}</p>
                 </div>
               )}
             </div>

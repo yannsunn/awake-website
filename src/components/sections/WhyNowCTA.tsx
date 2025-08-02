@@ -33,7 +33,7 @@ const WhyNowCTA = memo(function WhyNowCTA() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
           {reasons.map((reason, index) => (
             <div key={index} className="text-center">
-              <div className="text-3xl font-bold text-gray-900 mb-4">
+              <div className="text-3xl font-bold text-white mb-4">
                 {index + 1}
               </div>
               <h3 className={STYLES.heading.h3.emphasis + " mb-3"}>
@@ -69,7 +69,7 @@ const WhyNowCTA = memo(function WhyNowCTA() {
             </div>
           </div>
           
-          <p className={STYLES.text.body.medium + " text-gray-300 mb-8"}>
+          <p className={STYLES.text.body.medium + " text-gray-200 mb-8"}>
             診断後の押し売りは一切ありません
           </p>
           
@@ -78,7 +78,7 @@ const WhyNowCTA = memo(function WhyNowCTA() {
             
             <Link
               href="/#contact"
-              className="inline-flex items-center justify-center px-8 py-4 bg-white-overlay text-gray-900 font-medium rounded-lg hover:bg-gray-overlay transition-colors"
+              className="inline-flex items-center justify-center px-8 py-4 bg-white-overlay text-white font-medium rounded-lg hover:bg-gray-overlay transition-colors"
             >
               今すぐ無料診断を申し込む
             </Link>

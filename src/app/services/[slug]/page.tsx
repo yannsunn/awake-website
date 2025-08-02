@@ -250,7 +250,7 @@ export default async function ServicePage(
               <h2 className={cn(STYLES.heading.h2.section, "text-white mb-4")}>
                 導入プロセス
               </h2>
-              <p className={STYLES.text.body.large + " text-gray-300"}>
+              <p className={STYLES.text.body.large + " text-gray-200"}>
                 たった4ステップで、業務が劇的に変わる
               </p>
             </div>
@@ -299,7 +299,7 @@ export default async function ServicePage(
               <h2 className={cn(STYLES.heading.h2.section, "text-white mb-4")}>
                 導入の流れ
               </h2>
-              <p className={STYLES.text.body.large + " text-gray-300"}>
+              <p className={STYLES.text.body.large + " text-gray-200"}>
                 最短2週間で販売開始
               </p>
             </div>
@@ -347,7 +347,7 @@ export default async function ServicePage(
           <h2 className={cn(STYLES.heading.h2.section, "text-white mb-8")}>
             まずはお気軽にご相談ください
           </h2>
-          <p className="text-lg text-gray-300 mb-8">
+          <p className="text-lg text-gray-200 mb-8">
             お客様のビジネスに最適なソリューションをご提案いたします
           </p>
           <Link

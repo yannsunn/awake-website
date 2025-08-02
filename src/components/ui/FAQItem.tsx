@@ -34,7 +34,7 @@ const FAQItem = memo(function FAQItem({ question, answer, index }: FAQItemProps)
       
       <div className="px-4 sm:px-6 pb-4 sm:pb-6">
         <div className="pt-4 border-t border-gray-100">
-          <p className={`${STYLES.text.description.medium} text-gray-700`}>
+          <p className={`${STYLES.text.description.medium} text-gray-200`}>
             {answer}
           </p>
         </div>

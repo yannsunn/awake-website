@@ -40,7 +40,7 @@ const UnifiedCard = memo(function UnifiedCard({
             <div className="w-12 h-12 bg-gray-overlay rounded-lg flex items-center justify-center">
               {(() => {
                 const IconComponent = icon as LucideIcon;
-                return <IconComponent className="w-6 h-6 text-gray-700" />;
+                return <IconComponent className="w-6 h-6 text-gray-200" />;
               })()}
             </div>
           )}

@@ -23,13 +23,13 @@ const ContactInfo = memo(function ContactInfo() {
         />
 
         <ContactMethod
-          icon={<MapPin className="w-6 h-6 text-gray-400" />}
+          icon={<MapPin className="w-6 h-6 text-gray-300" />}
           title="所在地"
           content={`${COMPANY_DATA.contact.address.postal}\n${COMPANY_DATA.contact.address.full}`}
         />
 
         <ContactMethod
-          icon={<Clock className="w-6 h-6 text-gray-400" />}
+          icon={<Clock className="w-6 h-6 text-gray-300" />}
           title="営業時間"
           content={`${COMPANY_DATA.contact.businessHours.weekdays}\n${COMPANY_DATA.contact.businessHours.weekend}`}
         />
@@ -39,11 +39,11 @@ const ContactInfo = memo(function ContactInfo() {
       <div className="mt-8 pt-8 border-t border-gray-600">
         <div className="mb-4">
           <h4 className="font-bold text-white">{COMPANY_DATA.basic.name}</h4>
-          <p className="text-sm text-gray-300 mt-1">{COMPANY_DATA.basic.mission}</p>
+          <p className="text-sm text-gray-200 mt-1">{COMPANY_DATA.basic.mission}</p>
         </div>
         
         <div className="bg-gray-700/50 rounded-lg p-6 mt-6">
-          <ul className="text-sm text-gray-300 space-y-2">
+          <ul className="text-sm text-gray-200 space-y-2">
             {COMPANY_DATA.consultation.features.map((feature, index) => (
               <li key={index}>• {feature}</li>
             ))}

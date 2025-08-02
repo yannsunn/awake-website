@@ -39,11 +39,11 @@ export function ServiceHero({
           <h1 className={cn(STYLES.heading.h1.hero, "mb-6")}>
             {title}
           </h1>
-          <p className="mb-8 text-lg sm:text-xl text-gray-600 leading-relaxed">
+          <p className="mb-8 text-lg sm:text-xl text-gray-300 leading-relaxed">
             {description}
           </p>
           {subDescription && (
-            <p className="mb-8 text-base sm:text-lg text-gray-500">
+            <p className="mb-8 text-base sm:text-lg text-gray-300">
               {subDescription}
             </p>
           )}

@@ -41,7 +41,7 @@ const ValueProposition = memo(function ValueProposition() {
               <h3 className="text-xl font-bold text-white mb-3">
                 {reason.title}
               </h3>
-              <p className="text-gray-300 leading-relaxed font-medium">
+              <p className="text-gray-200 leading-relaxed font-medium">
                 {reason.description}
               </p>
             </div>

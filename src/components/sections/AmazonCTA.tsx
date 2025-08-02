@@ -33,7 +33,7 @@ const AmazonCTA = memo(function AmazonCTA() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
           {reasons.map((reason, index) => (
             <div key={index} className="text-center">
-              <div className="text-3xl font-bold text-gray-900 mb-4">
+              <div className="text-3xl font-bold text-white mb-4">
                 {index + 1}
               </div>
               <h3 className={STYLES.heading.h3.emphasis + " mb-3"}>
@@ -53,7 +53,7 @@ const AmazonCTA = memo(function AmazonCTA() {
           <p className={STYLES.text.body.large + " text-white mb-6"}>
             まずは無料診断で、売上ポテンシャルを確認
           </p>
-          <p className={STYLES.text.body.medium + " text-gray-300 mb-8"}>
+          <p className={STYLES.text.body.medium + " text-gray-200 mb-8"}>
             あなたの商品が、Amazonでどれだけ売れるか。<br />
             具体的な数値でお示しします。
           </p>
@@ -63,7 +63,7 @@ const AmazonCTA = memo(function AmazonCTA() {
             
             <Link
               href="/#contact"
-              className="inline-flex items-center justify-center px-8 py-4 bg-white-overlay text-gray-900 font-medium rounded-lg hover:bg-gray-overlay transition-colors"
+              className="inline-flex items-center justify-center px-8 py-4 bg-white-overlay text-white font-medium rounded-lg hover:bg-gray-overlay transition-colors"
             >
               30秒で申し込み完了
             </Link>
