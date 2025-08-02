@@ -36,7 +36,7 @@ const ValueProposition = memo(function ValueProposition() {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {reasons.map((reason, index) => (
-            <div key={index} className="bg-gray-700/90 backdrop-blur-md rounded-lg p-8 shadow-sm border border-gray-600">
+            <div key={index} className="bg-gray-800/80 backdrop-blur-sm rounded-lg p-8 shadow-lg border border-gray-700">
               <div className="text-4xl mb-4">{reason.icon}</div>
               <h3 className="text-xl font-bold text-white mb-3">
                 {reason.title}

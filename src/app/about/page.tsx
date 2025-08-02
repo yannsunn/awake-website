@@ -121,16 +121,14 @@ export default function AboutPage() {
 
       {/* Hero Section */}
       <section className="relative min-h-[50vh] flex items-center justify-center overflow-hidden pt-20 sm:pt-24 md:pt-32 pb-20">
-        <div className="absolute inset-0 bg-gray-900/95 backdrop-blur-md" />
+        <div className="absolute inset-0 bg-gray-900/60 backdrop-blur-sm" />
         <div className="relative z-10 w-full px-4 sm:px-6 lg:px-8 text-center">
           <ParallaxElement speed={0.3}>
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold mb-6">
-              <span className="bg-gradient-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent">
-                私たちが、お客様に選ばれる理由
-              </span>
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold mb-6 text-white" style={{ textShadow: '0 2px 4px rgba(0, 0, 0, 0.8)' }}>
+              私たちが、お客様に選ばれる理由
             </h1>
           </ParallaxElement>
-          <p className="text-xl sm:text-2xl text-white font-semibold mb-4">
+          <p className="text-xl sm:text-2xl text-white font-semibold mb-4 bg-gray-800/90 rounded-lg px-6 py-3 inline-block shadow-xl" style={{ textShadow: '0 1px 2px rgba(0, 0, 0, 0.8)' }}>
             「高すぎるIT投資」を、「適正な成長投資」に変える
           </p>
         <p className={STYLES.text.body.medium + " text-gray-200 w-full"}>
@@ -141,10 +139,10 @@ export default function AboutPage() {
       </section>
 
       {/* CEO Message Section */}
-      <ContentSection className="bg-gray-900/95" ariaLabel="代表メッセージ">
+      <ContentSection className="bg-gray-900/30" ariaLabel="代表メッセージ">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12">
           <div>
-            <div className="bg-gray-800/90 rounded-2xl p-6 sm:p-8 mb-8">
+            <div className="bg-gray-800/80 backdrop-blur-sm rounded-2xl p-6 sm:p-8 mb-8 border border-gray-700">
               <div className="flex items-center mb-6">
                 <div className="w-10 sm:w-12 h-10 sm:h-12 bg-white rounded-full flex items-center justify-center mr-3 sm:mr-4">
                   <User className="h-6 w-6 text-gray-900" />
