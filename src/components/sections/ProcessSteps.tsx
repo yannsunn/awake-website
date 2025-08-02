@@ -26,21 +26,21 @@ export function ProcessSteps({ title, steps, className }: ProcessStepsProps) {
           <ol className="relative space-y-8">
             {steps.map((stepData, index) => (
               <li key={index} className="relative pl-12">
-                <div className="absolute left-0 top-0 flex h-8 w-8 items-center justify-center rounded-full bg-gray-900 text-sm font-bold text-white">
+                <div className="absolute left-0 top-0 flex h-8 w-8 items-center justify-center rounded-full bg-gradient-to-r from-indigo-600 to-purple-600 text-sm font-bold text-white shadow-lg">
                   {stepData.step}
                 </div>
                 {index < steps.length - 1 && (
-                  <div className="absolute left-4 top-8 h-full w-px bg-gray-200" />
+                  <div className="absolute left-4 top-8 h-full w-px bg-gray-600" />
                 )}
                 <div>
-                  <h3 className="mb-2 text-xl font-semibold text-white">
+                  <h3 className="mb-2 text-xl font-semibold text-white" style={{ textShadow: '0 1px 2px rgba(0, 0, 0, 0.5)' }}>
                     {stepData.title}
                   </h3>
-                  <p className="text-gray-300 leading-relaxed">
+                  <p className="text-gray-200 leading-relaxed">
                     {stepData.description}
                   </p>
                   {stepData.duration && (
-                    <p className="mt-2 text-sm text-gray-300">
+                    <p className="mt-2 text-sm text-gray-400">
                       目安期間: {stepData.duration}
                     </p>
                   )}
