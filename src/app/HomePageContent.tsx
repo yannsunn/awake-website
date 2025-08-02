@@ -78,11 +78,13 @@ export default function HomePageContent() {
         {/* Hero Section - Creative & Bold */}
         <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16 sm:pt-24 md:pt-32 pb-16 sm:pb-20">
           
+          {/* フッターと同じ背景レイヤー */}
+          <div className="absolute inset-0 bg-gray-900/60 backdrop-blur-sm" />
           
           <div className={cn('relative z-10 w-full', SPACING.section.container)}>
             <div className="text-center max-w-6xl mx-auto">
               {/* Animated Tagline */}
-              <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold mb-6 sm:mb-8 leading-tight">
+              <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold mb-6 sm:mb-8 leading-tight" style={{ textShadow: '0 2px 4px rgba(0, 0, 0, 0.8)' }}>
                 <span className="text-white font-extrabold">
                   高額なIT投資に、
                 </span>
@@ -92,11 +94,11 @@ export default function HomePageContent() {
                 </span>
               </h1>
               
-              <p className="text-lg sm:text-2xl text-white font-semibold mb-3 sm:mb-4 bg-gray-800/90 rounded-lg px-4 sm:px-6 py-3 sm:py-4 inline-block shadow-2xl border-2 border-gray-700 mx-2 sm:mx-0">
+              <p className="text-lg sm:text-2xl text-white font-semibold mb-3 sm:mb-4 bg-gray-800/90 rounded-lg px-4 sm:px-6 py-3 sm:py-4 inline-block shadow-2xl border-2 border-gray-700 mx-2 sm:mx-0" style={{ textShadow: '0 1px 2px rgba(0, 0, 0, 0.8)' }}>
                 {COMPANY_DATA.basic.description}
               </p>
 
-              <p className="text-base sm:text-xl text-gray-200 font-medium mb-8 sm:mb-12 bg-gray-800/90 rounded-lg px-4 sm:px-6 py-2 sm:py-3 inline-block shadow-xl border border-gray-700 mx-2 sm:mx-0">
+              <p className="text-base sm:text-xl text-gray-200 font-medium mb-8 sm:mb-12 bg-gray-800/90 rounded-lg px-4 sm:px-6 py-2 sm:py-3 inline-block shadow-xl border border-gray-700 mx-2 sm:mx-0" style={{ textShadow: '0 1px 2px rgba(0, 0, 0, 0.8)' }}>
                 {COMPANY_DATA.basic.subMessage}
               </p>
 
