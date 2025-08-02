@@ -12,6 +12,7 @@ import ProblemSection from '@/components/sections/ProblemSection'
 import UseCases from '@/components/sections/UseCases'
 import AIFaq from '@/components/sections/AIFaq'
 import WhyNowCTA from '@/components/sections/WhyNowCTA'
+import AIPricingTable from '@/components/sections/AIPricingTable'
 import WhyAmazon from '@/components/sections/WhyAmazon'
 import RiskFree from '@/components/sections/RiskFree'
 import AmazonSupport from '@/components/sections/AmazonSupport'
@@ -261,6 +262,7 @@ export default async function ServicePage(
         </section>
         
         <UseCases />
+        <AIPricingTable />
         <AIFaq />
         <WhyNowCTA />
       </PageLayout>
