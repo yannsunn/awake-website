@@ -50,6 +50,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ja" suppressHydrationWarning>
+      <head>
+        <link rel="preload" href="/assets/images/hero-background.png" as="image" />
+      </head>
       <body className={`${notoSansJP.variable} font-sans antialiased bg-gray-50`} suppressHydrationWarning>
         {/* WCAG 2.1 AAA準拠 スキップナビゲーション強化 */}
         <div className="sr-only focus-within:not-sr-only focus-within:fixed focus-within:top-0 focus-within:left-0 focus-within:z-50 focus-within:bg-gray-900 focus-within:p-4">
