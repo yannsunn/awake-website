@@ -36,26 +36,25 @@ export default function HolographicCard({
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      {/* ホログラフィックオーバーレイ */}
+      {/* 高級感のあるホバーエフェクト */}
       <div 
         className={cn(
-          'absolute inset-0 -z-10 opacity-0 transition-opacity duration-500',
-          isHovered && 'opacity-30',
-          EFFECTS.gradient.holographic
+          'absolute inset-0 -z-10 opacity-0 transition-all duration-700',
+          isHovered && 'opacity-20',
+          'bg-gradient-to-br from-indigo-600/20 via-purple-600/20 to-indigo-600/20'
         )}
-        style={{ backgroundSize: '300% 300%' }}
       />
       
-      {/* ネオンボーダー */}
+      {/* 上品なボーダーグロウ */}
       <div 
         className={cn(
           'absolute inset-0 rounded-inherit',
-          'bg-gradient-to-r from-purple-400 via-pink-500 to-cyan-400',
-          'opacity-0 transition-opacity duration-500',
-          isHovered && 'opacity-100'
+          'bg-gradient-to-r from-indigo-500 to-purple-600',
+          'opacity-0 transition-opacity duration-700',
+          isHovered && 'opacity-60'
         )}
         style={{
-          padding: '2px',
+          padding: '1px',
           WebkitMask: 'linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)',
           WebkitMaskComposite: 'xor',
           maskComposite: 'exclude'

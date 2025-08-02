@@ -31,18 +31,18 @@ export const STYLES = {
   heading: {
     // メインヘッダー（ページタイトル）
     h1: {
-      primary: 'text-4xl sm:text-5xl md:text-6xl font-extrabold text-white tracking-tight leading-tight drop-shadow-lg',
-      hero: 'text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-tight drop-shadow-lg'
+      primary: 'text-4xl sm:text-5xl md:text-6xl font-extrabold text-white tracking-tight leading-tight',
+      hero: 'text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-tight'
     },
     // セクションヘッダー
     h2: {
-      section: 'text-2xl sm:text-3xl md:text-4xl font-bold text-white tracking-tight drop-shadow-md',
-      subsection: 'text-xl sm:text-2xl md:text-3xl font-bold text-white drop-shadow'
+      section: 'text-2xl sm:text-3xl md:text-4xl font-bold text-white tracking-tight',
+      subsection: 'text-xl sm:text-2xl md:text-3xl font-bold text-white'
     },
     // サブヘッダー
     h3: {
-      card: 'text-lg sm:text-xl font-bold text-white drop-shadow',
-      emphasis: 'text-base sm:text-lg font-bold text-white drop-shadow'
+      card: 'text-lg sm:text-xl font-bold text-white',
+      emphasis: 'text-base sm:text-lg font-bold text-white'
     },
     // 小見出し
     h4: 'text-base sm:text-lg font-semibold text-white'
@@ -132,11 +132,11 @@ export const EFFECTS = {
     primary: 'bg-gradient-to-r from-indigo-600 to-purple-600',
     glass: 'bg-gradient-to-br from-white/10 to-white/5'
   },
-  // ネオングロウ効果
+  // ネオングロウ効果 - 上品で控えめ
   glow: {
-    purple: 'shadow-[0_0_30px_rgba(147,51,234,0.5)]',
-    cyan: 'shadow-[0_0_30px_rgba(34,211,238,0.5)]',
-    pink: 'shadow-[0_0_30px_rgba(236,72,153,0.5)]'
+    purple: 'shadow-[0_0_15px_rgba(147,51,234,0.3)]',
+    cyan: 'shadow-[0_0_15px_rgba(34,211,238,0.3)]',
+    pink: 'shadow-[0_0_15px_rgba(236,72,153,0.3)]'
   },
   // アニメーション
   animation: {
