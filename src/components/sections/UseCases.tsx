@@ -65,7 +65,7 @@ const UseCases = memo(function UseCases() {
               <ul className="space-y-2">
                 {industry.items.map((item, idx) => (
                   <li key={idx} className="flex items-start">
-                    <span className="text-gray-400 mr-2">•</span>
+                    <span className="text-gray-300 mr-2">•</span>
                     <span className={STYLES.text.description.small}>{item}</span>
                   </li>
                 ))}

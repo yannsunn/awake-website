@@ -38,7 +38,7 @@ const SectionHeader = memo(function SectionHeader({
       )}
       
       {description && (
-        <p className={`${STYLES.text.body.medium} text-gray-600`}>
+        <p className={`${STYLES.text.body.medium} text-gray-300`}>
           {description}
         </p>
       )}

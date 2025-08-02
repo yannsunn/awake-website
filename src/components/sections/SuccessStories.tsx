@@ -44,10 +44,10 @@ const SuccessStories = memo(function SuccessStories() {
               <h3 className={STYLES.heading.h3.emphasis + " mb-2"}>
                 &ldquo;{story.title}&rdquo;
               </h3>
-              <p className={STYLES.text.body.medium + " text-gray-700 mb-3"}>
+              <p className={STYLES.text.body.medium + " text-gray-200 mb-3"}>
                 {story.company}
               </p>
-              <p className={STYLES.text.description.medium + " text-gray-600"}>
+              <p className={STYLES.text.description.medium + " text-gray-300"}>
                 {story.result}
               </p>
             </div>

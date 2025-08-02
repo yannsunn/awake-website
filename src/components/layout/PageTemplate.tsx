@@ -7,6 +7,8 @@ import Footer from './Footer'
 import ErrorBoundary from '../ErrorBoundary'
 import { createBreadcrumbSchema } from '@/lib/enhanced-schema'
 import { COMPANY_DATA } from '@/lib/company-data'
+import { cn } from '@/lib/utils'
+import { SPACING, STYLES } from '@/lib/constants'
 
 interface PageTemplateProps {
   children: ReactNode
@@ -52,13 +54,13 @@ const PageTemplate = ({
             className="bg-transparent-overlay border-b border-gray-200"
             aria-label="パンくずリスト"
           >
-            <div className="w-full px-4 sm:px-6 lg:px-8 py-3">
+            <div className={cn('w-full py-3', SPACING.section.container)}>
               <ol className="flex items-center space-x-2 text-sm">
                 {breadcrumbs.map((crumb, index) => (
                   <li key={index} className="flex items-center">
                     {index > 0 && (
                       <svg
-                        className="w-4 h-4 text-gray-400 mx-2"
+                        className="w-4 h-4 text-gray-300 mx-2"
                         fill="currentColor"
                         viewBox="0 0 20 20"
                         aria-hidden="true"
@@ -72,7 +74,7 @@ const PageTemplate = ({
                     )}
                     {index === breadcrumbs.length - 1 ? (
                       <span
-                        className="text-gray-500"
+                        className="text-gray-300"
                         aria-current="page"
                       >
                         {crumb.name}
@@ -130,11 +132,11 @@ export const ContentSection = ({
   return (
     <Component
       id={id}
-      className={`py-12 sm:py-16 lg:py-20 ${className}`}
+      className={cn(SPACING.section.padding, className)}
       aria-label={ariaLabel}
       aria-labelledby={ariaLabelledBy}
     >
-      <div className="w-full px-4 sm:px-6 lg:px-8">
+      <div className={cn('w-full', SPACING.section.container)}>
         {children}
       </div>
     </Component>
@@ -164,15 +166,15 @@ export const PageHeader = ({
         backgroundPosition: 'center'
       } : undefined}
     >
-      <div className="w-full px-4 sm:px-6 lg:px-8 text-center">
+      <div className={cn('w-full text-center', SPACING.section.container)}>
         <h1 className={`text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight mb-6 ${
-          backgroundImage ? 'text-white' : 'text-gray-900'
+          backgroundImage ? 'text-white' : 'text-white'
         }`}>
           {title}
         </h1>
         {subtitle && (
           <p className={`text-xl sm:text-2xl leading-relaxed ${
-            backgroundImage ? 'text-gray-100' : 'text-gray-600'
+            backgroundImage ? 'text-gray-100' : 'text-gray-300'
           }`}>
             {subtitle}
           </p>

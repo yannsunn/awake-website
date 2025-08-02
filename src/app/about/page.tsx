@@ -133,7 +133,7 @@ export default function AboutPage() {
           <p className="text-xl sm:text-2xl text-white font-semibold mb-4">
             「高すぎるIT投資」を、「適正な成長投資」に変える
           </p>
-        <p className={STYLES.text.body.medium + " text-gray-300 w-full"}>
+        <p className={STYLES.text.body.medium + " text-gray-200 w-full"}>
           株式会社Awakeは、無駄を削ぎ落とし、<br className="hidden sm:block" />
           本当に価値のある投資だけに集中できる環境を創ります。
         </p>
@@ -151,7 +151,7 @@ export default function AboutPage() {
                 </div>
                 <div>
                   <h3 className={STYLES.heading.h3.emphasis + " text-white"}>代表挨拶</h3>
-                  <p className={STYLES.text.label.secondary + " text-gray-300"}>Message from CEO</p>
+                  <p className={STYLES.text.label.secondary + " text-gray-200"}>Message from CEO</p>
                 </div>
               </div>
             </div>
@@ -160,10 +160,10 @@ export default function AboutPage() {
               代表メッセージ
             </h2>
             
-            <div className="space-y-8 text-gray-300 leading-relaxed">
+            <div className="space-y-8 text-gray-200 leading-relaxed">
               <div className="mb-6">
                 <h3 className={STYLES.text.emphasis.strong + " text-white text-xl mb-2"}>挫折から這い上がり、学んだこと</h3>
-                <p className={STYLES.text.emphasis.medium + " text-gray-200 mb-4"}>代表取締役CEO　{COMPANY_DATA.basic.ceo}</p>
+                <p className={STYLES.text.emphasis.medium + " text-white mb-4"}>代表取締役CEO　{COMPANY_DATA.basic.ceo}</p>
                 
                 <p className={STYLES.text.description.medium + " mb-4"}>
                   株式会社Awakeの田形でございます。
@@ -292,11 +292,11 @@ export default function AboutPage() {
                 <User className="h-16 w-16 text-gray-900" />
               </div>
               <h3 className={STYLES.heading.h3.card + " text-white mb-2"}>{COMPANY_DATA.basic.ceo}</h3>
-              <p className={STYLES.text.emphasis.medium + " text-gray-200 text-lg mb-4"}>代表取締役CEO</p>
+              <p className={STYLES.text.emphasis.medium + " text-white text-lg mb-4"}>代表取締役CEO</p>
               <div className="space-y-4">
                 <div>
                   <h4 className={STYLES.text.emphasis.medium + " text-white mb-2"}>略歴</h4>
-                  <ul className={STYLES.text.description.small + " text-gray-300 space-y-1"}>
+                  <ul className={STYLES.text.description.small + " text-gray-200 space-y-1"}>
                     <li>静岡県清水区出身</li>
                     <li>幼稚園〜中学：不登校</li>
                     <li>高校：生徒会長</li>
@@ -307,7 +307,7 @@ export default function AboutPage() {
                 </div>
                 <div>
                   <h4 className={STYLES.text.emphasis.medium + " text-white mb-2"}>経営理念</h4>
-                  <p className={STYLES.text.description.small + " text-gray-300"}>
+                  <p className={STYLES.text.description.small + " text-gray-200"}>
                     「つながるすべての人に、感謝と繁栄を」
                   </p>
                 </div>
@@ -330,7 +330,7 @@ export default function AboutPage() {
             <h3 className={STYLES.heading.h2.subsection + " text-white mb-4"}>
               ミッション
             </h3>
-            <p className={STYLES.text.description.medium + " text-gray-300"}>
+            <p className={STYLES.text.description.medium + " text-gray-200"}>
               お客様の経営資源を最適配分し、真の成果を生み出すパートナーとして、適正なコストで最大の価値を提供し続けます。
             </p>
           </div>
@@ -339,7 +339,7 @@ export default function AboutPage() {
             <h3 className={STYLES.heading.h2.subsection + " text-white mb-4"}>
               ビジョン
             </h3>
-            <p className={STYLES.text.description.medium + " text-gray-300"}>
+            <p className={STYLES.text.description.medium + " text-gray-200"}>
               適正なコストで最大の価値を得られる経営環境の実現。そして、関わるすべての人々が相互に繁栄できる社会を創造します。
             </p>
           </div>
@@ -352,7 +352,7 @@ export default function AboutPage() {
           <h2 className={STYLES.heading.h2.section + " text-white mb-4"}>
             なぜAwakeなのか
           </h2>
-          <p className={STYLES.text.body.large + " text-gray-300"}>
+          <p className={STYLES.text.body.large + " text-gray-200"}>
             私たちの3つの約束
           </p>
         </div>
@@ -362,7 +362,7 @@ export default function AboutPage() {
             <div key={index} className="bg-gray-800/80 rounded-2xl p-8 shadow-sm border border-gray-600">
               <div className="text-4xl mb-4">{promise.icon}</div>
               <h3 className={STYLES.heading.h3.emphasis + " text-white mb-3"}>{promise.title}</h3>
-              <p className={STYLES.text.description.medium + " text-gray-300"}>{promise.description}</p>
+              <p className={STYLES.text.description.medium + " text-gray-200"}>{promise.description}</p>
             </div>
           ))}
         </div>
@@ -374,7 +374,7 @@ export default function AboutPage() {
           <h2 className={STYLES.heading.h2.section + " text-white mb-4"}>
             サービスの特徴
           </h2>
-          <p className={STYLES.text.body.large + " text-gray-300"}>
+          <p className={STYLES.text.body.large + " text-gray-200"}>
             コストを抑えながら、成果を最大化する仕組み
           </p>
         </div>
@@ -387,7 +387,7 @@ export default function AboutPage() {
                 {feature.items.map((item, idx) => (
                   <li key={idx} className="flex items-start">
                     <CheckCircle className="h-5 w-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" />
-                    <span className={STYLES.text.description.small + " text-gray-300"}>{item}</span>
+                    <span className={STYLES.text.description.small + " text-gray-200"}>{item}</span>
                   </li>
                 ))}
               </ul>
@@ -402,7 +402,7 @@ export default function AboutPage() {
           <h2 className={STYLES.heading.h2.section + " text-white mb-4"}>
             私たちの価値観
           </h2>
-          <p className={STYLES.text.body.large + " text-gray-300"}>
+          <p className={STYLES.text.body.large + " text-gray-200"}>
             お客様と共に成長し続けるために
           </p>
         </div>
@@ -417,7 +417,7 @@ export default function AboutPage() {
                 </div>
                 <div>
                   <h3 className={STYLES.heading.h3.card + " text-white mb-3"}>{value.title}</h3>
-                  <p className={STYLES.text.description.medium + " text-gray-300"}>{value.description}</p>
+                  <p className={STYLES.text.description.medium + " text-gray-200"}>{value.description}</p>
                 </div>
               </div>
             )
@@ -434,7 +434,7 @@ export default function AboutPage() {
           <p className={STYLES.text.body.large + " text-white mb-4"}>
             まずは、お話を聞かせてください
           </p>
-          <p className={STYLES.text.body.medium + " text-gray-300 mb-8 max-w-3xl mx-auto"}>
+          <p className={STYLES.text.body.medium + " text-gray-200 mb-8 max-w-3xl mx-auto"}>
             あなたのビジネスの課題と理想の姿。<br className="hidden sm:block" />
             無料相談で、最適な解決策を一緒に考えましょう。
           </p>

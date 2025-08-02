@@ -42,16 +42,16 @@ const AmazonFAQ = memo(function AmazonFAQ() {
                 className="w-full px-6 py-4 text-left flex items-center justify-between hover:bg-gray-overlay transition-colors"
                 onClick={() => setOpenIndex(openIndex === index ? null : index)}
               >
-                <span className="font-medium text-gray-900">Q: {faq.question}</span>
+                <span className="font-medium text-white">Q: {faq.question}</span>
                 <ChevronDown 
-                  className={`h-5 w-5 text-gray-500 transition-transform ${
+                  className={`h-5 w-5 text-gray-300 transition-transform ${
                     openIndex === index ? 'rotate-180' : ''
                   }`}
                 />
               </button>
               {openIndex === index && (
                 <div className="px-6 py-4 border-t border-gray-200">
-                  <p className="text-gray-600">A: {faq.answer}</p>
+                  <p className="text-gray-300">A: {faq.answer}</p>
                 </div>
               )}
             </div>

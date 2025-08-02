@@ -33,14 +33,14 @@ export function ProcessSteps({ title, steps, className }: ProcessStepsProps) {
                   <div className="absolute left-4 top-8 h-full w-px bg-gray-200" />
                 )}
                 <div>
-                  <h3 className="mb-2 text-xl font-semibold text-gray-900">
+                  <h3 className="mb-2 text-xl font-semibold text-white">
                     {stepData.title}
                   </h3>
-                  <p className="text-gray-600 leading-relaxed">
+                  <p className="text-gray-300 leading-relaxed">
                     {stepData.description}
                   </p>
                   {stepData.duration && (
-                    <p className="mt-2 text-sm text-gray-500">
+                    <p className="mt-2 text-sm text-gray-300">
                       目安期間: {stepData.duration}
                     </p>
                   )}

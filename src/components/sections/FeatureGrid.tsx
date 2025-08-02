@@ -41,10 +41,10 @@ export function FeatureGrid({
               <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-2xl bg-gray-900 text-white">
                 {feature.icon}
               </div>
-              <h3 className="mb-2 text-xl font-semibold text-gray-900">
+              <h3 className="mb-2 text-xl font-semibold text-white">
                 {feature.title}
               </h3>
-              <p className="text-gray-600 leading-relaxed">
+              <p className="text-gray-300 leading-relaxed">
                 {feature.description}
               </p>
             </div>

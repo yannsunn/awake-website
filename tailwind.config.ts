@@ -105,6 +105,55 @@ const config: Config = {
         'md-max': {'max': '767px'},
         'lg-max': {'max': '1023px'},
       },
+      animation: {
+        // 令和最新トレンド: ネオン&ホログラフィック
+        'gradient-shift': 'gradient-shift 3s ease infinite',
+        'glow-pulse': 'glow-pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+        'float': 'float 6s ease-in-out infinite',
+        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+        'slide-up': 'slide-up 0.6s ease-out',
+        'bounce-subtle': 'bounce-subtle 2s infinite',
+        'spin-slow': 'spin 3s linear infinite',
+        'neon-flicker': 'neon-flicker 1.5s infinite alternate',
+      },
+      keyframes: {
+        'gradient-shift': {
+          '0%, 100%': { backgroundPosition: '0% 50%' },
+          '50%': { backgroundPosition: '100% 50%' },
+        },
+        'glow-pulse': {
+          '0%, 100%': { opacity: '1', filter: 'blur(0px)' },
+          '50%': { opacity: '0.8', filter: 'blur(1px)' },
+        },
+        'float': {
+          '0%, 100%': { transform: 'translateY(0)' },
+          '50%': { transform: 'translateY(-20px)' },
+        },
+        'slide-up': {
+          '0%': { transform: 'translateY(20px)', opacity: '0' },
+          '100%': { transform: 'translateY(0)', opacity: '1' },
+        },
+        'bounce-subtle': {
+          '0%, 100%': { transform: 'translateY(-5%)' },
+          '50%': { transform: 'translateY(0)' },
+        },
+        'neon-flicker': {
+          '0%, 18%, 22%, 25%, 53%, 57%, 100%': {
+            textShadow: '0 0 4px #fff, 0 0 11px #fff, 0 0 19px #fff, 0 0 40px #ff00de, 0 0 80px #ff00de, 0 0 90px #ff00de, 0 0 100px #ff00de, 0 0 150px #ff00de',
+          },
+          '20%, 24%, 55%': {
+            textShadow: 'none',
+          },
+        },
+      },
+      backgroundImage: {
+        // ホログラフィック背景
+        'holographic': 'linear-gradient(45deg, #ff00de, #00fff0, #ff00de)',
+        'neon-gradient': 'linear-gradient(45deg, #f093fb 0%, #f5576c 25%, #ffd32c 50%, #4facfe 75%, #f093fb 100%)',
+      },
+      backgroundSize: {
+        '300%': '300% 300%',
+      },
     },
   },
   plugins: [],

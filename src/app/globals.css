@@ -13,6 +13,13 @@
     --primary-600: #7c3aed;
     --primary-700: #6d28d9;
     
+    /* 令和最新トレンド: ネオンカラー */
+    --neon-purple: #ff00de;
+    --neon-cyan: #00fff0;
+    --neon-pink: #ff0066;
+    --neon-yellow: #ffff00;
+    --neon-green: #00ff00;
+    
     /* グレースケール */
     --gray-50: #f9fafb;
     --gray-100: #f3f4f6;
@@ -41,7 +48,7 @@
   }
 
   body {
-    @apply bg-white text-gray-900 antialiased;
+    @apply bg-gray-900 text-white antialiased;
     font-feature-settings: "palt" 1;
     font-weight: 400; /* 500から400に変更 */
     letter-spacing: 0.02em;
@@ -754,5 +761,117 @@ button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visib
 .delay-300 { animation-delay: 300ms; transition-delay: 300ms; }
 .delay-400 { animation-delay: 400ms; transition-delay: 400ms; }
 .delay-500 { animation-delay: 500ms; transition-delay: 500ms; }
+
+/* 🌟 令和最新トレンド: ネオングロウ&ホログラフィック効果 */
+@layer components {
+  /* ネオングロウテキスト */
+  .neon-text {
+    color: var(--neon-purple);
+    text-shadow: 
+      0 0 10px currentColor,
+      0 0 20px currentColor,
+      0 0 30px currentColor,
+      0 0 40px currentColor;
+    animation: neon-flicker 1.5s infinite alternate;
+  }
+  
+  /* ホログラフィック背景 */
+  .holographic-bg {
+    background: linear-gradient(45deg, 
+      var(--neon-purple) 0%, 
+      var(--neon-cyan) 25%, 
+      var(--neon-pink) 50%, 
+      var(--neon-yellow) 75%, 
+      var(--neon-purple) 100%);
+    background-size: 300% 300%;
+    animation: gradient-shift 3s ease infinite;
+  }
+  
+  /* グリッチエフェクト */
+  .glitch {
+    position: relative;
+    animation: glitch 2s infinite;
+  }
+  
+  .glitch::before,
+  .glitch::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .glitch::before {
+    animation: glitch-1 0.3s infinite;
+    color: var(--neon-cyan);
+    z-index: -1;
+  }
+  
+  .glitch::after {
+    animation: glitch-2 0.3s infinite;
+    color: var(--neon-pink);
+    z-index: -2;
+  }
+  
+  @keyframes glitch {
+    0%, 100% { transform: translate(0); }
+    20% { transform: translate(-2px, 2px); }
+    40% { transform: translate(-2px, -2px); }
+    60% { transform: translate(2px, 2px); }
+    80% { transform: translate(2px, -2px); }
+  }
+  
+  @keyframes glitch-1 {
+    0%, 100% { clip-path: inset(0 0 0 0); }
+    25% { clip-path: inset(0 100% 0 0); }
+    50% { clip-path: inset(0 0 100% 0); }
+    75% { clip-path: inset(100% 0 0 0); }
+  }
+  
+  @keyframes glitch-2 {
+    0%, 100% { clip-path: inset(0 0 0 0); }
+    25% { clip-path: inset(100% 0 0 0); }
+    50% { clip-path: inset(0 0 0 100%); }
+    75% { clip-path: inset(0 0 100% 0); }
+  }
+  
+  /* サイバーパンクボタン */
+  .cyber-button {
+    position: relative;
+    padding: 1rem 2rem;
+    background: linear-gradient(45deg, var(--neon-purple), var(--neon-cyan));
+    border: 2px solid var(--neon-cyan);
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    clip-path: polygon(0 0, calc(100% - 15px) 0, 100% 25%, 100% 100%, 15px 100%, 0 calc(100% - 25%));
+  }
+  
+  .cyber-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+    transition: left 0.5s;
+  }
+  
+  .cyber-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255,0,222,0.4);
+    border-color: var(--neon-pink);
+  }
+  
+  .cyber-button:hover::before {
+    left: 100%;
+  }
+}
 
 

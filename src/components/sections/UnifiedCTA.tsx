@@ -24,8 +24,8 @@ const UnifiedCTA = memo(function UnifiedCTA({
   className = ''
 }: UnifiedCTAProps) {
   const bgClass = theme === 'dark' ? 'bg-gray-900 text-white' : 'bg-gray-overlay'
-  const textClass = theme === 'dark' ? 'text-white' : 'text-gray-900'
-  const subtitleClass = theme === 'dark' ? 'text-gray-300' : 'text-gray-600'
+  const textClass = theme === 'dark' ? 'text-white' : 'text-white'
+  const subtitleClass = theme === 'dark' ? 'text-gray-200' : 'text-gray-300'
   
   return (
     <section className={`py-16 md:py-24 ${bgClass} ${className}`}>
@@ -54,7 +54,7 @@ const UnifiedCTA = memo(function UnifiedCTA({
               <AccessibleButton
                 href="/#contact"
                 className={theme === 'dark' ? 
-                  "bg-white-overlay text-gray-900 hover:bg-gray-overlay" : 
+                  "bg-white-overlay text-white hover:bg-gray-overlay" : 
                   "bg-gray-900 text-white hover:bg-gray-800"
                 }
               >

@@ -132,10 +132,10 @@ class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundaryState> {
               </div>
 
               {/* エラーメッセージ */}
-              <h2 className="text-2xl font-bold text-gray-900 mb-4">
+              <h2 className="text-2xl font-bold text-white mb-4">
                 申し訳ございません
               </h2>
-              <p className="text-gray-600 mb-6 leading-relaxed">
+              <p className="text-gray-300 mb-6 leading-relaxed">
                 システムエラーが発生しました。<br />
                 ページを再読み込みしても問題が解決しない場合は、
                 お手数ですがお問い合わせください。
@@ -144,10 +144,10 @@ class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundaryState> {
               {/* エラー詳細（開発環境のみ） */}
               {this.props.showDetails && process.env.NODE_ENV === 'development' && this.state.error && (
                 <details className="text-left mb-6 p-4 bg-gray-overlay rounded-lg">
-                  <summary className="font-medium text-gray-700 cursor-pointer">
+                  <summary className="font-medium text-gray-200 cursor-pointer">
                     技術的な詳細
                   </summary>
-                  <div className="mt-3 text-sm text-gray-600">
+                  <div className="mt-3 text-sm text-gray-300">
                     <p><strong>エラーID:</strong> {this.state.errorId}</p>
                     <p><strong>エラー:</strong> {this.state.error.message}</p>
                     {this.state.error.stack && (
@@ -183,7 +183,7 @@ class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundaryState> {
 
                 <Link 
                   href="/#contact"
-                  className="block text-sm text-gray-500 hover:text-gray-700"
+                  className="block text-sm text-gray-300 hover:text-gray-200"
                 >
                   お問い合わせ
                 </Link>
@@ -191,7 +191,7 @@ class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundaryState> {
 
               {/* エラーID表示（サポート用） */}
               {this.state.errorId && (
-                <p className="mt-6 text-xs text-gray-400">
+                <p className="mt-6 text-xs text-gray-300">
                   エラーID: {this.state.errorId}
                 </p>
               )}
@@ -219,7 +219,7 @@ export const SuspenseWrapper = ({
     <div className="flex items-center justify-center min-h-screen">
       <div className="text-center">
         <div className="rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto mb-4"></div>
-        <p className="text-gray-600">読み込み中...</p>
+        <p className="text-gray-300">読み込み中...</p>
       </div>
     </div>
   )

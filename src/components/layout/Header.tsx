@@ -125,7 +125,7 @@ const Header = memo(function Header() {
                 className="flex items-center group"
                 aria-label={`${COMPANY_DATA.basic.name} ホーム`}
               >
-                <span className={`${STYLES.heading.h2.subsection} text-white group-hover:text-gray-300 transition-colors`}>
+                <span className={`${STYLES.heading.h2.subsection} text-white group-hover:text-gray-100 transition-colors`}>
                   {COMPANY_DATA.basic.name}
                 </span>
               </Link>
@@ -141,7 +141,7 @@ const Header = memo(function Header() {
                     <div key={index} className="relative" ref={servicesRef}>
                       <button
                         onClick={toggleServices}
-                        className={`flex items-center px-4 py-2 min-h-[48px] rounded-lg text-gray-700 hover:bg-gray-100 transition-all duration-300 ease-out hover:scale-[1.02] focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-blue-500 focus-visible:ring-offset-3 ${STYLES.text.body.medium}`}
+                        className={`flex items-center px-4 py-2 min-h-[48px] rounded-lg text-white hover:bg-gray-100 transition-all duration-300 ease-out hover:scale-[1.02] focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-blue-500 focus-visible:ring-offset-3 ${STYLES.text.body.medium}`}
                         aria-expanded={isServicesOpen}
                         aria-haspopup="true"
                         type="button"
@@ -169,7 +169,7 @@ const Header = memo(function Header() {
                               <div className={`${STYLES.text.emphasis.medium} mb-1`}>
                                 {service.title}
                               </div>
-                              <div className={`${STYLES.text.description.small} text-gray-600`}>
+                              <div className={`${STYLES.text.description.small} text-gray-200`}>
                                 {service.description}
                               </div>
                             </Link>
@@ -186,8 +186,8 @@ const Header = memo(function Header() {
                     href={item.href} 
                     className={`px-4 py-2 min-h-[48px] rounded-lg transition-all duration-300 ease-out hover:scale-[1.02] focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-blue-500 focus-visible:ring-offset-3 ${STYLES.text.body.medium} ${
                       isActive 
-                        ? 'text-gray-900 bg-gray-100 font-bold' 
-                        : 'text-gray-700 hover:bg-gray-100'
+                        ? 'text-white bg-gray-100 font-bold' 
+                        : 'text-white hover:bg-gray-100'
                     }`}
                     aria-current={isActive ? 'page' : undefined}
                   >
@@ -213,9 +213,9 @@ const Header = memo(function Header() {
               type="button"
             >
               {isMenuOpen ? (
-                <X className="h-6 w-6 text-gray-700" />
+                <X className="h-6 w-6 text-white" />
               ) : (
-                <Menu className="h-6 w-6 text-gray-700" />
+                <Menu className="h-6 w-6 text-white" />
               )}
             </button>
           </div>
@@ -255,7 +255,7 @@ const Header = memo(function Header() {
                 aria-label="メニューを閉じる"
                 type="button"
               >
-                <X className="h-6 w-6 text-gray-300" />
+                <X className="h-6 w-6 text-gray-100" />
               </button>
             </div>
             
@@ -265,7 +265,7 @@ const Header = memo(function Header() {
                 if (item.type === 'dropdown') {
                   return (
                     <div key={index} className="px-4 py-2">
-                      <div className={`${STYLES.text.label.primary} text-gray-400 mb-2`}>
+                      <div className={`${STYLES.text.label.primary} text-gray-200 mb-2`}>
                         {item.title}
                       </div>
                       <div className="space-y-1">
@@ -284,7 +284,7 @@ const Header = memo(function Header() {
                             <div className={STYLES.text.emphasis.medium + " text-white"}>
                               {service.title}
                             </div>
-                            <div className={`${STYLES.text.description.small} text-gray-400 mt-1`}>
+                            <div className={`${STYLES.text.description.small} text-gray-200 mt-1`}>
                               {service.description}
                             </div>
                           </Link>
@@ -298,7 +298,7 @@ const Header = memo(function Header() {
                   <Link 
                     key={index}
                     href={item.href}
-                    className={`block px-8 py-3 min-h-[56px] ${STYLES.text.body.medium} text-gray-300 hover:bg-gray-700 transition-all duration-300 ease-out focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-blue-500 focus-visible:ring-offset-3`}
+                    className={`block px-8 py-3 min-h-[56px] ${STYLES.text.body.medium} text-gray-100 hover:bg-gray-700 transition-all duration-300 ease-out focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-blue-500 focus-visible:ring-offset-3`}
                     onClick={toggleMenu}
                   >
                     {item.title}
