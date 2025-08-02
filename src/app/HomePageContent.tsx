@@ -79,7 +79,7 @@ export default function HomePageContent() {
         <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16 sm:pt-24 md:pt-32 pb-16 sm:pb-20">
           
           {/* コンテンツ背景をフッターと同じダーク設定に */}
-          <div className="absolute inset-0 bg-gray-900/98 backdrop-blur-md" />
+          <div className="absolute inset-0 bg-gray-900/95 backdrop-blur-md" />
           
           <div className={cn('relative z-10 w-full', SPACING.section.container)}>
             <div className="text-center max-w-6xl mx-auto">
