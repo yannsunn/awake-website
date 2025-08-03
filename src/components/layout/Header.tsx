@@ -6,6 +6,7 @@ import { usePathname } from 'next/navigation'
 import { Menu, X, ChevronDown, MessageCircle } from 'lucide-react'
 import { COMPANY_DATA } from '@/lib/company-data'
 import { STYLES } from '@/lib/constants'
+import { TEXT_SHADOW } from '@/lib/ultra-styles'
 import LineButton from '@/components/ui/LineButton'
 
 // 🚀 最適化されたナビゲーションヘッダー
@@ -125,7 +126,7 @@ const Header = memo(function Header() {
                 className="flex items-center group"
                 aria-label={`${COMPANY_DATA.basic.name} ホーム`}
               >
-                <span className={`${STYLES.heading.h2.subsection} text-white group-hover:text-indigo-300 transition-colors`} style={{ textShadow: '0 2px 4px rgba(0, 0, 0, 0.8)' }}>
+                <span className={`${STYLES.heading.h2.subsection} text-white group-hover:text-indigo-300 transition-colors`} style={TEXT_SHADOW.heading}>
                   {COMPANY_DATA.basic.name}
                 </span>
               </Link>
@@ -141,7 +142,7 @@ const Header = memo(function Header() {
                     <div key={index} className="relative" ref={servicesRef}>
                       <button
                         onClick={toggleServices}
-                        className={`flex items-center px-4 py-2 min-h-[48px] rounded-lg text-white hover:bg-gray-800/50 transition-all duration-300 ease-out hover:scale-[1.02] focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-blue-500 focus-visible:ring-offset-3 ${STYLES.text.body.medium}`} style={{ textShadow: '0 1px 2px rgba(0, 0, 0, 0.8)' }}
+                        className={`flex items-center px-4 py-2 min-h-[48px] rounded-lg text-white hover:bg-gray-800/50 transition-all duration-300 ease-out hover:scale-[1.02] focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-blue-500 focus-visible:ring-offset-3 ${STYLES.text.body.medium}`} style={TEXT_SHADOW.small}
                         aria-expanded={isServicesOpen}
                         aria-haspopup="true"
                         type="button"
@@ -166,7 +167,7 @@ const Header = memo(function Header() {
                                 'aria-label': `${service.title} - 新しいウィンドウで開きます`
                               })}
                             >
-                              <div className={`${STYLES.text.emphasis.medium} mb-1 text-white`} style={{ textShadow: '0 1px 2px rgba(0, 0, 0, 0.5)' }}>
+                              <div className={`${STYLES.text.emphasis.medium} mb-1 text-white`} style={TEXT_SHADOW.small}>
                                 {service.title}
                               </div>
                               <div className={`${STYLES.text.description.small} text-gray-300`}>
@@ -188,7 +189,7 @@ const Header = memo(function Header() {
                       isActive 
                         ? 'text-white bg-gray-800/80 font-bold border border-gray-700' 
                         : 'text-white hover:bg-gray-800/50'
-                    }`} style={{ textShadow: '0 1px 2px rgba(0, 0, 0, 0.8)' }}
+                    }`} style={TEXT_SHADOW.small}
                     aria-current={isActive ? 'page' : undefined}
                   >
                     {item.title}

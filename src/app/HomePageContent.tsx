@@ -14,7 +14,7 @@ import FAQ from '@/components/sections/FAQ'
 import LazyLoad from '@/components/ui/LazyLoad'
 import { RippleContainer, BreathingButton, SoundWave, NeonGlow } from '@/components/effects/DynamicEffects'
 import HolographicCard from '@/components/ui/HolographicCard'
-import { TEXT_BG_STYLES } from '@/lib/ultra-styles'
+import { TEXT_BG_STYLES, TEXT_SHADOW } from '@/lib/ultra-styles'
 
 const services = [
   {
@@ -85,7 +85,7 @@ export default function HomePageContent() {
           <div className={cn('relative z-10 w-full', SPACING.section.container)}>
             <div className="text-center max-w-6xl mx-auto">
               {/* Animated Tagline */}
-              <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold mb-6 sm:mb-8 leading-tight" style={{ textShadow: '0 2px 4px rgba(0, 0, 0, 0.8)' }}>
+              <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold mb-6 sm:mb-8 leading-tight" style={TEXT_SHADOW.heading}>
                 <span className="text-white font-extrabold">
                   高額なIT投資に、
                 </span>
@@ -95,11 +95,11 @@ export default function HomePageContent() {
                 </span>
               </h1>
               
-              <p className={`text-lg sm:text-2xl text-white font-semibold mb-3 sm:mb-4 ${TEXT_BG_STYLES.default} border-2 border-gray-700 mx-2 sm:mx-0`} style={{ textShadow: '0 1px 2px rgba(0, 0, 0, 0.8)' }}>
+              <p className={`text-lg sm:text-2xl text-white font-semibold mb-3 sm:mb-4 ${TEXT_BG_STYLES.default} border-2 border-gray-700 mx-2 sm:mx-0`} style={TEXT_SHADOW.small}>
                 {COMPANY_DATA.basic.description}
               </p>
 
-              <p className={`text-base sm:text-xl text-gray-200 font-medium mb-8 sm:mb-12 ${TEXT_BG_STYLES.default} border border-gray-700 mx-2 sm:mx-0`} style={{ textShadow: '0 1px 2px rgba(0, 0, 0, 0.8)' }}>
+              <p className={`text-base sm:text-xl text-gray-200 font-medium mb-8 sm:mb-12 ${TEXT_BG_STYLES.default} border border-gray-700 mx-2 sm:mx-0`} style={TEXT_SHADOW.small}>
                 {COMPANY_DATA.basic.subMessage}
               </p>
 
@@ -148,10 +148,10 @@ export default function HomePageContent() {
           <div className="absolute inset-0 bg-gray-900/30 backdrop-blur-sm" />
           <div className={cn('relative z-10 w-full', SPACING.section.container)}>
             <div className="text-center mb-12 lg:mb-16 reveal">
-              <h2 className="text-4xl sm:text-5xl font-extrabold mb-4 text-white" style={{ textShadow: '0 2px 4px rgba(0, 0, 0, 0.8)' }}>
+              <h2 className="text-4xl sm:text-5xl font-extrabold mb-4 text-white" style={TEXT_SHADOW.heading}>
                 あなたの課題を解決する
               </h2>
-              <p className={`text-xl text-white font-semibold ${TEXT_BG_STYLES.default}`} style={{ textShadow: '0 1px 2px rgba(0, 0, 0, 0.8)' }}>3つのクリエイティブソリューション</p>
+              <p className={`text-xl text-white font-semibold ${TEXT_BG_STYLES.default}`} style={TEXT_SHADOW.small}>3つのクリエイティブソリューション</p>
             </div>
             
             <div className={cn(SPACING.grid.cols['3'], SPACING.grid.gap.md, SPACING.section.maxWidth)}>
@@ -171,13 +171,13 @@ export default function HomePageContent() {
                         </div>
                       </div>
                       
-                      <h3 className="text-2xl font-bold mb-4 text-white" style={{ textShadow: '0 2px 4px rgba(0, 0, 0, 0.8)' }}>
+                      <h3 className="text-2xl font-bold mb-4 text-white" style={TEXT_SHADOW.heading}>
                         {service.title}
                       </h3>
-                      <p className="text-white mb-4 font-medium leading-relaxed" style={{ textShadow: '0 1px 3px rgba(0, 0, 0, 0.8)' }}>
+                      <p className="text-white mb-4 font-medium leading-relaxed" style={TEXT_SHADOW.body}>
                         {service.description}
                       </p>
-                      <p className="text-sm text-gray-100 mb-6 leading-relaxed" style={{ textShadow: '0 1px 2px rgba(0, 0, 0, 0.8)' }}>
+                      <p className="text-sm text-gray-100 mb-6 leading-relaxed" style={TEXT_SHADOW.small}>
                         {service.longDescription}
                       </p>
                       
@@ -187,7 +187,7 @@ export default function HomePageContent() {
                             <svg className="w-5 h-5 text-green-400 mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                               <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                             </svg>
-                            <span className="text-sm text-white leading-relaxed" style={{ textShadow: '0 1px 2px rgba(0, 0, 0, 0.7)' }}>{feature}</span>
+                            <span className="text-sm text-white leading-relaxed" style={TEXT_SHADOW.small}>{feature}</span>
                           </li>
                         ))}
                       </ul>
@@ -195,7 +195,7 @@ export default function HomePageContent() {
                     
                     <div>
                       <div className="bg-gradient-to-r from-indigo-600/30 to-purple-600/30 rounded-2xl p-5 mb-6 text-center shadow-xl border border-indigo-500/50 backdrop-blur-sm">
-                        <span className="text-3xl font-bold text-white" style={{ textShadow: '0 2px 4px rgba(0, 0, 0, 0.8)' }}>{service.price}</span>
+                        <span className="text-3xl font-bold text-white" style={TEXT_SHADOW.heading}>{service.price}</span>
                         {service.price !== "完全成果報酬" && <span className="text-white/90 ml-1">〜</span>}
                       </div>
                       

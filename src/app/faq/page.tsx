@@ -140,10 +140,10 @@ export default function FAQPage() {
       {/* Hero Section */}
       <ContentSection className="bg-gray-900/60">
         <div className="text-center">
-          <h1 className={STYLES.heading.h1.primary + " text-white mb-6"} style={{ textShadow: '0 1px 2px rgba(0, 0, 0, 0.8)' }}>
+          <h1 className={STYLES.heading.h1.primary + " text-white mb-6"} style={TEXT_SHADOW.small}>
             よくある質問
           </h1>
-          <p className={STYLES.text.body.medium + " text-gray-200"} style={{ textShadow: '0 1px 2px rgba(0, 0, 0, 0.8)' }}>
+          <p className={STYLES.text.body.medium + " text-gray-200"} style={TEXT_SHADOW.small}>
             お客様からよくいただくご質問をまとめました。<br className="hidden sm:block" />
             こちらにない質問は、お気軽にお問い合わせください。
           </p>
@@ -156,7 +156,7 @@ export default function FAQPage() {
         <div className="space-y-8 sm:space-y-12">
           {faqCategories.map((category, categoryIndex) => (
             <div key={categoryIndex}>
-              <h2 className={STYLES.heading.h2.subsection + " text-white mb-6 sm:mb-8 pb-2 border-b border-gray-600"} style={{ textShadow: '0 1px 2px rgba(0, 0, 0, 0.8)' }}>
+              <h2 className={STYLES.heading.h2.subsection + " text-white mb-6 sm:mb-8 pb-2 border-b border-gray-600"} style={TEXT_SHADOW.small}>
                 {category.category}
               </h2>
               
@@ -167,7 +167,7 @@ export default function FAQPage() {
                     className="group bg-gray-800/80 backdrop-blur-sm border border-gray-700 rounded-lg overflow-hidden"
                   >
                     <summary className="flex items-center justify-between p-4 sm:p-6 cursor-pointer hover:bg-gray-600/50 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2">
-                      <h3 className={STYLES.heading.h3.emphasis + " text-white pr-4"} style={{ textShadow: '0 1px 2px rgba(0, 0, 0, 0.8)' }}>
+                      <h3 className={STYLES.heading.h3.emphasis + " text-white pr-4"} style={TEXT_SHADOW.small}>
                         {faq.question}
                       </h3>
                       <div className="flex-shrink-0">
@@ -184,7 +184,7 @@ export default function FAQPage() {
                     
                     <div className="px-4 sm:px-6 pb-4 sm:pb-6">
                       <div className="pt-4 border-t border-gray-600">
-                        <p className={STYLES.text.description.medium + " text-gray-200"} style={{ textShadow: '0 1px 2px rgba(0, 0, 0, 0.8)' }}>
+                        <p className={STYLES.text.description.medium + " text-gray-200"} style={TEXT_SHADOW.small}>
                           {faq.answer}
                         </p>
                       </div>
@@ -200,17 +200,17 @@ export default function FAQPage() {
       {/* Contact Section */}
       <ContentSection className="bg-gray-900/60">
         <div className="text-center">
-          <h2 className={STYLES.heading.h2.section + " text-white mb-6"} style={{ textShadow: '0 1px 2px rgba(0, 0, 0, 0.8)' }}>
+          <h2 className={STYLES.heading.h2.section + " text-white mb-6"} style={TEXT_SHADOW.small}>
             まだ疑問が解決しませんか？
           </h2>
-          <p className={STYLES.text.body.medium + " text-gray-200 mb-8"} style={{ textShadow: '0 1px 2px rgba(0, 0, 0, 0.8)' }}>
+          <p className={STYLES.text.body.medium + " text-gray-200 mb-8"} style={TEXT_SHADOW.small}>
             お気軽にお問い合わせください。専門スタッフが丁寧にお答えいたします。
           </p>
           
           <div className="">
             <div className="bg-gray-800/80 backdrop-blur-sm border border-gray-700 p-6 sm:p-8 rounded-xl shadow-sm">
-              <h3 className={STYLES.heading.h2.subsection + " text-white mb-4 text-center"} style={{ textShadow: '0 1px 2px rgba(0, 0, 0, 0.8)' }}>💬 公式LINEでお気軽に</h3>
-              <p className={STYLES.text.body.medium + " text-gray-200 text-center mb-6"} style={{ textShadow: '0 1px 2px rgba(0, 0, 0, 0.8)' }}>最速返信！まずはLINEでお話をお聞かせください</p>
+              <h3 className={STYLES.heading.h2.subsection + " text-white mb-4 text-center"} style={TEXT_SHADOW.small}>💬 公式LINEでお気軽に</h3>
+              <p className={STYLES.text.body.medium + " text-gray-200 text-center mb-6"} style={TEXT_SHADOW.small}>最速返信！まずはLINEでお話をお聞かせください</p>
               <LineButton className="w-full" size="large" />
             </div>
           </div>
