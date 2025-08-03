@@ -2,7 +2,7 @@
 
 import { ReactNode } from 'react'
 import { cn } from '@/lib/utils'
-import { SECTION_PATTERNS, TEXT_SHADOW } from '@/lib/ultra-styles'
+import { SECTION_PATTERNS, TEXT_SHADOW, TEXT_BG_STYLES } from '@/lib/ultra-styles'
 
 interface UltraSectionProps {
   children: ReactNode
@@ -49,12 +49,12 @@ export function UltraHero({
           {title}
         </h1>
         {subtitle && (
-          <p className="text-xl sm:text-2xl text-white font-semibold mb-4 bg-gray-800/90 rounded-lg px-6 py-3 inline-block shadow-xl" style={TEXT_SHADOW.body}>
+          <p className={`text-xl sm:text-2xl text-white font-semibold mb-4 ${TEXT_BG_STYLES.default}`} style={TEXT_SHADOW.body}>
             {subtitle}
           </p>
         )}
         {description && (
-          <p className="text-base sm:text-lg text-gray-200 bg-gray-800/90 rounded-lg px-6 py-3 inline-block shadow-xl mt-4" style={TEXT_SHADOW.small}>
+          <p className={`text-base sm:text-lg text-gray-200 ${TEXT_BG_STYLES.default} mt-4`} style={TEXT_SHADOW.small}>
             {description}
           </p>
         )}
@@ -82,7 +82,7 @@ export function UltraCTA({
         <h2 className="text-2xl sm:text-3xl font-bold text-white mb-6" style={TEXT_SHADOW.heading}>
           {title}
         </h2>
-        <p className="text-lg text-white mb-8 bg-gray-800/90 rounded-lg px-6 py-3 inline-block shadow-xl" style={TEXT_SHADOW.body}>
+        <p className={`text-lg text-white mb-8 ${TEXT_BG_STYLES.default}`} style={TEXT_SHADOW.body}>
           {description}
         </p>
         <a 

@@ -8,6 +8,7 @@ import OptimizedImage from '@/components/ui/OptimizedImage'
 import AccessibleButton from '@/components/ui/AccessibleButton'
 import { STYLES } from '@/lib/constants'
 import { createArticleSchema } from '@/lib/enhanced-schema'
+import { TEXT_BG_STYLES } from '@/lib/ultra-styles'
 import LineButton from '@/components/ui/LineButton'
 
 export const metadata: Metadata = {
@@ -128,7 +129,7 @@ export default function AboutPage() {
               私たちが、お客様に選ばれる理由
             </h1>
           </ParallaxElement>
-          <p className="text-xl sm:text-2xl text-white font-semibold mb-4 bg-gray-800/90 rounded-lg px-6 py-3 inline-block shadow-xl" style={{ textShadow: '0 1px 2px rgba(0, 0, 0, 0.8)' }}>
+          <p className={`text-xl sm:text-2xl text-white font-semibold mb-4 ${TEXT_BG_STYLES.default}`} style={{ textShadow: '0 1px 2px rgba(0, 0, 0, 0.8)' }}>
             「高すぎるIT投資」を、「適正な成長投資」に変える
           </p>
         <p className={STYLES.text.body.medium + " text-gray-200 w-full"}>

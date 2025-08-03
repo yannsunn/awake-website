@@ -2,6 +2,7 @@ import React from 'react'
 import Link from 'next/link'
 import { cn } from '@/lib/utils'
 import { STYLES } from '@/lib/constants'
+import { TEXT_BG_STYLES } from '@/lib/ultra-styles'
 
 interface ServiceHeroProps {
   title: string
@@ -42,11 +43,11 @@ export function ServiceHero({
           <h1 className={cn(STYLES.heading.h1.hero, "mb-6")} style={{ textShadow: '0 2px 4px rgba(0, 0, 0, 0.8)' }}>
             {title}
           </h1>
-          <p className="mb-8 text-lg sm:text-xl text-white leading-relaxed bg-gray-800/90 rounded-lg px-6 py-4 inline-block shadow-xl" style={{ textShadow: '0 1px 2px rgba(0, 0, 0, 0.8)' }}>
+          <p className={`mb-8 text-lg sm:text-xl text-white leading-relaxed ${TEXT_BG_STYLES.large}`} style={{ textShadow: '0 1px 2px rgba(0, 0, 0, 0.8)' }}>
             {description}
           </p>
           {subDescription && (
-            <p className="mb-8 text-base sm:text-lg text-gray-200 bg-gray-800/90 rounded-lg px-6 py-3 inline-block shadow-xl" style={{ textShadow: '0 1px 2px rgba(0, 0, 0, 0.8)' }}>
+            <p className={`mb-8 text-base sm:text-lg text-gray-200 ${TEXT_BG_STYLES.default}`} style={{ textShadow: '0 1px 2px rgba(0, 0, 0, 0.8)' }}>
               {subDescription}
             </p>
           )}

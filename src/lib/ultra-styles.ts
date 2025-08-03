@@ -75,6 +75,20 @@ export const CTA_STYLES = {
   button: 'inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-indigo-600 to-purple-600 text-white hover:from-indigo-700 hover:to-purple-700 shadow-xl font-bold rounded-lg transition-all'
 } as const
 
+// テキスト背景スタイル（最も使用頻度が高い）
+export const TEXT_BG_STYLES = {
+  default: 'bg-gray-800/90 rounded-lg px-6 py-3 inline-block shadow-xl',
+  compact: 'bg-gray-800/90 rounded-md px-4 py-2 inline-block shadow-lg',
+  large: 'bg-gray-800/90 rounded-xl px-8 py-4 inline-block shadow-2xl'
+} as const
+
+// インタラクティブ要素の共通スタイル
+export const INTERACTIVE_STYLES = {
+  focusRing: 'focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-blue-500 focus-visible:ring-offset-3',
+  hoverScale: 'hover:scale-[1.02] active:scale-[0.98]',
+  transition: 'transition-all duration-300 ease-out'
+} as const
+
 // 限界突破アニメーション
 export const ANIMATIONS = {
   fadeInUp: 'animate-fade-in-up',

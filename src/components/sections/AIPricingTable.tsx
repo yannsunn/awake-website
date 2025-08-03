@@ -6,7 +6,7 @@ import { Check } from 'lucide-react'
 import { COMPANY_DATA } from '@/lib/company-data'
 import { STYLES } from '@/lib/constants'
 import { cn } from '@/lib/utils'
-import { TEXT_SHADOW, CARD_STYLES } from '@/lib/ultra-styles'
+import { TEXT_SHADOW, CARD_STYLES, TEXT_BG_STYLES } from '@/lib/ultra-styles'
 import UltraSection from '@/components/ui/UltraSection'
 
 const AIPricingTable = memo(function AIPricingTable() {
@@ -18,7 +18,7 @@ const AIPricingTable = memo(function AIPricingTable() {
         <h2 className={cn(STYLES.heading.h2.section, "text-white mb-4")} style={TEXT_SHADOW.heading}>
           料金プラン
         </h2>
-        <p className={STYLES.text.body.large + " text-white bg-gray-800/90 rounded-lg px-6 py-3 inline-block shadow-xl"} style={TEXT_SHADOW.body}>
+        <p className={`${STYLES.text.body.large} text-white ${TEXT_BG_STYLES.default}`} style={TEXT_SHADOW.body}>
           具体的な導入イメージと投資効果を無料で試算できます
         </p>
       </div>
@@ -40,9 +40,6 @@ const AIPricingTable = memo(function AIPricingTable() {
             </div>
             
             <div className="mb-8">
-              <p className="text-gray-200 mb-4" style={TEXT_SHADOW.body}>
-                中小企業・スタートアップ向けの導入プラン
-              </p>
               <ul className="space-y-3">
                 {aiPricing.basic.features.map((feature, index) => (
                   <li key={index} className="flex items-start gap-3">
@@ -81,9 +78,6 @@ const AIPricingTable = memo(function AIPricingTable() {
             </div>
             
             <div className="mb-8">
-              <p className="text-gray-200 mb-4" style={TEXT_SHADOW.body}>
-                大企業・組織全体のDX推進向けプラン
-              </p>
               <ul className="space-y-3">
                 {aiPricing.enterprise.features.map((feature, index) => (
                   <li key={index} className="flex items-start gap-3">
@@ -108,12 +102,8 @@ const AIPricingTable = memo(function AIPricingTable() {
       </div>
 
       <div className="mt-12 text-center">
-        <p className="text-gray-200 mb-4" style={TEXT_SHADOW.body}>
-          <strong className="text-white">※ 料金はすべて税込価格です</strong>
-        </p>
-        <p className="text-gray-200 max-w-2xl mx-auto" style={TEXT_SHADOW.small}>
-          お客様の業務内容・規模に応じて最適なプランをご提案します。<br />
-          まずは無料診断で、具体的な導入効果と投資回収期間をご確認ください。
+        <p className="text-gray-200" style={TEXT_SHADOW.small}>
+          ※ 料金はすべて税込価格です
         </p>
       </div>
     </UltraSection>

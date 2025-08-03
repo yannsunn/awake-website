@@ -2,6 +2,7 @@
 
 import { memo } from 'react'
 import { STYLES } from '@/lib/constants'
+import { TEXT_BG_STYLES } from '@/lib/ultra-styles'
 
 const ProblemSection = memo(function ProblemSection() {
   const problems = [
@@ -19,7 +20,7 @@ const ProblemSection = memo(function ProblemSection() {
           <h2 className={STYLES.heading.h2.section + " mb-4"} style={{ textShadow: '0 2px 4px rgba(0, 0, 0, 0.8)' }}>
             こんな課題を抱えていませんか？
           </h2>
-          <p className={STYLES.text.body.large + " bg-gray-800/90 rounded-lg px-6 py-3 inline-block shadow-xl"} style={{ textShadow: '0 1px 2px rgba(0, 0, 0, 0.8)' }}>
+          <p className={`${STYLES.text.body.large} ${TEXT_BG_STYLES.default}`} style={{ textShadow: '0 1px 2px rgba(0, 0, 0, 0.8)' }}>
             毎日の業務に、こんな「もったいない」が潜んでいる
           </p>
         </div>
