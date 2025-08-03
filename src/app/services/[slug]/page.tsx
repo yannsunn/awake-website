@@ -8,6 +8,7 @@ import PageLayout from '@/components/layout/PageLayout'
 import { COMPANY_DATA } from '@/lib/company-data'
 import { STYLES } from '@/lib/constants'
 import { cn } from '@/lib/utils'
+import { TEXT_BG_STYLES } from '@/lib/ultra-styles'
 import ProblemSection from '@/components/sections/ProblemSection'
 import UseCases from '@/components/sections/UseCases'
 import AIFaq from '@/components/sections/AIFaq'
@@ -253,7 +254,7 @@ export default async function ServicePage(
               <h2 className={cn(STYLES.heading.h2.section, "text-white mb-4")} style={{ textShadow: '0 2px 4px rgba(0, 0, 0, 0.8)' }}>
                 導入プロセス
               </h2>
-              <p className={STYLES.text.body.large + " text-white bg-gray-800/90 rounded-lg px-6 py-3 inline-block shadow-xl"} style={{ textShadow: '0 1px 2px rgba(0, 0, 0, 0.8)' }}>
+              <p className={`${STYLES.text.body.large} text-white ${TEXT_BG_STYLES.default}`} style={{ textShadow: '0 1px 2px rgba(0, 0, 0, 0.8)' }}>
                 たった4ステップで、業務が劇的に変わる
               </p>
             </div>
@@ -305,7 +306,7 @@ export default async function ServicePage(
               <h2 className={cn(STYLES.heading.h2.section, "text-white mb-4")} style={{ textShadow: '0 2px 4px rgba(0, 0, 0, 0.8)' }}>
                 導入の流れ
               </h2>
-              <p className={STYLES.text.body.large + " text-white bg-gray-800/90 rounded-lg px-6 py-3 inline-block shadow-xl"} style={{ textShadow: '0 1px 2px rgba(0, 0, 0, 0.8)' }}>
+              <p className={`${STYLES.text.body.large} text-white ${TEXT_BG_STYLES.default}`} style={{ textShadow: '0 1px 2px rgba(0, 0, 0, 0.8)' }}>
                 最短2週間で販売開始
               </p>
             </div>
@@ -356,7 +357,7 @@ export default async function ServicePage(
           <h2 className={cn(STYLES.heading.h2.section, "text-white mb-8")} style={{ textShadow: '0 2px 4px rgba(0, 0, 0, 0.8)' }}>
             まずはお気軽にご相談ください
           </h2>
-          <p className="text-lg text-white mb-8 bg-gray-800/90 rounded-lg px-6 py-3 inline-block shadow-xl" style={{ textShadow: '0 1px 2px rgba(0, 0, 0, 0.8)' }}>
+          <p className={`text-lg text-white mb-8 ${TEXT_BG_STYLES.default}`} style={{ textShadow: '0 1px 2px rgba(0, 0, 0, 0.8)' }}>
             お客様のビジネスに最適なソリューションをご提案いたします
           </p>
           <Link

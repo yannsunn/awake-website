@@ -14,6 +14,7 @@ import FAQ from '@/components/sections/FAQ'
 import LazyLoad from '@/components/ui/LazyLoad'
 import { RippleContainer, BreathingButton, SoundWave, NeonGlow } from '@/components/effects/DynamicEffects'
 import HolographicCard from '@/components/ui/HolographicCard'
+import { TEXT_BG_STYLES } from '@/lib/ultra-styles'
 
 const services = [
   {
@@ -94,11 +95,11 @@ export default function HomePageContent() {
                 </span>
               </h1>
               
-              <p className="text-lg sm:text-2xl text-white font-semibold mb-3 sm:mb-4 bg-gray-800/90 rounded-lg px-4 sm:px-6 py-3 sm:py-4 inline-block shadow-2xl border-2 border-gray-700 mx-2 sm:mx-0" style={{ textShadow: '0 1px 2px rgba(0, 0, 0, 0.8)' }}>
+              <p className={`text-lg sm:text-2xl text-white font-semibold mb-3 sm:mb-4 ${TEXT_BG_STYLES.default} border-2 border-gray-700 mx-2 sm:mx-0`} style={{ textShadow: '0 1px 2px rgba(0, 0, 0, 0.8)' }}>
                 {COMPANY_DATA.basic.description}
               </p>
 
-              <p className="text-base sm:text-xl text-gray-200 font-medium mb-8 sm:mb-12 bg-gray-800/90 rounded-lg px-4 sm:px-6 py-2 sm:py-3 inline-block shadow-xl border border-gray-700 mx-2 sm:mx-0" style={{ textShadow: '0 1px 2px rgba(0, 0, 0, 0.8)' }}>
+              <p className={`text-base sm:text-xl text-gray-200 font-medium mb-8 sm:mb-12 ${TEXT_BG_STYLES.default} border border-gray-700 mx-2 sm:mx-0`} style={{ textShadow: '0 1px 2px rgba(0, 0, 0, 0.8)' }}>
                 {COMPANY_DATA.basic.subMessage}
               </p>
 
@@ -150,7 +151,7 @@ export default function HomePageContent() {
               <h2 className="text-4xl sm:text-5xl font-extrabold mb-4 text-white" style={{ textShadow: '0 2px 4px rgba(0, 0, 0, 0.8)' }}>
                 あなたの課題を解決する
               </h2>
-              <p className="text-xl text-white font-semibold bg-gray-800/90 rounded-lg px-6 py-3 inline-block shadow-xl" style={{ textShadow: '0 1px 2px rgba(0, 0, 0, 0.8)' }}>3つのクリエイティブソリューション</p>
+              <p className={`text-xl text-white font-semibold ${TEXT_BG_STYLES.default}`} style={{ textShadow: '0 1px 2px rgba(0, 0, 0, 0.8)' }}>3つのクリエイティブソリューション</p>
             </div>
             
             <div className={cn(SPACING.grid.cols['3'], SPACING.grid.gap.md, SPACING.section.maxWidth)}>
