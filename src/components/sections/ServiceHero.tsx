@@ -2,7 +2,7 @@ import React from 'react'
 import Link from 'next/link'
 import { cn } from '@/lib/utils'
 import { STYLES } from '@/lib/constants'
-import { TEXT_BG_STYLES } from '@/lib/ultra-styles'
+import { TEXT_BG_STYLES, TEXT_SHADOW } from '@/lib/ultra-styles'
 
 interface ServiceHeroProps {
   title: string
@@ -40,14 +40,14 @@ export function ServiceHero({
       
       <div className={cn(STYLES.container, 'py-12 sm:py-16 lg:py-20 relative z-10')}>
         <div className="mx-auto max-w-3xl text-center">
-          <h1 className={cn(STYLES.heading.h1.hero, "mb-6")} style={{ textShadow: '0 2px 4px rgba(0, 0, 0, 0.8)' }}>
+          <h1 className={cn(STYLES.heading.h1.hero, "mb-6")} style={TEXT_SHADOW.heading}>
             {title}
           </h1>
-          <p className={`mb-8 text-lg sm:text-xl text-white leading-relaxed ${TEXT_BG_STYLES.large}`} style={{ textShadow: '0 1px 2px rgba(0, 0, 0, 0.8)' }}>
+          <p className={`mb-8 text-lg sm:text-xl text-white leading-relaxed ${TEXT_BG_STYLES.large}`} style={TEXT_SHADOW.small}>
             {description}
           </p>
           {subDescription && (
-            <p className={`mb-8 text-base sm:text-lg text-gray-200 ${TEXT_BG_STYLES.default}`} style={{ textShadow: '0 1px 2px rgba(0, 0, 0, 0.8)' }}>
+            <p className={`mb-8 text-base sm:text-lg text-gray-200 ${TEXT_BG_STYLES.default}`} style={TEXT_SHADOW.small}>
               {subDescription}
             </p>
           )}

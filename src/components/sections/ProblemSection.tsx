@@ -2,7 +2,7 @@
 
 import { memo } from 'react'
 import { STYLES } from '@/lib/constants'
-import { TEXT_BG_STYLES } from '@/lib/ultra-styles'
+import { TEXT_BG_STYLES, TEXT_SHADOW } from '@/lib/ultra-styles'
 
 const ProblemSection = memo(function ProblemSection() {
   const problems = [
@@ -17,10 +17,10 @@ const ProblemSection = memo(function ProblemSection() {
       <div className="absolute inset-0 bg-gray-900/60 backdrop-blur-sm" />
       <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <h2 className={STYLES.heading.h2.section + " mb-4"} style={{ textShadow: '0 2px 4px rgba(0, 0, 0, 0.8)' }}>
+          <h2 className={STYLES.heading.h2.section + " mb-4"} style={TEXT_SHADOW.heading}>
             こんな課題を抱えていませんか？
           </h2>
-          <p className={`${STYLES.text.body.large} ${TEXT_BG_STYLES.default}`} style={{ textShadow: '0 1px 2px rgba(0, 0, 0, 0.8)' }}>
+          <p className={`${STYLES.text.body.large} ${TEXT_BG_STYLES.default}`} style={TEXT_SHADOW.small}>
             毎日の業務に、こんな「もったいない」が潜んでいる
           </p>
         </div>
@@ -36,7 +36,7 @@ const ProblemSection = memo(function ProblemSection() {
           </ul>
           
           <div className="mt-8 p-6 bg-indigo-600/20 rounded-lg text-center border border-indigo-500/30">
-            <p className={STYLES.text.emphasis.strong + " text-xl text-white"} style={{ textShadow: '0 1px 2px rgba(0, 0, 0, 0.8)' }}>
+            <p className={STYLES.text.emphasis.strong + " text-xl text-white"} style={TEXT_SHADOW.small}>
               これらすべて、AIが解決します。
             </p>
           </div>

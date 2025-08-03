@@ -8,7 +8,7 @@ import PageLayout from '@/components/layout/PageLayout'
 import { COMPANY_DATA } from '@/lib/company-data'
 import { STYLES } from '@/lib/constants'
 import { cn } from '@/lib/utils'
-import { TEXT_BG_STYLES } from '@/lib/ultra-styles'
+import { TEXT_BG_STYLES, TEXT_SHADOW } from '@/lib/ultra-styles'
 import ProblemSection from '@/components/sections/ProblemSection'
 import UseCases from '@/components/sections/UseCases'
 import AIFaq from '@/components/sections/AIFaq'
@@ -240,7 +240,7 @@ export default async function ServicePage(
         <section className="py-16 md:py-24 relative">
           <div className="absolute inset-0 bg-gray-900/60 backdrop-blur-sm" />
           <div className="relative z-10 w-full px-4 sm:px-6 lg:px-8">
-            <h2 className={cn(STYLES.heading.h2.section, "text-white text-center mb-12")} style={{ textShadow: '0 2px 4px rgba(0, 0, 0, 0.8)' }}>
+            <h2 className={cn(STYLES.heading.h2.section, "text-white text-center mb-12")} style={TEXT_SHADOW.heading}>
               Awakeが選ばれる4つの理由
             </h2>
             <FeatureGrid features={service.features} />
@@ -251,10 +251,10 @@ export default async function ServicePage(
           <div className="absolute inset-0 bg-gray-800/30 backdrop-blur-sm" />
           <div className="relative z-10 w-full px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
-              <h2 className={cn(STYLES.heading.h2.section, "text-white mb-4")} style={{ textShadow: '0 2px 4px rgba(0, 0, 0, 0.8)' }}>
+              <h2 className={cn(STYLES.heading.h2.section, "text-white mb-4")} style={TEXT_SHADOW.heading}>
                 導入プロセス
               </h2>
-              <p className={`${STYLES.text.body.large} text-white ${TEXT_BG_STYLES.default}`} style={{ textShadow: '0 1px 2px rgba(0, 0, 0, 0.8)' }}>
+              <p className={`${STYLES.text.body.large} text-white ${TEXT_BG_STYLES.default}`} style={TEXT_SHADOW.small}>
                 たった4ステップで、業務が劇的に変わる
               </p>
             </div>
@@ -290,7 +290,7 @@ export default async function ServicePage(
         <section className="py-16 md:py-24 relative">
           <div className="absolute inset-0 bg-gray-800/30 backdrop-blur-sm" />
           <div className="relative z-10 w-full px-4 sm:px-6 lg:px-8">
-            <h2 className={cn(STYLES.heading.h2.section, "text-white text-center mb-12")} style={{ textShadow: '0 2px 4px rgba(0, 0, 0, 0.8)' }}>
+            <h2 className={cn(STYLES.heading.h2.section, "text-white text-center mb-12")} style={TEXT_SHADOW.heading}>
               私たちが選ばれる4つの理由
             </h2>
             <FeatureGrid features={service.features} />
@@ -303,10 +303,10 @@ export default async function ServicePage(
           <div className="absolute inset-0 bg-gray-900/60 backdrop-blur-sm" />
           <div className="relative z-10 w-full px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
-              <h2 className={cn(STYLES.heading.h2.section, "text-white mb-4")} style={{ textShadow: '0 2px 4px rgba(0, 0, 0, 0.8)' }}>
+              <h2 className={cn(STYLES.heading.h2.section, "text-white mb-4")} style={TEXT_SHADOW.heading}>
                 導入の流れ
               </h2>
-              <p className={`${STYLES.text.body.large} text-white ${TEXT_BG_STYLES.default}`} style={{ textShadow: '0 1px 2px rgba(0, 0, 0, 0.8)' }}>
+              <p className={`${STYLES.text.body.large} text-white ${TEXT_BG_STYLES.default}`} style={TEXT_SHADOW.small}>
                 最短2週間で販売開始
               </p>
             </div>
@@ -334,7 +334,7 @@ export default async function ServicePage(
       <section className="py-16 md:py-24 relative">
         <div className="absolute inset-0 bg-gray-800/30 backdrop-blur-sm" />
         <div className="relative z-10 w-full px-4 sm:px-6 lg:px-8">
-          <h2 className={cn(STYLES.heading.h2.section, "text-white text-center mb-12")} style={{ textShadow: '0 2px 4px rgba(0, 0, 0, 0.8)' }}>
+          <h2 className={cn(STYLES.heading.h2.section, "text-white text-center mb-12")} style={TEXT_SHADOW.heading}>
             サービスの特徴
           </h2>
           <FeatureGrid features={service.features} />
@@ -344,7 +344,7 @@ export default async function ServicePage(
       <section className="py-16 md:py-24 relative">
         <div className="absolute inset-0 bg-gray-900/60 backdrop-blur-sm" />
         <div className="relative z-10 w-full px-4 sm:px-6 lg:px-8">
-          <h2 className={cn(STYLES.heading.h2.section, "text-white text-center mb-12")} style={{ textShadow: '0 2px 4px rgba(0, 0, 0, 0.8)' }}>
+          <h2 className={cn(STYLES.heading.h2.section, "text-white text-center mb-12")} style={TEXT_SHADOW.heading}>
             導入までの流れ
           </h2>
           <ProcessSteps title="" steps={service.process} />
@@ -354,10 +354,10 @@ export default async function ServicePage(
       <section className="py-16 md:py-24 relative">
         <div className="absolute inset-0 bg-gray-800/30 backdrop-blur-sm" />
         <div className="relative z-10 w-full px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className={cn(STYLES.heading.h2.section, "text-white mb-8")} style={{ textShadow: '0 2px 4px rgba(0, 0, 0, 0.8)' }}>
+          <h2 className={cn(STYLES.heading.h2.section, "text-white mb-8")} style={TEXT_SHADOW.heading}>
             まずはお気軽にご相談ください
           </h2>
-          <p className={`text-lg text-white mb-8 ${TEXT_BG_STYLES.default}`} style={{ textShadow: '0 1px 2px rgba(0, 0, 0, 0.8)' }}>
+          <p className={`text-lg text-white mb-8 ${TEXT_BG_STYLES.default}`} style={TEXT_SHADOW.small}>
             お客様のビジネスに最適なソリューションをご提案いたします
           </p>
           <Link
