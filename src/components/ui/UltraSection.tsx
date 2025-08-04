@@ -11,6 +11,7 @@ interface UltraSectionProps {
   id?: string
   title?: string
   subtitle?: string
+  description?: string
   ariaLabel?: string
 }
 
@@ -22,6 +23,7 @@ export default function UltraSection({
   id,
   title,
   subtitle,
+  description,
   ariaLabel
 }: UltraSectionProps) {
   const pattern = SECTION_PATTERNS[variant]
@@ -36,8 +38,13 @@ export default function UltraSection({
               {title}
             </h2>
             {subtitle && (
-              <p className="text-xl text-gray-200" style={TEXT_SHADOW.body}>
+              <p className="text-xl text-gray-200 mb-4" style={TEXT_SHADOW.body}>
                 {subtitle}
+              </p>
+            )}
+            {description && (
+              <p className="text-lg text-gray-300" style={TEXT_SHADOW.small}>
+                {description}
               </p>
             )}
           </div>
