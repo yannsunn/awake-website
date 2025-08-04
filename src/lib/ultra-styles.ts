@@ -2,37 +2,37 @@
 
 import { cn } from '@/lib/utils'
 
-// テキストシャドウ統一システム
+// テキストシャドウ - 最小限の影で洗練された見た目
 export const TEXT_SHADOW = {
-  // 見出し用（最も強い影）
-  heading: { textShadow: '0 2px 4px rgba(0, 0, 0, 0.3)' },
-  // 本文用（中程度の影）
-  body: { textShadow: '0 1px 2px rgba(0, 0, 0, 0.2)' },
-  // 小テキスト用（軽い影）
-  small: { textShadow: '0 1px 1px rgba(0, 0, 0, 0.15)' },
-  // 特殊効果用
-  glow: { textShadow: '0 0 20px rgba(147, 51, 234, 0.5)' }
+  // 見出し用（控えめな影）
+  heading: { textShadow: '0 1px 2px rgba(0, 0, 0, 0.1)' },
+  // 本文用（ほぼ影なし）
+  body: { textShadow: '0 1px 1px rgba(0, 0, 0, 0.05)' },
+  // 小テキスト用（影なし）
+  small: { textShadow: 'none' },
+  // 特殊効果用（廃止）
+  glow: { textShadow: 'none' }
 } as const
 
 // セクション背景パターン
 export const SECTION_PATTERNS = {
   // 最も濃い背景（メインセクション）
   dark: {
-    wrapper: 'pt-20 md:pt-24 pb-12 sm:pb-16 md:pb-20 lg:pb-24 xl:pb-28 relative',
-    overlay: 'absolute inset-0 bg-gray-900/80',
-    content: 'relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-12'
+    wrapper: 'pt-20 md:pt-24 py-12 sm:py-16 md:py-20 relative',
+    overlay: 'absolute inset-0 bg-gray-900/90',
+    content: 'relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 md:px-8'
   },
   // 中間の背景（サブセクション）
   medium: {
-    wrapper: 'pt-20 md:pt-24 pb-12 sm:pb-16 md:pb-20 lg:pb-24 xl:pb-28 relative',
-    overlay: 'absolute inset-0 bg-gray-800/60',
-    content: 'relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-12'
+    wrapper: 'pt-20 md:pt-24 py-12 sm:py-16 md:py-20 relative',
+    overlay: 'absolute inset-0 bg-gray-900/70 backdrop-blur-sm',
+    content: 'relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 md:px-8'
   },
   // 軽い背景（補助セクション）
   light: {
-    wrapper: 'pt-20 md:pt-24 pb-12 sm:pb-16 md:pb-20 lg:pb-24 xl:pb-28 relative',
-    overlay: 'absolute inset-0 bg-gray-700/40',
-    content: 'relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-12'
+    wrapper: 'pt-20 md:pt-24 py-12 sm:py-16 md:py-20 relative',
+    overlay: 'absolute inset-0 bg-white/95 backdrop-blur-sm',
+    content: 'relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 md:px-8'
   }
 } as const
 
