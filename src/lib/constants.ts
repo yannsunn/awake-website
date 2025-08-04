@@ -23,7 +23,7 @@ export const STYLES = {
   // WCAG AAA準拠 + 限界突破カードスタイル
   card: {
     default: 'bg-gray-800/80 backdrop-blur-md rounded-2xl p-8 shadow-lg hover:shadow-xl border border-gray-700/50 transition-all duration-300 ease-out hover:bg-gray-800/90 hover:scale-[1.01] focus-within:ring-3 focus-within:ring-blue-500 focus-within:ring-offset-3',
-    featured: 'bg-gradient-to-br from-gray-800/95 to-gray-900/90 rounded-2xl p-8 border-2 border-indigo-500/60 shadow-xl shadow-indigo-500/10 hover:shadow-2xl hover:from-gray-800/98 hover:to-gray-900/95 transition-all duration-300 ease-out hover:scale-[1.01] focus-within:ring-3 focus-within:ring-blue-500 focus-within:ring-offset-3',
+    featured: 'bg-gradient-to-br from-gray-900 to-black rounded-2xl p-8 border-2 border-indigo-500/60 shadow-xl shadow-indigo-500/10 hover:shadow-2xl hover:from-gray-900 hover:to-gray-950 transition-all duration-300 ease-out hover:scale-[1.01] focus-within:ring-2 focus-within:ring-blue-500 focus-within:ring-offset-2',
     compact: 'bg-gray-800/80 backdrop-blur-md rounded-xl p-6 shadow-lg hover:shadow-xl border border-gray-700/50 transition-all duration-300 ease-out hover:bg-gray-800/90 hover:scale-[1.01] focus-within:ring-3 focus-within:ring-blue-500 focus-within:ring-offset-3'
   },
   
