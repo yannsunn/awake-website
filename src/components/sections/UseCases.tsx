@@ -2,6 +2,7 @@
 
 import { memo } from 'react'
 import { STYLES } from '@/lib/constants'
+import { TEXT_SHADOW } from '@/lib/ultra-styles'
 
 const UseCases = memo(function UseCases() {
   const industries = [
@@ -59,14 +60,14 @@ const UseCases = memo(function UseCases() {
           {industries.map((industry, index) => (
             <div key={index} className="bg-gray-overlay rounded-xl p-6">
               <div className="text-3xl mb-4">{industry.icon}</div>
-              <h3 className={STYLES.heading.h3.card + " mb-4"}>
+              <h3 className={STYLES.heading.h3.card + " mb-4 text-white"} style={TEXT_SHADOW.heading}>
                 {industry.title}
               </h3>
               <ul className="space-y-2">
                 {industry.items.map((item, idx) => (
                   <li key={idx} className="flex items-start">
-                    <span className="text-gray-300 mr-2">•</span>
-                    <span className={STYLES.text.description.small}>{item}</span>
+                    <span className="text-white mr-2">•</span>
+                    <span className="text-white text-sm" style={TEXT_SHADOW.body}>{item}</span>
                   </li>
                 ))}
               </ul>

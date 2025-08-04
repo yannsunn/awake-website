@@ -38,7 +38,7 @@ export default function BreathingButton({
         className="absolute inset-0 rounded-lg blur-xl opacity-50"
         style={{
           background: variant === 'primary' 
-            ? 'linear-gradient(135deg, #8b5cf6 0%, #6366f1 100%)'
+            ? 'linear-gradient(135deg, var(--primary-500) 0%, var(--effect-accent) 100%)'
             : 'transparent',
           transform: `scale(${1.1 + (scale - 1) * 2})`, // より大きなグロー効果
           transition: 'transform 0.3s ease-out'
