@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Noto_Sans_JP } from "next/font/google";
 import "./globals.css";
 import { enhancedOrganizationSchema } from "@/lib/enhanced-schema";
-import OptimizedBackground from "@/components/layout/OptimizedBackground";
+import HybridBackground from "@/components/layout/HybridBackground";
 
 const notoSansJP = Noto_Sans_JP({
   variable: "--font-noto-sans-jp",
@@ -60,8 +60,8 @@ export default function RootLayout({
             ナビゲーションへスキップ
           </a>
         </div>
-        {/* 最適化された背景 */}
-        <OptimizedBackground />
+        {/* ハイブリッド背景 */}
+        <HybridBackground />
         {/* メインコンテンツ */}
         <div className="relative z-10">
           <script
