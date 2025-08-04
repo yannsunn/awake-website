@@ -85,7 +85,7 @@ export default function HomePageContent() {
           <div className={cn('relative z-10 w-full', SPACING.section.container)}>
             <div className="text-center max-w-6xl mx-auto">
               {/* Animated Tagline */}
-              <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold mb-6 sm:mb-8 leading-tight" style={TEXT_SHADOW.heading}>
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 sm:mb-8 leading-tight" style={TEXT_SHADOW.heading}>
                 <span className="text-white font-extrabold">
                   高額なIT投資に、
                 </span>
@@ -143,7 +143,7 @@ export default function HomePageContent() {
           <div className="absolute inset-0 bg-gray-900/30 backdrop-blur-sm" />
           <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-12">
             <div className="text-center mb-12 lg:mb-16 reveal">
-              <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6 text-white leading-tight" style={TEXT_SHADOW.heading}>
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6 text-white leading-tight" style={TEXT_SHADOW.heading}>
                 あなたの課題を解決する
               </h2>
               <p className={`text-lg sm:text-xl md:text-2xl text-white font-semibold leading-relaxed ${TEXT_BG_STYLES.default}`} style={TEXT_SHADOW.small}>3つのクリエイティブソリューション</p>
