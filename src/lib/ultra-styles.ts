@@ -18,19 +18,19 @@ export const TEXT_SHADOW = {
 export const SECTION_PATTERNS = {
   // 最も濃い背景（メインセクション）
   dark: {
-    wrapper: 'py-12 sm:py-16 md:py-20 lg:py-24 xl:py-28 relative',
+    wrapper: 'pt-20 md:pt-24 pb-12 sm:pb-16 md:pb-20 lg:pb-24 xl:pb-28 relative',
     overlay: 'absolute inset-0 bg-gray-900/80',
     content: 'relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-12'
   },
   // 中間の背景（サブセクション）
   medium: {
-    wrapper: 'py-12 sm:py-16 md:py-20 lg:py-24 xl:py-28 relative',
+    wrapper: 'pt-20 md:pt-24 pb-12 sm:pb-16 md:pb-20 lg:pb-24 xl:pb-28 relative',
     overlay: 'absolute inset-0 bg-gray-800/60',
     content: 'relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-12'
   },
   // 軽い背景（補助セクション）
   light: {
-    wrapper: 'py-12 sm:py-16 md:py-20 lg:py-24 xl:py-28 relative',
+    wrapper: 'pt-20 md:pt-24 pb-12 sm:pb-16 md:pb-20 lg:pb-24 xl:pb-28 relative',
     overlay: 'absolute inset-0 bg-gray-700/40',
     content: 'relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-12'
   }

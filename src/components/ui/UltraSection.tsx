@@ -70,7 +70,7 @@ export function UltraHero({
   className?: string | undefined
 }) {
   return (
-    <UltraSection variant="dark" className={cn("min-h-[60vh] sm:min-h-[70vh] md:min-h-[80vh] flex items-center justify-center", className)}>
+    <UltraSection variant="dark" className={cn("min-h-[60vh] sm:min-h-[70vh] md:min-h-[80vh] flex items-center justify-center pt-20 md:pt-24", className)}>
       <div className="text-center max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-extrabold mb-6 text-white leading-tight" style={TEXT_SHADOW.heading}>
           {title}
