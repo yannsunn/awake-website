@@ -166,7 +166,7 @@ export default function HomePageContent() {
                     <div>
                       {/* Icon with gradient background */}
                       <div className="relative">
-                        <div className="w-24 h-24 rounded-3xl bg-gradient-to-br from-indigo-500/20 to-purple-600/20 border-2 border-indigo-500/30 flex items-center justify-center mb-8 shadow-2xl relative z-10 backdrop-blur-sm">
+                        <div className="w-24 h-24 rounded-3xl bg-gradient-to-br from-indigo-500/40 to-purple-600/40 border-2 border-indigo-500/50 flex items-center justify-center mb-8 shadow-2xl relative z-10 backdrop-blur-sm">
                           <Icon className="w-12 h-12 text-indigo-300" />
                         </div>
                       </div>
@@ -194,7 +194,7 @@ export default function HomePageContent() {
                     </div>
                     
                     <div>
-                      <div className="bg-gradient-to-r from-indigo-600/30 to-purple-600/30 rounded-2xl p-5 mb-6 text-center shadow-xl border border-indigo-500/50 backdrop-blur-sm">
+                      <div className="bg-gradient-to-r from-indigo-600/80 to-purple-600/80 rounded-2xl p-5 mb-6 text-center shadow-xl border border-indigo-500/50 backdrop-blur-sm">
                         <span className="text-3xl font-bold text-white" style={TEXT_SHADOW.heading}>{service.price}</span>
                         {service.price !== "完全成果報酬" && <span className="text-white/90 ml-1">〜</span>}
                       </div>
