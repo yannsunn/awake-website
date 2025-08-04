@@ -5,11 +5,11 @@ import { cn } from '@/lib/utils'
 // テキストシャドウ統一システム
 export const TEXT_SHADOW = {
   // 見出し用（最も強い影）
-  heading: { textShadow: '0 2px 4px rgba(0, 0, 0, 0.8)' },
+  heading: { textShadow: '0 2px 4px rgba(0, 0, 0, 0.3)' },
   // 本文用（中程度の影）
-  body: { textShadow: '0 1px 3px rgba(0, 0, 0, 0.8)' },
+  body: { textShadow: '0 1px 2px rgba(0, 0, 0, 0.2)' },
   // 小テキスト用（軽い影）
-  small: { textShadow: '0 1px 2px rgba(0, 0, 0, 0.8)' },
+  small: { textShadow: '0 1px 1px rgba(0, 0, 0, 0.15)' },
   // 特殊効果用
   glow: { textShadow: '0 0 20px rgba(147, 51, 234, 0.5)' }
 } as const
@@ -19,19 +19,19 @@ export const SECTION_PATTERNS = {
   // 最も濃い背景（メインセクション）
   dark: {
     wrapper: 'py-16 md:py-24 relative',
-    overlay: 'absolute inset-0 bg-gray-900/60 backdrop-blur-sm',
+    overlay: 'absolute inset-0 bg-gray-900/80',
     content: 'relative z-10 w-full px-4 sm:px-6 lg:px-8'
   },
   // 中間の背景（サブセクション）
   medium: {
     wrapper: 'py-16 md:py-24 relative',
-    overlay: 'absolute inset-0 bg-gray-800/30 backdrop-blur-sm',
+    overlay: 'absolute inset-0 bg-gray-800/60',
     content: 'relative z-10 w-full px-4 sm:px-6 lg:px-8'
   },
   // 軽い背景（補助セクション）
   light: {
     wrapper: 'py-16 md:py-24 relative',
-    overlay: 'absolute inset-0 bg-gray-700/20 backdrop-blur-sm',
+    overlay: 'absolute inset-0 bg-gray-700/40',
     content: 'relative z-10 w-full px-4 sm:px-6 lg:px-8'
   }
 } as const
@@ -39,11 +39,11 @@ export const SECTION_PATTERNS = {
 // カードスタイル統一
 export const CARD_STYLES = {
   // プレミアムカード
-  premium: 'bg-gray-800/90 backdrop-blur-md border-2 border-indigo-500/30 rounded-2xl p-8 shadow-2xl hover:shadow-3xl transition-all duration-300',
+  premium: 'bg-gray-800/95 border-2 border-indigo-500/30 rounded-2xl p-8 shadow-2xl hover:shadow-3xl transition-all duration-300',
   // スタンダードカード
-  standard: 'bg-gray-800/80 backdrop-blur-sm border border-gray-700 rounded-xl p-6 sm:p-8 shadow-lg hover:shadow-xl transition-all duration-300',
+  standard: 'bg-gray-800/90 border border-gray-700 rounded-xl p-6 sm:p-8 shadow-lg hover:shadow-xl transition-all duration-300',
   // コンパクトカード
-  compact: 'bg-gray-800/80 backdrop-blur-sm border border-gray-700 rounded-lg p-4 sm:p-6 shadow-md hover:shadow-lg transition-all duration-300'
+  compact: 'bg-gray-800/90 border border-gray-700 rounded-lg p-4 sm:p-6 shadow-md hover:shadow-lg transition-all duration-300'
 } as const
 
 // 統一セクションコンポーネント

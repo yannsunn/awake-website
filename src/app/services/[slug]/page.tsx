@@ -238,7 +238,7 @@ export default async function ServicePage(
         <ProblemSection />
         
         <section className="py-16 md:py-24 relative">
-          <div className="absolute inset-0 bg-gray-900/60 backdrop-blur-sm" />
+          <div className="absolute inset-0 bg-gray-900/80" />
           <div className="relative z-10 w-full px-4 sm:px-6 lg:px-8">
             <h2 className={cn(STYLES.heading.h2.section, "text-white text-center mb-12")} style={TEXT_SHADOW.heading}>
               Awakeが選ばれる4つの理由
@@ -248,7 +248,7 @@ export default async function ServicePage(
         </section>
         
         <section className="py-16 md:py-24 relative">
-          <div className="absolute inset-0 bg-gray-800/30 backdrop-blur-sm" />
+          <div className="absolute inset-0 bg-gray-800/60" />
           <div className="relative z-10 w-full px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
               <h2 className={cn(STYLES.heading.h2.section, "text-white mb-4")} style={TEXT_SHADOW.heading}>
@@ -288,7 +288,7 @@ export default async function ServicePage(
         <RiskFree />
         
         <section className="py-16 md:py-24 relative">
-          <div className="absolute inset-0 bg-gray-800/30 backdrop-blur-sm" />
+          <div className="absolute inset-0 bg-gray-800/60" />
           <div className="relative z-10 w-full px-4 sm:px-6 lg:px-8">
             <h2 className={cn(STYLES.heading.h2.section, "text-white text-center mb-12")} style={TEXT_SHADOW.heading}>
               私たちが選ばれる4つの理由
@@ -300,7 +300,7 @@ export default async function ServicePage(
         <AmazonSupport />
         
         <section className="py-16 md:py-24 relative">
-          <div className="absolute inset-0 bg-gray-900/60 backdrop-blur-sm" />
+          <div className="absolute inset-0 bg-gray-900/80" />
           <div className="relative z-10 w-full px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
               <h2 className={cn(STYLES.heading.h2.section, "text-white mb-4")} style={TEXT_SHADOW.heading}>
@@ -332,7 +332,7 @@ export default async function ServicePage(
       />
       
       <section className="py-16 md:py-24 relative">
-        <div className="absolute inset-0 bg-gray-800/30 backdrop-blur-sm" />
+        <div className="absolute inset-0 bg-gray-800/30 " />
         <div className="relative z-10 w-full px-4 sm:px-6 lg:px-8">
           <h2 className={cn(STYLES.heading.h2.section, "text-white text-center mb-12")} style={TEXT_SHADOW.heading}>
             サービスの特徴
@@ -342,7 +342,7 @@ export default async function ServicePage(
       </section>
       
       <section className="py-16 md:py-24 relative">
-        <div className="absolute inset-0 bg-gray-900/60 backdrop-blur-sm" />
+        <div className="absolute inset-0 bg-gray-900/60 " />
         <div className="relative z-10 w-full px-4 sm:px-6 lg:px-8">
           <h2 className={cn(STYLES.heading.h2.section, "text-white text-center mb-12")} style={TEXT_SHADOW.heading}>
             導入までの流れ
@@ -352,7 +352,7 @@ export default async function ServicePage(
       </section>
       
       <section className="py-16 md:py-24 relative">
-        <div className="absolute inset-0 bg-gray-800/30 backdrop-blur-sm" />
+        <div className="absolute inset-0 bg-gray-800/30 " />
         <div className="relative z-10 w-full px-4 sm:px-6 lg:px-8 text-center">
           <h2 className={cn(STYLES.heading.h2.section, "text-white mb-8")} style={TEXT_SHADOW.heading}>
             まずはお気軽にご相談ください
