@@ -61,9 +61,7 @@ export default function RootLayout({
           </a>
         </div>
         {/* 固定背景 */}
-        <div className="fixed inset-0 z-0">
-          <FixedBackground />
-        </div>
+        <FixedBackground />
         {/* メインコンテンツ */}
         <div className="relative z-10">
           <script
