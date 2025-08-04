@@ -12,7 +12,7 @@ import LineButton from '@/components/ui/LineButton'
 import ValueProposition from '@/components/sections/ValueProposition'
 import FAQ from '@/components/sections/FAQ'
 import LazyLoad from '@/components/ui/LazyLoad'
-import { RippleContainer, BreathingButton, SoundWave, NeonGlow } from '@/components/effects/DynamicEffects'
+import { RippleContainer, BreathingButton, NeonGlow } from '@/components/effects/DynamicEffects'
 import HolographicCard from '@/components/ui/HolographicCard'
 import { TEXT_BG_STYLES, TEXT_SHADOW } from '@/lib/ultra-styles'
 
@@ -127,11 +127,6 @@ export default function HomePageContent() {
                 <LineButton className="shadow-xl" size="medium" variant="filled" />
               </div>
               
-              {/* サウンドビジュアライザー */}
-              <div className="mt-12 flex justify-center items-center gap-4">
-                <span className="text-sm text-gray-300 font-medium">リズムを感じる</span>
-                <SoundWave />
-              </div>
             </div>
           </div>
           
