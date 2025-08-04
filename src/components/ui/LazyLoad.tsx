@@ -39,7 +39,7 @@ const LazyLoad = memo(function LazyLoad({
       },
       {
         rootMargin: `${offset}px`,
-        threshold: 0.01
+        threshold: 0.1
       }
     )
 
@@ -110,8 +110,8 @@ export const LazyImage = memo(function LazyImage({
         }
       },
       {
-        rootMargin: '50px',
-        threshold: 0.01
+        rootMargin: '100px',
+        threshold: 0.1
       }
     )
 
