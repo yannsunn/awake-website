@@ -204,7 +204,7 @@ export default function HomePageContent() {
                           <AccessibleButton
                             key={btnIdx}
                             href={button.href}
-                            className={btnIdx === 0 ? "bg-gradient-to-r from-indigo-600 to-purple-600 text-white hover:from-indigo-700 hover:to-purple-700 shadow-lg font-semibold" : "bg-gray-700/50 backdrop-blur-sm border-2 border-gray-600 text-white hover:bg-gray-700/70 hover:border-gray-500 font-medium"}
+                            className={btnIdx === 0 ? "bg-gradient-to-r from-indigo-600 to-purple-600 text-white hover:from-indigo-700 hover:to-purple-700 shadow-lg font-bold" : "bg-gray-800/90 backdrop-blur-sm border-2 border-gray-600 text-white hover:bg-gray-700 hover:border-gray-500 font-semibold"}
                             size="medium"
                             {...(button.href.startsWith('http') && {
                               target: '_blank',
