@@ -144,67 +144,67 @@ export default function HomePageContent() {
         </section>
 
         {/* Services Section - Bento Grid */}
-        <section id="services" className={cn(SPACING.section.padding, 'relative')}>
+        <section id="services" className="py-12 sm:py-16 md:py-20 lg:py-24 xl:py-28 relative">
           <div className="absolute inset-0 bg-gray-900/30 backdrop-blur-sm" />
-          <div className={cn('relative z-10 w-full', SPACING.section.container)}>
+          <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-12">
             <div className="text-center mb-12 lg:mb-16 reveal">
-              <h2 className="text-4xl sm:text-5xl font-extrabold mb-4 text-white" style={TEXT_SHADOW.heading}>
+              <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6 text-white leading-tight" style={TEXT_SHADOW.heading}>
                 あなたの課題を解決する
               </h2>
-              <p className={`text-xl text-white font-semibold ${TEXT_BG_STYLES.default}`} style={TEXT_SHADOW.small}>3つのクリエイティブソリューション</p>
+              <p className={`text-lg sm:text-xl md:text-2xl text-white font-semibold leading-relaxed ${TEXT_BG_STYLES.default}`} style={TEXT_SHADOW.small}>3つのクリエイティブソリューション</p>
             </div>
             
-            <div className={cn(SPACING.grid.cols['3'], SPACING.grid.gap.md, SPACING.section.maxWidth)}>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-10 max-w-7xl mx-auto">
               {services.map((service, index) => {
                 const Icon = service.icon
                 return (
                   <HolographicCard
                     key={index}
-                    className="p-8 md:p-10 flex flex-col justify-between h-full cursor-pointer"
+                    className="p-6 sm:p-8 lg:p-10 flex flex-col justify-between h-full cursor-pointer"
                     variant="featured"
                   >
                     <div>
                       {/* Icon with gradient background */}
                       <div className="relative">
-                        <div className="w-24 h-24 rounded-3xl bg-gradient-to-br from-indigo-500/40 to-purple-600/40 border-2 border-indigo-500/50 flex items-center justify-center mb-8 shadow-2xl relative z-10 backdrop-blur-sm">
-                          <Icon className="w-12 h-12 text-indigo-300" />
+                        <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-2xl sm:rounded-3xl bg-gradient-to-br from-indigo-500/40 to-purple-600/40 border-2 border-indigo-500/50 flex items-center justify-center mb-6 sm:mb-8 shadow-2xl relative z-10 backdrop-blur-sm">
+                          <Icon className="w-10 h-10 sm:w-12 sm:h-12 text-indigo-300" />
                         </div>
                       </div>
                       
-                      <h3 className="text-2xl font-bold mb-4 text-white" style={TEXT_SHADOW.heading}>
+                      <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold mb-3 sm:mb-4 text-white leading-tight" style={TEXT_SHADOW.heading}>
                         {service.title}
                       </h3>
-                      <p className="text-white mb-4 font-medium leading-relaxed" style={TEXT_SHADOW.body}>
+                      <p className="text-sm sm:text-base lg:text-lg text-white mb-3 sm:mb-4 font-medium leading-relaxed" style={TEXT_SHADOW.body}>
                         {service.description}
                       </p>
-                      <p className="text-sm text-white mb-6 leading-relaxed" style={TEXT_SHADOW.body}>
+                      <p className="text-xs sm:text-sm lg:text-base text-white mb-4 sm:mb-6 leading-relaxed" style={TEXT_SHADOW.body}>
                         {service.longDescription}
                       </p>
                       
-                      <ul className="space-y-2 mb-6">
+                      <ul className="space-y-2 mb-4 sm:mb-6">
                         {service.features.map((feature, idx) => (
                           <li key={idx} className="flex items-start">
-                            <svg className="w-5 h-5 text-green-400 mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                            <svg className="w-4 h-4 sm:w-5 sm:h-5 text-green-400 mr-2 sm:mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                               <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                             </svg>
-                            <span className="text-sm text-white leading-relaxed" style={TEXT_SHADOW.body}>{feature}</span>
+                            <span className="text-xs sm:text-sm lg:text-base text-white leading-relaxed" style={TEXT_SHADOW.body}>{feature}</span>
                           </li>
                         ))}
                       </ul>
                     </div>
                     
                     <div>
-                      <div className="bg-gradient-to-r from-indigo-600/80 to-purple-600/80 rounded-2xl p-5 mb-6 text-center shadow-xl border border-indigo-500/50 backdrop-blur-sm">
-                        <span className="text-3xl font-bold text-white" style={TEXT_SHADOW.heading}>{service.price}</span>
+                      <div className="bg-gradient-to-r from-indigo-600/80 to-purple-600/80 rounded-xl sm:rounded-2xl p-3 sm:p-5 mb-4 sm:mb-6 text-center shadow-xl border border-indigo-500/50 backdrop-blur-sm">
+                        <span className="text-xl sm:text-2xl lg:text-3xl font-bold text-white" style={TEXT_SHADOW.heading}>{service.price}</span>
                         {service.price !== "完全成果報酬" && <span className="text-white/90 ml-1">〜</span>}
                       </div>
                       
-                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-3">
                         {service.buttons.map((button, btnIdx) => (
                           <AccessibleButton
                             key={btnIdx}
                             href={button.href}
-                            className={btnIdx === 0 ? "bg-gradient-to-r from-indigo-600 to-purple-600 text-white hover:from-indigo-700 hover:to-purple-700 shadow-lg font-bold" : "bg-gray-800/90 backdrop-blur-sm border-2 border-gray-600 text-white hover:bg-gray-700 hover:border-gray-500 font-semibold"}
+                            className={btnIdx === 0 ? "bg-gradient-to-r from-indigo-600 to-purple-600 text-white hover:from-indigo-700 hover:to-purple-700 shadow-lg font-bold text-xs sm:text-sm" : "bg-gray-800/90 backdrop-blur-sm border-2 border-gray-600 text-white hover:bg-gray-700 hover:border-gray-500 font-semibold text-xs sm:text-sm"}
                             size="medium"
                             {...(button.href.startsWith('http') && {
                               target: '_blank',
@@ -260,24 +260,24 @@ export default function HomePageContent() {
         <FAQ />
         
         {/* Contact Section */}
-        <section id="contact" className="py-16 sm:py-20 lg:py-24 relative">
+        <section id="contact" className="py-12 sm:py-16 md:py-20 lg:py-24 xl:py-28 relative">
           <div className="absolute inset-0 bg-gray-900/30 backdrop-blur-sm" />
-          <div className="relative z-10 w-full px-4 sm:px-6 lg:px-8">
+          <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-12">
             <div className="text-center mb-8 sm:mb-12 lg:mb-16">
-              <h2 className="text-4xl sm:text-5xl font-bold mb-6 text-white">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-white leading-tight" style={TEXT_SHADOW.heading}>
                 まずは、お話を聞かせてください
               </h2>
-              <p className="text-xl text-gray-100 font-medium mb-4">
+              <p className="text-lg sm:text-xl md:text-2xl text-gray-100 font-medium mb-4 leading-relaxed" style={TEXT_SHADOW.body}>
                 無料相談で、あなたのビジネスの可能性を探る
               </p>
-              <p className="text-lg text-gray-300">
-                押し売りは一切いたしません。<br />
-                まずは現状の課題と、理想の姿をお聞かせください。<br />
+              <p className="text-base sm:text-lg md:text-xl text-gray-300 leading-relaxed px-4 sm:px-0" style={TEXT_SHADOW.small}>
+                押し売りは一切いたしません。<br className="hidden sm:block" />
+                まずは現状の課題と、理想の姿をお聞かせください。<br className="hidden sm:block" />
                 最適な解決策を一緒に考えます。
               </p>
             </div>
             
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12">
               <LazyLoad>
                 <ContactForm />
               </LazyLoad>

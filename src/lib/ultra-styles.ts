@@ -18,32 +18,32 @@ export const TEXT_SHADOW = {
 export const SECTION_PATTERNS = {
   // 最も濃い背景（メインセクション）
   dark: {
-    wrapper: 'py-16 md:py-24 relative',
+    wrapper: 'py-12 sm:py-16 md:py-20 lg:py-24 xl:py-28 relative',
     overlay: 'absolute inset-0 bg-gray-900/80',
-    content: 'relative z-10 w-full px-4 sm:px-6 lg:px-8'
+    content: 'relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-12'
   },
   // 中間の背景（サブセクション）
   medium: {
-    wrapper: 'py-16 md:py-24 relative',
+    wrapper: 'py-12 sm:py-16 md:py-20 lg:py-24 xl:py-28 relative',
     overlay: 'absolute inset-0 bg-gray-800/60',
-    content: 'relative z-10 w-full px-4 sm:px-6 lg:px-8'
+    content: 'relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-12'
   },
   // 軽い背景（補助セクション）
   light: {
-    wrapper: 'py-16 md:py-24 relative',
+    wrapper: 'py-12 sm:py-16 md:py-20 lg:py-24 xl:py-28 relative',
     overlay: 'absolute inset-0 bg-gray-700/40',
-    content: 'relative z-10 w-full px-4 sm:px-6 lg:px-8'
+    content: 'relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-12'
   }
 } as const
 
 // カードスタイル統一
 export const CARD_STYLES = {
   // プレミアムカード
-  premium: 'bg-gray-800/95 border-2 border-indigo-500/30 rounded-2xl p-8 shadow-2xl hover:shadow-3xl transition-all duration-300',
+  premium: 'bg-gray-800/95 border-2 border-indigo-500/30 rounded-xl sm:rounded-2xl p-6 sm:p-8 lg:p-10 shadow-2xl hover:shadow-3xl transition-all duration-300 hover:scale-[1.02]',
   // スタンダードカード
-  standard: 'bg-gray-800/90 border border-gray-700 rounded-xl p-6 sm:p-8 shadow-lg hover:shadow-xl transition-all duration-300',
+  standard: 'bg-gray-800/90 border border-gray-700 rounded-lg sm:rounded-xl p-4 sm:p-6 lg:p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-[1.01]',
   // コンパクトカード
-  compact: 'bg-gray-800/90 border border-gray-700 rounded-lg p-4 sm:p-6 shadow-md hover:shadow-lg transition-all duration-300'
+  compact: 'bg-gray-800/90 border border-gray-700 rounded-lg p-3 sm:p-4 lg:p-6 shadow-md hover:shadow-lg transition-all duration-300'
 } as const
 
 // 統一セクションコンポーネント
