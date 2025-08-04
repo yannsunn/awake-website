@@ -38,7 +38,7 @@ export function ServiceHero({
       {/* 背景レイヤー */}
       <div className="absolute inset-0 bg-gray-900/60 backdrop-blur-sm" />
       
-      <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 py-12 sm:py-16 md:py-20 lg:py-24 xl:py-28">
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 pt-20 md:pt-24 pb-12 sm:pb-16 md:pb-20 lg:pb-24 xl:pb-28">
         <div className="mx-auto max-w-5xl text-center">
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-extrabold mb-6 text-white leading-tight" style={TEXT_SHADOW.heading}>
             {title}
