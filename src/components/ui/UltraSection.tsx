@@ -7,7 +7,7 @@ import { SECTION_PATTERNS, TEXT_SHADOW, TEXT_BG_STYLES } from '@/lib/ultra-style
 interface UltraSectionProps {
   children?: ReactNode
   variant?: keyof typeof SECTION_PATTERNS
-  className?: string
+  className?: string | undefined
   id?: string
   title?: string
   subtitle?: string
@@ -67,7 +67,7 @@ export function UltraHero({
   subtitle?: string
   description?: string
   children?: ReactNode
-  className?: string
+  className?: string | undefined
 }) {
   return (
     <UltraSection variant="dark" className={cn("min-h-[50vh] flex items-center justify-center", className)}>
@@ -107,7 +107,7 @@ export function UltraCTA({
     label: string
     variant: 'primary' | 'secondary'
   }>
-  className?: string
+  className?: string | undefined
 }) {
   return (
     <UltraSection variant="medium" className={className}>
