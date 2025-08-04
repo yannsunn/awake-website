@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Noto_Sans_JP } from "next/font/google";
 import "./globals.css";
 import { enhancedOrganizationSchema } from "@/lib/enhanced-schema";
-import FixedBackground from "@/components/layout/FixedBackground";
+import OptimizedBackground from "@/components/layout/OptimizedBackground";
 
 const notoSansJP = Noto_Sans_JP({
   variable: "--font-noto-sans-jp",
@@ -60,8 +60,8 @@ export default function RootLayout({
             ナビゲーションへスキップ
           </a>
         </div>
-        {/* 固定背景 */}
-        <FixedBackground />
+        {/* 最適化された背景 */}
+        <OptimizedBackground />
         {/* メインコンテンツ */}
         <div className="relative z-10">
           <script
@@ -73,7 +73,6 @@ export default function RootLayout({
           {children}
         </div>
         {/* Core Web Vitals最適化: リソースヒント */}
-        <link rel="preload" href="/assets/images/hero-background.png" as="image" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
         <link rel="dns-prefetch" href="https://lin.ee" />
