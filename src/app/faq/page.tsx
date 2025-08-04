@@ -2,7 +2,6 @@ import type { Metadata } from 'next'
 import { Plus, Minus } from 'lucide-react'
 import { COMPANY_DATA } from '@/lib/company-data'
 import PageLayout from '@/components/layout/PageLayout'
-import { ContentSection } from '@/components/layout/PageTemplate'
 import AccessibleButton from '@/components/ui/AccessibleButton'
 import { STYLES } from '@/lib/constants'
 import { createFAQSchema } from '@/lib/enhanced-schema'
@@ -138,21 +137,16 @@ export default function FAQPage() {
       />
 
       {/* Hero Section */}
-      <ContentSection className="bg-gray-900/80">
-        <div className="text-center">
-          <h1 className={STYLES.heading.h1.primary + " text-white mb-6"} style={TEXT_SHADOW.small}>
-            よくある質問
-          </h1>
-          <p className={STYLES.text.body.medium + " text-gray-200"} style={TEXT_SHADOW.small}>
-            お客様からよくいただくご質問をまとめました。<br className="hidden sm:block" />
-            こちらにない質問は、お気軽にお問い合わせください。
-          </p>
-        </div>
-      </ContentSection>
+      <UltraHero
+        title="よくある質問"
+        subtitle="お客様からよくいただくご質問をまとめました。"
+        description="こちらにない質問は、お気軽にお問い合わせください。"
+        className="bg-gray-900/80"
+      />
 
 
       {/* FAQ Content */}
-      <ContentSection className="bg-gray-800/60">
+      <UltraSection className="bg-gray-800/60">
         <div className="space-y-8 sm:space-y-12">
           {faqCategories.map((category, categoryIndex) => (
             <div key={categoryIndex}>
@@ -195,27 +189,22 @@ export default function FAQPage() {
             </div>
           ))}
         </div>
-      </ContentSection>
+      </UltraSection>
 
       {/* Contact Section */}
-      <ContentSection className="bg-gray-900/80">
+      <UltraSection
+        title="まだ疑問が解決しませんか？"
+        subtitle="お気軽にお問い合わせください。専門スタッフが丁寧にお答えいたします。"
+        className="bg-gray-900/80"
+      >
         <div className="text-center">
-          <h2 className={STYLES.heading.h2.section + " text-white mb-6"} style={TEXT_SHADOW.small}>
-            まだ疑問が解決しませんか？
-          </h2>
-          <p className={STYLES.text.body.medium + " text-gray-200 mb-8"} style={TEXT_SHADOW.small}>
-            お気軽にお問い合わせください。専門スタッフが丁寧にお答えいたします。
-          </p>
-          
-          <div className="">
-            <div className="bg-gray-800/90 border border-gray-700 p-6 sm:p-8 rounded-xl shadow-sm">
-              <h3 className={STYLES.heading.h2.subsection + " text-white mb-4 text-center"} style={TEXT_SHADOW.small}>💬 公式LINEでお気軽に</h3>
-              <p className={STYLES.text.body.medium + " text-gray-200 text-center mb-6"} style={TEXT_SHADOW.small}>最速返信！まずはLINEでお話をお聞かせください</p>
-              <LineButton className="w-full" size="large" />
-            </div>
+          <div className="bg-gray-800/90 border border-gray-700 p-6 sm:p-8 rounded-xl shadow-sm">
+            <h3 className={STYLES.heading.h2.subsection + " text-white mb-4 text-center"} style={TEXT_SHADOW.small}>💬 公式LINEでお気軽に</h3>
+            <p className={STYLES.text.body.medium + " text-gray-200 text-center mb-6"} style={TEXT_SHADOW.small}>最速返信！まずはLINEでお話をお聞かせください</p>
+            <LineButton className="w-full" size="large" />
           </div>
         </div>
-      </ContentSection>
+      </UltraSection>
     </PageLayout>
   )
 }
