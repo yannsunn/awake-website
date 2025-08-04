@@ -1,6 +1,7 @@
 import React from 'react'
 import { cn } from '@/lib/utils'
 import { STYLES } from '@/lib/constants'
+import { TEXT_SHADOW } from '@/lib/ultra-styles'
 
 interface Feature {
   icon: React.ReactNode
@@ -41,10 +42,10 @@ export function FeatureGrid({
               <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-2xl bg-indigo-600/20 text-indigo-300 border border-indigo-500/30">
                 {feature.icon}
               </div>
-              <h3 className="mb-2 text-xl font-semibold text-white" style={{ textShadow: '0 1px 2px rgba(0, 0, 0, 0.5)' }}>
+              <h3 className="mb-2 text-xl font-semibold text-white" style={TEXT_SHADOW.heading}>
                 {feature.title}
               </h3>
-              <p className="text-gray-200 leading-relaxed">
+              <p className="text-white leading-relaxed" style={TEXT_SHADOW.body}>
                 {feature.description}
               </p>
             </div>

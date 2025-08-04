@@ -13,6 +13,14 @@
     --primary-600: #7c3aed;
     --primary-700: #6d28d9;
     
+    /* エフェクト用統一カラー */
+    --effect-primary: #9333ea;
+    --effect-primary-rgb: 147, 51, 234;
+    --effect-secondary: #4f46e5;
+    --effect-secondary-rgb: 79, 70, 229;
+    --effect-accent: #6366f1;
+    --effect-accent-rgb: 99, 102, 241;
+    
     /* 令和最新トレンド: ネオンカラー */
     --neon-purple: #ff00de;
     --neon-cyan: #00fff0;
@@ -64,9 +72,26 @@
 }
 
 @layer components {
-  /* フォーカススタイル統一 */
+  /* 🎯 WCAG AAA準拠 フォーカススタイル統一 */
   .focus-ring {
-    @apply focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2;
+    @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2;
+  }
+  
+  .focus-ring-white {
+    @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-gray-900;
+  }
+  
+  .focus-ring-primary {
+    @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-violet-400 focus-visible:ring-offset-2;
+  }
+  
+  /* インタラクティブ要素のベースフォーカス */
+  .interactive-focus {
+    @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:ring-offset-white;
+  }
+  
+  .interactive-focus-dark {
+    @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-900;
   }
 
   /* カードホバーエフェクト */
@@ -237,18 +262,22 @@ section {
   position: relative;
 }
 
-/* 統一された背景オーバーレイシステム - 視認性重視 */
+/* 🎯 統一された背景オーバーレイシステム - WCAG AAA準拠コントラスト */
 .bg-white-overlay {
-  background-color: rgba(255, 255, 255, 0.92);
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
+  background-color: rgba(31, 41, 55, 0.9);
+  backdrop-filter: blur(6px) saturate(150%);
+  -webkit-backdrop-filter: blur(6px) saturate(150%);
+  border: 1px solid rgba(55, 65, 81, 0.5);
+  box-shadow: 0 4px 16px 0 rgba(0, 0, 0, 0.3);
 }
 
-/* グレー背景セクション - 視認性向上 */
+/* グレー背景セクション - 高コントラスト視認性 */
 .bg-gray-overlay {
-  background-color: rgba(249, 250, 251, 0.95);
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
+  background-color: rgba(17, 24, 39, 0.85);
+  backdrop-filter: blur(6px) saturate(150%);
+  -webkit-backdrop-filter: blur(6px) saturate(150%);
+  border: 1px solid rgba(31, 41, 55, 0.5);
+  box-shadow: 0 4px 16px 0 rgba(0, 0, 0, 0.25);
 }
 
 /* ダーク背景セクション */
@@ -265,17 +294,37 @@ section {
   -webkit-backdrop-filter: blur(4px);
 }
 
-/* テキストの可読性向上 - シンプル化 */
+/* 📝 統一テキストシャドウシステム - WCAG AAA準拠 */
 .text-shadow-sm {
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8);
 }
 
 .text-shadow-md {
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
 }
 
 .text-shadow-lg {
-  text-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  text-shadow: 0 4px 6px rgba(0, 0, 0, 0.8);
+}
+
+/* 見出し用強いシャドウ */
+.text-shadow-heading {
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+/* 本文用中程度シャドウ */
+.text-shadow-body {
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
+}
+
+/* 小テキスト用軽いシャドウ */
+.text-shadow-small {
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8);
+}
+
+/* 特殊効果用 */
+.text-shadow-glow {
+  text-shadow: 0 0 20px rgba(147, 51, 234, 0.5);
 }
 
 /* カード内のテキスト */
@@ -339,7 +388,34 @@ html {
   }
 }
 
-/* WCAG AAA準拠 モバイルタッチ最適化 */
+/* 🎯 WCAG AAA準拠 モバイルタッチ最適化強化 */
+@layer components {
+  /* タッチターゲット基本クラス */
+  .touch-target {
+    min-height: 48px;
+    min-width: 48px;
+    position: relative;
+    touch-action: manipulation;
+  }
+  
+  .touch-target-large {
+    min-height: 56px;
+    min-width: 56px;
+    position: relative;
+    touch-action: manipulation;
+  }
+  
+  /* タッチフィードバック */
+  .touch-feedback {
+    transition: transform 0.1s ease, background-color 0.1s ease;
+  }
+  
+  .touch-feedback:active {
+    transform: scale(0.98);
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+}
+
 @media (hover: none) and (pointer: coarse) {
   /* タッチターゲット最小48px確保 */
   button, a, .clickable, input[type="button"], input[type="submit"], label {
@@ -347,11 +423,11 @@ html {
     min-width: 48px;
     position: relative;
     /* タッチターゲット間のスペース確保 */
-    margin: 4px;
+    margin: 2px;
   }
   
   /* タッチフィードバック最適化 */
-  button:active, a:active {
+  button:active, a:active, .clickable:active {
     transform: scale(0.98);
     transition: transform 0.1s ease;
     background-color: rgba(0, 0, 0, 0.1);
@@ -362,22 +438,79 @@ html {
     -webkit-overflow-scrolling: touch;
     touch-action: manipulation;
   }
+  
+  /* タッチデバイスでのホバー効果を無効化 */
+  .hover-only {
+    display: none;
+  }
 }
 
-/* 🔥 ウルトラスムースアニメーション */
+/* 🚀 統一アニメーションシステム - パフォーマンス最適化 */
 @layer utilities {
-  .ultra-smooth {
+  /* ベーストランジション */
+  .transition-base {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .transition-fast {
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .transition-slow {
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  /* インタラクティブホバー効果 */
+  .hover-lift {
     transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), 
-                opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1),
                 box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
   
+  .hover-lift:hover {
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  }
+  
+  .hover-lift:active {
+    transform: translateY(0) scale(0.98);
+    transition-duration: 0.1s;
+  }
+  
+  /* スケールアニメーション */
+  .hover-scale {
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .hover-scale:hover {
+    transform: scale(1.05);
+  }
+  
+  .hover-scale:active {
+    transform: scale(0.95);
+  }
+  
+  /* ボタン専用アニメーション */
+  .button-animation {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: transform;
+  }
+  
+  .button-animation:hover {
+    transform: translateY(-1px) scale(1.02);
+  }
+  
+  .button-animation:active {
+    transform: translateY(0) scale(0.98);
+    transition-duration: 0.1s;
+  }
+  
+  /* バウンスエフェクト */
   .bounce-on-hover {
     transition: transform 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
   }
   
   .bounce-on-hover:hover {
-    transform: translateY(-2px);
+    transform: translateY(-3px);
   }
   
   /* 科学的根拠: ホバーエフェクトは0.2-0.3秒が最適（Nielsen Norman Group） */
@@ -616,18 +749,52 @@ button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visib
   border-radius: 4px;
 }
 
-/* 高コントラスト対応 */
+/* 🎯 WCAG AAA準拠 高コントラスト対応強化 */
 @media (prefers-contrast: high) {
   :root {
     --text-primary: #000000;
     --bg-primary: #ffffff;
     --border-primary: #000000;
+    /* 高コントラスト用背景 */
+    --bg-high-contrast: #ffffff;
+    --text-high-contrast: #000000;
+    --border-high-contrast: #000000;
   }
   
+  /* 背景オーバーレイの高コントラスト化 */
+  .bg-white-overlay {
+    background-color: #ffffff !important;
+    border: 2px solid #000000 !important;
+  }
+  
+  .bg-gray-overlay {
+    background-color: #f8f9fa !important;
+    border: 2px solid #000000 !important;
+  }
+  
+  /* テキストの高コントラスト化 */
+  .text-white {
+    color: #000000 !important;
+  }
+  
+  .text-gray-100, .text-gray-200, .text-gray-300 {
+    color: #000000 !important;
+  }
+  
+  /* フォーカス状態の強化 */
   button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible {
-    outline: 4px solid #000000;
+    outline: 4px solid #000000 !important;
     outline-offset: 2px;
-    box-shadow: none;
+    box-shadow: none !important;
+    background-color: #ffff00 !important;
+    color: #000000 !important;
+  }
+  
+  /* ボタンの高コントラスト化 */
+  .bg-indigo-600, .bg-indigo-700 {
+    background-color: #000000 !important;
+    color: #ffffff !important;
+    border: 2px solid #000000 !important;
   }
 }
 

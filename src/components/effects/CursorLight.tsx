@@ -14,6 +14,17 @@ export default function CursorLight() {
     const ctx = canvas.getContext('2d')
     if (!ctx) return
     
+    // CSS変数から色を取得
+    const getColorFromCSS = (varName: string) => {
+      const rgb = getComputedStyle(document.documentElement)
+        .getPropertyValue(varName)
+        .trim()
+      return rgb
+    }
+    
+    const primaryRgb = getColorFromCSS('--effect-primary-rgb')
+    const secondaryRgb = getColorFromCSS('--effect-secondary-rgb')
+    
     // キャンバスサイズの設定
     const updateCanvasSize = () => {
       canvas.width = window.innerWidth
@@ -34,9 +45,9 @@ export default function CursorLight() {
         cursorPosition.x, cursorPosition.y, 0,
         cursorPosition.x, cursorPosition.y, 150
       )
-      gradient.addColorStop(0, 'rgba(147, 51, 234, 0.3)')
-      gradient.addColorStop(0.5, 'rgba(79, 70, 229, 0.2)')
-      gradient.addColorStop(1, 'rgba(79, 70, 229, 0)')
+      gradient.addColorStop(0, `rgba(${primaryRgb}, 0.3)`)
+      gradient.addColorStop(0.5, `rgba(${secondaryRgb}, 0.2)`)
+      gradient.addColorStop(1, `rgba(${secondaryRgb}, 0)`)
       
       ctx.fillStyle = gradient
       ctx.fillRect(0, 0, canvas.width, canvas.height)
@@ -53,7 +64,7 @@ export default function CursorLight() {
           const opacity = Math.max(0, 1 - age)
           
           ctx.lineTo(point.x, point.y)
-          ctx.strokeStyle = `rgba(147, 51, 234, ${opacity * 0.5})`
+          ctx.strokeStyle = `rgba(${primaryRgb}, ${opacity * 0.5})`
           ctx.lineWidth = Math.max(1, 5 * (1 - age))
           ctx.stroke()
           ctx.beginPath()
@@ -71,7 +82,7 @@ export default function CursorLight() {
         const y = cursorPosition.y + Math.sin(angle) * radius
         
         // グラデーションを毎回作成せず、透明度で表現
-        ctx.fillStyle = `rgba(147, 51, 234, ${0.4 - (i * 0.03)})`
+        ctx.fillStyle = `rgba(${primaryRgb}, ${0.4 - (i * 0.03)})`
         ctx.beginPath()
         ctx.arc(x, y, 5, 0, Math.PI * 2)
         ctx.fill()

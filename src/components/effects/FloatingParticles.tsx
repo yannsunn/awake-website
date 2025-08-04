@@ -21,6 +21,16 @@ export default function FloatingParticles() {
     const ctx = canvas.getContext('2d')
     if (!ctx) return
     
+    // CSS変数から色を取得
+    const getColorFromCSS = (varName: string) => {
+      const rgb = getComputedStyle(document.documentElement)
+        .getPropertyValue(varName)
+        .trim()
+      return rgb
+    }
+    
+    const primaryRgb = getColorFromCSS('--effect-primary-rgb')
+    
     // パーティクルの初期化 - 数を削減
     const particles: Particle[] = []
     const particleCount = 20 // 50から20に削減
@@ -95,7 +105,7 @@ export default function FloatingParticles() {
         // 描画
         ctx.beginPath()
         ctx.arc(particle.x, particle.y, particle.radius, 0, Math.PI * 2)
-        ctx.fillStyle = `rgba(147, 51, 234, ${particle.opacity})`
+        ctx.fillStyle = `rgba(${primaryRgb}, ${particle.opacity})`
         ctx.fill()
         
         // 近くのパーティクルと線を描く - 最適化
@@ -109,7 +119,7 @@ export default function FloatingParticles() {
             ctx.beginPath()
             ctx.moveTo(particle.x, particle.y)
             ctx.lineTo(otherParticle.x, otherParticle.y)
-            ctx.strokeStyle = `rgba(147, 51, 234, ${(1 - distance / 150) * 0.2})`
+            ctx.strokeStyle = `rgba(${primaryRgb}, ${(1 - distance / 150) * 0.2})`
             ctx.lineWidth = 0.5
             ctx.stroke()
           }

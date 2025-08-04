@@ -33,7 +33,7 @@ export function ProcessSteps({ title, steps, className }: ProcessStepsProps) {
                   <div className="absolute left-4 top-8 h-full w-px bg-gray-600" />
                 )}
                 <div>
-                  <h3 className="mb-2 text-xl font-semibold text-white" style={{ textShadow: '0 1px 2px rgba(0, 0, 0, 0.5)' }}>
+                  <h3 className="mb-2 text-xl font-semibold text-white text-shadow-small">
                     {stepData.title}
                   </h3>
                   <p className="text-gray-200 leading-relaxed">
