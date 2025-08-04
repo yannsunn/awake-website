@@ -38,25 +38,25 @@ export function ServiceHero({
       {/* 背景レイヤー */}
       <div className="absolute inset-0 bg-gray-900/60 backdrop-blur-sm" />
       
-      <div className={cn(STYLES.container, 'py-12 sm:py-16 lg:py-20 relative z-10')}>
-        <div className="mx-auto max-w-3xl text-center">
-          <h1 className={cn(STYLES.heading.h1.hero, "mb-6")} style={TEXT_SHADOW.heading}>
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 py-12 sm:py-16 md:py-20 lg:py-24 xl:py-28">
+        <div className="mx-auto max-w-5xl text-center">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-extrabold mb-6 text-white leading-tight" style={TEXT_SHADOW.heading}>
             {title}
           </h1>
-          <p className={`mb-8 text-lg sm:text-xl text-white leading-relaxed ${TEXT_BG_STYLES.large}`} style={TEXT_SHADOW.small}>
+          <p className={`mb-6 sm:mb-8 text-base sm:text-lg md:text-xl lg:text-2xl text-white leading-relaxed px-4 sm:px-0 ${TEXT_BG_STYLES.large}`} style={TEXT_SHADOW.small}>
             {description}
           </p>
           {subDescription && (
-            <p className={`mb-8 text-base sm:text-lg text-gray-200 ${TEXT_BG_STYLES.default}`} style={TEXT_SHADOW.small}>
+            <p className={`mb-6 sm:mb-8 text-sm sm:text-base md:text-lg lg:text-xl text-gray-200 leading-relaxed px-4 sm:px-0 ${TEXT_BG_STYLES.default}`} style={TEXT_SHADOW.small}>
               {subDescription}
             </p>
           )}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center">
             <Link
               href={ctaHref}
               className={cn(
                 STYLES.button.primary,
-                'px-8 py-4 text-lg font-medium'
+                'px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-medium w-full sm:w-auto'
               )}
             >
               {ctaText}
@@ -66,7 +66,7 @@ export function ServiceHero({
                 href={secondaryCtaHref}
                 className={cn(
                   STYLES.button.secondary,
-                  'px-8 py-4 text-lg font-medium'
+                  'px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-medium w-full sm:w-auto'
                 )}
               >
                 {secondaryCtaText}

@@ -29,23 +29,23 @@ export function FeatureGrid({
   }
 
   return (
-    <section className={cn('py-12 sm:py-16 lg:py-20', className)}>
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+    <section className={cn('py-12 sm:py-16 md:py-20 lg:py-24 xl:py-28', className)}>
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 xl:px-12">
         {title && (
-          <h2 className={cn(STYLES.heading.h2.section, "mb-12 text-center")}>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-8 sm:mb-12 lg:mb-16 text-center leading-tight" style={TEXT_SHADOW.heading}>
             {title}
           </h2>
         )}
-        <div className={cn('grid gap-8', gridColumns[columns])}>
+        <div className={cn('grid gap-6 sm:gap-8 lg:gap-10', gridColumns[columns])}>
           {features.map((feature, index) => (
-            <div key={index} className="text-center bg-gray-800/80 backdrop-blur-sm rounded-xl p-6 shadow-lg border border-gray-700">
-              <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-2xl bg-indigo-600/20 text-indigo-300 border border-indigo-500/30">
+            <div key={index} className="text-center bg-gray-800/80 backdrop-blur-sm rounded-lg sm:rounded-xl p-6 sm:p-8 lg:p-10 shadow-lg border border-gray-700 hover:shadow-xl transition-all duration-300 hover:scale-[1.02]">
+              <div className="mx-auto mb-4 sm:mb-6 flex h-12 w-12 sm:h-16 sm:w-16 items-center justify-center rounded-xl sm:rounded-2xl bg-indigo-600/20 text-indigo-300 border border-indigo-500/30">
                 {feature.icon}
               </div>
-              <h3 className="mb-2 text-xl font-semibold text-white" style={TEXT_SHADOW.heading}>
+              <h3 className="mb-3 sm:mb-4 text-lg sm:text-xl lg:text-2xl font-semibold text-white leading-tight" style={TEXT_SHADOW.heading}>
                 {feature.title}
               </h3>
-              <p className="text-white leading-relaxed" style={TEXT_SHADOW.body}>
+              <p className="text-sm sm:text-base lg:text-lg text-white leading-relaxed" style={TEXT_SHADOW.body}>
                 {feature.description}
               </p>
             </div>
