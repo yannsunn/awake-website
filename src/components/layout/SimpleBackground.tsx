@@ -11,7 +11,7 @@ const SimpleBackground = memo(function SimpleBackground() {
         top: '80px', // ヘッダーの下から開始
         left: 0,
         right: 0,
-        bottom: '60px', // フッターの上で終了
+        bottom: 0, // フッターも背景を透過させるため最下部まで
         zIndex: -100,
         backgroundColor: '#111827',
         backgroundImage: 'url(/assets/images/hero-background.png)',
