@@ -115,7 +115,7 @@ export default function HomePageContent() {
                 <BreathingButton 
                   href="#services" 
                   variant="secondary" 
-                  className="bg-gray-700 border-2 border-gray-500 text-white hover:bg-gray-600 hover:border-indigo-400 shadow-xl" 
+                  className="bg-gray-200 border-2 border-gray-400 text-gray-900 hover:bg-white hover:border-indigo-400 shadow-xl font-bold" 
                   size="large"
                 >
                   サービスを見る
