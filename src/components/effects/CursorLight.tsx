@@ -1,11 +1,31 @@
 'use client'
 
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { useCursorEffect } from '@/hooks/useCursorEffect'
 
 export default function CursorLight() {
   const { cursorPosition, isPointerDevice, prefersReducedMotion, trail } = useCursorEffect()
   const canvasRef = useRef<HTMLCanvasElement>(null)
+  const [isVisible, setIsVisible] = useState(true)
+  
+  useEffect(() => {
+    // FAQセクションの近くでは非表示にする
+    const handleScroll = () => {
+      const faqSection = document.querySelector('.faq-section')
+      if (faqSection) {
+        const rect = faqSection.getBoundingClientRect()
+        const isNearFaq = rect.top < window.innerHeight && rect.bottom > 0
+        setIsVisible(!isNearFaq)
+      }
+    }
+    
+    window.addEventListener('scroll', handleScroll)
+    handleScroll() // 初回チェック
+    
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+    }
+  }, [])
   
   useEffect(() => {
     if (!isPointerDevice || prefersReducedMotion || !canvasRef.current) return
@@ -106,7 +126,11 @@ export default function CursorLight() {
     <canvas
       ref={canvasRef}
       className="fixed inset-0 pointer-events-none z-[100]"
-      style={{ mixBlendMode: 'screen' }}
+      style={{ 
+        mixBlendMode: 'screen',
+        opacity: isVisible ? 1 : 0,
+        transition: 'opacity 0.5s ease-in-out'
+      }}
     />
   )
 }
