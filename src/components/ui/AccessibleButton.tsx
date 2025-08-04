@@ -6,6 +6,7 @@ import Link from 'next/link'
 import { ArrowRight, type LucideIcon } from 'lucide-react'
 import { BUTTON_STYLES } from '@/lib/constants'
 import type { ButtonVariant } from '@/lib/types'
+import { TEXT_SHADOW } from '@/lib/ultra-styles'
 
 interface AccessibleButtonProps {
   href?: string | undefined
@@ -98,7 +99,7 @@ const AccessibleButton = memo(forwardRef<
           aria-hidden="true"
         />
       )}
-      <span className="relative z-10">{children}</span>
+      <span className="relative z-10" style={TEXT_SHADOW.body}>{children}</span>
       {showArrow && (
         <ArrowRight 
           className="ml-2 h-5 w-5 flex-shrink-0" 
