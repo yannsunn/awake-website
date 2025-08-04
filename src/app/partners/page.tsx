@@ -4,6 +4,7 @@ import { COMPANY_DATA } from '@/lib/company-data'
 import PageLayout from '@/components/layout/PageLayout'
 import { ContentSection } from '@/components/layout/PageTemplate'
 import { STYLES } from '@/lib/constants'
+import { TEXT_SHADOW } from '@/lib/ultra-styles'
 import { Handshake, Award, Globe, Shield } from 'lucide-react'
 import LineButton from '@/components/ui/LineButton'
 
@@ -149,13 +150,13 @@ export default function PartnersPage() {
       {/* Hero Section */}
       <ContentSection className="bg-gray-900/60">
         <div className="text-center">
-          <h1 className={STYLES.heading.h1.primary + " text-white mb-4"} style={{ textShadow: '0 1px 2px rgba(0, 0, 0, 0.8)' }}>
+          <h1 className={STYLES.heading.h1.primary + " text-white mb-4"} style={TEXT_SHADOW.small}>
             1社では解決できない課題も、一緒なら解決できる
           </h1>
-          <p className={STYLES.text.body.large + " text-gray-200 mb-4"} style={{ textShadow: '0 1px 2px rgba(0, 0, 0, 0.8)' }}>
+          <p className={STYLES.text.body.large + " text-gray-200 mb-4"} style={TEXT_SHADOW.small}>
             各分野のプロフェッショナルと連携し、あらゆるビジネス課題にワンストップで対応
           </p>
-          <p className={STYLES.text.body.medium + " text-gray-300 mb-8"} style={{ textShadow: '0 1px 2px rgba(0, 0, 0, 0.8)' }}>
+          <p className={STYLES.text.body.medium + " text-gray-300 mb-8"} style={TEXT_SHADOW.small}>
             単独では限界がある。だから私たちは、信頼できるパートナーと手を組みました。
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -178,10 +179,10 @@ export default function PartnersPage() {
       {/* Why Partnership Section */}
       <ContentSection className="bg-gray-800/30">
         <div className="text-center mb-8 sm:mb-12 lg:mb-16">
-          <h2 className={STYLES.heading.h2.section + " text-white mb-4"} style={{ textShadow: '0 1px 2px rgba(0, 0, 0, 0.8)' }}>
+          <h2 className={STYLES.heading.h2.section + " text-white mb-4"} style={TEXT_SHADOW.small}>
             なぜ、パートナーシップが必要なのか
           </h2>
-          <p className={STYLES.text.body.large + " text-gray-200"} style={{ textShadow: '0 1px 2px rgba(0, 0, 0, 0.8)' }}>
+          <p className={STYLES.text.body.large + " text-gray-200"} style={TEXT_SHADOW.small}>
             お客様の「本当の成功」は、1つのサービスだけでは実現できない
           </p>
         </div>
@@ -206,10 +207,10 @@ export default function PartnersPage() {
           ].map((item, index) => (
             <div key={index} className="text-center">
               <div className="text-4xl mb-4">{item.icon}</div>
-              <h3 className={STYLES.heading.h3.emphasis + " text-white mb-3"} style={{ textShadow: '0 1px 2px rgba(0, 0, 0, 0.8)' }}>
+              <h3 className={STYLES.heading.h3.emphasis + " text-white mb-3"} style={TEXT_SHADOW.small}>
                 {item.title}
               </h3>
-              <p className={STYLES.text.description.medium + " text-gray-200"} style={{ textShadow: '0 1px 2px rgba(0, 0, 0, 0.8)' }}>
+              <p className={STYLES.text.description.medium + " text-gray-200"} style={TEXT_SHADOW.small}>
                 {item.description}
               </p>
             </div>
@@ -217,7 +218,7 @@ export default function PartnersPage() {
         </div>
         
         <div className="text-center">
-          <p className={STYLES.text.body.large + " text-gray-200"} style={{ textShadow: '0 1px 2px rgba(0, 0, 0, 0.8)' }}>
+          <p className={STYLES.text.body.large + " text-gray-200"} style={TEXT_SHADOW.small}>
             だから、ワンストップで解決できる体制を整えました。
           </p>
         </div>
@@ -226,10 +227,10 @@ export default function PartnersPage() {
       {/* Partnership Value Section */}
       <ContentSection className="bg-gray-900/60">
         <div className="text-center mb-8 sm:mb-12 lg:mb-16">
-          <h2 className={STYLES.heading.h2.section + " text-white mb-4"} style={{ textShadow: '0 1px 2px rgba(0, 0, 0, 0.8)' }}>
+          <h2 className={STYLES.heading.h2.section + " text-white mb-4"} style={TEXT_SHADOW.small}>
             パートナーシップがもたらす4つの価値
           </h2>
-          <p className={STYLES.text.body.medium + " text-gray-200"} style={{ textShadow: '0 1px 2px rgba(0, 0, 0, 0.8)' }}>
+          <p className={STYLES.text.body.medium + " text-gray-200"} style={TEXT_SHADOW.small}>
             お客様にとっての、本当のメリット
           </p>
         </div>
@@ -263,11 +264,11 @@ export default function PartnersPage() {
           ].map((value, index) => (
             <div key={index} className="text-center p-6 bg-gray-800/80 backdrop-blur-sm border border-gray-700 rounded-xl">
               <div className="text-3xl mb-2">{value.emoji}</div>
-              <div className="text-2xl font-bold text-white mb-3" style={{ textShadow: '0 1px 2px rgba(0, 0, 0, 0.8)' }}>{value.number}</div>
-              <h3 className={STYLES.heading.h3.emphasis + " text-white mb-3"} style={{ textShadow: '0 1px 2px rgba(0, 0, 0, 0.8)' }}>
+              <div className="text-2xl font-bold text-white mb-3" style={TEXT_SHADOW.small}>{value.number}</div>
+              <h3 className={STYLES.heading.h3.emphasis + " text-white mb-3"} style={TEXT_SHADOW.small}>
                 {value.title}
               </h3>
-              <p className={STYLES.text.description.small + " text-gray-200"} style={{ textShadow: '0 1px 2px rgba(0, 0, 0, 0.8)' }}>
+              <p className={STYLES.text.description.small + " text-gray-200"} style={TEXT_SHADOW.small}>
                 {value.description}
               </p>
             </div>
@@ -281,10 +282,10 @@ export default function PartnersPage() {
           {partners.map((category, categoryIndex) => (
             <div key={categoryIndex}>
               <div className="text-center mb-12">
-                <h2 className={STYLES.heading.h2.section + " text-white mb-4"} style={{ textShadow: '0 1px 2px rgba(0, 0, 0, 0.8)' }}>
+                <h2 className={STYLES.heading.h2.section + " text-white mb-4"} style={TEXT_SHADOW.small}>
                   {category.category}
                 </h2>
-                <p className={STYLES.text.body.large + " text-gray-200"} style={{ textShadow: '0 1px 2px rgba(0, 0, 0, 0.8)' }}>
+                <p className={STYLES.text.body.large + " text-gray-200"} style={TEXT_SHADOW.small}>
                   {category.description}
                 </p>
               </div>
@@ -298,14 +299,14 @@ export default function PartnersPage() {
                     <div className="text-3xl mb-4 text-center">
                       {company.icon}
                     </div>
-                    <h3 className={STYLES.heading.h3.emphasis + " text-white mb-4 text-center"} style={{ textShadow: '0 1px 2px rgba(0, 0, 0, 0.8)' }}>
+                    <h3 className={STYLES.heading.h3.emphasis + " text-white mb-4 text-center"} style={TEXT_SHADOW.small}>
                       {company.name}
                     </h3>
                     <ul className="space-y-2">
                       {company.services.map((service, serviceIndex) => (
                         <li key={serviceIndex} className="flex items-start">
                           <span className="text-gray-300 mr-2">•</span>
-                          <span className={STYLES.text.description.small + " text-gray-200"} style={{ textShadow: '0 1px 2px rgba(0, 0, 0, 0.8)' }}>
+                          <span className={STYLES.text.description.small + " text-gray-200"} style={TEXT_SHADOW.small}>
                             {service}
                           </span>
                         </li>
@@ -322,10 +323,10 @@ export default function PartnersPage() {
       {/* Success Stories Section */}
       <ContentSection className="bg-gray-900/60">
         <div className="text-center mb-12">
-          <h2 className={STYLES.heading.h2.section + " text-white mb-4"} style={{ textShadow: '0 1px 2px rgba(0, 0, 0, 0.8)' }}>
+          <h2 className={STYLES.heading.h2.section + " text-white mb-4"} style={TEXT_SHADOW.small}>
             実際の成功事例
           </h2>
-          <p className={STYLES.text.body.large + " text-gray-200"} style={{ textShadow: '0 1px 2px rgba(0, 0, 0, 0.8)' }}>
+          <p className={STYLES.text.body.large + " text-gray-200"} style={TEXT_SHADOW.small}>
             パートナーシップが生んだ相乗効果
           </p>
         </div>
@@ -344,13 +345,13 @@ export default function PartnersPage() {
             }
           ].map((story, index) => (
             <div key={index} className="bg-gray-800/80 backdrop-blur-sm border border-gray-700 rounded-xl p-8">
-              <h3 className={STYLES.heading.h3.emphasis + " text-white mb-4"} style={{ textShadow: '0 1px 2px rgba(0, 0, 0, 0.8)' }}>
+              <h3 className={STYLES.heading.h3.emphasis + " text-white mb-4"} style={TEXT_SHADOW.small}>
                 {story.title}
               </h3>
-              <p className={STYLES.text.body.medium + " text-gray-200 mb-4 whitespace-pre-line"} style={{ textShadow: '0 1px 2px rgba(0, 0, 0, 0.8)' }}>
+              <p className={STYLES.text.body.medium + " text-gray-200 mb-4 whitespace-pre-line"} style={TEXT_SHADOW.small}>
                 {story.description}
               </p>
-              <p className={STYLES.text.description.medium + " text-gray-300"} style={{ textShadow: '0 1px 2px rgba(0, 0, 0, 0.8)' }}>
+              <p className={STYLES.text.description.medium + " text-gray-300"} style={TEXT_SHADOW.small}>
                 {story.company}
               </p>
             </div>
@@ -361,7 +362,7 @@ export default function PartnersPage() {
       {/* FAQ Section */}
       <ContentSection className="bg-gray-800/30">
         <div className="text-center mb-12">
-          <h2 className={STYLES.heading.h2.section + " text-white mb-4"} style={{ textShadow: '0 1px 2px rgba(0, 0, 0, 0.8)' }}>
+          <h2 className={STYLES.heading.h2.section + " text-white mb-4"} style={TEXT_SHADOW.small}>
             よくあるご質問
           </h2>
         </div>
@@ -382,10 +383,10 @@ export default function PartnersPage() {
             }
           ].map((faq, index) => (
             <div key={index} className="bg-gray-800/80 backdrop-blur-sm border border-gray-700 rounded-xl p-6">
-              <h3 className={STYLES.heading.h3.card + " text-white mb-3"} style={{ textShadow: '0 1px 2px rgba(0, 0, 0, 0.8)' }}>
+              <h3 className={STYLES.heading.h3.card + " text-white mb-3"} style={TEXT_SHADOW.small}>
                 Q: {faq.q}
               </h3>
-              <p className={STYLES.text.body.medium + " text-gray-200"} style={{ textShadow: '0 1px 2px rgba(0, 0, 0, 0.8)' }}>
+              <p className={STYLES.text.body.medium + " text-gray-200"} style={TEXT_SHADOW.small}>
                 A: {faq.a}
               </p>
             </div>
@@ -396,20 +397,20 @@ export default function PartnersPage() {
       {/* Partner Recruitment Section */}
       <ContentSection className="bg-gray-900/60">
         <div className="text-center mb-12">
-          <h2 className={STYLES.heading.h2.section + " text-white mb-4"} style={{ textShadow: '0 1px 2px rgba(0, 0, 0, 0.8)' }}>
+          <h2 className={STYLES.heading.h2.section + " text-white mb-4"} style={TEXT_SHADOW.small}>
             新しいパートナーも募集中
           </h2>
-          <p className={STYLES.text.body.large + " text-gray-200 mb-8"} style={{ textShadow: '0 1px 2px rgba(0, 0, 0, 0.8)' }}>
+          <p className={STYLES.text.body.large + " text-gray-200 mb-8"} style={TEXT_SHADOW.small}>
             一緒に、お客様の成功を支援しませんか？
           </p>
-          <p className={STYLES.text.body.medium + " text-gray-300 mb-8"} style={{ textShadow: '0 1px 2px rgba(0, 0, 0, 0.8)' }}>
+          <p className={STYLES.text.body.medium + " text-gray-300 mb-8"} style={TEXT_SHADOW.small}>
             私たちは、お客様により大きな価値を提供できる<br />
             パートナー企業を常に探しています。
           </p>
         </div>
         
         <div className="bg-gray-800/80 backdrop-blur-sm border border-gray-700 rounded-xl p-8 mb-12">
-          <h3 className={STYLES.heading.h3.emphasis + " text-white mb-6 text-center"} style={{ textShadow: '0 1px 2px rgba(0, 0, 0, 0.8)' }}>
+          <h3 className={STYLES.heading.h3.emphasis + " text-white mb-6 text-center"} style={TEXT_SHADOW.small}>
             こんな企業様を求めています：
           </h3>
           <ul className="space-y-4">
@@ -420,7 +421,7 @@ export default function PartnersPage() {
             ].map((item, index) => (
               <li key={index} className="flex items-center justify-center">
                 <span className="text-green-500 mr-3">✓</span>
-                <span className={STYLES.text.body.medium + " text-gray-200"} style={{ textShadow: '0 1px 2px rgba(0, 0, 0, 0.8)' }}>{item}</span>
+                <span className={STYLES.text.body.medium + " text-gray-200"} style={TEXT_SHADOW.small}>{item}</span>
               </li>
             ))}
           </ul>
@@ -439,13 +440,13 @@ export default function PartnersPage() {
       {/* CTA Section */}
       <ContentSection className="bg-dark-overlay text-white">
         <div className="text-center">
-          <h2 className={STYLES.heading.h2.section + " text-white mb-4"} style={{ textShadow: '0 1px 2px rgba(0, 0, 0, 0.8)' }}>
+          <h2 className={STYLES.heading.h2.section + " text-white mb-4"} style={TEXT_SHADOW.small}>
             次のステップ
           </h2>
-          <p className={STYLES.text.body.large + " text-white mb-4"} style={{ textShadow: '0 1px 2px rgba(0, 0, 0, 0.8)' }}>
+          <p className={STYLES.text.body.large + " text-white mb-4"} style={TEXT_SHADOW.small}>
             まずは、あなたの課題をお聞かせください
           </p>
-          <p className={STYLES.text.body.medium + " text-gray-200 mb-8"} style={{ textShadow: '0 1px 2px rgba(0, 0, 0, 0.8)' }}>
+          <p className={STYLES.text.body.medium + " text-gray-200 mb-8"} style={TEXT_SHADOW.small}>
             どんなサービスの組み合わせが最適か。<br />
             無料相談で、ベストな解決策をご提案します。
           </p>

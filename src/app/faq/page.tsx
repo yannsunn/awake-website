@@ -138,7 +138,7 @@ export default function FAQPage() {
       />
 
       {/* Hero Section */}
-      <ContentSection className="bg-gray-900/60">
+      <ContentSection className="bg-gray-900/80">
         <div className="text-center">
           <h1 className={STYLES.heading.h1.primary + " text-white mb-6"} style={TEXT_SHADOW.small}>
             よくある質問
@@ -152,7 +152,7 @@ export default function FAQPage() {
 
 
       {/* FAQ Content */}
-      <ContentSection className="bg-gray-800/30">
+      <ContentSection className="bg-gray-800/60">
         <div className="space-y-8 sm:space-y-12">
           {faqCategories.map((category, categoryIndex) => (
             <div key={categoryIndex}>
@@ -164,7 +164,7 @@ export default function FAQPage() {
                 {category.questions.map((faq, faqIndex) => (
                   <details 
                     key={faqIndex} 
-                    className="group bg-gray-800/80 backdrop-blur-sm border border-gray-700 rounded-lg overflow-hidden"
+                    className="group bg-gray-800/90 border border-gray-700 rounded-lg overflow-hidden"
                   >
                     <summary className="flex items-center justify-between p-4 sm:p-6 cursor-pointer hover:bg-gray-600/50 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2">
                       <h3 className={STYLES.heading.h3.emphasis + " text-white pr-4"} style={TEXT_SHADOW.small}>
@@ -198,7 +198,7 @@ export default function FAQPage() {
       </ContentSection>
 
       {/* Contact Section */}
-      <ContentSection className="bg-gray-900/60">
+      <ContentSection className="bg-gray-900/80">
         <div className="text-center">
           <h2 className={STYLES.heading.h2.section + " text-white mb-6"} style={TEXT_SHADOW.small}>
             まだ疑問が解決しませんか？
@@ -208,7 +208,7 @@ export default function FAQPage() {
           </p>
           
           <div className="">
-            <div className="bg-gray-800/80 backdrop-blur-sm border border-gray-700 p-6 sm:p-8 rounded-xl shadow-sm">
+            <div className="bg-gray-800/90 border border-gray-700 p-6 sm:p-8 rounded-xl shadow-sm">
               <h3 className={STYLES.heading.h2.subsection + " text-white mb-4 text-center"} style={TEXT_SHADOW.small}>💬 公式LINEでお気軽に</h3>
               <p className={STYLES.text.body.medium + " text-gray-200 text-center mb-6"} style={TEXT_SHADOW.small}>最速返信！まずはLINEでお話をお聞かせください</p>
               <LineButton className="w-full" size="large" />

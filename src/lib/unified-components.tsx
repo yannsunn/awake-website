@@ -140,7 +140,7 @@ export const FeatureHighlight = memo(function FeatureHighlight({
         {icon}
       </div>
       {metric && (
-        <div className="text-3xl font-light text-gray-900 mb-2">{metric}</div>
+        <div className="text-3xl font-medium text-gray-900 mb-2">{metric}</div>
       )}
       <h3 className="text-lg font-medium text-gray-900 mb-3">{title}</h3>
       <p className="text-gray-600 text-sm">{description}</p>
@@ -174,7 +174,7 @@ export const PricingCard = memo(function PricingCard({
         </div>
       )}
       <h3 className="text-xl font-medium text-gray-900 mb-2">{plan.name}</h3>
-      <div className="text-3xl font-light text-gray-900 mb-6">{plan.price}</div>
+      <div className="text-3xl font-medium text-gray-900 mb-6">{plan.price}</div>
       {plan.duration && (
         <div className="text-sm text-gray-500 mb-6">期間: {plan.duration}</div>
       )}

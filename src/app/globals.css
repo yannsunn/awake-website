@@ -553,8 +553,8 @@ html {
   
   body {
     -webkit-text-size-adjust: 100%;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: subpixel-antialiased;
+    -moz-osx-font-smoothing: auto;
     /* 読みやすさ向上 */
     line-height: 1.6;
     letter-spacing: 0.01em;
