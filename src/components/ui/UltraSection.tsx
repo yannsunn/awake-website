@@ -34,16 +34,16 @@ export default function UltraSection({
       <div className={pattern.content}>
         {title && (
           <div className="text-center mb-8 sm:mb-12 lg:mb-16">
-            <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4" style={TEXT_SHADOW.heading}>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 px-4 sm:px-0" style={TEXT_SHADOW.heading}>
               {title}
             </h2>
             {subtitle && (
-              <p className="text-xl text-gray-200 mb-4" style={TEXT_SHADOW.body}>
+              <p className="text-lg sm:text-xl md:text-2xl text-gray-200 mb-4 px-4 sm:px-0" style={TEXT_SHADOW.body}>
                 {subtitle}
               </p>
             )}
             {description && (
-              <p className="text-lg text-gray-300" style={TEXT_SHADOW.small}>
+              <p className="text-base sm:text-lg md:text-xl text-gray-300 px-4 sm:px-0" style={TEXT_SHADOW.small}>
                 {description}
               </p>
             )}
@@ -70,18 +70,18 @@ export function UltraHero({
   className?: string | undefined
 }) {
   return (
-    <UltraSection variant="dark" className={cn("min-h-[50vh] flex items-center justify-center", className)}>
-      <div className="text-center max-w-4xl mx-auto">
-        <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold mb-6 text-white" style={TEXT_SHADOW.heading}>
+    <UltraSection variant="dark" className={cn("min-h-[60vh] sm:min-h-[70vh] md:min-h-[80vh] flex items-center justify-center", className)}>
+      <div className="text-center max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-extrabold mb-6 text-white leading-tight" style={TEXT_SHADOW.heading}>
           {title}
         </h1>
         {subtitle && (
-          <p className={`text-xl sm:text-2xl text-white font-semibold mb-4 ${TEXT_BG_STYLES.default}`} style={TEXT_SHADOW.body}>
+          <p className={`text-lg sm:text-xl md:text-2xl lg:text-3xl text-white font-semibold mb-6 leading-relaxed ${TEXT_BG_STYLES.default}`} style={TEXT_SHADOW.body}>
             {subtitle}
           </p>
         )}
         {description && (
-          <p className={`text-base sm:text-lg text-gray-200 ${TEXT_BG_STYLES.default} mt-4`} style={TEXT_SHADOW.small}>
+          <p className={`text-base sm:text-lg md:text-xl lg:text-2xl text-gray-200 leading-relaxed ${TEXT_BG_STYLES.default} mt-4`} style={TEXT_SHADOW.small}>
             {description}
           </p>
         )}
@@ -111,27 +111,27 @@ export function UltraCTA({
 }) {
   return (
     <UltraSection variant="medium" className={className}>
-      <div className="text-center max-w-3xl mx-auto">
-        <h2 className="text-2xl sm:text-3xl font-bold text-white mb-6" style={TEXT_SHADOW.heading}>
+      <div className="text-center max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight" style={TEXT_SHADOW.heading}>
           {title}
         </h2>
         {subtitle && (
-          <p className={`text-xl text-white mb-4 ${TEXT_BG_STYLES.default}`} style={TEXT_SHADOW.body}>
+          <p className={`text-lg sm:text-xl md:text-2xl text-white mb-6 leading-relaxed ${TEXT_BG_STYLES.default}`} style={TEXT_SHADOW.body}>
             {subtitle}
           </p>
         )}
         {description && (
-          <p className={`text-lg text-gray-200 mb-8 ${TEXT_BG_STYLES.default}`} style={TEXT_SHADOW.body}>
+          <p className={`text-base sm:text-lg md:text-xl text-gray-200 mb-8 leading-relaxed ${TEXT_BG_STYLES.default}`} style={TEXT_SHADOW.body}>
             {description}
           </p>
         )}
         {buttons && buttons.length > 0 && (
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center">
             {buttons.map((button, index) => (
               <a 
                 key={index}
                 href={button.href}
-                className={`inline-flex items-center justify-center px-8 py-4 font-bold rounded-lg transition-all shadow-xl ${
+                className={`inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-bold rounded-lg transition-all shadow-xl hover:shadow-2xl transform hover:scale-105 w-full sm:w-auto ${
                   button.variant === 'primary'
                     ? 'bg-gradient-to-r from-indigo-600 to-purple-600 text-white hover:from-indigo-700 hover:to-purple-700'
                     : 'bg-white text-gray-900 hover:bg-gray-100'
