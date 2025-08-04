@@ -7,7 +7,7 @@ import { TEXT_SHADOW, CARD_STYLES, TEXT_BG_STYLES } from '@/lib/ultra-styles'
 import UltraSection, { UltraHero, UltraCTA } from '@/components/ui/UltraSection'
 import { Handshake, Award, Globe, Shield } from 'lucide-react'
 import LineButton from '@/components/ui/LineButton'
-import AccessibleButton from '@/components/ui/AccessibleButton'
+import UltraButton from '@/components/ui/UltraButton'
 
 export const metadata: Metadata = {
   title: `パートナー企業 | ${COMPANY_DATA.basic.name}`,
@@ -155,20 +155,20 @@ export default function PartnersPage() {
         description="単独では限界がある。だから私たちは、信頼できるパートナーと手を組みました。"
       >
         <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8">
-          <AccessibleButton
+          <UltraButton
             href="#services"
             variant="primary"
-            size="large"
+            size="lg"
           >
             パートナーサービスを見る
-          </AccessibleButton>
-          <AccessibleButton
+          </UltraButton>
+          <UltraButton
             href="/#contact"
             variant="secondary"
-            size="large"
+            size="lg"
           >
             相談する
-          </AccessibleButton>
+          </UltraButton>
         </div>
       </UltraHero>
 
@@ -368,13 +368,13 @@ export default function PartnersPage() {
         </div>
         
         <div className="text-center">
-          <AccessibleButton
+          <UltraButton
             href="/#contact"
             variant="secondary"
-            size="large"
+            size="lg"
           >
             パートナー登録の相談
-          </AccessibleButton>
+          </UltraButton>
         </div>
       </UltraSection>
 

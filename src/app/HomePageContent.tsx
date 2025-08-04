@@ -3,7 +3,7 @@
 import PageLayout from '@/components/layout/PageLayout'
 import { Globe, Brain, ShoppingCart } from 'lucide-react'
 import { COMPANY_DATA } from '@/lib/company-data'
-import AccessibleButton from '@/components/ui/AccessibleButton'
+import UltraButton from '@/components/ui/UltraButton'
 import { STYLES, SPACING, EFFECTS } from '@/lib/constants'
 import { cn } from '@/lib/utils'
 import ContactForm from '@/components/ui/ContactForm'
@@ -12,7 +12,6 @@ import LineButton from '@/components/ui/LineButton'
 import ValueProposition from '@/components/sections/ValueProposition'
 import FAQ from '@/components/sections/FAQ'
 import LazyLoad from '@/components/ui/LazyLoad'
-import { RippleContainer, BreathingButton, NeonGlow } from '@/components/effects/DynamicEffects'
 import HolographicCard from '@/components/ui/HolographicCard'
 import { TEXT_BG_STYLES, TEXT_SHADOW } from '@/lib/ultra-styles'
 
@@ -104,22 +103,12 @@ export default function HomePageContent() {
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center px-4 sm:px-0">
-                <BreathingButton 
-                  href="#contact" 
-                  showArrow 
-                  className="btn-modern bg-gradient-to-r from-indigo-600 to-purple-600 text-white hover:from-indigo-700 hover:to-purple-700 shadow-xl border-2 border-indigo-400/50" 
-                  size="large"
-                >
+                <UltraButton href="#contact" variant="primary" size="lg">
                   今すぐ無料相談
-                </BreathingButton>
-                <BreathingButton 
-                  href="#services" 
-                  variant="secondary" 
-                  className="bg-gray-200 border-2 border-gray-400 text-gray-900 hover:bg-white hover:border-indigo-400 shadow-xl font-bold" 
-                  size="large"
-                >
+                </UltraButton>
+                <UltraButton href="#services" variant="secondary" size="lg">
                   サービスを見る
-                </BreathingButton>
+                </UltraButton>
               </div>
               
               {/* Floating LINE Button */}
@@ -196,18 +185,14 @@ export default function HomePageContent() {
                       
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-3">
                         {service.buttons.map((button, btnIdx) => (
-                          <AccessibleButton
+                          <UltraButton
                             key={btnIdx}
                             href={button.href}
-                            className={btnIdx === 0 ? "bg-gradient-to-r from-indigo-600 to-purple-600 text-white hover:from-indigo-700 hover:to-purple-700 shadow-lg font-bold text-xs sm:text-sm" : "bg-gray-800/90 backdrop-blur-sm border-2 border-gray-600 text-white hover:bg-gray-700 hover:border-gray-500 font-semibold text-xs sm:text-sm"}
-                            size="medium"
-                            {...(button.href.startsWith('http') && {
-                              target: '_blank',
-                              rel: 'noopener noreferrer'
-                            })}
+                            variant={btnIdx === 0 ? "primary" : "secondary"}
+                            size="sm"
                           >
                             {button.text}
-                          </AccessibleButton>
+                          </UltraButton>
                         ))}
                       </div>
                     </div>
@@ -239,13 +224,9 @@ export default function HomePageContent() {
                 <p className="text-lg text-gray-200 mb-8 leading-relaxed">
                   高額なIT投資で失敗する企業が多い中、私たちは適正価格で確実な成果を出します。必要最小限の投資で最大の効果を生み出し、削減したコストを本業の成長に投資できる環境を提供します。
                 </p>
-                <AccessibleButton 
-                  href="/about" 
-                  showArrow
-                  className="bg-gradient-to-r from-indigo-500 to-purple-500 text-white hover:from-indigo-600 hover:to-purple-600 shadow-lg"
-                >
-                  詳しく見る
-                </AccessibleButton>
+                <UltraButton href="/about" variant="primary">
+                  詳しく見る →
+                </UltraButton>
               </div>
             </div>
           </div>

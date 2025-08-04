@@ -2,7 +2,7 @@
 
 import { memo } from 'react'
 import LineButton from '@/components/ui/LineButton'
-import AccessibleButton from '@/components/ui/AccessibleButton'
+import UltraButton from '@/components/ui/UltraButton'
 import { STYLES } from '@/lib/constants'
 
 interface UnifiedCTAProps {
@@ -51,15 +51,16 @@ const UnifiedCTA = memo(function UnifiedCTA({
             <LineButton size="medium" />
             
             {showContactButton && (
-              <AccessibleButton
+              <UltraButton
                 href="/#contact"
+                variant="primary"
                 className={theme === 'dark' ? 
                   "bg-white-overlay text-white hover:bg-gray-overlay" : 
                   "bg-gray-900 text-white hover:bg-gray-800"
                 }
               >
                 無料相談を予約する
-              </AccessibleButton>
+              </UltraButton>
             )}
           </div>
         </div>
