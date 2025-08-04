@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 
 interface Particle {
   x: number
@@ -13,6 +13,26 @@ interface Particle {
 
 export default function FloatingParticles() {
   const canvasRef = useRef<HTMLCanvasElement>(null)
+  const [isVisible, setIsVisible] = useState(true)
+  
+  useEffect(() => {
+    // FAQセクションの近くでは非表示にする
+    const handleScroll = () => {
+      const faqSection = document.querySelector('.faq-section')
+      if (faqSection) {
+        const rect = faqSection.getBoundingClientRect()
+        const isNearFaq = rect.top < window.innerHeight && rect.bottom > 0
+        setIsVisible(!isNearFaq)
+      }
+    }
+    
+    window.addEventListener('scroll', handleScroll)
+    handleScroll() // 初回チェック
+    
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+    }
+  }, [])
   
   useEffect(() => {
     const canvas = canvasRef.current
@@ -142,7 +162,10 @@ export default function FloatingParticles() {
     <canvas
       ref={canvasRef}
       className="fixed inset-0 pointer-events-none z-[1]"
-      style={{ opacity: 0.6 }}
+      style={{ 
+        opacity: isVisible ? 0.6 : 0,
+        transition: 'opacity 0.5s ease-in-out'
+      }}
     />
   )
 }

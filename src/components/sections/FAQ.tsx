@@ -24,7 +24,7 @@ const FAQ = memo(function FAQ() {
   ]
 
   return (
-    <section className="py-20 relative">
+    <section className="py-20 relative faq-section">
       <div className="absolute inset-0 bg-gray-800/60" />
       <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
