@@ -121,26 +121,19 @@ export default function AboutPage() {
       />
 
       {/* Hero Section */}
-      <section className="relative min-h-[50vh] flex items-center justify-center overflow-hidden pt-20 sm:pt-24 md:pt-32 pb-20">
-        <div className="absolute inset-0 bg-gray-900/60 backdrop-blur-sm" />
-        <div className="relative z-10 w-full px-4 sm:px-6 lg:px-8 text-center">
-          <ParallaxElement speed={0.3}>
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold mb-6 text-white" style={{ textShadow: '0 2px 4px rgba(0, 0, 0, 0.8)' }}>
-              私たちが、お客様に選ばれる理由
-            </h1>
-          </ParallaxElement>
-          <p className={`text-xl sm:text-2xl text-white font-semibold mb-4 ${TEXT_BG_STYLES.default}`} style={{ textShadow: '0 1px 2px rgba(0, 0, 0, 0.8)' }}>
-            「高すぎるIT投資」を、「適正な成長投資」に変える
-          </p>
-        <p className={STYLES.text.body.medium + " text-gray-200 w-full"}>
-          株式会社Awakeは、無駄を削ぎ落とし、<br className="hidden sm:block" />
-          本当に価値のある投資だけに集中できる環境を創ります。
-        </p>
-        </div>
-      </section>
+      <UltraHero
+        title="私たちが、お客様に選ばれる理由"
+        subtitle="「高すぎるIT投資」を、「適正な成長投資」に変える"
+        description="株式会社Awakeは、無駄を削ぎ落とし、本当に価値のある投資だけに集中できる環境を創ります。"
+        className="bg-gray-900/60"
+      />
 
       {/* CEO Message Section */}
-      <ContentSection className="bg-gray-900/30" ariaLabel="代表メッセージ">
+      <UltraSection
+        title="代表メッセージ"
+        className="bg-gray-900/30"
+        ariaLabel="代表メッセージ"
+      >
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12">
           <div>
             <div className="bg-gray-800/80 backdrop-blur-sm rounded-2xl p-6 sm:p-8 mb-8 border border-gray-700">
@@ -314,15 +307,14 @@ export default function AboutPage() {
             </div>
           </div>
         </div>
-      </ContentSection>
+      </UltraSection>
 
       {/* Mission & Vision Section */}
-      <ContentSection className="bg-gray-800/90" ariaLabel="ミッション・ビジョン">
-        <div className="text-center mb-8 sm:mb-12 lg:mb-16">
-          <h2 className={STYLES.heading.h2.section + " text-white mb-4"}>
-            ミッション・ビジョン
-          </h2>
-        </div>
+      <UltraSection
+        title="ミッション・ビジョン"
+        className="bg-gray-800/90"
+        ariaLabel="ミッション・ビジョン"
+      >
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-12">
           <div className="bg-gray-700/80 rounded-2xl p-6 sm:p-8 border border-gray-600">
@@ -343,18 +335,15 @@ export default function AboutPage() {
             </p>
           </div>
         </div>
-      </ContentSection>
+      </UltraSection>
 
       {/* Our Promise Section */}
-      <ContentSection className="bg-gray-900/95" ariaLabel="私たちの約束">
-        <div className="text-center mb-8 sm:mb-12 lg:mb-16">
-          <h2 className={STYLES.heading.h2.section + " text-white mb-4"}>
-            なぜAwakeなのか
-          </h2>
-          <p className={STYLES.text.body.large + " text-gray-200"}>
-            私たちの3つの約束
-          </p>
-        </div>
+      <UltraSection
+        title="なぜAwakeなのか"
+        subtitle="私たちの3つの約束"
+        className="bg-gray-900/95"
+        ariaLabel="私たちの約束"
+      >
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
           {promises.map((promise, index) => (
@@ -365,18 +354,15 @@ export default function AboutPage() {
             </div>
           ))}
         </div>
-      </ContentSection>
+      </UltraSection>
 
       {/* Service Features Section */}
-      <ContentSection className="bg-gray-800/90" ariaLabel="サービスの特徴">
-        <div className="text-center mb-8 sm:mb-12 lg:mb-16">
-          <h2 className={STYLES.heading.h2.section + " text-white mb-4"}>
-            サービスの特徴
-          </h2>
-          <p className={STYLES.text.body.large + " text-gray-200"}>
-            コストを抑えながら、成果を最大化する仕組み
-          </p>
-        </div>
+      <UltraSection
+        title="サービスの特徴"
+        subtitle="コストを抑えながら、成果を最大化する仕組み"
+        className="bg-gray-800/90"
+        ariaLabel="サービスの特徴"
+      >
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
           {features.map((feature, index) => (
@@ -393,18 +379,15 @@ export default function AboutPage() {
             </div>
           ))}
         </div>
-      </ContentSection>
+      </UltraSection>
 
       {/* Company Values Section */}
-      <ContentSection className="bg-gray-900/95" ariaLabel="私たちの価値観">
-        <div className="text-center mb-8 sm:mb-12 lg:mb-16">
-          <h2 className={STYLES.heading.h2.section + " text-white mb-4"}>
-            私たちの価値観
-          </h2>
-          <p className={STYLES.text.body.large + " text-gray-200"}>
-            お客様と共に成長し続けるために
-          </p>
-        </div>
+      <UltraSection
+        title="私たちの価値観"
+        subtitle="お客様と共に成長し続けるために"
+        className="bg-gray-900/95"
+        ariaLabel="私たちの価値観"
+      >
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-12">
           {values.map((value, index) => {
@@ -422,43 +405,19 @@ export default function AboutPage() {
             )
           })}
         </div>
-      </ContentSection>
+      </UltraSection>
 
       {/* Contact CTA Section */}
-      <ContentSection className="bg-dark-overlay text-white">
-        <div className="text-center">
-          <h2 className={STYLES.heading.h2.section + " text-white mb-6"}>
-            次のステップへ
-          </h2>
-          <p className={STYLES.text.body.large + " text-white mb-4"}>
-            まずは、お話を聞かせてください
-          </p>
-          <p className={STYLES.text.body.medium + " text-gray-200 mb-8 max-w-3xl mx-auto"}>
-            あなたのビジネスの課題と理想の姿。<br className="hidden sm:block" />
-            無料相談で、最適な解決策を一緒に考えましょう。
-          </p>
-          
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <LineButton />
-            <AccessibleButton
-              href="/#contact"
-              variant="secondary"
-              className="bg-white-overlay text-gray-900 hover:bg-gray-overlay"
-              ariaLabel="無料相談を予約する"
-            >
-              無料相談を予約する
-            </AccessibleButton>
-            <AccessibleButton
-              href="/#services"
-              variant="outline"
-              className="border-white text-white hover:bg-white-overlay hover:text-gray-900"
-              ariaLabel="サービス一覧を見る"
-            >
-              サービス一覧を見る
-            </AccessibleButton>
-          </div>
-        </div>
-      </ContentSection>
+      <UltraCTA
+        title="次のステップへ"
+        subtitle="まずは、お話を聞かせてください"
+        description="あなたのビジネスの課題と理想の姿。無料相談で、最適な解決策を一緒に考えましょう。"
+        buttons={[
+          { href: "/#contact", label: "無料相談を予約する", variant: "primary" as const },
+          { href: "/#services", label: "サービス一覧を見る", variant: "secondary" as const }
+        ]}
+        className="bg-dark-overlay text-white"
+      />
     </PageLayout>
   )
 }
