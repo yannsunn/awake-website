@@ -308,41 +308,6 @@ export default function PartnersPage() {
         </div>
       </UltraSection>
 
-      {/* Success Stories Section */}
-      <UltraSection
-        title="実際の成功事例"
-        subtitle="パートナーシップが生んだ相乗効果"
-        className="bg-gray-900/60"
-      >
-        
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {[
-            {
-              title: "「3つの課題を同時に解決できた」",
-              description: "ホームページ制作と同時に、SNS運用と営業支援を導入。\n各サービスが連携し、問い合わせが5倍に増加しました。",
-              company: "製造業 D社様"
-            },
-            {
-              title: "「コスト削減と売上アップを両立」",
-              description: "AI導入で業務効率化を図りながら、Amazon出店で新規売上を創出。\n削減したコストを成長投資に回せる好循環が生まれました。",
-              company: "小売業 E社様"
-            }
-          ].map((story, index) => (
-            <div key={index} className="bg-gray-800/80 backdrop-blur-sm border border-gray-700 rounded-xl p-8">
-              <h3 className={STYLES.heading.h3.emphasis + " text-white mb-4"} style={TEXT_SHADOW.small}>
-                {story.title}
-              </h3>
-              <p className={STYLES.text.body.medium + " text-gray-200 mb-4 whitespace-pre-line"} style={TEXT_SHADOW.small}>
-                {story.description}
-              </p>
-              <p className={STYLES.text.description.medium + " text-gray-300"} style={TEXT_SHADOW.small}>
-                {story.company}
-              </p>
-            </div>
-          ))}
-        </div>
-      </UltraSection>
-
       {/* FAQ Section */}
       <UltraSection
         title="よくあるご質問"
