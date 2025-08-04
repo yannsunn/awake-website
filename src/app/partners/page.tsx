@@ -2,11 +2,12 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import { COMPANY_DATA } from '@/lib/company-data'
 import PageLayout from '@/components/layout/PageLayout'
-import { ContentSection } from '@/components/layout/PageTemplate'
 import { STYLES } from '@/lib/constants'
-import { TEXT_SHADOW } from '@/lib/ultra-styles'
+import { TEXT_SHADOW, CARD_STYLES, TEXT_BG_STYLES } from '@/lib/ultra-styles'
+import UltraSection, { UltraHero, UltraCTA } from '@/components/ui/UltraSection'
 import { Handshake, Award, Globe, Shield } from 'lucide-react'
 import LineButton from '@/components/ui/LineButton'
+import AccessibleButton from '@/components/ui/AccessibleButton'
 
 export const metadata: Metadata = {
   title: `パートナー企業 | ${COMPANY_DATA.basic.name}`,
@@ -148,44 +149,35 @@ export default function PartnersPage() {
   return (
     <PageLayout>
       {/* Hero Section */}
-      <ContentSection className="bg-gray-900/60">
-        <div className="text-center">
-          <h1 className={STYLES.heading.h1.primary + " text-white mb-4"} style={TEXT_SHADOW.small}>
-            1社では解決できない課題も、一緒なら解決できる
-          </h1>
-          <p className={STYLES.text.body.large + " text-gray-200 mb-4"} style={TEXT_SHADOW.small}>
-            各分野のプロフェッショナルと連携し、あらゆるビジネス課題にワンストップで対応
-          </p>
-          <p className={STYLES.text.body.medium + " text-gray-300 mb-8"} style={TEXT_SHADOW.small}>
-            単独では限界がある。だから私たちは、信頼できるパートナーと手を組みました。
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link
-              href="#services"
-              className={STYLES.button.primary}
-            >
-              パートナーサービスを見る
-            </Link>
-            <Link
-              href="/#contact"
-              className={STYLES.button.secondary}
-            >
-              相談する
-            </Link>
-          </div>
+      <UltraHero
+        title="1社では解決できない課題も、一緒なら解決できる"
+        subtitle="各分野のプロフェッショナルと連携し、あらゆるビジネス課題にワンストップで対応"
+        description="単独では限界がある。だから私たちは、信頼できるパートナーと手を組みました。"
+      >
+        <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8">
+          <AccessibleButton
+            href="#services"
+            variant="primary"
+            size="large"
+          >
+            パートナーサービスを見る
+          </AccessibleButton>
+          <AccessibleButton
+            href="/#contact"
+            variant="secondary"
+            size="large"
+          >
+            相談する
+          </AccessibleButton>
         </div>
-      </ContentSection>
+      </UltraHero>
 
       {/* Why Partnership Section */}
-      <ContentSection className="bg-gray-800/30">
-        <div className="text-center mb-8 sm:mb-12 lg:mb-16">
-          <h2 className={STYLES.heading.h2.section + " text-white mb-4"} style={TEXT_SHADOW.small}>
-            なぜ、パートナーシップが必要なのか
-          </h2>
-          <p className={STYLES.text.body.large + " text-gray-200"} style={TEXT_SHADOW.small}>
-            お客様の「本当の成功」は、1つのサービスだけでは実現できない
-          </p>
-        </div>
+      <UltraSection
+        title="なぜ、パートナーシップが必要なのか"
+        subtitle="お客様の「本当の成功」は、1つのサービスだけでは実現できない"
+        className="bg-gray-800/30"
+      >
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
           {[
@@ -222,18 +214,14 @@ export default function PartnersPage() {
             だから、ワンストップで解決できる体制を整えました。
           </p>
         </div>
-      </ContentSection>
+      </UltraSection>
 
       {/* Partnership Value Section */}
-      <ContentSection className="bg-gray-900/60">
-        <div className="text-center mb-8 sm:mb-12 lg:mb-16">
-          <h2 className={STYLES.heading.h2.section + " text-white mb-4"} style={TEXT_SHADOW.small}>
-            パートナーシップがもたらす4つの価値
-          </h2>
-          <p className={STYLES.text.body.medium + " text-gray-200"} style={TEXT_SHADOW.small}>
-            お客様にとっての、本当のメリット
-          </p>
-        </div>
+      <UltraSection
+        title="パートナーシップがもたらす4つの価値"
+        subtitle="お客様にとっての、本当のメリット"
+        className="bg-gray-900/60"
+      >
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
           {[
@@ -274,10 +262,10 @@ export default function PartnersPage() {
             </div>
           ))}
         </div>
-      </ContentSection>
+      </UltraSection>
 
       {/* Partner Services Section */}
-      <ContentSection className="bg-gray-800/30" id="services">
+      <UltraSection className="bg-gray-800/30" id="services">
         <div className="space-y-20">
           {partners.map((category, categoryIndex) => (
             <div key={categoryIndex}>
@@ -318,18 +306,14 @@ export default function PartnersPage() {
             </div>
           ))}
         </div>
-      </ContentSection>
+      </UltraSection>
 
       {/* Success Stories Section */}
-      <ContentSection className="bg-gray-900/60">
-        <div className="text-center mb-12">
-          <h2 className={STYLES.heading.h2.section + " text-white mb-4"} style={TEXT_SHADOW.small}>
-            実際の成功事例
-          </h2>
-          <p className={STYLES.text.body.large + " text-gray-200"} style={TEXT_SHADOW.small}>
-            パートナーシップが生んだ相乗効果
-          </p>
-        </div>
+      <UltraSection
+        title="実際の成功事例"
+        subtitle="パートナーシップが生んだ相乗効果"
+        className="bg-gray-900/60"
+      >
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {[
@@ -357,15 +341,13 @@ export default function PartnersPage() {
             </div>
           ))}
         </div>
-      </ContentSection>
+      </UltraSection>
 
       {/* FAQ Section */}
-      <ContentSection className="bg-gray-800/30">
-        <div className="text-center mb-12">
-          <h2 className={STYLES.heading.h2.section + " text-white mb-4"} style={TEXT_SHADOW.small}>
-            よくあるご質問
-          </h2>
-        </div>
+      <UltraSection
+        title="よくあるご質問"
+        className="bg-gray-800/30"
+      >
         
         <div className="w-full space-y-6">
           {[
@@ -392,22 +374,15 @@ export default function PartnersPage() {
             </div>
           ))}
         </div>
-      </ContentSection>
+      </UltraSection>
 
       {/* Partner Recruitment Section */}
-      <ContentSection className="bg-gray-900/60">
-        <div className="text-center mb-12">
-          <h2 className={STYLES.heading.h2.section + " text-white mb-4"} style={TEXT_SHADOW.small}>
-            新しいパートナーも募集中
-          </h2>
-          <p className={STYLES.text.body.large + " text-gray-200 mb-8"} style={TEXT_SHADOW.small}>
-            一緒に、お客様の成功を支援しませんか？
-          </p>
-          <p className={STYLES.text.body.medium + " text-gray-300 mb-8"} style={TEXT_SHADOW.small}>
-            私たちは、お客様により大きな価値を提供できる<br />
-            パートナー企業を常に探しています。
-          </p>
-        </div>
+      <UltraSection
+        title="新しいパートナーも募集中"
+        subtitle="一緒に、お客様の成功を支援しませんか？"
+        description="私たちは、お客様により大きな価値を提供できるパートナー企業を常に探しています。"
+        className="bg-gray-900/60"
+      >
         
         <div className="bg-gray-800/80 backdrop-blur-sm border border-gray-700 rounded-xl p-8 mb-12">
           <h3 className={STYLES.heading.h3.emphasis + " text-white mb-6 text-center"} style={TEXT_SHADOW.small}>
@@ -428,42 +403,26 @@ export default function PartnersPage() {
         </div>
         
         <div className="text-center">
-          <Link
+          <AccessibleButton
             href="/#contact"
-            className={STYLES.button.secondary + " inline-block"}
+            variant="secondary"
+            size="large"
           >
             パートナー登録の相談
-          </Link>
+          </AccessibleButton>
         </div>
-      </ContentSection>
+      </UltraSection>
 
       {/* CTA Section */}
-      <ContentSection className="bg-dark-overlay text-white">
-        <div className="text-center">
-          <h2 className={STYLES.heading.h2.section + " text-white mb-4"} style={TEXT_SHADOW.small}>
-            次のステップ
-          </h2>
-          <p className={STYLES.text.body.large + " text-white mb-4"} style={TEXT_SHADOW.small}>
-            まずは、あなたの課題をお聞かせください
-          </p>
-          <p className={STYLES.text.body.medium + " text-gray-200 mb-8"} style={TEXT_SHADOW.small}>
-            どんなサービスの組み合わせが最適か。<br />
-            無料相談で、ベストな解決策をご提案します。
-          </p>
-          
-          <div className="flex flex-col gap-4 items-center mb-6">
-            <LineButton />
-            
-            <Link
-              href="/#contact"
-              className="inline-flex items-center justify-center px-8 py-4 bg-white text-gray-900 font-medium rounded-lg hover:bg-gray-200 transition-colors"
-            >
-              無料相談を予約する
-            </Link>
-          </div>
-          
-        </div>
-      </ContentSection>
+      <UltraCTA
+        title="次のステップ"
+        subtitle="まずは、あなたの課題をお聞かせください"
+        description="どんなサービスの組み合わせが最適か。無料相談で、ベストな解決策をご提案します。"
+        buttons={[
+          { href: "/#contact", label: "無料相談を予約する", variant: "primary" as const }
+        ]}
+        className="bg-dark-overlay text-white"
+      />
     </PageLayout>
   )
 }
