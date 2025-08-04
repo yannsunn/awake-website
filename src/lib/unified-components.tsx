@@ -4,7 +4,7 @@ import { memo } from 'react'
 import { ArrowRight } from 'lucide-react'
 import Link from 'next/link'
 import { COMPANY_DATA } from './company-data'
-import AccessibleButton from '@/components/ui/AccessibleButton'
+import UltraButton from '@/components/ui/UltraButton'
 
 // 🚀 UNIFIED COMPONENTS - 重複撲滅完了！
 
@@ -40,9 +40,9 @@ export const ServiceCard = memo(function ServiceCard({
       <p className="text-gray-600 mb-8 leading-relaxed">
         {service.description}
       </p>
-      <AccessibleButton href={service.href} variant={featured ? 'primary' : 'secondary'} showArrow>
-        詳細を見る
-      </AccessibleButton>
+      <UltraButton href={service.href} variant={featured ? 'primary' : 'secondary'}>
+        詳細を見る →
+      </UltraButton>
     </div>
   )
 })
@@ -186,14 +186,13 @@ export const PricingCard = memo(function PricingCard({
           </li>
         ))}
       </ul>
-      <AccessibleButton 
+      <UltraButton 
         href="/#contact" 
         variant={featured ? 'primary' : 'secondary'}
         className="w-full"
-        showArrow
       >
-        お問い合わせ
-      </AccessibleButton>
+        お問い合わせ →
+      </UltraButton>
     </div>
   )
 })

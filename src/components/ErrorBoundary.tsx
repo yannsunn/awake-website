@@ -4,7 +4,7 @@
 import { Component, ReactNode, ErrorInfo, Suspense } from 'react'
 import { AlertTriangle, RefreshCw, Home } from 'lucide-react'
 import Link from 'next/link'
-import AccessibleButton from './ui/AccessibleButton'
+import UltraButton from './ui/UltraButton'
 
 interface ErrorBoundaryState {
   hasError: boolean
@@ -161,25 +161,23 @@ class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundaryState> {
 
               {/* アクションボタン */}
               <div className="space-y-3">
-                <AccessibleButton
+                <UltraButton
                   onClick={this.handleRetry}
                   variant="primary"
-                  icon={RefreshCw}
-                  className="w-full"
-                  ariaLabel="ページを再読み込みしてエラーから復旧"
+                  className="w-full flex items-center justify-center"
                 >
+                  <RefreshCw className="mr-2 h-5 w-5" />
                   再読み込み
-                </AccessibleButton>
+                </UltraButton>
                 
-                <AccessibleButton
+                <UltraButton
                   onClick={this.handleGoHome}
                   variant="secondary"
-                  icon={Home}
-                  className="w-full"
-                  ariaLabel="ホームページに戻る"
+                  className="w-full flex items-center justify-center"
                 >
+                  <Home className="mr-2 h-5 w-5" />
                   ホームに戻る
-                </AccessibleButton>
+                </UltraButton>
 
                 <Link 
                   href="/#contact"

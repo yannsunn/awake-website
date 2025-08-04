@@ -2,7 +2,7 @@
 
 import { ReactNode } from 'react'
 import { usePulseEffect } from '@/hooks/useCursorEffect'
-import AccessibleButton from '@/components/ui/AccessibleButton'
+import UltraButton from '@/components/ui/UltraButton'
 
 interface BreathingButtonProps {
   children: ReactNode
@@ -45,16 +45,16 @@ export default function BreathingButton({
         }}
       />
       
-      <AccessibleButton
-        href={href}
-        onClick={onClick}
+      <UltraButton
+        {...(href && { href })}
+        {...(onClick && { onClick })}
         className={`relative z-10 ${className}`}
-        variant={variant}
-        size={size}
-        showArrow={showArrow}
+        variant={variant === 'primary' ? 'primary' : 'secondary'}
+        size={size === 'small' ? 'sm' : size === 'large' ? 'lg' : 'md'}
       >
         {children}
-      </AccessibleButton>
+        {showArrow && <span className="ml-2">→</span>}
+      </UltraButton>
     </div>
   )
 }
