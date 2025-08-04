@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Noto_Sans_JP } from "next/font/google";
 import "./globals.css";
 import { enhancedOrganizationSchema } from "@/lib/enhanced-schema";
-import HybridBackground from "@/components/layout/HybridBackground";
+import SimpleBackground from "@/components/layout/SimpleBackground";
 
 const notoSansJP = Noto_Sans_JP({
   variable: "--font-noto-sans-jp",
@@ -50,7 +50,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ja" suppressHydrationWarning>
-      <body className={`${notoSansJP.variable} font-sans antialiased bg-gray-50`} suppressHydrationWarning>
+      <body className={`${notoSansJP.variable} font-sans antialiased`} suppressHydrationWarning>
         {/* WCAG 2.1 AAA準拠 スキップナビゲーション強化 */}
         <div className="sr-only focus-within:not-sr-only focus-within:fixed focus-within:top-0 focus-within:left-0 focus-within:z-50 focus-within:bg-gray-900 focus-within:p-4">
           <a href="#main-content" className="inline-block bg-white text-gray-900 font-bold px-6 py-3 rounded-lg border-2 border-gray-900 focus:outline-none focus:ring-4 focus:ring-blue-500 focus:ring-offset-2">
@@ -60,10 +60,10 @@ export default function RootLayout({
             ナビゲーションへスキップ
           </a>
         </div>
-        {/* ハイブリッド背景 */}
-        <HybridBackground />
+        {/* シンプル背景 */}
+        <SimpleBackground />
         {/* メインコンテンツ */}
-        <div className="relative z-10">
+        <div className="relative">
           <script
             type="application/ld+json"
             dangerouslySetInnerHTML={{
