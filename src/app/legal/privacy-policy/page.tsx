@@ -162,8 +162,9 @@ export default function PrivacyPolicyPage() {
       <UltraCTA 
         title="プライバシーに関するご質問"
         description="個人情報の取扱いについてご不明な点がございましたら、お気軽にお問い合わせください。"
-        buttonText="お問い合わせ"
-        buttonHref="/#contact"
+        buttons={[
+          { href: "/#contact", label: "お問い合わせ", variant: "primary" as const }
+        ]}
       />
     </PageLayout>
   )
