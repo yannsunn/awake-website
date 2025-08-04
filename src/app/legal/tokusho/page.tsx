@@ -207,8 +207,9 @@ export default function TokushoPage() {
       <UltraCTA 
         title="ご不明点がございましたら"
         description="特定商取引法に関するご質問は、お気軽にお問い合わせください。"
-        buttonText="お問い合わせ"
-        buttonHref="/#contact"
+        buttons={[
+          { href: "/#contact", label: "お問い合わせ", variant: "primary" as const }
+        ]}
       />
     </PageLayout>
   )

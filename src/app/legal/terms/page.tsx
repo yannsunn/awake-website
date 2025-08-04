@@ -141,8 +141,9 @@ export default function TermsPage() {
       <UltraCTA 
         title="利用規約に関するご質問"
         description="ご不明な点がございましたら、お気軽にお問い合わせください。"
-        buttonText="お問い合わせ"
-        buttonHref="/#contact"
+        buttons={[
+          { href: "/#contact", label: "お問い合わせ", variant: "primary" as const }
+        ]}
       />
     </PageLayout>
   )
