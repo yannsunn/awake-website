@@ -701,8 +701,8 @@ button:active, a:active {
   transition-duration: 0.1s;
 }
 
-/* 光沢エフェクト */
-button::before, .btn-glow::before {
+/* 光沢エフェクト - FAQボタンを除外 */
+button:not(.faq-button)::before, .btn-glow::before {
   content: '';
   position: absolute;
   top: 0;
@@ -720,7 +720,7 @@ button::before, .btn-glow::before {
   transform: skewX(-12deg);
 }
 
-button:hover::before, .btn-glow:hover::before {
+button:not(.faq-button):hover::before, .btn-glow:hover::before {
   left: 100%;
 }
 

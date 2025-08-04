@@ -21,7 +21,7 @@ export default function FloatingParticles() {
       const faqSection = document.querySelector('.faq-section')
       if (faqSection) {
         const rect = faqSection.getBoundingClientRect()
-        const isNearFaq = rect.top < window.innerHeight && rect.bottom > 0
+        const isNearFaq = rect.top < window.innerHeight * 1.5 && rect.bottom > -window.innerHeight * 0.5
         setIsVisible(!isNearFaq)
       }
     }

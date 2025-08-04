@@ -37,7 +37,7 @@ const FAQ = memo(function FAQ() {
           {faqs.map((faq, index) => (
             <div key={index} className="bg-gray-800/90 border border-gray-700 rounded-lg shadow-lg">
               <button
-                className="w-full px-6 py-4 text-left flex items-center justify-between hover:bg-gray-600/50 transition-colors"
+                className="w-full px-6 py-4 text-left flex items-center justify-between hover:bg-gray-600/50 transition-colors faq-button"
                 onClick={() => setOpenIndex(openIndex === index ? null : index)}
               >
                 <span className="font-medium text-white" style={TEXT_SHADOW.body}>Q: {faq.question}</span>
