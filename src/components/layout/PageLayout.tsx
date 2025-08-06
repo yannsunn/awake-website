@@ -6,8 +6,7 @@ import Footer from '@/components/layout/Footer'
 import { useScrollRevealGlobal } from '@/hooks/useScrollReveal'
 import type { Breadcrumb } from '@/lib/types'
 
-import CursorLight from '@/components/effects/CursorLight'
-import FloatingParticles from '@/components/effects/FloatingParticles'
+// エフェクトを削除してシンプルに
 
 interface PageLayoutProps {
   children: ReactNode
@@ -28,13 +27,7 @@ export default function PageLayout({
   
   return (
     <>
-      {/* 水平思考エフェクト */}
-      {showEffects && (
-        <>
-          <CursorLight />
-          <FloatingParticles />
-        </>
-      )}
+      {/* エフェクトを削除 */}
       
       <Header />
       
