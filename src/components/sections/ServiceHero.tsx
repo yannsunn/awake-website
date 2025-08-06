@@ -40,14 +40,14 @@ export function ServiceHero({
       
       <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 pt-20 md:pt-24 pb-12 sm:pb-16 md:pb-20 lg:pb-24 xl:pb-28">
         <div className="mx-auto max-w-5xl text-center">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-extrabold mb-6 text-white leading-tight" style={TEXT_SHADOW.heading}>
+          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-white leading-tight" style={TEXT_SHADOW.heading}>
             {title}
           </h1>
-          <p className={`mb-6 sm:mb-8 text-base sm:text-lg md:text-xl lg:text-2xl text-white leading-relaxed px-4 sm:px-0 ${TEXT_BG_STYLES.large}`} style={TEXT_SHADOW.small}>
+          <p className="mb-6 sm:mb-8 text-sm sm:text-base md:text-lg text-white leading-relaxed px-4 sm:px-0" style={TEXT_SHADOW.small}>
             {description}
           </p>
           {subDescription && (
-            <p className={`mb-6 sm:mb-8 text-sm sm:text-base md:text-lg lg:text-xl text-gray-200 leading-relaxed px-4 sm:px-0 ${TEXT_BG_STYLES.default}`} style={TEXT_SHADOW.small}>
+            <p className="mb-6 sm:mb-8 text-xs sm:text-sm md:text-base text-gray-200 leading-relaxed px-4 sm:px-0" style={TEXT_SHADOW.small}>
               {subDescription}
             </p>
           )}

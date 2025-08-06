@@ -72,16 +72,16 @@ export function UltraHero({
   return (
     <UltraSection variant="dark" className={cn("min-h-[60vh] sm:min-h-[70vh] md:min-h-[80vh] flex items-center justify-center pt-20 md:pt-24", className)}>
       <div className="text-center max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-extrabold mb-6 text-white leading-tight" style={TEXT_SHADOW.heading}>
+        <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-white leading-tight" style={TEXT_SHADOW.heading}>
           {title}
         </h1>
         {subtitle && (
-          <p className={`text-lg sm:text-xl md:text-2xl lg:text-3xl text-white font-semibold mb-6 leading-relaxed ${TEXT_BG_STYLES.default}`} style={TEXT_SHADOW.body}>
+          <p className="text-base sm:text-lg md:text-xl text-white font-medium mb-6 leading-relaxed" style={TEXT_SHADOW.body}>
             {subtitle}
           </p>
         )}
         {description && (
-          <p className={`text-base sm:text-lg md:text-xl lg:text-2xl text-gray-200 leading-relaxed ${TEXT_BG_STYLES.default} mt-4`} style={TEXT_SHADOW.small}>
+          <p className="text-sm sm:text-base md:text-lg text-gray-200 leading-relaxed mt-4" style={TEXT_SHADOW.small}>
             {description}
           </p>
         )}
