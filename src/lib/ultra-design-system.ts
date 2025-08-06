@@ -35,25 +35,20 @@ export const COLORS = {
   info: '#3b82f6'
 } as const
 
-// タイポグラフィシステム - 一貫性のある階層
+// タイポグラフィシステム - モバイルファースト最適化
 export const TYPOGRAPHY = {
-  // デスクトップサイズ
-  desktop: {
-    h1: 'text-5xl font-bold tracking-tight',      // 48px
-    h2: 'text-4xl font-bold tracking-tight',      // 36px
-    h3: 'text-2xl font-semibold',                 // 24px
-    h4: 'text-xl font-semibold',                  // 20px
-    body: 'text-base font-normal',                // 16px
-    small: 'text-sm font-normal'                  // 14px
-  },
-  // モバイルサイズ
-  mobile: {
-    h1: 'text-3xl font-bold tracking-tight',      // 30px
-    h2: 'text-2xl font-bold tracking-tight',      // 24px
-    h3: 'text-xl font-semibold',                  // 20px
-    h4: 'text-lg font-semibold',                  // 18px
-    body: 'text-base font-normal',                // 16px
-    small: 'text-sm font-normal'                  // 14px
+  // レスポンシブクラス
+  h1: 'text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight',
+  h2: 'text-xl sm:text-2xl md:text-3xl font-bold tracking-tight',
+  h3: 'text-lg sm:text-xl md:text-2xl font-semibold',
+  h4: 'text-base sm:text-lg md:text-xl font-semibold',
+  body: 'text-sm sm:text-base font-normal',
+  small: 'text-xs sm:text-sm font-normal',
+  // 行間
+  lineHeight: {
+    tight: 'leading-tight',
+    normal: 'leading-normal',
+    relaxed: 'leading-relaxed'
   }
 } as const
 
