@@ -3,6 +3,7 @@ import { Noto_Sans_JP } from "next/font/google";
 import "./globals-optimized.css";
 import { enhancedOrganizationSchema } from "@/lib/enhanced-schema";
 import SimpleBackground from "@/components/layout/SimpleBackground";
+import MouseEffects from "@/components/effects/MouseEffects";
 
 const notoSansJP = Noto_Sans_JP({
   variable: "--font-noto-sans-jp",
@@ -62,6 +63,8 @@ export default function RootLayout({
         </div>
         {/* シンプル背景 */}
         <SimpleBackground />
+        {/* マウスエフェクト */}
+        <MouseEffects />
         {/* メインコンテンツ */}
         <div className="relative">
           <script
