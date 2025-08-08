@@ -250,7 +250,7 @@ export default function PartnersPage() {
               description: "各サービスが連携し、1+1が3になる成果を実現"
             }
           ].map((value, index) => (
-            <div key={index} className="text-center p-6 bg-gray-800/80 backdrop-blur-sm border border-gray-700 rounded-xl">
+            <div key={index} className="text-center p-6 bg-gradient-to-br from-gray-800/95 to-gray-850/95 backdrop-blur-sm border border-purple-500/30 rounded-xl shadow-lg hover:border-purple-400/50 transition-all duration-300">
               <div className="text-3xl mb-2">{value.emoji}</div>
               <div className="text-2xl font-bold text-white mb-3" style={TEXT_SHADOW.small}>{value.number}</div>
               <h3 className={STYLES.heading.h3.emphasis + " text-white mb-3"} style={TEXT_SHADOW.small}>
@@ -282,7 +282,7 @@ export default function PartnersPage() {
                 {category.companies.map((company, companyIndex) => (
                   <div 
                     key={companyIndex} 
-                    className="bg-gray-800/80 backdrop-blur-sm border border-gray-700 rounded-xl p-6 hover:border-gray-500 hover:shadow-lg transition-all duration-300"
+                    className="bg-gradient-to-br from-gray-750/95 to-gray-800/95 backdrop-blur-sm border border-gray-500 rounded-xl p-6 hover:border-purple-500/40 hover:shadow-xl transition-all duration-300"
                   >
                     <div className="text-3xl mb-4 text-center">
                       {company.icon}
@@ -329,7 +329,7 @@ export default function PartnersPage() {
               a: "基本的に私たちが窓口となり、全体をコーディネートします。"
             }
           ].map((faq, index) => (
-            <div key={index} className="bg-gray-800/80 backdrop-blur-sm border border-gray-700 rounded-xl p-6">
+            <div key={index} className="bg-gradient-to-br from-gray-800/95 to-gray-850/95 backdrop-blur-sm border border-gray-500 rounded-xl p-6 shadow-lg hover:border-purple-500/40 transition-all duration-300">
               <h3 className={STYLES.heading.h3.card + " text-white mb-3"} style={TEXT_SHADOW.small}>
                 Q: {faq.q}
               </h3>
@@ -349,7 +349,7 @@ export default function PartnersPage() {
         className="bg-gray-900/60"
       >
         
-        <div className="bg-gray-800/80 backdrop-blur-sm border border-gray-700 rounded-xl p-8 mb-12">
+        <div className="bg-gradient-to-br from-purple-900/20 to-gray-800/95 backdrop-blur-sm border border-purple-500/30 rounded-xl p-8 mb-12 shadow-xl">
           <h3 className={STYLES.heading.h3.emphasis + " text-white mb-6 text-center"} style={TEXT_SHADOW.small}>
             こんな企業様を求めています：
           </h3>

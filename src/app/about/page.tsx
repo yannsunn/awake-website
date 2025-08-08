@@ -134,7 +134,7 @@ export default function AboutPage() {
       >
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12">
           <div>
-            <div className="bg-gray-800/80 backdrop-blur-sm rounded-2xl p-6 sm:p-8 mb-8 border border-gray-700">
+            <div className="bg-gradient-to-br from-gray-800/95 to-gray-850/95 backdrop-blur-sm rounded-2xl p-6 sm:p-8 mb-8 border border-purple-500/20 shadow-lg">
               <div className="flex items-center mb-6">
                 <div className="w-10 sm:w-12 h-10 sm:h-12 bg-white rounded-full flex items-center justify-center mr-3 sm:mr-4">
                   <User className="h-6 w-6 text-gray-900" />
@@ -243,7 +243,7 @@ export default function AboutPage() {
               <div>
                 <h3 className={STYLES.heading.h3.emphasis + " text-white mb-4"}>私たちの信念</h3>
                 
-                <div className="bg-gray-800/80 rounded-lg p-6 mb-4">
+                <div className="bg-gradient-to-br from-purple-900/30 to-gray-800/95 backdrop-blur-sm rounded-lg p-6 mb-4 border border-purple-500/20 shadow-lg">
                   <p className={STYLES.text.emphasis.strong + " text-white text-lg text-center mb-2"}>「つながるすべての人に、感謝と繁栄を」</p>
                 </div>
                 
@@ -277,7 +277,7 @@ export default function AboutPage() {
           </div>
           
           <div className="lg:pl-8">
-            <div className="bg-gray-800/90 rounded-2xl p-6 sm:p-8 text-center">
+            <div className="bg-gradient-to-br from-gray-800/95 to-gray-850/95 backdrop-blur-sm rounded-2xl p-6 sm:p-8 text-center border border-purple-500/20 shadow-lg">
               <div className="w-32 h-32 bg-white rounded-full flex items-center justify-center mx-auto mb-6">
                 <User className="h-16 w-16 text-gray-900" />
               </div>
@@ -315,7 +315,7 @@ export default function AboutPage() {
       >
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-12">
-          <div className="bg-gray-700/80 rounded-2xl p-6 sm:p-8 border border-gray-600">
+          <div className="bg-gradient-to-br from-gray-750/95 to-gray-800/95 backdrop-blur-sm rounded-2xl p-6 sm:p-8 border border-gray-500 hover:border-purple-500/40 shadow-lg transition-all duration-300">
             <h3 className={STYLES.heading.h2.subsection + " text-white mb-4"}>
               ミッション
             </h3>
@@ -324,7 +324,7 @@ export default function AboutPage() {
             </p>
           </div>
           
-          <div className="bg-gray-700/80 rounded-2xl p-6 sm:p-8 border border-gray-600">
+          <div className="bg-gradient-to-br from-gray-750/95 to-gray-800/95 backdrop-blur-sm rounded-2xl p-6 sm:p-8 border border-gray-500 hover:border-purple-500/40 shadow-lg transition-all duration-300">
             <h3 className={STYLES.heading.h2.subsection + " text-white mb-4"}>
               ビジョン
             </h3>
@@ -345,7 +345,7 @@ export default function AboutPage() {
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
           {promises.map((promise, index) => (
-            <div key={index} className="bg-gray-800/80 rounded-2xl p-8 shadow-sm border border-gray-600">
+            <div key={index} className="bg-gradient-to-br from-gray-800/95 to-gray-850/95 backdrop-blur-sm rounded-2xl p-8 shadow-lg border border-gray-500 hover:border-purple-500/40 hover:shadow-xl transition-all duration-300">
               <div className="text-4xl mb-4">{promise.icon}</div>
               <h3 className={STYLES.heading.h3.emphasis + " text-white mb-3"}>{promise.title}</h3>
               <p className={STYLES.text.description.medium + " text-gray-200"}>{promise.description}</p>
@@ -364,7 +364,7 @@ export default function AboutPage() {
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
           {features.map((feature, index) => (
-            <div key={index} className="bg-gray-700/80 rounded-xl p-6 sm:p-8 shadow-sm">
+            <div key={index} className="bg-gradient-to-br from-gray-750/95 to-gray-800/95 backdrop-blur-sm rounded-xl p-6 sm:p-8 shadow-lg border border-gray-500 hover:border-purple-500/40 hover:shadow-xl transition-all duration-300">
               <h3 className={STYLES.heading.h3.card + " text-white mb-4"}>{feature.title}</h3>
               <ul className="space-y-3" role="list">
                 {feature.items.map((item, idx) => (
@@ -391,7 +391,7 @@ export default function AboutPage() {
           {values.map((value, index) => {
             const IconComponent = value.icon
             return (
-              <div key={index} className="flex items-start p-6 sm:p-8 bg-gray-800/80 rounded-xl shadow-sm">
+              <div key={index} className="flex items-start p-6 sm:p-8 bg-gradient-to-br from-gray-800/95 to-gray-850/95 backdrop-blur-sm rounded-xl shadow-lg border border-gray-500 hover:border-purple-500/40 hover:shadow-xl transition-all duration-300">
                 <div className="text-3xl mr-4 mt-1">
                   {value.icon === Target ? "🎯" : value.icon === Zap ? "📚" : value.icon === Heart ? "🤝" : "🌱"}
                 </div>
