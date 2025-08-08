@@ -19,9 +19,9 @@ export default function UltraCard({
   hover = true
 }: UltraCardProps) {
   const variants = {
-    default: 'bg-gray-800/90 backdrop-blur-sm border border-gray-700',
-    featured: 'bg-gradient-to-br from-gray-800/95 to-gray-900/95 border border-gray-600',
-    minimal: 'bg-gray-900/50 border border-gray-800'
+    default: 'bg-gradient-to-br from-gray-800/95 to-gray-850/95 backdrop-blur-sm border border-gray-500 shadow-lg',
+    featured: 'bg-gradient-to-br from-purple-900/20 to-gray-800/95 backdrop-blur-sm border border-purple-500/30 shadow-xl shadow-purple-500/10',
+    minimal: 'bg-gray-850/90 backdrop-blur-sm border border-gray-600 shadow-md'
   }
 
   return (
@@ -29,7 +29,7 @@ export default function UltraCard({
       className={cn(
         'rounded-lg p-6',
         variants[variant],
-        hover && 'transition-all duration-200 hover:transform hover:translateY(-2px) hover:shadow-lg',
+        hover && 'transition-all duration-300 hover:border-purple-500/40 hover:shadow-xl',
         className
       )}
     >
