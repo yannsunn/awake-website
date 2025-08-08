@@ -8,6 +8,7 @@ import UltraSection, { UltraHero, UltraCTA } from '@/components/ui/UltraSection'
 import { Handshake, Award, Globe, Shield } from 'lucide-react'
 import LineButton from '@/components/ui/LineButton'
 import UltraButton from '@/components/ui/UltraButton'
+import UltraCard from '@/components/ui/UltraCard'
 
 export const metadata: Metadata = {
   title: `パートナー企業 | ${COMPANY_DATA.basic.name}`,
@@ -250,7 +251,7 @@ export default function PartnersPage() {
               description: "各サービスが連携し、1+1が3になる成果を実現"
             }
           ].map((value, index) => (
-            <div key={index} className="text-center p-6 bg-gradient-to-br from-gray-800/95 to-gray-850/95 backdrop-blur-sm border border-purple-500/30 rounded-xl shadow-lg hover:border-purple-400/50 transition-all duration-300">
+            <UltraCard key={index} variant="featured" className="text-center">
               <div className="text-3xl mb-2">{value.emoji}</div>
               <div className="text-2xl font-bold text-white mb-3" style={TEXT_SHADOW.small}>{value.number}</div>
               <h3 className={STYLES.heading.h3.emphasis + " text-white mb-3"} style={TEXT_SHADOW.small}>
@@ -259,7 +260,7 @@ export default function PartnersPage() {
               <p className={STYLES.text.description.small + " text-gray-200"} style={TEXT_SHADOW.small}>
                 {value.description}
               </p>
-            </div>
+            </UltraCard>
           ))}
         </div>
       </UltraSection>
@@ -280,10 +281,7 @@ export default function PartnersPage() {
               
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                 {category.companies.map((company, companyIndex) => (
-                  <div 
-                    key={companyIndex} 
-                    className="bg-gradient-to-br from-gray-750/95 to-gray-800/95 backdrop-blur-sm border border-gray-500 rounded-xl p-6 hover:border-purple-500/40 hover:shadow-xl transition-all duration-300"
-                  >
+                  <UltraCard key={companyIndex} variant="default">
                     <div className="text-3xl mb-4 text-center">
                       {company.icon}
                     </div>
@@ -300,7 +298,7 @@ export default function PartnersPage() {
                         </li>
                       ))}
                     </ul>
-                  </div>
+                  </UltraCard>
                 ))}
               </div>
             </div>
@@ -329,14 +327,14 @@ export default function PartnersPage() {
               a: "基本的に私たちが窓口となり、全体をコーディネートします。"
             }
           ].map((faq, index) => (
-            <div key={index} className="bg-gradient-to-br from-gray-800/95 to-gray-850/95 backdrop-blur-sm border border-gray-500 rounded-xl p-6 shadow-lg hover:border-purple-500/40 transition-all duration-300">
+            <UltraCard key={index} variant="default">
               <h3 className={STYLES.heading.h3.card + " text-white mb-3"} style={TEXT_SHADOW.small}>
                 Q: {faq.q}
               </h3>
               <p className={STYLES.text.body.medium + " text-gray-200"} style={TEXT_SHADOW.small}>
                 A: {faq.a}
               </p>
-            </div>
+            </UltraCard>
           ))}
         </div>
       </UltraSection>
@@ -349,7 +347,7 @@ export default function PartnersPage() {
         className="bg-gray-900/60"
       >
         
-        <div className="bg-gradient-to-br from-purple-900/20 to-gray-800/95 backdrop-blur-sm border border-purple-500/30 rounded-xl p-8 mb-12 shadow-xl">
+        <UltraCard variant="featured" className="mb-12 p-8">
           <h3 className={STYLES.heading.h3.emphasis + " text-white mb-6 text-center"} style={TEXT_SHADOW.small}>
             こんな企業様を求めています：
           </h3>
@@ -365,7 +363,7 @@ export default function PartnersPage() {
               </li>
             ))}
           </ul>
-        </div>
+        </UltraCard>
         
         <div className="text-center">
           <UltraButton

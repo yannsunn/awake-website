@@ -37,7 +37,8 @@ const ProblemSection = memo(function ProblemSection() {
           
           <div className="mt-8 p-6 bg-indigo-600/20 rounded-lg text-center border border-indigo-500/30">
             <p className={STYLES.text.emphasis.strong + " text-xl text-white"} style={TEXT_SHADOW.small}>
-              これらすべて、AIが解決します。
+              これらすべて、<br />
+              AIが解決します。
             </p>
           </div>
         </div>
