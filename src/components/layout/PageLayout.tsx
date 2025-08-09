@@ -29,7 +29,7 @@ export default function PageLayout({
     <div className="min-h-screen flex flex-col overflow-x-hidden">
       <Header />
       
-      <main role="main" id="main-content" className="flex-grow">
+      <main role="main" id="main-content" className="flex-grow pt-16 md:pt-20">
         {children}
       </main>
       
