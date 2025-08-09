@@ -31,7 +31,7 @@ export default function PageLayout({
       
       <Header />
       
-      <main role="main" id="main-content">
+      <main role="main" id="main-content" className="pt-16 md:pt-20">
         {children}
       </main>
       

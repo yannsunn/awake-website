@@ -76,7 +76,7 @@ export default function HomePageContent() {
   return (
     <PageLayout>
         {/* Hero Section - Creative & Bold */}
-        <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16 sm:pt-20 md:pt-24 pb-16 sm:pb-20">
+        <section className="relative min-h-screen flex items-center justify-center overflow-hidden pb-16 sm:pb-20">
           
           {/* フッターと同じ背景レイヤー */}
           <div className="absolute inset-0 bg-gray-900/60 backdrop-blur-sm" />
