@@ -38,8 +38,10 @@ const LineButton = memo(function LineButton({
     >
       {showIcon && <MessageCircle className="mr-2 h-5 w-5 flex-shrink-0 transition-transform duration-300 group-hover:rotate-12" aria-hidden="true" />}
       <span>LINEで相談する</span>
-      {/* マイクロインタラクションエフェクト */}
-      <span className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 opacity-0 group-hover:opacity-100 transition-all duration-400 ease-out transform -skew-x-12 translate-x-[-100%] group-hover:translate-x-[100%]" />
+      {/* マイクロインタラクションエフェクト - overflow制御付き */}
+      <span className="absolute inset-0 overflow-hidden rounded-lg pointer-events-none">
+        <span className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 opacity-0 group-hover:opacity-100 transition-all duration-400 ease-out transform -skew-x-12 -translate-x-full group-hover:translate-x-full" />
+      </span>
     </UltraButton>
   )
 })
