@@ -65,10 +65,9 @@ const AccessibleButton = memo(forwardRef<
     focus-visible:ring-offset-white focus-visible:shadow-focus
     disabled:opacity-50 disabled:cursor-not-allowed disabled:pointer-events-none
     text-center font-bold relative overflow-hidden
-    transition-all duration-300 ease-out transform
+    transition-transform duration-300 ease-out
     hover:scale-[1.02] active:scale-[0.98]
     hover:shadow-xl active:shadow-lg
-    will-change-transform
     touch-manipulation
     select-none
     ${disabled ? 'opacity-50 cursor-not-allowed' : ''}
