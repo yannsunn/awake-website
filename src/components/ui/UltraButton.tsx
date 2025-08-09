@@ -22,7 +22,7 @@ const sizeClasses = {
 const UltraButton = forwardRef<HTMLButtonElement, UltraButtonProps>(
   ({ variant = 'primary', size = 'md', href, children, className, ...props }, ref) => {
     const classes = cn(
-      'ultra-button',
+      'ultra-button relative z-10',
       variant === 'primary' ? BUTTONS.primary : BUTTONS.secondary,
       sizeClasses[size],
       FOCUS.ring,
