@@ -29,7 +29,7 @@ export default function UltraCard({
       className={cn(
         'rounded-lg p-6',
         variants[variant],
-        hover && 'transition-all duration-300 hover:border-purple-500/40 hover:shadow-xl',
+        hover && 'hover:border-purple-500/40 hover:shadow-xl',
         className
       )}
     >
