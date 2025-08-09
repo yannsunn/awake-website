@@ -119,7 +119,7 @@ export default function HomePageContent() {
                 {COMPANY_DATA.basic.subMessage}
               </p>
 
-              <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center px-4 sm:px-0">
+              <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center px-4 sm:px-0 relative z-20">
                 <UltraButton href="#contact" variant="primary" size="lg">
                   今すぐ無料相談
                 </UltraButton>
@@ -128,7 +128,7 @@ export default function HomePageContent() {
                 </UltraButton>
               </div>
               
-              <div className="mt-8">
+              <div className="mt-8 relative z-20">
                 <LineButton className="shadow-xl" size="medium" variant="filled" />
               </div>
             </div>

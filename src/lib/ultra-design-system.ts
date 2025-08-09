@@ -84,22 +84,25 @@ export const BUTTONS = {
   primary: `
     inline-flex items-center justify-center
     px-6 py-3 
-    bg-primary-600 hover:bg-primary-700 
-    text-white font-medium
-    rounded-lg
-    transition-colors duration-200
-    focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2
+    bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 
+    text-white font-semibold
+    rounded-lg shadow-lg hover:shadow-xl
+    transition-all duration-300
+    transform hover:scale-[1.02] active:scale-[0.98]
+    focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2
     disabled:opacity-50 disabled:cursor-not-allowed
   `,
   secondary: `
     inline-flex items-center justify-center
     px-6 py-3
-    bg-white hover:bg-gray-50
-    text-gray-900 font-medium
-    border border-gray-300
-    rounded-lg
-    transition-colors duration-200
-    focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2
+    bg-white/90 hover:bg-white
+    text-gray-900 font-semibold
+    border-2 border-gray-300 hover:border-indigo-500
+    rounded-lg shadow-lg hover:shadow-xl
+    backdrop-blur-sm
+    transition-all duration-300
+    transform hover:scale-[1.02] active:scale-[0.98]
+    focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2
     disabled:opacity-50 disabled:cursor-not-allowed
   `
 } as const
