@@ -26,7 +26,7 @@ export default function PageLayout({
   useScrollRevealGlobal()
   
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col overflow-x-hidden">
       <Header />
       
       <main role="main" id="main-content" className="flex-grow">
