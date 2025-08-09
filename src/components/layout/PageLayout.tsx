@@ -26,16 +26,14 @@ export default function PageLayout({
   useScrollRevealGlobal()
   
   return (
-    <>
-      {/* エフェクトを削除 */}
-      
+    <div className="min-h-screen flex flex-col">
       <Header />
       
-      <main role="main" id="main-content" className="pt-16 md:pt-20">
+      <main role="main" id="main-content" className="flex-grow">
         {children}
       </main>
       
       <Footer />
-    </>
+    </div>
   )
 }

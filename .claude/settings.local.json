@@ -78,7 +78,8 @@
       "Bash(git remote get-url:*)",
       "Bash(git revert:*)",
       "Bash(python3:*)",
-      "Bash(timeout 5s npm run dev)"
+      "Bash(timeout 5s npm run dev)",
+      "Bash(npx next build:*)"
     ],
     "deny": []
   }
