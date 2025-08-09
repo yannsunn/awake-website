@@ -77,7 +77,8 @@
       "WebFetch(domain:www.awakeinc.co.jp)",
       "Bash(git remote get-url:*)",
       "Bash(git revert:*)",
-      "Bash(python3:*)"
+      "Bash(python3:*)",
+      "Bash(timeout 5s npm run dev)"
     ],
     "deny": []
   }

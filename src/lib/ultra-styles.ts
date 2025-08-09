@@ -77,9 +77,9 @@ export const CTA_STYLES = {
 
 // テキスト背景スタイル（最も使用頻度が高い）
 export const TEXT_BG_STYLES = {
-  default: 'bg-gradient-to-r from-purple-900/50 to-indigo-900/50 backdrop-blur-md rounded-lg px-6 py-3 inline-block shadow-xl border border-purple-500/30',
-  compact: 'bg-gradient-to-r from-purple-900/40 to-indigo-900/40 backdrop-blur-md rounded-md px-4 py-2 inline-block shadow-lg border border-purple-500/20',
-  large: 'bg-gradient-to-r from-purple-900/60 to-indigo-900/60 backdrop-blur-md rounded-xl px-8 py-4 inline-block shadow-2xl border border-purple-500/40'
+  default: '',  // 背景なしでシンプルに
+  compact: '',  // 背景なしでシンプルに
+  large: ''     // 背景なしでシンプルに
 } as const
 
 // インタラクティブ要素の共通スタイル
