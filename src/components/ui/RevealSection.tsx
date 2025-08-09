@@ -32,7 +32,7 @@ const RevealSection = forwardRef<HTMLDivElement, RevealSectionProps>(
     })
 
     const getAnimationClasses = () => {
-      const baseClasses = 'transition-all duration-800 ease-out will-change-transform'
+      const baseClasses = 'transition-all duration-800 ease-out'
       const delayClass = delay ? `delay-${Math.min(delay, 1000)}` : ''
       
       switch (animation) {

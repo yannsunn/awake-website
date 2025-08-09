@@ -447,24 +447,23 @@ html {
 
 /* 🚀 統一アニメーションシステム - パフォーマンス最適化 */
 @layer utilities {
-  /* ベーストランジション */
+  /* 統一トランジション */
   .transition-base {
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
   
   .transition-fast {
-    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   }
   
   .transition-slow {
-    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1);
   }
   
   
   /* ボタン専用アニメーション */
   .button-animation {
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    will-change: transform;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
   
   .button-animation:hover {
@@ -479,7 +478,7 @@ html {
   
   /* 科学的根拠: ホバーエフェクトは0.2-0.3秒が最適（Nielsen Norman Group） */
   .neuro-hover {
-    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
   
   .neuro-hover:hover {
