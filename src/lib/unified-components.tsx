@@ -196,4 +196,3 @@ export const PricingCard = memo(function PricingCard({
     </div>
   )
 })
-

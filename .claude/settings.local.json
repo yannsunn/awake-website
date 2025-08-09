@@ -76,7 +76,8 @@
       "Bash(bash:*)",
       "WebFetch(domain:www.awakeinc.co.jp)",
       "Bash(git remote get-url:*)",
-      "Bash(git revert:*)"
+      "Bash(git revert:*)",
+      "Bash(python3:*)"
     ],
     "deny": []
   }
