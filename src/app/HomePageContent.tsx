@@ -245,7 +245,7 @@ export default function HomePageContent() {
               </h2>
             </div>
             
-            <div className="max-w-4xl mx-auto bg-gray-800/90 backdrop-blur-md rounded-3xl p-8 md:p-12 shadow-2xl border border-gray-700">
+            <div className="max-w-4xl mx-auto bg-gradient-to-br from-indigo-900/30 to-purple-900/30 backdrop-blur-md rounded-3xl p-8 md:p-12 shadow-2xl border-2 border-indigo-500/30">
               <div className="text-center">
                 <h3 className="text-2xl sm:text-3xl font-bold mb-6 text-white">
                   {COMPANY_DATA.basic.mission}
