@@ -14,6 +14,7 @@ import FAQ from '@/components/sections/FAQ'
 import LazyLoad from '@/components/ui/LazyLoad'
 import HolographicCard from '@/components/ui/HolographicCard'
 import { TEXT_BG_STYLES, TEXT_SHADOW } from '@/lib/ultra-styles'
+import { RESPONSIVE_FONT, RESPONSIVE_PADDING, RESPONSIVE_TYPOGRAPHY, MOBILE_FIRST } from '@/lib/responsive-utils'
 
 const services = [
   {
@@ -84,7 +85,16 @@ export default function HomePageContent() {
           <div className={cn('relative z-10 w-full', SPACING.section.container)}>
             <div className="text-center max-w-6xl mx-auto">
               {/* Animated Tagline */}
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 sm:mb-8 leading-tight" style={TEXT_SHADOW.heading}>
+              <h1 
+                className={cn(
+                  "font-bold mb-6 sm:mb-8",
+                  RESPONSIVE_TYPOGRAPHY.lineHeight.tight
+                )}
+                style={{
+                  ...TEXT_SHADOW.heading,
+                  fontSize: RESPONSIVE_FONT.hero.clamp
+                }}
+              >
                 <span className="text-white font-extrabold">
                   高額なIT投資に、
                 </span>
@@ -94,11 +104,30 @@ export default function HomePageContent() {
                 </span>
               </h1>
               
-              <p className={`text-lg sm:text-2xl text-white font-semibold mb-3 sm:mb-4 ${TEXT_BG_STYLES.default} border-2 border-gray-700 mx-2 sm:mx-0`} style={TEXT_SHADOW.small}>
+              <p 
+                className={cn(
+                  "text-white font-semibold mb-3 sm:mb-4 border-2 border-gray-700 mx-2 sm:mx-0",
+                  TEXT_BG_STYLES.default
+                )}
+                style={{
+                  ...TEXT_SHADOW.small,
+                  fontSize: RESPONSIVE_FONT.h2.clamp
+                }}
+              >
                 {COMPANY_DATA.basic.description}
               </p>
 
-              <p className={`text-base sm:text-xl text-gray-200 font-medium mb-8 sm:mb-12 ${TEXT_BG_STYLES.default} border border-gray-700 mx-2 sm:mx-0`} style={TEXT_SHADOW.small}>
+              <p 
+                className={cn(
+                  "text-gray-200 font-medium mb-8 sm:mb-12 border border-gray-700 mx-2 sm:mx-0",
+                  TEXT_BG_STYLES.default,
+                  RESPONSIVE_TYPOGRAPHY.lineHeight.relaxed
+                )}
+                style={{
+                  ...TEXT_SHADOW.small,
+                  fontSize: RESPONSIVE_FONT.body.clamp
+                }}
+              >
                 {COMPANY_DATA.basic.subMessage}
               </p>
 

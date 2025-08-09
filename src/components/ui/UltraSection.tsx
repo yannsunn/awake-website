@@ -3,6 +3,7 @@
 import { ReactNode } from 'react'
 import { cn } from '@/lib/utils'
 import { SECTION_PATTERNS, TEXT_SHADOW, TEXT_BG_STYLES } from '@/lib/ultra-styles'
+import { RESPONSIVE_FONT, RESPONSIVE_PADDING, RESPONSIVE_TYPOGRAPHY } from '@/lib/responsive-utils'
 
 interface UltraSectionProps {
   children?: ReactNode
@@ -70,18 +71,55 @@ export function UltraHero({
   className?: string | undefined
 }) {
   return (
-    <UltraSection variant="dark" className={cn("min-h-[60vh] sm:min-h-[70vh] md:min-h-[80vh] flex items-center justify-center py-16 sm:py-20", className)}>
-      <div className="text-center max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-white leading-tight" style={TEXT_SHADOW.heading}>
+    <UltraSection 
+      variant="dark" 
+      className={cn(
+        "min-h-[60vh] sm:min-h-[70vh] md:min-h-[80vh] flex items-center justify-center",
+        RESPONSIVE_PADDING.section.dynamic,
+        className
+      )}
+    >
+      <div className={cn(
+        "text-center max-w-7xl mx-auto",
+        RESPONSIVE_PADDING.container.dynamic
+      )}>
+        <h1 
+          className={cn(
+            "font-bold mb-4 sm:mb-6 text-white",
+            RESPONSIVE_TYPOGRAPHY.lineHeight.tight
+          )}
+          style={{
+            ...TEXT_SHADOW.heading,
+            fontSize: RESPONSIVE_FONT.hero.clamp
+          }}
+        >
           {title}
         </h1>
         {subtitle && (
-          <p className="text-base sm:text-lg md:text-xl text-white font-medium mb-6 leading-relaxed" style={TEXT_SHADOW.body}>
+          <p 
+            className={cn(
+              "text-white font-medium mb-4 sm:mb-6",
+              RESPONSIVE_TYPOGRAPHY.lineHeight.relaxed
+            )}
+            style={{
+              ...TEXT_SHADOW.body,
+              fontSize: RESPONSIVE_FONT.h2.clamp
+            }}
+          >
             {subtitle}
           </p>
         )}
         {description && (
-          <p className="text-sm sm:text-base md:text-lg text-gray-200 leading-relaxed mt-4" style={TEXT_SHADOW.small}>
+          <p 
+            className={cn(
+              "text-gray-200 mt-4",
+              RESPONSIVE_TYPOGRAPHY.lineHeight.relaxed
+            )}
+            style={{
+              ...TEXT_SHADOW.small,
+              fontSize: RESPONSIVE_FONT.body.clamp
+            }}
+          >
             {description}
           </p>
         )}

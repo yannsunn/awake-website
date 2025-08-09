@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { cn } from '@/lib/utils'
 import { STYLES } from '@/lib/constants'
 import { TEXT_BG_STYLES, TEXT_SHADOW } from '@/lib/ultra-styles'
+import { RESPONSIVE_FONT, RESPONSIVE_PADDING, RESPONSIVE_TYPOGRAPHY } from '@/lib/responsive-utils'
 
 interface ServiceHeroProps {
   title: string
@@ -38,12 +39,33 @@ export function ServiceHero({
       {/* 背景レイヤー */}
       <div className="absolute inset-0 bg-gray-900/60 backdrop-blur-sm" />
       
-      <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 py-12 sm:py-16 md:py-20 lg:py-24 xl:py-28">
+      <div className={cn(
+        "relative z-10 w-full max-w-7xl mx-auto",
+        RESPONSIVE_PADDING.section.dynamic
+      )}>
         <div className="mx-auto max-w-5xl text-center">
-          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-white leading-tight" style={TEXT_SHADOW.heading}>
+          <h1 
+            className={cn(
+              "font-bold mb-6 text-white",
+              RESPONSIVE_TYPOGRAPHY.lineHeight.tight
+            )}
+            style={{
+              ...TEXT_SHADOW.heading,
+              fontSize: RESPONSIVE_FONT.hero.clamp
+            }}
+          >
             {title}
           </h1>
-          <p className="mb-6 sm:mb-8 text-sm sm:text-base md:text-lg text-white leading-relaxed px-4 sm:px-0" style={TEXT_SHADOW.small}>
+          <p 
+            className={cn(
+              "mb-6 sm:mb-8 text-white px-4 sm:px-0",
+              RESPONSIVE_TYPOGRAPHY.lineHeight.relaxed
+            )}
+            style={{
+              ...TEXT_SHADOW.small,
+              fontSize: RESPONSIVE_FONT.body.clamp
+            }}
+          >
             {description}
           </p>
           {subDescription && (
