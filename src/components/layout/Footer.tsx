@@ -39,7 +39,7 @@ const Footer = memo(function Footer() {
   ]
 
   return (
-    <footer className="relative bg-gray-900/70 backdrop-blur-sm z-20" role="contentinfo">
+    <footer className="relative bg-gray-900/90 backdrop-blur-sm mt-auto" role="contentinfo">
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
           
