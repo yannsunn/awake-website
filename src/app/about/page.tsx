@@ -160,20 +160,23 @@ export default function AboutPage() {
                 </p>
                 
                 <p className={STYLES.text.description.medium + " mb-4"}>
-                  私がこの事業を立ち上げたきっかけは、<br />
-                  ある経営者様との出会いでした。<br />
-                  <br />
-                  「100万円以上投資してホームページを制作したが、<br />
-                  期待した成果が得られない」<br />
-                  というお悩みをお聞きし、<br />
-                  強い問題意識を抱きました。
+                  私がこの事業を立ち上げたきっかけは、
+                  ある経営者様との出会いでした。
+                </p>
+                <p className={STYLES.text.description.medium + " mb-4"}>
+                  「100万円以上投資してホームページを制作したが、
+                  期待した成果が得られない」
+                </p>
+                <p className={STYLES.text.description.medium + " mb-4"}>
+                  というお悩みをお聞きし、強い問題意識を抱きました。
                 </p>
                 
+                <p className={STYLES.text.description.medium + " mb-4"}>
+                  その投資額があれば、人材育成や設備投資など、
+                  より直接的な事業成長に活用できたはずです。
+                </p>
                 <p className={STYLES.text.description.medium}>
-                  その投資額があれば、<br />
-                  人材育成や設備投資など、<br />
-                  より直接的な事業成長に活用できたはずです。<br />
-                  このような経営資源の非効率な配分を解決したい。<br />
+                  このような経営資源の非効率な配分を解決したい。
                   その想いが、現在の事業の原点となっています。
                 </p>
               </div>
@@ -182,17 +185,17 @@ export default function AboutPage() {
                 <h3 className={STYLES.heading.h3.emphasis + " text-white mb-4"}>不登校からトップへ。私の転機</h3>
                 
                 <p className={STYLES.text.description.medium + " mb-4"}>
-                  静岡県清水区で育った私は、幼稚園から中学まで不登校でした。<br />
+                  静岡県清水区で育った私は、幼稚園から中学まで不登校でした。
                   学校に行かず、ずっとゲームをしていました。
                 </p>
                 
                 <p className={STYLES.text.description.medium + " mb-4"}>
-                  しかし高校で、人生が変わりました。<br />
+                  しかし高校で、人生が変わりました。
                   なんと生徒会長になったのです。
                 </p>
                 
                 <p className={STYLES.text.description.medium + " mb-4"}>
-                  その勢いでトヨタの自動車専門学校に進学。<br />
+                  その勢いでトヨタの自動車専門学校に進学。
                   そこで私は、本気で打ち込むことの楽しさを知りました。
                 </p>
                 
@@ -212,12 +215,12 @@ export default function AboutPage() {
                 </ul>
                 
                 <p className={STYLES.text.description.medium + " mb-4"}>
-                  地元静岡のトヨタ系ディーラーに就職後も、その姿勢は変わりませんでした。<br />
+                  地元静岡のトヨタ系ディーラーに就職後も、その姿勢は変わりませんでした。
                   4年間の勤務で新人賞を受賞。
                 </p>
                 
                 <p className={STYLES.text.description.medium}>
-                  しかし、そこで気づいたのです。<br />
+                  しかし、そこで気づいたのです。
                   「技術だけでは、お客様の本当の課題は解決できない」
                 </p>
               </div>
@@ -226,17 +229,17 @@ export default function AboutPage() {
                 <h3 className={STYLES.heading.h3.emphasis + " text-white mb-4"}>なぜ、Awakeを立ち上げたのか</h3>
                 
                 <p className={STYLES.text.description.medium + " mb-4"}>
-                  整備士時代、多くの経営者の方とお話する機会がありました。<br />
+                  整備士時代、多くの経営者の方とお話する機会がありました。
                   そこで聞いたのが、冒頭の言葉です。
                 </p>
                 
                 <p className={STYLES.text.description.medium + " mb-4"}>
-                  高額なIT投資で失敗し、本業に投資できない。<br />
+                  高額なIT投資で失敗し、本業に投資できない。
                   技術はあるのに、活用できていない。
                 </p>
                 
                 <p className={STYLES.text.description.medium + " mb-4"}>
-                  これは、私の過去と重なりました。<br />
+                  これは、私の過去と重なりました。
                   能力はあったのに、不登校で活かせなかった自分。
                 </p>
                 
@@ -245,7 +248,7 @@ export default function AboutPage() {
                 </p>
                 
                 <p className={STYLES.text.description.medium}>
-                  だから決めました。<br />
+                  だから決めました。
                   「適正なコストで最大の価値を提供し、お客様の可能性を引き出す会社を作ろう」と。
                 </p>
               </div>
