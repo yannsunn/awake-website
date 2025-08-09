@@ -20,9 +20,9 @@ export default function HolographicCard({
   const [isHovered, setIsHovered] = useState(false)
 
   const baseStyles = {
-    default: 'bg-gray-800/95 backdrop-blur-sm rounded-xl p-6 border border-gray-600 shadow-lg hover:bg-gray-750/95 hover:border-gray-500 transition-colors duration-300',
-    featured: 'bg-gradient-to-br from-purple-900/40 to-indigo-900/40 backdrop-blur-md rounded-xl p-6 border-2 border-purple-500/40 shadow-2xl shadow-purple-500/20 hover:border-purple-400/60 hover:shadow-purple-400/30 transition-colors duration-300',
-    minimal: 'bg-gray-850/90 backdrop-blur-sm rounded-xl p-6 border border-gray-700 shadow-lg hover:bg-gray-800/95 hover:border-gray-600 transition-colors duration-300'
+    default: 'bg-slate-800/80 backdrop-blur-sm rounded-2xl p-6 border border-slate-700/50 shadow-md hover:bg-slate-800/90 hover:border-slate-600/50 transition-all duration-500',
+    featured: 'bg-gradient-to-br from-slate-800/60 via-violet-900/20 to-slate-800/60 backdrop-blur-md rounded-2xl p-6 border border-violet-500/20 shadow-lg hover:border-violet-400/30 hover:shadow-violet-500/10 transition-all duration-500',
+    minimal: 'bg-slate-900/60 backdrop-blur-sm rounded-2xl p-6 border border-slate-800/50 shadow-sm hover:bg-slate-900/70 hover:border-slate-700/50 transition-all duration-500'
   }
 
   return (

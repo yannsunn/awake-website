@@ -34,8 +34,8 @@ export default function ServiceCard({
     >
       <div>
         {/* Icon */}
-        <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-2xl sm:rounded-3xl bg-gradient-to-br from-indigo-500/40 to-purple-600/40 border-2 border-indigo-500/50 flex items-center justify-center mb-6 sm:mb-8 shadow-2xl backdrop-blur-sm">
-          <Icon className="w-10 h-10 sm:w-12 sm:h-12 text-indigo-300" />
+        <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-2xl sm:rounded-3xl bg-gradient-to-br from-slate-700/50 via-violet-600/30 to-slate-700/50 border border-violet-500/30 flex items-center justify-center mb-6 sm:mb-8 shadow-md backdrop-blur-sm">
+          <Icon className="w-10 h-10 sm:w-12 sm:h-12 text-violet-300" />
         </div>
         
         {/* Content */}
@@ -64,7 +64,7 @@ export default function ServiceCard({
       
       {/* Pricing & Actions */}
       <div>
-        <div className="bg-gradient-to-r from-indigo-600/80 to-purple-600/80 rounded-xl sm:rounded-2xl p-3 sm:p-5 mb-4 sm:mb-6 text-center shadow-xl border border-indigo-500/50 backdrop-blur-sm">
+        <div className="bg-gradient-to-r from-slate-700/60 via-violet-600/40 to-slate-700/60 rounded-xl sm:rounded-2xl p-3 sm:p-5 mb-4 sm:mb-6 text-center shadow-md border border-violet-500/20 backdrop-blur-sm">
           <span className="text-xl sm:text-2xl lg:text-3xl font-bold text-white">
             {price}
           </span>

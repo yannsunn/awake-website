@@ -84,25 +84,26 @@ export const BUTTONS = {
   primary: `
     inline-flex items-center justify-center
     px-6 py-3 
-    bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 
-    text-white font-semibold
-    rounded-lg shadow-lg hover:shadow-xl
-    transition-all duration-300
-    transform hover:scale-[1.02] active:scale-[0.98]
-    focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2
+    bg-gradient-to-r from-slate-700 via-violet-600 to-slate-700 hover:from-slate-600 hover:via-violet-500 hover:to-slate-600 
+    text-white font-medium
+    rounded-xl shadow-md hover:shadow-lg
+    backdrop-blur-sm
+    transition-all duration-500 ease-out
+    transform hover:scale-[1.01] active:scale-[0.99]
+    focus:outline-none focus:ring-2 focus:ring-violet-400 focus:ring-offset-2
     disabled:opacity-50 disabled:cursor-not-allowed
   `,
   secondary: `
     inline-flex items-center justify-center
     px-6 py-3
-    bg-white/90 hover:bg-white
-    text-gray-900 font-semibold
-    border-2 border-gray-300 hover:border-indigo-500
-    rounded-lg shadow-lg hover:shadow-xl
+    bg-white/80 hover:bg-white/90
+    text-slate-800 font-medium
+    border border-slate-200 hover:border-violet-300
+    rounded-xl shadow-sm hover:shadow-md
     backdrop-blur-sm
-    transition-all duration-300
-    transform hover:scale-[1.02] active:scale-[0.98]
-    focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2
+    transition-all duration-500 ease-out
+    transform hover:scale-[1.01] active:scale-[0.99]
+    focus:outline-none focus:ring-2 focus:ring-violet-400 focus:ring-offset-2
     disabled:opacity-50 disabled:cursor-not-allowed
   `
 } as const
