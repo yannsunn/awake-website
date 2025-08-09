@@ -65,8 +65,8 @@ export function UltraHero({
   className
 }: { 
   title: string | ReactNode
-  subtitle?: string
-  description?: string
+  subtitle?: string | ReactNode
+  description?: string | ReactNode
   children?: ReactNode
   className?: string | undefined
 }) {
