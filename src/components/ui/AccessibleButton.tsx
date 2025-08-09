@@ -105,9 +105,11 @@ const AccessibleButton = memo(forwardRef<
           aria-hidden="true"
         />
       )}
-      {/* 限界突破マイクロインタラクション */}
-      <span className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/25 to-white/0 opacity-0 group-hover:opacity-100 transition-all duration-400 ease-out transform -skew-x-12 translate-x-[-100%] group-hover:translate-x-[100%]" />
-      <span className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/8 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-600 ease-out" />
+      {/* 限界突破マイクロインタラクション - overflow制御付き */}
+      <span className="absolute inset-0 overflow-hidden rounded-lg pointer-events-none">
+        <span className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/25 to-white/0 opacity-0 group-hover:opacity-100 transition-all duration-400 ease-out transform -skew-x-12 -translate-x-full group-hover:translate-x-full" />
+      </span>
+      <span className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/8 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-600 ease-out pointer-events-none" />
       {/* フォーカスリングアニメーション */}
       <span className="absolute inset-0 rounded-inherit border-2 border-transparent group-focus-visible:border-blue-400 group-focus-visible:animate-pulse transition-all duration-300" />
     </>
