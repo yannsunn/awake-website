@@ -159,7 +159,7 @@ export const PageHeader = ({
 }) => {
   return (
     <header
-      className={`relative pt-24 pb-16 sm:pt-32 sm:pb-24 lg:pt-40 lg:pb-32 ${className}`}
+      className={`relative pt-20 pb-16 sm:pt-24 sm:pb-24 lg:pt-28 lg:pb-32 ${className}`}
       style={backgroundImage ? {
         backgroundImage: `linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url(${backgroundImage})`,
         backgroundSize: 'cover',
