@@ -106,8 +106,7 @@ export default function HomePageContent() {
               
               <p 
                 className={cn(
-                  "text-white font-semibold mb-3 sm:mb-4 border-2 border-gray-700 mx-2 sm:mx-0",
-                  TEXT_BG_STYLES.default
+                  "text-white font-semibold mb-3 sm:mb-4 mx-2 sm:mx-0"
                 )}
                 style={{
                   ...TEXT_SHADOW.small,
@@ -119,8 +118,7 @@ export default function HomePageContent() {
 
               <p 
                 className={cn(
-                  "text-gray-200 font-medium mb-8 sm:mb-12 border border-gray-700 mx-2 sm:mx-0",
-                  TEXT_BG_STYLES.default,
+                  "text-gray-200 font-medium mb-8 sm:mb-12 mx-2 sm:mx-0",
                   RESPONSIVE_TYPOGRAPHY.lineHeight.relaxed
                 )}
                 style={{
