@@ -98,7 +98,7 @@ const PageTemplate = ({
         <main
           role="main"
           id={skipToMainId}
-          className="flex-1 pt-16 md:pt-20"
+          className="flex-1 flex flex-col justify-center pt-16 md:pt-20 min-h-[calc(100vh-4rem)]"
           tabIndex={-1}
         >
           {children}
