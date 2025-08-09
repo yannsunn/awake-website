@@ -19,8 +19,8 @@ export const metadata: Metadata = {
 // パートナー企業データ
 const partners = [
   {
-    category: "ビジネス成長を加速させるパートナー",
-    description: "売上アップから効率化まで、成長に必要なすべてを",
+    category: "ビジネス成長を加速させるパートナー。",
+    description: "売上アップから効率化まで、成長に必要なすべてを。",
     companies: [
       {
         name: "経営戦略パートナー",
@@ -65,8 +65,8 @@ const partners = [
     ]
   },
   {
-    category: "働く人を支えるライフサポート",
-    description: "従業員満足度を高め、生産性を向上",
+    category: "働く人を支えるライフサポート。",
+    description: "従業員満足度を高め、生産性を向上。",
     companies: [
       {
         name: "モビリティサービス",
@@ -107,8 +107,8 @@ const partners = [
     ]
   },
   {
-    category: "人材の確保と成長を支援",
-    description: "採用から育成まで、人の課題を解決",
+    category: "人材の確保と成長を支援。",
+    description: "採用から育成まで、人の課題を解決。",
     companies: [
       {
         name: "人材確保",
@@ -151,8 +151,8 @@ export default function PartnersPage() {
     <PageLayout>
       {/* Hero Section */}
       <UltraHero
-        title="1社では解決できない課題も、一緒なら解決できる"
-        subtitle="各分野のプロフェッショナルと連携し、あらゆるビジネス課題にワンストップで対応"
+        title={<>1社では解決できない課題も、<br />一緒なら解決できる。</>}
+        subtitle={<>各分野のプロフェッショナルと連携し、<br />あらゆるビジネス課題にワンストップで対応。</>}
         description="単独では限界がある。だから私たちは、信頼できるパートナーと手を組みました。"
       >
         <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8">
@@ -175,8 +175,8 @@ export default function PartnersPage() {
 
       {/* Why Partnership Section */}
       <UltraSection
-        title="なぜ、パートナーシップが必要なのか"
-        subtitle="お客様の「本当の成功」は、1つのサービスだけでは実現できない"
+        title="なぜ、パートナーシップが必要なのか。"
+        subtitle="お客様の「本当の成功」は、1つのサービスだけでは実現できない。"
         className="bg-gray-800/30"
       >
         
@@ -185,17 +185,17 @@ export default function PartnersPage() {
             {
               icon: "🎯",
               title: "経営課題は複雑化している",
-              description: "IT化、人材不足、マーケティング...すべてが連動する時代"
+              description: <>IT化、人材不足、マーケティング...<br />すべてが連動する時代。</>
             },
             {
               icon: "💡",
               title: "専門性がより重要に",
-              description: "中途半端な知識では、もう通用しない"
+              description: "中途半端な知識では、もう通用しない。"
             },
             {
               icon: "⚡",
               title: "スピードが競争力",
-              description: "複数の専門家に個別相談する時間はない"
+              description: "複数の専門家に個別相談する時間はない。"
             }
           ].map((item, index) => (
             <div key={index} className="text-center">
@@ -219,8 +219,8 @@ export default function PartnersPage() {
 
       {/* Partnership Value Section */}
       <UltraSection
-        title="パートナーシップがもたらす4つの価値"
-        subtitle="お客様にとっての、本当のメリット"
+        title="パートナーシップがもたらす4つの価値。"
+        subtitle="お客様にとっての、本当のメリット。"
         className="bg-gray-900/60"
       >
         
@@ -230,25 +230,25 @@ export default function PartnersPage() {
               emoji: "🚀",
               number: "1",
               title: "スピード解決",
-              description: "複数の課題を同時並行で解決。個別に探す手間も時間も不要"
+              description: "複数の課題を同時並行で解決。個別に探す手間も時間も不要。"
             },
             {
               emoji: "💰",
               number: "2",
               title: "コスト最適化",
-              description: "パートナー優待価格で、通常より安く質の高いサービスを"
+              description: "パートナー優待価格で、通常より安く質の高いサービスを。"
             },
             {
               emoji: "🤝",
               number: "3",
               title: "一貫したサポート",
-              description: "窓口は私たち1社。責任を持って全体をコーディネート"
+              description: "窓口は私たち1社。責任を持って全体をコーディネート。"
             },
             {
               emoji: "✨",
               number: "4",
               title: "相乗効果",
-              description: "各サービスが連携し、1+1が3になる成果を実現"
+              description: "各サービスが連携し、1+1が3になる成果を実現。"
             }
           ].map((value, index) => (
             <UltraCard key={index} variant="featured" className="text-center">
@@ -308,7 +308,7 @@ export default function PartnersPage() {
 
       {/* FAQ Section */}
       <UltraSection
-        title="よくあるご質問"
+        title="よくあるご質問。"
         className="bg-gray-800/30"
       >
         
