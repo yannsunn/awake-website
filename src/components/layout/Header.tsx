@@ -111,7 +111,7 @@ const Header = memo(function Header() {
   return (
     <>
       <header 
-        className={`fixed top-0 left-0 right-0 z-50 transition-transform duration-300 ${
+        className={`fixed top-0 left-0 right-0 z-50 transition-transform duration-300 overflow-hidden ${
           isScrolled 
             ? 'bg-gray-900/80 backdrop-blur-md shadow-xl border-b border-gray-700' 
             : 'bg-gray-900/60 backdrop-blur-sm border-b border-gray-700/50'
@@ -239,7 +239,7 @@ const Header = memo(function Header() {
         {/* メニューパネル */}
         <nav 
           id="mobile-menu"
-          className={`absolute right-0 top-0 h-full w-full max-w-sm bg-gray-900/98 backdrop-blur-xl shadow-2xl transform transition-transform duration-300 ease-out before:absolute before:inset-0 before:bg-gradient-to-b before:from-gray-800/10 before:to-transparent before:pointer-events-none ${
+          className={`fixed right-0 top-0 h-full w-full max-w-sm bg-gray-900/98 backdrop-blur-xl shadow-2xl transform transition-transform duration-300 ease-out before:absolute before:inset-0 before:bg-gradient-to-b before:from-gray-800/10 before:to-transparent before:pointer-events-none ${
             isMenuOpen ? 'translate-x-0' : 'translate-x-full'
           }`}
           aria-label="モバイルナビゲーション"

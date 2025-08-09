@@ -87,7 +87,7 @@ export default function MouseEffects() {
     <>
       {/* カスタムカーソル */}
       <div
-        className="pointer-events-none fixed inset-0 z-[9999] hidden lg:block"
+        className="pointer-events-none fixed inset-0 z-[9999] hidden lg:block overflow-hidden"
         style={{ cursor: 'none' }}
       >
         {/* メインカーソル */}

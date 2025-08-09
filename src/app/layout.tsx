@@ -66,7 +66,7 @@ export default function RootLayout({
         {/* マウスエフェクト */}
         <MouseEffects />
         {/* メインコンテンツ */}
-        <div className="relative">
+        <div className="relative overflow-x-hidden">
           <script
             type="application/ld+json"
             dangerouslySetInnerHTML={{

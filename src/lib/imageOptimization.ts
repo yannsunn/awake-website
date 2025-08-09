@@ -22,10 +22,10 @@ export const imageSizes = {
   serviceIcon: "(max-width: 768px) 48px, 64px",
   
   // カード画像
-  cardImage: "(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw",
+  cardImage: "(max-width: 768px) 100%, (max-width: 1024px) 50%, 33%",
   
   // フルワイド
-  fullWidth: "100vw"
+  fullWidth: "100%"
 } as const
 
 // 🚀 最適化画像コンポーネント設定
@@ -85,7 +85,7 @@ export const presetConfig = {
   default: {
     quality: 85,
     priority: false,
-    sizes: "(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw",
+    sizes: "(max-width: 640px) 100%, (max-width: 768px) 50%, (max-width: 1024px) 33%, 25%",
     showLoadingPlaceholder: true,
     className: ''
   }

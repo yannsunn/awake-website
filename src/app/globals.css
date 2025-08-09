@@ -53,6 +53,8 @@
 
   html {
     @apply scroll-smooth;
+    overflow-x: hidden;
+    max-width: 100%;
   }
 
   body {
@@ -61,6 +63,8 @@
     font-weight: 400; /* 500から400に変更 */
     letter-spacing: 0.02em;
     line-height: 1.7;
+    overflow-x: hidden;
+    max-width: 100%;
   }
   
 
