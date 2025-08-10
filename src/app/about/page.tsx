@@ -123,18 +123,18 @@ export default function AboutPage() {
         title="私たちが、お客様に選ばれる理由"
         subtitle="「高すぎるIT投資」を、「適正な成長投資」に変える"
         description="株式会社Awakeは、無駄を削ぎ落とし、本当に価値のある投資だけに集中できる環境を創ります。"
-        className="bg-gray-900/60"
+        className="bg-gray-900/30"
       />
 
       {/* CEO Message Section */}
       <UltraSection
         title="代表メッセージ"
-        className="bg-gray-900/30"
+        className="bg-gray-900/20"
         ariaLabel="代表メッセージ"
       >
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12">
           <div>
-            <div className="bg-gradient-to-br from-gray-800/95 to-gray-850/95 backdrop-blur-sm rounded-2xl p-6 sm:p-8 mb-8 border border-purple-500/20 shadow-lg">
+            <div className="bg-gradient-to-br from-gray-800/60 to-gray-850/60 backdrop-blur-sm rounded-2xl p-6 sm:p-8 mb-8 border border-purple-500/20 shadow-lg">
               <div className="flex items-center mb-6">
                 <div className="w-10 sm:w-12 h-10 sm:h-12 bg-white rounded-full flex items-center justify-center mr-3 sm:mr-4">
                   <User className="h-6 w-6 text-gray-900" />
@@ -323,7 +323,7 @@ export default function AboutPage() {
       {/* Mission & Vision Section */}
       <UltraSection
         title="ミッション・ビジョン"
-        className="bg-gray-800/90"
+        className="bg-gray-800/40"
         ariaLabel="ミッション・ビジョン"
       >
         
@@ -352,7 +352,7 @@ export default function AboutPage() {
       <UltraSection
         title="なぜAwakeなのか"
         subtitle="私たちの3つの約束"
-        className="bg-gray-900/95"
+        className="bg-gray-900/30"
         ariaLabel="私たちの約束"
       >
         
@@ -371,7 +371,7 @@ export default function AboutPage() {
       <UltraSection
         title="サービスの特徴"
         subtitle="コストを抑えながら、成果を最大化する仕組み"
-        className="bg-gray-800/90"
+        className="bg-gray-800/40"
         ariaLabel="サービスの特徴"
       >
         
@@ -396,7 +396,7 @@ export default function AboutPage() {
       <UltraSection
         title="私たちの価値観"
         subtitle="お客様と共に成長し続けるために"
-        className="bg-gray-900/95"
+        className="bg-gray-900/30"
         ariaLabel="私たちの価値観"
       >
         
