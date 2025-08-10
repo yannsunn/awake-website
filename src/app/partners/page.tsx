@@ -151,8 +151,8 @@ export default function PartnersPage() {
     <PageLayout>
       {/* Hero Section */}
       <UltraHero
-        title={<>1社では解決できない課題も、<br />一緒なら解決できる。</>}
-        subtitle={<>各分野のプロフェッショナルと連携し、<br />あらゆるビジネス課題にワンストップで対応。</>}
+        title={<>1社では解決できない課題も、<br className="hidden sm:inline" />一緒なら解決できる。</>}
+        subtitle={<>各分野のプロフェッショナルと連携し、<br className="hidden sm:inline" />あらゆるビジネス課題にワンストップで対応。</>}
         description="単独では限界がある。だから私たちは、信頼できるパートナーと手を組みました。"
       >
         <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8">
@@ -185,7 +185,7 @@ export default function PartnersPage() {
             {
               icon: "🎯",
               title: "経営課題は複雑化している",
-              description: <>IT化、人材不足、マーケティング...<br />すべてが連動する時代。</>
+              description: <>IT化、人材不足、マーケティング...<br className="hidden sm:inline" />すべてが連動する時代。</>
             },
             {
               icon: "💡",

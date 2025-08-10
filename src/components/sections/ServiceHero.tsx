@@ -6,7 +6,7 @@ import { TEXT_BG_STYLES, TEXT_SHADOW } from '@/lib/ultra-styles'
 import { RESPONSIVE_FONT, RESPONSIVE_PADDING, RESPONSIVE_TYPOGRAPHY } from '@/lib/responsive-utils'
 
 interface ServiceHeroProps {
-  title: string
+  title: string | React.ReactNode
   description: string
   subDescription?: string | undefined
   ctaText: string
