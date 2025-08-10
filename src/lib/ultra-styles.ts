@@ -19,13 +19,13 @@ export const SECTION_PATTERNS = {
   // 最も濃い背景（メインセクション）
   dark: {
     wrapper: 'py-12 sm:py-16 md:py-20 relative',
-    overlay: 'absolute inset-0 bg-gray-900/90',
+    overlay: 'absolute inset-0 bg-gray-900/60',
     content: 'relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 md:px-8'
   },
   // 中間の背景（サブセクション）
   medium: {
     wrapper: 'py-12 sm:py-16 md:py-20 relative',
-    overlay: 'absolute inset-0 bg-gray-900/70 backdrop-blur-sm',
+    overlay: 'absolute inset-0 bg-gray-900/40 backdrop-blur-sm',
     content: 'relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 md:px-8'
   },
   // 軽い背景（補助セクション）
