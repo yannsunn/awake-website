@@ -43,14 +43,22 @@ export default function PrivacyPolicyPage() {
             <section>
               <h2 className={STYLES.heading.h2.subsection + " text-white mb-4"} style={TEXT_SHADOW.body}>1. 個人情報の定義</h2>
               <p className={STYLES.text.body.medium + " text-gray-200"} style={TEXT_SHADOW.body}>
-                    本プライバシーポリシーにおいて、「個人情報」とは、個人情報の保護に関する法律にいう「個人情報」を指すものとし、生存する個人に関する情報であって、当該情報に含まれる氏名、生年月日、住所、電話番号、連絡先その他の記述等により特定の個人を識別できる情報および容貌、指紋、声紋にかかるデータ、及び健康保険証の保険者番号などの当該情報単体から特定の個人を識別できる情報（個人識別情報）を指します。
+                    本プライバシーポリシーにおいて、「個人情報」とは、<br />
+                    個人情報の保護に関する法律にいう「個人情報」を指すものとし、<br />
+                    生存する個人に関する情報であって、<br />
+                    当該情報に含まれる氏名、生年月日、住所、電話番号、連絡先その他の記述等により<br />
+                    特定の個人を識別できる情報および容貌、指紋、声紋にかかるデータ、<br />
+                    及び健康保険証の保険者番号などの当該情報単体から<br />
+                    特定の個人を識別できる情報（個人識別情報）を指します。
                   </p>
                 </section>
 
             <section>
               <h2 className={STYLES.heading.h2.subsection + " text-white mb-4"} style={TEXT_SHADOW.body}>2. 個人情報の収集方法</h2>
               <p className={STYLES.text.body.medium + " text-gray-200"} style={TEXT_SHADOW.body}>
-                    当社は、お客様から個人情報を収集する際は、適法かつ公正な手段により、かつお客様の意思に基づいて収集いたします。当社が個人情報を収集する場面は、主に以下の通りです。
+                    当社は、お客様から個人情報を収集する際は、<br />
+                    適法かつ公正な手段により、かつお客様の意思に基づいて収集いたします。<br />
+                    当社が個人情報を収集する場面は、主に以下の通りです。
                   </p>
               <ul className="list-disc list-inside text-gray-200 leading-relaxed space-y-2" style={TEXT_SHADOW.body}>
                 <li>お問い合わせフォームのご入力時</li>
@@ -97,7 +105,8 @@ export default function PrivacyPolicyPage() {
                 <section>
                   <h2 className={cn(STYLES.heading.h2.subsection, "text-white mb-4")} style={TEXT_SHADOW.body}>5. 個人情報の第三者提供</h2>
                   <p className="text-gray-200 leading-relaxed mb-4" style={TEXT_SHADOW.body}>
-                    当社は、お客様の同意を得ることなく、第三者に個人情報を提供することはありません。ただし、個人情報保護法その他の法令で認められる場合を除きます。
+                    当社は、お客様の同意を得ることなく、第三者に個人情報を提供することはありません。<br />
+                    ただし、個人情報保護法その他の法令で認められる場合を除きます。
                   </p>
                   <p className="text-gray-200 leading-relaxed" style={TEXT_SHADOW.body}>
                     なお、当社では、より良いサービスの提供のため、業務の一部を外部に委託する場合があります。委託先に対しては、適切な監督を行い、お客様の個人情報を適切に取り扱うよう義務付けています。
@@ -121,14 +130,23 @@ export default function PrivacyPolicyPage() {
                 <section>
                   <h2 className={cn(STYLES.heading.h2.subsection, "text-white mb-4")} style={TEXT_SHADOW.body}>8. Cookie（クッキー）について</h2>
                   <p className="text-gray-200 leading-relaxed" style={TEXT_SHADOW.body}>
-                    当社のウェブサイトでは、お客様により良いサービスを提供するため、Cookie（クッキー）を使用することがあります。Cookieを使用することで、お客様のサイト閲覧履歴を把握し、より便利で個人に適したサービスを提供することができます。Cookieの使用を希望されない場合は、お客様のブラウザでCookieを無効にすることができます。
+                    当社のウェブサイトでは、お客様により良いサービスを提供するため、<br />
+                    Cookie（クッキー）を使用することがあります。<br />
+                    Cookieを使用することで、お客様のサイト閲覧履歴を把握し、<br />
+                    より便利で個人に適したサービスを提供することができます。<br />
+                    Cookieの使用を希望されない場合は、<br />
+                    お客様のブラウザでCookieを無効にすることができます。
                   </p>
                 </section>
 
                 <section>
                   <h2 className={cn(STYLES.heading.h2.subsection, "text-white mb-4")} style={TEXT_SHADOW.body}>9. アクセス解析ツールについて</h2>
                   <p className="text-gray-200 leading-relaxed" style={TEXT_SHADOW.body}>
-                    当社では、ウェブサイトの分析のためにGoogle Analyticsを利用しています。Google Analyticsは、トラフィックデータの収集のためにCookieを使用しています。このトラフィックデータは匿名で収集されており、個人を特定するものではありません。この機能はCookieを無効にすることで収集を拒否することができますので、お使いのブラウザの設定をご確認ください。
+                    当社では、ウェブサイトの分析のためにGoogle Analyticsを利用しています。<br />
+                    Google Analyticsは、トラフィックデータの収集のためにCookieを使用しています。<br />
+                    このトラフィックデータは匿名で収集されており、個人を特定するものではありません。<br />
+                    この機能はCookieを無効にすることで収集を拒否することができますので、<br />
+                    お使いのブラウザの設定をご確認ください。
                   </p>
                 </section>
 

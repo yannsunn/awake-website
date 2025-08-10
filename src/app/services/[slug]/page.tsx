@@ -79,7 +79,7 @@ const serviceData = {
   },
   ai: {
     title: COMPANY_DATA.services.details.ai.title,
-    subtitle: 'AIで、あなたの会社はどう変わるか？',
+    subtitle: <>AIで、<br />あなたの会社はどう変わるか？</>,
     description: '単純作業から解放され、創造的な仕事に集中できる組織へ',
     icon: '🤖',
     features: [
@@ -129,7 +129,7 @@ const serviceData = {
   },
   ec: {
     title: COMPANY_DATA.services.details.ec.title,
-    subtitle: '初期費用0円。売れてから払う、新しい販路開拓',
+    subtitle: <>初期費用0円。<br />売れてから払う、新しい販路開拓</>,
     description: 'Amazonで月商1,000万円を目指す、完全成果報酬型サービス',
     subDescription: '在庫リスクなし。広告費の持ち出しなし。売れた分だけお支払い。',
     icon: '🛒',
