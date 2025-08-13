@@ -1,18 +1,8 @@
 // 🚀 ULTRA STYLES - 限界突破デザインシステム
 
 import { cn } from '@/lib/utils'
-
-// テキストシャドウ - 最小限の影で洗練された見た目
-export const TEXT_SHADOW = {
-  // 見出し用（控えめな影）
-  heading: { textShadow: '0 1px 2px rgba(0, 0, 0, 0.1)' },
-  // 本文用（ほぼ影なし）
-  body: { textShadow: '0 1px 1px rgba(0, 0, 0, 0.05)' },
-  // 小テキスト用（影なし）
-  small: { textShadow: 'none' },
-  // 特殊効果用（廃止）
-  glow: { textShadow: 'none' }
-} as const
+import { TEXT_SHADOW } from '@/lib/styles'
+export { TEXT_SHADOW }
 
 // セクション背景パターン
 export const SECTION_PATTERNS = {
@@ -82,12 +72,9 @@ export const TEXT_BG_STYLES = {
   large: ''     // 背景なしでシンプルに
 } as const
 
-// インタラクティブ要素の共通スタイル
-export const INTERACTIVE_STYLES = {
-  focusRing: 'focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-blue-500 focus-visible:ring-offset-3',
-  hoverScale: 'hover:scale-[1.02] active:scale-[0.98]',
-  transition: 'transition-all duration-300 ease-out'
-} as const
+// インタラクティブ要素はstyles.tsから取得
+import { INTERACTIVE_STYLES } from '@/lib/styles'
+export { INTERACTIVE_STYLES }
 
 // 限界突破アニメーション
 export const ANIMATIONS = {

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Noto_Sans_JP } from "next/font/google";
-import "./globals-optimized.css";
+import "./globals.css";
 import { enhancedOrganizationSchema } from "@/lib/enhanced-schema";
 import SimpleBackground from "@/components/layout/SimpleBackground";
 import MouseEffects from "@/components/effects/MouseEffects";
