@@ -137,13 +137,10 @@ export default function AboutPage() {
             <div className="bg-gradient-to-br from-gray-800/60 to-gray-850/60 backdrop-blur-sm rounded-2xl p-4 sm:p-6 mb-6 border border-purple-500/20 shadow-lg">
               <div className="flex items-center">
                 <div className="w-20 sm:w-24 h-20 sm:h-24 mr-4 flex items-center justify-center">
-                  <OptimizedImage
+                  <img
                     src="/assets/images/awake-logo-dark.png"
                     alt="Awake Inc. Logo"
-                    width={96}
-                    height={96}
                     className="w-full h-full object-contain brightness-0 invert"
-                    priority
                   />
                 </div>
                 <div>
@@ -300,14 +297,11 @@ export default function AboutPage() {
             <div className="bg-gradient-to-br from-gray-800/95 to-gray-850/95 backdrop-blur-sm rounded-2xl pt-8 pb-6 px-6 sm:pt-10 sm:px-8 text-center border border-purple-500/20 shadow-lg">
               <div className="relative w-72 h-72 mx-auto mb-6">
                 <div className="absolute inset-0 bg-gradient-to-r from-violet-600 to-purple-600 rounded-2xl blur-xl opacity-50 animate-pulse"></div>
-                <div className="relative w-72 h-72 rounded-2xl overflow-hidden border-4 border-gradient-to-r from-violet-400 to-purple-400 shadow-2xl ring-4 ring-purple-500/20 ring-offset-4 ring-offset-gray-900">
-                  <OptimizedImage
+                <div className="relative w-72 h-72 rounded-2xl overflow-hidden border-4 border-violet-400 shadow-2xl ring-4 ring-purple-500/20 ring-offset-4 ring-offset-gray-900">
+                  <img
                     src="/assets/images/ceo-profile.jpg"
                     alt={COMPANY_DATA.basic.ceo}
-                    width={288}
-                    height={288}
                     className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
-                    priority
                   />
                 </div>
               </div>
