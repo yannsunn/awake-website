@@ -136,11 +136,12 @@ export default function AboutPage() {
           <div>
             <div className="bg-gradient-to-br from-gray-800/60 to-gray-850/60 backdrop-blur-sm rounded-2xl p-4 sm:p-6 mb-6 border border-purple-500/20 shadow-lg">
               <div className="flex items-center">
-                <div className="w-20 sm:w-24 h-20 sm:h-24 mr-4 flex items-center justify-center bg-white rounded-lg p-2">
+                <div className="w-20 sm:w-24 h-20 sm:h-24 mr-4 flex items-center justify-center bg-white rounded-lg p-1">
                   <img
                     src="/assets/images/awake-logo-dark.png"
                     alt="Awake Inc. Logo"
                     className="w-full h-full object-contain"
+                    style={{ maxWidth: '90%', maxHeight: '90%' }}
                   />
                 </div>
                 <div>
@@ -295,9 +296,9 @@ export default function AboutPage() {
           
           <div className="lg:pl-8">
             <div className="bg-gradient-to-br from-gray-800/95 to-gray-850/95 backdrop-blur-sm rounded-2xl pt-8 pb-6 px-6 sm:pt-10 sm:px-8 text-center border border-purple-500/20 shadow-lg">
-              <div className="relative w-72 h-72 mx-auto mb-6">
+              <div className="relative w-80 h-80 mx-auto mb-6">
                 <div className="absolute inset-0 bg-gradient-to-r from-violet-600 to-purple-600 rounded-2xl blur-xl opacity-50 animate-pulse"></div>
-                <div className="relative w-72 h-72 rounded-2xl overflow-hidden border-4 border-violet-400 shadow-2xl ring-4 ring-purple-500/20 ring-offset-4 ring-offset-gray-900">
+                <div className="relative w-80 h-80 rounded-2xl overflow-hidden border-4 border-violet-400 shadow-2xl ring-4 ring-purple-500/20 ring-offset-4 ring-offset-gray-900">
                   <img
                     src="/assets/images/ceo-profile.jpg"
                     alt={COMPANY_DATA.basic.ceo}
