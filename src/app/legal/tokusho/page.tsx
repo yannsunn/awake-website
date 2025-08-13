@@ -27,7 +27,7 @@ export default function TokushoPage() {
       {/* Hero Section */}
       <UltraHero 
         title="特定商取引法に基づく表記"
-        description="最終更新日: 2024年6月18日"
+        description="最終更新日: 2025年1月13日"
       />
 
       {/* Content */}
@@ -92,7 +92,7 @@ export default function TokushoPage() {
                       <ul className="space-y-2 text-sm" style={TEXT_SHADOW.body}>
                         <li>• ホームページ制作: {COMPANY_DATA.services.details.web.pricing.standard.price}〜</li>
                         <li>• AIコンサルティング: {COMPANY_DATA.services.details.ai.pricing.basic.price}〜</li>
-                        <li>• Amazon代理店サービス: 完全成果報酬制（売上の10%〜15%）</li>
+                        <li>• Amazon代理店サービス: 完全成果報酬制（売上の{COMPANY_DATA.services.details.ec.pricing.commission.rate}）</li>
                       </ul>
                       <p className="text-xs text-gray-200 mt-3" style={TEXT_SHADOW.body}>
                         ※ 詳細な料金については、お見積りにてご確認ください。
