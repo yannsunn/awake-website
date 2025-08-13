@@ -291,8 +291,15 @@ export default function AboutPage() {
           
           <div className="lg:pl-8">
             <div className="bg-gradient-to-br from-gray-800/95 to-gray-850/95 backdrop-blur-sm rounded-2xl p-6 sm:p-8 text-center border border-purple-500/20 shadow-lg">
-              <div className="w-32 h-32 bg-white rounded-full flex items-center justify-center mx-auto mb-6">
-                <User className="h-16 w-16 text-gray-900" />
+              <div className="w-32 h-32 rounded-full overflow-hidden mx-auto mb-6 border-4 border-purple-500/30 shadow-xl">
+                <OptimizedImage
+                  src="/assets/images/ceo-profile.jpg"
+                  alt={COMPANY_DATA.basic.ceo}
+                  width={128}
+                  height={128}
+                  className="w-full h-full object-cover"
+                  priority
+                />
               </div>
               <h3 className={STYLES.heading.h3.card + " text-white mb-2"}>{COMPANY_DATA.basic.ceo}</h3>
               <p className={STYLES.text.emphasis.medium + " text-white text-lg mb-4"}>代表取締役CEO</p>
