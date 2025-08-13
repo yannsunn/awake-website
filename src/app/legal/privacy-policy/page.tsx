@@ -27,7 +27,7 @@ export default function PrivacyPolicyPage() {
       {/* Hero Section */}
       <UltraHero 
         title="プライバシーポリシー"
-        description="最終更新日: 2024年1月1日"
+        description="最終更新日: 2025年1月1日"
       />
 
       {/* Content */}
@@ -45,11 +45,9 @@ export default function PrivacyPolicyPage() {
               <p className={STYLES.text.body.medium + " text-gray-200"} style={TEXT_SHADOW.body}>
                     本プライバシーポリシーにおいて、「個人情報」とは、<br />
                     個人情報の保護に関する法律にいう「個人情報」を指すものとし、<br />
-                    生存する個人に関する情報であって、<br />
-                    当該情報に含まれる氏名、生年月日、住所、電話番号、連絡先その他の記述等により<br />
-                    特定の個人を識別できる情報および容貌、指紋、声紋にかかるデータ、<br />
-                    及び健康保険証の保険者番号などの当該情報単体から<br />
-                    特定の個人を識別できる情報（個人識別情報）を指します。
+                    生存する個人に関する情報であって、当該情報に含まれる氏名、<br />
+                    住所、電話番号、連絡先その他の記述等により<br />
+                    特定の個人を識別できる情報を指します。
                   </p>
                 </section>
 

@@ -27,7 +27,7 @@ export default function TermsPage() {
       {/* Hero Section */}
       <UltraHero 
         title="利用規約"
-        description="最終更新日: 2024年1月1日"
+        description="最終更新日: 2025年1月1日"
       />
 
       {/* Content */}
