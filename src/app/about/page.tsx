@@ -134,20 +134,20 @@ export default function AboutPage() {
       >
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 items-start">
           <div>
-            <div className="bg-gradient-to-br from-gray-800/60 to-gray-850/60 backdrop-blur-sm rounded-2xl p-6 sm:p-8 mb-8 border border-purple-500/20 shadow-lg">
-              <div className="flex items-center mb-6">
-                <div className="w-24 sm:w-32 h-24 sm:h-32 mr-6 flex items-center justify-center">
+            <div className="bg-gradient-to-br from-gray-800/60 to-gray-850/60 backdrop-blur-sm rounded-2xl p-4 sm:p-6 mb-6 border border-purple-500/20 shadow-lg">
+              <div className="flex items-center">
+                <div className="w-20 sm:w-24 h-20 sm:h-24 mr-4 flex items-center justify-center">
                   <OptimizedImage
                     src="/assets/images/awake-logo-dark.png"
                     alt="Awake Inc. Logo"
-                    width={128}
-                    height={128}
+                    width={96}
+                    height={96}
                     className="w-full h-full object-contain brightness-0 invert"
                     priority
                   />
                 </div>
                 <div>
-                  <h3 className={STYLES.heading.h3.emphasis + " text-white text-xl sm:text-2xl"}>代表挨拶</h3>
+                  <h3 className={STYLES.heading.h3.emphasis + " text-white text-lg sm:text-xl"}>代表挨拶</h3>
                   <p className={STYLES.text.label.secondary + " text-gray-200"}>Message from CEO</p>
                 </div>
               </div>
