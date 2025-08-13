@@ -291,14 +291,14 @@ export default function AboutPage() {
           
           <div className="lg:pl-8">
             <div className="bg-gradient-to-br from-gray-800/95 to-gray-850/95 backdrop-blur-sm rounded-2xl pt-8 pb-6 px-6 sm:pt-10 sm:px-8 text-center border border-purple-500/20 shadow-lg">
-              <div className="relative w-48 h-48 mx-auto mb-6">
+              <div className="relative w-56 h-56 mx-auto mb-6">
                 <div className="absolute inset-0 bg-gradient-to-r from-violet-600 to-purple-600 rounded-full blur-xl opacity-50 animate-pulse"></div>
-                <div className="relative w-48 h-48 rounded-full overflow-hidden border-4 border-gradient-to-r from-violet-400 to-purple-400 shadow-2xl ring-4 ring-purple-500/20 ring-offset-4 ring-offset-gray-900">
+                <div className="relative w-56 h-56 rounded-full overflow-hidden border-4 border-gradient-to-r from-violet-400 to-purple-400 shadow-2xl ring-4 ring-purple-500/20 ring-offset-4 ring-offset-gray-900">
                   <OptimizedImage
                     src="/assets/images/ceo-profile.jpg"
                     alt={COMPANY_DATA.basic.ceo}
-                    width={192}
-                    height={192}
+                    width={224}
+                    height={224}
                     className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
                     priority
                   />
