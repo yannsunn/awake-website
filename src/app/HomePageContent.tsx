@@ -14,7 +14,6 @@ import FAQ from '@/components/sections/FAQ'
 import LazyLoad from '@/components/ui/LazyLoad'
 import { TEXT_SHADOW } from '@/lib/ultra-styles'
 import { RESPONSIVE_FONT, RESPONSIVE_TYPOGRAPHY } from '@/lib/responsive-utils'
-import ServiceCard from '@/components/sections/ServiceCard'
 import SectionWrapper from '@/components/ui/SectionWrapper'
 import HolographicCard from '@/components/ui/HolographicCard'
 
@@ -154,7 +153,31 @@ export default function HomePageContent() {
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-10 max-w-7xl mx-auto">
             {services.map((service, index) => (
-              <ServiceCard key={index} {...service} />
+              <HolographicCard key={index} variant="featured" className="p-6 sm:p-8 h-full">
+                <div className="flex flex-col h-full">
+                  <div className="w-16 h-16 rounded-xl bg-gradient-to-br from-violet-600/30 to-indigo-600/30 flex items-center justify-center mb-6">
+                    <service.icon className="w-8 h-8 text-violet-300" />
+                  </div>
+                  <h3 className="text-2xl font-bold mb-4 text-white">{service.title}</h3>
+                  <p className="text-gray-200 mb-4 flex-grow">{service.description}</p>
+                  <p className="text-sm text-gray-300 mb-6">{service.longDescription}</p>
+                  <div className="text-center bg-violet-600/20 rounded-lg p-4 mb-6">
+                    <span className="text-2xl font-bold text-white">{service.price}</span>
+                  </div>
+                  <div className="space-y-2">
+                    {service.buttons.map((button, btnIdx) => (
+                      <UltraButton
+                        key={btnIdx}
+                        href={button.href}
+                        variant={btnIdx === 0 ? "primary" : "secondary"}
+                        size="sm"
+                      >
+                        {button.text}
+                      </UltraButton>
+                    ))}
+                  </div>
+                </div>
+              </HolographicCard>
             ))}
           </div>
         </SectionWrapper>
