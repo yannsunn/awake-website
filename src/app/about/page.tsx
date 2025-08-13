@@ -290,34 +290,37 @@ export default function AboutPage() {
           </div>
           
           <div className="lg:pl-8">
-            <div className="bg-gradient-to-br from-gray-800/95 to-gray-850/95 backdrop-blur-sm rounded-2xl p-6 sm:p-8 text-center border border-purple-500/20 shadow-lg">
-              <div className="w-32 h-32 rounded-full overflow-hidden mx-auto mb-6 border-4 border-purple-500/30 shadow-xl">
-                <OptimizedImage
-                  src="/assets/images/ceo-profile.jpg"
-                  alt={COMPANY_DATA.basic.ceo}
-                  width={128}
-                  height={128}
-                  className="w-full h-full object-cover"
-                  priority
-                />
+            <div className="bg-gradient-to-br from-violet-900/30 via-purple-800/20 to-indigo-900/30 backdrop-blur-md rounded-2xl p-6 sm:p-8 text-center border-2 border-purple-400/40 shadow-2xl shadow-purple-500/20 hover:shadow-purple-500/30 transition-all duration-500">
+              <div className="relative w-40 h-40 mx-auto mb-6">
+                <div className="absolute inset-0 bg-gradient-to-r from-violet-600 to-purple-600 rounded-full blur-xl opacity-50 animate-pulse"></div>
+                <div className="relative w-40 h-40 rounded-full overflow-hidden border-4 border-gradient-to-r from-violet-400 to-purple-400 shadow-2xl ring-4 ring-purple-500/20 ring-offset-4 ring-offset-gray-900">
+                  <OptimizedImage
+                    src="/assets/images/ceo-profile.jpg"
+                    alt={COMPANY_DATA.basic.ceo}
+                    width={160}
+                    height={160}
+                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                    priority
+                  />
+                </div>
               </div>
-              <h3 className={STYLES.heading.h3.card + " text-white mb-2"}>{COMPANY_DATA.basic.ceo}</h3>
-              <p className={STYLES.text.emphasis.medium + " text-white text-lg mb-4"}>代表取締役CEO</p>
+              <h3 className="text-3xl font-bold bg-gradient-to-r from-violet-300 to-purple-300 bg-clip-text text-transparent mb-2">{COMPANY_DATA.basic.ceo}</h3>
+              <p className="text-xl font-semibold text-purple-200 mb-6 tracking-wider">代表取締役CEO</p>
               <div className="space-y-4">
-                <div>
-                  <h4 className={STYLES.text.emphasis.medium + " text-white mb-2"}>略歴</h4>
-                  <ul className={STYLES.text.description.small + " text-gray-200 space-y-1"}>
-                    <li>静岡県清水区出身</li>
-                    <li>幼稚園〜中学：不登校</li>
-                    <li>高校：生徒会長</li>
-                    <li>トヨタ自動車専門学校：実技歴代記録更新、全国学年代表（2年間）</li>
-                    <li>静岡トヨペット：整備士（4年間）、新人賞受賞</li>
-                    <li>2020年：株式会社Awake設立（現在5期目）</li>
+                <div className="bg-gray-800/50 rounded-xl p-4 backdrop-blur-sm border border-purple-500/20">
+                  <h4 className="text-lg font-bold text-purple-300 mb-3">略歴</h4>
+                  <ul className="text-gray-100 space-y-2 text-left">
+                    <li className="flex items-start"><span className="text-purple-400 mr-2">▸</span>静岡県清水区出身</li>
+                    <li className="flex items-start"><span className="text-purple-400 mr-2">▸</span>幼稚園〜中学：不登校</li>
+                    <li className="flex items-start"><span className="text-purple-400 mr-2">▸</span>高校：生徒会長</li>
+                    <li className="flex items-start"><span className="text-purple-400 mr-2">▸</span>トヨタ自動車専門学校：実技歴代記録更新、全国学年代表（2年間）</li>
+                    <li className="flex items-start"><span className="text-purple-400 mr-2">▸</span>静岡トヨペット：整備士（4年間）、新人賞受賞</li>
+                    <li className="flex items-start"><span className="text-purple-400 mr-2">▸</span>2020年：株式会社Awake設立（現在5期目）</li>
                   </ul>
                 </div>
-                <div>
-                  <h4 className={STYLES.text.emphasis.medium + " text-white mb-2"}>経営理念</h4>
-                  <p className={STYLES.text.description.small + " text-gray-200"}>
+                <div className="bg-gradient-to-r from-purple-600/20 to-violet-600/20 rounded-xl p-4 border border-purple-400/30">
+                  <h4 className="text-lg font-bold text-purple-300 mb-3">経営理念</h4>
+                  <p className="text-xl font-bold bg-gradient-to-r from-violet-300 to-purple-300 bg-clip-text text-transparent">
                     「つながるすべての人に、感謝と繁栄を」
                   </p>
                 </div>
