@@ -136,11 +136,11 @@ export default function AboutPage() {
           <div>
             <div className="bg-gradient-to-br from-gray-800/60 to-gray-850/60 backdrop-blur-sm rounded-2xl p-4 sm:p-6 mb-6 border border-purple-500/20 shadow-lg">
               <div className="flex items-center">
-                <div className="w-20 sm:w-24 h-20 sm:h-24 mr-4 flex items-center justify-center">
+                <div className="w-20 sm:w-24 h-20 sm:h-24 mr-4 flex items-center justify-center bg-white rounded-lg p-2">
                   <img
                     src="/assets/images/awake-logo-dark.png"
                     alt="Awake Inc. Logo"
-                    className="w-full h-full object-contain brightness-0 invert"
+                    className="w-full h-full object-contain"
                   />
                 </div>
                 <div>
