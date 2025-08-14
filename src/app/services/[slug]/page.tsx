@@ -368,9 +368,29 @@ export default async function ServicePage(
                   />
                 </div>
                 <div className="mt-4 space-y-2">
-                  <p className="text-gray-200">• CLEMIRA PHOENIX - ¥165,000（税込）</p>
-                  <p className="text-gray-200">• CLEMIRA athlete - ¥55,000（税込）</p>
-                  <p className="text-gray-200">• CLEMIRA blackcard - ¥27,500（税込）</p>
+                  <p className="text-gray-200">
+                    • <a href="https://amzn.to/46S4RMV" target="_blank" rel="noopener noreferrer" className="text-yellow-400 hover:text-yellow-300 underline">CLEMIRA PHOENIX</a> - ¥165,000（税込）
+                  </p>
+                  <p className="text-gray-200">
+                    • <a href="https://amzn.to/471iglX" target="_blank" rel="noopener noreferrer" className="text-yellow-400 hover:text-yellow-300 underline">CLEMIRA athlete</a> - ¥55,000（税込）
+                  </p>
+                  <p className="text-gray-200">
+                    • <a href="https://amzn.to/3JfiUlV" target="_blank" rel="noopener noreferrer" className="text-yellow-400 hover:text-yellow-300 underline">CLEMIRA blackcard</a> - ¥27,500（税込）
+                  </p>
+                </div>
+                <div className="mt-6 pt-4 border-t border-white/20">
+                  <h4 className="text-lg font-semibold text-white mb-3">お得なセット商品</h4>
+                  <div className="space-y-2">
+                    <p className="text-gray-200">
+                      • <a href="https://amzn.to/46X1swq" target="_blank" rel="noopener noreferrer" className="text-yellow-400 hover:text-yellow-300 underline">全セット</a> - 全製品をお得な価格で
+                    </p>
+                    <p className="text-gray-200">
+                      • <a href="https://amzn.to/47vxhMN" target="_blank" rel="noopener noreferrer" className="text-yellow-400 hover:text-yellow-300 underline">アスリートカードセット</a> - athleteとblackcardのセット
+                    </p>
+                    <p className="text-gray-200">
+                      • <a href="https://amzn.to/4mB1SwQ" target="_blank" rel="noopener noreferrer" className="text-yellow-400 hover:text-yellow-300 underline">アスリート2個セット</a> - athlete 2個のお得なセット
+                    </p>
+                  </div>
                 </div>
               </div>
               
