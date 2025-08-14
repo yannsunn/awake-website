@@ -247,6 +247,61 @@ export default async function ServicePage(
           </div>
         </section>
         
+        {/* 経費精算自動化ワークフロー */}
+        <section className="py-16 md:py-24 relative">
+          <div className="absolute inset-0 bg-gray-800/70" />
+          <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="bg-gray-900/90 backdrop-blur-sm rounded-2xl p-8 shadow-2xl border border-purple-500/30">
+              <h3 className={cn(STYLES.heading.h3.emphasis, "text-white text-center mb-6")} style={TEXT_SHADOW.heading}>
+                経費精算の完全自動化ソリューション
+              </h3>
+              <div className="relative rounded-xl overflow-hidden bg-black">
+                <img
+                  src="/assets/images/ai-expense-automation.webp"
+                  alt="経費精算自動化ワークフロー - Google Drive + n8n + AI"
+                  className="w-full h-auto"
+                />
+              </div>
+              <div className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                  <h4 className="text-white font-semibold mb-3">このワークフローで実現：</h4>
+                  <ul className="space-y-2 text-gray-300">
+                    <li className="flex items-start">
+                      <span className="text-purple-400 mr-2">✓</span>
+                      <span>Google Driveにレシートをアップロードするだけ</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-purple-400 mr-2">✓</span>
+                      <span>AIがレシート内容を自動解析</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-purple-400 mr-2">✓</span>
+                      <span>データを整理してGoogle Sheetsに自動入力</span>
+                    </li>
+                  </ul>
+                </div>
+                <div>
+                  <h4 className="text-white font-semibold mb-3">使用技術：</h4>
+                  <ul className="space-y-2 text-gray-300">
+                    <li className="flex items-start">
+                      <span className="text-blue-400 mr-2">•</span>
+                      <span>n8n（ワークフロー自動化ツール）</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-blue-400 mr-2">•</span>
+                      <span>OpenAI Chat Model（画像解析AI）</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-blue-400 mr-2">•</span>
+                      <span>Google Drive & Sheets連携</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        
         <section className="py-16 md:py-24 relative">
           <div className="absolute inset-0 bg-gray-800/60" />
           <div className="relative z-10 w-full px-4 sm:px-6 lg:px-8">
@@ -286,6 +341,86 @@ export default async function ServicePage(
         
         <WhyAmazon />
         <RiskFree />
+        
+        {/* CLEMIRA独占販売セクション */}
+        <section className="py-16 md:py-24 relative">
+          <div className="absolute inset-0 bg-gradient-to-br from-purple-900/90 to-indigo-900/90" />
+          <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-12">
+              <h2 className={cn(STYLES.heading.h2.section, "text-white mb-6")} style={TEXT_SHADOW.heading}>
+                CLEMIRA製品の唯一の直販店として
+              </h2>
+              <p className="text-xl text-gray-200 max-w-3xl mx-auto">
+                身体機能向上をサポートする革新的な技術製品CLEMIRAを、<br />
+                日本で唯一の正規直販店として販売しています
+              </p>
+            </div>
+            
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
+              {/* 製品ラインナップ */}
+              <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20">
+                <h3 className="text-2xl font-bold text-white mb-4">製品ラインナップ</h3>
+                <div className="relative rounded-xl overflow-hidden">
+                  <img
+                    src="/assets/images/clemira-products.png"
+                    alt="CLEMIRA製品ラインナップ - PHOENIX, athlete, blackcard"
+                    className="w-full h-auto"
+                  />
+                </div>
+                <div className="mt-4 space-y-2">
+                  <p className="text-gray-200">• CLEMIRA PHOENIX - ¥165,000（税込）</p>
+                  <p className="text-gray-200">• CLEMIRA athlete - ¥55,000（税込）</p>
+                  <p className="text-gray-200">• CLEMIRA blackcard - ¥27,500（税込）</p>
+                </div>
+              </div>
+              
+              {/* メディア実績 */}
+              <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20">
+                <h3 className="text-2xl font-bold text-white mb-4">メディア掲載実績</h3>
+                <div className="relative rounded-xl overflow-hidden bg-white">
+                  <img
+                    src="/assets/images/clemira-youtube.png"
+                    alt="CLEMIRA YouTubeチャンネル「令和の虎」掲載"
+                    className="w-full h-auto"
+                  />
+                </div>
+                <div className="mt-4 space-y-2">
+                  <p className="text-gray-200">YouTubeチャンネル「令和の虎」に定期出演</p>
+                  <p className="text-gray-200">記憶力向上と身体機能向上の革新的技術として紹介</p>
+                </div>
+              </div>
+            </div>
+            
+            {/* 販売実績 */}
+            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20">
+              <h3 className="text-2xl font-bold text-white mb-6 text-center">驚異的な販売実績</h3>
+              <div className="relative rounded-xl overflow-hidden bg-white p-4">
+                <img
+                  src="/assets/images/clemira-sales.png"
+                  alt="CLEMIRA販売実績 - 49件の注文、53点の販売、売上299万円以上"
+                  className="w-full h-auto"
+                />
+              </div>
+              <div className="mt-6 grid grid-cols-3 gap-4 text-center">
+                <div>
+                  <p className="text-3xl font-bold text-yellow-400">49件</p>
+                  <p className="text-gray-300">注文数</p>
+                </div>
+                <div>
+                  <p className="text-3xl font-bold text-yellow-400">53点</p>
+                  <p className="text-gray-300">販売数</p>
+                </div>
+                <div>
+                  <p className="text-3xl font-bold text-yellow-400">¥2,992,895</p>
+                  <p className="text-gray-300">売上実績</p>
+                </div>
+              </div>
+              <p className="text-center text-xl text-white mt-6 font-semibold">
+                信頼と実績の正規直販店として、確実な商品提供をお約束します
+              </p>
+            </div>
+          </div>
+        </section>
         
         <section className="py-16 md:py-24 relative">
           <div className="absolute inset-0 bg-gray-800/60" />
