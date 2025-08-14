@@ -42,6 +42,39 @@ const ProblemSection = memo(function ProblemSection() {
             </p>
           </div>
         </div>
+        
+        {/* AI自動化ワークフロー画像 */}
+        <div className="mt-12">
+          <div className="bg-gray-800/90 backdrop-blur-sm rounded-2xl p-8 shadow-2xl border border-indigo-500/30">
+            <h3 className={STYLES.heading.h3.emphasis + " text-white text-center mb-6"} style={TEXT_SHADOW.heading}>
+              業務自動化の実例：AIによる完全自動化フロー
+            </h3>
+            <div className="relative rounded-xl overflow-hidden bg-white/95 p-4">
+              <img
+                src="/assets/images/ai-workflow-automation.webp"
+                alt="AI業務自動化ワークフロー図"
+                className="w-full h-auto"
+              />
+            </div>
+            <div className="mt-6 grid grid-cols-1 md:grid-cols-3 gap-4">
+              <div className="text-center">
+                <div className="text-3xl font-bold text-indigo-400">90%</div>
+                <p className="text-sm text-gray-300 mt-1">作業時間削減</p>
+              </div>
+              <div className="text-center">
+                <div className="text-3xl font-bold text-green-400">24/7</div>
+                <p className="text-sm text-gray-300 mt-1">365日自動稼働</p>
+              </div>
+              <div className="text-center">
+                <div className="text-3xl font-bold text-purple-400">0</div>
+                <p className="text-sm text-gray-300 mt-1">ヒューマンエラー</p>
+              </div>
+            </div>
+            <p className="text-center text-gray-300 mt-6 text-sm">
+              ※ 実際の導入事例：ブログ記事作成・SEO最適化・WordPress投稿まで完全自動化
+            </p>
+          </div>
+        </div>
       </div>
     </section>
   )
