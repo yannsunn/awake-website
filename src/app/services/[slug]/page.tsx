@@ -442,17 +442,89 @@ export default async function ServicePage(
             
             {/* アスリート採用実績 */}
             <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20 mt-8">
-              <h3 className="text-2xl font-bold text-white mb-6 text-center">プロアスリートも愛用</h3>
-              <div className="relative rounded-xl overflow-hidden">
+              <h3 className="text-2xl font-bold text-white mb-6 text-center">プロアスリートサポート実績</h3>
+              <div className="relative rounded-xl overflow-hidden mb-6">
                 <img
                   src="/assets/images/clemira-athletes.jpg"
                   alt="CLEMIRA採用アスリート - 広島東洋カープ選手、格闘家など"
                   className="w-full h-auto"
                 />
               </div>
-              <p className="text-center text-lg text-gray-200 mt-4">
-                広島東洋カープの選手や格闘家など、多くのプロアスリートが採用
-              </p>
+              
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                  <h4 className="text-lg font-bold text-yellow-400 mb-3">アドバイザリー契約</h4>
+                  <div className="space-y-3">
+                    <div>
+                      <p className="text-white font-semibold">◆ 広島東洋カープ</p>
+                      <p className="text-gray-300 text-sm ml-4">
+                        末包昇大、矢野雅哉、羽月隆太郎、<br />
+                        田村俊介、小園海人（予定）
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                
+                <div>
+                  <h4 className="text-lg font-bold text-yellow-400 mb-3">スポンサー契約</h4>
+                  <div className="space-y-2">
+                    <div>
+                      <p className="text-white font-semibold text-sm">◆ フットサル</p>
+                      <p className="text-gray-300 text-sm ml-4">ボルクバレット北九州（Fリーグ）</p>
+                    </div>
+                    <div>
+                      <p className="text-white font-semibold text-sm">◆ バレーボール</p>
+                      <p className="text-gray-300 text-sm ml-4">福岡ギラソール（Vリーグ）</p>
+                    </div>
+                    <div>
+                      <p className="text-white font-semibold text-sm">◆ ボクシング</p>
+                      <p className="text-gray-300 text-sm ml-4">宮澤蓮斗選手（U24日本一）</p>
+                    </div>
+                    <div>
+                      <p className="text-white font-semibold text-sm">◆ キックボクシング</p>
+                      <p className="text-gray-300 text-sm ml-4">寺山遼冴（那須川天心の弟子）</p>
+                    </div>
+                    <div>
+                      <p className="text-white font-semibold text-sm">◆ 高校サッカー</p>
+                      <p className="text-gray-300 text-sm ml-4">昌平高校エース鄭君（インター杯優勝）</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <div className="mt-6 pt-6 border-t border-white/20">
+                <h4 className="text-lg font-bold text-yellow-400 mb-3">メディア出演</h4>
+                <div className="space-y-3">
+                  <div>
+                    <a 
+                      href="https://youtu.be/nMvy6GAX2Xk?si=RDRt7y_M8Ip4AqUV"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center text-blue-400 hover:text-blue-300 underline"
+                    >
+                      <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/>
+                      </svg>
+                      ムエタイ世界王者 梅野源治選手の体感ワーク
+                    </a>
+                    <p className="text-gray-300 text-sm ml-7">RIZIN選手による実演動画</p>
+                  </div>
+                  <div>
+                    <a 
+                      href="https://youtu.be/xE8RM3L8vc4?si=YfuMmD8bGq9qsmea"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center text-blue-400 hover:text-blue-300 underline"
+                    >
+                      <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/>
+                      </svg>
+                      メーカー公認クルミラガール
+                    </a>
+                    <p className="text-gray-300 text-sm ml-7">公式プロモーション動画</p>
+                  </div>
+                </div>
+              </div>
             </div>
             
             {/* CLEMIRAインソール */}
