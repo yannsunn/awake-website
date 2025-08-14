@@ -439,6 +439,53 @@ export default async function ServicePage(
                 日本唯一のメーカー直販店として、確実な商品提供をお約束します
               </p>
             </div>
+            
+            {/* アスリート採用実績 */}
+            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20 mt-8">
+              <h3 className="text-2xl font-bold text-white mb-6 text-center">プロアスリートも愛用</h3>
+              <div className="relative rounded-xl overflow-hidden">
+                <img
+                  src="/assets/images/clemira-athletes.jpg"
+                  alt="CLEMIRA採用アスリート - 広島東洋カープ選手、格闘家など"
+                  className="w-full h-auto"
+                />
+              </div>
+              <p className="text-center text-lg text-gray-200 mt-4">
+                広島東洋カープの選手や格闘家など、多くのプロアスリートが採用
+              </p>
+            </div>
+            
+            {/* CLEMIRAインソール */}
+            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20 mt-8">
+              <h3 className="text-2xl font-bold text-white mb-6 text-center">完全オーダーメイドインソール</h3>
+              <div className="relative rounded-xl overflow-hidden">
+                <img
+                  src="/assets/images/clemira-insole.jpg"
+                  alt="CLEMIRAインソール - Quantum Effect Technology"
+                  className="w-full h-auto"
+                />
+              </div>
+              <div className="mt-6 text-center">
+                <p className="text-xl text-gray-200 mb-4">
+                  量子効果技術を搭載した完全オーダーメイドインソール
+                </p>
+                <div className="bg-gradient-to-r from-green-500 to-green-600 rounded-xl p-6 inline-block">
+                  <p className="text-white font-bold text-lg mb-2">インソールのお問い合わせはLINEから</p>
+                  <a 
+                    href="https://lin.ee/xBl5t78" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center px-8 py-3 bg-white text-green-600 font-bold rounded-lg hover:bg-gray-100 transition-colors"
+                  >
+                    <svg className="w-6 h-6 mr-2" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M12 2C6.48 2 2 6.48 2 12c0 5.52 4.48 10 10 10 1.19 0 2.34-.21 3.41-.6.3-.11.49-.4.49-.72 0-.43-.35-.78-.78-.78-.17 0-.33.06-.46.14-.85.32-1.74.49-2.66.49-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8c0 1.29-.31 2.5-.85 3.57-.13.25-.42.43-.7.43-.43 0-.78-.35-.78-.78v-4.72c0-.43-.35-.78-.78-.78s-.78.35-.78.78v.42c-.71-.7-1.68-1.14-2.76-1.14-2.18 0-3.94 1.76-3.94 3.94s1.76 3.94 3.94 3.94c1.08 0 2.05-.44 2.76-1.14.36.68 1.08 1.14 1.9 1.14.88 0 1.68-.54 2.01-1.36.67-1.31 1.04-2.79 1.04-4.36 0-5.52-4.48-10-10-10zm0 12.56c-1.31 0-2.38-1.07-2.38-2.38s1.07-2.38 2.38-2.38 2.38 1.07 2.38 2.38-1.07 2.38-2.38 2.38z"/>
+                    </svg>
+                    LINEで問い合わせる
+                  </a>
+                  <p className="text-white text-sm mt-2">@awake-inc</p>
+                </div>
+              </div>
+            </div>
           </div>
         </section>
         
