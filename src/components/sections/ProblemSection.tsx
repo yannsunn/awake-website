@@ -56,23 +56,27 @@ const ProblemSection = memo(function ProblemSection() {
                 className="w-full h-auto"
               />
             </div>
-            <div className="mt-6 grid grid-cols-1 md:grid-cols-3 gap-4">
-              <div className="text-center">
-                <div className="text-3xl font-bold text-indigo-400">90%</div>
-                <p className="text-sm text-gray-300 mt-1">作業時間削減</p>
-              </div>
-              <div className="text-center">
-                <div className="text-3xl font-bold text-green-400">24/7</div>
-                <p className="text-sm text-gray-300 mt-1">365日自動稼働</p>
-              </div>
-              <div className="text-center">
-                <div className="text-3xl font-bold text-purple-400">0</div>
-                <p className="text-sm text-gray-300 mt-1">ヒューマンエラー</p>
-              </div>
+            <div className="mt-6 space-y-3">
+              <h4 className="text-white font-semibold">このワークフローで実現できること：</h4>
+              <ul className="space-y-2 text-gray-300">
+                <li className="flex items-start">
+                  <span className="text-green-400 mr-2">✓</span>
+                  <span>キーワード調査から記事作成まで自動化</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-green-400 mr-2">✓</span>
+                  <span>SEO最適化されたコンテンツを自動生成</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-green-400 mr-2">✓</span>
+                  <span>WordPressへの自動投稿・画像設定</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-green-400 mr-2">✓</span>
+                  <span>人の手を介さない完全自動プロセス</span>
+                </li>
+              </ul>
             </div>
-            <p className="text-center text-gray-300 mt-6 text-sm">
-              ※ 実際の導入事例：ブログ記事作成・SEO最適化・WordPress投稿まで完全自動化
-            </p>
           </div>
         </div>
       </div>
