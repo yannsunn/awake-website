@@ -348,11 +348,11 @@ export default async function ServicePage(
           <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
               <h2 className={cn(STYLES.heading.h2.section, "text-white mb-6")} style={TEXT_SHADOW.heading}>
-                CLEMIRA製品の唯一の直販店として
+                CLEMIRA製品の日本唯一のメーカー直販店
               </h2>
               <p className="text-xl text-gray-200 max-w-3xl mx-auto">
                 身体機能向上をサポートする革新的な技術製品CLEMIRAを、<br />
-                日本で唯一の正規直販店として販売しています
+                日本で唯一のメーカー直販店として販売しています
               </p>
             </div>
             
@@ -436,7 +436,7 @@ export default async function ServicePage(
                 </div>
               </div>
               <p className="text-center text-xl text-white mt-6 font-semibold">
-                信頼と実績の正規直販店として、確実な商品提供をお約束します
+                日本唯一のメーカー直販店として、確実な商品提供をお約束します
               </p>
             </div>
           </div>
