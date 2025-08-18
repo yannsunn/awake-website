@@ -198,12 +198,9 @@ export default function HomePageContent() {
                 <h3 className="text-2xl sm:text-3xl font-bold mb-6 text-white jp-wrap no-orphan">
                   {COMPANY_DATA.basic.mission}
                 </h3>
-                <div className="text-lg text-gray-200 mb-8 leading-relaxed space-y-2">
-                  <p>高額なIT投資で失敗する企業が多い中、</p>
-                  <p>私たちは適正価格で確実な成果を出します。</p>
-                  <p>必要最小限の投資で最大の効果を生み出し、</p>
-                  <p>削減したコストを本業の成長に投資できる環境を提供します。</p>
-                </div>
+                <p className="text-lg text-gray-200 mb-8 leading-relaxed">
+                  高額なIT投資で失敗する企業が多い中、私たちは適正価格で確実な成果を出します。必要最小限の投資で最大の効果を生み出し、削減したコストを本業の成長に投資できる環境を提供いたします。
+                </p>
                 <UltraButton href="/about" variant="primary">
                   詳しく見る →
                 </UltraButton>
