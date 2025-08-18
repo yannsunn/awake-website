@@ -8,6 +8,7 @@ import { SPACING } from '@/lib/constants'
 import { cn } from '@/lib/utils'
 import ContactForm from '@/components/ui/ContactForm'
 import ContactInfo from '@/components/ui/ContactInfo'
+import LineButton from '@/components/ui/LineButton'
 import ValueProposition from '@/components/sections/ValueProposition'
 import FAQ from '@/components/sections/FAQ'
 import LazyLoad from '@/components/ui/LazyLoad'
@@ -123,6 +124,10 @@ export default function HomePageContent() {
                 <UltraButton href="#services" variant="secondary" size="lg">
                   サービスを見る
                 </UltraButton>
+              </div>
+              
+              <div className="mt-8 relative z-20">
+                <LineButton className="shadow-xl" size="medium" variant="filled" />
               </div>
             </div>
           </div>
