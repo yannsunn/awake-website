@@ -53,9 +53,9 @@ const AmazonCTA = memo(function AmazonCTA() {
           <p className={STYLES.text.body.large + " text-white mb-6"}>
             まずは無料診断で、売上ポテンシャルを確認
           </p>
-          <p className={STYLES.text.body.medium + " text-gray-200 mb-8"}>
-            あなたの商品が、Amazonでどれだけ売れるか。<br />
-            具体的な数値でお示しします。
+          <p className={STYLES.text.body.medium + " text-gray-200 mb-8 break-words"}>
+            <span className="inline-block">あなたの商品が、Amazonでどれだけ売れるか。</span>
+            <span className="inline-block">具体的な数値でお示しします。</span>
           </p>
           
           <div className="flex flex-col md:flex-row gap-4 justify-center items-center">

@@ -142,7 +142,7 @@ const Header = memo(function Header() {
                     <div key={index} className="relative" ref={servicesRef}>
                       <button
                         onClick={toggleServices}
-                        className={`flex items-center px-4 py-2 min-h-[48px] rounded-lg text-white hover:bg-gray-800/50 transition-all duration-300 ease-out hover:scale-[1.02] focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-blue-500 focus-visible:ring-offset-3 ${STYLES.text.body.medium}`} style={TEXT_SHADOW.small}
+                        className={`flex items-center px-4 py-2 min-h-[48px] rounded-lg text-white hover:bg-gray-800/50 transition-all duration-300 ease-out hover:scale-[1.02] focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-blue-500 focus-visible:ring-offset-3 whitespace-nowrap ${STYLES.text.body.medium}`} style={TEXT_SHADOW.small}
                         aria-expanded={isServicesOpen}
                         aria-haspopup="true"
                         type="button"

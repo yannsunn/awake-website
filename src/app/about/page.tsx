@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { User, Target, Heart, Award, Users, Zap, CheckCircle } from 'lucide-react'
+import Image from 'next/image'
 import { COMPANY_DATA } from '@/lib/company-data'
 import PageLayout from '@/components/layout/PageLayout'
 import OptimizedImage from '@/components/ui/OptimizedImage'
@@ -136,12 +137,13 @@ export default function AboutPage() {
           <div>
             <div className="bg-gradient-to-br from-gray-800/60 to-gray-850/60 backdrop-blur-sm rounded-2xl p-4 sm:p-6 mb-6 border border-purple-500/20 shadow-lg">
               <div className="flex items-center">
-                <div className="w-20 sm:w-24 h-20 sm:h-24 mr-4 flex items-center justify-center bg-white rounded-lg p-1">
-                  <img
+                <div className="w-20 sm:w-24 h-20 sm:h-24 mr-4 relative bg-white rounded-lg p-1">
+                  <Image
                     src="/assets/images/awake-logo-dark.png"
                     alt="Awake Inc. Logo"
-                    className="w-full h-full object-contain"
-                    style={{ maxWidth: '90%', maxHeight: '90%' }}
+                    fill
+                    className="object-contain p-1"
+                    sizes="(max-width: 640px) 80px, 96px"
                   />
                 </div>
                 <div>
@@ -160,8 +162,8 @@ export default function AboutPage() {
                 <h3 className={STYLES.text.emphasis.strong + " text-white text-xl mb-2"}>挫折から這い上がり、学んだこと</h3>
                 <p className={STYLES.text.emphasis.medium + " text-white mb-4"}>代表取締役CEO　{COMPANY_DATA.basic.ceo}</p>
                 
-                <p className={STYLES.text.description.medium + " mb-4"}>
-                  株式会社Awakeの田形でございます。<br />
+                <p className={STYLES.text.description.medium + " mb-4 break-words"}>
+                  <span className="inline-block">株式会社Awakeの田形でございます。</span>
                   私がこの事業を立ち上げたきっかけは、ある経営者様との出会いでした。
                 </p>
                 

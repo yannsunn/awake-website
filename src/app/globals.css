@@ -140,6 +140,65 @@
     background-image: 
       linear-gradient(to bottom, transparent 0%, var(--gray-900) 100%);
   }
+  
+  /* モバイル対応テキスト折り返し */
+  .break-words-mobile {
+    @apply break-words sm:break-normal;
+  }
+  
+  /* テキストバランシング（CSS Text Module Level 4） */
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  .text-pretty {
+    text-wrap: pretty;
+  }
+  
+  /* モバイル用改行制御 */
+  .mobile-break {
+    @apply block sm:inline;
+  }
+  
+  /* レスポンシブな行数制限 */
+  .line-clamp-mobile-2 {
+    @apply line-clamp-2 sm:line-clamp-none;
+  }
+  
+  .line-clamp-mobile-3 {
+    @apply line-clamp-3 sm:line-clamp-none;
+  }
+  
+  /* モバイル用ハイフン制御 */
+  .hyphens-mobile {
+    @apply hyphens-auto sm:hyphens-none;
+  }
+  
+  /* 日本語の禁則処理 */
+  .jp-wrap {
+    word-break: keep-all;
+    overflow-wrap: break-word;
+    line-break: strict;
+  }
+  
+  /* モバイル用日本語最適化 */
+  .jp-mobile {
+    word-break: auto-phrase; /* iOS 15+ */
+    -webkit-hyphens: none;
+    hyphens: none;
+  }
+  
+  /* 文字孤立防止 */
+  .no-orphan {
+    text-wrap: pretty; /* 美しい改行 */
+  }
+  
+  @supports not (text-wrap: pretty) {
+    .no-orphan {
+      word-break: keep-all;
+      overflow-wrap: break-word;
+    }
+  }
 }
 
 /* 固定背景スタイル */

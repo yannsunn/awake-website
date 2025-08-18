@@ -20,7 +20,7 @@ export function ProcessSteps({ title, steps, className }: ProcessStepsProps) {
   return (
     <section className={cn('py-12 sm:py-16 md:py-20 lg:py-24 xl:py-28', className)}>
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 xl:px-12">
-        <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-8 sm:mb-12 lg:mb-16 text-center leading-tight" style={TEXT_SHADOW.heading}>
+        <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-8 sm:mb-12 lg:mb-16 text-center leading-tight jp-wrap no-orphan" style={TEXT_SHADOW.heading}>
           {title}
         </h2>
         <div className="mx-auto max-w-4xl">
@@ -34,10 +34,10 @@ export function ProcessSteps({ title, steps, className }: ProcessStepsProps) {
                   <div className="absolute left-4 sm:left-5 lg:left-6 top-8 sm:top-10 lg:top-12 h-full w-px bg-gray-600" />
                 )}
                 <div>
-                  <h3 className="mb-2 sm:mb-3 text-lg sm:text-xl lg:text-2xl font-semibold text-white leading-tight" style={TEXT_SHADOW.heading}>
+                  <h3 className="mb-2 sm:mb-3 text-lg sm:text-xl lg:text-2xl font-semibold text-white leading-tight jp-wrap no-orphan" style={TEXT_SHADOW.heading}>
                     {stepData.title}
                   </h3>
-                  <p className="text-sm sm:text-base lg:text-lg text-gray-200 leading-relaxed" style={TEXT_SHADOW.body}>
+                  <p className="text-sm sm:text-base lg:text-lg text-gray-200 leading-relaxed jp-wrap no-orphan" style={TEXT_SHADOW.body}>
                     {stepData.description}
                   </p>
                   {stepData.duration && (
