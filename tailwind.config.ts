@@ -106,6 +106,11 @@ const config: Config = {
         'sm-max': {'max': '639px'},
         'md-max': {'max': '767px'},
         'lg-max': {'max': '1023px'},
+        // iPhone専用ブレークポイント
+        'iphone-se': '375px',
+        'iphone': '390px',
+        'iphone-plus': '414px',
+        'iphone-landscape': {'raw': '(min-width: 568px) and (max-width: 926px) and (orientation: landscape)'},
       },
       animation: {
         // 令和最新トレンド: ネオン&ホログラフィック

@@ -78,7 +78,7 @@ export default function HomePageContent() {
             <div className="text-center max-w-6xl mx-auto">
               <h1 
                 className={cn(
-                  "font-bold mb-6 sm:mb-8",
+                  "font-bold mb-6 sm:mb-8 jp-wrap no-orphan",
                   RESPONSIVE_TYPOGRAPHY.lineHeight.tight
                 )}
                 style={{
@@ -86,17 +86,16 @@ export default function HomePageContent() {
                   fontSize: RESPONSIVE_FONT.hero.clamp
                 }}
               >
-                <span className="text-white font-extrabold">
+                <span className="text-white font-extrabold inline-block">
                   高額なIT投資に、
                 </span>
-                <br />
-                <span className="text-white">
+                <span className="text-white inline-block">
                   もう悩まない
                 </span>
               </h1>
               
               <p 
-                className="text-white font-semibold mb-3 sm:mb-4 mx-2 sm:mx-0"
+                className="text-white font-semibold mb-3 sm:mb-4 mx-2 sm:mx-0 jp-wrap no-orphan"
                 style={{
                   ...TEXT_SHADOW.small,
                   fontSize: RESPONSIVE_FONT.h2.clamp
@@ -107,7 +106,7 @@ export default function HomePageContent() {
 
               <p 
                 className={cn(
-                  "text-gray-200 font-medium mb-8 sm:mb-12 mx-2 sm:mx-0",
+                  "text-gray-200 font-medium mb-8 sm:mb-12 mx-2 sm:mx-0 jp-wrap no-orphan",
                   RESPONSIVE_TYPOGRAPHY.lineHeight.relaxed
                 )}
                 style={{

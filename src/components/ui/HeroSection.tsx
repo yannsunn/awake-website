@@ -67,15 +67,15 @@ const HeroSection = memo(function HeroSection() {
         <div className="max-w-4xl mx-auto">
           
           {/* 🚀 限界突破 - 感情的訴求 + ストーリーテリング */}
-          <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-6 tracking-tight">
+          <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-6 tracking-tight break-words">
             {COMPANY_DATA.basic.tagline}
           </h1>
           
-          <p className="text-lg md:text-xl text-gray-100 mb-4 font-semibold leading-relaxed">
+          <p className="text-lg md:text-xl text-gray-100 mb-4 font-semibold leading-relaxed break-words">
             {COMPANY_DATA.basic.description}
           </p>
           
-          <p className="text-base md:text-lg text-gray-200 mb-8 font-medium leading-relaxed">
+          <p className="text-base md:text-lg text-gray-200 mb-8 font-medium leading-relaxed break-words">
             {COMPANY_DATA.basic.subMessage}
           </p>
           
@@ -96,10 +96,10 @@ const HeroSection = memo(function HeroSection() {
                 tabIndex={0}
               >
                 <div className="text-3xl mb-4">{service.icon}</div>
-                <h3 className="text-lg font-bold text-black mb-3 text-shadow-md">
+                <h3 className="text-lg font-bold text-black mb-3 text-shadow-md break-words">
                   {service.title}
                 </h3>
-                <p className="text-black text-sm leading-relaxed font-medium text-shadow-sm">
+                <p className="text-black text-sm leading-relaxed font-medium text-shadow-sm jp-wrap no-orphan">
                   {service.description}
                 </p>
               </Link>

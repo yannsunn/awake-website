@@ -32,7 +32,7 @@ export function FeatureGrid({
     <section className={cn('py-12 sm:py-16 md:py-20 lg:py-24 xl:py-28', className)}>
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 xl:px-12">
         {title && (
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-8 sm:mb-12 lg:mb-16 text-center leading-tight" style={TEXT_SHADOW.heading}>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-8 sm:mb-12 lg:mb-16 text-center leading-tight jp-wrap no-orphan" style={TEXT_SHADOW.heading}>
             {title}
           </h2>
         )}
@@ -42,10 +42,10 @@ export function FeatureGrid({
               <div className="mx-auto mb-4 sm:mb-6 flex h-12 w-12 sm:h-16 sm:w-16 items-center justify-center rounded-xl sm:rounded-2xl bg-indigo-600/20 text-indigo-300 border border-indigo-500/30">
                 {feature.icon}
               </div>
-              <h3 className="mb-3 sm:mb-4 text-lg sm:text-xl lg:text-2xl font-semibold text-white leading-tight" style={TEXT_SHADOW.heading}>
+              <h3 className="mb-3 sm:mb-4 text-lg sm:text-xl lg:text-2xl font-semibold text-white leading-tight jp-wrap no-orphan" style={TEXT_SHADOW.heading}>
                 {feature.title}
               </h3>
-              <p className="text-sm sm:text-base lg:text-lg text-white leading-relaxed" style={TEXT_SHADOW.body}>
+              <p className="text-sm sm:text-base lg:text-lg text-white leading-relaxed jp-wrap no-orphan" style={TEXT_SHADOW.body}>
                 {feature.description}
               </p>
             </div>
