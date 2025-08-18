@@ -198,8 +198,12 @@ export default function HomePageContent() {
                 <h3 className="text-2xl sm:text-3xl font-bold mb-6 text-white jp-wrap no-orphan">
                   {COMPANY_DATA.basic.mission}
                 </h3>
-                <p className="text-lg text-gray-200 mb-8 leading-relaxed">
-                  高額なIT投資で失敗する企業が多い中、私たちは適正価格で確実な成果を出します。必要最小限の投資で最大の効果を生み出し、削減したコストを本業の成長に投資できる環境を提供いたします。
+                <p className="text-lg text-gray-200 mb-8 leading-relaxed" style={{ 
+                  wordBreak: 'keep-all',
+                  overflowWrap: 'break-word',
+                  lineBreak: 'strict'
+                }}>
+                  多くの企業が高額なIT投資で失敗している現状において、私たちは適正価格で確実な成果をお約束いたします。必要最小限の投資で最大の効果を実現し、削減したコストを本業の成長に投資できる環境をご提供いたします。
                 </p>
                 <UltraButton href="/about" variant="primary">
                   詳しく見る →
