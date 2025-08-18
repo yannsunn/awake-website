@@ -176,9 +176,18 @@
   
   /* 日本語の禁則処理 */
   .jp-wrap {
-    word-break: keep-all;
-    overflow-wrap: break-word;
+    word-break: auto-phrase; /* 文節で改行 */
+    word-wrap: break-word;
+    overflow-wrap: anywhere;
     line-break: strict;
+    hanging-punctuation: allow-end; /* 句読点の行末配置 */
+  }
+  
+  @supports not (word-break: auto-phrase) {
+    .jp-wrap {
+      word-break: keep-all; /* フォールバック */
+      word-wrap: break-word;
+    }
   }
   
   /* モバイル用日本語最適化 */
