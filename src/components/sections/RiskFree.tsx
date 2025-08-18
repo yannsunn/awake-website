@@ -44,9 +44,8 @@ const RiskFree = memo(function RiskFree() {
           </div>
           
           <div className="text-center pt-8 border-t border-gray-200">
-            <p className={STYLES.text.body.large + " jp-wrap no-orphan"}>
-              <span className="block md:inline">失敗のリスクがないから、挑戦できる。</span>
-              <span className="block md:inline">それが、完全成果報酬制の最大のメリットです。</span>
+            <p className={STYLES.text.body.large}>
+              失敗のリスクがないから、挑戦できる。それが、完全成果報酬制の最大のメリットです。
             </p>
           </div>
         </div>

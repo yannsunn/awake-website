@@ -142,13 +142,11 @@ export default function HomePageContent() {
         {/* Services Section */}
         <SectionWrapper id="services" background="medium">
           <div className="text-center mb-12 lg:mb-16 reveal">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6 text-white leading-tight jp-wrap no-orphan" style={TEXT_SHADOW.heading}>
-              <span className="inline-block">あなたの課題を</span>
-              <span className="inline-block">解決する</span>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6 text-white leading-tight" style={TEXT_SHADOW.heading}>
+              あなたの課題を解決する
             </h2>
-            <p className="text-lg sm:text-xl md:text-2xl text-white font-semibold leading-relaxed jp-wrap no-orphan" style={TEXT_SHADOW.small}>
-              <span className="inline-block">3つの</span>
-              <span className="inline-block">クリエイティブソリューション</span>
+            <p className="text-lg sm:text-xl md:text-2xl text-white font-semibold leading-relaxed" style={TEXT_SHADOW.small}>
+              3つのクリエイティブソリューション
             </p>
           </div>
           
@@ -189,9 +187,8 @@ export default function HomePageContent() {
         {/* Company Mission Section */}
         <SectionWrapper background="light">
           <div className="text-center mb-8 sm:mb-12 lg:mb-16">
-            <h2 className="text-4xl sm:text-5xl font-bold mb-4 text-white jp-wrap no-orphan">
-              <span className="inline-block">私たちの</span>
-              <span className="inline-block">想い</span>
+            <h2 className="text-4xl sm:text-5xl font-bold mb-4 text-white">
+              私たちの想い
             </h2>
           </div>
           
@@ -201,11 +198,8 @@ export default function HomePageContent() {
                 <h3 className="text-2xl sm:text-3xl font-bold mb-6 text-white jp-wrap no-orphan">
                   {COMPANY_DATA.basic.mission}
                 </h3>
-                <p className="text-lg text-gray-200 mb-8 leading-relaxed jp-wrap no-orphan">
-                  <span className="block md:inline">高額なIT投資で失敗する企業が多い中、</span>
-                  <span className="block md:inline">私たちは適正価格で確実な成果を出します。</span>
-                  <span className="block md:inline">必要最小限の投資で最大の効果を生み出し、</span>
-                  <span className="block md:inline">削減したコストを本業の成長に投資できる環境を提供します。</span>
+                <p className="text-lg text-gray-200 mb-8 leading-relaxed">
+                  高額なIT投資で失敗する企業が多い中、私たちは適正価格で確実な成果を出します。必要最小限の投資で最大の効果を生み出し、削減したコストを本業の成長に投資できる環境を提供します。
                 </p>
                 <UltraButton href="/about" variant="primary">
                   詳しく見る →
@@ -221,14 +215,11 @@ export default function HomePageContent() {
         {/* Contact Section */}
         <SectionWrapper id="contact" background="medium">
           <div className="text-center mb-8 sm:mb-12 lg:mb-16">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-white leading-tight jp-wrap no-orphan" style={TEXT_SHADOW.heading}>
-              <span className="inline-block">まずは、</span>
-              <span className="inline-block">お話を聞かせてください</span>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-white leading-tight" style={TEXT_SHADOW.heading}>
+              まずは、お話を聞かせてください
             </h2>
-            <p className="text-lg sm:text-xl md:text-2xl text-gray-100 font-medium mb-4 leading-relaxed jp-wrap no-orphan" style={TEXT_SHADOW.body}>
-              <span className="inline-block">無料相談で、</span>
-              <span className="inline-block">あなたのビジネスの</span>
-              <span className="inline-block">可能性を探る</span>
+            <p className="text-lg sm:text-xl md:text-2xl text-gray-100 font-medium mb-4 leading-relaxed" style={TEXT_SHADOW.body}>
+              無料相談で、あなたのビジネスの可能性を探る
             </p>
             <p className="text-base sm:text-lg md:text-xl text-gray-300 leading-relaxed px-4 sm:px-0" style={TEXT_SHADOW.small}>
               押し売りは一切いたしません。<br className="hidden sm:block" />
