@@ -141,10 +141,6 @@ const Footer = memo(function Footer() {
               お気軽にご相談ください。
               LINEなら最速で返信いたします。
             </p>
-            <LineButton 
-              className="w-full" 
-              size="medium"
-            />
           </div>
         </div>
         
