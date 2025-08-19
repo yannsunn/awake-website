@@ -79,7 +79,7 @@ const serviceData = {
   },
   ai: {
     title: COMPANY_DATA.services.details.ai.title,
-    subtitle: <>AIで、<br />あなたの会社はどう変わるか？</>,
+    subtitle: <>AIで、あなたの会社は<br />どう変わるか？</>,
     description: '単純作業から解放され、創造的な仕事に集中できる組織へ',
     icon: '🤖',
     features: [
