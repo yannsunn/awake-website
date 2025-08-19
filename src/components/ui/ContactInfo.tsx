@@ -1,7 +1,7 @@
 'use client'
 
 import { memo } from 'react'
-import { MapPin, Clock, MessageCircle } from 'lucide-react'
+import { MapPin, Clock } from 'lucide-react'
 import { COMPANY_DATA } from '@/lib/company-data'
 import { ContactMethod } from '@/lib/unified-components'
 
@@ -9,19 +9,11 @@ import { ContactMethod } from '@/lib/unified-components'
 const ContactInfo = memo(function ContactInfo() {
   return (
     <div className="bg-gray-800/90 backdrop-blur-xl rounded-2xl p-8 shadow-xl border border-gray-600 relative overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-br before:from-gray-700/20 before:to-transparent before:pointer-events-none">
-      <h3 className="text-2xl font-medium text-white mb-8">お問い合わせ</h3>
+      <h3 className="text-2xl font-medium text-white mb-8">会社情報</h3>
       
       
       {/* 🎯 統合された連絡先情報 */}
       <div className="space-y-6">
-        <ContactMethod
-          icon={<MessageCircle className="w-6 h-6 text-green-400" />}
-          title="公式LINE"
-          content="最速で返信！お気軽にご相談ください"
-          link="https://lin.ee/fIaLAjy"
-          linkText="LINEで相談する"
-        />
-
         <ContactMethod
           icon={<MapPin className="w-6 h-6 text-gray-300" />}
           title="所在地"
