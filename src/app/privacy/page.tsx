@@ -32,8 +32,8 @@ export default function PrivacyPage() {
       />
 
       {/* Content */}
-      <UltraSection variant="medium">
-        <div className="prose prose-lg max-w-none">
+      <div className="bg-gray-900 py-12 sm:py-16 md:py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="space-y-8">
             <section>
               <h2 className={STYLES.heading.h2.subsection + " text-white mb-4"} style={TEXT_SHADOW.body}>はじめに</h2>
@@ -295,7 +295,7 @@ export default function PrivacyPage() {
             </section>
           </div>
         </div>
-      </UltraSection>
+      </div>
     </PageLayout>
   )
 }
