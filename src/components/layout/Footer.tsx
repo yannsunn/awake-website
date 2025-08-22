@@ -33,8 +33,10 @@ const Footer = memo(function Footer() {
   ]
   
   const legalLinks = [
-    { href: '/legal/privacy-policy', title: 'プライバシーポリシー' },
-    { href: '/legal/terms', title: '利用規約' },
+    { href: '/privacy', title: 'プライバシーポリシー' },
+    { href: '/terms', title: '利用規約' },
+    { href: '/legal/privacy-policy', title: 'プライバシーポリシー（会社）' },
+    { href: '/legal/terms', title: '利用規約（会社）' },
     { href: '/legal/tokusho', title: '特定商取引法に基づく表記' }
   ]
 
