@@ -243,18 +243,18 @@ export default function PrivacyPage() {
                   以下の窓口までご連絡ください：
                 </p>
                 <div className="bg-gray-50 p-6 rounded-lg">
-                  <p className="font-bold text-gray-900 mb-2">株式会社AWAKE 個人情報保護担当</p>
-                  <p>〒103-0014</p>
-                  <p>東京都中央区日本橋蛎殻町1-32-5 ACN日本橋蛎殻町ビル2階</p>
+                  <p className="font-bold text-gray-900 mb-2">株式会社Awake 個人情報保護担当</p>
+                  <p>〒207-0013</p>
+                  <p>東京都東大和市向原5-1129-61 渡辺ビル1F</p>
                   <p className="mt-3">
                     <span className="font-semibold">メール：</span>
-                    <a href="mailto:privacy@awakeinc.co.jp" className="text-blue-600 hover:text-blue-700 underline">
-                      privacy@awakeinc.co.jp
+                    <a href="mailto:shop@awakeinc.co.jp" className="text-blue-600 hover:text-blue-700 underline">
+                      shop@awakeinc.co.jp
                     </a>
                   </p>
                   <p>
                     <span className="font-semibold">電話：</span>
-                    03-1234-5678（平日10:00-18:00）
+                    050-7115-4948（平日9:00-18:00）
                   </p>
                   <p>
                     <span className="font-semibold">ウェブサイト：</span>
@@ -273,8 +273,8 @@ export default function PrivacyPage() {
             <section className="border-t pt-8">
               <h2 className="text-2xl font-bold text-gray-900 mb-4">個人情報保護管理者</h2>
               <div className="bg-gray-50 p-6 rounded-lg">
-                <p>株式会社AWAKE</p>
-                <p>代表取締役 CEO</p>
+                <p>株式会社Awake</p>
+                <p>代表取締役 田形 康貴</p>
                 <p>連絡先：上記お問い合わせ窓口と同じ</p>
               </div>
             </section>

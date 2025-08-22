@@ -28,7 +28,7 @@ export default function TermsPage() {
               <h2 className="text-2xl font-bold text-gray-900 mb-4">第1条（サービス概要）</h2>
               <div className="space-y-3">
                 <p>
-                  株式会社AWAKE（以下「当社」といいます）が提供する「AI News Automation」（以下「本サービス」といいます）は、
+                  株式会社Awake（以下「当社」といいます）が提供する「AI News Automation」（以下「本サービス」といいます）は、
                   AIを活用したニュースの自動収集、動画コンテンツの生成、およびSNSへの自動投稿を行うサービスです。
                 </p>
                 <p>
@@ -166,13 +166,13 @@ export default function TermsPage() {
               <div className="space-y-3">
                 <p>本利用規約に関するお問い合わせは、以下までご連絡ください：</p>
                 <div className="bg-gray-50 p-6 rounded-lg">
-                  <p className="font-bold text-gray-900 mb-2">株式会社AWAKE</p>
-                  <p>〒103-0014</p>
-                  <p>東京都中央区日本橋蛎殻町1-32-5 ACN日本橋蛎殻町ビル2階</p>
+                  <p className="font-bold text-gray-900 mb-2">株式会社Awake</p>
+                  <p>〒207-0013</p>
+                  <p>東京都東大和市向原5-1129-61 渡辺ビル1F</p>
                   <p className="mt-3">
                     <span className="font-semibold">メール：</span>
-                    <a href="mailto:info@awakeinc.co.jp" className="text-blue-600 hover:text-blue-700 underline">
-                      info@awakeinc.co.jp
+                    <a href="mailto:shop@awakeinc.co.jp" className="text-blue-600 hover:text-blue-700 underline">
+                      shop@awakeinc.co.jp
                     </a>
                   </p>
                   <p>
