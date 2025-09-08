@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server'
+import { logger } from '@/lib/logger'
 
 export async function POST(request: NextRequest) {
   try {
@@ -28,7 +29,7 @@ export async function POST(request: NextRequest) {
     // 3. Send to CRM
     // For now, we'll simulate success
 
-    console.log('Contact form submission:', {
+    logger.log('Contact form submission:', {
       name,
       email,
       company: company || 'Not provided',
@@ -44,7 +45,7 @@ export async function POST(request: NextRequest) {
     })
 
   } catch (error) {
-    console.error('Contact form error:', error)
+    logger.error('Contact form error:', error)
     return NextResponse.json(
       { success: false, error: 'Internal server error' },
       { status: 500 }

@@ -4,6 +4,7 @@
 import { useState, useCallback, memo } from 'react'
 import Image, { ImageProps } from 'next/image'
 import { cn } from '@/lib/utils'
+import { logger } from '@/lib/logger'
 import { presetConfig } from '@/lib/imageOptimization'
 
 type ImagePreset = 'hero' | 'thumbnail' | 'gallery' | 'responsive' | 'default'
@@ -85,7 +86,7 @@ const OptimizedImage = memo(function OptimizedImage({
     setIsError(true)
     setCurrentSrc(fallbackSrc)
     onError?.()
-    console.warn(`Image failed to load: ${src}`)
+    logger.warn(`Image failed to load: ${src}`)
   }, [src, fallbackSrc, onError])
 
   // コンテナクラス名の決定
