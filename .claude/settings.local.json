@@ -80,7 +80,8 @@
       "Bash(python3:*)",
       "Bash(timeout 5s npm run dev)",
       "Bash(npx next build:*)",
-      "WebFetch(domain:my-website-blush-chi.vercel.app)"
+      "WebFetch(domain:my-website-blush-chi.vercel.app)",
+      "WebFetch(domain:my-website-rizulecug-yasuus-projects.vercel.app)"
     ],
     "deny": [],
     "defaultMode": "acceptEdits"

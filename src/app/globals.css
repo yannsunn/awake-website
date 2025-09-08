@@ -8,16 +8,16 @@
     /* Enhanced Primary - 信頼感のある青紫 */
     --primary-50: #f5f3ff;
     --primary-100: #ede9fe;
-    --primary-500: #8b5cf6;
-    --primary-600: #7c3aed;
-    --primary-700: #6d28d9;
+    --primary-500: #a78bfa;
+    --primary-600: #9333ea;
+    --primary-700: #7e22ce;
     
     /* エフェクト用統一カラー */
-    --effect-primary: #8b5cf6;
-    --effect-primary-rgb: 139, 92, 246;
+    --effect-primary: #a78bfa;
+    --effect-primary-rgb: 167, 139, 250;
     
     /* プロフェッショナルアクセントカラー */
-    --accent-purple: #8b5cf6;
+    --accent-purple: #a78bfa;
     --accent-blue: #3b82f6;
     --accent-green: #10b981;
     
