@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TikTok認証コールバック</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #333;
+            border-bottom: 2px solid #007bff;
+            padding-bottom: 10px;
+        }
+        .success {
+            color: #28a745;
+            font-weight: bold;
+        }
+        .error {
+            color: #dc3545;
+            font-weight: bold;
+        }
+        .code-box {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+            word-break: break-all;
+        }
+        .instructions {
+            background: #e9ecef;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>TikTok Developer認証</h1>
+        
+        <div id="status"></div>
+        <div id="content"></div>
+        
+        <div class="instructions">
+            <h3>次のステップ:</h3>
+            <ol>
+                <li>表示された認証コードをコピー</li>
+                <li>ローカル環境でトークン交換を実行</li>
+                <li>Sandboxモードでテストを開始</li>
+            </ol>
+        </div>
+    </div>
+
+    <script>
+        // URLパラメータを解析
+        const params = new URLSearchParams(window.location.search);
+        const code = params.get('code');
+        const error = params.get('error');
+        const errorDescription = params.get('error_description');
+        const state = params.get('state');
+        
+        const statusDiv = document.getElementById('status');
+        const contentDiv = document.getElementById('content');
+        
+        if (error) {
+            statusDiv.innerHTML = '<p class="error">❌ 認証エラー</p>';
+            contentDiv.innerHTML = `
+                <div class="code-box">
+                    <strong>エラー:</strong> ${error}<br>
+                    <strong>詳細:</strong> ${errorDescription || '詳細情報なし'}
+                </div>
+            `;
+        } else if (code) {
+            statusDiv.innerHTML = '<p class="success">✅ 認証成功！</p>';
+            contentDiv.innerHTML = `
+                <div class="code-box">
+                    <strong>認証コード:</strong><br>
+                    <code>${code}</code>
+                </div>
+                <p>このコードを使用してアクセストークンを取得してください。</p>
+                <p><strong>State:</strong> ${state || 'なし'}</p>
+                
+                <h3>トークン交換用のcURLコマンド:</h3>
+                <div class="code-box">
+                    <pre>curl -X POST https://open.tiktokapis.com/v2/oauth/token \\
+  -H "Content-Type: application/json" \\
+  -d '{
+    "client_key": "YOUR_CLIENT_KEY",
+    "client_secret": "YOUR_CLIENT_SECRET",
+    "code": "${code}",
+    "grant_type": "authorization_code",
+    "redirect_uri": "https://www.awakeinc.co.jp/callback"
+  }'</pre>
+                </div>
+            `;
+        } else {
+            statusDiv.innerHTML = '<p class="error">パラメータが見つかりません</p>';
+            contentDiv.innerHTML = '<p>URLに認証パラメータが含まれていません。</p>';
+        }
+        
+        // 認証コードを自動的にローカルサーバーに送信（オプション）
+        if (code && window.location.hostname === 'www.awakeinc.co.jp') {
+            // ローカルサーバーが稼働している場合、コードを送信
+            fetch('http://localhost:3001/tiktok-callback', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ code, state })
+            }).then(() => {
+                console.log('コードをローカルサーバーに送信しました');
+            }).catch(err => {
+                console.log('ローカルサーバーへの送信はスキップ:', err.message);
+            });
+        }
+    </script>
+</body>
+</html>
