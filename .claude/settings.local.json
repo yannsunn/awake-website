@@ -82,7 +82,9 @@
       "Bash(npx next build:*)",
       "WebFetch(domain:my-website-blush-chi.vercel.app)",
       "WebFetch(domain:my-website-rizulecug-yasuus-projects.vercel.app)",
-      "Bash(timeout 30 npm run build:*)"
+      "Bash(timeout 30 npm run build:*)",
+      "Bash(git show:*)",
+      "Bash(git diff:*)"
     ],
     "deny": [],
     "defaultMode": "acceptEdits"

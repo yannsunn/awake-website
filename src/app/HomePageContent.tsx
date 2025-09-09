@@ -87,10 +87,7 @@ export default function HomePageContent() {
                 }}
               >
                 <span className="text-white font-extrabold inline-block">
-                  高額なIT投資に、
-                </span>
-                <span className="text-white inline-block">
-                  もう悩まない
+                  {COMPANY_DATA.basic.tagline}
                 </span>
               </h1>
               
