@@ -86,8 +86,9 @@ export default function HomePageContent() {
                   fontSize: RESPONSIVE_FONT.hero.clamp
                 }}
               >
-                <span className="text-white font-extrabold inline-block">
-                  {COMPANY_DATA.basic.tagline}
+                <span className="text-white font-extrabold">
+                  <span className="inline-block">型にはまらない、</span>
+                  <span className="inline-block">あなただけのIT戦略</span>
                 </span>
               </h1>
               
