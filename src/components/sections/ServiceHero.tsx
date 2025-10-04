@@ -2,6 +2,7 @@
 
 import React from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import { cn } from '@/lib/utils'
 import { RESPONSIVE_FONT, RESPONSIVE_PADDING, RESPONSIVE_TYPOGRAPHY } from '@/lib/responsive-utils'
 import { motion } from 'framer-motion'
@@ -40,10 +41,12 @@ export function ServiceHero({
     <section className={cn('relative overflow-hidden min-h-[70vh] flex items-center', className)}>
       {/* 背景画像 - Unsplash仮画像（後で差し替え） */}
       <div className="absolute inset-0 z-0">
-        <img
+        <Image
           src="https://images.unsplash.com/photo-1551434678-e076c223a692?q=80&w=2070&auto=format&fit=crop"
           alt="サービス背景"
-          className="w-full h-full object-cover opacity-10"
+          fill
+          className="object-cover opacity-10"
+          unoptimized
         />
       </div>
 

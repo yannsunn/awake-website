@@ -148,10 +148,13 @@ export default function AboutPage() {
           <div className="order-2 lg:order-1">
             <div className="sticky top-24">
               <div className="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-blue-100">
-                <img
+                <Image
                   src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1887&auto=format&fit=crop"
                   alt="代表取締役CEO 田形康貴"
+                  width={1887}
+                  height={1887}
                   className="w-full h-auto object-cover"
+                  unoptimized
                 />
                 <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-gray-900/80 to-transparent p-6">
                   <h3 className="text-white font-bold text-2xl mb-1">{COMPANY_DATA.basic.ceo}</h3>

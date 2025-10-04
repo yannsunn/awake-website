@@ -1,6 +1,7 @@
 'use client'
 
 import { memo } from 'react'
+import Image from 'next/image'
 import '@/app/corporate.css'
 
 const ProblemSection = memo(function ProblemSection() {
@@ -47,9 +48,11 @@ const ProblemSection = memo(function ProblemSection() {
               業務自動化の実例：AIによる完全自動化フロー
             </h3>
             <div className="relative rounded-xl overflow-hidden bg-white/95 p-4">
-              <img
+              <Image
                 src="/assets/images/ai-workflow-automation.webp"
                 alt="AI業務自動化ワークフロー図"
+                width={1200}
+                height={800}
                 className="w-full h-auto"
               />
             </div>

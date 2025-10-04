@@ -2,6 +2,7 @@
 
 import PageLayout from '@/components/layout/PageLayout'
 import Link from 'next/link'
+import Image from 'next/image'
 import { Globe, Brain, ShoppingCart } from 'lucide-react'
 import { COMPANY_DATA } from '@/lib/company-data'
 import ContactForm from '@/components/ui/ContactForm'
@@ -69,11 +70,13 @@ export default function HomePageContent() {
         <section className="corp-hero corp-section min-h-screen flex items-center justify-center relative overflow-hidden">
           {/* 背景画像 - Unsplash仮画像（後で差し替え） - より見えるように */}
           <div className="absolute inset-0 z-0">
-            <img
+            <Image
               src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2070&auto=format&fit=crop"
               alt="チームワーク背景"
-              className="w-full h-full object-cover opacity-20"
-              loading="eager"
+              fill
+              className="object-cover opacity-20"
+              priority
+              unoptimized
             />
           </div>
 
@@ -229,11 +232,12 @@ export default function HomePageContent() {
                     <div className="flex flex-col h-full">
                     {/* サービス画像 - より目立つように */}
                     <div className="relative h-64 mb-6 -mx-8 -mt-8 overflow-hidden rounded-t-xl">
-                      <img
+                      <Image
                         src={service.image}
                         alt={service.title}
-                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                        loading="eager"
+                        fill
+                        className="object-cover group-hover:scale-110 transition-transform duration-500"
+                        unoptimized
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-white/70 via-transparent to-transparent"></div>
                       {/* 画像が読み込まれているか確認用 */}

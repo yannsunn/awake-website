@@ -32,7 +32,7 @@ export default function ChatBot() {
         }
       ])
     }
-  }, [isOpen])
+  }, [isOpen, messages.length])
 
   const handleSend = () => {
     if (!inputValue.trim()) return

@@ -1,6 +1,7 @@
 'use client'
 
 import { memo } from 'react'
+import Image from 'next/image'
 import '@/app/corporate.css'
 
 const UseCases = memo(function UseCases() {
@@ -53,9 +54,11 @@ const UseCases = memo(function UseCases() {
               LINEと連携した自動化の実例
             </h3>
             <div className="relative rounded-xl overflow-hidden bg-white/95 p-4">
-              <img
+              <Image
                 src="/assets/images/ai-line-automation.png"
                 alt="LINE自動化ワークフロー図"
+                width={1200}
+                height={800}
                 className="w-full h-auto"
               />
             </div>
