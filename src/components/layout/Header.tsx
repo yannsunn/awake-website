@@ -5,9 +5,8 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { Menu, X, ChevronDown, MessageCircle } from 'lucide-react'
 import { COMPANY_DATA } from '@/lib/company-data'
-import { STYLES } from '@/lib/constants'
-import { TEXT_SHADOW } from '@/lib/ultra-styles'
 import LineButton from '@/components/ui/LineButton'
+import '@/app/corporate.css'
 
 // 🚀 最適化されたナビゲーションヘッダー
 const Header = memo(function Header() {
@@ -110,11 +109,11 @@ const Header = memo(function Header() {
 
   return (
     <>
-      <header 
-        className={`fixed top-0 left-0 right-0 z-50 transition-transform duration-300 ${
-          isScrolled 
-            ? 'bg-gray-900/80 backdrop-blur-md shadow-xl border-b border-gray-700' 
-            : 'bg-gray-900/60 backdrop-blur-sm border-b border-gray-700/50'
+      <header
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+          isScrolled
+            ? 'corp-header-scrolled'
+            : 'corp-header'
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -126,7 +125,7 @@ const Header = memo(function Header() {
                 className="flex items-center group"
                 aria-label={`${COMPANY_DATA.basic.name} ホーム`}
               >
-                <span className={`${STYLES.heading.h2.subsection} text-white group-hover:text-indigo-300 transition-colors`} style={TEXT_SHADOW.heading}>
+                <span className="text-xl md:text-2xl text-black group-hover:text-black transition-colors font-bold">
                   {COMPANY_DATA.basic.name}
                 </span>
               </Link>
@@ -142,7 +141,7 @@ const Header = memo(function Header() {
                     <div key={index} className="relative" ref={servicesRef}>
                       <button
                         onClick={toggleServices}
-                        className={`flex items-center px-4 py-2 min-h-[48px] rounded-lg text-white hover:bg-gray-800/50 transition-all duration-300 ease-out hover:scale-[1.02] focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-blue-500 focus-visible:ring-offset-3 whitespace-nowrap ${STYLES.text.body.medium}`} style={TEXT_SHADOW.small}
+                        className="flex items-center px-4 py-2 min-h-[48px] rounded-lg text-black hover:text-black hover:bg-blue-50 transition-all duration-300 ease-out hover:scale-[1.02] focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-blue-600 focus-visible:ring-offset-3 whitespace-nowrap text-base font-medium"
                         aria-expanded={isServicesOpen}
                         aria-haspopup="true"
                         type="button"
@@ -152,13 +151,13 @@ const Header = memo(function Header() {
                       </button>
                       
                       {isServicesOpen && (
-                        <div className="absolute top-full left-0 mt-2 w-80 bg-gray-800/95 backdrop-blur-xl rounded-xl shadow-2xl border border-gray-700 overflow-hidden animate-slide-up z-50">
+                        <div className="absolute top-full left-0 mt-2 w-80 bg-white rounded-xl shadow-2xl border border-gray-200 overflow-hidden animate-slide-up z-50">
                           {item.items?.map((service, serviceIndex) => (
                             <Link
                               key={service.href}
                               href={service.href}
-                              className={`block px-6 py-4 min-h-[56px] hover:bg-gray-700/50 transition-all duration-300 ease-out focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-blue-500 focus-visible:ring-offset-3 ${
-                                serviceIndex !== item.items.length - 1 ? 'border-b border-gray-700' : ''
+                              className={`block px-6 py-4 min-h-[56px] hover:bg-blue-50 transition-all duration-300 ease-out focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-blue-600 focus-visible:ring-offset-3 ${
+                                serviceIndex !== item.items.length - 1 ? 'border-b border-gray-100' : ''
                               }`}
                               onClick={() => setIsServicesOpen(false)}
                               {...(service.href.startsWith('http') && {
@@ -167,10 +166,10 @@ const Header = memo(function Header() {
                                 'aria-label': `${service.title} - 新しいウィンドウで開きます`
                               })}
                             >
-                              <div className={`${STYLES.text.emphasis.medium} mb-1 text-white`} style={TEXT_SHADOW.small}>
+                              <div className="text-base mb-1 text-black font-semibold">
                                 {service.title}
                               </div>
-                              <div className={`${STYLES.text.description.small} text-gray-300`}>
+                              <div className="text-sm text-black/70">
                                 {service.description}
                               </div>
                             </Link>
@@ -182,14 +181,14 @@ const Header = memo(function Header() {
                 }
                 
                 return (
-                  <Link 
+                  <Link
                     key={index}
-                    href={item.href} 
-                    className={`px-4 py-2 min-h-[48px] rounded-lg transition-all duration-300 ease-out hover:scale-[1.02] focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-blue-500 focus-visible:ring-offset-3 ${STYLES.text.body.medium} ${
-                      isActive 
-                        ? 'text-white bg-gray-800/80 font-bold border border-gray-700' 
-                        : 'text-white hover:bg-gray-800/50'
-                    }`} style={TEXT_SHADOW.small}
+                    href={item.href || '#'}
+                    className={`inline-flex items-center px-4 py-2 min-h-[48px] rounded-lg transition-all duration-300 ease-out hover:scale-[1.02] focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-blue-600 focus-visible:ring-offset-3 text-base font-medium ${
+                      isActive
+                        ? 'text-blue-600 bg-blue-50 font-bold'
+                        : 'text-black hover:text-black hover:bg-blue-50'
+                    }`}
                     aria-current={isActive ? 'page' : undefined}
                   >
                     {item.title}
@@ -214,9 +213,9 @@ const Header = memo(function Header() {
               type="button"
             >
               {isMenuOpen ? (
-                <X className="h-6 w-6 text-white" />
+                <X className="h-6 w-6 text-black" />
               ) : (
-                <Menu className="h-6 w-6 text-white" />
+                <Menu className="h-6 w-6 text-black" />
               )}
             </button>
           </div>
@@ -237,9 +236,9 @@ const Header = memo(function Header() {
         />
         
         {/* メニューパネル */}
-        <nav 
+        <nav
           id="mobile-menu"
-          className={`fixed right-0 top-0 h-full w-full max-w-sm bg-gray-900/98 backdrop-blur-xl shadow-2xl transform transition-transform duration-300 ease-out before:absolute before:inset-0 before:bg-gradient-to-b before:from-gray-800/10 before:to-transparent before:pointer-events-none ${
+          className={`fixed right-0 top-0 h-full w-full max-w-sm bg-white shadow-2xl transform transition-transform duration-300 ease-out ${
             isMenuOpen ? 'translate-x-0' : 'translate-x-full'
           }`}
           aria-label="モバイルナビゲーション"
@@ -248,15 +247,15 @@ const Header = memo(function Header() {
         >
           <div className="flex flex-col h-full">
             {/* ヘッダー */}
-            <div className="flex items-center justify-between px-4 py-4 border-b border-gray-700">
-              <span className={STYLES.heading.h3.card + " text-white"}>メニュー</span>
+            <div className="flex items-center justify-between px-4 py-4 border-b border-gray-200">
+              <span className="corp-heading-3 text-black">メニュー</span>
               <button
                 onClick={toggleMenu}
-                className="p-3 min-h-[48px] min-w-[48px] rounded-lg hover:bg-gray-700 transition-all duration-300 ease-out hover:scale-[1.05] active:scale-[0.95] focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-blue-500 focus-visible:ring-offset-3"
+                className="p-3 min-h-[48px] min-w-[48px] rounded-lg hover:bg-gray-100 transition-all duration-300 ease-out hover:scale-[1.05] active:scale-[0.95] focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-blue-500 focus-visible:ring-offset-3"
                 aria-label="メニューを閉じる"
                 type="button"
               >
-                <X className="h-6 w-6 text-gray-100" />
+                <X className="h-6 w-6 text-black" />
               </button>
             </div>
             
@@ -266,7 +265,7 @@ const Header = memo(function Header() {
                 if (item.type === 'dropdown') {
                   return (
                     <div key={index} className="px-4 py-2">
-                      <div className={`${STYLES.text.label.primary} text-gray-200 mb-2`}>
+                      <div className="corp-text-body text-black mb-2">
                         {item.title}
                       </div>
                       <div className="space-y-1">
@@ -274,7 +273,7 @@ const Header = memo(function Header() {
                           <Link
                             key={service.href}
                             href={service.href}
-                            className="block px-4 py-3 min-h-[56px] rounded-lg hover:bg-gray-700 transition-all duration-300 ease-out focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-blue-500 focus-visible:ring-offset-3"
+                            className="block px-4 py-3 min-h-[56px] rounded-lg hover:bg-blue-50 transition-all duration-300 ease-out focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-blue-500 focus-visible:ring-offset-3"
                             onClick={toggleMenu}
                             {...(service.href.startsWith('http') && {
                               target: '_blank',
@@ -282,10 +281,10 @@ const Header = memo(function Header() {
                               'aria-label': `${service.title} - 新しいウィンドウで開きます`
                             })}
                           >
-                            <div className={STYLES.text.emphasis.medium + " text-white"}>
+                            <div className="corp-text-body text-black">
                               {service.title}
                             </div>
-                            <div className={`${STYLES.text.description.small} text-gray-200 mt-1`}>
+                            <div className="corp-text-small text-gray-600 mt-1">
                               {service.description}
                             </div>
                           </Link>
@@ -294,12 +293,12 @@ const Header = memo(function Header() {
                     </div>
                   )
                 }
-                
+
                 return (
-                  <Link 
+                  <Link
                     key={index}
-                    href={item.href}
-                    className={`block px-8 py-3 min-h-[56px] ${STYLES.text.body.medium} text-gray-100 hover:bg-gray-700 transition-all duration-300 ease-out focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-blue-500 focus-visible:ring-offset-3`}
+                    href={item.href || '#'}
+                    className="block px-8 py-3 min-h-[56px] corp-text-body text-black hover:bg-blue-50 transition-all duration-300 ease-out focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-blue-500 focus-visible:ring-offset-3"
                     onClick={toggleMenu}
                   >
                     {item.title}
@@ -309,7 +308,7 @@ const Header = memo(function Header() {
             </div>
             
             {/* CTA */}
-            <div className="p-4 border-t border-gray-100">
+            <div className="p-4 border-t border-gray-200">
               <LineButton className="w-full" size="large" />
             </div>
           </div>

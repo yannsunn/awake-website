@@ -1,7 +1,7 @@
 'use client'
 
 import { memo } from 'react'
-import { STYLES } from '@/lib/constants'
+import '@/app/corporate.css'
 
 const AmazonSupport = memo(function AmazonSupport() {
   const supports = [
@@ -51,10 +51,10 @@ const AmazonSupport = memo(function AmazonSupport() {
     <section className="py-16 md:py-24 bg-gray-overlay">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <h2 className={STYLES.heading.h2.section + " mb-4"}>
+          <h2 className="corp-heading-2 mb-4">
             具体的なサポート内容
           </h2>
-          <p className={STYLES.text.body.large}>
+          <p className="corp-text-lead">
             すべてお任せください。売ることに集中します。
           </p>
         </div>
@@ -63,14 +63,14 @@ const AmazonSupport = memo(function AmazonSupport() {
           {supports.map((support, index) => (
             <div key={index} className="bg-white-overlay rounded-xl p-6">
               <div className="text-3xl mb-4">{support.icon}</div>
-              <h3 className={STYLES.heading.h3.card + " mb-4"}>
+              <h3 className="corp-heading-3 mb-4">
                 {support.title}
               </h3>
               <ul className="space-y-2">
                 {support.items.map((item, idx) => (
                   <li key={idx} className="flex items-start">
                     <span className="text-green-500 mr-2 mt-1">•</span>
-                    <span className={STYLES.text.description.small}>{item}</span>
+                    <span className="corp-text-small">{item}</span>
                   </li>
                 ))}
               </ul>

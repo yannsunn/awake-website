@@ -1,24 +1,14 @@
 import type { Metadata } from 'next'
 import HomePageContent from './HomePageContent'
-import Header from '@/components/layout/Header'
-import Footer from '@/components/layout/Footer'
-import { ArrowRight, Globe, Brain, ShoppingCart, CheckCircle, Award, Users, Heart } from 'lucide-react'
-import Link from 'next/link'
-import { COMPANY_DATA } from '@/lib/company-data'
-import { STYLES } from '@/lib/constants'
-import ContactForm from '@/components/ui/ContactForm'
-import ContactInfo from '@/components/ui/ContactInfo'
-import LineButton from '@/components/ui/LineButton'
-import ValueProposition from '@/components/sections/ValueProposition'
-import FAQ from '@/components/sections/FAQ'
 
 export const metadata: Metadata = {
-  title: `Awake Inc. | DXと成長を加速するデジタルパートナー`,
-  description: '中小企業のDXを支援。コストを抑えて最大の成果を実現するWebサイト制作・AIコンサルティング・Amazon代理店サービス',
+  title: 'Awake Inc. | Webサイト制作・AIチャットボット開発・Amazon代理店',
+  description: '適正価格で確実な成果を。中小企業向けのWebサイト制作、AIチャットボット開発、Amazon販路開拓を支援します。初期費用を抑えた実用的なデジタルソリューション。',
   openGraph: {
-    title: 'Awake Inc. | DXと成長を加速するデジタルパートナー',
-    description: '中小企業のDXを支援。コストを抑えて最大の成果を実現するWebサイト制作・AIコンサルティング・Amazon代理店サービス',
+    title: 'Awake Inc. | Webサイト制作・AIチャットボット開発',
+    description: '適正価格で確実な成果を。中小企業のための実用的なデジタルソリューション。',
   },
+  keywords: ['Webサイト制作', 'AIチャットボット開発', 'Amazon代理店', '中小企業', 'デジタル化', '東京'],
 }
 
 export default function HomePage() {

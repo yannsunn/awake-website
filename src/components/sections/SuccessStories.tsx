@@ -1,7 +1,7 @@
 'use client'
 
 import { memo } from 'react'
-import { STYLES } from '@/lib/constants'
+import '@/app/corporate.css'
 
 const SuccessStories = memo(function SuccessStories() {
   const stories = [
@@ -29,10 +29,10 @@ const SuccessStories = memo(function SuccessStories() {
     <section className="py-16 md:py-24 bg-white-overlay">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <h2 className={STYLES.heading.h2.section + " mb-4"}>
+          <h2 className="corp-heading-2 mb-4">
             成功事例
           </h2>
-          <p className={STYLES.text.body.large}>
+          <p className="corp-text-lead">
             実際の導入企業様の声
           </p>
         </div>
@@ -41,13 +41,13 @@ const SuccessStories = memo(function SuccessStories() {
           {stories.map((story, index) => (
             <div key={index} className="bg-gray-overlay rounded-xl p-8 text-center">
               <div className="text-4xl mb-4">{story.icon}</div>
-              <h3 className={STYLES.heading.h3.emphasis + " mb-2"}>
+              <h3 className="corp-heading-3 mb-2">
                 &ldquo;{story.title}&rdquo;
               </h3>
-              <p className={STYLES.text.body.medium + " text-gray-200 mb-3"}>
+              <p className="corp-text-body text-black mb-3">
                 {story.company}
               </p>
-              <p className={STYLES.text.description.medium + " text-gray-300"}>
+              <p className="corp-text-body text-black">
                 {story.result}
               </p>
             </div>

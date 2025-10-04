@@ -2,7 +2,7 @@
 
 import { memo, useState } from 'react'
 import { ChevronDown } from 'lucide-react'
-import { STYLES } from '@/lib/constants'
+import '@/app/corporate.css'
 
 const AIFaq = memo(function AIFaq() {
   const [openIndex, setOpenIndex] = useState<number | null>(null)
@@ -30,7 +30,7 @@ const AIFaq = memo(function AIFaq() {
     <section className="py-16 md:py-24 bg-gray-overlay">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <h2 className={STYLES.heading.h2.section + " mb-4"}>
+          <h2 className="corp-heading-2 mb-4">
             よくあるご質問
           </h2>
         </div>
@@ -42,16 +42,16 @@ const AIFaq = memo(function AIFaq() {
                 className="w-full px-6 py-4 text-left flex items-center justify-between hover:bg-gray-overlay transition-colors"
                 onClick={() => setOpenIndex(openIndex === index ? null : index)}
               >
-                <span className="font-medium text-white">Q: {faq.question}</span>
+                <span className="font-medium text-black">Q: {faq.question}</span>
                 <ChevronDown 
-                  className={`h-5 w-5 text-gray-300 transition-transform ${
+                  className={`h-5 w-5 text-black transition-transform ${
                     openIndex === index ? 'rotate-180' : ''
                   }`}
                 />
               </button>
               {openIndex === index && (
                 <div className="px-6 py-4 border-t border-gray-200">
-                  <p className="text-gray-300">A: {faq.answer}</p>
+                  <p className="text-black">A: {faq.answer}</p>
                 </div>
               )}
             </div>

@@ -85,7 +85,7 @@ export const BUTTONS = {
     inline-flex items-center justify-center
     px-6 py-3 
     bg-gradient-to-r from-slate-700 via-violet-600 to-slate-700 hover:from-slate-600 hover:via-violet-500 hover:to-slate-600 
-    text-white font-medium
+    text-black font-medium
     rounded-xl shadow-md hover:shadow-lg
     backdrop-blur-sm
     transition-all duration-500 ease-out

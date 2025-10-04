@@ -2,7 +2,7 @@
 
 import { memo } from 'react'
 import Link from 'next/link'
-import { STYLES } from '@/lib/constants'
+import '@/app/corporate.css'
 import LineButton from '@/components/ui/LineButton'
 
 const WhyNowCTA = memo(function WhyNowCTA() {
@@ -25,7 +25,7 @@ const WhyNowCTA = memo(function WhyNowCTA() {
     <section className="py-16 md:py-24 bg-white-overlay">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <h2 className={STYLES.heading.h2.section + " mb-4"}>
+          <h2 className="corp-heading-2 mb-4">
             今すぐ始める3つの理由
           </h2>
         </div>
@@ -33,24 +33,24 @@ const WhyNowCTA = memo(function WhyNowCTA() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
           {reasons.map((reason, index) => (
             <div key={index} className="text-center">
-              <div className="text-3xl font-bold text-white mb-4">
+              <div className="text-3xl font-bold text-black mb-4">
                 {index + 1}
               </div>
-              <h3 className={STYLES.heading.h3.emphasis + " mb-3"}>
+              <h3 className="corp-heading-3 mb-3">
                 {reason.title}
               </h3>
-              <p className={STYLES.text.description.medium}>
+              <p className="corp-text-body">
                 {reason.description}
               </p>
             </div>
           ))}
         </div>
         
-        <div className="bg-gray-900 text-white rounded-2xl p-12 text-center">
-          <h3 className={STYLES.heading.h2.subsection + " text-white mb-4"}>
+        <div className="bg-white text-black rounded-2xl p-12 text-center border-2 border-blue-200 shadow-sm">
+          <h3 className="corp-heading-2 text-black mb-4">
             次のステップ
           </h3>
-          <p className={STYLES.text.body.large + " text-white mb-6"}>
+          <p className="corp-text-lead text-black mb-6">
             まずは無料診断で、あなたの会社の「AI活用可能性」を見える化
           </p>
           
@@ -69,7 +69,7 @@ const WhyNowCTA = memo(function WhyNowCTA() {
             </div>
           </div>
           
-          <p className={STYLES.text.body.medium + " text-gray-200 mb-8"}>
+          <p className="corp-text-body text-black mb-8">
             診断後の押し売りは一切ありません
           </p>
           
@@ -78,7 +78,7 @@ const WhyNowCTA = memo(function WhyNowCTA() {
             
             <Link
               href="/#contact"
-              className="inline-flex items-center justify-center px-8 py-4 bg-white-overlay text-white font-medium rounded-lg hover:bg-gray-overlay transition-colors"
+              className="inline-flex items-center justify-center px-8 py-4 bg-white-overlay text-black font-medium rounded-lg hover:bg-gray-overlay transition-colors"
             >
               今すぐ無料診断を申し込む
             </Link>

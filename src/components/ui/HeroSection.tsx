@@ -67,15 +67,15 @@ const HeroSection = memo(function HeroSection() {
         <div className="max-w-4xl mx-auto">
           
           {/* 🚀 限界突破 - 感情的訴求 + ストーリーテリング */}
-          <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-6 tracking-tight break-words">
+          <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-black mb-6 tracking-tight break-words">
             {COMPANY_DATA.basic.tagline}
           </h1>
           
-          <p className="text-lg md:text-xl text-gray-100 mb-4 font-semibold leading-relaxed break-words">
+          <p className="text-lg md:text-xl text-black mb-4 font-semibold leading-relaxed break-words">
             {COMPANY_DATA.basic.description}
           </p>
-          
-          <p className="text-base md:text-lg text-gray-200 mb-8 font-medium leading-relaxed break-words">
+
+          <p className="text-base md:text-lg text-black mb-8 font-medium leading-relaxed break-words">
             {COMPANY_DATA.basic.subMessage}
           </p>
           
@@ -108,19 +108,19 @@ const HeroSection = memo(function HeroSection() {
           
           {/* 🚀 限界突破CTA - 感情的訴求強化 */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link 
-              href="#contact" 
-              className="group inline-flex items-center justify-center px-8 py-4 min-h-[56px] bg-gray-900 text-white font-bold rounded-lg transition-all duration-300 ease-out hover:bg-gray-800 hover:scale-[1.02] active:scale-[0.98] focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-blue-500 focus-visible:ring-offset-3 shadow-lg hover:shadow-xl"
+            <Link
+              href="#contact"
+              className="group inline-flex items-center justify-center px-8 py-4 min-h-[56px] bg-blue-600 text-white font-bold rounded-lg transition-all duration-300 ease-out hover:bg-blue-700 hover:scale-[1.02] active:scale-[0.98] focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-blue-500 focus-visible:ring-offset-3 shadow-lg hover:shadow-xl"
               role="button"
               aria-label="無料相談を始める - お問い合わせセクションへ移動"
             >
               <span>無料相談を始める</span>
               <ArrowRight className="ml-2 h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" aria-hidden="true" />
             </Link>
-            
-            <Link 
-              href="#services" 
-              className="inline-flex items-center justify-center px-8 py-4 min-h-[56px] bg-white-overlay text-white font-bold rounded-lg border border-gray-200 transition-all duration-300 ease-out hover:bg-gray-overlay hover:scale-[1.02] active:scale-[0.98] focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-blue-500 focus-visible:ring-offset-3 shadow-lg hover:shadow-xl"
+
+            <Link
+              href="#services"
+              className="inline-flex items-center justify-center px-8 py-4 min-h-[56px] bg-white text-black font-bold rounded-lg border border-gray-200 transition-all duration-300 ease-out hover:bg-gray-50 hover:scale-[1.02] active:scale-[0.98] focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-blue-500 focus-visible:ring-offset-3 shadow-lg hover:shadow-xl"
               role="button"
               aria-label="サービス詳細を見る - サービスセクションへ移動"
             >

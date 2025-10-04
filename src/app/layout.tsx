@@ -1,17 +1,25 @@
 import type { Metadata } from "next";
-import { Noto_Sans_JP } from "next/font/google";
+import { Noto_Sans_JP, Inter } from "next/font/google";
 import "./globals.css";
 import { enhancedOrganizationSchema } from "@/lib/enhanced-schema";
 import SimpleBackground from "@/components/layout/SimpleBackground";
 import MouseEffects from "@/components/effects/MouseEffects";
+import ChatWidget from "@/components/chat/ChatWidget";
 
 const notoSansJP = Noto_Sans_JP({
   variable: "--font-noto-sans-jp",
   subsets: ["latin"],
-  weight: ["400", "700"], // 必要最小限のweightのみ使用
+  weight: ["400", "700"],
   display: "swap",
-  preload: true, // プリロード有効化
-  fallback: ["system-ui", "sans-serif"], // フォールバック
+  preload: true,
+});
+
+const inter = Inter({
+  variable: "--font-inter",
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  display: "swap",
+  preload: true,
 });
 
 export const viewport = {
@@ -51,13 +59,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ja" suppressHydrationWarning>
-      <body className={`${notoSansJP.variable} font-sans antialiased`} suppressHydrationWarning>
+      <body className={`${notoSansJP.variable} ${inter.variable} font-sans antialiased`} suppressHydrationWarning>
         {/* WCAG 2.1 AAA準拠 スキップナビゲーション強化 */}
-        <div className="sr-only focus-within:not-sr-only focus-within:fixed focus-within:top-0 focus-within:left-0 focus-within:z-50 focus-within:bg-gray-900 focus-within:p-4">
-          <a href="#main-content" className="inline-block bg-white text-gray-900 font-bold px-6 py-3 rounded-lg border-2 border-gray-900 focus:outline-none focus:ring-4 focus:ring-blue-500 focus:ring-offset-2">
+        <div className="sr-only focus-within:not-sr-only focus-within:fixed focus-within:top-0 focus-within:left-0 focus-within:z-50 focus-within:bg-black focus-within:p-4">
+          <a href="#main-content" className="inline-block bg-white text-black font-bold px-6 py-3 rounded-lg border-2 border-black focus:outline-none focus:ring-4 focus:ring-blue-500 focus:ring-offset-2">
             メインコンテンツへスキップ
           </a>
-          <a href="#navigation" className="ml-2 inline-block bg-white text-gray-900 font-bold px-6 py-3 rounded-lg border-2 border-gray-900 focus:outline-none focus:ring-4 focus:ring-blue-500 focus:ring-offset-2">
+          <a href="#navigation" className="ml-2 inline-block bg-white text-black font-bold px-6 py-3 rounded-lg border-2 border-black focus:outline-none focus:ring-4 focus:ring-blue-500 focus:ring-offset-2">
             ナビゲーションへスキップ
           </a>
         </div>
@@ -75,10 +83,8 @@ export default function RootLayout({
           />
           {children}
         </div>
-        {/* Core Web Vitals最適化: リソースヒント */}
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
-        <link rel="dns-prefetch" href="https://lin.ee" />
+        {/* チャットボット */}
+        <ChatWidget />
       </body>
     </html>
   );

@@ -26,7 +26,7 @@ const UnifiedCard = memo(function UnifiedCard({
 }: UnifiedCardProps) {
   const cardStyles = {
     default: 'bg-white-overlay rounded-2xl p-8 shadow-sm border border-gray-100/50 interactive-focus transition-all duration-300 hover:shadow-lg hover:border-gray-200',
-    featured: 'bg-gradient-to-br from-indigo-900/40 to-purple-900/40 backdrop-blur-md rounded-2xl p-8 border-2 border-indigo-500/40 shadow-2xl shadow-indigo-500/20 interactive-focus transition-all duration-300 hover:shadow-2xl hover:border-indigo-400/60',
+    featured: 'bg-gradient-to-br from-blue-900/40 to-blue-900/40 backdrop-blur-md rounded-2xl p-8 border-2 border-blue-600/40 shadow-2xl shadow-blue-600/20 interactive-focus transition-all duration-300 hover:shadow-2xl hover:border-blue-500/60',
     compact: 'bg-white-overlay rounded-xl p-6 shadow-sm border border-gray-100/50 interactive-focus transition-all duration-300 hover:shadow-md hover:border-gray-200'
   }
   
@@ -37,10 +37,10 @@ const UnifiedCard = memo(function UnifiedCard({
           {typeof icon === 'string' ? (
             <div className="text-3xl">{icon}</div>
           ) : (
-            <div className="w-12 h-12 bg-gray-200/80 backdrop-blur-sm rounded-lg flex items-center justify-center">
+            <div className="w-12 h-12 bg-blue-100/80 backdrop-blur-sm rounded-lg flex items-center justify-center">
               {(() => {
                 const IconComponent = icon as LucideIcon;
-                return <IconComponent className="w-6 h-6 text-gray-200" />;
+                return <IconComponent className="w-6 h-6 text-black" />;
               })()}
             </div>
           )}

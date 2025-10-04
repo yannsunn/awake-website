@@ -45,11 +45,12 @@ export default function MouseEffects() {
     const handleMouseEnter = (e: MouseEvent) => {
       const target = e.target as HTMLElement
       if (
-        target.tagName === 'BUTTON' ||
-        target.tagName === 'A' ||
-        target.classList.contains('clickable') ||
-        target.closest('button') ||
-        target.closest('a')
+        target && (
+          target.tagName === 'BUTTON' ||
+          target.tagName === 'A' ||
+          (target.classList && target.classList.contains('clickable')) ||
+          (typeof target.closest === 'function' && (target.closest('button') || target.closest('a')))
+        )
       ) {
         setCursorScale(1.5)
         setIsHovering(true)
@@ -107,11 +108,11 @@ export default function MouseEffects() {
           }}
         >
           <div className={`
-            w-full h-full rounded-full border-2 
-            ${isHovering ? 'border-purple-400 bg-purple-400/20' : 'border-purple-500/50 bg-purple-500/10'}
+            w-full h-full rounded-full border-2
+            ${isHovering ? 'border-blue-300 bg-blue-400/20' : 'border-blue-600/50 bg-blue-600/10'}
             backdrop-blur-sm transition-colors duration-200
           `}>
-            <div className="absolute inset-0 rounded-full animate-ping bg-purple-400/30" />
+            <div className="absolute inset-0 rounded-full animate-ping bg-blue-400/30" />
           </div>
         </motion.div>
 
@@ -183,7 +184,7 @@ export default function MouseEffects() {
           mass: 2
         }}
       >
-        <div className="w-[400px] h-[400px] rounded-full bg-gradient-radial from-purple-500/10 via-blue-500/5 to-transparent blur-3xl" />
+        <div className="w-[400px] h-[400px] rounded-full bg-gradient-radial from-slate-600/10 via-blue-500/5 to-transparent blur-3xl" />
       </motion.div>
 
       {/* スタイル: デフォルトカーソルを非表示 */}

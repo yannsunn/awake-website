@@ -25,19 +25,19 @@ export const ServiceCard = memo(function ServiceCard({
   return (
     <div className={`
       bg-white-overlay rounded-2xl p-8 shadow-sm border
-      ${featured ? 'border-gray-900 ring-2 ring-gray-900 ring-opacity-10' : 'border-gray-100'}
+      ${featured ? 'border-blue-600 ring-2 ring-blue-600 ring-opacity-10' : 'border-blue-100'}
     `}>
       {featured && (
         <div className="text-center mb-4">
-          <span className="bg-gray-900 text-white px-4 py-1 rounded-full text-sm font-medium">
+          <span className="bg-blue-600 text-white px-4 py-1 rounded-full text-sm font-medium">
             人気サービス
           </span>
         </div>
       )}
-      <h3 className="text-2xl font-medium text-gray-900 mb-4">
+      <h3 className="text-2xl font-medium text-black mb-4">
         {service.title}
       </h3>
-      <p className="text-gray-600 mb-8 leading-relaxed">
+      <p className="text-black mb-8 leading-relaxed">
         {service.description}
       </p>
       <UltraButton href={service.href} variant={featured ? 'primary' : 'secondary'}>
@@ -64,28 +64,28 @@ export const ContactMethod = memo(function ContactMethod({
   highlighted?: boolean
 }) {
   const ContentWrapper = link ? 'a' : 'div'
-  const wrapperProps = link ? { href: link, className: 'hover:text-gray-900' } : {}
+  const wrapperProps = link ? { href: link, className: 'hover:text-black' } : {}
 
   return (
-    <div className={`flex items-start ${highlighted ? 'p-6 bg-green-900/20 backdrop-blur-sm border border-green-700 rounded-lg' : ''}`}>
+    <div className={`flex items-start ${highlighted ? 'p-6 bg-green-50 border border-green-200 rounded-lg' : ''}`}>
       <div className={`w-12 h-12 rounded-lg flex items-center justify-center mr-4 mt-1 ${
-        highlighted ? 'bg-green-800/50 backdrop-blur-sm' : 'bg-gray-700/50'
+        highlighted ? 'bg-green-100' : 'bg-blue-100'
       }`}>
         {icon}
       </div>
       <div>
-        <h4 className={`font-medium mb-1 ${highlighted ? 'text-green-400' : 'text-white'}`}>
+        <h4 className={`font-medium mb-1 ${highlighted ? 'text-green-900' : 'text-black'}`}>
           {title}
         </h4>
-        <p className={`${highlighted ? 'text-green-300' : 'text-gray-300'} mb-2`}>
+        <p className={`${highlighted ? 'text-green-800' : 'text-black'} mb-2 whitespace-pre-line`}>
           {content}
         </p>
         {link && linkText && (
-          <a 
+          <a
             href={link}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-green-500 to-green-600 text-white text-sm font-medium rounded-lg hover:from-green-600 hover:to-green-700 shadow-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-offset-2 focus:ring-offset-gray-800"
+            className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-blue-500 to-blue-600 text-white text-sm font-medium rounded-lg hover:from-blue-600 hover:to-blue-700 shadow-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2"
           >
             {linkText}
           </a>
@@ -113,8 +113,8 @@ export const CompanyInfoGrid = memo(function CompanyInfoGrid({
             {item.icon}
           </div>
           <div>
-            <h4 className="font-medium text-gray-900 mb-1">{item.label}</h4>
-            <div className="text-gray-600">{item.value}</div>
+            <h4 className="font-medium text-black mb-1">{item.label}</h4>
+            <div className="text-black">{item.value}</div>
           </div>
         </div>
       ))}
@@ -136,14 +136,14 @@ export const FeatureHighlight = memo(function FeatureHighlight({
 }) {
   return (
     <div className="text-center p-6 rounded-xl">
-      <div className="w-16 h-16 bg-gray-900 rounded-full flex items-center justify-center mx-auto mb-4">
+      <div className="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
         {icon}
       </div>
       {metric && (
-        <div className="text-3xl font-medium text-gray-900 mb-2">{metric}</div>
+        <div className="text-3xl font-medium text-black mb-2">{metric}</div>
       )}
-      <h3 className="text-lg font-medium text-gray-900 mb-3">{title}</h3>
-      <p className="text-gray-600 text-sm">{description}</p>
+      <h3 className="text-lg font-medium text-black mb-3">{title}</h3>
+      <p className="text-black text-sm">{description}</p>
     </div>
   )
 })
@@ -164,24 +164,24 @@ export const PricingCard = memo(function PricingCard({
   return (
     <div className={`
       bg-white-overlay rounded-2xl p-8 shadow-sm border
-      ${featured ? 'border-gray-900 ring-2 ring-gray-900 ring-opacity-10' : 'border-gray-200'}
+      ${featured ? 'border-blue-600 ring-2 ring-blue-600 ring-opacity-10' : 'border-blue-200'}
     `}>
       {featured && (
         <div className="text-center mb-4">
-          <span className="bg-gray-900 text-white px-4 py-1 rounded-full text-sm font-medium">
+          <span className="bg-blue-600 text-white px-4 py-1 rounded-full text-sm font-medium">
             人気プラン
           </span>
         </div>
       )}
-      <h3 className="text-xl font-medium text-gray-900 mb-2">{plan.name}</h3>
-      <div className="text-3xl font-medium text-gray-900 mb-6">{plan.price}</div>
+      <h3 className="text-xl font-medium text-black mb-2">{plan.name}</h3>
+      <div className="text-3xl font-medium text-black mb-6">{plan.price}</div>
       {plan.duration && (
-        <div className="text-sm text-gray-500 mb-6">期間: {plan.duration}</div>
+        <div className="text-sm text-black mb-6">期間: {plan.duration}</div>
       )}
       <ul className="space-y-3 mb-8">
         {plan.features.map((feature, index) => (
-          <li key={index} className="text-gray-600 text-sm flex items-center">
-            <span className="w-2 h-2 bg-gray-900 rounded-full mr-3"></span>
+          <li key={index} className="text-black text-sm flex items-center">
+            <span className="w-2 h-2 bg-blue-600 rounded-full mr-3"></span>
             {feature}
           </li>
         ))}

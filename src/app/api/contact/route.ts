@@ -28,14 +28,16 @@ export async function POST(request: NextRequest) {
     // 3. Send to CRM
     // For now, we'll simulate success
 
-    console.log('Contact form submission:', {
-      name,
-      email,
-      company: company || 'Not provided',
-      service: service || 'Not specified',
-      message,
-      timestamp: new Date().toISOString()
-    })
+    if (process.env.NODE_ENV === 'development') {
+      console.log('Contact form submission:', {
+        name,
+        email,
+        company: company || 'Not provided',
+        service: service || 'Not specified',
+        message,
+        timestamp: new Date().toISOString()
+      })
+    }
 
     // Return success response
     return NextResponse.json({
