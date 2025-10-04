@@ -4,8 +4,8 @@ import Link from 'next/link'
 import { memo } from 'react'
 import { MapPin, Clock, Phone, Mail, ArrowUpRight } from 'lucide-react'
 import { COMPANY_DATA } from '@/lib/company-data'
-import { STYLES } from '@/lib/constants'
 import LineButton from '@/components/ui/LineButton'
+import '@/app/corporate.css'
 
 const Footer = memo(function Footer() {
   const currentYear = new Date().getFullYear()
@@ -33,23 +33,21 @@ const Footer = memo(function Footer() {
   ]
   
   const legalLinks = [
-    { href: '/terms', title: 'AI News Automation 利用規約' },
-    { href: '/privacy', title: 'AI News Automation プライバシーポリシー' },
     { href: '/legal/terms', title: '利用規約' },
     { href: '/legal/privacy-policy', title: 'プライバシーポリシー' },
     { href: '/legal/tokusho', title: '特定商取引法に基づく表記' }
   ]
 
   return (
-    <footer className="relative bg-gray-900/90 backdrop-blur-sm mt-auto" role="contentinfo">
+    <footer className="relative corp-footer mt-auto" role="contentinfo">
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
           
           <div className="lg:col-span-1">
-            <h2 className={`${STYLES.heading.h3.card} text-white mb-6`}>
+            <h2 className="corp-heading-3 text-white font-bold mb-6">
               {COMPANY_DATA.basic.name}
             </h2>
-            <p className={`${STYLES.text.body.medium} text-white mb-6`}>
+            <p className="corp-text-body text-white font-medium mb-6">
               {COMPANY_DATA.basic.mission}
             </p>
             
@@ -57,33 +55,33 @@ const Footer = memo(function Footer() {
               <div className="flex items-start">
                 <MapPin className="w-5 h-5 text-white mr-3 mt-0.5 flex-shrink-0" />
                 <div>
-                  <p className={`${STYLES.text.description.small} text-white`}>
+                  <p className="corp-text-small text-white font-medium">
                     {COMPANY_DATA.contact.address.postal}
                   </p>
-                  <p className={`${STYLES.text.description.small} text-white`}>
+                  <p className="corp-text-small text-white font-medium">
                     {COMPANY_DATA.contact.address.full}
                   </p>
                 </div>
               </div>
-              
+
               <div className="flex items-center">
                 <Phone className="w-5 h-5 text-white mr-3 flex-shrink-0" />
-                <a 
+                <a
                   href={`tel:${COMPANY_DATA.contact.phone}`}
-                  className={`${STYLES.text.description.small} text-white hover:text-gray-200 transition-all duration-300 ease-out hover:scale-[1.02] focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-blue-400 focus-visible:ring-offset-3`}
+                  className="corp-text-small text-white font-medium hover:text-blue-100 transition-all duration-300 ease-out hover:scale-[1.02] focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-blue-400 focus-visible:ring-offset-3"
                   aria-label="電話でお問い合わせ"
                 >
                   {COMPANY_DATA.contact.phone}
                 </a>
               </div>
-              
+
               <div className="flex items-start">
                 <Clock className="w-5 h-5 text-white mr-3 mt-0.5 flex-shrink-0" />
                 <div>
-                  <p className={`${STYLES.text.description.small} text-white`}>
+                  <p className="corp-text-small text-white font-medium">
                     {COMPANY_DATA.contact.businessHours.weekdays}
                   </p>
-                  <p className={`${STYLES.text.description.small} text-white`}>
+                  <p className="corp-text-small text-white font-medium">
                     {COMPANY_DATA.contact.businessHours.weekend}
                   </p>
                 </div>
@@ -92,15 +90,15 @@ const Footer = memo(function Footer() {
           </div>
           
           <div>
-            <h3 className={`${STYLES.heading.h4} text-white mb-6`}>
+            <h3 className="corp-heading-3 text-white font-bold mb-6">
               サービス
             </h3>
             <ul className="space-y-3">
               {serviceLinks.map((link) => (
                 <li key={link.href}>
-                  <Link 
+                  <Link
                     href={link.href}
-                    className={`${STYLES.text.body.small} text-white hover:text-gray-200 transition-all duration-300 ease-out hover:scale-[1.02] focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-blue-400 focus-visible:ring-offset-3 inline-flex items-center group`}
+                    className="corp-text-body text-white font-medium hover:text-blue-100 transition-all duration-300 ease-out hover:scale-[1.02] focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-blue-400 focus-visible:ring-offset-3 inline-flex items-center group"
                     {...(link.external && {
                       target: '_blank',
                       rel: 'noopener noreferrer',
@@ -118,15 +116,15 @@ const Footer = memo(function Footer() {
           </div>
           
           <div>
-            <h3 className={`${STYLES.heading.h4} text-white mb-6`}>
+            <h3 className="corp-heading-3 text-white font-bold mb-6">
               会社情報
             </h3>
             <ul className="space-y-3">
               {companyLinks.map((link) => (
                 <li key={link.href}>
-                  <Link 
+                  <Link
                     href={link.href}
-                    className={`${STYLES.text.body.small} text-white hover:text-gray-200 transition-all duration-300 ease-out hover:scale-[1.02] focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-blue-400 focus-visible:ring-offset-3`}
+                    className="corp-text-body text-white font-medium hover:text-blue-100 transition-all duration-300 ease-out hover:scale-[1.02] focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-blue-400 focus-visible:ring-offset-3"
                   >
                     {link.title}
                   </Link>
@@ -134,12 +132,12 @@ const Footer = memo(function Footer() {
               ))}
             </ul>
           </div>
-          
+
           <div>
-            <h3 className={`${STYLES.heading.h4} text-white mb-6`}>
+            <h3 className="corp-heading-3 text-white font-bold mb-6">
               お問い合わせ
             </h3>
-            <p className={`${STYLES.text.body.small} text-white mb-6`}>
+            <p className="corp-text-body text-white font-medium mb-6">
               お気軽にご相談ください。
               LINEなら最速で返信いたします。
             </p>
@@ -153,14 +151,14 @@ const Footer = memo(function Footer() {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className={`${STYLES.text.description.small} text-white hover:text-gray-200 transition-all duration-300 ease-out hover:scale-[1.02] focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-blue-400 focus-visible:ring-offset-3`}
+                  className="corp-text-small text-white font-medium hover:text-blue-100 transition-all duration-300 ease-out hover:scale-[1.02] focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-blue-400 focus-visible:ring-offset-3"
                 >
                   {link.title}
                 </Link>
               ))}
             </div>
-            
-            <p className={`${STYLES.text.description.small} text-white`}>
+
+            <p className="corp-text-small text-white font-medium">
               © {currentYear} {COMPANY_DATA.basic.name}. All rights reserved.
             </p>
           </div>

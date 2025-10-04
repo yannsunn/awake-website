@@ -35,16 +35,16 @@ export default function UltraSection({
       <div className={pattern.content}>
         {title && (
           <div className="text-center mb-8 sm:mb-12 lg:mb-16">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 px-4 sm:px-0" style={TEXT_SHADOW.heading}>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-black mb-4 px-4 sm:px-0" style={TEXT_SHADOW.heading}>
               {title}
             </h2>
             {subtitle && (
-              <p className="text-lg sm:text-xl md:text-2xl text-gray-200 mb-4 px-4 sm:px-0" style={TEXT_SHADOW.body}>
+              <p className="text-lg sm:text-xl md:text-2xl text-black mb-4 px-4 sm:px-0 font-bold" style={TEXT_SHADOW.body}>
                 {subtitle}
               </p>
             )}
             {description && (
-              <p className="text-base sm:text-lg md:text-xl text-gray-300 px-4 sm:px-0" style={TEXT_SHADOW.small}>
+              <p className="text-base sm:text-lg md:text-xl text-black px-4 sm:px-0" style={TEXT_SHADOW.small}>
                 {description}
               </p>
             )}
@@ -85,7 +85,7 @@ export function UltraHero({
       )}>
         <h1 
           className={cn(
-            "font-bold mb-4 sm:mb-6 text-white",
+            "font-bold mb-4 sm:mb-6 text-black",
             RESPONSIVE_TYPOGRAPHY.lineHeight.tight
           )}
           style={{
@@ -98,7 +98,7 @@ export function UltraHero({
         {subtitle && (
           <p 
             className={cn(
-              "text-white font-medium mb-4 sm:mb-6",
+              "text-black font-medium mb-4 sm:mb-6",
               RESPONSIVE_TYPOGRAPHY.lineHeight.relaxed
             )}
             style={{
@@ -110,9 +110,9 @@ export function UltraHero({
           </p>
         )}
         {description && (
-          <p 
+          <p
             className={cn(
-              "text-gray-200 mt-4",
+              "text-black mt-4",
               RESPONSIVE_TYPOGRAPHY.lineHeight.relaxed
             )}
             style={{
@@ -150,29 +150,29 @@ export function UltraCTA({
   return (
     <UltraSection variant="medium" className={className}>
       <div className="text-center max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight" style={TEXT_SHADOW.heading}>
+        <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-black mb-6 leading-tight" style={TEXT_SHADOW.heading}>
           {title}
         </h2>
         {subtitle && (
-          <p className={`text-lg sm:text-xl md:text-2xl text-white mb-6 leading-relaxed ${TEXT_BG_STYLES.default}`} style={TEXT_SHADOW.body}>
+          <p className={`text-lg sm:text-xl md:text-2xl text-black mb-6 leading-relaxed ${TEXT_BG_STYLES.default}`} style={TEXT_SHADOW.body}>
             {subtitle}
           </p>
         )}
         {description && (
-          <p className={`text-base sm:text-lg md:text-xl text-gray-200 mb-8 leading-relaxed ${TEXT_BG_STYLES.default}`} style={TEXT_SHADOW.body}>
+          <p className={`text-base sm:text-lg md:text-xl text-black mb-8 leading-relaxed ${TEXT_BG_STYLES.default}`} style={TEXT_SHADOW.body}>
             {description}
           </p>
         )}
         {buttons && buttons.length > 0 && (
           <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center">
             {buttons.map((button, index) => (
-              <a 
+              <a
                 key={index}
                 href={button.href}
                 className={`inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-bold rounded-lg transition-all shadow-xl hover:shadow-2xl transform hover:scale-105 w-full sm:w-auto ${
                   button.variant === 'primary'
-                    ? 'bg-gradient-to-r from-indigo-600 to-purple-600 text-white hover:from-indigo-700 hover:to-purple-700'
-                    : 'bg-white text-gray-900 hover:bg-gray-100'
+                    ? 'bg-gradient-to-r from-blue-600 to-sky-600 text-white hover:from-blue-700 hover:to-sky-700'
+                    : 'bg-white text-blue-900 hover:bg-blue-50 border-2 border-blue-200'
                 }`}
                 style={TEXT_SHADOW.small}
               >

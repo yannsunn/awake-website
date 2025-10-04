@@ -2,11 +2,9 @@ import type { Metadata } from 'next'
 import { Plus, Minus } from 'lucide-react'
 import { COMPANY_DATA } from '@/lib/company-data'
 import PageLayout from '@/components/layout/PageLayout'
-import { STYLES } from '@/lib/constants'
 import { createFAQSchema } from '@/lib/enhanced-schema'
 import LineButton from '@/components/ui/LineButton'
-import UltraSection, { UltraHero, UltraCTA } from '@/components/ui/UltraSection'
-import { TEXT_SHADOW, CARD_STYLES } from '@/lib/ultra-styles'
+import '@/app/corporate.css'
 
 export const metadata: Metadata = {
   title: `よくある質問 | ${COMPANY_DATA.basic.name}`,
@@ -136,48 +134,58 @@ export default function FAQPage() {
       />
 
       {/* Hero Section */}
-      <UltraHero
-        title="よくある質問"
-        subtitle="お客様からよくいただくご質問をまとめました。"
-        description="こちらにない質問は、お気軽にお問い合わせください。"
-        className="bg-gray-900/80"
-      />
+      <section className="relative min-h-[40vh] flex items-center justify-center overflow-hidden pt-24 md:pt-28 corp-hero">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="text-center max-w-4xl mx-auto">
+            <h1 className="corp-heading-2 mb-6 text-black leading-tight">
+              よくある質問
+            </h1>
+            <p className="corp-text-lead text-black font-bold mb-4">
+              お客様からよくいただくご質問をまとめました。
+            </p>
+            <p className="corp-text-body text-black">
+              こちらにない質問は、お気軽にお問い合わせください。
+            </p>
+          </div>
+        </div>
+      </section>
 
 
       {/* FAQ Content */}
-      <UltraSection className="bg-gray-800/60">
-        <div className="space-y-8 sm:space-y-12">
+      <section className="py-16 md:py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="space-y-8 sm:space-y-12">
           {faqCategories.map((category, categoryIndex) => (
             <div key={categoryIndex}>
-              <h2 className={STYLES.heading.h2.subsection + " text-white mb-6 sm:mb-8 pb-2 border-b border-gray-600"} style={TEXT_SHADOW.small}>
+              <h2 className="corp-heading-2 text-black mb-6 sm:mb-8 pb-2 border-b border-blue-200">
                 {category.category}
               </h2>
-              
+
               <div className="space-y-4">
                 {category.questions.map((faq, faqIndex) => (
-                  <details 
-                    key={faqIndex} 
-                    className="group bg-gray-800/90 border border-gray-700 rounded-lg overflow-hidden"
+                  <details
+                    key={faqIndex}
+                    className="group bg-white border border-blue-200 rounded-lg overflow-hidden shadow-md"
                   >
-                    <summary className="flex items-center justify-between p-4 sm:p-6 cursor-pointer hover:bg-gray-600/50 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2">
-                      <h3 className={STYLES.heading.h3.emphasis + " text-white pr-4"} style={TEXT_SHADOW.small}>
+                    <summary className="flex items-center justify-between p-4 sm:p-6 cursor-pointer hover:bg-blue-50 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2">
+                      <h3 className="corp-heading-3 text-black pr-4">
                         {faq.question}
                       </h3>
                       <div className="flex-shrink-0">
-                        <Plus 
-                          className="h-5 w-5 text-gray-200 group-open:hidden" 
+                        <Plus
+                          className="h-5 w-5 text-gray-600 group-open:hidden"
                           aria-hidden="true"
                         />
-                        <Minus 
-                          className="h-5 w-5 text-gray-200 hidden group-open:block" 
+                        <Minus
+                          className="h-5 w-5 text-gray-600 hidden group-open:block"
                           aria-hidden="true"
                         />
                       </div>
                     </summary>
-                    
+
                     <div className="px-4 sm:px-6 pb-4 sm:pb-6">
-                      <div className="pt-4 border-t border-gray-600">
-                        <p className={STYLES.text.description.medium + " text-gray-200"} style={TEXT_SHADOW.small} dangerouslySetInnerHTML={{ __html: faq.answer }} />
+                      <div className="pt-4 border-t border-blue-100">
+                        <p className="corp-text-body text-black" dangerouslySetInnerHTML={{ __html: faq.answer }} />
                       </div>
                     </div>
                   </details>
@@ -185,23 +193,30 @@ export default function FAQPage() {
               </div>
             </div>
           ))}
-        </div>
-      </UltraSection>
-
-      {/* Contact Section */}
-      <UltraSection
-        title="まだ疑問が解決しませんか？"
-        subtitle="お気軽にお問い合わせください。専門スタッフが丁寧にお答えいたします。"
-        className="bg-gray-900/80"
-      >
-        <div className="text-center">
-          <div className="bg-gray-800/90 border border-gray-700 p-6 sm:p-8 rounded-xl shadow-sm">
-            <h3 className={STYLES.heading.h2.subsection + " text-white mb-4 text-center"} style={TEXT_SHADOW.small}>💬 公式LINEでお気軽に</h3>
-            <p className={STYLES.text.body.medium + " text-gray-200 text-center mb-6"} style={TEXT_SHADOW.small}>最速返信！まずはLINEでお話をお聞かせください</p>
-            <LineButton className="w-full" size="large" />
           </div>
         </div>
-      </UltraSection>
+      </section>
+
+      {/* Contact Section */}
+      <section className="py-16 md:py-24 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="corp-heading-2 mb-4 text-black">
+              まだ疑問が解決しませんか？
+            </h2>
+            <p className="corp-text-lead text-black">
+              お気軽にお問い合わせください。専門スタッフが丁寧にお答えいたします。
+            </p>
+          </div>
+          <div className="text-center">
+            <div className="bg-white border border-blue-200 p-6 sm:p-8 rounded-xl shadow-lg">
+              <h3 className="corp-heading-2 text-black mb-4 text-center">💬 公式LINEでお気軽に</h3>
+              <p className="corp-text-body text-black text-center mb-6">最速迓信！まずはLINEでお話をお聞かせください</p>
+              <LineButton className="w-full" size="large" />
+            </div>
+          </div>
+        </div>
+      </section>
     </PageLayout>
   )
 }

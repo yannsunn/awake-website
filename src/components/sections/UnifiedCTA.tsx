@@ -3,7 +3,7 @@
 import { memo } from 'react'
 import LineButton from '@/components/ui/LineButton'
 import UltraButton from '@/components/ui/UltraButton'
-import { STYLES } from '@/lib/constants'
+import { motion } from 'framer-motion'
 
 interface UnifiedCTAProps {
   title: string
@@ -14,56 +14,81 @@ interface UnifiedCTAProps {
   className?: string
 }
 
-// 🚀 統一されたCTAセクション
+// 🚀 統一されたCTAセクション（白基調）
 const UnifiedCTA = memo(function UnifiedCTA({
   title,
   subtitle,
   description,
-  theme = 'dark',
+  theme = 'light',
   showContactButton = true,
   className = ''
 }: UnifiedCTAProps) {
-  const bgClass = theme === 'dark' ? 'bg-gray-900 text-white' : 'bg-gray-overlay'
-  const textClass = theme === 'dark' ? 'text-white' : 'text-white'
-  const subtitleClass = theme === 'dark' ? 'text-gray-200' : 'text-gray-300'
-  
+  const bgClass = theme === 'dark' ? 'bg-gradient-to-br from-blue-50 to-violet-50' : 'bg-gradient-to-br from-white to-blue-50'
+
   return (
     <section className={`py-16 md:py-24 ${bgClass} ${className}`}>
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center">
-          <h2 className={`${STYLES.heading.h2.section} ${textClass} mb-4`}>
+        <motion.div
+          className="text-center"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
+          <motion.h2
+            className="corp-heading-2 text-black mb-4"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+          >
             {title}
-          </h2>
-          
+          </motion.h2>
+
           {subtitle && (
-            <p className={`${STYLES.text.body.large} ${textClass} mb-4`}>
+            <motion.p
+              className="corp-text-lead text-black mb-4"
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+            >
               {subtitle}
-            </p>
+            </motion.p>
           )}
-          
+
           {description && (
-            <p className={`${STYLES.text.body.medium} ${subtitleClass} mb-8`}>
+            <motion.p
+              className="corp-text-body text-gray-600 mb-8"
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+            >
               {description}
-            </p>
+            </motion.p>
           )}
-          
-          <div className="flex flex-col md:flex-row gap-4 justify-center items-center">
+
+          <motion.div
+            className="flex flex-col md:flex-row gap-4 justify-center items-center"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+          >
             <LineButton size="medium" />
-            
+
             {showContactButton && (
               <UltraButton
                 href="/#contact"
                 variant="primary"
-                className={theme === 'dark' ? 
-                  "bg-white-overlay text-white hover:bg-gray-overlay" : 
-                  "bg-gray-900 text-white hover:bg-gray-800"
-                }
+                className="corp-button-primary"
               >
                 無料相談を予約する
               </UltraButton>
             )}
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       </div>
     </section>
   )

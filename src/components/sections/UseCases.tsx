@@ -1,8 +1,7 @@
 'use client'
 
 import { memo } from 'react'
-import { STYLES } from '@/lib/constants'
-import { TEXT_SHADOW } from '@/lib/ultra-styles'
+import '@/app/corporate.css'
 
 const UseCases = memo(function UseCases() {
   const industries = [
@@ -49,8 +48,8 @@ const UseCases = memo(function UseCases() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* LINE自動化ワークフロー */}
         <div className="mb-16">
-          <div className="bg-gray-800/90 backdrop-blur-sm rounded-2xl p-8 shadow-2xl border border-green-500/30">
-            <h3 className={STYLES.heading.h3.emphasis + " text-white text-center mb-6"} style={TEXT_SHADOW.heading}>
+          <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-8 shadow-2xl border border-blue-200">
+            <h3 className="corp-heading-3 text-black text-center mb-6">
               LINEと連携した自動化の実例
             </h3>
             <div className="relative rounded-xl overflow-hidden bg-white/95 p-4">
@@ -61,22 +60,22 @@ const UseCases = memo(function UseCases() {
               />
             </div>
             <div className="mt-6 space-y-3">
-              <h4 className="text-white font-semibold">このLINE連携で実現できること：</h4>
-              <ul className="space-y-2 text-gray-300">
+              <h4 className="text-black font-semibold">このLINE連携で実現できること：</h4>
+              <ul className="space-y-2 text-black">
                 <li className="flex items-start">
-                  <span className="text-green-400 mr-2">✓</span>
+                  <span className="text-blue-600 mr-2">✓</span>
                   <span>スプレッドシートのデータをLINEに通知</span>
                 </li>
                 <li className="flex items-start">
-                  <span className="text-green-400 mr-2">✓</span>
+                  <span className="text-blue-600 mr-2">✓</span>
                   <span>日付をスケジュール設定して定期実行</span>
                 </li>
                 <li className="flex items-start">
-                  <span className="text-green-400 mr-2">✓</span>
+                  <span className="text-blue-600 mr-2">✓</span>
                   <span>複数のデータソースを統合・整理</span>
                 </li>
                 <li className="flex items-start">
-                  <span className="text-green-400 mr-2">✓</span>
+                  <span className="text-blue-600 mr-2">✓</span>
                   <span>条件に応じた自動分岐処理</span>
                 </li>
               </ul>
@@ -85,10 +84,10 @@ const UseCases = memo(function UseCases() {
         </div>
         
         <div className="text-center mb-12">
-          <h2 className={STYLES.heading.h2.section + " mb-4"}>
+          <h2 className="corp-heading-2 mb-4">
             具体的な活用シーン
           </h2>
-          <p className={STYLES.text.body.large}>
+          <p className="corp-text-lead">
             あなたの業界でも、こんな成果が期待できます
           </p>
         </div>
@@ -97,14 +96,14 @@ const UseCases = memo(function UseCases() {
           {industries.map((industry, index) => (
             <div key={index} className="bg-gray-overlay rounded-xl p-6">
               <div className="text-3xl mb-4">{industry.icon}</div>
-              <h3 className={STYLES.heading.h3.card + " mb-4 text-white"} style={TEXT_SHADOW.heading}>
+              <h3 className="corp-heading-3 mb-4 text-black">
                 {industry.title}
               </h3>
               <ul className="space-y-2">
                 {industry.items.map((item, idx) => (
                   <li key={idx} className="flex items-start">
-                    <span className="text-white mr-2">•</span>
-                    <span className="text-white text-sm" style={TEXT_SHADOW.body}>{item}</span>
+                    <span className="text-black mr-2">•</span>
+                    <span className="corp-text-small text-black">{item}</span>
                   </li>
                 ))}
               </ul>

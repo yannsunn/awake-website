@@ -8,7 +8,8 @@ import ErrorBoundary from '../ErrorBoundary'
 import { createBreadcrumbSchema } from '@/lib/enhanced-schema'
 import { COMPANY_DATA } from '@/lib/company-data'
 import { cn } from '@/lib/utils'
-import { SPACING, STYLES } from '@/lib/constants'
+import { SPACING } from '@/lib/constants'
+import '@/app/corporate.css'
 
 interface PageTemplateProps {
   children: ReactNode
@@ -60,7 +61,7 @@ const PageTemplate = ({
                   <li key={index} className="flex items-center">
                     {index > 0 && (
                       <svg
-                        className="w-4 h-4 text-gray-300 mx-2"
+                        className="w-4 h-4 text-black mx-2"
                         fill="currentColor"
                         viewBox="0 0 20 20"
                         aria-hidden="true"
@@ -74,7 +75,7 @@ const PageTemplate = ({
                     )}
                     {index === breadcrumbs.length - 1 ? (
                       <span
-                        className="text-gray-300"
+                        className="text-black"
                         aria-current="page"
                       >
                         {crumb.name}
@@ -168,13 +169,13 @@ export const PageHeader = ({
     >
       <div className={cn('w-full text-center', SPACING.section.container)}>
         <h1 className={`text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight mb-6 ${
-          backgroundImage ? 'text-white' : 'text-white'
+          backgroundImage ? 'text-black' : 'text-black'
         }`}>
           {title}
         </h1>
         {subtitle && (
           <p className={`text-xl sm:text-2xl leading-relaxed ${
-            backgroundImage ? 'text-gray-100' : 'text-gray-300'
+            backgroundImage ? 'text-black' : 'text-black'
           }`}>
             {subtitle}
           </p>

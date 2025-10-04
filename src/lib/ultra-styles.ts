@@ -1,85 +1,13 @@
-// 🚀 ULTRA STYLES - 限界突破デザインシステム
+// 🚀 ULTRA STYLES - constants.tsへの統合完了
+// このファイルは後方互換性のためのre-exportです
 
-import { cn } from '@/lib/utils'
-import { TEXT_SHADOW } from '@/lib/styles'
-export { TEXT_SHADOW }
+export {
+  TEXT_SHADOW,
+  CARD_STYLES,
+  TEXT_BG_STYLES,
+  SECTION_PATTERNS
+} from '@/lib/constants'
 
-// セクション背景パターン
-export const SECTION_PATTERNS = {
-  // 最も濃い背景（メインセクション）
-  dark: {
-    wrapper: 'py-12 sm:py-16 md:py-20 relative',
-    overlay: 'absolute inset-0 bg-gray-900/60',
-    content: 'relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 md:px-8'
-  },
-  // 中間の背景（サブセクション）
-  medium: {
-    wrapper: 'py-12 sm:py-16 md:py-20 relative',
-    overlay: 'absolute inset-0 bg-gray-900/40 backdrop-blur-sm',
-    content: 'relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 md:px-8'
-  },
-  // 軽い背景（補助セクション）
-  light: {
-    wrapper: 'py-12 sm:py-16 md:py-20 relative',
-    overlay: 'absolute inset-0 bg-white/95 backdrop-blur-sm',
-    content: 'relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 md:px-8'
-  }
-} as const
-
-// カードスタイル統一
-export const CARD_STYLES = {
-  // プレミアムカード
-  premium: 'bg-gray-800/95 border-2 border-indigo-500/30 rounded-xl sm:rounded-2xl p-6 sm:p-8 lg:p-10 shadow-2xl hover:shadow-3xl transition-all duration-300 hover:scale-[1.02]',
-  // スタンダードカード
-  standard: 'bg-gray-800/90 border border-gray-700 rounded-lg sm:rounded-xl p-4 sm:p-6 lg:p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-[1.01]',
-  // コンパクトカード
-  compact: 'bg-gray-800/90 border border-gray-700 rounded-lg p-3 sm:p-4 lg:p-6 shadow-md hover:shadow-lg transition-all duration-300'
-} as const
-
-// 統一セクションコンポーネント
-export function createSection(
-  variant: keyof typeof SECTION_PATTERNS = 'dark',
-  className?: string
-) {
-  const pattern = SECTION_PATTERNS[variant]
-  return {
-    wrapper: cn(pattern.wrapper, className),
-    overlay: pattern.overlay,
-    content: pattern.content
-  }
-}
-
-// ヒーローセクションスタイル
-export const HERO_STYLES = {
-  wrapper: 'relative min-h-[50vh] flex items-center justify-center overflow-hidden pt-20 sm:pt-24 md:pt-32 pb-20',
-  heading: (className?: string) => cn('text-4xl sm:text-5xl md:text-6xl font-extrabold mb-6 text-white', className),
-  subheading: 'text-xl sm:text-2xl text-white font-semibold mb-4 bg-gray-800/90 rounded-lg px-6 py-3 inline-block shadow-xl',
-  description: 'text-base sm:text-lg text-gray-200 bg-gray-800/90 rounded-lg px-6 py-3 inline-block shadow-xl'
-} as const
-
-// CTAセクションスタイル
-export const CTA_STYLES = {
-  wrapper: 'text-center',
-  heading: 'text-2xl sm:text-3xl font-bold text-white mb-6',
-  description: 'text-lg text-white mb-8 bg-gray-800/90 rounded-lg px-6 py-3 inline-block shadow-xl',
-  button: 'inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-indigo-600 to-purple-600 text-white hover:from-indigo-700 hover:to-purple-700 shadow-xl font-bold rounded-lg transition-all'
-} as const
-
-// テキスト背景スタイル（最も使用頻度が高い）
-export const TEXT_BG_STYLES = {
-  default: '',  // 背景なしでシンプルに
-  compact: '',  // 背景なしでシンプルに
-  large: ''     // 背景なしでシンプルに
-} as const
-
-// インタラクティブ要素はstyles.tsから取得
+// レガシーエクスポート - 段階的に削除予定
 import { INTERACTIVE_STYLES } from '@/lib/styles'
 export { INTERACTIVE_STYLES }
-
-// 限界突破アニメーション
-export const ANIMATIONS = {
-  fadeInUp: 'animate-fade-in-up',
-  slideIn: 'animate-slide-in',
-  pulse: 'animate-pulse-slow',
-  glow: 'animate-glow-pulse'
-} as const

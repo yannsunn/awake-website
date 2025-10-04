@@ -1,7 +1,7 @@
 'use client'
 
 import { memo } from 'react'
-import { TEXT_SHADOW } from '@/lib/ultra-styles'
+import '@/app/corporate.css'
 
 const ValueProposition = memo(function ValueProposition() {
   const reasons = [
@@ -23,30 +23,30 @@ const ValueProposition = memo(function ValueProposition() {
   ]
 
   return (
-    <section className="py-20 relative">
-      <div className="absolute inset-0 bg-gray-800/30 backdrop-blur-sm" />
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-16 md:py-24 bg-gray-50/50 relative overflow-hidden">
+      <div className="absolute inset-0 opacity-5" style={{
+        backgroundImage: 'url("/images/digital-particles.png")',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center'
+      }} />
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-white mb-4" style={{
-            wordBreak: 'keep-all',
-            overflowWrap: 'anywhere',
-            lineBreak: 'strict'
-          }}>
+          <h2 className="corp-heading-2 mb-4">
             私たちが選ばれる理由
           </h2>
-          <p className="text-xl text-gray-200 font-semibold">
+          <p className="corp-text-lead">
             投資を「コスト」から「成長エンジン」に変える
           </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {reasons.map((reason, index) => (
-            <div key={index} className="bg-gray-800/80 backdrop-blur-sm rounded-lg p-8 shadow-lg border border-gray-700">
+            <div key={index} className="corp-card">
               <div className="text-4xl mb-4">{reason.icon}</div>
-              <h3 className="text-xl font-bold text-white mb-3 jp-wrap no-orphan" style={TEXT_SHADOW.heading}>
+              <h3 className="corp-heading-3 mb-3">
                 {reason.title}
               </h3>
-              <p className="text-white leading-relaxed font-medium jp-wrap no-orphan" style={TEXT_SHADOW.body}>
+              <p className="corp-text-body">
                 {reason.description}
               </p>
             </div>

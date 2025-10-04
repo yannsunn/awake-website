@@ -1,14 +1,13 @@
 import type { Metadata } from 'next'
+import Link from 'next/link'
 import { User, Target, Heart, Award, Users, Zap, CheckCircle } from 'lucide-react'
 import Image from 'next/image'
 import { COMPANY_DATA } from '@/lib/company-data'
 import PageLayout from '@/components/layout/PageLayout'
 import OptimizedImage from '@/components/ui/OptimizedImage'
-import { STYLES } from '@/lib/constants'
 import { createArticleSchema } from '@/lib/enhanced-schema'
-import { TEXT_SHADOW, CARD_STYLES, TEXT_BG_STYLES } from '@/lib/ultra-styles'
-import UltraSection, { UltraHero, UltraCTA } from '@/components/ui/UltraSection'
 import LineButton from '@/components/ui/LineButton'
+import '@/app/corporate.css'
 
 export const metadata: Metadata = {
   title: "会社概要・代表挨拶 | 株式会社Awake",
@@ -120,197 +119,123 @@ export default function AboutPage() {
       />
 
       {/* Hero Section */}
-      <UltraHero
-        title="私たちが、お客様に選ばれる理由"
-        subtitle="「高すぎるIT投資」を、「適正な成長投資」に変える"
-        description="株式会社Awakeは、無駄を削ぎ落とし、本当に価値のある投資だけに集中できる環境を創ります。"
-        className="bg-gray-900/30"
-      />
+      <section className="relative min-h-[50vh] flex items-center justify-center overflow-hidden pt-24 md:pt-28 corp-hero">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="text-center max-w-4xl mx-auto">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-black leading-tight">
+              私たちが、お客様に選ばれる理由
+            </h1>
+            <p className="text-xl md:text-2xl text-black font-semibold mb-4">
+              「高すぎるIT投資」を、「適正な成長投資」に変える
+            </p>
+            <p className="text-base md:text-lg text-black mb-8">
+              株式会社Awakeは、無駄を削ぎ落とし、本当に価値のある投資だけに集中できる環境を創ります。
+            </p>
+          </div>
+        </div>
+      </section>
 
       {/* CEO Message Section */}
-      <UltraSection
-        title="代表メッセージ"
-        className="bg-gray-900/20"
-        ariaLabel="代表メッセージ"
-      >
+      <section className="py-16 md:py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="corp-heading-2 mb-4 text-black">
+              代表メッセージ
+            </h2>
+          </div>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 items-start">
-          <div>
-            <div className="bg-gradient-to-br from-gray-800/60 to-gray-850/60 backdrop-blur-sm rounded-2xl p-4 sm:p-6 mb-6 border border-purple-500/20 shadow-lg">
-              <div className="flex items-center">
-                <div className="w-20 sm:w-24 h-20 sm:h-24 mr-4 relative bg-white rounded-lg p-1">
-                  <Image
-                    src="/assets/images/awake-logo-dark.png"
-                    alt="Awake Inc. Logo"
-                    fill
-                    className="object-contain p-1"
-                    sizes="(max-width: 640px) 80px, 96px"
-                  />
-                </div>
-                <div>
-                  <h3 className={STYLES.heading.h3.emphasis + " text-white text-lg sm:text-xl"}>代表挨拶</h3>
-                  <p className={STYLES.text.label.secondary + " text-gray-200"}>Message from CEO</p>
+          {/* CEO画像 - Unsplash仮画像（後で差し替え） */}
+          <div className="order-2 lg:order-1">
+            <div className="sticky top-24">
+              <div className="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-blue-100">
+                <img
+                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1887&auto=format&fit=crop"
+                  alt="代表取締役CEO 田形康貴"
+                  className="w-full h-auto object-cover"
+                />
+                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-gray-900/80 to-transparent p-6">
+                  <h3 className="text-white font-bold text-2xl mb-1">{COMPANY_DATA.basic.ceo}</h3>
+                  <p className="text-gray-200">代表取締役CEO</p>
                 </div>
               </div>
             </div>
-            
-            <h2 className={STYLES.heading.h2.section + " text-white mb-6"}>
+          </div>
+
+          <div className="order-1 lg:order-2">
+            <div className="bg-gradient-to-br from-gray-50 to-gray-50 rounded-2xl p-4 sm:p-6 mb-6 border border-blue-200 shadow-lg">
+              <div>
+                <h3 className="corp-heading-3 text-black text-lg sm:text-xl mb-1">代表挨拶</h3>
+                <p className="corp-text-small text-gray-600">Message from CEO</p>
+              </div>
+            </div>
+
+            <h2 className="corp-heading-2 text-black mb-6">
               代表メッセージ
             </h2>
             
-            <div className="space-y-8 text-gray-200 leading-relaxed">
+            <div className="space-y-6 text-black leading-relaxed">
               <div className="mb-6">
-                <h3 className={STYLES.text.emphasis.strong + " text-white text-xl mb-2"}>挫折から這い上がり、学んだこと</h3>
-                <p className={STYLES.text.emphasis.medium + " text-white mb-4"}>代表取締役CEO　{COMPANY_DATA.basic.ceo}</p>
-                
-                <p className={STYLES.text.description.medium + " mb-4 break-words"}>
-                  <span className="inline-block">株式会社Awakeの田形でございます。</span>
-                  私がこの事業を立ち上げたきっかけは、ある経営者様との出会いでした。
-                </p>
-                
-                <p className={STYLES.text.description.medium + " mb-4"}>
-                  「100万円以上投資してホームページを制作したが、<br />
-                  期待した成果が得られない」<br />
-                  というお悩みをお聞きし、強い問題意識を抱きました。
-                </p>
-                
-                <p className={STYLES.text.description.medium + " mb-4"}>
-                  その投資額があれば、人材育成や設備投資など、<br />
-                  より直接的な事業成長に活用できたはずです。
-                </p>
-                
-                <p className={STYLES.text.description.medium}>
-                  このような経営資源の非効率な配分を解決したい。<br />
-                  その想いが、現在の事業の原点となっています。
+                <h3 className="corp-text-body font-semibold text-black text-xl mb-2">挫折から這い上がり、学んだこと</h3>
+                <p className="corp-text-body font-medium text-black mb-4">代表取締役CEO　{COMPANY_DATA.basic.ceo}</p>
+
+                <p className="corp-text-body mb-4 break-words">
+                  株式会社Awakeの田形でございます。この事業を立ち上げたきっかけは、「100万円以上投資してホームページを制作したが、期待した成果が得られない」という経営者様のお悩みでした。その資金があれば、より直接的に事業成長へ投資できたはず。この経営資源の非効率な配分を解決したい。その想いが、現在の事業の原点です。
                 </p>
               </div>
-              
+
               <div>
-                <h3 className={STYLES.heading.h3.emphasis + " text-white mb-4"}>不登校からトップへ。私の転機</h3>
-                
-                <p className={STYLES.text.description.medium + " mb-4"}>
-                  静岡県清水区で育った私は、幼稚園から中学まで不登校でした。<br />
-                  学校に行かず、ずっとゲームをしていました。
-                </p>
-                
-                <p className={STYLES.text.description.medium + " mb-4"}>
-                  しかし高校で、人生が変わりました。<br />
-                  なんと生徒会長になったのです。
-                </p>
-                
-                <p className={STYLES.text.description.medium + " mb-4"}>
-                  その勢いでトヨタの自動車専門学校に進学。<br />
-                  そこで私は、本気で打ち込むことの楽しさを知りました。
-                </p>
-                
-                <ul className={STYLES.text.description.medium + " mb-4 space-y-2 ml-6"}>
-                  <li className="flex items-start">
-                    <span className="text-green-600 mr-2">•</span>
-                    <span>実技の歴代記録を複数更新</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-green-600 mr-2">•</span>
-                    <span>2年間、全国の学年代表を務める</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-green-600 mr-2">•</span>
-                    <span>整備の技術で、誰にも負けない自信を得る</span>
-                  </li>
-                </ul>
-                
-                <p className={STYLES.text.description.medium + " mb-4"}>
-                  地元静岡のトヨタ系ディーラーに就職後も、その姿勢は変わりませんでした。<br />
-                  4年間の勤務で新人賞を受賞。
-                </p>
-                
-                <p className={STYLES.text.description.medium}>
-                  しかし、そこで気づいたのです。<br />
-                  「技術だけでは、お客様の本当の課題は解決できない」
+                <h3 className="corp-heading-3 text-black mb-4">不登校から、全国代表へ</h3>
+
+                <p className="corp-text-body mb-4">
+                  静岡県清水区で育った私は、幼稚園から中学まで不登校でした。しかし高校で生徒会長に。トヨタの自動車専門学校では実技の歴代記録を更新し、2年間全国の学年代表を務めました。地元ディーラーで新人賞も受賞しましたが、そこで気づいたのです。「技術だけでは、お客様の本当の課題は解決できない」と。
                 </p>
               </div>
-              
+
               <div>
-                <h3 className={STYLES.heading.h3.emphasis + " text-white mb-4"}>なぜ、Awakeを立ち上げたのか</h3>
-                
-                <p className={STYLES.text.description.medium + " mb-4"}>
-                  整備士時代、多くの経営者の方とお話する機会がありました。<br />
-                  そこで聞いたのが、冒頭の言葉です。
-                </p>
-                
-                <p className={STYLES.text.description.medium + " mb-4"}>
-                  高額なIT投資で失敗し、本業に投資できない。<br />
-                  技術はあるのに、活用できていない。
-                </p>
-                
-                <p className={STYLES.text.description.medium + " mb-4"}>
-                  これは、私の過去と重なりました。<br />
-                  能力はあったのに、不登校で活かせなかった自分。
-                </p>
-                
-                <p className={STYLES.text.description.medium + " mb-4"}>
-                  でも、環境と機会があれば、人は変われる。
-                </p>
-                
-                <p className={STYLES.text.description.medium}>
-                  だから決めました。<br />
-                  「適正なコストで最大の価値を提供し、<br />
-                  お客様の可能性を引き出す会社を作ろう」と。
+                <h3 className="corp-heading-3 text-black mb-4">なぜ、Awakeを立ち上げたのか</h3>
+
+                <p className="corp-text-body mb-4">
+                  高額なIT投資で失敗し、本業に投資できない経営者。技術はあるのに活用できていない現状。これは、能力はあったのに不登校で活かせなかった私の過去と重なりました。でも、環境と機会があれば人は変われる。だから決めました。「適正なコストで最大の価値を提供し、お客様の可能性を引き出す会社を作ろう」と。
                 </p>
               </div>
-              
+
               <div>
-                <h3 className={STYLES.heading.h3.emphasis + " text-white mb-4"}>私たちの信念</h3>
-                
-                <div className="bg-gradient-to-br from-purple-900/30 to-gray-800/95 backdrop-blur-sm rounded-lg p-6 mb-4 border border-purple-500/20 shadow-lg">
-                  <p className={STYLES.text.emphasis.strong + " text-white text-lg text-center mb-2"}>「つながるすべての人に、感謝と繁栄を」</p>
+                <div className="bg-gradient-to-br from-blue-50 to-white rounded-lg p-6 mb-4 border border-blue-200 shadow-lg">
+                  <p className="corp-text-body font-semibold text-black text-lg text-center mb-2">「つながるすべての人に、感謝と繁栄を」</p>
                 </div>
-                
-                <p className={STYLES.text.description.medium + " mb-4"}>
-                  不登校だった私が、生徒会長になれた。<br />
-                  ゲームばかりしていた私が、全国代表になれた。
+
+                <p className="corp-text-body mb-4">
+                  不登校だった私が生徒会長になれたのは、信じてくれる人がいたから。今度は私たちが、お客様の可能性を信じる番です。高額な投資は必要ありません。必要なのは、一歩踏み出す勇気だけ。
                 </p>
-                
-                <p className={STYLES.text.description.medium + " mb-4"}>
-                  それは、信じてくれる人がいたからです。
-                </p>
-                
-                <p className={STYLES.text.description.medium + " mb-4"}>
-                  今度は私たちが、お客様の可能性を信じる番です。
-                </p>
-                
-                <p className={STYLES.text.description.medium}>
-                  高額な投資は必要ありません。<br />
-                  必要なのは、一歩踏み出す勇気だけ。
+
+                <p className="corp-text-body">
+                  IT投資でお悩みなら、ぜひお話をお聞かせください。あなたのビジネスの本当の可能性を、一緒に見つけましょう。
                 </p>
               </div>
-              
-                <p className={STYLES.text.description.medium + " mb-4"}>
-                  もし今、IT投資でお悩みなら、ぜひお話をお聞かせください。
-                </p>
-                
-                <p className={STYLES.text.description.medium}>
-                  あなたのビジネスの、本当の可能性を一緒に見つけましょう。
-                </p>
             </div>
           </div>
           
           <div className="lg:pl-8">
-            <div className="bg-gradient-to-br from-gray-800/95 to-gray-850/95 backdrop-blur-sm rounded-2xl pt-8 pb-6 px-6 sm:pt-10 sm:px-8 text-center border border-purple-500/20 shadow-lg">
+            <div className="bg-white rounded-2xl pt-8 pb-6 px-6 sm:pt-10 sm:px-8 text-center border border-blue-200 shadow-lg">
               <div className="relative w-80 h-80 mx-auto mb-6">
-                <div className="absolute inset-0 bg-gradient-to-r from-violet-600 to-purple-600 rounded-2xl blur-xl opacity-50 animate-pulse"></div>
-                <div className="relative w-80 h-80 rounded-2xl overflow-hidden border-4 border-violet-400 shadow-2xl ring-4 ring-purple-500/20 ring-offset-4 ring-offset-gray-900">
-                  <img
+                <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-blue-800 rounded-2xl blur-xl opacity-50 animate-pulse"></div>
+                <div className="relative w-80 h-80 rounded-2xl overflow-hidden border-4 border-blue-400 shadow-2xl ring-4 ring-blue-400/20 ring-offset-4 ring-offset-gray-900">
+                  <Image
                     src="/assets/images/ceo-profile.jpg"
                     alt={COMPANY_DATA.basic.ceo}
-                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                    fill
+                    className="object-cover hover:scale-105 transition-transform duration-500"
+                    sizes="320px"
+                    priority
                   />
                 </div>
               </div>
-              <h3 className={STYLES.heading.h3.card + " text-white mb-2"}>{COMPANY_DATA.basic.ceo}</h3>
-              <p className={STYLES.text.emphasis.medium + " text-white text-lg mb-4"}>代表取締役CEO</p>
+              <h3 className="corp-heading-3 text-black mb-2">{COMPANY_DATA.basic.ceo}</h3>
+              <p className="corp-text-body font-medium text-black text-lg mb-4">代表取締役CEO</p>
               <div className="space-y-4">
                 <div>
-                  <h4 className={STYLES.text.emphasis.medium + " text-white mb-2"}>略歴</h4>
-                  <ul className={STYLES.text.description.small + " text-gray-200 space-y-1"}>
+                  <h4 className="corp-text-body font-medium text-black mb-2">略歴</h4>
+                  <ul className="corp-text-small text-black space-y-1">
                     <li>静岡県清水区出身</li>
                     <li>幼稚園〜中学：不登校</li>
                     <li>高校：生徒会長</li>
@@ -320,8 +245,8 @@ export default function AboutPage() {
                   </ul>
                 </div>
                 <div>
-                  <h4 className={STYLES.text.emphasis.medium + " text-white mb-2"}>経営理念</h4>
-                  <p className={STYLES.text.description.small + " text-gray-200"}>
+                  <h4 className="corp-text-body font-medium text-black mb-2">経営理念</h4>
+                  <p className="corp-text-small text-black">
                     「つながるすべての人に、感謝と繁栄を」
                   </p>
                 </div>
@@ -329,117 +254,149 @@ export default function AboutPage() {
             </div>
           </div>
         </div>
-      </UltraSection>
+        </div>
+      </section>
 
       {/* Mission & Vision Section */}
-      <UltraSection
-        title="ミッション・ビジョン"
-        className="bg-gray-800/40"
-        ariaLabel="ミッション・ビジョン"
-      >
+      <section className="py-16 md:py-24 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="corp-heading-2 mb-4 text-black">
+              ミッション・ビジョン
+            </h2>
+          </div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-12">
-          <div className="bg-gradient-to-br from-gray-750/95 to-gray-800/95 backdrop-blur-sm rounded-2xl p-6 sm:p-8 border border-gray-500 hover:border-purple-500/40 shadow-lg transition-all duration-300">
-            <h3 className={STYLES.heading.h2.subsection + " text-white mb-4"}>
+          <div className="corp-card">
+            <h3 className="corp-heading-2 text-black mb-4">
               ミッション
             </h3>
-            <p className={STYLES.text.description.medium + " text-gray-200"}>
+            <p className="corp-text-body text-black">
               お客様の経営資源を最適配分し、真の成果を生み出すパートナーとして、適正なコストで最大の価値を提供し続けます。
             </p>
           </div>
-          
-          <div className="bg-gradient-to-br from-gray-750/95 to-gray-800/95 backdrop-blur-sm rounded-2xl p-6 sm:p-8 border border-gray-500 hover:border-purple-500/40 shadow-lg transition-all duration-300">
-            <h3 className={STYLES.heading.h2.subsection + " text-white mb-4"}>
+
+          <div className="corp-card">
+            <h3 className="corp-heading-2 text-black mb-4">
               ビジョン
             </h3>
-            <p className={STYLES.text.description.medium + " text-gray-200"}>
+            <p className="corp-text-body text-black">
               適正なコストで最大の価値を得られる経営環境の実現。そして、関わるすべての人々が相互に繁栄できる社会を創造します。
             </p>
           </div>
         </div>
-      </UltraSection>
+        </div>
+      </section>
 
       {/* Our Promise Section */}
-      <UltraSection
-        title="なぜAwakeなのか"
-        subtitle="私たちの3つの約束"
-        className="bg-gray-900/30"
-        ariaLabel="私たちの約束"
-      >
+      <section className="py-16 md:py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="corp-heading-2 mb-4 text-black">
+              なぜAwakeなのか
+            </h2>
+            <p className="corp-text-lead text-black">
+              私たちの3つの約束
+            </p>
+          </div>
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
           {promises.map((promise, index) => (
-            <div key={index} className="bg-gradient-to-br from-gray-800/95 to-gray-850/95 backdrop-blur-sm rounded-2xl p-8 shadow-lg border border-gray-500 hover:border-purple-500/40 hover:shadow-xl transition-all duration-300">
+            <div key={index} className="corp-card">
               <div className="text-4xl mb-4">{promise.icon}</div>
-              <h3 className={STYLES.heading.h3.emphasis + " text-white mb-3"}>{promise.title}</h3>
-              <p className={STYLES.text.description.medium + " text-gray-200"}>{promise.description}</p>
+              <h3 className="corp-heading-3 text-black mb-3">{promise.title}</h3>
+              <p className="corp-text-body text-black">{promise.description}</p>
             </div>
           ))}
         </div>
-      </UltraSection>
+        </div>
+      </section>
 
       {/* Service Features Section */}
-      <UltraSection
-        title="サービスの特徴"
-        subtitle="コストを抑えながら、成果を最大化する仕組み"
-        className="bg-gray-800/40"
-        ariaLabel="サービスの特徴"
-      >
+      <section className="py-16 md:py-24 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="corp-heading-2 mb-4 text-black">
+              サービスの特徴
+            </h2>
+            <p className="corp-text-lead text-black">
+              コストを抑えながら、成果を最大化する仕組み
+            </p>
+          </div>
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
           {features.map((feature, index) => (
-            <div key={index} className="bg-gradient-to-br from-gray-750/95 to-gray-800/95 backdrop-blur-sm rounded-xl p-6 sm:p-8 shadow-lg border border-gray-500 hover:border-purple-500/40 hover:shadow-xl transition-all duration-300">
-              <h3 className={STYLES.heading.h3.card + " text-white mb-4"}>{feature.title}</h3>
+            <div key={index} className="corp-card">
+              <h3 className="corp-heading-3 text-black mb-4">{feature.title}</h3>
               <ul className="space-y-3" role="list">
                 {feature.items.map((item, idx) => (
                   <li key={idx} className="flex items-start">
-                    <CheckCircle className="h-5 w-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" />
-                    <span className={STYLES.text.description.small + " text-gray-200"}>{item}</span>
+                    <CheckCircle className="h-5 w-5 text-blue-600 mr-2 flex-shrink-0 mt-0.5" />
+                    <span className="corp-text-small text-black">{item}</span>
                   </li>
                 ))}
               </ul>
             </div>
           ))}
         </div>
-      </UltraSection>
+        </div>
+      </section>
 
       {/* Company Values Section */}
-      <UltraSection
-        title="私たちの価値観"
-        subtitle="お客様と共に成長し続けるために"
-        className="bg-gray-900/30"
-        ariaLabel="私たちの価値観"
-      >
+      <section className="py-16 md:py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="corp-heading-2 mb-4 text-black">
+              私たちの価値観
+            </h2>
+            <p className="corp-text-lead text-black">
+              お客様と共に成長し続けるために
+            </p>
+          </div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-12">
           {values.map((value, index) => {
             const IconComponent = value.icon
             return (
-              <div key={index} className="flex items-start p-6 sm:p-8 bg-gradient-to-br from-gray-800/95 to-gray-850/95 backdrop-blur-sm rounded-xl shadow-lg border border-gray-500 hover:border-purple-500/40 hover:shadow-xl transition-all duration-300">
+              <div key={index} className="corp-card flex items-start">
                 <div className="text-3xl mr-4 mt-1">
                   {value.icon === Target ? "🎯" : value.icon === Zap ? "📚" : value.icon === Heart ? "🤝" : "🌱"}
                 </div>
                 <div>
-                  <h3 className={STYLES.heading.h3.card + " text-white mb-3"}>{value.title}</h3>
-                  <p className={STYLES.text.description.medium + " text-gray-200"}>{value.description}</p>
+                  <h3 className="corp-heading-3 text-black mb-3">{value.title}</h3>
+                  <p className="corp-text-body text-black">{value.description}</p>
                 </div>
               </div>
             )
           })}
         </div>
-      </UltraSection>
+        </div>
+      </section>
 
       {/* Contact CTA Section */}
-      <UltraCTA
-        title="次のステップへ"
-        subtitle="まずは、お話を聞かせてください"
-        description="あなたのビジネスの課題と理想の姿。無料相談で、最適な解決策を一緒に考えましょう。"
-        buttons={[
-          { href: "/#contact", label: "無料相談を予約する", variant: "primary" as const },
-          { href: "/#services", label: "サービス一覧を見る", variant: "secondary" as const }
-        ]}
-        className="bg-dark-overlay text-white"
-      />
+      <section className="py-16 md:py-24 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="corp-heading-2 mb-4 text-black">
+              次のステップへ
+            </h2>
+            <p className="corp-text-lead text-black mb-4">
+              まずは、お話を聞かせてください
+            </p>
+            <p className="text-lg text-black mb-8">
+              あなたのビジネスの課題と理想の姿。無料相談で、最適な解決策を一緒に考えましょう。
+            </p>
+          </div>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link href="/#contact" className="inline-flex items-center justify-center px-8 py-4 text-lg bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-xl shadow-md hover:shadow-lg transition-all duration-300 transform hover:scale-[1.02]">
+              無料相談を予約する
+            </Link>
+            <Link href="/#services" className="inline-flex items-center justify-center px-8 py-4 text-lg bg-white hover:bg-gray-50 text-blue-600 font-medium rounded-xl shadow-md hover:shadow-lg border-2 border-blue-600 transition-all duration-300 transform hover:scale-[1.02]">
+              サービス一覧を見る
+            </Link>
+          </div>
+        </div>
+      </section>
     </PageLayout>
   )
 }

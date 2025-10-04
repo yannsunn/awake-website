@@ -2,37 +2,43 @@
 @tailwind components;
 @tailwind utilities;
 
-/* 🎨 OPTIMIZED DESIGN SYSTEM - プロフェッショナル&ミニマル */
+
+/* 🎨 PROFESSIONAL CORPORATE DESIGN SYSTEM */
 @layer base {
   :root {
-    /* Enhanced Primary - 信頼感のある青紫 */
-    --primary-50: #f5f3ff;
-    --primary-100: #ede9fe;
-    --primary-500: #8b5cf6;
-    --primary-600: #7c3aed;
-    --primary-700: #6d28d9;
-    
-    /* エフェクト用統一カラー */
-    --effect-primary: #8b5cf6;
-    --effect-primary-rgb: 139, 92, 246;
-    
-    /* プロフェッショナルアクセントカラー */
-    --accent-purple: #8b5cf6;
-    --accent-blue: #3b82f6;
-    --accent-green: #10b981;
-    
-    /* グレースケール */
-    --gray-50: #f9fafb;
-    --gray-100: #f3f4f6;
-    --gray-200: #e5e7eb;
-    --gray-300: #d1d5db;
-    --gray-400: #9ca3af;
-    --gray-500: #6b7280;
-    --gray-600: #4b5563;
-    --gray-700: #374151;
-    --gray-800: #1f2937;
-    --gray-900: #111827;
-    
+    /* Professional Blue System - プロフェッショナルなブルー基調 */
+    --primary-50: #f0f9ff;
+    --primary-100: #e0f2fe;
+    --primary-200: #bae6fd;
+    --primary-300: #7dd3fc;
+    --primary-400: #38bdf8;
+    --primary-500: #0ea5e9;
+    --primary-600: #0284c7;
+    --primary-700: #0369a1;
+    --primary-800: #075985;
+    --primary-900: #0c4a6e;
+
+    /* エフェクト用統一カラー - プロフェッショナルブルー */
+    --effect-primary: #0ea5e9;
+    --effect-primary-rgb: 14, 165, 233;
+
+    /* アクセントカラー */
+    --accent-blue: #0ea5e9;
+    --accent-sky: #38bdf8;
+    --accent-cyan: #06b6d4;
+
+    /* グレースケール - ニュートラル */
+    --gray-50: #fafafa;
+    --gray-100: #f4f4f5;
+    --gray-200: #e4e4e7;
+    --gray-300: #d4d4d8;
+    --gray-400: #a1a1aa;
+    --gray-500: #71717a;
+    --gray-600: #52525b;
+    --gray-700: #3f3f46;
+    --gray-800: #27272a;
+    --gray-900: #18181b;
+
     /* シャドウ - 控えめで洗練 */
     --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
     --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1);
@@ -44,31 +50,32 @@
     margin: 0;
     padding: 0;
   }
-  
+
   html {
     scroll-behavior: smooth;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
-  
+
   body {
     font-family: var(--font-noto-sans-jp), system-ui, sans-serif;
-    color: var(--gray-900);
+    color: #1f2937;
     line-height: 1.6;
-    background-color: var(--gray-900);
+    background: #ffffff;
+    min-height: 100vh;
   }
-  
+
   /* フォーカススタイル統一 */
   :focus-visible {
     outline: 2px solid var(--primary-500);
     outline-offset: 2px;
   }
-  
+
   /* 選択時のスタイル */
   ::selection {
-    background-color: var(--primary-100);
-    color: var(--primary-700);
+    background-color: var(--primary-200);
+    color: var(--primary-900);
   }
 }
 
@@ -84,20 +91,20 @@
     cursor: pointer;
     min-height: 44px;
   }
-  
+
   /* テキストスタイル */
   .text-gradient {
-    background: linear-gradient(135deg, var(--primary-600) 0%, var(--accent-purple) 100%);
+    background: linear-gradient(135deg, var(--primary-600) 0%, var(--accent-blue) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
-  
+
   /* カードホバー効果 */
   .card-hover {
     transition: transform 0.2s ease, box-shadow 0.2s ease;
   }
-  
+
   .card-hover:hover {
     transform: translateY(-2px);
     box-shadow: var(--shadow-lg);
@@ -110,7 +117,7 @@
     from { opacity: 0; }
     to { opacity: 1; }
   }
-  
+
   @keyframes slide-up {
     from {
       opacity: 0;
@@ -121,59 +128,59 @@
       transform: translateY(0);
     }
   }
-  
+
   .animate-fade-in {
     animation: fade-in 0.5s ease forwards;
   }
-  
+
   .animate-slide-up {
     animation: slide-up 0.5s ease forwards;
   }
-  
+
   /* スクロールパディング */
   .scroll-padding {
     scroll-padding-top: 80px;
   }
-  
+
   /* 背景パターン */
   .bg-pattern {
-    background-image: 
-      linear-gradient(to bottom, transparent 0%, var(--gray-900) 100%);
+    background-image:
+      linear-gradient(to bottom, transparent 0%, #f9fafb 100%);
   }
-  
+
   /* モバイル対応テキスト折り返し */
   .break-words-mobile {
     @apply break-words sm:break-normal;
   }
-  
+
   /* テキストバランシング（CSS Text Module Level 4） */
   .text-balance {
     text-wrap: balance;
   }
-  
+
   .text-pretty {
     text-wrap: pretty;
   }
-  
+
   /* モバイル用改行制御 */
   .mobile-break {
     @apply block sm:inline;
   }
-  
+
   /* レスポンシブな行数制限 */
   .line-clamp-mobile-2 {
     @apply line-clamp-2 sm:line-clamp-none;
   }
-  
+
   .line-clamp-mobile-3 {
     @apply line-clamp-3 sm:line-clamp-none;
   }
-  
+
   /* モバイル用ハイフン制御 */
   .hyphens-mobile {
     @apply hyphens-auto sm:hyphens-none;
   }
-  
+
   /* 日本語の禁則処理 */
   .jp-wrap {
     word-break: auto-phrase; /* 文節で改行 */
@@ -182,26 +189,26 @@
     line-break: strict;
     hanging-punctuation: allow-end; /* 句読点の行末配置 */
   }
-  
+
   @supports not (word-break: auto-phrase) {
     .jp-wrap {
       word-break: keep-all; /* フォールバック */
       word-wrap: break-word;
     }
   }
-  
+
   /* モバイル用日本語最適化 */
   .jp-mobile {
     word-break: auto-phrase; /* iOS 15+ */
     -webkit-hyphens: none;
     hyphens: none;
   }
-  
+
   /* 文字孤立防止 */
   .no-orphan {
     text-wrap: pretty; /* 美しい改行 */
   }
-  
+
   @supports not (text-wrap: pretty) {
     .no-orphan {
       word-break: keep-all;
@@ -254,13 +261,47 @@ section {
   }
 }
 
+/* セクション統一スタイル */
+.section-standard {
+  @apply py-20 md:py-24 lg:py-32;
+  @apply px-4 sm:px-6 lg:px-8;
+}
+
+.section-container {
+  @apply max-w-7xl mx-auto;
+}
+
+.section-header {
+  @apply text-center mb-12 md:mb-16;
+}
+
+.section-title {
+  @apply text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4;
+}
+
+.section-subtitle {
+  @apply text-lg md:text-xl lg:text-2xl text-gray-600 font-medium;
+}
+
+.section-content {
+  @apply space-y-8 md:space-y-12;
+}
+
+.grid-standard {
+  @apply grid gap-6 md:gap-8 lg:gap-10;
+}
+
+.card-standard {
+  @apply bg-white rounded-xl p-6 md:p-8 shadow-md hover:shadow-lg transition-all duration-300 border border-gray-100;
+}
+
 /* プリント用スタイル */
 @media print {
   body {
     background: white;
     color: black;
   }
-  
+
   .no-print {
     display: none !important;
   }

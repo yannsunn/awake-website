@@ -121,21 +121,21 @@ class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundaryState> {
 
       // デフォルトエラーUI
       return (
-        <div className="min-h-screen flex items-center justify-center bg-gray-overlay px-4">
+        <div className="min-h-screen flex items-center justify-center bg-gray-50 px-4">
           <div className="max-w-md w-full text-center">
-            <div className="bg-white-overlay rounded-2xl p-8 shadow-xl">
+            <div className="bg-white rounded-2xl p-8 shadow-xl border border-gray-200">
               {/* エラーアイコン */}
               <div className="flex justify-center mb-6">
-                <div className="w-16 h-16 bg-red-100/80 backdrop-blur-sm rounded-full flex items-center justify-center">
+                <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center">
                   <AlertTriangle className="w-8 h-8 text-red-600" />
                 </div>
               </div>
 
               {/* エラーメッセージ */}
-              <h2 className="text-2xl font-bold text-white mb-4">
+              <h2 className="text-2xl font-bold text-black mb-4">
                 申し訳ございません
               </h2>
-              <p className="text-gray-300 mb-6 leading-relaxed">
+              <p className="text-black mb-6 leading-relaxed">
                 システムエラーが発生しました。<br />
                 ページを再読み込みしても問題が解決しない場合は、
                 お手数ですがお問い合わせください。
@@ -143,15 +143,15 @@ class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundaryState> {
 
               {/* エラー詳細（開発環境のみ） */}
               {this.props.showDetails && process.env.NODE_ENV === 'development' && this.state.error && (
-                <details className="text-left mb-6 p-4 bg-gray-overlay rounded-lg">
-                  <summary className="font-medium text-gray-200 cursor-pointer">
+                <details className="text-left mb-6 p-4 bg-gray-50 rounded-lg border border-gray-300">
+                  <summary className="font-medium text-black cursor-pointer">
                     技術的な詳細
                   </summary>
-                  <div className="mt-3 text-sm text-gray-300">
+                  <div className="mt-3 text-sm text-black">
                     <p><strong>エラーID:</strong> {this.state.errorId}</p>
                     <p><strong>エラー:</strong> {this.state.error.message}</p>
                     {this.state.error.stack && (
-                      <pre className="mt-2 text-xs overflow-x-auto whitespace-pre-wrap">
+                      <pre className="mt-2 text-xs overflow-x-auto whitespace-pre-wrap text-gray-600">
                         {this.state.error.stack}
                       </pre>
                     )}
@@ -181,7 +181,7 @@ class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundaryState> {
 
                 <Link 
                   href="/#contact"
-                  className="block text-sm text-gray-300 hover:text-gray-200"
+                  className="block text-sm text-blue-600 hover:text-blue-700 underline"
                 >
                   お問い合わせ
                 </Link>
@@ -189,7 +189,7 @@ class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundaryState> {
 
               {/* エラーID表示（サポート用） */}
               {this.state.errorId && (
-                <p className="mt-6 text-xs text-gray-300">
+                <p className="mt-6 text-xs text-gray-500">
                   エラーID: {this.state.errorId}
                 </p>
               )}
@@ -217,7 +217,7 @@ export const SuspenseWrapper = ({
     <div className="flex items-center justify-center min-h-screen">
       <div className="text-center">
         <div className="rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto mb-4"></div>
-        <p className="text-gray-300">読み込み中...</p>
+        <p className="text-black">読み込み中...</p>
       </div>
     </div>
   )
