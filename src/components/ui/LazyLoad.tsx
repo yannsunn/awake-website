@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useRef, useState, ReactNode, memo } from 'react'
+import Image from 'next/image'
 
 interface LazyLoadProps {
   children: ReactNode
@@ -81,8 +82,8 @@ export const LazyImage = memo(function LazyImage({
   src,
   alt,
   className = '',
-  width,
-  height,
+  width = 800,
+  height = 600,
   priority = false
 }: {
   src: string
@@ -93,51 +94,21 @@ export const LazyImage = memo(function LazyImage({
   priority?: boolean
 }) {
   const [isLoaded, setIsLoaded] = useState(false)
-  const [imageSrc, setImageSrc] = useState('')
-  const imgRef = useRef<HTMLImageElement>(null)
-
-  useEffect(() => {
-    if (priority) {
-      setImageSrc(src)
-      return
-    }
-
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setImageSrc(src)
-          observer.disconnect()
-        }
-      },
-      {
-        rootMargin: '100px',
-        threshold: 0.1
-      }
-    )
-
-    if (imgRef.current) {
-      observer.observe(imgRef.current)
-    }
-
-    return () => {
-      observer.disconnect()
-    }
-  }, [src, priority])
 
   return (
     <div className={`relative ${className}`}>
       {!isLoaded && (
         <div className="absolute inset-0 skeleton rounded-lg" />
       )}
-      
-      <img
-        ref={imgRef}
-        src={imageSrc}
+
+      <Image
+        src={src}
         alt={alt}
         width={width}
         height={height}
         onLoad={() => setIsLoaded(true)}
         className={`${className} ${isLoaded ? 'animate-fade-in' : 'opacity-0'}`}
+        priority={priority}
         loading={priority ? 'eager' : 'lazy'}
       />
     </div>

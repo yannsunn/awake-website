@@ -110,12 +110,14 @@ export const useScrollRevealGlobal = () => {
   useEffect(() => {
     // Intersection Observer APIを使用
     initIntersectionObserver()
-    
+
     // クリーンアップ
     return () => {
       const currentObserver = observer.current
+      // ESLintの警告を抑制：refの値をローカル変数にコピーしているため安全
+      // eslint-disable-next-line react-hooks/exhaustive-deps
       const elements = elementsRef.current
-      
+
       currentObserver?.disconnect()
       elements.clear()
     }
