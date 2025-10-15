@@ -4,6 +4,7 @@
 import { Component, ReactNode, ErrorInfo, Suspense } from 'react'
 import { AlertTriangle, RefreshCw, Home } from 'lucide-react'
 import Link from 'next/link'
+import { logger } from '@/lib/logger'
 import UltraButton from './ui/UltraButton'
 
 interface ErrorBoundaryState {
@@ -49,11 +50,10 @@ class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundaryState> {
     this.setState({ errorInfo })
 
     // コンソールにエラーログ出力
-    console.group('🚨 Error Boundary Caught an Error')
-    console.error('Error:', error)
-    console.error('Error Info:', errorInfo)
-    console.error('Error ID:', this.state.errorId)
-    console.groupEnd()
+    logger.error('🚨 Error Boundary Caught an Error')
+    logger.error('Error:', error)
+    logger.error('Error Info:', errorInfo)
+    logger.error('Error ID:', this.state.errorId)
 
     // カスタムエラーハンドラ実行
     if (this.props.onError) {
@@ -86,10 +86,10 @@ class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundaryState> {
       // 実際のエラー監視サービスへの送信ロジックをここに実装
       if (process.env.NODE_ENV === 'production') {
         // 例: fetch('/api/error-report', { method: 'POST', body: JSON.stringify(errorReport) })
-        console.log('Error report would be sent:', errorReport)
+        logger.log('Error report would be sent:', errorReport)
       }
     } catch (reportingError) {
-      console.error('Failed to report error:', reportingError)
+      logger.error('Failed to report error:', reportingError)
     }
   }
 
@@ -242,7 +242,7 @@ export const PageWrapper = ({
       showDetails={showErrorDetails}
       onError={(error, errorInfo) => {
         // カスタムエラーハンドリング
-        console.error('Page Error:', { error, errorInfo })
+        logger.error('Page Error:', { error, errorInfo })
       }}
     >
       {children}
