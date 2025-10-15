@@ -118,26 +118,26 @@ export default function AboutPage() {
         }}
       />
 
-      {/* Hero Section */}
-      <section className="relative min-h-[50vh] flex items-center justify-center overflow-hidden pt-24 md:pt-28 corp-hero">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      {/* Hero Section - ミニマル化 */}
+      <section className="relative py-12 md:py-16 flex items-center justify-center overflow-hidden bg-gradient-to-br from-blue-600 to-blue-800">
+        <div className="container mx-auto px-4 relative z-10">
           <div className="text-center max-w-4xl mx-auto">
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-black leading-tight">
-              私たちが、お客様に選ばれる理由
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-white leading-tight tracking-tight break-words">
+              会社概要
             </h1>
-            <p className="text-xl md:text-2xl text-black font-semibold mb-4">
-              「高すぎるIT投資」を、「適正な成長投資」に変える
+            <p className="text-xl md:text-2xl text-gray-200 font-medium mb-4 break-words">
+              私たちが、お客様に選ばれる理由
             </p>
-            <p className="text-base md:text-lg text-black mb-8">
-              株式会社Awakeは、無駄を削ぎ落とし、本当に価値のある投資だけに集中できる環境を創ります。
+            <p className="text-lg md:text-xl text-gray-300 leading-relaxed break-words">
+              「高すぎるIT投資」を、「適正な成長投資」に変える
             </p>
           </div>
         </div>
       </section>
 
       {/* CEO Message Section */}
-      <section className="py-16 md:py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative py-8 md:py-12 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-12">
             <h2 className="corp-heading-2 mb-4 text-black">
               代表メッセージ
@@ -261,8 +261,20 @@ export default function AboutPage() {
       </section>
 
       {/* Mission & Vision Section */}
-      <section className="py-16 md:py-24 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative py-8 md:py-12 bg-gray-50">
+        {/* 背景画像 */}
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="/images/service-5.png"
+            alt="ミッション・ビジョン"
+            fill
+            className="object-cover"
+            sizes="100vw"
+          />
+          <div className="absolute inset-0 bg-gray-50/90" />
+        </div>
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-12">
             <h2 className="corp-heading-2 mb-4 text-black">
               ミッション・ビジョン
@@ -271,6 +283,15 @@ export default function AboutPage() {
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-12">
           <div className="corp-card">
+            <div className="relative w-full h-48 mb-6 rounded-lg overflow-hidden">
+              <Image
+                src="/images/about-3-1.png"
+                alt="ミッション"
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, 50vw"
+              />
+            </div>
             <h3 className="corp-heading-2 text-black mb-4">
               ミッション
             </h3>
@@ -280,6 +301,15 @@ export default function AboutPage() {
           </div>
 
           <div className="corp-card">
+            <div className="relative w-full h-48 mb-6 rounded-lg overflow-hidden">
+              <Image
+                src="/images/about-3-2.png"
+                alt="ビジョン"
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, 50vw"
+              />
+            </div>
             <h3 className="corp-heading-2 text-black mb-4">
               ビジョン
             </h3>
@@ -291,94 +321,166 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Our Promise Section */}
-      <section className="py-16 md:py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="corp-heading-2 mb-4 text-black">
-              なぜAwakeなのか
-            </h2>
-            <p className="corp-text-lead text-black">
-              私たちの3つの約束
-            </p>
-          </div>
-        
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
-          {promises.map((promise, index) => (
-            <div key={index} className="corp-card">
-              <div className="text-4xl mb-4">{promise.icon}</div>
-              <h3 className="corp-heading-3 text-black mb-3">{promise.title}</h3>
-              <p className="corp-text-body text-black">{promise.description}</p>
-            </div>
-          ))}
-        </div>
-        </div>
-      </section>
-
-      {/* Service Features Section */}
-      <section className="py-16 md:py-24 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="corp-heading-2 mb-4 text-black">
-              サービスの特徴
-            </h2>
-            <p className="corp-text-lead text-black">
-              コストを抑えながら、成果を最大化する仕組み
-            </p>
-          </div>
-        
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
-          {features.map((feature, index) => (
-            <div key={index} className="corp-card">
-              <h3 className="corp-heading-3 text-black mb-4">{feature.title}</h3>
-              <ul className="space-y-3" role="list">
-                {feature.items.map((item, idx) => (
-                  <li key={idx} className="flex items-start">
-                    <CheckCircle className="h-5 w-5 text-blue-600 mr-2 flex-shrink-0 mt-0.5" />
-                    <span className="corp-text-small text-black">{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
-        </div>
-        </div>
-      </section>
-
-      {/* Company Values Section */}
-      <section className="py-16 md:py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="corp-heading-2 mb-4 text-black">
-              私たちの価値観
-            </h2>
-            <p className="corp-text-lead text-black">
-              お客様と共に成長し続けるために
-            </p>
-          </div>
-        
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-12">
-          {values.map((value, index) => {
-            const IconComponent = value.icon
-            return (
-              <div key={index} className="corp-card flex items-start">
-                <div className="text-3xl mr-4 mt-1">
-                  {value.icon === Target ? "🎯" : value.icon === Zap ? "📚" : value.icon === Heart ? "🤝" : "🌱"}
-                </div>
-                <div>
-                  <h3 className="corp-heading-3 text-black mb-3">{value.title}</h3>
-                  <p className="corp-text-body text-black">{value.description}</p>
-                </div>
+      {/* Our Promise Section - 画像追加 */}
+      <section className="relative bg-white">
+        {/* 大きな背景画像セクション */}
+        <div className="relative h-[40vh] md:h-[50vh] w-full overflow-hidden">
+          <Image
+            src="/images/about-10.png"
+            alt="革新的なアイデア"
+            fill
+            className="object-cover"
+            sizes="100vw"
+          />
+          {/* テキストオーバーレイ */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent flex items-end">
+            <div className="container mx-auto px-4 pb-16 md:pb-20 text-white">
+              <div className="max-w-3xl">
+                <h2 className="text-3xl md:text-4xl font-bold mb-6 break-words">
+                  なぜAwakeなのか
+                </h2>
+                <p className="text-xl md:text-2xl text-white/90 break-words leading-relaxed">
+                  私たちの3つの約束
+                </p>
               </div>
-            )
-          })}
+            </div>
+          </div>
         </div>
+
+        {/* コンテンツセクション */}
+        <div className="bg-gray-50 py-12 md:py-16">
+          <div className="container mx-auto px-4">
+            <div className="max-w-6xl mx-auto">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                {promises.map((promise, index) => (
+                  <div key={index} className="bg-white rounded-xl p-8 shadow-sm hover:shadow-md transition-shadow">
+                    <div className="text-4xl mb-6">{promise.icon}</div>
+                    <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-4 break-words">{promise.title}</h3>
+                    <p className="text-base md:text-lg text-gray-600 leading-relaxed break-words">{promise.description}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Service Features Section - 画像追加 */}
+      <section className="relative bg-white">
+        {/* 大きな背景画像セクション */}
+        <div className="relative h-[40vh] md:h-[50vh] w-full overflow-hidden">
+          <Image
+            src="/images/feature-5.png"
+            alt="デジタル技術"
+            fill
+            className="object-cover"
+            sizes="100vw"
+          />
+          {/* テキストオーバーレイ */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent flex items-end">
+            <div className="container mx-auto px-4 pb-16 md:pb-20 text-white">
+              <div className="max-w-3xl">
+                <h2 className="text-3xl md:text-4xl font-bold mb-6 break-words">
+                  サービスの特徴
+                </h2>
+                <p className="text-xl md:text-2xl text-white/90 break-words leading-relaxed">
+                  コストを抑えながら、成果を最大化する仕組み
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* コンテンツセクション */}
+        <div className="bg-gray-50 py-12 md:py-16">
+          <div className="container mx-auto px-4">
+            <div className="max-w-6xl mx-auto">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                {features.map((feature, index) => (
+                  <div key={index} className="bg-white rounded-xl p-8 shadow-sm hover:shadow-md transition-shadow">
+                    <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-6 break-words">{feature.title}</h3>
+                    <ul className="space-y-4" role="list">
+                      {feature.items.map((item, idx) => (
+                        <li key={idx} className="flex items-start">
+                          <CheckCircle className="h-5 w-5 text-blue-600 mr-3 flex-shrink-0 mt-1" />
+                          <span className="text-base md:text-lg text-gray-600 break-words leading-relaxed">{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Company Values Section - 画像追加 */}
+      <section className="relative bg-white">
+        {/* 大きな背景画像セクション */}
+        <div className="relative h-[40vh] md:h-[50vh] w-full overflow-hidden">
+          <Image
+            src="/images/feature-6.png"
+            alt="企業の成長"
+            fill
+            className="object-cover"
+            sizes="100vw"
+          />
+          {/* テキストオーバーレイ */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent flex items-end">
+            <div className="container mx-auto px-4 pb-16 md:pb-20 text-white">
+              <div className="max-w-3xl">
+                <h2 className="text-3xl md:text-4xl font-bold mb-6 break-words">
+                  私たちの価値観
+                </h2>
+                <p className="text-xl md:text-2xl text-white/90 break-words leading-relaxed">
+                  お客様と共に成長し続けるために
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* コンテンツセクション */}
+        <div className="bg-gray-50 py-12 md:py-16">
+          <div className="container mx-auto px-4">
+            <div className="max-w-6xl mx-auto">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                {values.map((value, index) => {
+                  const IconComponent = value.icon
+                  return (
+                    <div key={index} className="bg-white rounded-xl p-8 shadow-sm hover:shadow-md transition-shadow flex items-start">
+                      <div className="text-4xl mr-6 mt-1 flex-shrink-0">
+                        {value.icon === Target ? "🎯" : value.icon === Zap ? "📚" : value.icon === Heart ? "🤝" : "🌱"}
+                      </div>
+                      <div>
+                        <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-4 break-words">{value.title}</h3>
+                        <p className="text-base md:text-lg text-gray-600 leading-relaxed break-words">{value.description}</p>
+                      </div>
+                    </div>
+                  )
+                })}
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
       {/* Contact CTA Section */}
-      <section className="py-16 md:py-24 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative py-12 md:py-16 bg-gray-50">
+        {/* 背景画像 */}
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="/images/cta-8.png"
+            alt="次のステップへ"
+            fill
+            className="object-cover"
+            sizes="100vw"
+          />
+          <div className="absolute inset-0 bg-gray-50/90" />
+        </div>
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-12">
             <h2 className="corp-heading-2 mb-4 text-black">
               次のステップへ

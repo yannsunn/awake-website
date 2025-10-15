@@ -1,5 +1,30 @@
 import { NextResponse } from 'next/server';
 import { createChatMessages } from '@/lib/chatbot-prompt';
+import { MAX_IMAGE_DIMENSION } from '@/lib/imageOptimization';
+
+// 型定義
+interface ImageSource {
+  type: 'base64';
+  data: string;
+  media_type?: string;
+}
+
+interface TextContent {
+  type: 'text';
+  text: string;
+}
+
+interface ImageContent {
+  type: 'image';
+  source: ImageSource;
+}
+
+type ContentBlock = TextContent | ImageContent;
+
+interface ChatMessage {
+  role: 'user' | 'assistant';
+  content: string | ContentBlock[];
+}
 
 export async function POST(request: Request) {
   try {
@@ -8,6 +33,39 @@ export async function POST(request: Request) {
     if (!messages || !Array.isArray(messages)) {
       return NextResponse.json(
         { error: 'Invalid request format' },
+        { status: 400 }
+      );
+    }
+
+    // 画像サイズチェック（API制限対応）
+    const validateImageMessages = (messages: ChatMessage[]) => {
+      for (const message of messages) {
+        if (message.content && Array.isArray(message.content)) {
+          for (const content of message.content) {
+            if (content.type === 'image' && content.source?.type === 'base64') {
+              // Base64画像のサイズをチェック
+              const base64Data = content.source.data;
+              if (base64Data) {
+                // Base64データから画像のサイズを推定
+                const imageSize = Math.floor((base64Data.length * 3) / 4);
+                // 大まかな画像サイズの推定（1ピクセルあたり約3バイト）
+                const estimatedPixels = Math.sqrt(imageSize / 3);
+                
+                if (estimatedPixels > MAX_IMAGE_DIMENSION) {
+                  throw new Error(`画像のサイズが制限を超えています。最大${MAX_IMAGE_DIMENSION}ピクセルまで対応しています。`);
+                }
+              }
+            }
+          }
+        }
+      }
+    };
+
+    try {
+      validateImageMessages(messages);
+    } catch (error) {
+      return NextResponse.json(
+        { error: error instanceof Error ? error.message : '画像サイズエラー' },
         { status: 400 }
       );
     }

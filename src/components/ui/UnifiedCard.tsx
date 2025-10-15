@@ -2,7 +2,14 @@
 
 import { memo, ReactNode } from 'react'
 import { LucideIcon } from 'lucide-react'
-import { STYLES } from '@/lib/constants'
+import { COMPONENT_STYLES, TYPOGRAPHY } from '@/lib/design-system'
+
+// 後方互換性のため、headingとtextを含む統合スタイル
+const STYLES = {
+  ...COMPONENT_STYLES,
+  heading: TYPOGRAPHY.heading,
+  text: TYPOGRAPHY.text
+}
 
 interface UnifiedCardProps {
   icon?: LucideIcon | string

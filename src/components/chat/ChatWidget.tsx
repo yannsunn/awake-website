@@ -1,12 +1,13 @@
 'use client';
 
 import { useState, useRef, useEffect } from 'react';
-import { Bot, X, Send, Loader2 } from 'lucide-react';
+import { Bot, X, Send, Loader2, Image as ImageIcon } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { checkAndResizeImage, fileToBase64, validateImageFile, MAX_IMAGE_DIMENSION } from '@/lib/imageOptimization';
 
 interface Message {
   role: 'user' | 'assistant';
-  content: string;
+  content: string | Array<{ type: 'text' | 'image'; text?: string; source?: { type: 'base64'; data: string; media_type: string } }>;
   timestamp: Date;
 }
 
@@ -21,7 +22,9 @@ export default function ChatWidget() {
   ]);
   const [input, setInput] = useState('');
   const [isLoading, setIsLoading] = useState(false);
+  const [isUploadingImage, setIsUploadingImage] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
+  const fileInputRef = useRef<HTMLInputElement>(null);
 
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
@@ -31,17 +34,63 @@ export default function ChatWidget() {
     scrollToBottom();
   }, [messages]);
 
-  const handleSend = async () => {
-    if (!input.trim() || isLoading) return;
+  // 画像アップロード処理
+  const handleImageUpload = async (file: File) => {
+    setIsUploadingImage(true);
+    
+    try {
+      // 画像ファイルの検証
+      const validation = validateImageFile(file);
+      if (!validation.valid) {
+        alert(validation.error);
+        return;
+      }
 
-    const userMessage: Message = {
-      role: 'user',
-      content: input,
-      timestamp: new Date(),
-    };
+      // 画像のリサイズ
+      const { file: resizedFile, dimensions } = await checkAndResizeImage(file);
+      
+      // Base64エンコード
+      const base64Data = await fileToBase64(resizedFile);
+      
+      // メディアタイプを取得
+      const mediaType = resizedFile.type;
+      
+      // 画像メッセージを作成
+      const imageMessage: Message = {
+        role: 'user',
+        content: [
+          {
+            type: 'text',
+            text: input.trim() || 'この画像について教えてください'
+          },
+          {
+            type: 'image',
+            source: {
+              type: 'base64',
+              data: base64Data.split(',')[1], // data:image/... の部分を除去
+              media_type: mediaType
+            }
+          }
+        ],
+        timestamp: new Date(),
+      };
 
-    setMessages((prev) => [...prev, userMessage]);
-    setInput('');
+      setMessages((prev) => [...prev, imageMessage]);
+      setInput('');
+      
+      // APIに送信
+      await sendToAPI(imageMessage);
+      
+    } catch (error) {
+      console.error('Image upload error:', error);
+      alert('画像のアップロードに失敗しました。もう一度お試しください。');
+    } finally {
+      setIsUploadingImage(false);
+    }
+  };
+
+  // API送信処理
+  const sendToAPI = async (message: Message) => {
     setIsLoading(true);
 
     try {
@@ -51,7 +100,7 @@ export default function ChatWidget() {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          messages: [...messages, userMessage].map((m) => ({
+          messages: [...messages, message].map((m) => ({
             role: m.role,
             content: m.content,
           })),
@@ -59,7 +108,8 @@ export default function ChatWidget() {
       });
 
       if (!response.ok) {
-        throw new Error('Failed to get response');
+        const errorData = await response.json();
+        throw new Error(errorData.error || 'Failed to get response');
       }
 
       const data = await response.json();
@@ -75,13 +125,28 @@ export default function ChatWidget() {
       console.error('Chat error:', error);
       const errorMessage: Message = {
         role: 'assistant',
-        content: '申し訳ございません。エラーが発生しました。もう一度お試しいただくか、お問い合わせフォームからご連絡ください。',
+        content: error instanceof Error ? error.message : '申し訳ございません。エラーが発生しました。もう一度お試しいただくか、お問い合わせフォームからご連絡ください。',
         timestamp: new Date(),
       };
       setMessages((prev) => [...prev, errorMessage]);
     } finally {
       setIsLoading(false);
     }
+  };
+
+  const handleSend = async () => {
+    if (!input.trim() || isLoading) return;
+
+    const userMessage: Message = {
+      role: 'user',
+      content: input,
+      timestamp: new Date(),
+    };
+
+    setMessages((prev) => [...prev, userMessage]);
+    setInput('');
+    
+    await sendToAPI(userMessage);
   };
 
   const handleKeyPress = (e: React.KeyboardEvent) => {
@@ -184,7 +249,31 @@ export default function ChatWidget() {
                         : 'bg-white text-gray-800 shadow-sm border border-gray-200'
                     }`}
                   >
-                    <p className="text-sm whitespace-pre-wrap break-words">{message.content}</p>
+                    {/* テキストメッセージまたは複合メッセージの表示 */}
+                    {typeof message.content === 'string' ? (
+                      <p className="text-sm whitespace-pre-wrap break-words">{message.content}</p>
+                    ) : (
+                      <div className="space-y-2">
+                        {message.content.map((content, contentIndex) => (
+                          <div key={contentIndex}>
+                            {content.type === 'text' && content.text && (
+                              <p className="text-sm whitespace-pre-wrap break-words">{content.text}</p>
+                            )}
+                            {content.type === 'image' && content.source && (
+                              <div className="mt-2">
+                                {/* eslint-disable-next-line @next/next/no-img-element */}
+                                <img
+                                  src={`data:${content.source.media_type};base64,${content.source.data}`}
+                                  alt="アップロードされた画像"
+                                  className="max-w-full h-auto rounded-lg"
+                                  style={{ maxHeight: '200px' }}
+                                />
+                              </div>
+                            )}
+                          </div>
+                        ))}
+                      </div>
+                    )}
                     <p
                       className={`text-xs mt-1 ${
                         message.role === 'user' ? 'text-blue-100' : 'text-gray-400'
@@ -222,19 +311,49 @@ export default function ChatWidget() {
                   onKeyPress={handleKeyPress}
                   placeholder="メッセージを入力..."
                   className="flex-1 px-4 py-3 rounded-full border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-gray-800 placeholder-gray-400"
-                  disabled={isLoading}
+                  disabled={isLoading || isUploadingImage}
+                />
+                
+                {/* 画像アップロードボタン */}
+                <input
+                  ref={fileInputRef}
+                  type="file"
+                  accept="image/*"
+                  onChange={(e) => {
+                    const file = e.target.files?.[0];
+                    if (file) {
+                      handleImageUpload(file);
+                    }
+                  }}
+                  className="hidden"
                 />
                 <button
+                  onClick={() => fileInputRef.current?.click()}
+                  disabled={isLoading || isUploadingImage}
+                  className="bg-gray-100 text-gray-600 p-3 rounded-full hover:bg-gray-200 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+                  aria-label="画像をアップロード"
+                  title={`画像をアップロード（最大${MAX_IMAGE_DIMENSION}px）`}
+                >
+                  {isUploadingImage ? (
+                    <Loader2 className="w-5 h-5 animate-spin" />
+                  ) : (
+                    <ImageIcon className="w-5 h-5" />
+                  )}
+                </button>
+                
+                <button
                   onClick={handleSend}
-                  disabled={!input.trim() || isLoading}
+                  disabled={!input.trim() || isLoading || isUploadingImage}
                   className="bg-gradient-to-r from-blue-600 to-violet-600 text-white p-3 rounded-full hover:shadow-lg transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
                   aria-label="送信"
                 >
                   <Send className="w-5 h-5" />
                 </button>
               </div>
-              <p className="text-xs text-gray-400 mt-2 text-center">
-                AI搭載チャットボット by Claude
+              
+              {/* 画像アップロードの説明 */}
+              <p className="text-xs text-gray-500 mt-2 text-center">
+                画像をアップロードできます（JPEG、PNG、WebP、GIF形式、最大10MB、{MAX_IMAGE_DIMENSION}px以下）
               </p>
             </div>
           </motion.div>

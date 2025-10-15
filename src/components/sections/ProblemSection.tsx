@@ -47,9 +47,9 @@ const ProblemSection = memo(function ProblemSection() {
             <h3 className="corp-heading-3 text-black text-center mb-6">
               業務自動化の実例：AIによる完全自動化フロー
             </h3>
-            <div className="relative rounded-xl overflow-hidden bg-white/95 p-4">
+            <div className="relative rounded-xl overflow-hidden bg-white/98 p-4">
               <Image
-                src="/assets/images/ai-workflow-automation.webp"
+                src="/images/cta-8.png"
                 alt="AI業務自動化ワークフロー図"
                 width={1200}
                 height={800}

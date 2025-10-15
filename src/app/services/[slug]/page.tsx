@@ -7,7 +7,6 @@ import { ProcessSteps } from '@/components/sections/ProcessSteps'
 import { FeatureGrid } from '@/components/sections/FeatureGrid'
 import PageLayout from '@/components/layout/PageLayout'
 import { COMPANY_DATA } from '@/lib/company-data'
-import { cn } from '@/lib/utils'
 import ProblemSection from '@/components/sections/ProblemSection'
 import UseCases from '@/components/sections/UseCases'
 import AIFaq from '@/components/sections/AIFaq'
@@ -192,7 +191,7 @@ export async function generateMetadata(
   props: { params: Params }
 ): Promise<Metadata> {
   const { slug } = await props.params
-  
+
   const service = serviceData[slug as keyof typeof serviceData]
   if (!service) {
     return {
@@ -200,13 +199,61 @@ export async function generateMetadata(
     }
   }
 
+  // サービス別の詳細説明
+  const enhancedDescriptions = {
+    ai: `${service.description}。AIチャットボット開発298,000円〜、月額AIコモン33,000円〜。東京都東大和市の${COMPANY_DATA.basic.name}が、中小企業のカスタマーサポート自動化・業務効率化を支援。24時間365日対応で人件費削減と顧客満足度向上を実現。`,
+    ec: `${service.description}。完全成果報酬型で初期費用0円。Amazon販売手数料10%〜15%。東京都東大和市の${COMPANY_DATA.basic.name}が、CLEMIRA製品など高品質商品のAmazon販路開拓を支援。在庫リスクなし、データ分析で確実な売上アップ。`,
+    web: `${service.description}。ホームページ制作132,000円〜。東京都東大和市の${COMPANY_DATA.basic.name}が、中小企業のWebサイト制作を支援。レスポンシブデザイン、SEO対策、高速表示で集客力のあるサイトを実現。`
+  }
+
+  const description = enhancedDescriptions[slug as keyof typeof enhancedDescriptions] || service.description
+
+  // サービス別のキーワード
+  const keywords = {
+    ai: ['AIチャットボット開発', 'AIコンサルティング', 'カスタマーサポート自動化', '業務効率化', 'AI導入支援', '中小企業DX', '東京都東大和市', 'LINE連携', 'Web連携', '人件費削減'],
+    ec: ['Amazon代理店', 'EC販売代行', 'Amazon販路開拓', 'CLEMIRA', '完全成果報酬', '初期費用0円', 'オンライン販売', '中小企業', '東京都東大和市', 'メーカー直販'],
+    web: ['ホームページ制作', 'Webサイト制作', 'レスポンシブデザイン', 'SEO対策', '中小企業', 'コーポレートサイト', '東京都東大和市', '高速表示', '保守運用']
+  }
+
   return {
     title: `${service.title} | ${COMPANY_DATA.basic.name}`,
-    description: service.description,
+    description,
+    keywords: keywords[slug as keyof typeof keywords] || [],
     openGraph: {
+      type: 'website',
+      locale: 'ja_JP',
+      url: `${COMPANY_DATA.url}/services/${slug}`,
+      siteName: COMPANY_DATA.basic.name,
       title: `${service.title} | ${COMPANY_DATA.basic.name}`,
-      description: service.description,
+      description,
+      images: [
+        {
+          url: `${COMPANY_DATA.url}/assets/images/og-${slug}.png`,
+          width: 1200,
+          height: 630,
+          alt: `${service.title} - ${COMPANY_DATA.basic.name}`
+        }
+      ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: `${service.title} | ${COMPANY_DATA.basic.name}`,
+      description,
       images: [`${COMPANY_DATA.url}/assets/images/og-${slug}.png`],
+    },
+    alternates: {
+      canonical: `${COMPANY_DATA.url}/services/${slug}`,
+    },
+    robots: {
+      index: true,
+      follow: true,
+      googleBot: {
+        index: true,
+        follow: true,
+        'max-video-preview': -1,
+        'max-image-preview': 'large',
+        'max-snippet': -1,
+      },
     },
   }
 }
@@ -237,77 +284,17 @@ export default async function ServicePage(
         
         <ProblemSection />
         
-        <section className="py-16 md:py-24 relative">
-          <div className="absolute inset-0 bg-blue-50/50" />
-          <div className="relative z-10 w-full px-4 sm:px-6 lg:px-8">
+        <section className="py-16 md:py-24 bg-white">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 className="corp-heading-2 text-black text-center mb-12">
               Awakeが選ばれる4つの理由
             </h2>
             <FeatureGrid features={service.features} />
           </div>
         </section>
-        
-        {/* 経費精算自動化ワークフロー */}
-        <section className="py-16 md:py-24 relative">
-          <div className="absolute inset-0 bg-white/90" />
-          <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="corp-card">
-              <h3 className="corp-heading-3 text-black text-center mb-6">
-                経費精算の完全自動化ソリューション
-              </h3>
-              <div className="relative rounded-xl overflow-hidden bg-black">
-                <Image
-                  src="/assets/images/ai-expense-automation.webp"
-                  alt="経費精算自動化ワークフロー - Google Drive + n8n + AI"
-                  width={1200}
-                  height={675}
-                  className="w-full h-auto"
-                  loading="lazy"
-                />
-              </div>
-              <div className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div>
-                  <h4 className="corp-text-body text-black font-bold mb-3">このワークフローで実現：</h4>
-                  <ul className="space-y-2">
-                    <li className="flex items-start">
-                      <span className="text-blue-600 mr-2">✓</span>
-                      <span className="corp-text-body text-black">Google Driveにレシートをアップロードするだけ</span>
-                    </li>
-                    <li className="flex items-start">
-                      <span className="text-blue-600 mr-2">✓</span>
-                      <span className="corp-text-body text-black">AIがレシート内容を自動解析</span>
-                    </li>
-                    <li className="flex items-start">
-                      <span className="text-blue-600 mr-2">✓</span>
-                      <span>データを整理してGoogle Sheetsに自動入力</span>
-                    </li>
-                  </ul>
-                </div>
-                <div>
-                  <h4 className="corp-text-body text-black font-bold mb-3">使用技術：</h4>
-                  <ul className="space-y-2">
-                    <li className="flex items-start">
-                      <span className="text-blue-400 mr-2">•</span>
-                      <span>n8n（ワークフロー自動化ツール）</span>
-                    </li>
-                    <li className="flex items-start">
-                      <span className="text-blue-400 mr-2">•</span>
-                      <span>OpenAI Chat Model（画像解析AI）</span>
-                    </li>
-                    <li className="flex items-start">
-                      <span className="text-blue-400 mr-2">•</span>
-                      <span>Google Drive & Sheets連携</span>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-        
-        <section className="py-16 md:py-24 relative">
-          <div className="absolute inset-0 bg-blue-50/30" />
-          <div className="relative z-10 w-full px-4 sm:px-6 lg:px-8">
+
+        <section className="py-16 md:py-24 bg-gray-50">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
               <h2 className="corp-heading-2 text-black mb-4">
                 導入プロセス
@@ -364,7 +351,7 @@ export default async function ServicePage(
                 <h3 className="text-2xl font-bold text-black mb-4">製品ラインナップ</h3>
                 <div className="relative rounded-xl overflow-hidden">
                   <Image
-                    src="/assets/images/clemira-products.png"
+                    src="/assets/images/clemira-products.webp"
                     alt="CLEMIRA製品ラインナップ - PHOENIX, athlete, blackcard"
                     width={1200}
                     height={675}
@@ -404,7 +391,7 @@ export default async function ServicePage(
                 <h3 className="text-2xl font-bold text-black mb-4">メディア掲載実績</h3>
                 <div className="relative rounded-xl overflow-hidden bg-white">
                   <Image
-                    src="/assets/images/clemira-youtube.png"
+                    src="/assets/images/clemira-youtube.webp"
                     alt="CLEMIRA YouTubeチャンネル「令和の虎」掲載"
                     width={1200}
                     height={675}
@@ -424,7 +411,7 @@ export default async function ServicePage(
               <h3 className="text-2xl font-bold text-black mb-6 text-center">驚異的な販売実績</h3>
               <div className="relative rounded-xl overflow-hidden bg-white p-4">
                 <Image
-                  src="/assets/images/clemira-sales.png"
+                  src="/assets/images/clemira-sales.webp"
                   alt="CLEMIRA販売実績 - 49件の注文、53点の販売、売上299万円以上"
                   width={1200}
                   height={675}
@@ -559,40 +546,38 @@ export default async function ServicePage(
                   量子効果技術を搭載した完全オーダーメイドインソール
                 </p>
                 <div className="bg-gradient-to-r from-green-500 to-green-600 rounded-xl p-6 inline-block">
-                  <p className="text-black font-bold text-lg mb-2">インソールのお問い合わせはLINEから</p>
-                  <a 
-                    href="https://lin.ee/xBl5t78" 
-                    target="_blank" 
+                  <p className="text-white font-bold text-lg mb-2">インソールのご相談はこちら</p>
+                  <a
+                    href="https://lin.ee/xBl5t78"
+                    target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center justify-center px-8 py-3 bg-white text-green-600 font-bold rounded-lg hover:bg-blue-50 transition-colors"
+                    className="inline-flex items-center justify-center px-8 py-3 bg-white text-green-600 font-bold rounded-lg hover:bg-blue-50 transition-colors whitespace-nowrap"
                   >
                     <svg className="w-6 h-6 mr-2" viewBox="0 0 24 24" fill="currentColor">
                       <path d="M12 2C6.48 2 2 6.48 2 12c0 5.52 4.48 10 10 10 1.19 0 2.34-.21 3.41-.6.3-.11.49-.4.49-.72 0-.43-.35-.78-.78-.78-.17 0-.33.06-.46.14-.85.32-1.74.49-2.66.49-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8c0 1.29-.31 2.5-.85 3.57-.13.25-.42.43-.7.43-.43 0-.78-.35-.78-.78v-4.72c0-.43-.35-.78-.78-.78s-.78.35-.78.78v.42c-.71-.7-1.68-1.14-2.76-1.14-2.18 0-3.94 1.76-3.94 3.94s1.76 3.94 3.94 3.94c1.08 0 2.05-.44 2.76-1.14.36.68 1.08 1.14 1.9 1.14.88 0 1.68-.54 2.01-1.36.67-1.31 1.04-2.79 1.04-4.36 0-5.52-4.48-10-10-10zm0 12.56c-1.31 0-2.38-1.07-2.38-2.38s1.07-2.38 2.38-2.38 2.38 1.07 2.38 2.38-1.07 2.38-2.38 2.38z"/>
                     </svg>
-                    LINEで問い合わせる
+                    LINEで相談する
                   </a>
-                  <p className="text-black text-sm mt-2">@awake-inc</p>
+                  <p className="text-white text-sm mt-2">@awake-inc</p>
                 </div>
               </div>
             </div>
           </div>
         </section>
-        
-        <section className="py-16 md:py-24 relative">
-          <div className="absolute inset-0 bg-blue-50/30" />
-          <div className="relative z-10 w-full px-4 sm:px-6 lg:px-8">
+
+        <section className="py-16 md:py-24 bg-white">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 className="corp-heading-2 text-black text-center mb-12">
               私たちが選ばれる4つの理由
             </h2>
             <FeatureGrid features={service.features} />
           </div>
         </section>
-        
+
         <AmazonSupport />
-        
-        <section className="py-16 md:py-24 relative">
-          <div className="absolute inset-0 bg-blue-50/50" />
-          <div className="relative z-10 w-full px-4 sm:px-6 lg:px-8">
+
+        <section className="py-16 md:py-24 bg-gray-50">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
               <h2 className="corp-heading-2 text-black mb-4">
                 導入の流れ
@@ -621,10 +606,9 @@ export default async function ServicePage(
         ctaText="お問い合わせはこちら"
         ctaHref="/#contact"
       />
-      
-      <section className="py-16 md:py-24 relative">
-        <div className="absolute inset-0 bg-blue-50/20" />
-        <div className="relative z-10 w-full px-4 sm:px-6 lg:px-8">
+
+      <section className="py-16 md:py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="corp-heading-2 text-black text-center mb-12">
             サービスの特徴
           </h2>
@@ -632,9 +616,8 @@ export default async function ServicePage(
         </div>
       </section>
 
-      <section className="py-16 md:py-24 relative">
-        <div className="absolute inset-0 bg-white/80" />
-        <div className="relative z-10 w-full px-4 sm:px-6 lg:px-8">
+      <section className="py-16 md:py-24 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="corp-heading-2 text-black text-center mb-12">
             導入までの流れ
           </h2>
@@ -642,9 +625,8 @@ export default async function ServicePage(
         </div>
       </section>
 
-      <section className="py-16 md:py-24 relative">
-        <div className="absolute inset-0 bg-blue-50/20" />
-        <div className="relative z-10 w-full px-4 sm:px-6 lg:px-8 text-center">
+      <section className="py-16 md:py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="corp-heading-2 text-black mb-8">
             まずはお気軽にご相談ください
           </h2>

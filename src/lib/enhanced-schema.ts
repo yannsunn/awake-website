@@ -21,7 +21,7 @@ export const enhancedOrganizationSchema = {
     "height": 630
   },
   "sameAs": [],
-  "foundingDate": "2020-01-01",
+  "foundingDate": "2021-01-01",
   "founder": {
     "@type": "Person",
     "name": COMPANY_DATA.basic.ceo,
@@ -29,8 +29,9 @@ export const enhancedOrganizationSchema = {
   },
   "numberOfEmployees": {
     "@type": "QuantitativeValue",
-    "minValue": 1,
-    "maxValue": 10
+    "value": 12,
+    "minValue": 10,
+    "maxValue": 15
   },
   "areaServed": {
     "@type": "Country",

@@ -1,12 +1,15 @@
 'use client'
 
-import { memo } from 'react'
+import { memo, useRef } from 'react'
+import { motion, useInView, AnimatePresence } from 'framer-motion'
 import { ChevronDown } from 'lucide-react'
 import { useState } from 'react'
 import '@/app/corporate.css'
 
 const FAQ = memo(function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(null)
+  const ref = useRef(null)
+  const isInView = useInView(ref, { once: true, amount: 0.2 })
 
   const faqs = [
     {
@@ -23,39 +26,93 @@ const FAQ = memo(function FAQ() {
     }
   ]
 
+  const titleVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.6,
+        ease: [0.25, 0.46, 0.45, 0.94] as const
+      }
+    }
+  }
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: (i: number) => ({
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.5,
+        delay: i * 0.1,
+        ease: [0.25, 0.46, 0.45, 0.94] as const
+      }
+    })
+  }
+
   return (
     <section className="py-16 md:py-24 bg-white">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12">
-          <h2 className="corp-heading-2 mb-4">
+        <motion.div
+          ref={ref}
+          initial="hidden"
+          animate={isInView ? 'visible' : 'hidden'}
+          variants={titleVariants}
+          className="text-center mb-12"
+        >
+          <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
             よくあるご質問
           </h2>
-        </div>
+        </motion.div>
 
         <div className="space-y-4">
           {faqs.map((faq, index) => (
-            <div key={index} className="corp-card">
-              <button
-                className="w-full px-6 py-4 text-left flex items-center justify-between hover:bg-gray-50 transition-colors"
+            <motion.div
+              key={index}
+              initial="hidden"
+              animate={isInView ? 'visible' : 'hidden'}
+              custom={index}
+              variants={itemVariants}
+              className="corp-card"
+            >
+              <motion.button
+                className="w-full px-6 py-4 text-left flex items-center justify-between transition-colors"
                 onClick={() => setOpenIndex(openIndex === index ? null : index)}
+                whileHover={{ backgroundColor: 'rgba(249, 250, 251, 1)' }}
+                transition={{ duration: 0.2 }}
               >
-                <span className="corp-text-body font-semibold">Q: {faq.question}</span>
-                <ChevronDown
-                  className={`h-5 w-5 text-gray-600 transition-transform duration-200 ${
-                    openIndex === index ? 'rotate-180' : ''
-                  }`}
-                />
-              </button>
-              <div
-                className={`overflow-hidden transition-[max-height] duration-300 ease-in-out ${
-                  openIndex === index ? 'max-h-40' : 'max-h-0'
-                }`}
-              >
-                <div className="px-6 py-4 border-t border-gray-200">
-                  <p className="corp-text-body">A: {faq.answer}</p>
-                </div>
-              </div>
-            </div>
+                <span className="text-base md:text-lg font-semibold text-gray-900">Q: {faq.question}</span>
+                <motion.div
+                  animate={{ rotate: openIndex === index ? 180 : 0 }}
+                  transition={{ duration: 0.3, ease: [0.25, 0.46, 0.45, 0.94] }}
+                >
+                  <ChevronDown className="h-5 w-5 text-gray-600 flex-shrink-0 ml-4" />
+                </motion.div>
+              </motion.button>
+              <AnimatePresence initial={false}>
+                {openIndex === index && (
+                  <motion.div
+                    initial={{ height: 0, opacity: 0 }}
+                    animate={{ height: 'auto', opacity: 1 }}
+                    exit={{ height: 0, opacity: 0 }}
+                    transition={{ duration: 0.3, ease: [0.25, 0.46, 0.45, 0.94] }}
+                    className="overflow-hidden"
+                  >
+                    <div className="px-6 py-4 border-t border-gray-200">
+                      <motion.p
+                        initial={{ y: -10, opacity: 0 }}
+                        animate={{ y: 0, opacity: 1 }}
+                        transition={{ duration: 0.3, delay: 0.1 }}
+                        className="text-sm md:text-base text-gray-700 leading-relaxed"
+                      >
+                        A: {faq.answer}
+                      </motion.p>
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </motion.div>
           ))}
         </div>
       </div>

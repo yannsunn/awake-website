@@ -1,7 +1,6 @@
 'use client'
 
 import { memo } from 'react'
-import '@/app/corporate.css'
 
 const ValueProposition = memo(function ValueProposition() {
   const reasons = [
@@ -23,34 +22,33 @@ const ValueProposition = memo(function ValueProposition() {
   ]
 
   return (
-    <section className="py-16 md:py-24 bg-gray-50/50 relative overflow-hidden">
-      <div className="absolute inset-0 opacity-5" style={{
-        backgroundImage: 'url("/images/digital-particles.png")',
-        backgroundSize: 'cover',
-        backgroundPosition: 'center'
-      }} />
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="text-center mb-12">
-          <h2 className="corp-heading-2 mb-4">
+    <section className="relative bg-white">
+      {/* 見出しセクション */}
+      <div className="container mx-auto px-4 py-24 md:py-32">
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
             私たちが選ばれる理由
           </h2>
-          <p className="corp-text-lead">
+          <p className="text-xl md:text-2xl text-gray-700">
             投資を「コスト」から「成長エンジン」に変える
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {reasons.map((reason, index) => (
-            <div key={index} className="corp-card">
-              <div className="text-4xl mb-4">{reason.icon}</div>
-              <h3 className="corp-heading-3 mb-3">
-                {reason.title}
-              </h3>
-              <p className="corp-text-body">
-                {reason.description}
-              </p>
-            </div>
-          ))}
+        {/* コンテンツグリッド */}
+        <div className="max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {reasons.map((reason, index) => (
+              <div key={index} className="bg-white rounded-xl p-8 shadow-md hover:shadow-lg transition-all border border-gray-200">
+                <div className="text-5xl mb-6">{reason.icon}</div>
+                <h3 className="text-2xl font-bold text-gray-900 mb-4">
+                  {reason.title}
+                </h3>
+                <p className="text-lg text-gray-600 leading-relaxed">
+                  {reason.description}
+                </p>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>

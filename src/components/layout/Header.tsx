@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef, memo, useCallback } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 import { Menu, X, ChevronDown, MessageCircle } from 'lucide-react'
 import { COMPANY_DATA } from '@/lib/company-data'
@@ -120,11 +121,21 @@ const Header = memo(function Header() {
           <div className="flex justify-between items-center h-16 md:h-20">
             {/* ロゴ */}
             <div className="flex-shrink-0">
-              <Link 
-                href="/" 
+              <Link
+                href="/"
                 className="flex items-center group"
                 aria-label={`${COMPANY_DATA.basic.name} ホーム`}
               >
+                <div className="relative w-10 h-10 md:w-12 md:h-12 mr-2">
+                  <Image
+                    src="/images/awake-logo-text.png"
+                    alt={`${COMPANY_DATA.basic.name} ロゴ`}
+                    fill
+                    className="object-contain"
+                    sizes="48px"
+                    priority
+                  />
+                </div>
                 <span className="text-xl md:text-2xl text-black group-hover:text-black transition-colors font-bold">
                   {COMPANY_DATA.basic.name}
                 </span>
@@ -248,7 +259,18 @@ const Header = memo(function Header() {
           <div className="flex flex-col h-full">
             {/* ヘッダー */}
             <div className="flex items-center justify-between px-4 py-4 border-b border-gray-200">
-              <span className="corp-heading-3 text-black">メニュー</span>
+              <div className="flex items-center">
+                <div className="relative w-8 h-8 mr-2">
+                  <Image
+                    src="/images/awake-logo-text.png"
+                    alt={`${COMPANY_DATA.basic.name} ロゴ`}
+                    fill
+                    className="object-contain"
+                    sizes="32px"
+                  />
+                </div>
+                <span className="corp-heading-3 text-black">メニュー</span>
+              </div>
               <button
                 onClick={toggleMenu}
                 className="p-3 min-h-[48px] min-w-[48px] rounded-lg hover:bg-gray-100 transition-all duration-300 ease-out hover:scale-[1.05] active:scale-[0.95] focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-blue-500 focus-visible:ring-offset-3"

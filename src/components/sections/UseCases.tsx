@@ -53,9 +53,9 @@ const UseCases = memo(function UseCases() {
             <h3 className="corp-heading-3 text-black text-center mb-6">
               LINEと連携した自動化の実例
             </h3>
-            <div className="relative rounded-xl overflow-hidden bg-white/95 p-4">
+            <div className="relative rounded-xl overflow-hidden bg-white/98 p-4">
               <Image
-                src="/assets/images/ai-line-automation.png"
+                src="/images/cta-12.png"
                 alt="LINE自動化ワークフロー図"
                 width={1200}
                 height={800}
