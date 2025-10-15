@@ -1,9 +1,9 @@
 'use client'
 
 import { ReactNode } from 'react'
+import Image from 'next/image'
 import Header from '@/components/layout/Header'
 import Footer from '@/components/layout/Footer'
-import ChatBot from '@/components/ui/ChatBot'
 import { useScrollRevealGlobal } from '@/hooks/useScrollReveal'
 import type { Breadcrumb } from '@/lib/types'
 
@@ -27,17 +27,33 @@ export default function PageLayout({
   useScrollRevealGlobal()
   
   return (
-    <div className="min-h-screen flex flex-col overflow-x-hidden">
-      <Header />
+    <div className="min-h-screen flex flex-col overflow-x-hidden relative">
+      {/* 固定背景ロゴ - 全ページ共通 */}
+      <div className="fixed inset-0 z-0 pointer-events-none">
+        <div className="absolute inset-0 flex items-center justify-center p-8 md:p-12">
+          <div className="relative w-full h-full max-w-6xl max-h-[80vh]">
+            <Image
+              src="/images/hero-logo.png"
+              alt="Awake Inc. Logo"
+              fill
+              className="object-contain opacity-[0.03]"
+              priority
+              sizes="(max-width: 768px) 90vw, 80vw"
+            />
+          </div>
+        </div>
+      </div>
 
-      <main role="main" id="main-content" className="flex-grow pt-16 md:pt-20">
-        {children}
-      </main>
+      {/* コンテンツ */}
+      <div className="relative z-10 flex flex-col min-h-screen">
+        <Header />
 
-      <Footer />
+        <main role="main" id="main-content" className="flex-grow pt-16 md:pt-20">
+          {children}
+        </main>
 
-      {/* チャットボット */}
-      <ChatBot />
+        <Footer />
+      </div>
     </div>
   )
 }

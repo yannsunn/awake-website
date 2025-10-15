@@ -12,11 +12,15 @@ const nextConfig: NextConfig = {
     ignoreBuildErrors: false,
   },
   
+  // ビルドタイムアウトを延長（画像最適化対応）
+  staticPageGenerationTimeout: 180, // 3分
+
   // Core Web Vitals 最適化 - 限界突破パフォーマンス
   images: {
     formats: ['image/avif', 'image/webp'],
     minimumCacheTTL: 31536000, // 1 year
-    deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
+    // API制限対応: 最大サイズを8000ピクセル以下に制限
+    deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048],
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
     dangerouslyAllowSVG: false,
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
@@ -25,6 +29,10 @@ const nextConfig: NextConfig = {
         protocol: 'https',
         hostname: 'static.mercdn.net',
         pathname: '/item/detail/orig/photos/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'images.unsplash.com',
       },
     ],
   },

@@ -14,7 +14,7 @@ export const FloatingParticles = dynamic(
 export const RippleContainer = dynamic(
   () => import('./RippleContainer'),
   {
-    ssr: true,
+    ssr: false,
     loading: () => <div className="min-h-full" />
   }
 )

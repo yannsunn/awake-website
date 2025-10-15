@@ -2,7 +2,7 @@
 
 import { ReactNode } from 'react'
 import { cn } from '@/lib/utils'
-import { SHADOWS } from '@/lib/ultra-design-system'
+import { SHADOWS } from '@/lib/design-system'
 
 interface UltraCardProps {
   children: ReactNode
@@ -27,13 +27,16 @@ export default function UltraCard({
   return (
     <div
       className={cn(
-        'rounded-lg p-6',
+        'rounded-lg p-6 relative overflow-hidden transition-all duration-300',
         variants[variant],
-        hover && 'hover:border-blue-600/40 hover:shadow-xl',
+        hover && 'hover:border-blue-600/40 hover:shadow-xl hover:-translate-y-2 hover:scale-[1.02]',
         className
       )}
     >
-      {children}
+      {hover && (
+        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent translate-x-[-100%] hover:translate-x-[100%] transition-transform duration-1000 pointer-events-none"></div>
+      )}
+      <div className="relative z-10">{children}</div>
     </div>
   )
 }

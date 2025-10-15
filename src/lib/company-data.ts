@@ -4,11 +4,26 @@ export const COMPANY_DATA = {
     name: '株式会社Awake',
     nameEn: 'Awake Inc.',
     ceo: '田形 康貴',
-    established: '2020年（令和2年）',
+    established: '2021年（令和3年）',
+    capital: '150万円',
+    employees: '12名（パート・業務委託を含む）',
     mission: '適正コストで最大の価値を',
     tagline: '高額なIT投資に、もう悩まない',
     description: '必要最小限の投資で、最大の成果を引き出す経営パートナー',
-    subMessage: '無駄を削ぎ落とし、本当に価値のある投資だけに集中。あなたのビジネスに、新しい成長の道筋を作ります。'
+    subMessage: '無駄を削ぎ落とし、本当に価値のある投資だけに集中。あなたのビジネスに、新しい成長の道筋を作ります。',
+    businessContent: [
+      'ホームページ制作・Webサイト開発',
+      'AIチャットボット開発・AIコンサルティング',
+      'Amazon EC販売代行サービス',
+      '業務効率化・DX推進支援'
+    ],
+    banks: [
+      '多摩信用金庫',
+      '日本政策公庫'
+    ],
+    licenses: [
+      '古物商許可'
+    ]
   },
   contact: {
     address: {
@@ -16,7 +31,7 @@ export const COMPANY_DATA = {
       full: '東京都東大和市向原5-1129-61 渡辺ビル1F'
     },
     phone: '050-7115-4948',
-    email: 'shop@awakeinc.co.jp',
+    email: 'ai.ec@awakeinc.co.jp',
     line: '@awakeinc',
     website: 'https://awakeinc.co.jp/',
     businessHours: {
@@ -51,6 +66,11 @@ export const COMPANY_DATA = {
             name: 'エンタープライズ',
             price: '要相談',
             features: ['ページ数無制限', '完全オリジナル', 'システム連携', '専属サポート', '柔軟な制作期間']
+          },
+          chatbotOption: {
+            name: 'AIチャットボット導入オプション',
+            price: '+¥298,000〜',
+            features: ['ホームページ制作プランに追加可能', 'カスタムAIチャットボット開発', 'FAQ学習データ作成', 'Webサイトに完全統合', '運用サポート付き']
           }
         }
       },
@@ -62,13 +82,45 @@ export const COMPANY_DATA = {
         pricing: {
           basic: {
             name: 'AIチャットボット開発',
-            price: '¥498,000〜',
-            duration: '2-3ヶ月',
+            price: '¥298,000〜',
+            duration: '1-3ヶ月',
             features: ['要件定義・設計支援', 'カスタムAIチャットボット開発', 'FAQ学習データ作成', 'Webサイト・LINE連携', '運用・改善サポート（3ヶ月）']
+          },
+          aiCommon: {
+            name: 'AIコモン（月額制）',
+            price: '¥33,000〜330,000',
+            duration: '月額',
+            features: ['AI活用の継続的支援', '月次レポート・改善提案', '優先サポート対応', 'AI技術アップデート対応', '定期的なコンサルティング'],
+            tiers: [
+              {
+                size: 'スモール',
+                employees: '〜5名',
+                price: '¥33,000/月',
+                features: ['基本的なAI活用支援', '月1回のオンライン相談', 'メールサポート']
+              },
+              {
+                size: 'ミディアム',
+                employees: '6〜20名',
+                price: '¥165,000/月',
+                features: ['AI活用戦略立案支援', '月2回のオンライン相談', 'チャットサポート', '月次レポート']
+              },
+              {
+                size: 'ラージ',
+                employees: '21〜50名',
+                price: '¥330,000/月',
+                features: ['包括的AI導入支援', '週1回のオンライン相談', '専任担当者配置', '詳細分析レポート']
+              },
+              {
+                size: 'エンタープライズ',
+                employees: '51名〜',
+                price: '要相談',
+                features: ['全社的AI戦略策定', '週2回以上の定期MTG', '専任チーム配置', 'カスタム開発支援']
+              }
+            ]
           },
           enterprise: {
             name: 'AI業務自動化・DX推進',
-            price: '¥1,000,000〜',
+            price: '要相談',
             duration: '6-12ヶ月',
             features: ['業務プロセス分析・改善提案', 'AIチャットボット＋自動化システム開発', '社員向けAI研修プログラム', 'システム間連携構築', '継続的効果測定・改善']
           }

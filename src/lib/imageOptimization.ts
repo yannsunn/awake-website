@@ -114,3 +114,133 @@ export const getOptimizedImageUrl = (basePath: string, format?: 'webp' | 'jpg' |
   // フォールバック
   return `${basePath}.jpg`
 }
+
+// 🎯 画像サイズ制限チェック（API制限対応）
+export const MAX_IMAGE_DIMENSION = 8000 // API制限: 8000ピクセル
+
+export interface ImageDimensions {
+  width: number
+  height: number
+}
+
+// 画像のサイズをチェックして、制限を超える場合はリサイズ
+export const checkAndResizeImage = async (
+  file: File,
+  maxDimension: number = MAX_IMAGE_DIMENSION
+): Promise<{ file: File; dimensions: ImageDimensions }> => {
+  return new Promise((resolve, reject) => {
+    const img = new Image()
+    const canvas = document.createElement('canvas')
+    const ctx = canvas.getContext('2d')
+
+    if (!ctx) {
+      reject(new Error('Canvas context not available'))
+      return
+    }
+
+    img.onload = () => {
+      const { width, height } = img
+      
+      // サイズが制限内の場合はそのまま返す
+      if (width <= maxDimension && height <= maxDimension) {
+        resolve({
+          file,
+          dimensions: { width, height }
+        })
+        return
+      }
+
+      // リサイズが必要な場合
+      let newWidth = width
+      let newHeight = height
+
+      // アスペクト比を保ちながらリサイズ
+      if (width > height) {
+        if (width > maxDimension) {
+          newWidth = maxDimension
+          newHeight = (height * maxDimension) / width
+        }
+      } else {
+        if (height > maxDimension) {
+          newHeight = maxDimension
+          newWidth = (width * maxDimension) / height
+        }
+      }
+
+      // キャンバスサイズを設定
+      canvas.width = newWidth
+      canvas.height = newHeight
+
+      // 画像をリサイズして描画
+      ctx.drawImage(img, 0, 0, newWidth, newHeight)
+
+      // リサイズされた画像をBlobに変換
+      canvas.toBlob(
+        (blob) => {
+          if (!blob) {
+            reject(new Error('Failed to resize image'))
+            return
+          }
+
+          // 新しいFileオブジェクトを作成
+          const resizedFile = new File([blob], file.name, {
+            type: file.type,
+            lastModified: Date.now()
+          })
+
+          resolve({
+            file: resizedFile,
+            dimensions: { width: newWidth, height: newHeight }
+          })
+        },
+        file.type,
+        0.85 // 品質85%
+      )
+    }
+
+    img.onerror = () => {
+      reject(new Error('Failed to load image'))
+    }
+
+    // 画像を読み込み
+    img.src = URL.createObjectURL(file)
+  })
+}
+
+// Base64エンコード（API送信用）
+export const fileToBase64 = (file: File): Promise<string> => {
+  return new Promise((resolve, reject) => {
+    const reader = new FileReader()
+    reader.onload = () => {
+      const result = reader.result as string
+      resolve(result)
+    }
+    reader.onerror = () => {
+      reject(new Error('Failed to convert file to base64'))
+    }
+    reader.readAsDataURL(file)
+  })
+}
+
+// 画像ファイルの検証
+export const validateImageFile = (file: File): { valid: boolean; error?: string } => {
+  // ファイルタイプのチェック
+  const allowedTypes = ['image/jpeg', 'image/jpg', 'image/png', 'image/webp', 'image/gif']
+  if (!allowedTypes.includes(file.type)) {
+    return {
+      valid: false,
+      error: 'サポートされていない画像形式です。JPEG、PNG、WebP、GIF形式をご利用ください。'
+    }
+  }
+
+  // ファイルサイズのチェック（10MB制限）
+  const maxSize = 10 * 1024 * 1024 // 10MB
+  if (file.size > maxSize) {
+    return {
+      valid: false,
+      error: '画像ファイルが大きすぎます。10MB以下のファイルをご利用ください。'
+    }
+  }
+
+  return { valid: true }
+}

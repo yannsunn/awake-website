@@ -4,9 +4,8 @@
 import { memo, forwardRef, KeyboardEvent, ReactNode, useRef, useEffect } from 'react'
 import Link from 'next/link'
 import { ArrowRight, type LucideIcon } from 'lucide-react'
-import { BUTTON_STYLES } from '@/lib/constants'
+import { BUTTON_STYLES, TEXT_SHADOW } from '@/lib/design-system'
 import type { ButtonVariant } from '@/lib/types'
-import { TEXT_SHADOW } from '@/lib/ultra-styles'
 
 interface AccessibleButtonProps {
   href?: string | undefined
@@ -85,7 +84,7 @@ const AccessibleButton = memo(forwardRef<
     if (e.key === 'Enter' || e.key === ' ') {
       e.preventDefault()
       if (!disabled && onClick) {
-        onClick(e as any)
+        onClick(e as unknown as React.MouseEvent<HTMLButtonElement>)
       }
     }
   }
@@ -132,9 +131,9 @@ const AccessibleButton = memo(forwardRef<
   // リンクボタンの場合
   if (href && !disabled) {
     return (
-      <Link 
-        ref={ref as any}
-        href={href} 
+      <Link
+        ref={ref as React.Ref<HTMLAnchorElement>}
+        href={href}
         className={`${styles} group inline-flex items-center justify-center no-underline`}
         target={target}
         rel={rel}
@@ -147,8 +146,8 @@ const AccessibleButton = memo(forwardRef<
 
   // 通常のボタンの場合
   return (
-    <button 
-      ref={ref as any}
+    <button
+      ref={ref as React.Ref<HTMLButtonElement>}
       type={type}
       onClick={onClick}
       onKeyDown={handleKeyDown}

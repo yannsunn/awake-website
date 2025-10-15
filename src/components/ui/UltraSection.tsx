@@ -1,8 +1,9 @@
 'use client'
 
 import { ReactNode } from 'react'
+import Image from 'next/image'
 import { cn } from '@/lib/utils'
-import { SECTION_PATTERNS, TEXT_SHADOW, TEXT_BG_STYLES } from '@/lib/ultra-styles'
+import { SECTION_PATTERNS, TEXT_SHADOW, TEXT_BG_STYLES } from '@/lib/design-system'
 import { RESPONSIVE_FONT, RESPONSIVE_PADDING, RESPONSIVE_TYPOGRAPHY } from '@/lib/responsive-utils'
 
 interface UltraSectionProps {
@@ -35,16 +36,16 @@ export default function UltraSection({
       <div className={pattern.content}>
         {title && (
           <div className="text-center mb-8 sm:mb-12 lg:mb-16">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-black mb-4 px-4 sm:px-0" style={TEXT_SHADOW.heading}>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-black mb-4 px-4 sm:px-0 leading-relaxed" style={{...TEXT_SHADOW.heading, wordBreak: 'keep-all', overflowWrap: 'anywhere', textWrap: 'balance'}}>
               {title}
             </h2>
             {subtitle && (
-              <p className="text-lg sm:text-xl md:text-2xl text-black mb-4 px-4 sm:px-0 font-bold" style={TEXT_SHADOW.body}>
+              <p className="text-lg sm:text-xl md:text-2xl text-black mb-4 px-4 sm:px-0 font-bold leading-relaxed" style={{...TEXT_SHADOW.body, wordBreak: 'keep-all', overflowWrap: 'anywhere', textWrap: 'balance'}}>
                 {subtitle}
               </p>
             )}
             {description && (
-              <p className="text-base sm:text-lg md:text-xl text-black px-4 sm:px-0" style={TEXT_SHADOW.small}>
+              <p className="text-base sm:text-lg md:text-xl text-black px-4 sm:px-0 leading-relaxed" style={{...TEXT_SHADOW.small, wordBreak: 'keep-all', overflowWrap: 'anywhere', textWrap: 'pretty'}}>
                 {description}
               </p>
             )}
@@ -57,13 +58,13 @@ export default function UltraSection({
 }
 
 // ヒーローセクション専用
-export function UltraHero({ 
-  title, 
-  subtitle, 
+export function UltraHero({
+  title,
+  subtitle,
   description,
   children,
   className
-}: { 
+}: {
   title: string | ReactNode
   subtitle?: string | ReactNode
   description?: string | ReactNode
@@ -71,39 +72,56 @@ export function UltraHero({
   className?: string | undefined
 }) {
   return (
-    <UltraSection 
-      variant="dark" 
-      className={cn(
-        "min-h-[60vh] sm:min-h-[70vh] md:min-h-[80vh] flex items-center justify-center",
-        RESPONSIVE_PADDING.section.dynamic,
-        className
-      )}
-    >
+    <section className={cn(
+      "relative min-h-[50vh] flex items-center justify-center overflow-hidden pt-24 md:pt-28",
+      className
+    )}>
+      {/* Background Image */}
+      <div className="absolute inset-0 z-0">
+        <Image
+          src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?q=80&w=2070&auto=format&fit=crop"
+          alt="Legal documentation background"
+          fill
+          className="object-cover opacity-20"
+          priority
+          unoptimized
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-white/80 via-white/70 to-white/90" />
+      </div>
+
       <div className={cn(
-        "text-center max-w-7xl mx-auto",
+        "text-center max-w-7xl mx-auto relative z-10",
         RESPONSIVE_PADDING.container.dynamic
       )}>
-        <h1 
+        <h1
           className={cn(
             "font-bold mb-4 sm:mb-6 text-black",
-            RESPONSIVE_TYPOGRAPHY.lineHeight.tight
+            RESPONSIVE_TYPOGRAPHY.lineHeight.relaxed
           )}
           style={{
             ...TEXT_SHADOW.heading,
-            fontSize: RESPONSIVE_FONT.hero.clamp
+            fontSize: RESPONSIVE_FONT.hero.clamp,
+            wordBreak: 'keep-all',
+            overflowWrap: 'anywhere',
+            textWrap: 'balance',
+            letterSpacing: '0.02em'
           }}
         >
           {title}
         </h1>
         {subtitle && (
-          <p 
+          <p
             className={cn(
               "text-black font-medium mb-4 sm:mb-6",
               RESPONSIVE_TYPOGRAPHY.lineHeight.relaxed
             )}
             style={{
               ...TEXT_SHADOW.body,
-              fontSize: RESPONSIVE_FONT.h2.clamp
+              fontSize: RESPONSIVE_FONT.h2.clamp,
+              wordBreak: 'keep-all',
+              overflowWrap: 'anywhere',
+              textWrap: 'balance',
+              letterSpacing: '0.02em'
             }}
           >
             {subtitle}
@@ -117,7 +135,11 @@ export function UltraHero({
             )}
             style={{
               ...TEXT_SHADOW.small,
-              fontSize: RESPONSIVE_FONT.body.clamp
+              fontSize: RESPONSIVE_FONT.body.clamp,
+              wordBreak: 'keep-all',
+              overflowWrap: 'anywhere',
+              textWrap: 'pretty',
+              letterSpacing: '0.02em'
             }}
           >
             {description}
@@ -125,7 +147,7 @@ export function UltraHero({
         )}
         {children}
       </div>
-    </UltraSection>
+    </section>
   )
 }
 
@@ -150,16 +172,16 @@ export function UltraCTA({
   return (
     <UltraSection variant="medium" className={className}>
       <div className="text-center max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-black mb-6 leading-tight" style={TEXT_SHADOW.heading}>
+        <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-black mb-6 leading-relaxed" style={{...TEXT_SHADOW.heading, wordBreak: 'keep-all', overflowWrap: 'anywhere', textWrap: 'balance', letterSpacing: '0.02em'}}>
           {title}
         </h2>
         {subtitle && (
-          <p className={`text-lg sm:text-xl md:text-2xl text-black mb-6 leading-relaxed ${TEXT_BG_STYLES.default}`} style={TEXT_SHADOW.body}>
+          <p className={`text-lg sm:text-xl md:text-2xl text-black mb-6 leading-relaxed ${TEXT_BG_STYLES.default}`} style={{...TEXT_SHADOW.body, wordBreak: 'keep-all', overflowWrap: 'anywhere', textWrap: 'balance', letterSpacing: '0.02em'}}>
             {subtitle}
           </p>
         )}
         {description && (
-          <p className={`text-base sm:text-lg md:text-xl text-black mb-8 leading-relaxed ${TEXT_BG_STYLES.default}`} style={TEXT_SHADOW.body}>
+          <p className={`text-base sm:text-lg md:text-xl text-black mb-8 leading-relaxed ${TEXT_BG_STYLES.default}`} style={{...TEXT_SHADOW.body, wordBreak: 'keep-all', overflowWrap: 'anywhere', textWrap: 'pretty', letterSpacing: '0.02em'}}>
             {description}
           </p>
         )}

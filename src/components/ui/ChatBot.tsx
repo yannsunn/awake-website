@@ -97,7 +97,7 @@ export default function ChatBot() {
         {/* 通知バッジ */}
         {hasShownWelcome && !isOpen && (
           <motion.span
-            className="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center"
+            className="absolute -top-1 -right-1 bg-blue-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center border-2 border-white shadow-lg"
             initial={{ scale: 0 }}
             animate={{ scale: 1 }}
             transition={{ type: 'spring', stiffness: 500, damping: 15 }}
@@ -136,7 +136,7 @@ export default function ChatBot() {
                   <div
                     className={`max-w-[80%] p-3 rounded-2xl whitespace-pre-line ${
                       message.isBot
-                        ? 'bg-white text-gray-800 shadow-sm border border-gray-200'
+                        ? 'bg-white text-[#1f2937] shadow-sm border border-[#e5e7eb]'
                         : 'bg-blue-500 text-white'
                     }`}
                     style={{ fontSize: '0.95rem', lineHeight: '1.5' }}
