@@ -205,7 +205,7 @@ export async function generateMetadata(
 
   // サービス別の詳細説明
   const enhancedDescriptions = {
-    ai: `${service.description}。AIチャットボット開発298,000円〜、月額AIコモン33,000円〜。東京都東大和市の${COMPANY_DATA.basic.name}が、中小企業のカスタマーサポート自動化・業務効率化を支援。24時間365日対応で人件費削減と顧客満足度向上を実現。`,
+    ai: `${service.description}。AIチャットボット開発298,000円〜、AI顧問（月額制）33,000円〜。東京都東大和市の${COMPANY_DATA.basic.name}が、中小企業のカスタマーサポート自動化・業務効率化を支援。24時間365日対応で人件費削減と顧客満足度向上を実現。`,
     ec: `${service.description}。完全成果報酬型で初期費用0円。Amazon販売手数料10%〜15%。東京都東大和市の${COMPANY_DATA.basic.name}が、CLEMIRA製品など高品質商品のAmazon販路開拓を支援。在庫リスクなし、データ分析で確実な売上アップ。`,
     web: `${service.description}。ホームページ制作132,000円〜。東京都東大和市の${COMPANY_DATA.basic.name}が、中小企業のWebサイト制作を支援。レスポンシブデザイン、SEO対策、高速表示で集客力のあるサイトを実現。`
   }
@@ -287,7 +287,7 @@ export default async function ServicePage(
           description: '御社専用のAIチャットボット開発・導入サービス'
         },
         {
-          name: '月額AIコモン',
+          name: 'AI顧問（月額制）',
           price: '33000',
           description: 'AI活用の継続的なサポートとメンテナンス'
         }
