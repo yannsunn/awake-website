@@ -15,10 +15,40 @@ export const metadata: Metadata = {
   description: "株式会社Awakeの会社概要、代表取締役田形康貴からのメッセージ、ミッション・ビジョンをご紹介。革新的なソリューションで企業の成長をサポート。",
   keywords: "株式会社Awake, 田形康貴, 会社概要, 代表挨拶, ミッション, ビジョン, 企業理念",
   openGraph: {
+    type: 'website',
+    locale: 'ja_JP',
+    url: `${COMPANY_DATA.url}/about`,
+    siteName: COMPANY_DATA.basic.name,
     title: "会社概要・代表挨拶 | 株式会社Awake",
     description: "代表取締役田形康貴からのメッセージと企業理念。革新的なソリューションで企業の成長をサポートします。",
-    images: ["/assets/images/ogp.jpg"],
-    url: "https://awakeinc.co.jp/about/",
+    images: [
+      {
+        url: `${COMPANY_DATA.url}/assets/images/ogp.jpg`,
+        width: 1200,
+        height: 630,
+        alt: "株式会社Awake - 会社概要"
+      }
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: "会社概要・代表挨拶 | 株式会社Awake",
+    description: "代表取締役田形康貴からのメッセージと企業理念。",
+    images: [`${COMPANY_DATA.url}/assets/images/ogp.jpg`],
+  },
+  alternates: {
+    canonical: `${COMPANY_DATA.url}/about`,
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
   },
 }
 

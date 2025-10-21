@@ -8,7 +8,42 @@ import '@/app/corporate.css'
 export const metadata: Metadata = {
   title: "利用規約 | 株式会社Awake",
   description: "株式会社Awakeの利用規約をご確認ください。",
-  robots: "index, follow",
+  openGraph: {
+    type: 'website',
+    locale: 'ja_JP',
+    url: `${COMPANY_DATA.url}/legal/terms`,
+    siteName: COMPANY_DATA.basic.name,
+    title: "利用規約 | 株式会社Awake",
+    description: "株式会社Awakeの利用規約をご確認ください。",
+    images: [
+      {
+        url: `${COMPANY_DATA.url}/assets/images/ogp.jpg`,
+        width: 1200,
+        height: 630,
+        alt: "株式会社Awake - 利用規約"
+      }
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: "利用規約 | 株式会社Awake",
+    description: "株式会社Awakeの利用規約。",
+    images: [`${COMPANY_DATA.url}/assets/images/ogp.jpg`],
+  },
+  alternates: {
+    canonical: `${COMPANY_DATA.url}/legal/terms`,
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
 }
 
 export default function TermsPage() {
