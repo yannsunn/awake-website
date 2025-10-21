@@ -118,6 +118,23 @@ const nextConfig: NextConfig = {
     },
   },
   
+  // Domain redirect - www to non-www (SEO最適化)
+  async redirects() {
+    return [
+      {
+        source: '/:path*',
+        has: [
+          {
+            type: 'host',
+            value: 'www.awakeinc.co.jp',
+          },
+        ],
+        destination: 'https://awakeinc.co.jp/:path*',
+        permanent: true, // 308 redirect
+      },
+    ];
+  },
+
   // Enhanced Security headers - 限界突破セキュリティ対応
   async headers() {
     return [
