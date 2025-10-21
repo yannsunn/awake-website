@@ -1,0 +1,11 @@
+{
+  "rules": {
+    "no-restricted-syntax": [
+      "error",
+      {
+        "selector": "Property[key.name='fullPage'][value.value=true]",
+        "message": "CRITICAL: Never use fullPage: true in Playwright screenshots. This exceeds 2000px dimension limits. Use viewport-only screenshots with standard sizes (Desktop: 1920x1080, Mobile: 390x844)."
+      }
+    ]
+  }
+}
