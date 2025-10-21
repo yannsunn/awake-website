@@ -12,6 +12,42 @@ export const metadata: Metadata = {
   title: `パートナー企業 | ${COMPANY_DATA.basic.name}`,
   description: `${COMPANY_DATA.basic.name}と協力し、お客様に最高のサービスを提供するパートナー企業をご紹介します。`,
   keywords: `${COMPANY_DATA.metadata.keywords}, パートナー企業, 提携企業, 協業`,
+  openGraph: {
+    type: 'website',
+    locale: 'ja_JP',
+    url: `${COMPANY_DATA.url}/partners`,
+    siteName: COMPANY_DATA.basic.name,
+    title: `パートナー企業 | ${COMPANY_DATA.basic.name}`,
+    description: `${COMPANY_DATA.basic.name}と協力し、お客様に最高のサービスを提供するパートナー企業をご紹介します。`,
+    images: [
+      {
+        url: `${COMPANY_DATA.url}/assets/images/ogp.jpg`,
+        width: 1200,
+        height: 630,
+        alt: `${COMPANY_DATA.basic.name} - パートナー企業`
+      }
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: `パートナー企業 | ${COMPANY_DATA.basic.name}`,
+    description: `${COMPANY_DATA.basic.name}と協力し、お客様に最高のサービスを提供します。`,
+    images: [`${COMPANY_DATA.url}/assets/images/ogp.jpg`],
+  },
+  alternates: {
+    canonical: `${COMPANY_DATA.url}/partners`,
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
 }
 
 // パートナー企業データ

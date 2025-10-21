@@ -8,7 +8,42 @@ import '@/app/corporate.css'
 export const metadata: Metadata = {
   title: "プライバシーポリシー | 株式会社Awake",
   description: "株式会社Awakeのプライバシーポリシーをご確認ください。個人情報の取扱いについて詳しく説明しています。",
-  robots: "index, follow",
+  openGraph: {
+    type: 'website',
+    locale: 'ja_JP',
+    url: `${COMPANY_DATA.url}/legal/privacy-policy`,
+    siteName: COMPANY_DATA.basic.name,
+    title: "プライバシーポリシー | 株式会社Awake",
+    description: "株式会社Awakeのプライバシーポリシーをご確認ください。個人情報の取扱いについて詳しく説明しています。",
+    images: [
+      {
+        url: `${COMPANY_DATA.url}/assets/images/ogp.jpg`,
+        width: 1200,
+        height: 630,
+        alt: "株式会社Awake - プライバシーポリシー"
+      }
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: "プライバシーポリシー | 株式会社Awake",
+    description: "株式会社Awakeのプライバシーポリシー。個人情報の取扱いについて。",
+    images: [`${COMPANY_DATA.url}/assets/images/ogp.jpg`],
+  },
+  alternates: {
+    canonical: `${COMPANY_DATA.url}/legal/privacy-policy`,
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
 }
 
 export default function PrivacyPolicyPage() {

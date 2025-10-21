@@ -12,6 +12,42 @@ export const metadata: Metadata = {
   title: `よくある質問 | ${COMPANY_DATA.basic.name}`,
   description: `${COMPANY_DATA.basic.name}のサービスに関するよくある質問をまとめました。ホームページ制作、AIコンサルティング、Amazon代理店サービスについて詳しく解説。`,
   keywords: `${COMPANY_DATA.metadata.keywords}, FAQ, よくある質問, サポート`,
+  openGraph: {
+    type: 'website',
+    locale: 'ja_JP',
+    url: `${COMPANY_DATA.url}/faq`,
+    siteName: COMPANY_DATA.basic.name,
+    title: `よくある質問 | ${COMPANY_DATA.basic.name}`,
+    description: `${COMPANY_DATA.basic.name}のサービスに関するよくある質問をまとめました。`,
+    images: [
+      {
+        url: `${COMPANY_DATA.url}/assets/images/ogp.jpg`,
+        width: 1200,
+        height: 630,
+        alt: `${COMPANY_DATA.basic.name} - よくある質問`
+      }
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: `よくある質問 | ${COMPANY_DATA.basic.name}`,
+    description: `${COMPANY_DATA.basic.name}のサービスに関するよくある質問をまとめました。`,
+    images: [`${COMPANY_DATA.url}/assets/images/ogp.jpg`],
+  },
+  alternates: {
+    canonical: `${COMPANY_DATA.url}/faq`,
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
 }
 
 // 🚀 FAQ データ構造

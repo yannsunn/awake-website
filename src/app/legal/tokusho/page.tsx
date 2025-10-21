@@ -8,7 +8,42 @@ import '@/app/corporate.css'
 export const metadata: Metadata = {
   title: `特定商取引法に基づく表記 | ${COMPANY_DATA.basic.name}`,
   description: `${COMPANY_DATA.basic.name}の特定商取引法に基づく表記をご確認ください。販売条件、返品・交換について詳しく説明しています。`,
-  robots: "index, follow",
+  openGraph: {
+    type: 'website',
+    locale: 'ja_JP',
+    url: `${COMPANY_DATA.url}/legal/tokusho`,
+    siteName: COMPANY_DATA.basic.name,
+    title: `特定商取引法に基づく表記 | ${COMPANY_DATA.basic.name}`,
+    description: `${COMPANY_DATA.basic.name}の特定商取引法に基づく表記をご確認ください。`,
+    images: [
+      {
+        url: `${COMPANY_DATA.url}/assets/images/ogp.jpg`,
+        width: 1200,
+        height: 630,
+        alt: `${COMPANY_DATA.basic.name} - 特定商取引法に基づく表記`
+      }
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: `特定商取引法に基づく表記 | ${COMPANY_DATA.basic.name}`,
+    description: `${COMPANY_DATA.basic.name}の特定商取引法に基づく表記。`,
+    images: [`${COMPANY_DATA.url}/assets/images/ogp.jpg`],
+  },
+  alternates: {
+    canonical: `${COMPANY_DATA.url}/legal/tokusho`,
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
 }
 
 export default function TokushoPage() {
