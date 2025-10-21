@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 import LineButton from '@/components/ui/LineButton'
+import { CONTAINER, HEADING, TEXT } from '@/lib/design-system/unified'
 
 export default function HomeHero() {
   // アニメーション設定
@@ -75,29 +76,29 @@ export default function HomeHero() {
 
       {/* メインコンテンツ */}
       <motion.div
-        className="container mx-auto px-4 relative z-30"
+        className={`${CONTAINER.default.full} relative z-30`}
         initial="hidden"
         animate="visible"
         variants={containerVariants}
       >
-        <div className="max-w-[90%] lg:max-w-[1600px] mx-auto text-center">
+        <div className="text-center">
           <div>
             <motion.h1
-              className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-8 leading-tight tracking-tight"
+              className={`${HEADING.h1} text-slate-900 mb-8`}
               variants={textVariants}
             >
               ホームページ制作・AIチャットボット開発・Amazon代理店
             </motion.h1>
 
             <motion.p
-              className="text-xl md:text-2xl text-slate-700 mb-6 font-medium"
+              className={`${TEXT.lead} text-slate-700 mb-6 font-medium`}
               variants={textVariants}
             >
               株式会社Awake
             </motion.p>
 
             <motion.p
-              className="text-lg md:text-xl text-slate-600 mb-12 leading-relaxed"
+              className={`${TEXT.body} text-slate-600 mb-12 leading-relaxed`}
               variants={textVariants}
             >
               適正価格で最大の価値を。

@@ -2,6 +2,8 @@
 
 import { memo } from 'react'
 import Image from 'next/image'
+import { cn } from '@/lib/utils'
+import { SECTION_SPACING, CONTAINER, HEADING, TEXT, MARGIN } from '@/lib/design-system/unified'
 
 const ValueProposition = memo(function ValueProposition() {
   const reasons = [
@@ -26,14 +28,14 @@ const ValueProposition = memo(function ValueProposition() {
   ]
 
   return (
-    <section className="relative bg-white">
+    <section className={cn(SECTION_SPACING.large, 'relative bg-white')}>
       {/* 見出しセクション */}
-      <div className="container mx-auto px-4 py-24 md:py-32">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+      <div className={CONTAINER.default.full}>
+        <div className={cn('text-center', MARGIN['2xl'])}>
+          <h2 className={cn(HEADING.h2, 'text-gray-900', MARGIN.md)}>
             私たちが選ばれる理由
           </h2>
-          <p className="text-xl md:text-2xl text-gray-700">
+          <p className={cn(TEXT.lead, 'text-gray-700')}>
             投資を「コスト」から「成長エンジン」に変える
           </p>
         </div>
@@ -53,11 +55,11 @@ const ValueProposition = memo(function ValueProposition() {
                     sizes="(max-width: 768px) 100vw, 33vw"
                   />
                 </div>
-                <div className="text-5xl mb-6">{reason.icon}</div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-4">
+                <div className={cn('text-5xl', MARGIN.md)}>{reason.icon}</div>
+                <h3 className={cn(HEADING.h4, 'text-gray-900', MARGIN.sm)}>
                   {reason.title}
                 </h3>
-                <p className="text-lg text-gray-600 leading-relaxed">
+                <p className={cn(TEXT.body, 'text-gray-600 leading-relaxed')}>
                   {reason.description}
                 </p>
               </div>

@@ -5,6 +5,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { COMPANY_DATA } from '@/lib/company-data'
 import { useRef } from 'react'
+import { SECTION_SPACING, CONTAINER, HEADING, TEXT, BUTTON_VARIANT, BUTTON_SIZE } from '@/lib/design-system/unified'
 
 export default function HomeMission() {
   const ref = useRef(null)
@@ -59,26 +60,26 @@ export default function HomeMission() {
 
       <motion.div
         ref={ref}
-        className="container mx-auto px-4 py-24 md:py-32 relative z-10"
+        className={`${CONTAINER.default.full} ${SECTION_SPACING.default} relative z-10`}
         initial="hidden"
         animate={isInView ? 'visible' : 'hidden'}
         variants={containerVariants}
       >
-        <div className="max-w-7xl mx-auto text-center">
+        <div className="text-center">
           <motion.h2
-            className="text-4xl md:text-5xl font-bold mb-8 break-words text-gray-900 leading-tight"
+            className={`${HEADING.h2} text-gray-900 mb-8`}
             variants={textVariants}
           >
             経営理念
           </motion.h2>
           <motion.p
-            className="text-2xl md:text-3xl font-bold text-gray-900 mb-8 break-words leading-relaxed"
+            className={`${HEADING.h3} text-gray-900 mb-8`}
             variants={textVariants}
           >
             {COMPANY_DATA.basic.mission}
           </motion.p>
           <motion.p
-            className="text-lg md:text-xl text-gray-700 mb-12 break-words leading-relaxed"
+            className={`${TEXT.lead} text-gray-700 mb-12`}
             variants={textVariants}
           >
             適正な投資で最大の効果を。
@@ -93,12 +94,8 @@ export default function HomeMission() {
           >
             <Link href="/about">
               <motion.button
-                className="px-12 py-5 bg-blue-600 text-white text-xl font-semibold rounded-xl shadow-md hover:shadow-lg"
-                whileHover={{
-                  scale: 1.05,
-                  backgroundColor: '#2563eb',
-                  boxShadow: '0 20px 40px -12px rgba(37, 99, 235, 0.3)'
-                }}
+                className={`${BUTTON_VARIANT.primary} ${BUTTON_SIZE.lg}`}
+                whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 transition={{ duration: 0.3 }}
                 aria-label="会社概要ページへ移動"

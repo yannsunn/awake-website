@@ -5,6 +5,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { motion } from 'framer-motion'
 import { cn } from '@/lib/utils'
+import { CONTAINER, HEADING, TEXT, MARGIN } from '@/lib/design-system/unified'
 
 interface ServiceHeroProps {
   title: string | React.ReactNode
@@ -66,19 +67,19 @@ export function ServiceHero({
         </motion.div>
       )}
 
-      <div className="container mx-auto px-4 relative z-10">
+      <div className={cn(CONTAINER.default.full, 'relative z-10')}>
         <div className="text-center max-w-5xl mx-auto">
 
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-8 leading-tight tracking-tight break-words">
+          <h1 className={cn(HEADING.h2, 'text-gray-900', MARGIN.lg, 'leading-tight tracking-tight break-words')}>
             {title}
           </h1>
 
-          <p className="text-xl md:text-2xl text-gray-800 font-medium mb-6 break-words leading-relaxed">
+          <p className={cn(TEXT.lead, 'text-gray-800 font-medium', MARGIN.md, 'break-words leading-relaxed')}>
             {description}
           </p>
 
           {subDescription && (
-            <p className="text-lg md:text-xl text-gray-600 mb-12 leading-relaxed break-words">
+            <p className={cn(TEXT.body, 'text-gray-600', MARGIN.xl, 'leading-relaxed break-words')}>
               {subDescription}
             </p>
           )}
