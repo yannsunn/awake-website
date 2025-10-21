@@ -141,11 +141,11 @@ const AIPricingTable = memo(function AIPricingTable() {
         </div>
       </div>
 
-      {/* AIコモン会社規模別価格表 */}
+      {/* AI顧問 会社規模別価格表 */}
       <div className="mt-16 max-w-5xl mx-auto">
         <div className={cn('text-center', MARGIN.lg)}>
           <h3 className={cn(HEADING.h3, 'text-black', MARGIN.sm)}>
-            AIコモン 会社規模別料金
+            AI顧問 会社規模別料金
           </h3>
           <p className={cn(TEXT.body, 'text-black')}>
             従業員数に応じた最適なプランをご提案
