@@ -4,8 +4,7 @@ import "./globals.css";
 import "./corporate.css";
 import { enhancedOrganizationSchema } from "@/lib/enhanced-schema";
 import SimpleBackground from "@/components/layout/SimpleBackground";
-import MouseEffects from "@/components/effects/MouseEffects";
-import ChatWidget from "@/components/chat/ChatWidget";
+import ClientOnlyProviders from "@/components/ClientOnlyProviders";
 
 const notoSansJP = Noto_Sans_JP({
   variable: "--font-noto-sans-jp",
@@ -72,8 +71,6 @@ export default function RootLayout({
         </div>
         {/* シンプル背景 */}
         <SimpleBackground />
-        {/* マウスエフェクト */}
-        <MouseEffects />
         {/* メインコンテンツ */}
         <div className="relative overflow-x-hidden">
           <script
@@ -84,8 +81,8 @@ export default function RootLayout({
           />
           {children}
         </div>
-        {/* チャットボット */}
-        <ChatWidget />
+        {/* クライアントサイド専用コンポーネント（動的ロード最適化） */}
+        <ClientOnlyProviders />
       </body>
     </html>
   );
