@@ -5,6 +5,7 @@ import PageLayout from '@/components/layout/PageLayout'
 import { Handshake, Award, Globe, Shield } from 'lucide-react'
 import LineButton from '@/components/ui/LineButton'
 import { UltraHero } from '@/components/ui/UltraSection'
+import { createBreadcrumbSchema } from '@/lib/enhanced-schema'
 import '@/app/corporate.css'
 
 export const metadata: Metadata = {
@@ -139,13 +140,21 @@ const partners = [
 ]
 
 export default function PartnersPage() {
-  const breadcrumbs = [
-    { name: "ホーム", url: "/" },
-    { name: "パートナー企業", url: "/partners" }
-  ]
+  const breadcrumbSchema = createBreadcrumbSchema([
+    { name: "ホーム", url: COMPANY_DATA.contact.website },
+    { name: "パートナー企業", url: `${COMPANY_DATA.contact.website}partners` }
+  ])
 
   return (
     <PageLayout>
+      {/* Breadcrumb Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(breadcrumbSchema)
+        }}
+      />
+
       {/* Hero Section */}
       <UltraHero
         title="パートナー企業"
@@ -271,7 +280,7 @@ export default function PartnersPage() {
           {partners.map((category, categoryIndex) => (
             <div key={categoryIndex}>
               <div className="text-center mb-12">
-                <h2 className="corp-heading-1 text-black mb-4">
+                <h2 className="corp-heading-2 text-black mb-4">
                   {category.category}
                 </h2>
                 <p className="corp-text-lead text-black">

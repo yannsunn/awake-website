@@ -3,7 +3,7 @@ import { Plus, Minus } from 'lucide-react'
 import Image from 'next/image'
 import { COMPANY_DATA } from '@/lib/company-data'
 import PageLayout from '@/components/layout/PageLayout'
-import { createFAQSchema } from '@/lib/enhanced-schema'
+import { createFAQSchema, createBreadcrumbSchema } from '@/lib/enhanced-schema'
 import LineButton from '@/components/ui/LineButton'
 import { UltraHero } from '@/components/ui/UltraSection'
 import '@/app/corporate.css'
@@ -112,7 +112,7 @@ const faqCategories = [
 
 export default function FAQPage() {
   // 🚀 FAQ構造化データの生成
-  const allQuestions = faqCategories.flatMap(category => 
+  const allQuestions = faqCategories.flatMap(category =>
     category.questions.map(q => ({
       question: q.question,
       answer: q.answer
@@ -120,10 +120,10 @@ export default function FAQPage() {
   )
   const faqSchema = createFAQSchema(allQuestions)
 
-  const breadcrumbs = [
-    { name: "ホーム", url: "/" },
-    { name: "よくある質問", url: "/faq" }
-  ]
+  const breadcrumbSchema = createBreadcrumbSchema([
+    { name: "ホーム", url: COMPANY_DATA.contact.website },
+    { name: "よくある質問", url: `${COMPANY_DATA.contact.website}faq` }
+  ])
 
   return (
     <PageLayout>
@@ -132,6 +132,13 @@ export default function FAQPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(faqSchema)
+        }}
+      />
+      {/* Breadcrumb Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(breadcrumbSchema)
         }}
       />
 

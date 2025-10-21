@@ -7,6 +7,7 @@ import { ProcessSteps } from '@/components/sections/ProcessSteps'
 import { FeatureGrid } from '@/components/sections/FeatureGrid'
 import PageLayout from '@/components/layout/PageLayout'
 import { COMPANY_DATA } from '@/lib/company-data'
+import { createServiceSchema, createBreadcrumbSchema } from '@/lib/enhanced-schema'
 import ProblemSection from '@/components/sections/ProblemSection'
 import UseCases from '@/components/sections/UseCases'
 import AIFaq from '@/components/sections/AIFaq'
@@ -274,8 +275,48 @@ export default async function ServicePage(
 
   // AIコンサルティングページのカスタマイズ
   if (slug === 'ai') {
+    // Service schema for AI consulting
+    const aiServiceSchema = createServiceSchema({
+      name: service.title,
+      description: service.description,
+      serviceType: 'Business Consulting',
+      offers: [
+        {
+          name: 'AIチャットボット開発',
+          price: '298000',
+          description: '御社専用のAIチャットボット開発・導入サービス'
+        },
+        {
+          name: '月額AIコモン',
+          price: '33000',
+          description: 'AI活用の継続的なサポートとメンテナンス'
+        }
+      ]
+    })
+
+    // Breadcrumb schema
+    const breadcrumbSchema = createBreadcrumbSchema([
+      { name: 'ホーム', url: COMPANY_DATA.contact.website },
+      { name: 'サービス', url: `${COMPANY_DATA.contact.website}#services` },
+      { name: service.title, url: `${COMPANY_DATA.contact.website}services/${slug}` }
+    ])
+
     return (
       <PageLayout>
+        {/* Structured Data */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(aiServiceSchema)
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(breadcrumbSchema)
+          }}
+        />
+
         <ServiceHero
           title={service.subtitle || service.title}
           description={service.description}
@@ -322,8 +363,44 @@ export default async function ServicePage(
 
   // Amazon代理店サービスページのカスタマイズ
   if (slug === 'ec') {
+    // Service schema for Amazon EC
+    const ecServiceSchema = createServiceSchema({
+      name: service.title,
+      description: service.description,
+      serviceType: 'E-commerce',
+      price: '0',
+      offers: [
+        {
+          name: 'Amazon販売代行',
+          price: '0',
+          description: '初期費用0円、完全成果報酬型（売上の10-15%）のAmazon販売総合支援'
+        }
+      ]
+    })
+
+    // Breadcrumb schema
+    const breadcrumbSchema = createBreadcrumbSchema([
+      { name: 'ホーム', url: COMPANY_DATA.contact.website },
+      { name: 'サービス', url: `${COMPANY_DATA.contact.website}#services` },
+      { name: service.title, url: `${COMPANY_DATA.contact.website}services/${slug}` }
+    ])
+
     return (
       <PageLayout>
+        {/* Structured Data */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(ecServiceSchema)
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(breadcrumbSchema)
+          }}
+        />
+
         <ServiceHero
           title={service.subtitle || service.title}
           description={service.description}
@@ -603,8 +680,48 @@ export default async function ServicePage(
   }
 
   // その他のサービスページ（既存のレイアウト）
+  // Service schema for web development
+  const webServiceSchema = createServiceSchema({
+    name: service.title,
+    description: service.description,
+    serviceType: 'Web Development',
+    offers: [
+      {
+        name: 'スタンダードプラン',
+        price: '132000',
+        description: 'レスポンシブデザイン対応の高品質なWebサイト制作'
+      },
+      {
+        name: 'プレミアムプラン',
+        price: '248000',
+        description: 'SEO対策・コンテンツ制作込みの完全パッケージ'
+      }
+    ]
+  })
+
+  // Breadcrumb schema
+  const breadcrumbSchema = createBreadcrumbSchema([
+    { name: 'ホーム', url: COMPANY_DATA.contact.website },
+    { name: 'サービス', url: `${COMPANY_DATA.contact.website}#services` },
+    { name: service.title, url: `${COMPANY_DATA.contact.website}services/${slug}` }
+  ])
+
   return (
     <PageLayout>
+      {/* Structured Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(webServiceSchema)
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(breadcrumbSchema)
+        }}
+      />
+
       <ServiceHero
         title={service.title}
         description={service.description}
