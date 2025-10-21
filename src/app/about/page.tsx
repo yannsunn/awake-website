@@ -5,7 +5,7 @@ import Image from 'next/image'
 import { COMPANY_DATA } from '@/lib/company-data'
 import PageLayout from '@/components/layout/PageLayout'
 import OptimizedImage from '@/components/ui/OptimizedImage'
-import { createArticleSchema } from '@/lib/enhanced-schema'
+import { createArticleSchema, createBreadcrumbSchema } from '@/lib/enhanced-schema'
 import LineButton from '@/components/ui/LineButton'
 import { UltraHero } from '@/components/ui/UltraSection'
 import '@/app/corporate.css'
@@ -104,10 +104,10 @@ export default function AboutPage() {
     image: "/assets/images/ogp.jpg"
   })
 
-  const breadcrumbs = [
-    { name: "ホーム", url: "/" },
-    { name: "会社概要", url: "/about" }
-  ]
+  const breadcrumbSchema = createBreadcrumbSchema([
+    { name: "ホーム", url: COMPANY_DATA.contact.website },
+    { name: "会社概要", url: `${COMPANY_DATA.contact.website}about` }
+  ])
 
   return (
     <PageLayout>
@@ -116,6 +116,13 @@ export default function AboutPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(articleSchema)
+        }}
+      />
+      {/* Breadcrumb Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(breadcrumbSchema)
         }}
       />
 
