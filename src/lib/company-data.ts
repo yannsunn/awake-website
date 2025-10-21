@@ -33,7 +33,7 @@ export const COMPANY_DATA = {
     phone: '050-7115-4948',
     email: 'ai.ec@awakeinc.co.jp',
     line: '@awakeinc',
-    website: 'https://awakeinc.co.jp/',
+    website: 'https://www.awakeinc.co.jp/',
     businessHours: {
       weekdays: '平日 9:00-18:00',
       weekend: '土日祝日：お休み'
@@ -169,9 +169,9 @@ export const COMPANY_DATA = {
     baseDescription: '株式会社Awakeは、デジタルソリューションを通じて企業の成長を支援し、新しい価値を創造します。',
     keywords: '株式会社Awake, ホームページ制作, AIコンサルティング, Amazon代理店, デジタル変革',
     ogImage: '/assets/images/ogp.jpg',
-    ogUrl: 'https://awakeinc.co.jp/'
+    ogUrl: 'https://www.awakeinc.co.jp/'
   },
-  url: 'https://awakeinc.co.jp'
+  url: 'https://www.awakeinc.co.jp'
 } as const
 
 // 🚀 Contact Methods - Prioritized by Response Speed
