@@ -189,7 +189,7 @@ class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundaryState> {
 
               {/* エラーID表示（サポート用） */}
               {this.state.errorId && (
-                <p className="mt-6 text-xs text-gray-500">
+                <p className="mt-6 text-xs text-gray-600">
                   エラーID: {this.state.errorId}
                 </p>
               )}

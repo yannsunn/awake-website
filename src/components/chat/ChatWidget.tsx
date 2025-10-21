@@ -352,7 +352,7 @@ export default function ChatWidget() {
               </div>
               
               {/* 画像アップロードの説明 */}
-              <p className="text-xs text-gray-500 mt-2 text-center">
+              <p className="text-xs text-gray-600 mt-2 text-center">
                 画像をアップロードできます（JPEG、PNG、WebP、GIF形式、最大10MB、{MAX_IMAGE_DIMENSION}px以下）
               </p>
             </div>

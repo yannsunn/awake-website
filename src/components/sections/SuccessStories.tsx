@@ -56,7 +56,7 @@ const SuccessStories = memo(function SuccessStories() {
               <p className={cn(TEXT.body, 'text-black', MARGIN.xs)}>
                 {stat.description}
               </p>
-              <p className={cn(TEXT.small, 'text-gray-500')}>
+              <p className={cn(TEXT.small, 'text-gray-600')}>
                 出典: {stat.source}
               </p>
             </div>

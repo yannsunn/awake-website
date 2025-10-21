@@ -40,7 +40,7 @@ export function ProcessSteps({ title, steps, className }: ProcessStepsProps) {
                     {stepData.description}
                   </p>
                   {stepData.duration && (
-                    <p className="corp-text-small mt-2 sm:mt-3 text-gray-500">
+                    <p className="corp-text-small mt-2 sm:mt-3 text-gray-600">
                       目安期間: {stepData.duration}
                     </p>
                   )}
