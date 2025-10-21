@@ -5,6 +5,7 @@ import Link from 'next/link'
 import { Check } from 'lucide-react'
 import { COMPANY_DATA } from '@/lib/company-data'
 import { cn } from '@/lib/utils'
+import { HEADING, TEXT, MARGIN } from '@/lib/design-system/unified'
 import '@/app/corporate.css'
 import UltraSection from '@/components/ui/UltraSection'
 
@@ -13,11 +14,11 @@ const AIPricingTable = memo(function AIPricingTable() {
 
   return (
     <UltraSection variant="dark">
-      <div className="text-center mb-12">
-        <h2 className="corp-heading-2 text-black mb-4">
+      <div className={cn('text-center', MARGIN.xl)}>
+        <h2 className={cn(HEADING.h2, 'text-black', MARGIN.sm)}>
           料金プラン
         </h2>
-        <p className="corp-text-lead text-black">
+        <p className={cn(TEXT.lead, 'text-black')}>
           具体的な導入イメージと投資効果を無料で試算できます
         </p>
       </div>
@@ -26,14 +27,14 @@ const AIPricingTable = memo(function AIPricingTable() {
         {/* Basic Plan */}
         <div className="corp-card">
           <div className="p-8">
-            <h3 className="corp-heading-3 text-black mb-2">
+            <h3 className={cn(HEADING.h4, 'text-black', MARGIN.xs)}>
               {aiPricing.basic.name}
             </h3>
-            <div className="mb-6">
+            <div className={MARGIN.md}>
               <span className="text-4xl font-bold text-black">
                 {aiPricing.basic.price}
               </span>
-              <span className="corp-text-body text-black ml-2">
+              <span className={cn(TEXT.body, 'text-black ml-2')}>
                 / {aiPricing.basic.duration}
               </span>
             </div>
@@ -43,7 +44,7 @@ const AIPricingTable = memo(function AIPricingTable() {
                 {aiPricing.basic.features.map((feature, index) => (
                   <li key={index} className="flex items-start gap-3">
                     <Check className="w-5 h-5 text-green-400 mt-0.5 flex-shrink-0" />
-                    <span className="corp-text-small text-black">
+                    <span className={cn(TEXT.small, 'text-black')}>
                       {feature}
                     </span>
                   </li>
@@ -68,14 +69,14 @@ const AIPricingTable = memo(function AIPricingTable() {
             </span>
           </div>
           <div className="p-8">
-            <h3 className="corp-heading-3 text-black mb-2">
+            <h3 className={cn(HEADING.h4, 'text-black', MARGIN.xs)}>
               {aiPricing.aiCommon.name}
             </h3>
-            <div className="mb-6">
+            <div className={MARGIN.md}>
               <span className="text-4xl font-bold text-black">
                 {aiPricing.aiCommon.price}
               </span>
-              <span className="corp-text-body text-black ml-2">
+              <span className={cn(TEXT.body, 'text-black ml-2')}>
                 / {aiPricing.aiCommon.duration}
               </span>
             </div>
@@ -85,7 +86,7 @@ const AIPricingTable = memo(function AIPricingTable() {
                 {aiPricing.aiCommon.features.map((feature, index) => (
                   <li key={index} className="flex items-start gap-3">
                     <Check className="w-5 h-5 text-purple-600 mt-0.5 flex-shrink-0" />
-                    <span className="corp-text-small text-black">
+                    <span className={cn(TEXT.small, 'text-black')}>
                       {feature}
                     </span>
                   </li>
@@ -105,14 +106,14 @@ const AIPricingTable = memo(function AIPricingTable() {
         {/* Enterprise Plan */}
         <div className="corp-card">
           <div className="p-8">
-            <h3 className="corp-heading-3 text-black mb-2">
+            <h3 className={cn(HEADING.h4, 'text-black', MARGIN.xs)}>
               {aiPricing.enterprise.name}
             </h3>
-            <div className="mb-6">
+            <div className={MARGIN.md}>
               <span className="text-4xl font-bold text-black">
                 {aiPricing.enterprise.price}
               </span>
-              <span className="corp-text-body text-black ml-2">
+              <span className={cn(TEXT.body, 'text-black ml-2')}>
                 / {aiPricing.enterprise.duration}
               </span>
             </div>
@@ -122,7 +123,7 @@ const AIPricingTable = memo(function AIPricingTable() {
                 {aiPricing.enterprise.features.map((feature, index) => (
                   <li key={index} className="flex items-start gap-3">
                     <Check className="w-5 h-5 text-green-400 mt-0.5 flex-shrink-0" />
-                    <span className="corp-text-small text-black">
+                    <span className={cn(TEXT.small, 'text-black')}>
                       {feature}
                     </span>
                   </li>
@@ -142,11 +143,11 @@ const AIPricingTable = memo(function AIPricingTable() {
 
       {/* AIコモン会社規模別価格表 */}
       <div className="mt-16 max-w-5xl mx-auto">
-        <div className="text-center mb-8">
-          <h3 className="corp-heading-3 text-black mb-4">
+        <div className={cn('text-center', MARGIN.lg)}>
+          <h3 className={cn(HEADING.h3, 'text-black', MARGIN.sm)}>
             AIコモン 会社規模別料金
           </h3>
-          <p className="corp-text-body text-black">
+          <p className={cn(TEXT.body, 'text-black')}>
             従業員数に応じた最適なプランをご提案
           </p>
         </div>
@@ -177,7 +178,7 @@ const AIPricingTable = memo(function AIPricingTable() {
       </div>
 
       <div className="mt-12 text-center">
-        <p className="corp-text-small text-black">
+        <p className={cn(TEXT.small, 'text-black')}>
           ※ 料金はすべて税込価格です
         </p>
       </div>
