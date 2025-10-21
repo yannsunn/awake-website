@@ -44,7 +44,10 @@
       "Bash(xargs kill:*)",
       "Bash(node scripts/convert-assets-to-webp.js:*)",
       "Bash(node scripts/convert-jpg-to-webp.js:*)",
-      "Bash(xargs cat:*)"
+      "Bash(xargs cat:*)",
+      "Bash(timeout 30 bash -c \"echo ''Waiting for Vercel redeploy (30 seconds)...'' && sleep 30 && echo ''Ready to test''\")",
+      "Bash(timeout 40 bash:*)",
+      "Bash(npm install:*)"
     ],
     "deny": [],
     "ask": [],
