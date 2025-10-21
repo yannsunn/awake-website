@@ -3,10 +3,9 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { memo } from 'react'
-import { MapPin, Clock, Phone, Mail, ArrowUpRight } from 'lucide-react'
+import { MapPin, Clock, Phone, ArrowUpRight } from 'lucide-react'
 import { COMPANY_DATA } from '@/lib/company-data'
-import LineButton from '@/components/ui/LineButton'
-import '@/app/corporate.css'
+import { CONTAINER, GRID, TEXT_COLOR, TRANSITION } from '@/lib/design-system/unified'
 
 const Footer = memo(function Footer() {
   const currentYear = new Date().getFullYear()
@@ -40,9 +39,9 @@ const Footer = memo(function Footer() {
   ]
 
   return (
-    <footer className="relative corp-footer mt-auto" role="contentinfo">
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
+    <footer className="relative bg-gray-900 text-white mt-auto" role="contentinfo">
+      <div className={`relative z-10 ${CONTAINER.default.full} py-12 lg:py-16`}>
+        <div className={GRID.four}>
           
           <div className="lg:col-span-1">
             <div className="flex items-center mb-6">
@@ -55,46 +54,45 @@ const Footer = memo(function Footer() {
                   sizes="48px"
                 />
               </div>
-              <h2 className="corp-heading-3 text-white font-bold" style={{ color: 'white' }}>
+              <h2 className="text-xl font-bold">
                 {COMPANY_DATA.basic.name}
               </h2>
             </div>
-            <p className="corp-text-body text-white font-medium mb-6" style={{ color: 'white' }}>
+            <p className="text-sm md:text-base font-medium mb-6 text-gray-300">
               {COMPANY_DATA.basic.mission}
             </p>
             
             <div className="space-y-3">
               <div className="flex items-start">
-                <MapPin className="w-5 h-5 text-white mr-3 mt-0.5 flex-shrink-0" />
+                <MapPin className="w-5 h-5 text-gray-400 mr-3 mt-0.5 flex-shrink-0" />
                 <div>
-                  <p className="corp-text-small text-white font-medium" style={{ color: 'white' }}>
+                  <p className="text-sm font-medium text-gray-300">
                     {COMPANY_DATA.contact.address.postal}
                   </p>
-                  <p className="corp-text-small text-white font-medium" style={{ color: 'white' }}>
+                  <p className="text-sm font-medium text-gray-300">
                     {COMPANY_DATA.contact.address.full}
                   </p>
                 </div>
               </div>
 
               <div className="flex items-center">
-                <Phone className="w-5 h-5 text-white mr-3 flex-shrink-0" />
+                <Phone className="w-5 h-5 text-gray-400 mr-3 flex-shrink-0" />
                 <a
                   href={`tel:${COMPANY_DATA.contact.phone}`}
-                  className="corp-text-small text-white font-medium hover:opacity-80 transition-all duration-300 ease-out hover:scale-[1.02] focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-blue-400 focus-visible:ring-offset-3"
+                  className={`text-sm font-medium text-gray-300 hover:text-white ${TRANSITION.colors} focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-900`}
                   aria-label="電話でお問い合わせ"
-                  style={{ color: 'white' }}
                 >
                   {COMPANY_DATA.contact.phone}
                 </a>
               </div>
 
               <div className="flex items-start">
-                <Clock className="w-5 h-5 text-white mr-3 mt-0.5 flex-shrink-0" />
+                <Clock className="w-5 h-5 text-gray-400 mr-3 mt-0.5 flex-shrink-0" />
                 <div>
-                  <p className="corp-text-small text-white font-medium" style={{ color: 'white' }}>
+                  <p className="text-sm font-medium text-gray-300">
                     {COMPANY_DATA.contact.businessHours.weekdays}
                   </p>
-                  <p className="corp-text-small text-white font-medium" style={{ color: 'white' }}>
+                  <p className="text-sm font-medium text-gray-300">
                     {COMPANY_DATA.contact.businessHours.weekend}
                   </p>
                 </div>
@@ -103,7 +101,7 @@ const Footer = memo(function Footer() {
           </div>
           
           <div>
-            <h3 className="corp-heading-3 text-white font-bold mb-6" style={{ color: 'white' }}>
+            <h3 className="text-lg font-bold mb-6">
               サービス
             </h3>
             <ul className="space-y-3">
@@ -111,8 +109,7 @@ const Footer = memo(function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="corp-text-body text-white font-medium hover:opacity-80 transition-all duration-300 ease-out hover:scale-[1.02] focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-blue-400 focus-visible:ring-offset-3 inline-flex items-center group"
-                    style={{ color: 'white' }}
+                    className={`text-sm md:text-base font-medium text-gray-300 hover:text-white ${TRANSITION.colors} focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-900 inline-flex items-center group`}
                     {...(link.external && {
                       target: '_blank',
                       rel: 'noopener noreferrer',
@@ -128,9 +125,9 @@ const Footer = memo(function Footer() {
               ))}
             </ul>
           </div>
-          
+
           <div>
-            <h3 className="corp-heading-3 text-white font-bold mb-6" style={{ color: 'white' }}>
+            <h3 className="text-lg font-bold mb-6">
               会社情報
             </h3>
             <ul className="space-y-3">
@@ -138,8 +135,7 @@ const Footer = memo(function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="corp-text-body text-white font-medium hover:opacity-80 transition-all duration-300 ease-out hover:scale-[1.02] focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-blue-400 focus-visible:ring-offset-3"
-                    style={{ color: 'white' }}
+                    className={`text-sm md:text-base font-medium text-gray-300 hover:text-white ${TRANSITION.colors} focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-900`}
                   >
                     {link.title}
                   </Link>
@@ -149,10 +145,10 @@ const Footer = memo(function Footer() {
           </div>
 
           <div>
-            <h3 className="corp-heading-3 text-white font-bold mb-6" style={{ color: 'white' }}>
+            <h3 className="text-lg font-bold mb-6">
               お問い合わせ
             </h3>
-            <p className="corp-text-body text-white font-medium mb-6" style={{ color: 'white' }}>
+            <p className="text-sm md:text-base font-medium text-gray-300 mb-6">
               お気軽にご相談ください。
               LINEなら最速で返信いたします。
             </p>
@@ -162,28 +158,27 @@ const Footer = memo(function Footer() {
         <div className="mt-12 pt-8 border-t border-white/30">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <div className="flex flex-wrap justify-center md:justify-start gap-4 text-sm">
-              {legalLinks.map((link, index) => (
+              {legalLinks.map((link) => (
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="corp-text-small text-white font-medium hover:opacity-80 transition-all duration-300 ease-out hover:scale-[1.02] focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-blue-400 focus-visible:ring-offset-3"
-                  style={{ color: 'white' }}
+                  className={`text-sm font-medium text-gray-400 hover:text-white ${TRANSITION.colors} focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-900`}
                 >
                   {link.title}
                 </Link>
               ))}
             </div>
 
-            <p className="corp-text-small text-white font-medium" style={{ color: 'white' }}>
+            <p className="text-sm font-medium text-gray-400">
               © {currentYear} {COMPANY_DATA.basic.name}. All rights reserved.
             </p>
           </div>
         </div>
       </div>
-      
+
       <button
         onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-        className="fixed bottom-6 right-6 p-4 min-h-[56px] min-w-[56px] bg-[#1f2937] hover:bg-[#374151] text-white rounded-full shadow-lg transition-all duration-300 ease-out opacity-90 hover:opacity-100 hover:scale-[1.1] active:scale-[0.9] focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-blue-500 focus-visible:ring-offset-3 z-40"
+        className={`fixed bottom-6 right-6 p-4 min-h-[56px] min-w-[56px] bg-gray-800 hover:bg-gray-700 text-white rounded-full shadow-lg ${TRANSITION.default} hover:scale-110 active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 z-40`}
         aria-label="ページトップへ戻る"
         type="button"
       >
