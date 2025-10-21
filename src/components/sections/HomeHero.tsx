@@ -1,6 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import Image from 'next/image'
 import LineButton from '@/components/ui/LineButton'
 
 export default function HomeHero() {
@@ -54,6 +55,24 @@ export default function HomeHero() {
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden -mt-16 md:-mt-20 pt-16 md:pt-20 z-20 bg-gradient-to-b from-slate-50 via-white to-slate-50">
+      {/* 背景動画 - 半透明オーバーレイ */}
+      <div className="absolute inset-0 z-10">
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          preload="auto"
+          className="w-full h-full object-cover opacity-30"
+          poster="/images/digital-particles.webp"
+        >
+          <source src="/videos/hero-video.webm" type="video/webm" />
+          <source src="/videos/hero-video.mp4" type="video/mp4" />
+          {/* フォールバック: 動画が読み込めない場合は背景画像 */}
+        </video>
+        <div className="absolute inset-0 bg-gradient-to-b from-white/70 via-white/50 to-white/70" />
+      </div>
+
       {/* メインコンテンツ */}
       <motion.div
         className="container mx-auto px-4 relative z-30"
@@ -61,7 +80,7 @@ export default function HomeHero() {
         animate="visible"
         variants={containerVariants}
       >
-        <div className="max-w-7xl mx-auto text-center">
+        <div className="max-w-[90%] lg:max-w-[1600px] mx-auto text-center">
           <div>
             <motion.h1
               className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-8 leading-tight tracking-tight"
@@ -74,14 +93,26 @@ export default function HomeHero() {
               className="text-xl md:text-2xl text-slate-700 mb-6 font-medium"
               variants={textVariants}
             >
-              株式会社Awake｜東京都東大和市｜中小企業のデジタル化パートナー
+              株式会社Awake
             </motion.p>
 
             <motion.p
               className="text-lg md:text-xl text-slate-600 mb-12 leading-relaxed"
               variants={textVariants}
             >
-              適正価格で最大の価値を。ホームページ制作132,000円〜、AIチャットボット298,000円〜、Amazon販売代行手数料10%〜
+              適正価格で最大の価値を。
+              <br />
+              <span className="block sm:inline">
+                ホームページ制作132,000円〜、
+              </span>
+              <br className="sm:hidden" />
+              <span className="block sm:inline">
+                AIチャットボット298,000円〜、
+              </span>
+              <br className="sm:hidden" />
+              <span className="block sm:inline">
+                Amazon販売代行手数料10%〜
+              </span>
             </motion.p>
 
             {/* LINEボタン */}

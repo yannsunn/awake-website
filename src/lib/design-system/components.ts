@@ -40,31 +40,30 @@ export const COMPONENT_STYLES = {
 
 /**
  * Ultra Design System互換のボタンスタイル
+ * コーポレートブルーに統一
  */
 export const BUTTONS = {
   primary: `
-    inline-flex items-center justify-center
+    inline-flex items-center justify-center whitespace-nowrap
     px-6 py-3
-    bg-gradient-to-r from-slate-700 via-violet-600 to-slate-700 hover:from-slate-600 hover:via-violet-500 hover:to-slate-600
-    text-black font-medium
-    rounded-xl shadow-md hover:shadow-lg
-    backdrop-blur-sm
-    transition-all duration-500 ease-out
-    transform hover:scale-[1.01] active:scale-[0.99]
-    focus:outline-none focus:ring-2 focus:ring-violet-400 focus:ring-offset-2
+    bg-blue-600 hover:bg-blue-700
+    text-white font-semibold
+    rounded-lg shadow-md hover:shadow-lg
+    transition-all duration-300 ease-out
+    transform hover:scale-105 active:scale-95
+    focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2
     disabled:opacity-50 disabled:cursor-not-allowed
   `,
   secondary: `
-    inline-flex items-center justify-center
+    inline-flex items-center justify-center whitespace-nowrap
     px-6 py-3
-    bg-white/80 hover:bg-white/90
-    text-slate-800 font-medium
-    border border-slate-200 hover:border-violet-300
-    rounded-xl shadow-sm hover:shadow-md
-    backdrop-blur-sm
-    transition-all duration-500 ease-out
-    transform hover:scale-[1.01] active:scale-[0.99]
-    focus:outline-none focus:ring-2 focus:ring-violet-400 focus:ring-offset-2
+    bg-white hover:bg-blue-50
+    text-blue-600 font-semibold
+    border-2 border-blue-600 hover:border-blue-700
+    rounded-lg shadow-sm hover:shadow-md
+    transition-all duration-300 ease-out
+    transform hover:scale-105 active:scale-95
+    focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2
     disabled:opacity-50 disabled:cursor-not-allowed
   `
 } as const

@@ -32,9 +32,9 @@ const UnifiedCard = memo(function UnifiedCard({
   className = ''
 }: UnifiedCardProps) {
   const cardStyles = {
-    default: 'bg-white-overlay rounded-2xl p-8 shadow-sm border border-gray-100/50 interactive-focus transition-all duration-300 hover:shadow-lg hover:border-gray-200',
+    default: 'bg-white rounded-2xl p-8 shadow-sm border border-gray-100/50 interactive-focus transition-all duration-300 hover:shadow-lg hover:border-gray-200',
     featured: 'bg-gradient-to-br from-blue-900/40 to-blue-900/40 backdrop-blur-md rounded-2xl p-8 border-2 border-blue-600/40 shadow-2xl shadow-blue-600/20 interactive-focus transition-all duration-300 hover:shadow-2xl hover:border-blue-500/60',
-    compact: 'bg-white-overlay rounded-xl p-6 shadow-sm border border-gray-100/50 interactive-focus transition-all duration-300 hover:shadow-md hover:border-gray-200'
+    compact: 'bg-white rounded-xl p-6 shadow-sm border border-gray-100/50 interactive-focus transition-all duration-300 hover:shadow-md hover:border-gray-200'
   }
   
   return (

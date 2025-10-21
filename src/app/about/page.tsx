@@ -7,6 +7,7 @@ import PageLayout from '@/components/layout/PageLayout'
 import OptimizedImage from '@/components/ui/OptimizedImage'
 import { createArticleSchema } from '@/lib/enhanced-schema'
 import LineButton from '@/components/ui/LineButton'
+import { UltraHero } from '@/components/ui/UltraSection'
 import '@/app/corporate.css'
 
 export const metadata: Metadata = {
@@ -118,22 +119,13 @@ export default function AboutPage() {
         }}
       />
 
-      {/* Hero Section - ミニマル化 */}
-      <section className="relative py-12 md:py-16 flex items-center justify-center overflow-hidden bg-gradient-to-br from-blue-600 to-blue-800">
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="text-center max-w-4xl mx-auto">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-white leading-tight tracking-tight break-words">
-              会社概要
-            </h1>
-            <p className="text-xl md:text-2xl text-gray-200 font-medium mb-4 break-words">
-              私たちが、お客様に選ばれる理由
-            </p>
-            <p className="text-lg md:text-xl text-gray-300 leading-relaxed break-words">
-              「高すぎるIT投資」を、「適正な成長投資」に変える
-            </p>
-          </div>
-        </div>
-      </section>
+      {/* Hero Section */}
+      <UltraHero
+        title="会社概要"
+        subtitle="私たちが、お客様に選ばれる理由"
+        description="「高すぎるIT投資」を、「適正な成長投資」に変える"
+        backgroundImage="/images/company-gears.webp"
+      />
 
       {/* CEO Message Section */}
       <section className="relative py-8 md:py-12 bg-gray-50">
@@ -144,26 +136,6 @@ export default function AboutPage() {
             </h2>
           </div>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 items-start">
-          {/* CEO画像 - Unsplash仮画像（後で差し替え） */}
-          <div className="order-2 lg:order-1">
-            <div className="sticky top-24">
-              <div className="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-blue-100">
-                <Image
-                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1887&auto=format&fit=crop"
-                  alt="代表取締役CEO 田形康貴"
-                  width={1887}
-                  height={1887}
-                  className="w-full h-auto object-cover"
-                  unoptimized
-                />
-                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-gray-900/80 to-transparent p-6">
-                  <h3 className="text-white font-bold text-2xl mb-1">{COMPANY_DATA.basic.ceo}</h3>
-                  <p className="text-gray-200">代表取締役CEO</p>
-                </div>
-              </div>
-            </div>
-          </div>
-
           <div className="order-1 lg:order-2">
             <div className="bg-gradient-to-br from-gray-50 to-gray-50 rounded-2xl p-4 sm:p-6 mb-6 border border-blue-200 shadow-lg">
               <div>
@@ -220,19 +192,6 @@ export default function AboutPage() {
           
           <div className="lg:pl-8">
             <div className="bg-white rounded-2xl pt-8 pb-6 px-6 sm:pt-10 sm:px-8 text-center border border-blue-200 shadow-lg">
-              <div className="relative w-80 h-80 mx-auto mb-6">
-                <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-blue-800 rounded-2xl blur-xl opacity-50 animate-pulse"></div>
-                <div className="relative w-80 h-80 rounded-2xl overflow-hidden border-4 border-blue-400 shadow-2xl ring-4 ring-blue-400/20 ring-offset-4 ring-offset-gray-900">
-                  <Image
-                    src="/assets/images/ceo-profile.jpg"
-                    alt={COMPANY_DATA.basic.ceo}
-                    fill
-                    className="object-cover hover:scale-105 transition-transform duration-500"
-                    sizes="320px"
-                    priority
-                  />
-                </div>
-              </div>
               <h3 className="corp-heading-3 text-black mb-2">{COMPANY_DATA.basic.ceo}</h3>
               <p className="corp-text-body font-medium text-black text-lg mb-4">代表取締役CEO</p>
               <div className="space-y-4">
@@ -262,18 +221,6 @@ export default function AboutPage() {
 
       {/* Mission & Vision Section */}
       <section className="relative py-8 md:py-12 bg-gray-50">
-        {/* 背景画像 */}
-        <div className="absolute inset-0 z-0">
-          <Image
-            src="/images/service-5.png"
-            alt="ミッション・ビジョン"
-            fill
-            className="object-cover"
-            sizes="100vw"
-          />
-          <div className="absolute inset-0 bg-gray-50/90" />
-        </div>
-
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-12">
             <h2 className="corp-heading-2 mb-4 text-black">
@@ -283,15 +230,6 @@ export default function AboutPage() {
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-12">
           <div className="corp-card">
-            <div className="relative w-full h-48 mb-6 rounded-lg overflow-hidden">
-              <Image
-                src="/images/about-3-1.png"
-                alt="ミッション"
-                fill
-                className="object-cover"
-                sizes="(max-width: 768px) 100vw, 50vw"
-              />
-            </div>
             <h3 className="corp-heading-2 text-black mb-4">
               ミッション
             </h3>
@@ -301,15 +239,6 @@ export default function AboutPage() {
           </div>
 
           <div className="corp-card">
-            <div className="relative w-full h-48 mb-6 rounded-lg overflow-hidden">
-              <Image
-                src="/images/about-3-2.png"
-                alt="ビジョン"
-                fill
-                className="object-cover"
-                sizes="(max-width: 768px) 100vw, 50vw"
-              />
-            </div>
             <h3 className="corp-heading-2 text-black mb-4">
               ビジョン
             </h3>
@@ -321,34 +250,19 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Our Promise Section - 画像追加 */}
+      {/* Our Promise Section */}
       <section className="relative bg-white">
-        {/* 大きな背景画像セクション */}
-        <div className="relative h-[40vh] md:h-[50vh] w-full overflow-hidden">
-          <Image
-            src="/images/about-10.png"
-            alt="革新的なアイデア"
-            fill
-            className="object-cover"
-            sizes="100vw"
-          />
-          {/* テキストオーバーレイ */}
-          <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent flex items-end">
-            <div className="container mx-auto px-4 pb-16 md:pb-20 text-white">
-              <div className="max-w-3xl">
-                <h2 className="text-3xl md:text-4xl font-bold mb-6 break-words">
-                  なぜAwakeなのか
-                </h2>
-                <p className="text-xl md:text-2xl text-white/90 break-words leading-relaxed">
-                  私たちの3つの約束
-                </p>
-              </div>
+        <div className="bg-gray-50 py-12 md:py-16">
+          <div className="container mx-auto px-4 mb-12">
+            <div className="max-w-3xl mx-auto text-center">
+              <h2 className="text-3xl md:text-4xl font-bold mb-6 break-words text-gray-900">
+                なぜAwakeなのか
+              </h2>
+              <p className="text-xl md:text-2xl text-gray-600 break-words leading-relaxed">
+                私たちの3つの約束
+              </p>
             </div>
           </div>
-        </div>
-
-        {/* コンテンツセクション */}
-        <div className="bg-gray-50 py-12 md:py-16">
           <div className="container mx-auto px-4">
             <div className="max-w-6xl mx-auto">
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -365,34 +279,19 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Service Features Section - 画像追加 */}
+      {/* Service Features Section */}
       <section className="relative bg-white">
-        {/* 大きな背景画像セクション */}
-        <div className="relative h-[40vh] md:h-[50vh] w-full overflow-hidden">
-          <Image
-            src="/images/feature-5.png"
-            alt="デジタル技術"
-            fill
-            className="object-cover"
-            sizes="100vw"
-          />
-          {/* テキストオーバーレイ */}
-          <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent flex items-end">
-            <div className="container mx-auto px-4 pb-16 md:pb-20 text-white">
-              <div className="max-w-3xl">
-                <h2 className="text-3xl md:text-4xl font-bold mb-6 break-words">
-                  サービスの特徴
-                </h2>
-                <p className="text-xl md:text-2xl text-white/90 break-words leading-relaxed">
-                  コストを抑えながら、成果を最大化する仕組み
-                </p>
-              </div>
+        <div className="bg-gray-50 py-12 md:py-16">
+          <div className="container mx-auto px-4 mb-12">
+            <div className="max-w-3xl mx-auto text-center">
+              <h2 className="text-3xl md:text-4xl font-bold mb-6 break-words text-gray-900">
+                サービスの特徴
+              </h2>
+              <p className="text-xl md:text-2xl text-gray-600 break-words leading-relaxed">
+                コストを抑えながら、成果を最大化する仕組み
+              </p>
             </div>
           </div>
-        </div>
-
-        {/* コンテンツセクション */}
-        <div className="bg-gray-50 py-12 md:py-16">
           <div className="container mx-auto px-4">
             <div className="max-w-6xl mx-auto">
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -415,34 +314,19 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Company Values Section - 画像追加 */}
+      {/* Company Values Section */}
       <section className="relative bg-white">
-        {/* 大きな背景画像セクション */}
-        <div className="relative h-[40vh] md:h-[50vh] w-full overflow-hidden">
-          <Image
-            src="/images/feature-6.png"
-            alt="企業の成長"
-            fill
-            className="object-cover"
-            sizes="100vw"
-          />
-          {/* テキストオーバーレイ */}
-          <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent flex items-end">
-            <div className="container mx-auto px-4 pb-16 md:pb-20 text-white">
-              <div className="max-w-3xl">
-                <h2 className="text-3xl md:text-4xl font-bold mb-6 break-words">
-                  私たちの価値観
-                </h2>
-                <p className="text-xl md:text-2xl text-white/90 break-words leading-relaxed">
-                  お客様と共に成長し続けるために
-                </p>
-              </div>
+        <div className="bg-gray-50 py-12 md:py-16">
+          <div className="container mx-auto px-4 mb-12">
+            <div className="max-w-3xl mx-auto text-center">
+              <h2 className="text-3xl md:text-4xl font-bold mb-6 break-words text-gray-900">
+                私たちの価値観
+              </h2>
+              <p className="text-xl md:text-2xl text-gray-600 break-words leading-relaxed">
+                お客様と共に成長し続けるために
+              </p>
             </div>
           </div>
-        </div>
-
-        {/* コンテンツセクション */}
-        <div className="bg-gray-50 py-12 md:py-16">
           <div className="container mx-auto px-4">
             <div className="max-w-6xl mx-auto">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -468,18 +352,6 @@ export default function AboutPage() {
 
       {/* Contact CTA Section */}
       <section className="relative py-12 md:py-16 bg-gray-50">
-        {/* 背景画像 */}
-        <div className="absolute inset-0 z-0">
-          <Image
-            src="/images/cta-8.png"
-            alt="次のステップへ"
-            fill
-            className="object-cover"
-            sizes="100vw"
-          />
-          <div className="absolute inset-0 bg-gray-50/90" />
-        </div>
-
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-12">
             <h2 className="corp-heading-2 mb-4 text-black">

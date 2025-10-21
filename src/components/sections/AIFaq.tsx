@@ -37,7 +37,7 @@ const AIFaq = memo(function AIFaq() {
 
         <div className="space-y-4">
           {faqs.map((faq, index) => (
-            <div key={index} className="bg-white-overlay border border-gray-200 rounded-lg overflow-hidden">
+            <div key={index} className="bg-white border border-gray-200 rounded-lg overflow-hidden">
               <button
                 className="w-full px-6 py-4 text-left flex items-center justify-between hover:bg-gray-overlay transition-colors"
                 onClick={() => setOpenIndex(openIndex === index ? null : index)}

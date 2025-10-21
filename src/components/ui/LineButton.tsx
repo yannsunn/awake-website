@@ -23,25 +23,24 @@ const LineButton = memo(function LineButton({
   
   // UltraButtonのsizeにマッピング
   const ultraSize = size === 'small' ? 'sm' : size === 'large' ? 'lg' : 'md'
-  
+
+  // サイズ別の最小幅を強制（アイコン+テキストが確実に1行になる幅）
+  const minWidthClass = size === 'small' ? '!min-w-[200px]' : size === 'large' ? '!min-w-[280px]' : '!min-w-[240px]'
+
   // LINE専用のスタイリング
-  const lineStyles = variant === 'filled' ? 
+  const lineStyles = variant === 'filled' ?
     'bg-green-600 text-white hover:bg-green-700 border-2 border-transparent focus:ring-green-500' :
     'bg-white border-2 border-green-600 text-green-600 hover:bg-green-50 focus:ring-green-500'
-  
+
   return (
     <UltraButton
       href={LINE_URL}
       variant="primary"
       size={ultraSize}
-      className={`${lineStyles} ${className} group`}
+      className={`${lineStyles} ${minWidthClass} ${className}`}
     >
-      {showIcon && <MessageCircle className="mr-2 h-5 w-5 flex-shrink-0 transition-transform duration-300 group-hover:rotate-12" aria-hidden="true" />}
+      {showIcon && <MessageCircle className="h-5 w-5 flex-shrink-0 transition-transform duration-300 group-hover:rotate-12" aria-hidden="true" />}
       <span>LINEで相談する</span>
-      {/* マイクロインタラクションエフェクト - overflow制御付き */}
-      <span className="absolute inset-0 overflow-hidden rounded-lg pointer-events-none">
-        <span className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 opacity-0 group-hover:opacity-100 transition-all duration-400 ease-out transform -skew-x-12 -translate-x-full group-hover:translate-x-full" />
-      </span>
     </UltraButton>
   )
 })

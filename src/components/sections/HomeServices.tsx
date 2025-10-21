@@ -12,7 +12,7 @@ const services = [
     title: COMPANY_DATA.services.details.web.title,
     description: COMPANY_DATA.services.details.web.description,
     price: COMPANY_DATA.services.details.web.pricing.standard.price,
-    image: '/images/service-2-2.png',
+    image: '/images/web-service.webp',
     features: [
       'モバイル対応で機会損失を防ぐ',
       'SEO対策で検索上位を狙える',
@@ -27,7 +27,7 @@ const services = [
     title: COMPANY_DATA.services.details.ai.title,
     description: COMPANY_DATA.services.details.ai.description,
     price: COMPANY_DATA.services.details.ai.pricing.basic.price,
-    image: '/images/service-3.png',
+    image: '/images/ai-service.webp',
     features: [
       '24時間自動対応で顧客満足度向上',
       'カスタマーサポートコスト削減',
@@ -42,7 +42,7 @@ const services = [
     title: COMPANY_DATA.services.details.ec.title,
     description: COMPANY_DATA.services.details.ec.description,
     price: "完全成果報酬",
-    image: '/images/service-4.png',
+    image: '/images/ec-service.webp',
     features: [
       '商品登録から販売戦略まで完全代行',
       '売れるまで費用は一切不要',

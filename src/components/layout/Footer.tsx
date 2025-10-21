@@ -46,12 +46,12 @@ const Footer = memo(function Footer() {
           
           <div className="lg:col-span-1">
             <div className="flex items-center mb-6">
-              <div className="relative w-12 h-12 mr-3">
+              <div className="relative w-12 h-12 mr-3 bg-white rounded p-1">
                 <Image
                   src="/images/awake-logo-text.png"
                   alt={`${COMPANY_DATA.basic.name} ロゴ`}
                   fill
-                  className="object-contain brightness-0 invert"
+                  className="object-contain"
                   sizes="48px"
                 />
               </div>

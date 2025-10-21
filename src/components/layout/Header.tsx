@@ -136,14 +136,14 @@ const Header = memo(function Header() {
                     priority
                   />
                 </div>
-                <span className="text-xl md:text-2xl text-black group-hover:text-black transition-colors font-bold">
+                <span className="text-xl md:text-2xl text-white group-hover:text-white transition-colors font-bold">
                   {COMPANY_DATA.basic.name}
                 </span>
               </Link>
             </div>
             
             {/* デスクトップナビゲーション */}
-            <nav className="hidden md:flex items-center space-x-1" aria-label="メインナビゲーション" role="navigation">
+            <nav className="hidden lg:flex items-center space-x-1" aria-label="メインナビゲーション" role="navigation">
               {navigationItems.map((item, index) => {
                 const isActive = pathname === item.href
                 
@@ -152,7 +152,7 @@ const Header = memo(function Header() {
                     <div key={index} className="relative" ref={servicesRef}>
                       <button
                         onClick={toggleServices}
-                        className="flex items-center px-4 py-2 min-h-[48px] rounded-lg text-black hover:text-black hover:bg-blue-50 transition-all duration-300 ease-out hover:scale-[1.02] focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-blue-600 focus-visible:ring-offset-3 whitespace-nowrap text-base font-medium"
+                        className="flex items-center px-4 py-2 min-h-[48px] rounded-lg text-white hover:text-white hover:bg-white/10 transition-all duration-300 ease-out hover:scale-[1.02] focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-blue-600 focus-visible:ring-offset-3 whitespace-nowrap text-base font-medium"
                         aria-expanded={isServicesOpen}
                         aria-haspopup="true"
                         type="button"
@@ -177,10 +177,10 @@ const Header = memo(function Header() {
                                 'aria-label': `${service.title} - 新しいウィンドウで開きます`
                               })}
                             >
-                              <div className="text-base mb-1 text-black font-semibold">
+                              <div className="text-base mb-1 text-gray-900 font-semibold">
                                 {service.title}
                               </div>
-                              <div className="text-sm text-black/70">
+                              <div className="text-sm text-gray-600">
                                 {service.description}
                               </div>
                             </Link>
@@ -197,8 +197,8 @@ const Header = memo(function Header() {
                     href={item.href || '#'}
                     className={`inline-flex items-center px-4 py-2 min-h-[48px] rounded-lg transition-all duration-300 ease-out hover:scale-[1.02] focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-blue-600 focus-visible:ring-offset-3 text-base font-medium ${
                       isActive
-                        ? 'text-blue-600 bg-blue-50 font-bold'
-                        : 'text-black hover:text-black hover:bg-blue-50'
+                        ? 'text-white font-bold border-b-2 border-blue-400'
+                        : 'text-white hover:text-white hover:bg-white/10'
                     }`}
                     aria-current={isActive ? 'page' : undefined}
                   >
@@ -209,7 +209,7 @@ const Header = memo(function Header() {
               
               {/* LINE CTAボタン */}
               <div className="ml-4">
-                <LineButton size="small" />
+                <LineButton size="medium" className="!min-w-[240px]" />
               </div>
             </nav>
             
@@ -217,16 +217,16 @@ const Header = memo(function Header() {
             <button
               ref={menuButtonRef}
               onClick={toggleMenu}
-              className="md:hidden p-3 min-h-[48px] min-w-[48px] rounded-lg hover:bg-gray-100 transition-all duration-300 ease-out hover:scale-[1.05] active:scale-[0.95] focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-blue-500 focus-visible:ring-offset-3"
+              className="lg:hidden p-3 min-h-[48px] min-w-[48px] rounded-lg hover:bg-white/10 transition-all duration-300 ease-out hover:scale-[1.05] active:scale-[0.95] focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-blue-500 focus-visible:ring-offset-3"
               aria-expanded={isMenuOpen}
               aria-label={isMenuOpen ? 'メニューを閉じる' : 'メニューを開く'}
               aria-controls="mobile-menu"
               type="button"
             >
               {isMenuOpen ? (
-                <X className="h-6 w-6 text-black" />
+                <X className="h-6 w-6 text-gray-900" />
               ) : (
-                <Menu className="h-6 w-6 text-black" />
+                <Menu className="h-6 w-6 text-white" />
               )}
             </button>
           </div>
@@ -234,8 +234,8 @@ const Header = memo(function Header() {
       </header>
 
       {/* モバイルメニュー */}
-      <div 
-        className={`fixed inset-0 z-40 md:hidden transition-opacity duration-300 ${
+      <div
+        className={`fixed inset-0 z-40 lg:hidden transition-opacity duration-300 ${
           isMenuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
         }`}
       >
@@ -269,7 +269,7 @@ const Header = memo(function Header() {
                     sizes="32px"
                   />
                 </div>
-                <span className="corp-heading-3 text-black">メニュー</span>
+                <span className="corp-heading-3 text-gray-900">メニュー</span>
               </div>
               <button
                 onClick={toggleMenu}
@@ -277,7 +277,7 @@ const Header = memo(function Header() {
                 aria-label="メニューを閉じる"
                 type="button"
               >
-                <X className="h-6 w-6 text-black" />
+                <X className="h-6 w-6 text-gray-900" />
               </button>
             </div>
             
@@ -287,7 +287,7 @@ const Header = memo(function Header() {
                 if (item.type === 'dropdown') {
                   return (
                     <div key={index} className="px-4 py-2">
-                      <div className="corp-text-body text-black mb-2">
+                      <div className="corp-text-body text-gray-900 mb-2 font-semibold">
                         {item.title}
                       </div>
                       <div className="space-y-1">
@@ -303,7 +303,7 @@ const Header = memo(function Header() {
                               'aria-label': `${service.title} - 新しいウィンドウで開きます`
                             })}
                           >
-                            <div className="corp-text-body text-black">
+                            <div className="corp-text-body text-gray-900">
                               {service.title}
                             </div>
                             <div className="corp-text-small text-gray-600 mt-1">
@@ -320,7 +320,7 @@ const Header = memo(function Header() {
                   <Link
                     key={index}
                     href={item.href || '#'}
-                    className="block px-8 py-3 min-h-[56px] corp-text-body text-black hover:bg-blue-50 transition-all duration-300 ease-out focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-blue-500 focus-visible:ring-offset-3"
+                    className="block px-8 py-3 min-h-[56px] corp-text-body text-gray-900 hover:bg-blue-50 transition-all duration-300 ease-out focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-blue-500 focus-visible:ring-offset-3"
                     onClick={toggleMenu}
                   >
                     {item.title}

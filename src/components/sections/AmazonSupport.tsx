@@ -61,7 +61,7 @@ const AmazonSupport = memo(function AmazonSupport() {
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {supports.map((support, index) => (
-            <div key={index} className="bg-white-overlay rounded-xl p-6">
+            <div key={index} className="bg-white rounded-xl p-6">
               <div className="text-3xl mb-4">{support.icon}</div>
               <h3 className="corp-heading-3 mb-4">
                 {support.title}
