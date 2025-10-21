@@ -178,7 +178,9 @@ export default function FAQPage() {
 
                     <div className="px-4 sm:px-6 pb-4 sm:pb-6">
                       <div className="pt-4 border-t border-blue-100">
-                        <p className="corp-text-body text-black" dangerouslySetInnerHTML={{ __html: faq.answer }} />
+                        <p className="corp-text-body text-black whitespace-pre-line">
+                          {faq.answer.replace(/<br\s*\/?>/gi, '\n')}
+                        </p>
                       </div>
                     </div>
                   </details>
