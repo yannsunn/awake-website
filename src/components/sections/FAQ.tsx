@@ -4,7 +4,7 @@ import { memo, useRef } from 'react'
 import { motion, useInView, AnimatePresence } from 'framer-motion'
 import { ChevronDown } from 'lucide-react'
 import { useState } from 'react'
-import '@/app/corporate.css'
+import { SECTION_SPACING, CONTAINER, HEADING, TEXT } from '@/lib/design-system/unified'
 
 const FAQ = memo(function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(null)
@@ -52,8 +52,8 @@ const FAQ = memo(function FAQ() {
   }
 
   return (
-    <section className="py-16 md:py-24 bg-white">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className={`${SECTION_SPACING.compact} bg-white`}>
+      <div className={CONTAINER.narrow.full}>
         <motion.div
           ref={ref}
           initial="hidden"
@@ -61,7 +61,7 @@ const FAQ = memo(function FAQ() {
           variants={titleVariants}
           className="text-center mb-12"
         >
-          <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
+          <h2 className={`${HEADING.h3} text-gray-900 mb-4`}>
             よくあるご質問
           </h2>
         </motion.div>
@@ -74,7 +74,7 @@ const FAQ = memo(function FAQ() {
               animate={isInView ? 'visible' : 'hidden'}
               custom={index}
               variants={itemVariants}
-              className="corp-card"
+              className="bg-white border border-gray-200 rounded-xl overflow-hidden hover:shadow-lg transition-shadow duration-300"
             >
               <motion.button
                 className="w-full px-6 py-4 text-left flex items-center justify-between transition-colors"

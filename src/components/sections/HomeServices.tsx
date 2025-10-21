@@ -5,6 +5,7 @@ import { Globe, Brain, ShoppingCart } from 'lucide-react'
 import { COMPANY_DATA } from '@/lib/company-data'
 import ServiceCard from './ServiceCard'
 import { useRef } from 'react'
+import { SECTION_SPACING, CONTAINER, HEADING, TEXT } from '@/lib/design-system/unified'
 
 const services = [
   {
@@ -71,19 +72,19 @@ export default function HomeServices() {
   }
 
   return (
-    <section id="services" className="relative bg-white">
-      <div className="container mx-auto px-4 py-24 md:py-32 relative z-10">
+    <section id="services" className={`relative ${SECTION_SPACING.default} bg-white`}>
+      <div className={`${CONTAINER.default.full} relative z-10`}>
         <motion.div
           ref={ref}
           initial="hidden"
           animate={isInView ? 'visible' : 'hidden'}
           variants={titleVariants}
-          className="text-center mb-20"
+          className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 tracking-tight break-words leading-tight">
+          <h2 className={`${HEADING.h2} text-gray-900 mb-6`}>
             ソリューション
           </h2>
-          <p className="text-xl md:text-2xl text-gray-700 break-words leading-relaxed">
+          <p className={`${TEXT.lead} text-gray-700`}>
             貴社の課題に最適な3つのサービス
           </p>
         </motion.div>
