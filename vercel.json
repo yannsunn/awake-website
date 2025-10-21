@@ -1,0 +1,16 @@
+{
+  "redirects": [
+    {
+      "source": "/:path((?!www\\.).)*",
+      "has": [
+        {
+          "type": "host",
+          "value": "awakeinc.co.jp"
+        }
+      ],
+      "destination": "https://www.awakeinc.co.jp/:path*",
+      "permanent": true,
+      "statusCode": 301
+    }
+  ]
+}
