@@ -5,6 +5,7 @@ import { COMPANY_DATA } from '@/lib/company-data'
 import PageLayout from '@/components/layout/PageLayout'
 import { createFAQSchema } from '@/lib/enhanced-schema'
 import LineButton from '@/components/ui/LineButton'
+import { UltraHero } from '@/components/ui/UltraSection'
 import '@/app/corporate.css'
 
 export const metadata: Metadata = {
@@ -134,26 +135,17 @@ export default function FAQPage() {
         }}
       />
 
-      {/* Hero Section - ミニマル化 */}
-      <section className="relative py-16 md:py-24 flex items-center justify-center overflow-hidden bg-gradient-to-br from-blue-600 to-blue-800">
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="text-center max-w-4xl mx-auto">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-white leading-tight tracking-tight break-words">
-              よくある質問
-            </h1>
-            <p className="text-xl md:text-2xl text-gray-200 font-medium mb-4 break-words">
-              お客様からよくいただくご質問をまとめました
-            </p>
-            <p className="text-lg md:text-xl text-gray-300 leading-relaxed break-words">
-              こちらにない質問は、お気軽にお問い合わせください
-            </p>
-          </div>
-        </div>
-      </section>
+      {/* Hero Section */}
+      <UltraHero
+        title="よくある質問"
+        subtitle="お客様からよくいただくご質問をまとめました"
+        description="こちらにない質問は、お気軽にお問い合わせください"
+        backgroundImage="/images/future-office.webp"
+      />
 
 
       {/* FAQ Content */}
-      <section className="py-16 md:py-24 bg-[#0a1628]">
+      <section className="py-16 md:py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="space-y-8 sm:space-y-12">
           {faqCategories.map((category, categoryIndex) => (
@@ -199,19 +191,8 @@ export default function FAQPage() {
       </section>
 
       {/* Contact Section */}
-      <section className="relative py-16 md:py-24 overflow-hidden">
-        {/* Background Image */}
-        <div className="absolute inset-0 z-0">
-          <Image
-            src="/images/cta-8.png"
-            alt="お問い合わせ"
-            fill
-            className="object-cover"
-          />
-          <div className="absolute inset-0 bg-gray-50/90" />
-        </div>
-
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative py-16 md:py-24 overflow-hidden bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="corp-heading-2 mb-4 text-black">
               まだ疑問が解決しませんか？

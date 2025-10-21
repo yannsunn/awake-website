@@ -24,7 +24,7 @@ export const ServiceCard = memo(function ServiceCard({
 }) {
   return (
     <div className={`
-      bg-white-overlay rounded-2xl p-8 shadow-sm border
+      bg-white rounded-2xl p-8 shadow-sm border
       ${featured ? 'border-blue-600 ring-2 ring-blue-600 ring-opacity-10' : 'border-blue-100'}
     `}>
       {featured && (
@@ -163,7 +163,7 @@ export const PricingCard = memo(function PricingCard({
 }) {
   return (
     <div className={`
-      bg-white-overlay rounded-2xl p-8 shadow-sm border
+      bg-white rounded-2xl p-8 shadow-sm border
       ${featured ? 'border-blue-600 ring-2 ring-blue-600 ring-opacity-10' : 'border-blue-200'}
     `}>
       {featured && (

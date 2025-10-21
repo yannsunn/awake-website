@@ -122,6 +122,7 @@ const config: Config = {
         'bounce-subtle': 'bounce-subtle 2s infinite',
         'spin-slow': 'spin 3s linear infinite',
         'neon-flicker': 'neon-flicker 1.5s infinite alternate',
+        'zoom': 'zoom 15s ease-in-out infinite',
       },
       keyframes: {
         'gradient-shift': {
@@ -151,6 +152,10 @@ const config: Config = {
           '20%, 24%, 55%': {
             textShadow: 'none',
           },
+        },
+        'zoom': {
+          '0%, 100%': { transform: 'scale(1)' },
+          '50%': { transform: 'scale(1.1)' },
         },
       },
       backgroundImage: {

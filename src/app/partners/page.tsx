@@ -1,10 +1,10 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import Image from 'next/image'
 import { COMPANY_DATA } from '@/lib/company-data'
 import PageLayout from '@/components/layout/PageLayout'
 import { Handshake, Award, Globe, Shield } from 'lucide-react'
 import LineButton from '@/components/ui/LineButton'
+import { UltraHero } from '@/components/ui/UltraSection'
 import '@/app/corporate.css'
 
 export const metadata: Metadata = {
@@ -146,27 +146,19 @@ export default function PartnersPage() {
 
   return (
     <PageLayout>
-      {/* Hero Section - ミニマル化 */}
-      <section className="relative py-12 md:py-16 flex items-center justify-center overflow-hidden bg-gradient-to-br from-blue-600 to-blue-800">
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="text-center max-w-4xl mx-auto">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-white leading-tight tracking-tight break-words">
-              パートナー企業
-            </h1>
-            <p className="text-xl md:text-2xl text-gray-200 font-medium mb-4 break-words">
-              1社では解決できない課題も、一緒なら解決できる
-            </p>
-            <p className="text-lg md:text-xl text-gray-300 leading-relaxed mb-8 break-words">
-              各分野のプロフェッショナルと連携し、あらゆるビジネス課題にワンストップで対応
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a href="#services" className="px-12 py-5 bg-gray-900 text-white text-xl font-medium hover:bg-gray-800 transition-colors">
-                パートナーサービスを見る
-              </a>
-            </div>
-          </div>
+      {/* Hero Section */}
+      <UltraHero
+        title="パートナー企業"
+        subtitle="1社では解決できない課題も、一緒なら解決できる"
+        description="各分野のプロフェッショナルと連携し、あらゆるビジネス課題にワンストップで対応"
+        backgroundImage="/images/network-connections.webp"
+      >
+        <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8">
+          <a href="#services" className="inline-flex items-center justify-center px-8 py-4 text-lg bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-xl shadow-md hover:shadow-lg transition-all duration-300 transform hover:scale-[1.02]">
+            パートナーサービスを見る
+          </a>
         </div>
-      </section>
+      </UltraHero>
 
       {/* Why Partnership Section */}
       <section className="relative py-12 md:py-16 bg-white">
@@ -220,19 +212,7 @@ export default function PartnersPage() {
 
       {/* Partnership Value Section */}
       <section className="relative py-12 md:py-16 bg-gray-50">
-        {/* 背景画像 */}
-        <div className="absolute inset-0 z-0">
-          <Image
-            src="/images/feature-8.png"
-            alt="パートナーシップの価値"
-            fill
-            className="object-cover"
-            sizes="100vw"
-          />
-          <div className="absolute inset-0 bg-gray-50/90" />
-        </div>
-
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="corp-heading-2 mb-4 text-black">
               パートナーシップがもたらす4つの価値。
@@ -329,19 +309,7 @@ export default function PartnersPage() {
 
       {/* FAQ Section */}
       <section className="relative py-12 md:py-16 bg-gray-50">
-        {/* 背景画像 */}
-        <div className="absolute inset-0 z-0">
-          <Image
-            src="/images/service-2-2.png"
-            alt="よくあるご質問"
-            fill
-            className="object-cover"
-            sizes="100vw"
-          />
-          <div className="absolute inset-0 bg-gray-50/90" />
-        </div>
-
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="corp-heading-2 mb-4 text-black">
               よくあるご質問。
@@ -378,19 +346,7 @@ export default function PartnersPage() {
 
       {/* Partner Recruitment Section */}
       <section className="relative py-12 md:py-16 bg-white">
-        {/* 背景画像 */}
-        <div className="absolute inset-0 z-0">
-          <Image
-            src="/images/service-2-4.png"
-            alt="パートナー募集"
-            fill
-            className="object-cover"
-            sizes="100vw"
-          />
-          <div className="absolute inset-0 bg-white/90" />
-        </div>
-
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="corp-heading-2 mb-4 text-black">
               新しいパートナーも募集中
@@ -431,19 +387,7 @@ export default function PartnersPage() {
 
       {/* CTA Section */}
       <section className="relative py-12 md:py-16 bg-gray-50">
-        {/* 背景画像 */}
-        <div className="absolute inset-0 z-0">
-          <Image
-            src="/images/cta-8.png"
-            alt="次のステップ"
-            fill
-            className="object-cover"
-            sizes="100vw"
-          />
-          <div className="absolute inset-0 bg-gray-50/90" />
-        </div>
-
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="corp-heading-2 mb-4 text-black">
               次のステップ

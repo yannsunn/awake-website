@@ -63,14 +63,18 @@ export function UltraHero({
   subtitle,
   description,
   children,
-  className
+  className,
+  backgroundImage
 }: {
   title: string | ReactNode
   subtitle?: string | ReactNode
   description?: string | ReactNode
   children?: ReactNode
   className?: string | undefined
+  backgroundImage?: string
 }) {
+  const defaultImage = "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?q=80&w=2070&auto=format&fit=crop"
+
   return (
     <section className={cn(
       "relative min-h-[50vh] flex items-center justify-center overflow-hidden pt-24 md:pt-28",
@@ -79,14 +83,14 @@ export function UltraHero({
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?q=80&w=2070&auto=format&fit=crop"
-          alt="Legal documentation background"
+          src={backgroundImage || defaultImage}
+          alt="Hero background"
           fill
-          className="object-cover opacity-20"
+          className="object-cover opacity-30"
           priority
-          unoptimized
+          unoptimized={!backgroundImage?.startsWith('/images/')}
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-white/80 via-white/70 to-white/90" />
+        <div className="absolute inset-0 bg-gradient-to-b from-white/75 via-white/65 to-white/85" />
       </div>
 
       <div className={cn(

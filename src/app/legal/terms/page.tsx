@@ -24,9 +24,10 @@ export default function TermsPage() {
       breadcrumbs={breadcrumbs}
     >
       {/* Hero Section */}
-      <UltraHero 
+      <UltraHero
         title="利用規約"
         description="最終更新日: 2025年1月1日"
+        backgroundImage="/images/balance-concept.webp"
       />
 
       {/* Content */}

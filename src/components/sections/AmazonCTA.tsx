@@ -22,7 +22,7 @@ const AmazonCTA = memo(function AmazonCTA() {
   ]
 
   return (
-    <section className="py-16 md:py-24 bg-white-overlay">
+    <section className="py-16 md:py-24 bg-white">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h2 className="corp-heading-2 mb-4">
@@ -63,7 +63,7 @@ const AmazonCTA = memo(function AmazonCTA() {
             
             <Link
               href="/#contact"
-              className="inline-flex items-center justify-center px-8 py-4 bg-white-overlay text-black font-medium rounded-lg hover:bg-gray-overlay transition-colors"
+              className="inline-flex items-center justify-center px-8 py-4 bg-white text-black font-medium rounded-lg hover:bg-gray-overlay transition-colors"
             >
               30秒で申し込み完了
             </Link>

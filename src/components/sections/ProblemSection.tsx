@@ -1,7 +1,6 @@
 'use client'
 
 import { memo } from 'react'
-import Image from 'next/image'
 import '@/app/corporate.css'
 
 const ProblemSection = memo(function ProblemSection() {
@@ -41,44 +40,6 @@ const ProblemSection = memo(function ProblemSection() {
           </div>
         </div>
         
-        {/* AI自動化ワークフロー画像 */}
-        <div className="mt-12">
-          <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-8 shadow-2xl border border-blue-200">
-            <h3 className="corp-heading-3 text-black text-center mb-6">
-              業務自動化の実例：AIによる完全自動化フロー
-            </h3>
-            <div className="relative rounded-xl overflow-hidden bg-white/98 p-4">
-              <Image
-                src="/images/cta-8.png"
-                alt="AI業務自動化ワークフロー図"
-                width={1200}
-                height={800}
-                className="w-full h-auto"
-              />
-            </div>
-            <div className="mt-6 space-y-3">
-              <h4 className="corp-text-body text-black font-bold">このワークフローで実現できること：</h4>
-              <ul className="space-y-2">
-                <li className="flex items-start">
-                  <span className="text-blue-600 mr-2">✓</span>
-                  <span className="corp-text-body text-black">キーワード調査から記事作成まで自動化</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-blue-600 mr-2">✓</span>
-                  <span className="corp-text-body text-black">SEO最適化されたコンテンツを自動生成</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-blue-600 mr-2">✓</span>
-                  <span className="corp-text-body text-black">WordPressへの自動投稿・画像設定</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-blue-600 mr-2">✓</span>
-                  <span className="corp-text-body text-black">人の手を介さない完全自動プロセス</span>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
   )

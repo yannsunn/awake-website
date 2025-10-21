@@ -1,7 +1,6 @@
 'use client'
 
 import { memo } from 'react'
-import Image from 'next/image'
 import '@/app/corporate.css'
 
 const UseCases = memo(function UseCases() {
@@ -45,47 +44,8 @@ const UseCases = memo(function UseCases() {
   ]
 
   return (
-    <section className="py-16 md:py-24 bg-white-overlay">
+    <section className="py-16 md:py-24 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* LINE自動化ワークフロー */}
-        <div className="mb-16">
-          <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-8 shadow-2xl border border-blue-200">
-            <h3 className="corp-heading-3 text-black text-center mb-6">
-              LINEと連携した自動化の実例
-            </h3>
-            <div className="relative rounded-xl overflow-hidden bg-white/98 p-4">
-              <Image
-                src="/images/cta-12.png"
-                alt="LINE自動化ワークフロー図"
-                width={1200}
-                height={800}
-                className="w-full h-auto"
-              />
-            </div>
-            <div className="mt-6 space-y-3">
-              <h4 className="text-black font-semibold">このLINE連携で実現できること：</h4>
-              <ul className="space-y-2 text-black">
-                <li className="flex items-start">
-                  <span className="text-blue-600 mr-2">✓</span>
-                  <span>スプレッドシートのデータをLINEに通知</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-blue-600 mr-2">✓</span>
-                  <span>日付をスケジュール設定して定期実行</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-blue-600 mr-2">✓</span>
-                  <span>複数のデータソースを統合・整理</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-blue-600 mr-2">✓</span>
-                  <span>条件に応じた自動分岐処理</span>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        
         <div className="text-center mb-12">
           <h2 className="corp-heading-2 mb-4">
             具体的な活用シーン

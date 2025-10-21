@@ -3,6 +3,7 @@
 import React from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
+import { motion } from 'framer-motion'
 import { cn } from '@/lib/utils'
 
 interface ServiceHeroProps {
@@ -40,34 +41,33 @@ export function ServiceHero({
 
   return (
     <section className={cn('relative min-h-screen flex items-center justify-center overflow-hidden bg-white', className)}>
-      {/* 背景画像 */}
-      <div className="absolute inset-0 z-0">
-        <Image
-          src={backgroundImage || "/images/service-5.png"}
-          alt="サービス背景"
-          fill
-          className="object-cover"
-          priority
-          sizes="100vw"
-        />
-        <div className="absolute inset-0 bg-white/70" />
-      </div>
+      {/* 背景画像 - 半透明オーバーレイ with ゆっくり拡大アニメーション */}
+      {backgroundImage && (
+        <motion.div
+          className="absolute inset-0 z-0"
+          initial={{ scale: 1 }}
+          animate={{ scale: 1.1 }}
+          transition={{
+            duration: 15,
+            repeat: Infinity,
+            repeatType: "reverse",
+            ease: "easeInOut"
+          }}
+        >
+          <Image
+            src={backgroundImage}
+            alt="サービス背景"
+            fill
+            className="object-cover opacity-[0.15]"
+            priority
+            sizes="100vw"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-white/75 via-white/55 to-white/75" />
+        </motion.div>
+      )}
 
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center max-w-5xl mx-auto">
-          {/* アイコン画像 - backgroundImageが指定されていない場合のみ表示 */}
-          {iconImage && !backgroundImage && (
-            <div className="flex justify-center mb-8">
-              <div className="relative w-24 h-24 md:w-32 md:h-32">
-                <Image
-                  src={iconImage}
-                  alt="サービスアイコン"
-                  fill
-                  className="object-contain drop-shadow-2xl"
-                />
-              </div>
-            </div>
-          )}
 
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-8 leading-tight tracking-tight break-words">
             {title}

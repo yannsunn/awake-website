@@ -13,26 +13,25 @@ interface UltraButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 }
 
 const sizeClasses = {
-  sm: 'px-4 py-2 text-sm',
-  md: 'px-6 py-3 text-base',
-  lg: 'px-8 py-4 text-lg'
+  sm: 'px-6 py-2 text-sm min-w-[180px]',
+  md: 'px-8 py-3 text-base min-w-[220px]',
+  lg: 'px-10 py-4 text-lg min-w-[260px]'
 }
 
-// 🚀 統一されたボタンコンポーネント
+// 🚀 統一されたボタンコンポーネント - デザインシステム統合
 const UltraButton = forwardRef<HTMLButtonElement, UltraButtonProps>(
   ({ variant = 'primary', size = 'md', href, children, className, ...props }, ref) => {
     const classes = cn(
-      'ultra-button relative z-10 group overflow-hidden',
+      'ultra-button relative group overflow-hidden whitespace-nowrap inline-flex items-center justify-center',
       variant === 'primary' ? BUTTONS.primary : BUTTONS.secondary,
       sizeClasses[size],
       FOCUS.ring,
-      'transition-all duration-300 hover:scale-105 hover:shadow-xl',
       className
     )
 
     const content = (
       <>
-        <span className="relative z-10">{children}</span>
+        <span className="relative z-10 flex items-center justify-center gap-2">{children}</span>
         <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"></div>
       </>
     )

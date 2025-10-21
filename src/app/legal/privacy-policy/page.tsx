@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import { COMPANY_DATA } from '@/lib/company-data'
 import PageLayout from '@/components/layout/PageLayout'
+import { UltraHero } from '@/components/ui/UltraSection'
 import '@/app/corporate.css'
 
 export const metadata: Metadata = {
@@ -23,18 +24,11 @@ export default function PrivacyPolicyPage() {
       breadcrumbs={breadcrumbs}
     >
       {/* Hero Section */}
-      <section className="corp-hero corp-section">
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="text-center max-w-4xl mx-auto">
-            <h1 className="corp-heading-1 mb-6 corp-gradient-text">
-              プライバシーポリシー
-            </h1>
-            <p className="corp-text-lead">
-              最終更新日: 2025年1月1日
-            </p>
-          </div>
-        </div>
-      </section>
+      <UltraHero
+        title="プライバシーポリシー"
+        description="最終更新日: 2025年1月1日"
+        backgroundImage="/images/balance-concept.webp"
+      />
 
       {/* Content */}
       <section className="corp-section bg-white">

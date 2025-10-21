@@ -12,10 +12,10 @@ import UseCases from '@/components/sections/UseCases'
 import AIFaq from '@/components/sections/AIFaq'
 import WhyNowCTA from '@/components/sections/WhyNowCTA'
 import AIPricingTable from '@/components/sections/AIPricingTable'
+import SuccessStories from '@/components/sections/SuccessStories'
 import WhyAmazon from '@/components/sections/WhyAmazon'
 import RiskFree from '@/components/sections/RiskFree'
 import AmazonSupport from '@/components/sections/AmazonSupport'
-import SuccessStories from '@/components/sections/SuccessStories'
 import AmazonFAQ from '@/components/sections/AmazonFAQ'
 import AmazonCTA from '@/components/sections/AmazonCTA'
 import '@/app/corporate.css'
@@ -31,6 +31,7 @@ const serviceData = {
     description: COMPANY_DATA.services.details.web.description,
     subDescription: '',
     icon: '🌐',
+    backgroundImage: '/images/hero-growth.webp',
     features: [
       {
         title: 'レスポンシブデザイン',
@@ -81,6 +82,7 @@ const serviceData = {
     subtitle: <>24時間働く<br />あなた専用のAIアシスタント</>,
     description: 'カスタマーサポートを自動化し、顧客満足度と業務効率を同時に向上',
     icon: '💬',
+    backgroundImage: '/images/ai-energy.webp',
     features: [
       {
         title: '御社専用のAIチャットボット開発',
@@ -132,6 +134,7 @@ const serviceData = {
     description: 'Amazonで月商1,000万円を目指す、完全成果報酬型サービス',
     subDescription: '在庫リスクなし。広告費の持ち出しなし。売れた分だけお支払い。',
     icon: '🛒',
+    backgroundImage: '/images/innovation-burst.webp',
     features: [
       {
         title: 'データに基づく確実な売上アップ',
@@ -280,6 +283,7 @@ export default async function ServicePage(
           ctaHref="/#contact"
           secondaryCtaText="導入事例を見る"
           secondaryCtaHref="#use-cases"
+          backgroundImage={'backgroundImage' in service ? service.backgroundImage : undefined}
         />
         
         <ProblemSection />
@@ -308,6 +312,7 @@ export default async function ServicePage(
         </section>
         
         <UseCases />
+        <SuccessStories />
         <AIPricingTable />
         <AIFaq />
         <WhyNowCTA />
@@ -327,6 +332,7 @@ export default async function ServicePage(
           secondaryCtaText="サービス詳細を見る"
           secondaryCtaHref="#support"
           subDescription={'subDescription' in service ? service.subDescription : undefined}
+          backgroundImage={'backgroundImage' in service ? service.backgroundImage : undefined}
         />
         
         <WhyAmazon />
@@ -551,7 +557,7 @@ export default async function ServicePage(
                     href="https://lin.ee/xBl5t78"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center justify-center px-8 py-3 bg-white text-green-600 font-bold rounded-lg hover:bg-blue-50 transition-colors whitespace-nowrap"
+                    className="inline-flex items-center justify-center whitespace-nowrap px-8 py-3 bg-white text-green-600 font-bold rounded-lg hover:bg-blue-50 transition-colors"
                   >
                     <svg className="w-6 h-6 mr-2" viewBox="0 0 24 24" fill="currentColor">
                       <path d="M12 2C6.48 2 2 6.48 2 12c0 5.52 4.48 10 10 10 1.19 0 2.34-.21 3.41-.6.3-.11.49-.4.49-.72 0-.43-.35-.78-.78-.78-.17 0-.33.06-.46.14-.85.32-1.74.49-2.66.49-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8c0 1.29-.31 2.5-.85 3.57-.13.25-.42.43-.7.43-.43 0-.78-.35-.78-.78v-4.72c0-.43-.35-.78-.78-.78s-.78.35-.78.78v.42c-.71-.7-1.68-1.14-2.76-1.14-2.18 0-3.94 1.76-3.94 3.94s1.76 3.94 3.94 3.94c1.08 0 2.05-.44 2.76-1.14.36.68 1.08 1.14 1.9 1.14.88 0 1.68-.54 2.01-1.36.67-1.31 1.04-2.79 1.04-4.36 0-5.52-4.48-10-10-10zm0 12.56c-1.31 0-2.38-1.07-2.38-2.38s1.07-2.38 2.38-2.38 2.38 1.07 2.38 2.38-1.07 2.38-2.38 2.38z"/>
@@ -589,8 +595,7 @@ export default async function ServicePage(
             <ProcessSteps title="" steps={service.process} />
           </div>
         </section>
-        
-        <SuccessStories />
+
         <AmazonFAQ />
         <AmazonCTA />
       </PageLayout>
@@ -605,6 +610,7 @@ export default async function ServicePage(
         description={service.description}
         ctaText="お問い合わせはこちら"
         ctaHref="/#contact"
+        backgroundImage={'backgroundImage' in service ? service.backgroundImage : undefined}
       />
 
       <section className="py-16 md:py-24 bg-white">

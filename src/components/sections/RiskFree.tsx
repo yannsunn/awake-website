@@ -5,7 +5,7 @@ import '@/app/corporate.css'
 
 const RiskFree = memo(function RiskFree() {
   return (
-    <section className="py-16 md:py-24 bg-white-overlay">
+    <section className="py-16 md:py-24 bg-white">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h2 className="corp-heading-2 mb-4">

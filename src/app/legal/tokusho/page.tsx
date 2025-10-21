@@ -24,9 +24,10 @@ export default function TokushoPage() {
       breadcrumbs={breadcrumbs}
     >
       {/* Hero Section */}
-      <UltraHero 
+      <UltraHero
         title="特定商取引法に基づく表記"
         description="最終更新日: 2025年1月13日"
+        backgroundImage="/images/balance-concept.webp"
       />
 
       {/* Content */}
