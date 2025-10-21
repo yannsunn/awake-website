@@ -1,11 +1,20 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import { useEffect, useRef } from 'react'
 import Image from 'next/image'
 import LineButton from '@/components/ui/LineButton'
 import { CONTAINER, HEADING, TEXT } from '@/lib/design-system/unified'
 
 export default function HomeHero() {
+  const videoRef = useRef<HTMLVideoElement>(null)
+
+  useEffect(() => {
+    if (videoRef.current) {
+      // 動画の再生速度を0.5倍（半分の速度）に設定
+      videoRef.current.playbackRate = 0.5
+    }
+  }, [])
   // アニメーション設定
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -59,6 +68,7 @@ export default function HomeHero() {
       {/* 背景動画 - 半透明オーバーレイ */}
       <div className="absolute inset-0 z-10">
         <video
+          ref={videoRef}
           autoPlay
           loop
           muted
