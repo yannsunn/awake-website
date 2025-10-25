@@ -16,7 +16,7 @@ export default function ChatWidget() {
   const [messages, setMessages] = useState<Message[]>([
     {
       role: 'assistant',
-      content: 'こんにちは！株式会社Awakeのチャットボットです。ホームページ制作、AIコンサルティング、Amazon代理店サービスについて、何でもお気軽にご質問ください😊',
+      content: 'こんにちは！株式会社Awakeのチャットボットです。chatbot付きホームページ制作、月額制AI顧問・システム導入、Amazon代理店サービスについて、何でもお気軽にご質問ください😊',
       timestamp: new Date(),
     },
   ]);

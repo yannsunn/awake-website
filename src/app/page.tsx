@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     'ホームページ制作',
     'Webサイト制作',
     'AIチャットボット開発',
-    'AIコンサルティング',
+    '月額制AI顧問',
     'Amazon代理店',
     'EC販売代行',
     '株式会社Awake',

@@ -214,9 +214,9 @@ export async function generateMetadata(
 
   // サービス別のキーワード
   const keywords = {
-    ai: ['AIチャットボット開発', 'AIコンサルティング', 'カスタマーサポート自動化', '業務効率化', 'AI導入支援', '中小企業DX', '東京都東大和市', 'LINE連携', 'Web連携', '人件費削減'],
+    ai: ['月額制AI顧問', 'AIシステム導入', 'AIチャットボット開発', 'カスタマーサポート自動化', '業務効率化', 'AI導入支援', '中小企業DX', '東京都東大和市', 'LINE連携', 'Web連携', '人件費削減'],
     ec: ['Amazon代理店', 'EC販売代行', 'Amazon販路開拓', 'CLEMIRA', '完全成果報酬', '初期費用0円', 'オンライン販売', '中小企業', '東京都東大和市', 'メーカー直販'],
-    web: ['ホームページ制作', 'Webサイト制作', 'レスポンシブデザイン', 'SEO対策', '中小企業', 'コーポレートサイト', '東京都東大和市', '高速表示', '保守運用']
+    web: ['chatbot付きホームページ制作', 'Webサイト制作', 'レスポンシブデザイン', 'SEO対策', '中小企業', 'コーポレートサイト', '東京都東大和市', '高速表示', '保守運用']
   }
 
   return {
@@ -273,9 +273,9 @@ export default async function ServicePage(
     notFound()
   }
 
-  // AIコンサルティングページのカスタマイズ
+  // AI顧問・システム導入ページのカスタマイズ
   if (slug === 'ai') {
-    // Service schema for AI consulting
+    // Service schema for AI advisory & system implementation
     const aiServiceSchema = createServiceSchema({
       name: service.title,
       description: service.description,

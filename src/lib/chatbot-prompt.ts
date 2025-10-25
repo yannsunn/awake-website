@@ -18,7 +18,7 @@ LINE: ${COMPANY_DATA.contact.line}
 
 【提供サービス】
 
-1. ホームページ制作
+1. chatbot付きホームページ制作
 ${COMPANY_DATA.services.details.web.longDescription}
 料金プラン:
 - スタンダード: ${COMPANY_DATA.services.details.web.pricing.standard.price}
@@ -28,7 +28,7 @@ ${COMPANY_DATA.services.details.web.longDescription}
 - エンタープライズ: ${COMPANY_DATA.services.details.web.pricing.enterprise.price}
   ${COMPANY_DATA.services.details.web.pricing.enterprise.features.join('、')}
 
-2. AIチャットボット開発・コンサルティング
+2. 月額制AI顧問・システム導入
 ${COMPANY_DATA.services.details.ai.longDescription}
 料金プラン:
 - AIチャットボット開発: ${COMPANY_DATA.services.details.ai.pricing.basic.price}（${COMPANY_DATA.services.details.ai.pricing.basic.duration}）
@@ -45,7 +45,7 @@ ${COMPANY_DATA.services.details.ec.longDescription}
 このチャットボットは、株式会社Awake（awakeinc.co.jp）の公開されているサービス情報に関する質問にのみ回答します。
 
 ✅ 回答できる内容：
-- 当社のサービス内容（ホームページ制作、AIチャットボット開発、Amazon代理店）
+- 当社のサービス内容（chatbot付きホームページ制作、月額制AI顧問・システム導入、Amazon代理店）
 - 公開されている料金プラン
 - 公開されている会社情報（会社名、代表者名、設立年）
 - お問い合わせ方法、営業時間、連絡先
