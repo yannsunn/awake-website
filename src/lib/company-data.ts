@@ -13,7 +13,7 @@ export const COMPANY_DATA = {
     subMessage: '無駄を削ぎ落とし、本当に価値のある投資だけに集中。あなたのビジネスに、新しい成長の道筋を作ります。',
     businessContent: [
       'ホームページ制作・Webサイト開発',
-      'AIチャットボット開発・AIコンサルティング',
+      'AIチャットボット開発・月額制AI顧問',
       'Amazon EC販売代行サービス',
       '業務効率化・DX推進支援'
     ],
@@ -47,7 +47,7 @@ export const COMPANY_DATA = {
     ],
     details: {
       web: {
-        title: 'ホームページ制作',
+        title: 'chatbot付きホームページ制作',
         description: '売上を生むサイトを適正価格で',
         longDescription: 'あなたの商品・サービスの価値を、お客様に正しく伝える。24時間働く営業ツールとして機能するホームページを制作します。',
         href: 'https://portfolio.awakeinc.co.jp/',
@@ -75,7 +75,7 @@ export const COMPANY_DATA = {
         }
       },
       ai: {
-        title: 'AIチャットボット開発・コンサルティング',
+        title: '月額制AI顧問・システム導入',
         description: '24時間対応の顧客サポートを実現',
         longDescription: 'カスタマーサポートの自動化から社内業務効率化まで。御社専用のAIチャットボットを開発し、人件費削減と顧客満足度向上を同時に実現します。',
         href: '/services/ai',
