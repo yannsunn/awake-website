@@ -54,7 +54,7 @@ export const COMPANY_DATA = {
         pricing: {
           standard: {
             name: 'スタンダード',
-            price: '¥132,000',
+            price: '¥198,000',
             features: ['5ページまで', 'レスポンシブデザイン', '基本SEO対策', 'お問い合わせフォーム', '3週間制作期間']
           },
           premium: {
