@@ -125,8 +125,8 @@ export default function TokushoPage() {
                     <div className="corp-card p-6">
                       <h3 className="corp-heading-3 text-black mb-3">主要サービス料金</h3>
                       <ul className="space-y-2 corp-text-small">
-                        <li>• ホームページ制作: {COMPANY_DATA.services.details.web.pricing.standard.price}〜</li>
-                        <li>• AIコンサルティング: {COMPANY_DATA.services.details.ai.pricing.basic.price}〜</li>
+                        <li>• chatbot付きホームページ制作: {COMPANY_DATA.services.details.web.pricing.standard.price}〜</li>
+                        <li>• 月額制AI顧問・システム導入: {COMPANY_DATA.services.details.ai.pricing.basic.price}〜</li>
                         <li>• Amazon代理店サービス: 完全成果報酬制（売上の{COMPANY_DATA.services.details.ec.pricing.commission.rate}）</li>
                       </ul>
                       <p className="corp-text-small text-black mt-3">
@@ -141,8 +141,8 @@ export default function TokushoPage() {
                   <div className="corp-text-body text-black leading-relaxed space-y-4">
                     <h3 className="corp-heading-3 text-black">支払時期</h3>
                     <ul className="list-disc list-inside space-y-2">
-                      <li>ホームページ制作: 契約締結時に50%、納品時に50%</li>
-                      <li>AIコンサルティング: サービス開始前に全額前払い</li>
+                      <li>chatbot付きホームページ制作: 契約締結時に50%、納品時に50%</li>
+                      <li>月額制AI顧問・システム導入: サービス開始前に全額前払い</li>
                       <li>Amazon代理店サービス: 月末締め翌月末払い</li>
                     </ul>
                     
@@ -162,8 +162,8 @@ export default function TokushoPage() {
                   <h2 className="corp-heading-2 text-black mb-4">商品・サービスの引渡時期</h2>
                   <div className="corp-text-body text-black leading-relaxed space-y-4">
                     <ul className="list-disc list-inside space-y-2">
-                      <li>ホームページ制作: 契約締結後3〜8週間（プランにより異なります）</li>
-                      <li>AIコンサルティング: 契約締結後1週間以内にサービス開始</li>
+                      <li>chatbot付きホームページ制作: 契約締結後3〜8週間（プランにより異なります）</li>
+                      <li>月額制AI顧問・システム導入: 契約締結後1週間以内にサービス開始</li>
                       <li>Amazon代理店サービス: 契約締結後1〜2週間で販売開始</li>
                     </ul>
                     <p className="corp-text-small text-black">

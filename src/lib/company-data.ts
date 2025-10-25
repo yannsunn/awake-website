@@ -161,7 +161,7 @@ export const COMPANY_DATA = {
     baseTitle: '株式会社Awake',
     baseTitleSuffix: ' | 株式会社Awake',
     baseDescription: '株式会社Awakeは、デジタルソリューションを通じて企業の成長を支援し、新しい価値を創造します。',
-    keywords: '株式会社Awake, ホームページ制作, AIコンサルティング, Amazon代理店, デジタル変革',
+    keywords: '株式会社Awake, chatbot付きホームページ制作, 月額制AI顧問, AIシステム導入, Amazon代理店, デジタル変革',
     ogImage: '/assets/images/ogp.jpg',
     ogUrl: 'https://www.awakeinc.co.jp/'
   },

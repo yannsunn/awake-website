@@ -188,9 +188,9 @@ export const enhancedOrganizationSchema = {
       "description": "企業向けウェブサイト制作・運用サポート"
     },
     {
-      "@type": "Organization", 
-      "name": "AIコンサルティング部門",
-      "description": "AI導入支援・業務効率化コンサルティング"
+      "@type": "Organization",
+      "name": "AI顧問・システム導入部門",
+      "description": "月額制AI顧問・AIシステム導入支援"
     }
   ]
 } as const
