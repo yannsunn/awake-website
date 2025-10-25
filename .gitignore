@@ -51,3 +51,5 @@ gsc-credentials.json
 gsc-token.json
 indexing-service-account.json
 google-ads-config.json
+
+.vercel

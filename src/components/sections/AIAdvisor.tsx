@@ -72,7 +72,7 @@ const AIAdvisor = memo(function AIAdvisor() {
       {/* 背景装飾 */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute top-10 left-10 w-72 h-72 bg-blue-500 rounded-full blur-3xl" />
-        <div className="absolute bottom-10 right-10 w-96 h-96 bg-purple-500 rounded-full blur-3xl" />
+        <div className="absolute bottom-10 right-10 w-96 h-96 bg-blue-400 rounded-full blur-3xl" />
       </div>
 
       <div className="container mx-auto px-4 relative z-10">
@@ -84,7 +84,7 @@ const AIAdvisor = memo(function AIAdvisor() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-full text-sm font-medium mb-6">
+          <div className="inline-flex items-center gap-2 px-4 py-2 bg-blue-600 text-white rounded-full text-sm font-medium mb-6">
             <Sparkles className="w-4 h-4" />
             <span>新サービス</span>
           </div>
@@ -116,7 +116,7 @@ const AIAdvisor = memo(function AIAdvisor() {
                 key={index}
                 className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 hover:border-blue-200"
               >
-                <div className="w-14 h-14 bg-gradient-to-br from-blue-600 to-purple-600 rounded-xl flex items-center justify-center mb-4">
+                <div className="w-14 h-14 bg-blue-600 rounded-xl flex items-center justify-center mb-4">
                   <Icon className="w-7 h-7 text-white" />
                 </div>
                 <h3 className="text-lg font-bold text-gray-900 mb-2">{feature.title}</h3>
@@ -144,7 +144,7 @@ const AIAdvisor = memo(function AIAdvisor() {
                 key={index}
                 className={`relative rounded-2xl p-8 ${
                   plan.popular
-                    ? 'bg-gradient-to-br from-blue-600 to-purple-600 text-white shadow-2xl scale-105'
+                    ? 'bg-blue-600 text-white shadow-2xl scale-105'
                     : 'bg-white border-2 border-gray-200 hover:border-blue-300 shadow-lg'
                 } transition-all duration-300`}
               >
@@ -197,7 +197,7 @@ const AIAdvisor = memo(function AIAdvisor() {
 
         {/* CTA */}
         <motion.div
-          className="text-center bg-gradient-to-r from-blue-600 to-purple-600 rounded-3xl p-12 text-white"
+          className="text-center bg-blue-600 rounded-3xl p-12 text-white"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
