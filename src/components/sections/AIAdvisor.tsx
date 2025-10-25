@@ -68,14 +68,8 @@ const AIAdvisor = memo(function AIAdvisor() {
   ]
 
   return (
-    <section className="relative py-20 md:py-32 overflow-hidden bg-gradient-to-b from-white via-blue-50/30 to-white">
-      {/* 背景装飾 */}
-      <div className="absolute inset-0 opacity-5">
-        <div className="absolute top-10 left-10 w-72 h-72 bg-blue-500 rounded-full blur-3xl" />
-        <div className="absolute bottom-10 right-10 w-96 h-96 bg-blue-400 rounded-full blur-3xl" />
-      </div>
-
-      <div className="container mx-auto px-4 relative z-10">
+    <section className="relative py-20 md:py-32 bg-white">
+      <div className="container mx-auto px-4">
         {/* ヘッダー */}
         <motion.div
           className="text-center mb-16"
@@ -84,7 +78,7 @@ const AIAdvisor = memo(function AIAdvisor() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-blue-600 text-white rounded-full text-sm font-medium mb-6">
+          <div className="inline-flex items-center gap-2 px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-sm font-medium mb-6">
             <Sparkles className="w-4 h-4" />
             <span>新サービス</span>
           </div>
@@ -116,8 +110,8 @@ const AIAdvisor = memo(function AIAdvisor() {
                 key={index}
                 className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 hover:border-blue-200"
               >
-                <div className="w-14 h-14 bg-blue-600 rounded-xl flex items-center justify-center mb-4">
-                  <Icon className="w-7 h-7 text-white" />
+                <div className="w-14 h-14 bg-gray-100 rounded-xl flex items-center justify-center mb-4">
+                  <Icon className="w-7 h-7 text-gray-700" />
                 </div>
                 <h3 className="text-lg font-bold text-gray-900 mb-2">{feature.title}</h3>
                 <p className="text-gray-600 text-sm">{feature.description}</p>
@@ -144,25 +138,25 @@ const AIAdvisor = memo(function AIAdvisor() {
                 key={index}
                 className={`relative rounded-2xl p-8 ${
                   plan.popular
-                    ? 'bg-blue-600 text-white shadow-2xl scale-105'
-                    : 'bg-white border-2 border-gray-200 hover:border-blue-300 shadow-lg'
+                    ? 'bg-white border-2 border-blue-600 shadow-xl'
+                    : 'bg-white border-2 border-gray-200 hover:border-gray-300 shadow-lg'
                 } transition-all duration-300`}
               >
                 {plan.popular && (
-                  <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-yellow-400 text-gray-900 px-4 py-1 rounded-full text-sm font-bold">
+                  <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-blue-600 text-white px-4 py-1 rounded-full text-sm font-bold">
                     人気No.1
                   </div>
                 )}
 
                 <div className="text-center mb-6">
-                  <h4 className={`text-2xl font-bold mb-2 ${plan.popular ? 'text-white' : 'text-gray-900'}`}>
+                  <h4 className="text-2xl font-bold mb-2 text-gray-900">
                     {plan.name}
                   </h4>
                   <div className="flex items-baseline justify-center gap-1">
-                    <span className={`text-5xl font-bold ${plan.popular ? 'text-white' : 'text-blue-600'}`}>
+                    <span className="text-5xl font-bold text-gray-900">
                       ¥{plan.price}
                     </span>
-                    <span className={`text-lg ${plan.popular ? 'text-blue-100' : 'text-gray-600'}`}>
+                    <span className="text-lg text-gray-600">
                       /月
                     </span>
                   </div>
@@ -171,10 +165,8 @@ const AIAdvisor = memo(function AIAdvisor() {
                 <ul className="space-y-3 mb-8">
                   {plan.features.map((feature, i) => (
                     <li key={i} className="flex items-start gap-2">
-                      <CheckCircle2 className={`w-5 h-5 flex-shrink-0 mt-0.5 ${
-                        plan.popular ? 'text-blue-200' : 'text-blue-600'
-                      }`} />
-                      <span className={`text-sm ${plan.popular ? 'text-white' : 'text-gray-700'}`}>
+                      <CheckCircle2 className="w-5 h-5 flex-shrink-0 mt-0.5 text-gray-400" />
+                      <span className="text-sm text-gray-700">
                         {feature}
                       </span>
                     </li>
@@ -184,8 +176,8 @@ const AIAdvisor = memo(function AIAdvisor() {
                 <button
                   className={`w-full py-3 rounded-xl font-bold transition-all duration-300 ${
                     plan.popular
-                      ? 'bg-white text-blue-600 hover:bg-blue-50'
-                      : 'bg-blue-600 text-white hover:bg-blue-700'
+                      ? 'bg-blue-600 text-white hover:bg-blue-700'
+                      : 'bg-gray-100 text-gray-900 hover:bg-gray-200'
                   }`}
                 >
                   無料で試す
@@ -197,25 +189,25 @@ const AIAdvisor = memo(function AIAdvisor() {
 
         {/* CTA */}
         <motion.div
-          className="text-center bg-blue-600 rounded-3xl p-12 text-white"
+          className="text-center bg-gray-50 rounded-3xl p-12 border border-gray-200"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.6 }}
         >
-          <h3 className="text-3xl md:text-4xl font-bold mb-4">
+          <h3 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">
             まずは無料トライアルから
           </h3>
-          <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
+          <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
             14日間、すべての機能を無料でお試しいただけます。
             <br />
             クレジットカード登録不要。
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <LineButton size="large" className="!bg-white !text-blue-600 hover:!bg-blue-50" />
+            <LineButton size="large" />
             <a
               href="tel:050-7115-4948"
-              className="px-8 py-4 bg-blue-700 hover:bg-blue-800 text-white rounded-xl font-bold transition-all duration-300 inline-flex items-center gap-2"
+              className="px-8 py-4 bg-white border-2 border-gray-300 hover:border-gray-400 text-gray-900 rounded-xl font-bold transition-all duration-300 inline-flex items-center gap-2"
             >
               📞 電話で相談する
             </a>
