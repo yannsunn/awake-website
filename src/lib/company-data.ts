@@ -47,7 +47,7 @@ export const COMPANY_DATA = {
     ],
     details: {
       web: {
-        title: 'chatbot付きホームページ制作',
+        title: 'チャットボット搭載ホームページ制作',
         description: '売上を生むサイトを適正価格で',
         longDescription: 'あなたの商品・サービスの価値を、お客様に正しく伝える。24時間働く営業ツールとして機能するホームページを制作します。',
         href: 'https://portfolio.awakeinc.co.jp/',
@@ -161,7 +161,7 @@ export const COMPANY_DATA = {
     baseTitle: '株式会社Awake',
     baseTitleSuffix: ' | 株式会社Awake',
     baseDescription: '株式会社Awakeは、デジタルソリューションを通じて企業の成長を支援し、新しい価値を創造します。',
-    keywords: '株式会社Awake, chatbot付きホームページ制作, 月額制AI顧問, AIシステム導入, Amazon代理店, デジタル変革',
+    keywords: '株式会社Awake, チャットボット搭載ホームページ制作, 月額制AI顧問, AIシステム導入, Amazon代理店, デジタル変革',
     ogImage: '/assets/images/ogp.jpg',
     ogUrl: 'https://www.awakeinc.co.jp/'
   },

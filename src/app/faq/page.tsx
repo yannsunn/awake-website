@@ -10,7 +10,7 @@ import '@/app/corporate.css'
 
 export const metadata: Metadata = {
   title: `よくある質問 | ${COMPANY_DATA.basic.name}`,
-  description: `${COMPANY_DATA.basic.name}のサービスに関するよくある質問をまとめました。chatbot付きホームページ制作、月額制AI顧問・システム導入、Amazon代理店サービスについて詳しく解説。`,
+  description: `${COMPANY_DATA.basic.name}のサービスに関するよくある質問をまとめました。チャットボット搭載ホームページ制作、月額制AI顧問・システム導入、Amazon代理店サービスについて詳しく解説。`,
   keywords: `${COMPANY_DATA.metadata.keywords}, FAQ, よくある質問, サポート`,
   openGraph: {
     type: 'website',
@@ -57,7 +57,7 @@ const faqCategories = [
     questions: [
       {
         question: "どのようなサービスを提供していますか？",
-        answer: "3つの専門サービスを提供しています。<br />①chatbot付きホームページ制作：成果にコミットする戦略的ウェブサイト制作<br />②月額制AI顧問・システム導入：最新AI技術で業務効率を劇的に改善<br />③Amazon代理店サービス：初期費用0円のAmazon販売総合支援です。"
+        answer: "3つの専門サービスを提供しています。<br />①チャットボット搭載ホームページ制作：成果にコミットする戦略的ウェブサイト制作<br />②月額制AI顧問・システム導入：最新AI技術で業務効率を劇的に改善<br />③Amazon代理店サービス：初期費用0円のAmazon販売総合支援です。"
       },
       {
         question: "相談や見積もりは無料ですか？",

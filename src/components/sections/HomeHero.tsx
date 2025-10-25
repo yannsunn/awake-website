@@ -97,7 +97,7 @@ export default function HomeHero() {
               className={`${HEADING.h1} text-slate-900 mb-8`}
               variants={textVariants}
             >
-              chatbot付きホームページ制作
+              チャットボット搭載ホームページ制作
               <br className="hidden sm:block" />
               <span className="block sm:inline">月額制AI顧問・Amazon代理店</span>
             </motion.h1>
@@ -116,7 +116,7 @@ export default function HomeHero() {
               適正価格で最大の価値を。
               <br />
               <span className="block sm:inline">
-                chatbot付きホームページ制作 198,000円〜
+                チャットボット搭載ホームページ制作 198,000円〜
               </span>
               <br />
               <span className="block sm:inline">
