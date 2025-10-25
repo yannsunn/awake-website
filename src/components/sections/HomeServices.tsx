@@ -27,7 +27,7 @@ const services = [
     icon: Brain,
     title: COMPANY_DATA.services.details.ai.title,
     description: COMPANY_DATA.services.details.ai.description,
-    price: COMPANY_DATA.services.details.ai.pricing.basic.price,
+    price: COMPANY_DATA.services.details.ai.pricing.aiCommon.price,
     image: '/images/ai-service.webp',
     features: [
       '24時間自動対応で顧客満足度向上',
