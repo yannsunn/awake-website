@@ -34,7 +34,7 @@ export const viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL("https://awakeinc.co.jp"),
   title: "株式会社Awake（アウェイク）| 東京都東大和市のchatbot付きホームページ制作・月額制AI顧問・Amazon代理店",
-  description: "東京都東大和市の株式会社Awake（アウェイク）。chatbot付きホームページ制作13.2万円〜、月額制AI顧問・システム導入29.8万円〜、Amazon EC販売代行を適正価格で提供。中小企業のDX推進・業務効率化を支援します。",
+  description: "東京都東大和市の株式会社Awake（アウェイク）。chatbot付きホームページ制作19.8万円〜、月額制AI顧問・システム導入3.3万円〜、Amazon EC販売代行を適正価格で提供。中小企業のDX推進・業務効率化を支援します。",
   keywords: "株式会社Awake,アウェイク,東大和市,chatbot付きホームページ制作,Webサイト制作,月額制AI顧問,AIシステム導入,Amazon代理店,EC販売代行,中小企業,DX支援,業務効率化,東京",
   openGraph: {
     title: "株式会社Awake（アウェイク）| 東大和市のホームページ制作・AI開発・Amazon代理店",
