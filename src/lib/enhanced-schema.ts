@@ -3,11 +3,13 @@ import { COMPANY_DATA } from './company-data'
 
 export const enhancedOrganizationSchema = {
   "@context": "https://schema.org",
-  "@type": ["Organization", "LocalBusiness", "Corporation"],
+  "@type": ["Organization", "LocalBusiness", "Corporation", "ProfessionalService"],
   "name": COMPANY_DATA.basic.name,
-  "alternateName": COMPANY_DATA.basic.nameEn,
+  "alternateName": [COMPANY_DATA.basic.nameEn, "アウェイク", "Awake"],
   "legalName": COMPANY_DATA.basic.name,
   "url": COMPANY_DATA.contact.website,
+  "identifier": "8012801020829",
+  "taxID": "T8012801020829",
   "logo": {
     "@type": "ImageObject",
     "url": `${COMPANY_DATA.contact.website}assets/images/logo.png`,
@@ -161,12 +163,20 @@ export const enhancedOrganizationSchema = {
     }
   ],
   "knowsAbout": [
-    "ウェブ開発",
-    "AI活用コンサルティング", 
+    "ホームページ制作",
+    "Webサイト制作",
+    "AIチャットボット開発",
+    "AI活用コンサルティング",
+    "Amazon代理店サービス",
+    "EC販売代行",
     "デジタルマーケティング",
     "ECサイト運営",
+    "業務効率化",
+    "DX推進",
     "システム構築"
   ],
+  "priceRange": "¥132,000-¥330,000",
+  "paymentAccepted": ["現金", "銀行振込", "クレジットカード"],
   "slogan": COMPANY_DATA.basic.mission,
   "mission": COMPANY_DATA.basic.description,
   "parentOrganization": null,

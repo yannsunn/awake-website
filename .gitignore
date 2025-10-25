@@ -46,6 +46,8 @@ next-env.d.ts
 
 /src/generated/prisma
 
-# Google Search Console API credentials
+# Google API credentials
 gsc-credentials.json
 gsc-token.json
+indexing-service-account.json
+google-ads-config.json

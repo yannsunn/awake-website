@@ -33,20 +33,21 @@ export const viewport = {
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://awakeinc.co.jp"),
-  title: "株式会社Awake | ビジネスコンサルティング",
-  description: "ホームページ制作、AIコンサルティング、Amazon代理店サービスで企業の成長をサポートする株式会社Awakeです。",
-  keywords: "ホームページ制作,AIコンサルティング,Amazon代理店,ビジネスコンサルティング,株式会社Awake",
+  title: "株式会社Awake（アウェイク）| 東京都東大和市のホームページ制作・AIチャットボット開発・Amazon代理店",
+  description: "東京都東大和市の株式会社Awake（アウェイク）。ホームページ制作13.2万円〜、AIチャットボット開発29.8万円〜、Amazon EC販売代行を適正価格で提供。中小企業のDX推進・業務効率化を支援します。",
+  keywords: "株式会社Awake,アウェイク,東大和市,ホームページ制作,Webサイト制作,AIチャットボット開発,AIコンサルティング,Amazon代理店,EC販売代行,中小企業,DX支援,業務効率化,東京",
   openGraph: {
-    title: "株式会社Awake | ビジネスコンサルティング",
-    description: "ホームページ制作、AIコンサルティング、Amazon代理店サービスで企業の成長をサポートする株式会社Awakeです。",
+    title: "株式会社Awake（アウェイク）| 東大和市のホームページ制作・AI開発・Amazon代理店",
+    description: "東京都東大和市の株式会社Awake（アウェイク）。適正価格で中小企業のデジタル化を支援。ホームページ制作、AIチャットボット開発、Amazon販売代行サービスを提供しています。",
     images: ["/assets/images/ogp.jpg"],
     locale: "ja_JP",
     type: "website",
+    siteName: "株式会社Awake（アウェイク）",
   },
   twitter: {
     card: "summary_large_image",
-    title: "株式会社Awake | ビジネスコンサルティング",
-    description: "ホームページ制作、AIコンサルティング、Amazon代理店サービスで企業の成長をサポートする株式会社Awakeです。",
+    title: "株式会社Awake（アウェイク）| 東大和市のホームページ制作・AI開発",
+    description: "東京都東大和市の株式会社Awake（アウェイク）。適正価格で中小企業のデジタル化を支援します。",
     images: ["/assets/images/ogp.jpg"],
   },
   robots: "index, follow",

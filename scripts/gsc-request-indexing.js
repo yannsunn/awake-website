@@ -1,25 +1,26 @@
 /**
- * Google Search Console API - URL検査とインデックスリクエスト
+ * Google Indexing API - インデックス登録リクエスト
  *
- * このスクリプトは、主要ページのURL検査とインデックスリクエストを実行します。
- *
- * 注意: Google Search Console API v3には直接的な「インデックスリクエスト」機能がありません。
- * 代わりに、Google Indexing API を使用する必要があります。
+ * このスクリプトは、Google Indexing APIを使用して主要ページのインデックス登録をリクエストします。
  *
  * 使用方法:
  *   node scripts/gsc-request-indexing.js
  *
  * 事前準備:
- *   1. node scripts/gsc-setup-oauth.js を実行して認証を完了
- *   2. Google Indexing API を有効化
- *   3. サービスアカウントを作成してSearch Consoleに所有者として追加
+ *   1. Google Cloud Consoleでサービスアカウントを作成
+ *   2. Indexing APIを有効化
+ *   3. サービスアカウントをSearch Consoleに所有者として追加
+ *   4. サービスアカウントキー（JSON）を indexing-service-account.json として保存
+ *
+ * 詳細: docs/INDEXING_API_SETUP.md を参照
  */
 
 const { google } = require('googleapis');
-const { authorize } = require('./gsc-setup-oauth');
+const fs = require('fs');
+const path = require('path');
 
 // 設定
-const SITE_URL = 'sc-domain:awakeinc.co.jp';
+const SERVICE_ACCOUNT_KEY_FILE = path.join(__dirname, '..', 'indexing-service-account.json');
 const PAGES_TO_INDEX = [
   'https://www.awakeinc.co.jp/',
   'https://www.awakeinc.co.jp/services/ai',
@@ -30,39 +31,36 @@ const PAGES_TO_INDEX = [
 ];
 
 /**
- * URL検査を実行（Search Console API v3）
+ * サービスアカウント認証
  */
-async function inspectUrl(auth, url) {
-  const webmasters = google.webmasters({ version: 'v3', auth });
-
-  try {
-    console.log(`🔍 検査中: ${url}`);
-
-    // Note: Search Console API v3にはURL Inspection APIがありません
-    // 代わりに、サイトマップ経由でのインデックス状況を確認
-    const response = await webmasters.urlcrawlerrorscounts.query({
-      siteUrl: SITE_URL,
-      category: 'notFound',
-      latestCountsOnly: true,
-    });
-
-    console.log('  ✅ クロールエラー確認完了');
-    return response.data;
-
-  } catch (error) {
-    console.error(`  ❌ エラー: ${error.message}`);
-    return null;
+async function getServiceAccountAuth() {
+  // 認証情報ファイルの存在確認
+  if (!fs.existsSync(SERVICE_ACCOUNT_KEY_FILE)) {
+    throw new Error(
+      `サービスアカウントキーが見つかりません: ${SERVICE_ACCOUNT_KEY_FILE}\n` +
+      'セットアップ手順: docs/INDEXING_API_SETUP.md を参照してください'
+    );
   }
+
+  const keyFile = JSON.parse(fs.readFileSync(SERVICE_ACCOUNT_KEY_FILE, 'utf8'));
+
+  const auth = new google.auth.GoogleAuth({
+    credentials: keyFile,
+    scopes: ['https://www.googleapis.com/auth/indexing'],
+  });
+
+  return auth;
 }
 
 /**
- * Indexing APIでインデックスリクエスト（要サービスアカウント）
+ * Indexing APIでインデックスリクエスト
  */
 async function requestIndexing(auth, url) {
-  const indexing = google.indexing({ version: 'v3', auth });
+  const authClient = await auth.getClient();
+  const indexing = google.indexing({ version: 'v3', auth: authClient });
 
   try {
-    console.log(`📤 インデックスリクエスト: ${url}`);
+    console.log(`📤 リクエスト中: ${url}`);
 
     const response = await indexing.urlNotifications.publish({
       requestBody: {
@@ -71,112 +69,120 @@ async function requestIndexing(auth, url) {
       },
     });
 
-    console.log('  ✅ リクエスト送信完了');
-    return response.data;
+    console.log('  ✅ 成功');
+    return { success: true, data: response.data };
 
   } catch (error) {
-    if (error.code === 403) {
-      console.log('  ⚠️  Indexing API未設定（Search Consoleでの手動リクエストが必要）');
-      console.log('  💡 詳細: https://developers.google.com/search/apis/indexing-api/v3/quickstart');
+    if (error.code === 403 || error.code === 401) {
+      console.log('  ❌ 権限エラー');
+      console.log('  💡 サービスアカウントがSearch Consoleに追加されているか確認してください');
+      console.log('  📖 手順: docs/INDEXING_API_SETUP.md');
+    } else if (error.code === 429) {
+      console.log('  ⚠️  API制限に達しました（1日200リクエスト）');
     } else {
-      console.error(`  ❌ エラー: ${error.message}`);
+      console.log(`  ❌ エラー: ${error.message}`);
     }
-    return null;
+    return { success: false, error: error.message };
   }
 }
 
 /**
- * サイトのクロール状況を取得
+ * インデックス状態を確認
  */
-async function getCrawlStatus(auth) {
-  const webmasters = google.webmasters({ version: 'v3', auth });
+async function getIndexingStatus(auth, url) {
+  const authClient = await auth.getClient();
+  const indexing = google.indexing({ version: 'v3', auth: authClient });
 
   try {
-    console.log('📊 クロール状況確認中...\n');
-
-    // クロールエラーを確認
-    const errors = await webmasters.urlcrawlerrorscounts.query({
-      siteUrl: SITE_URL,
-      latestCountsOnly: true,
+    const response = await indexing.urlNotifications.getMetadata({
+      url: url,
     });
 
-    if (errors.data.countPerTypes) {
-      console.log('クロールエラー:');
-      errors.data.countPerTypes.forEach((type) => {
-        console.log(`  ${type.category}: ${type.entries?.[0]?.count || 0} 件`);
-      });
-    } else {
-      console.log('✅ クロールエラーなし');
-    }
-
-    console.log('');
-
+    return response.data;
   } catch (error) {
-    console.error('クロール状況取得エラー:', error.message);
+    // エラーは無視（状態が取得できない場合がある）
+    return null;
   }
 }
+
 
 /**
  * メイン処理
  */
 async function main() {
-  console.log('🚀 Google Search Console - URL検査とインデックスリクエスト\n');
-  console.log('対象サイト:', SITE_URL);
+  console.log('🚀 Google Indexing API - インデックス登録リクエスト\n');
   console.log('対象ページ:', PAGES_TO_INDEX.length, 'ページ\n');
 
   try {
-    const auth = await authorize();
-
-    // クロール状況確認
-    await getCrawlStatus(auth);
+    // サービスアカウント認証
+    console.log('🔐 サービスアカウント認証中...');
+    const auth = await getServiceAccountAuth();
+    console.log('✅ 認証成功\n');
 
     console.log('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n');
-    console.log('📋 重要な注意事項:\n');
-    console.log('Search Console API v3では直接的な「インデックス登録をリクエスト」機能が');
-    console.log('提供されていません。以下の2つの方法があります:\n');
-    console.log('1. 【推奨】Google Search Consoleのウェブインターフェースで手動リクエスト');
-    console.log('   → docs/GOOGLE_SEARCH_CONSOLE_SETUP.md の手順に従ってください\n');
-    console.log('2. 【上級】Google Indexing APIを使用（サービスアカウント設定が必要）');
-    console.log('   → https://developers.google.com/search/apis/indexing-api/v3/quickstart\n');
-    console.log('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n');
 
-    // Indexing APIを試行（サービスアカウントが設定されている場合のみ成功）
-    console.log('Indexing API リクエストを試行中...\n');
+    // 各URLのインデックスリクエスト
     let successCount = 0;
+    let failCount = 0;
+    const results = [];
 
     for (const url of PAGES_TO_INDEX) {
       const result = await requestIndexing(auth, url);
-      if (result) {
+      results.push({ url, ...result });
+
+      if (result.success) {
         successCount++;
+      } else {
+        failCount++;
       }
-      // API制限を考慮して少し待機
-      await new Promise(resolve => setTimeout(resolve, 1000));
+
+      // API制限を考慮して待機（600リクエスト/分 = 1リクエスト/100ms）
+      await new Promise(resolve => setTimeout(resolve, 200));
     }
 
+    console.log('\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n');
+
+    // サマリー表示
+    console.log('📊 実行結果:');
+    console.log(`  ✅ 成功: ${successCount}件`);
+    if (failCount > 0) {
+      console.log(`  ❌ 失敗: ${failCount}件`);
+    }
     console.log('');
-    if (successCount > 0) {
-      console.log(`✅ ${successCount}/${PAGES_TO_INDEX.length} ページのインデックスリクエスト成功`);
-      console.log('');
-      console.log('📋 次のステップ:');
-      console.log('1. 数時間後にGoogle Search Consoleで確認');
-      console.log('2. 検索パフォーマンスをモニタリング');
-    } else {
-      console.log('⚠️  Indexing APIが利用できません');
-      console.log('');
-      console.log('📋 代替手順:');
-      console.log('1. Google Search Consoleにアクセス:');
-      console.log('   https://search.google.com/search-console?resource_id=sc-domain:awakeinc.co.jp');
-      console.log('2. 各URLでURL検査を実行:');
-      PAGES_TO_INDEX.forEach(url => {
-        console.log(`   - ${url}`);
-      });
-      console.log('3. 「インデックス登録をリクエスト」ボタンをクリック');
-    }
 
-    console.log('\n🎉 処理完了！');
+    if (successCount > 0) {
+      console.log('🎉 インデックスリクエスト送信完了！\n');
+      console.log('📋 次のステップ:');
+      console.log('1. 数時間～数日後にGoogleがクロールを実行');
+      console.log('2. Google Search Consoleで確認:');
+      console.log('   https://search.google.com/search-console?resource_id=sc-domain:awakeinc.co.jp');
+      console.log('3. 検索パフォーマンスをモニタリング\n');
+
+      console.log('💡 ヒント:');
+      console.log('  - このスクリプトは定期的に実行できます（更新時など）');
+      console.log('  - API制限: 200リクエスト/日、600リクエスト/分');
+    } else if (failCount > 0) {
+      console.log('\n⚠️  すべてのリクエストが失敗しました\n');
+      console.log('📖 トラブルシューティング:');
+      console.log('  1. サービスアカウントキーが正しく配置されているか確認');
+      console.log('     ファイル: indexing-service-account.json');
+      console.log('  2. Indexing APIが有効化されているか確認');
+      console.log('     https://console.cloud.google.com/apis/library/indexing.googleapis.com');
+      console.log('  3. サービスアカウントがSearch Consoleに追加されているか確認');
+      console.log('     https://search.google.com/search-console → 設定 → ユーザーと権限\n');
+      console.log('詳細: docs/INDEXING_API_SETUP.md');
+    }
 
   } catch (error) {
-    console.error('\n❌ 失敗:', error.message);
+    console.error('\n❌ エラー:', error.message);
+
+    if (error.message.includes('サービスアカウントキーが見つかりません')) {
+      console.log('\n📖 セットアップ手順:');
+      console.log('  1. docs/INDEXING_API_SETUP.md を参照');
+      console.log('  2. サービスアカウントキーをダウンロード');
+      console.log('  3. プロジェクトルートに indexing-service-account.json として配置');
+    }
+
     process.exit(1);
   }
 }
@@ -186,4 +192,4 @@ if (require.main === module) {
   main();
 }
 
-module.exports = { inspectUrl, requestIndexing };
+module.exports = { requestIndexing, getIndexingStatus };
