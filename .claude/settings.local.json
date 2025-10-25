@@ -54,7 +54,9 @@
       "Bash(node scripts/generate-google-ads-keywords-csv.js:*)",
       "Bash(node scripts/google-ads-add-keywords.js:*)",
       "Bash(explorer docs)",
-      "Bash(git reset:*)"
+      "Bash(git reset:*)",
+      "Bash(vercel ls:*)",
+      "Bash(vercel:*)"
     ],
     "deny": [],
     "ask": [],
