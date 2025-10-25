@@ -85,7 +85,7 @@ const AIAdvisor = memo(function AIAdvisor() {
 
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
             AI顧問サービス
-            <span className="block text-blue-600 mt-2">月額制で経営をサポート</span>
+            <span className="block text-gray-700 mt-2">月額制で経営をサポート</span>
           </h2>
 
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -108,7 +108,7 @@ const AIAdvisor = memo(function AIAdvisor() {
             return (
               <div
                 key={index}
-                className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 hover:border-blue-200"
+                className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 hover:border-gray-300"
               >
                 <div className="w-14 h-14 bg-gray-100 rounded-xl flex items-center justify-center mb-4">
                   <Icon className="w-7 h-7 text-gray-700" />
@@ -138,12 +138,12 @@ const AIAdvisor = memo(function AIAdvisor() {
                 key={index}
                 className={`relative rounded-2xl p-8 ${
                   plan.popular
-                    ? 'bg-white border-2 border-blue-600 shadow-xl'
+                    ? 'bg-white border-2 border-gray-300 shadow-xl'
                     : 'bg-white border-2 border-gray-200 hover:border-gray-300 shadow-lg'
                 } transition-all duration-300`}
               >
                 {plan.popular && (
-                  <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-blue-600 text-white px-4 py-1 rounded-full text-sm font-bold">
+                  <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-gray-800 text-white px-4 py-1 rounded-full text-sm font-bold">
                     人気No.1
                   </div>
                 )}
@@ -176,7 +176,7 @@ const AIAdvisor = memo(function AIAdvisor() {
                 <button
                   className={`w-full py-3 rounded-xl font-bold transition-all duration-300 ${
                     plan.popular
-                      ? 'bg-blue-600 text-white hover:bg-blue-700'
+                      ? 'bg-gray-800 text-white hover:bg-gray-900'
                       : 'bg-gray-100 text-gray-900 hover:bg-gray-200'
                   }`}
                 >
