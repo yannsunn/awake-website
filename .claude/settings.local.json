@@ -47,7 +47,14 @@
       "Bash(xargs cat:*)",
       "Bash(timeout 30 bash -c \"echo ''Waiting for Vercel redeploy (30 seconds)...'' && sleep 30 && echo ''Ready to test''\")",
       "Bash(timeout 40 bash:*)",
-      "Bash(npm install:*)"
+      "Bash(npm install:*)",
+      "Bash(node scripts/gsc-setup-oauth.js:*)",
+      "Bash(node scripts/gsc-submit-sitemap.js:*)",
+      "Bash(node scripts/gsc-request-indexing.js:*)",
+      "Bash(node scripts/generate-google-ads-keywords-csv.js:*)",
+      "Bash(node scripts/google-ads-add-keywords.js:*)",
+      "Bash(explorer docs)",
+      "Bash(git reset:*)"
     ],
     "deny": [],
     "ask": [],

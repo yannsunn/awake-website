@@ -11,9 +11,9 @@ import { UltraHero } from '@/components/ui/UltraSection'
 import '@/app/corporate.css'
 
 export const metadata: Metadata = {
-  title: "会社概要・代表挨拶 | 株式会社Awake",
-  description: "株式会社Awakeの会社概要、代表取締役田形康貴からのメッセージ、ミッション・ビジョンをご紹介。革新的なソリューションで企業の成長をサポート。",
-  keywords: "株式会社Awake, 田形康貴, 会社概要, 代表挨拶, ミッション, ビジョン, 企業理念",
+  title: "会社概要・代表挨拶 | 株式会社Awake（アウェイク）東京都東大和市",
+  description: "東京都東大和市の株式会社Awake（アウェイク）の会社概要。代表取締役田形康貴のメッセージ、企業理念、ミッション・ビジョンをご紹介。2021年設立、法人番号8012801020829。ホームページ制作、AIチャットボット開発、Amazon代理店サービスを提供。",
+  keywords: "株式会社Awake,アウェイク,東大和市,田形康貴,会社概要,代表挨拶,ミッション,ビジョン,企業理念,法人番号,東京",
   openGraph: {
     type: 'website',
     locale: 'ja_JP',
