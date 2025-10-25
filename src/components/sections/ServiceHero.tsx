@@ -86,13 +86,13 @@ export function ServiceHero({
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href={ctaHref}>
-              <button className="px-12 py-5 bg-gray-900 text-white text-xl font-medium hover:bg-gray-800 transition-colors">
+              <button className="px-8 sm:px-10 md:px-12 py-3 sm:py-4 md:py-5 bg-gray-900 text-white text-base sm:text-lg md:text-xl font-medium hover:bg-gray-800 transition-colors">
                 {ctaText}
               </button>
             </Link>
             {secondaryCtaText && secondaryCtaHref && (
               <Link href={secondaryCtaHref}>
-                <button className="px-12 py-5 bg-white text-gray-900 text-xl font-medium border-2 border-gray-900 hover:bg-gray-50 transition-colors">
+                <button className="px-8 sm:px-10 md:px-12 py-3 sm:py-4 md:py-5 bg-white text-gray-900 text-base sm:text-lg md:text-xl font-medium border-2 border-gray-900 hover:bg-gray-50 transition-colors">
                   {secondaryCtaText}
                 </button>
               </Link>

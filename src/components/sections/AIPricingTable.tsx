@@ -23,15 +23,15 @@ const AIPricingTable = memo(function AIPricingTable() {
         </p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-7 md:gap-8 max-w-7xl mx-auto">
         {/* Basic Plan */}
         <div className="corp-card">
-          <div className="p-8">
+          <div className="p-6 sm:p-7 md:p-8">
             <h3 className={cn(HEADING.h4, 'text-black', MARGIN.xs)}>
               {aiPricing.basic.name}
             </h3>
             <div className={MARGIN.md}>
-              <span className="text-4xl font-bold text-black">
+              <span className="text-3xl sm:text-4xl font-bold text-black">
                 {aiPricing.basic.price}
               </span>
               <span className={cn(TEXT.body, 'text-black ml-2')}>
@@ -62,18 +62,18 @@ const AIPricingTable = memo(function AIPricingTable() {
         </div>
 
         {/* AI Common Plan */}
-        <div className="corp-card border-2 border-blue-200 relative">
+        <div className="corp-card border-2 border-blue-200 relative sm:col-span-2 md:col-span-1">
           <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
             <span className="bg-blue-600 text-white px-6 py-1 rounded-full text-sm font-bold">
               月額制
             </span>
           </div>
-          <div className="p-8">
+          <div className="p-6 sm:p-7 md:p-8">
             <h3 className={cn(HEADING.h4, 'text-black', MARGIN.xs)}>
               {aiPricing.aiCommon.name}
             </h3>
             <div className={MARGIN.md}>
-              <span className="text-4xl font-bold text-black">
+              <span className="text-3xl sm:text-4xl font-bold text-black">
                 {aiPricing.aiCommon.price}
               </span>
               <span className={cn(TEXT.body, 'text-black ml-2')}>
@@ -105,12 +105,12 @@ const AIPricingTable = memo(function AIPricingTable() {
 
         {/* Enterprise Plan */}
         <div className="corp-card">
-          <div className="p-8">
+          <div className="p-6 sm:p-7 md:p-8">
             <h3 className={cn(HEADING.h4, 'text-black', MARGIN.xs)}>
               {aiPricing.enterprise.name}
             </h3>
             <div className={MARGIN.md}>
-              <span className="text-4xl font-bold text-black">
+              <span className="text-3xl sm:text-4xl font-bold text-black">
                 {aiPricing.enterprise.price}
               </span>
               <span className={cn(TEXT.body, 'text-black ml-2')}>
@@ -152,16 +152,16 @@ const AIPricingTable = memo(function AIPricingTable() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-5 md:gap-6">
           {aiPricing.aiCommon.tiers.map((tier, index) => (
             <div key={index} className="corp-card hover:shadow-xl transition-all">
-              <div className="p-6">
-                <div className="text-center mb-4">
-                  <h4 className="text-xl font-bold text-blue-700 mb-2">{tier.size}</h4>
+              <div className="p-5 sm:p-6">
+                <div className="text-center mb-3 sm:mb-4">
+                  <h4 className="text-lg sm:text-xl font-bold text-blue-700 mb-2">{tier.size}</h4>
                   <p className="text-sm text-gray-600">{tier.employees}</p>
                 </div>
-                <div className="text-center mb-6">
-                  <span className="text-3xl font-bold text-black">{tier.price}</span>
+                <div className="text-center mb-4 sm:mb-6">
+                  <span className="text-2xl sm:text-3xl font-bold text-black">{tier.price}</span>
                 </div>
                 <ul className="space-y-2">
                   {tier.features.map((feature, fIdx) => (
