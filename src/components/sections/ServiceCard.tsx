@@ -55,34 +55,34 @@ export default function ServiceCard({ service, index }: ServiceCardProps) {
       initial="hidden"
       animate={isInView ? 'visible' : 'hidden'}
       variants={cardVariants}
-      className="bg-white border-t border-gray-200 py-16 md:py-20"
+      className="bg-white border-t border-gray-200 py-12 sm:py-16 md:py-20"
     >
       <div className="container mx-auto px-4">
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-12">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 md:gap-12 items-center mb-8 sm:mb-10 md:mb-12">
             {/* 左側: テキストコンテンツ */}
             <div className={index % 2 === 0 ? 'lg:order-1' : 'lg:order-2'}>
-              <div className="flex items-center gap-6 mb-6">
+              <div className="flex items-center gap-4 sm:gap-5 md:gap-6 mb-4 sm:mb-5 md:mb-6">
                 <motion.div
-                  className="w-16 h-16 md:w-20 md:h-20 rounded-xl bg-gray-100 flex items-center justify-center flex-shrink-0"
+                  className="w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 rounded-xl bg-gray-100 flex items-center justify-center flex-shrink-0"
                   whileHover={{ scale: 1.1, backgroundColor: '#f3f4f6' }}
                   transition={{ duration: 0.3 }}
                 >
-                  <service.icon className="w-8 h-8 md:w-10 md:h-10 text-gray-900" strokeWidth={1.5} />
+                  <service.icon className="w-7 h-7 sm:w-8 sm:h-8 md:w-10 md:h-10 text-gray-900" strokeWidth={1.5} />
                 </motion.div>
                 <motion.h3
-                  className="text-3xl md:text-4xl font-bold text-gray-900 break-words"
+                  className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 break-words"
                   whileHover={{ x: 8 }}
                   transition={{ duration: 0.3 }}
                 >
                   {service.title}
                 </motion.h3>
               </div>
-              <p className="text-lg md:text-xl mb-6 text-gray-700 break-words leading-relaxed">
+              <p className="text-base sm:text-lg md:text-xl mb-4 sm:mb-5 md:mb-6 text-gray-700 break-words leading-relaxed">
                 {service.description}
               </p>
               <motion.div
-                className="text-2xl md:text-3xl font-bold text-gray-900 mb-8"
+                className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-6 sm:mb-7 md:mb-8"
                 whileHover={{ scale: 1.05 }}
                 transition={{ duration: 0.3 }}
               >
@@ -114,11 +114,11 @@ export default function ServiceCard({ service, index }: ServiceCardProps) {
           </div>
 
           {/* 特徴リスト */}
-          <ul className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+          <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 md:gap-8 mb-8 sm:mb-10 md:mb-12">
               {service.features.map((feature, i) => (
                 <motion.li
                   key={feature}
-                  className="text-center bg-gray-50 rounded-lg p-6"
+                  className="text-center bg-gray-50 rounded-lg p-4 sm:p-5 md:p-6"
                   initial="hidden"
                   whileInView="visible"
                   viewport={{ once: true }}
@@ -127,7 +127,7 @@ export default function ServiceCard({ service, index }: ServiceCardProps) {
                   whileHover={{ scale: 1.05, backgroundColor: '#f9fafb' }}
                   transition={{ duration: 0.3 }}
                 >
-                  <div className="text-lg md:text-xl font-medium text-gray-900 break-words leading-relaxed">
+                  <div className="text-base sm:text-lg md:text-xl font-medium text-gray-900 break-words leading-relaxed">
                     {feature}
                   </div>
                 </motion.li>
@@ -137,7 +137,7 @@ export default function ServiceCard({ service, index }: ServiceCardProps) {
               {service.buttons.map((button) => (
                 <Link key={button.href} href={button.href}>
                   <motion.button
-                    className="px-12 py-5 bg-gray-900 text-white text-xl font-medium rounded-lg"
+                    className="px-8 sm:px-10 md:px-12 py-3 sm:py-4 md:py-5 bg-gray-900 text-white text-base sm:text-lg md:text-xl font-medium rounded-lg"
                     whileHover={{
                       scale: 1.05,
                       backgroundColor: '#1f2937',

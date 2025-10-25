@@ -265,7 +265,7 @@ export default function AboutPage() {
             </h2>
           </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 md:gap-10 lg:gap-12">
           <div className="corp-card">
             <h3 className="corp-heading-2 text-black mb-4">
               ミッション
@@ -302,9 +302,9 @@ export default function AboutPage() {
           </div>
           <div className="container mx-auto px-4">
             <div className="max-w-6xl mx-auto">
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-7 md:gap-8">
                 {promises.map((promise, index) => (
-                  <div key={index} className="bg-white rounded-xl p-8 shadow-sm hover:shadow-md transition-shadow">
+                  <div key={index} className="bg-white rounded-xl p-6 sm:p-7 md:p-8 shadow-sm hover:shadow-md transition-shadow">
                     <div className="text-4xl mb-6">{promise.icon}</div>
                     <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-4 break-words">{promise.title}</h3>
                     <p className="text-base md:text-lg text-gray-600 leading-relaxed break-words">{promise.description}</p>
@@ -331,9 +331,9 @@ export default function AboutPage() {
           </div>
           <div className="container mx-auto px-4">
             <div className="max-w-6xl mx-auto">
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-7 md:gap-8">
                 {features.map((feature, index) => (
-                  <div key={index} className="bg-white rounded-xl p-8 shadow-sm hover:shadow-md transition-shadow">
+                  <div key={index} className="bg-white rounded-xl p-6 sm:p-7 md:p-8 shadow-sm hover:shadow-md transition-shadow">
                     <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-6 break-words">{feature.title}</h3>
                     <ul className="space-y-4" role="list">
                       {feature.items.map((item, idx) => (
@@ -366,11 +366,11 @@ export default function AboutPage() {
           </div>
           <div className="container mx-auto px-4">
             <div className="max-w-6xl mx-auto">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-7 md:gap-8">
                 {values.map((value, index) => {
                   const IconComponent = value.icon
                   return (
-                    <div key={index} className="bg-white rounded-xl p-8 shadow-sm hover:shadow-md transition-shadow flex items-start">
+                    <div key={index} className="bg-white rounded-xl p-6 sm:p-7 md:p-8 shadow-sm hover:shadow-md transition-shadow flex items-start">
                       <div className="text-4xl mr-6 mt-1 flex-shrink-0">
                         {value.icon === Target ? "🎯" : value.icon === Zap ? "📚" : value.icon === Heart ? "🤝" : "🌱"}
                       </div>
