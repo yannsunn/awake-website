@@ -173,15 +173,10 @@ const AIAdvisor = memo(function AIAdvisor() {
                   ))}
                 </ul>
 
-                <button
-                  className={`w-full py-3 rounded-xl font-bold transition-all duration-300 ${
-                    plan.popular
-                      ? 'bg-gray-800 text-white hover:bg-gray-900'
-                      : 'bg-gray-100 text-gray-900 hover:bg-gray-200'
-                  }`}
-                >
-                  無料で試す
-                </button>
+                <LineButton
+                  size="medium"
+                  className="w-full"
+                />
               </div>
             ))}
           </div>
@@ -196,12 +191,12 @@ const AIAdvisor = memo(function AIAdvisor() {
           transition={{ duration: 0.6, delay: 0.6 }}
         >
           <h3 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">
-            まずは無料トライアルから
+            まずは初回無料面談から
           </h3>
           <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
-            14日間、すべての機能を無料でお試しいただけます。
+            お客様のビジネス課題をヒアリングし、最適なプランをご提案します。
             <br />
-            クレジットカード登録不要。
+            オンライン・お電話・LINEで対応可能。
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <LineButton size="large" />
