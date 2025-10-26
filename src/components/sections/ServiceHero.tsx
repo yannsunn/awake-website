@@ -59,22 +59,22 @@ export function ServiceHero({
             src={backgroundImage}
             alt="サービス背景"
             fill
-            className="object-cover opacity-[0.15]"
+            className="object-cover opacity-[0.08]"
             priority
             sizes="100vw"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-white/75 via-white/55 to-white/75" />
+          <div className="absolute inset-0 bg-gradient-to-b from-white/90 via-white/80 to-white/90" />
         </motion.div>
       )}
 
       <div className={cn(CONTAINER.default.full, 'relative z-10')}>
-        <div className="text-center max-w-5xl mx-auto">
+        <div className="text-center max-w-4xl mx-auto px-4">
 
-          <h1 className={cn(HEADING.h2, 'text-gray-900', MARGIN.lg, 'leading-tight tracking-tight break-words')}>
+          <h1 className={cn(HEADING.h2, 'text-gray-900', MARGIN.lg, 'leading-tight tracking-tight break-words')} style={{ wordBreak: 'keep-all' }}>
             {title}
           </h1>
 
-          <p className={cn(TEXT.lead, 'text-gray-800 font-medium', MARGIN.md, 'break-words leading-relaxed')}>
+          <p className={cn(TEXT.lead, 'text-gray-900 font-semibold', MARGIN.md, 'break-words leading-relaxed')}>
             {description}
           </p>
 
