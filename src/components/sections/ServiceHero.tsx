@@ -68,9 +68,12 @@ export function ServiceHero({
       )}
 
       <div className={cn(CONTAINER.default.full, 'relative z-10')}>
-        <div className="text-center max-w-4xl mx-auto px-4">
+        <div className="text-center max-w-5xl mx-auto px-4">
 
-          <h1 className={cn(HEADING.h2, 'text-gray-900', MARGIN.lg, 'leading-tight tracking-tight break-words')} style={{ wordBreak: 'keep-all' }}>
+          <h1
+            className={cn(HEADING.h2, 'text-gray-900', MARGIN.lg, 'leading-tight tracking-tight')}
+            style={{ wordBreak: 'keep-all', overflowWrap: 'normal', whiteSpace: 'pre-line' }}
+          >
             {title}
           </h1>
 

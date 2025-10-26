@@ -92,13 +92,15 @@ export default function HomeHero() {
         variants={containerVariants}
       >
         <div className="text-center">
-          <div className="max-w-4xl mx-auto">
+          <div className="max-w-5xl mx-auto">
             <motion.h1
               className={`${HEADING.h1} text-slate-900 mb-8 leading-tight`}
-              style={{ wordBreak: 'keep-all' }}
+              style={{ wordBreak: 'keep-all', overflowWrap: 'normal' }}
               variants={textVariants}
             >
-              チャットボット搭載ホームページ制作
+              チャットボット搭載
+              <br />
+              ホームページ制作
               <br />
               月額制AI顧問・Amazon代理店
             </motion.h1>
