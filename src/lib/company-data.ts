@@ -47,7 +47,7 @@ export const COMPANY_DATA = {
     ],
     details: {
       web: {
-        title: 'チャットボット搭載ホームページ制作',
+        title: 'チャットボット搭載\nホームページ制作',
         description: '売上を生むサイトを適正価格で',
         longDescription: 'あなたの商品・サービスの価値を、お客様に正しく伝える。24時間働く営業ツールとして機能するホームページを制作します。',
         href: 'https://portfolio.awakeinc.co.jp/',
@@ -75,7 +75,7 @@ export const COMPANY_DATA = {
         }
       },
       ai: {
-        title: '月額制AI顧問・システム導入',
+        title: '月額制AI顧問・\nシステム導入',
         description: '24時間対応の顧客サポートを実現',
         longDescription: 'カスタマーサポートの自動化から社内業務効率化まで。御社専用のAIチャットボットを開発し、人件費削減と顧客満足度向上を同時に実現します。',
         href: '/services/ai',
@@ -121,7 +121,7 @@ export const COMPANY_DATA = {
         }
       },
       ec: {
-        title: 'Amazon代理店サービス',
+        title: 'Amazon代理店\nサービス',
         description: '新しい販路を、リスクなく開拓',
         longDescription: '初期費用0円、在庫リスクなし。売れてから手数料をいただく完全成果報酬制で、新しい販売チャネルに挑戦できます。',
         href: '/services/ec',
