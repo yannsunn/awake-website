@@ -1,12 +1,14 @@
 'use client'
 
 import { memo } from 'react'
+import { BarChart3, Factory, Mail, Users } from 'lucide-react'
 import '@/app/corporate.css'
 
 const UseCases = memo(function UseCases() {
   const industries = [
     {
-      icon: '📊',
+      icon: BarChart3,
+      gradient: 'from-blue-500 to-cyan-500',
       title: '経理・総務部門',
       items: [
         '請求書の自動処理',
@@ -15,7 +17,8 @@ const UseCases = memo(function UseCases() {
       ]
     },
     {
-      icon: '🏭',
+      icon: Factory,
+      gradient: 'from-purple-500 to-pink-500',
       title: '製造・品質管理',
       items: [
         '検品作業の自動化',
@@ -24,7 +27,8 @@ const UseCases = memo(function UseCases() {
       ]
     },
     {
-      icon: '📧',
+      icon: Mail,
+      gradient: 'from-green-500 to-emerald-500',
       title: '営業・マーケティング',
       items: [
         '顧客データの分析',
@@ -33,7 +37,8 @@ const UseCases = memo(function UseCases() {
       ]
     },
     {
-      icon: '🏢',
+      icon: Users,
+      gradient: 'from-orange-500 to-amber-500',
       title: '人事・採用',
       items: [
         '応募書類のスクリーニング',
@@ -44,7 +49,7 @@ const UseCases = memo(function UseCases() {
   ]
 
   return (
-    <section className="py-16 md:py-24 bg-white">
+    <section className="py-16 md:py-24 bg-gradient-to-br from-blue-50 via-white to-purple-50 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h2 className="corp-heading-2 mb-4">
@@ -57,8 +62,10 @@ const UseCases = memo(function UseCases() {
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {industries.map((industry, index) => (
-            <div key={index} className="bg-gray-overlay rounded-xl p-6">
-              <div className="text-3xl mb-4">{industry.icon}</div>
+            <div key={index} className="bg-white rounded-xl p-6 shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-200">
+              <div className={`mb-6 flex h-16 w-16 items-center justify-center rounded-2xl shadow-lg bg-gradient-to-br ${industry.gradient}`}>
+                <industry.icon className="h-8 w-8 text-white" />
+              </div>
               <h3 className="corp-heading-3 mb-4 text-black">
                 {industry.title}
               </h3>
