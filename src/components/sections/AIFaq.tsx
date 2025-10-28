@@ -27,7 +27,7 @@ const AIFaq = memo(function AIFaq() {
   ]
 
   return (
-    <section className="py-16 md:py-24 bg-gray-overlay">
+    <section className="py-16 md:py-24 bg-gradient-to-br from-purple-50 via-white to-blue-50">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h2 className="corp-heading-2 mb-4">
@@ -37,7 +37,7 @@ const AIFaq = memo(function AIFaq() {
 
         <div className="space-y-4">
           {faqs.map((faq, index) => (
-            <div key={index} className="bg-white border border-gray-200 rounded-lg overflow-hidden">
+            <div key={index} className="bg-white border border-gray-200 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300">
               <button
                 className="w-full px-6 py-4 text-left flex items-center justify-between hover:bg-gray-overlay transition-colors"
                 onClick={() => setOpenIndex(openIndex === index ? null : index)}
