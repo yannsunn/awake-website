@@ -139,13 +139,14 @@
   border: 1px solid var(--corp-border);
   border-radius: 16px;
   padding: clamp(24px, 5vw, 40px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
   transition: all 0.3s ease;
 }
 
 .corp-card:hover {
   border-color: var(--corp-accent);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-  transform: translateY(-2px);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.18);
+  transform: translateY(-8px);
 }
 
 /* セクションスタイル - ミニマル余白 */

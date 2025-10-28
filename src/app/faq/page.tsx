@@ -201,7 +201,7 @@ export default function FAQPage() {
                 {category.questions.map((faq, faqIndex) => (
                   <details
                     key={faqIndex}
-                    className="group bg-white border border-blue-200 rounded-lg overflow-hidden shadow-md"
+                    className="group bg-white border border-blue-200 rounded-lg overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300"
                   >
                     <summary className="flex items-center justify-between p-4 sm:p-6 cursor-pointer hover:bg-blue-50 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2">
                       <h3 className="corp-heading-3 text-black pr-4">
@@ -247,7 +247,7 @@ export default function FAQPage() {
             </p>
           </div>
           <div className="text-center">
-            <div className="bg-white border border-blue-200 p-6 sm:p-8 rounded-xl shadow-lg">
+            <div className="bg-white border border-blue-200 p-6 sm:p-8 rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300">
               <h3 className="corp-heading-2 text-black mb-4 text-center">💬 公式LINEでお気軽に</h3>
               <p className="corp-text-body text-black text-center mb-6">最速迓信！まずはLINEでお話をお聞かせください</p>
               <LineButton className="w-full" size="large" />

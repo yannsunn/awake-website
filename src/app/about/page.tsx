@@ -404,10 +404,10 @@ export default function AboutPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {/* CEO */}
-            <div className="bg-white rounded-2xl p-8 border border-gray-200 shadow-lg hover:shadow-xl transition-shadow">
+            <div className="bg-white rounded-2xl p-8 border border-gray-200 shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
               <div className="text-center mb-6">
-                <div className="w-32 h-32 mx-auto mb-4 bg-gradient-to-br from-blue-100 to-blue-200 rounded-full flex items-center justify-center">
-                  <User className="w-16 h-16 text-blue-600" />
+                <div className="w-32 h-32 mx-auto mb-4 bg-gradient-to-br from-blue-500 to-purple-500 rounded-full flex items-center justify-center shadow-lg">
+                  <User className="w-16 h-16 text-white" />
                 </div>
                 <h3 className="corp-heading-3 text-black mb-2">{COMPANY_DATA.basic.ceo}</h3>
                 <p className="corp-text-body text-gray-600 font-medium mb-4">代表取締役CEO</p>
@@ -433,10 +433,10 @@ export default function AboutPage() {
             </div>
 
             {/* Technical Director */}
-            <div className="bg-white rounded-2xl p-8 border border-gray-200 shadow-lg hover:shadow-xl transition-shadow">
+            <div className="bg-white rounded-2xl p-8 border border-gray-200 shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
               <div className="text-center mb-6">
-                <div className="w-32 h-32 mx-auto mb-4 bg-gradient-to-br from-purple-100 to-purple-200 rounded-full flex items-center justify-center">
-                  <Zap className="w-16 h-16 text-purple-600" />
+                <div className="w-32 h-32 mx-auto mb-4 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full flex items-center justify-center shadow-lg">
+                  <Zap className="w-16 h-16 text-white" />
                 </div>
                 <h3 className="corp-heading-3 text-black mb-2">テクニカルディレクター</h3>
                 <p className="corp-text-body text-gray-600 font-medium mb-4">技術統括責任者</p>
@@ -462,10 +462,10 @@ export default function AboutPage() {
             </div>
 
             {/* Design Director */}
-            <div className="bg-white rounded-2xl p-8 border border-gray-200 shadow-lg hover:shadow-xl transition-shadow">
+            <div className="bg-white rounded-2xl p-8 border border-gray-200 shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
               <div className="text-center mb-6">
-                <div className="w-32 h-32 mx-auto mb-4 bg-gradient-to-br from-pink-100 to-pink-200 rounded-full flex items-center justify-center">
-                  <Award className="w-16 h-16 text-pink-600" />
+                <div className="w-32 h-32 mx-auto mb-4 bg-gradient-to-br from-pink-500 to-rose-500 rounded-full flex items-center justify-center shadow-lg">
+                  <Award className="w-16 h-16 text-white" />
                 </div>
                 <h3 className="corp-heading-3 text-black mb-2">デザインディレクター</h3>
                 <p className="corp-text-body text-gray-600 font-medium mb-4">デザイン統括責任者</p>
@@ -491,10 +491,10 @@ export default function AboutPage() {
             </div>
 
             {/* Marketing Director */}
-            <div className="bg-white rounded-2xl p-8 border border-gray-200 shadow-lg hover:shadow-xl transition-shadow">
+            <div className="bg-white rounded-2xl p-8 border border-gray-200 shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
               <div className="text-center mb-6">
-                <div className="w-32 h-32 mx-auto mb-4 bg-gradient-to-br from-green-100 to-green-200 rounded-full flex items-center justify-center">
-                  <Target className="w-16 h-16 text-green-600" />
+                <div className="w-32 h-32 mx-auto mb-4 bg-gradient-to-br from-green-500 to-emerald-500 rounded-full flex items-center justify-center shadow-lg">
+                  <Target className="w-16 h-16 text-white" />
                 </div>
                 <h3 className="corp-heading-3 text-black mb-2">マーケティングディレクター</h3>
                 <p className="corp-text-body text-gray-600 font-medium mb-4">マーケティング統括責任者</p>
@@ -520,10 +520,10 @@ export default function AboutPage() {
             </div>
 
             {/* EC Consultant */}
-            <div className="bg-white rounded-2xl p-8 border border-gray-200 shadow-lg hover:shadow-xl transition-shadow">
+            <div className="bg-white rounded-2xl p-8 border border-gray-200 shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
               <div className="text-center mb-6">
-                <div className="w-32 h-32 mx-auto mb-4 bg-gradient-to-br from-orange-100 to-orange-200 rounded-full flex items-center justify-center">
-                  <Users className="w-16 h-16 text-orange-600" />
+                <div className="w-32 h-32 mx-auto mb-4 bg-gradient-to-br from-orange-500 to-amber-500 rounded-full flex items-center justify-center shadow-lg">
+                  <Users className="w-16 h-16 text-white" />
                 </div>
                 <h3 className="corp-heading-3 text-black mb-2">ECコンサルタント</h3>
                 <p className="corp-text-body text-gray-600 font-medium mb-4">EC事業統括責任者</p>
@@ -549,10 +549,10 @@ export default function AboutPage() {
             </div>
 
             {/* Customer Success */}
-            <div className="bg-white rounded-2xl p-8 border border-gray-200 shadow-lg hover:shadow-xl transition-shadow">
+            <div className="bg-white rounded-2xl p-8 border border-gray-200 shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
               <div className="text-center mb-6">
-                <div className="w-32 h-32 mx-auto mb-4 bg-gradient-to-br from-cyan-100 to-cyan-200 rounded-full flex items-center justify-center">
-                  <Heart className="w-16 h-16 text-cyan-600" />
+                <div className="w-32 h-32 mx-auto mb-4 bg-gradient-to-br from-cyan-500 to-blue-500 rounded-full flex items-center justify-center shadow-lg">
+                  <Heart className="w-16 h-16 text-white" />
                 </div>
                 <h3 className="corp-heading-3 text-black mb-2">カスタマーサクセス</h3>
                 <p className="corp-text-body text-gray-600 font-medium mb-4">顧客支援責任者</p>

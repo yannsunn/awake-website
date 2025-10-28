@@ -47,13 +47,13 @@ export function FeatureGrid({
           {features.map((feature, index) => (
             <motion.div
               key={index}
-              className="text-center bg-white backdrop-blur-sm rounded-lg sm:rounded-xl p-6 sm:p-8 lg:p-10 shadow-lg border-2 border-blue-100 hover:shadow-xl transition-all duration-300 hover:scale-[1.02] hover:border-blue-300"
+              className="text-center bg-white backdrop-blur-sm rounded-lg sm:rounded-xl p-6 sm:p-8 lg:p-10 shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 hover:scale-[1.02] hover:border-blue-300 border-2 border-blue-100"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
             >
-              <div className="mx-auto mb-4 sm:mb-6 flex h-12 w-12 sm:h-16 sm:w-16 items-center justify-center rounded-xl sm:rounded-2xl bg-blue-50 text-blue-600 border-2 border-blue-200">
+              <div className="mx-auto mb-4 sm:mb-6 flex h-16 w-16 sm:h-20 sm:w-20 items-center justify-center rounded-2xl bg-gradient-to-br from-blue-500 to-purple-500 text-white shadow-lg">
                 {feature.icon}
               </div>
               <h3 className="mb-3 sm:mb-4 text-lg sm:text-xl lg:text-2xl font-semibold text-black leading-tight">
