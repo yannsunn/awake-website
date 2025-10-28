@@ -51,6 +51,11 @@ export const metadata: Metadata = {
     images: ["/assets/images/ogp.jpg"],
   },
   robots: "index, follow",
+  other: {
+    // AI検索エンジン向けメタタグ
+    'ai-content-declaration': 'transparent',
+    'google-site-verification': process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION || '',
+  },
 };
 
 export default function RootLayout({

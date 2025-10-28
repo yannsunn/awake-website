@@ -1,3 +1,46 @@
+# Scripts Directory
+
+このディレクトリには、自動化スクリプトが含まれています。
+
+---
+
+## 📊 Google Ads & SEO Automation Scripts
+
+### Google Ads API Scripts
+
+**キーワード追加**:
+- `google-ads-add-all-keywords.js` - ホームページ制作: 26キーワード
+- `google-ads-add-ai-chatbot-keywords.js` - AIチャットボット: 18キーワード
+- `google-ads-add-amazon-keywords.js` - Amazon販売代行: 15キーワード
+
+**確認**:
+- `google-ads-verify-all-keywords.js` - 全59キーワードの確認
+- `google-ads-inspect-campaign.js` - キャンペーン詳細確認
+
+**その他**:
+- `generate-google-ads-keywords-csv.js` - CSV生成
+
+### Google Search Console API Scripts
+
+- `gsc-submit-sitemap.js` - サイトマップ提出
+- `gsc-request-indexing.js` - インデックス登録リクエスト
+- `gsc-check-portfolio-site.js` - ポートフォリオサイト確認
+
+### 使用方法
+
+```bash
+# キーワード追加（全59個）
+node scripts/google-ads-add-all-keywords.js
+node scripts/google-ads-add-ai-chatbot-keywords.js
+node scripts/google-ads-add-amazon-keywords.js
+
+# SEO
+node scripts/gsc-submit-sitemap.js
+node scripts/gsc-request-indexing.js
+```
+
+---
+
 # Playwright Scripts - Screenshot Guidelines
 
 ## 🚨 CRITICAL RULES

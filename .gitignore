@@ -52,4 +52,10 @@ gsc-token.json
 indexing-service-account.json
 google-ads-config.json
 
+# Temporary files
+screenshots/
+playwright-report/
+*.csv
+nul
+
 .vercel

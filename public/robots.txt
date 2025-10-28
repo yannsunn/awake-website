@@ -1,0 +1,50 @@
+# robots.txt for awakeinc.co.jp
+# AI検索エンジン対応版
+
+# すべてのクローラーに対するデフォルト設定
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /_next/
+Disallow: /admin/
+
+# Sitemap location
+Sitemap: https://www.awakeinc.co.jp/sitemap.xml
+
+# AI検索エンジンのクローラー（明示的に許可）
+# OpenAI ChatGPT
+User-agent: GPTBot
+Allow: /
+
+# OpenAI SearchGPT
+User-agent: ChatGPT-User
+Allow: /
+
+# Anthropic Claude
+User-agent: anthropic-ai
+Allow: /
+User-agent: Claude-Web
+Allow: /
+
+# Google Gemini/Bard
+User-agent: Google-Extended
+Allow: /
+
+# Perplexity
+User-agent: PerplexityBot
+Allow: /
+
+# Cohere
+User-agent: cohere-ai
+Allow: /
+
+# Meta AI
+User-agent: FacebookBot
+Allow: /
+
+# Common Crawl（AI学習データ）
+User-agent: CCBot
+Allow: /
+
+# クロール速度制限（サーバー負荷軽減）
+Crawl-delay: 1
