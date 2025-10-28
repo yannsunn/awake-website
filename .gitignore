@@ -55,6 +55,7 @@ google-ads-config.json
 # Temporary files
 screenshots/
 playwright-report/
+tests/
 *.csv
 nul
 
