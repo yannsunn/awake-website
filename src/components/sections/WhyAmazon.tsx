@@ -1,22 +1,26 @@
 'use client'
 
 import { memo } from 'react'
+import { TrendingUp, ShoppingBag, Rocket } from 'lucide-react'
 import '@/app/corporate.css'
 
 const WhyAmazon = memo(function WhyAmazon() {
   const facts = [
     {
-      icon: '📈',
+      icon: TrendingUp,
+      gradient: 'from-blue-500 to-cyan-500',
       title: '国内EC利用者の約7割がAmazonを利用',
       description: 'もはや無視できない、巨大な販売チャネル'
     },
     {
-      icon: '🛒',
+      icon: ShoppingBag,
+      gradient: 'from-orange-500 to-amber-500',
       title: '購買意欲の高いユーザーが集まる',
       description: '「買う前提」で訪れるから、成約率が高い'
     },
     {
-      icon: '🚀',
+      icon: Rocket,
+      gradient: 'from-purple-500 to-pink-500',
       title: '中小企業でも大手と対等に戦える',
       description: '商品力があれば、企業規模は関係ない'
     }
@@ -36,8 +40,10 @@ const WhyAmazon = memo(function WhyAmazon() {
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
           {facts.map((fact, index) => (
-            <div key={index} className="bg-white rounded-xl p-8 shadow-sm">
-              <div className="text-4xl mb-4">{fact.icon}</div>
+            <div key={index} className="bg-white rounded-xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-200">
+              <div className={`mb-6 flex h-20 w-20 items-center justify-center rounded-2xl shadow-lg bg-gradient-to-br ${fact.gradient}`}>
+                <fact.icon className="h-10 w-10 text-white" />
+              </div>
               <h3 className="corp-heading-3 mb-3">
                 {fact.title}
               </h3>
