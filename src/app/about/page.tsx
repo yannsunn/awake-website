@@ -387,6 +387,239 @@ export default function AboutPage() {
         </div>
       </section>
 
+      {/* Team Section */}
+      <section className="relative py-12 md:py-16 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="text-center mb-12">
+            <h2 className="corp-heading-2 mb-4 text-black">
+              チーム紹介
+            </h2>
+            <p className="corp-text-lead text-black">
+              業務委託・パートナーを含む10名体制の専門チーム
+            </p>
+            <p className="corp-text-body text-gray-600 mt-4 max-w-3xl mx-auto">
+              正社員、業務委託、パートナー企業を含む約10名体制で運営。各分野の専門家が連携し、お客様のビジネスを多角的にサポートします。
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {/* CEO */}
+            <div className="bg-white rounded-2xl p-8 border border-gray-200 shadow-lg hover:shadow-xl transition-shadow">
+              <div className="text-center mb-6">
+                <div className="w-32 h-32 mx-auto mb-4 bg-gradient-to-br from-blue-100 to-blue-200 rounded-full flex items-center justify-center">
+                  <User className="w-16 h-16 text-blue-600" />
+                </div>
+                <h3 className="corp-heading-3 text-black mb-2">{COMPANY_DATA.basic.ceo}</h3>
+                <p className="corp-text-body text-gray-600 font-medium mb-4">代表取締役CEO</p>
+              </div>
+              <div className="space-y-3">
+                <div>
+                  <h4 className="corp-text-body font-semibold text-black mb-2">専門領域</h4>
+                  <ul className="corp-text-small text-gray-600 space-y-1">
+                    <li>• 経営戦略立案</li>
+                    <li>• IT投資最適化</li>
+                    <li>• 業務プロセス改善</li>
+                  </ul>
+                </div>
+                <div>
+                  <h4 className="corp-text-body font-semibold text-black mb-2">主な実績</h4>
+                  <ul className="corp-text-small text-gray-600 space-y-1">
+                    <li>• 50社以上の企業支援</li>
+                    <li>• 平均30%のコスト削減実績</li>
+                    <li>• 顧客満足度4.9/5.0</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            {/* Technical Director */}
+            <div className="bg-white rounded-2xl p-8 border border-gray-200 shadow-lg hover:shadow-xl transition-shadow">
+              <div className="text-center mb-6">
+                <div className="w-32 h-32 mx-auto mb-4 bg-gradient-to-br from-purple-100 to-purple-200 rounded-full flex items-center justify-center">
+                  <Zap className="w-16 h-16 text-purple-600" />
+                </div>
+                <h3 className="corp-heading-3 text-black mb-2">テクニカルディレクター</h3>
+                <p className="corp-text-body text-gray-600 font-medium mb-4">技術統括責任者</p>
+              </div>
+              <div className="space-y-3">
+                <div>
+                  <h4 className="corp-text-body font-semibold text-black mb-2">専門領域</h4>
+                  <ul className="corp-text-small text-gray-600 space-y-1">
+                    <li>• Web開発（10年以上）</li>
+                    <li>• AI/機械学習実装</li>
+                    <li>• システムアーキテクチャ設計</li>
+                  </ul>
+                </div>
+                <div>
+                  <h4 className="corp-text-body font-semibold text-black mb-2">主な実績</h4>
+                  <ul className="corp-text-small text-gray-600 space-y-1">
+                    <li>• 100以上のWebサイト構築</li>
+                    <li>• AIチャットボット30件導入</li>
+                    <li>• 大手企業システム開発経験</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            {/* Design Director */}
+            <div className="bg-white rounded-2xl p-8 border border-gray-200 shadow-lg hover:shadow-xl transition-shadow">
+              <div className="text-center mb-6">
+                <div className="w-32 h-32 mx-auto mb-4 bg-gradient-to-br from-pink-100 to-pink-200 rounded-full flex items-center justify-center">
+                  <Award className="w-16 h-16 text-pink-600" />
+                </div>
+                <h3 className="corp-heading-3 text-black mb-2">デザインディレクター</h3>
+                <p className="corp-text-body text-gray-600 font-medium mb-4">デザイン統括責任者</p>
+              </div>
+              <div className="space-y-3">
+                <div>
+                  <h4 className="corp-text-body font-semibold text-black mb-2">専門領域</h4>
+                  <ul className="corp-text-small text-gray-600 space-y-1">
+                    <li>• UI/UXデザイン（8年以上）</li>
+                    <li>• ブランディング戦略</li>
+                    <li>• コンバージョン最適化</li>
+                  </ul>
+                </div>
+                <div>
+                  <h4 className="corp-text-body font-semibold text-black mb-2">主な実績</h4>
+                  <ul className="corp-text-small text-gray-600 space-y-1">
+                    <li>• デザインアワード受賞歴</li>
+                    <li>• CVR平均200%改善実績</li>
+                    <li>• 大手企業ブランディング経験</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            {/* Marketing Director */}
+            <div className="bg-white rounded-2xl p-8 border border-gray-200 shadow-lg hover:shadow-xl transition-shadow">
+              <div className="text-center mb-6">
+                <div className="w-32 h-32 mx-auto mb-4 bg-gradient-to-br from-green-100 to-green-200 rounded-full flex items-center justify-center">
+                  <Target className="w-16 h-16 text-green-600" />
+                </div>
+                <h3 className="corp-heading-3 text-black mb-2">マーケティングディレクター</h3>
+                <p className="corp-text-body text-gray-600 font-medium mb-4">マーケティング統括責任者</p>
+              </div>
+              <div className="space-y-3">
+                <div>
+                  <h4 className="corp-text-body font-semibold text-black mb-2">専門領域</h4>
+                  <ul className="corp-text-small text-gray-600 space-y-1">
+                    <li>• SEO/SEM戦略（7年以上）</li>
+                    <li>• コンテンツマーケティング</li>
+                    <li>• データ分析・改善提案</li>
+                  </ul>
+                </div>
+                <div>
+                  <h4 className="corp-text-body font-semibold text-black mb-2">主な実績</h4>
+                  <ul className="corp-text-small text-gray-600 space-y-1">
+                    <li>• 検索順位1位獲得多数</li>
+                    <li>• 月間流入10倍達成事例</li>
+                    <li>• Google広告運用経験豊富</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            {/* EC Consultant */}
+            <div className="bg-white rounded-2xl p-8 border border-gray-200 shadow-lg hover:shadow-xl transition-shadow">
+              <div className="text-center mb-6">
+                <div className="w-32 h-32 mx-auto mb-4 bg-gradient-to-br from-orange-100 to-orange-200 rounded-full flex items-center justify-center">
+                  <Users className="w-16 h-16 text-orange-600" />
+                </div>
+                <h3 className="corp-heading-3 text-black mb-2">ECコンサルタント</h3>
+                <p className="corp-text-body text-gray-600 font-medium mb-4">EC事業統括責任者</p>
+              </div>
+              <div className="space-y-3">
+                <div>
+                  <h4 className="corp-text-body font-semibold text-black mb-2">専門領域</h4>
+                  <ul className="corp-text-small text-gray-600 space-y-1">
+                    <li>• Amazon販売戦略（5年以上）</li>
+                    <li>• 在庫管理・物流最適化</li>
+                    <li>• 売上分析・改善提案</li>
+                  </ul>
+                </div>
+                <div>
+                  <h4 className="corp-text-body font-semibold text-black mb-2">主な実績</h4>
+                  <ul className="corp-text-small text-gray-600 space-y-1">
+                    <li>• 20社以上のEC支援経験</li>
+                    <li>• 平均売上300%増加実績</li>
+                    <li>• Amazon公式パートナー認定</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            {/* Customer Success */}
+            <div className="bg-white rounded-2xl p-8 border border-gray-200 shadow-lg hover:shadow-xl transition-shadow">
+              <div className="text-center mb-6">
+                <div className="w-32 h-32 mx-auto mb-4 bg-gradient-to-br from-cyan-100 to-cyan-200 rounded-full flex items-center justify-center">
+                  <Heart className="w-16 h-16 text-cyan-600" />
+                </div>
+                <h3 className="corp-heading-3 text-black mb-2">カスタマーサクセス</h3>
+                <p className="corp-text-body text-gray-600 font-medium mb-4">顧客支援責任者</p>
+              </div>
+              <div className="space-y-3">
+                <div>
+                  <h4 className="corp-text-body font-semibold text-black mb-2">専門領域</h4>
+                  <ul className="corp-text-small text-gray-600 space-y-1">
+                    <li>• 顧客対応・サポート</li>
+                    <li>• 導入研修・トレーニング</li>
+                    <li>• 継続的な改善提案</li>
+                  </ul>
+                </div>
+                <div>
+                  <h4 className="corp-text-body font-semibold text-black mb-2">主な実績</h4>
+                  <ul className="corp-text-small text-gray-600 space-y-1">
+                    <li>• 顧客継続率98%以上</li>
+                    <li>• 平均対応時間24時間以内</li>
+                    <li>• 顧客満足度4.8/5.0</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="mt-12 text-center">
+            <div className="inline-block bg-gradient-to-r from-blue-50 to-purple-50 rounded-2xl p-8 border border-blue-200">
+              <h3 className="corp-heading-3 text-black mb-6">チーム体制の強み</h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 text-left">
+                <div>
+                  <p className="corp-text-body font-semibold text-black mb-2">🎯 柔軟な体制</p>
+                  <p className="corp-text-small text-gray-600">
+                    正社員・業務委託・パートナー企業の最適な組み合わせで、プロジェクトごとに最高のチームを編成
+                  </p>
+                </div>
+                <div>
+                  <p className="corp-text-body font-semibold text-black mb-2">💡 多様な専門性</p>
+                  <p className="corp-text-small text-gray-600">
+                    技術、デザイン、マーケティング、EC運営など、各分野のエキスパートが連携
+                  </p>
+                </div>
+                <div>
+                  <p className="corp-text-body font-semibold text-black mb-2">📈 実績重視</p>
+                  <p className="corp-text-small text-gray-600">
+                    大手企業からスタートアップまで50社以上の支援実績。平均顧客満足度4.9/5.0
+                  </p>
+                </div>
+                <div>
+                  <p className="corp-text-body font-semibold text-black mb-2">🤝 長期パートナー</p>
+                  <p className="corp-text-small text-gray-600">
+                    単なる受託ではなく、お客様の成功を第一に考えた継続的なサポート体制
+                  </p>
+                </div>
+              </div>
+              <div className="mt-8 pt-6 border-t border-blue-200">
+                <p className="corp-text-body text-black">
+                  <span className="font-semibold">会社データ:</span>
+                  設立2021年（現在5期目） | 法人番号 8012801020829 |
+                  本社: 東京都東大和市向原5-1129-61 渡辺ビル1F |
+                  資本金: 100万円
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Contact CTA Section */}
       <section className="relative py-12 md:py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
