@@ -46,10 +46,11 @@ const AmazonCTA = memo(function AmazonCTA() {
           ))}
         </div>
         
-        <div className="bg-blue-50 text-black rounded-2xl p-12 text-center border border-blue-200">
-          <h3 className="corp-heading-2 text-black mb-4">
-            次のアクション
-          </h3>
+        <div className="relative p-[3px] bg-gradient-to-r from-orange-500 via-amber-500 to-yellow-500 rounded-2xl shadow-xl">
+          <div className="bg-blue-50 text-black rounded-2xl p-12 text-center">
+            <h3 className="corp-heading-2 text-black mb-4">
+              次のアクション
+            </h3>
           <p className="corp-text-lead text-black mb-6">
             まずは無料診断で、売上ポテンシャルを確認
           </p>
@@ -68,7 +69,7 @@ const AmazonCTA = memo(function AmazonCTA() {
               30秒で申し込み完了
             </Link>
           </div>
-          
+          </div>
         </div>
       </div>
     </section>

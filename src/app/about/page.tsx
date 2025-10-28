@@ -579,7 +579,8 @@ export default function AboutPage() {
           </div>
 
           <div className="mt-12 text-center">
-            <div className="inline-block bg-gradient-to-r from-blue-50 to-purple-50 rounded-2xl p-8 border border-blue-200">
+            <div className="relative inline-block p-[3px] bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-2xl shadow-xl">
+              <div className="bg-gradient-to-r from-blue-50 to-purple-50 rounded-2xl p-8">
               <h3 className="corp-heading-3 text-black mb-6">チーム体制の強み</h3>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 text-left">
                 <div>
@@ -615,6 +616,7 @@ export default function AboutPage() {
                   資本金: 100万円
                 </p>
               </div>
+            </div>
             </div>
           </div>
         </div>

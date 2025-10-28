@@ -62,12 +62,13 @@ const AIPricingTable = memo(function AIPricingTable() {
         </div>
 
         {/* AI Common Plan */}
-        <div className="corp-card border-2 border-blue-200 relative sm:col-span-2 md:col-span-1">
-          <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-            <span className="bg-blue-600 text-white px-6 py-1 rounded-full text-sm font-bold">
-              月額制
-            </span>
-          </div>
+        <div className="relative p-[3px] bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 rounded-2xl shadow-xl sm:col-span-2 md:col-span-1">
+          <div className="corp-card border-2 border-blue-200 relative">
+            <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 z-10">
+              <span className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-1 rounded-full text-sm font-bold shadow-lg">
+                おすすめ - 月額制
+              </span>
+            </div>
           <div className="p-6 sm:p-7 md:p-8">
             <h3 className={cn(HEADING.h4, 'text-black', MARGIN.xs)}>
               {aiPricing.aiCommon.name}
@@ -100,6 +101,7 @@ const AIPricingTable = memo(function AIPricingTable() {
             >
               プラン詳細を見る
             </Link>
+          </div>
           </div>
         </div>
 

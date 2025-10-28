@@ -46,10 +46,11 @@ const WhyNowCTA = memo(function WhyNowCTA() {
           ))}
         </div>
         
-        <div className="bg-white text-black rounded-2xl p-12 text-center border-2 border-blue-200 shadow-sm">
-          <h3 className="corp-heading-2 text-black mb-4">
-            次のステップ
-          </h3>
+        <div className="relative p-[3px] bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-2xl shadow-xl">
+          <div className="bg-white text-black rounded-2xl p-12 text-center">
+            <h3 className="corp-heading-2 text-black mb-4">
+              次のステップ
+            </h3>
           <p className="corp-text-lead text-black mb-6">
             まずは無料診断で、あなたの会社の「AI活用可能性」を見える化
           </p>
@@ -83,7 +84,7 @@ const WhyNowCTA = memo(function WhyNowCTA() {
               今すぐ無料診断を申し込む
             </Link>
           </div>
-          
+          </div>
         </div>
       </div>
     </section>
