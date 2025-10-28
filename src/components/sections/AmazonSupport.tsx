@@ -1,12 +1,14 @@
 'use client'
 
 import { memo } from 'react'
+import { FileText, Megaphone, BarChart3, MessageCircle } from 'lucide-react'
 import '@/app/corporate.css'
 
 const AmazonSupport = memo(function AmazonSupport() {
   const supports = [
     {
-      icon: '📝',
+      icon: FileText,
+      gradient: 'from-blue-500 to-cyan-500',
       title: '商品登録・ページ作成',
       items: [
         'プロのライターによる商品説明文',
@@ -16,7 +18,8 @@ const AmazonSupport = memo(function AmazonSupport() {
       ]
     },
     {
-      icon: '📢',
+      icon: Megaphone,
+      gradient: 'from-orange-500 to-amber-500',
       title: '広告運用・集客施策',
       items: [
         'スポンサープロダクト広告の最適化',
@@ -26,7 +29,8 @@ const AmazonSupport = memo(function AmazonSupport() {
       ]
     },
     {
-      icon: '📊',
+      icon: BarChart3,
+      gradient: 'from-purple-500 to-pink-500',
       title: '売上分析・改善提案',
       items: [
         '週次・月次の詳細レポート',
@@ -36,7 +40,8 @@ const AmazonSupport = memo(function AmazonSupport() {
       ]
     },
     {
-      icon: '💬',
+      icon: MessageCircle,
+      gradient: 'from-green-500 to-emerald-500',
       title: 'カスタマー対応',
       items: [
         '問い合わせへの迅速な対応',
@@ -61,8 +66,10 @@ const AmazonSupport = memo(function AmazonSupport() {
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {supports.map((support, index) => (
-            <div key={index} className="bg-white rounded-xl p-6">
-              <div className="text-3xl mb-4">{support.icon}</div>
+            <div key={index} className="bg-white rounded-xl p-6 shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-200">
+              <div className={`mb-6 flex h-16 w-16 items-center justify-center rounded-2xl shadow-lg bg-gradient-to-br ${support.gradient}`}>
+                <support.icon className="h-8 w-8 text-white" />
+              </div>
               <h3 className="corp-heading-3 mb-4">
                 {support.title}
               </h3>
