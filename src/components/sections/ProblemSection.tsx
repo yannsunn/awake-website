@@ -23,7 +23,7 @@ const ProblemSection = memo(function ProblemSection() {
           </p>
         </div>
 
-        <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-8 shadow-lg border border-blue-200">
+        <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 border border-blue-200">
           <ul className="space-y-4">
             {problems.map((problem, index) => (
               <li key={index} className="flex items-start">
@@ -33,10 +33,12 @@ const ProblemSection = memo(function ProblemSection() {
             ))}
           </ul>
 
-          <div className="mt-8 p-6 bg-blue-50 rounded-lg text-center border border-blue-300">
-            <p className="corp-heading-3 text-blue-900">
-              これらすべて、AIが解決します。
-            </p>
+          <div className="relative mt-8 p-[2px] bg-gradient-to-r from-blue-500 to-purple-500 rounded-xl">
+            <div className="p-6 bg-gradient-to-r from-blue-50 to-purple-50 rounded-xl text-center">
+              <p className="corp-heading-3 text-blue-900">
+                これらすべて、AIが解決します。
+              </p>
+            </div>
           </div>
         </div>
         
