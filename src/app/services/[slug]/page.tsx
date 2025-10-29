@@ -329,28 +329,15 @@ export default async function ServicePage(
         
         <ProblemSection />
         
-        <section className="py-16 md:py-24 bg-white">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="corp-heading-2 text-black text-center mb-12">
-              Awakeが選ばれる4つの理由
-            </h2>
-            <FeatureGrid features={service.features} />
-          </div>
-        </section>
+        <FeatureGrid
+          title="Awakeが選ばれる4つの理由"
+          features={service.features}
+        />
 
-        <section className="py-16 md:py-24 bg-gray-50">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-12">
-              <h2 className="corp-heading-2 text-black mb-4">
-                導入プロセス
-              </h2>
-              <p className="corp-text-lead text-black">
-                たった4ステップで、業務が劇的に変わる
-              </p>
-            </div>
-            <ProcessSteps title="" steps={service.process} />
-          </div>
-        </section>
+        <ProcessSteps
+          title="導入プロセス"
+          steps={service.process}
+        />
         
         <UseCases />
         <SuccessStories />
@@ -648,30 +635,17 @@ export default async function ServicePage(
           </div>
         </section>
 
-        <section className="py-16 md:py-24 bg-white">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="corp-heading-2 text-black text-center mb-12">
-              私たちが選ばれる4つの理由
-            </h2>
-            <FeatureGrid features={service.features} />
-          </div>
-        </section>
+        <FeatureGrid
+          title="私たちが選ばれる4つの理由"
+          features={service.features}
+        />
 
         <AmazonSupport />
 
-        <section className="py-16 md:py-24 bg-gray-50">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-12">
-              <h2 className="corp-heading-2 text-black mb-4">
-                導入の流れ
-              </h2>
-              <p className="corp-text-lead text-black">
-                最短2週間で販売開始
-              </p>
-            </div>
-            <ProcessSteps title="" steps={service.process} />
-          </div>
-        </section>
+        <ProcessSteps
+          title="導入の流れ"
+          steps={service.process}
+        />
 
         <AmazonFAQ />
         <AmazonCTA />
@@ -730,23 +704,15 @@ export default async function ServicePage(
         backgroundImage={'backgroundImage' in service ? service.backgroundImage : undefined}
       />
 
-      <section className="py-16 md:py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="corp-heading-2 text-black text-center mb-12">
-            サービスの特徴
-          </h2>
-          <FeatureGrid features={service.features} />
-        </div>
-      </section>
+      <FeatureGrid
+        title="サービスの特徴"
+        features={service.features}
+      />
 
-      <section className="py-16 md:py-24 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="corp-heading-2 text-black text-center mb-12">
-            導入までの流れ
-          </h2>
-          <ProcessSteps title="" steps={service.process} />
-        </div>
-      </section>
+      <ProcessSteps
+        title="導入までの流れ"
+        steps={service.process}
+      />
 
       <section className="py-16 md:py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
