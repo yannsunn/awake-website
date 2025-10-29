@@ -34,7 +34,7 @@ export function FeatureGrid({
       spacing="default"
       container="default"
       background="white"
-      title={title}
+      title={title || undefined}
       className={className}
     >
       <div className={gridClass}>
