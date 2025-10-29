@@ -5,7 +5,8 @@ import { Globe, Brain, ShoppingCart } from 'lucide-react'
 import { COMPANY_DATA } from '@/lib/company-data'
 import ServiceCard from './ServiceCard'
 import { useRef } from 'react'
-import { SECTION_SPACING, CONTAINER, HEADING, TEXT } from '@/lib/design-system/unified'
+import StandardSection from '@/components/layout/StandardSection'
+import { cn, HEADING, TEXT, MARGIN } from '@/lib/design-system/unified'
 
 const services = [
   {
@@ -72,19 +73,19 @@ export default function HomeServices() {
   }
 
   return (
-    <section id="services" className={`relative ${SECTION_SPACING.default} bg-white`}>
-      <div className={`${CONTAINER.default.full} relative z-10`}>
+    <section id="services" className="relative bg-white">
+      <StandardSection spacing="default" container="default" background="transparent">
         <motion.div
           ref={ref}
           initial="hidden"
           animate={isInView ? 'visible' : 'hidden'}
           variants={titleVariants}
-          className="text-center mb-16"
+          className={cn('text-center', MARGIN['2xl'])}
         >
-          <h2 className={`${HEADING.h2} text-gray-900 mb-6`}>
+          <h2 className={cn(HEADING.h2, 'text-gray-900', MARGIN.md)}>
             ソリューション
           </h2>
-          <p className={`${TEXT.lead} text-gray-700`}>
+          <p className={cn(TEXT.lead, 'text-gray-700')}>
             貴社の課題に最適な3つのサービス
           </p>
         </motion.div>
@@ -94,7 +95,7 @@ export default function HomeServices() {
             <ServiceCard key={service.title} service={service} index={index} />
           ))}
         </div>
-      </div>
+      </StandardSection>
     </section>
   )
 }
