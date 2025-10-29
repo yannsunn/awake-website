@@ -70,37 +70,63 @@ export function ServiceHero({
       <div className={cn(CONTAINER.default.full, 'relative z-10')}>
         <div className="text-center max-w-5xl mx-auto px-4">
 
-          <h1
+          <motion.h1
             className={cn(HEADING.h2, 'text-gray-900', MARGIN.lg, 'leading-tight tracking-tight')}
             style={{ wordBreak: 'keep-all', overflowWrap: 'normal', whiteSpace: 'pre-line' }}
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
           >
             {title}
-          </h1>
+          </motion.h1>
 
-          <p className={cn(TEXT.lead, 'text-gray-900 font-semibold', MARGIN.md, 'break-words leading-relaxed')}>
+          <motion.p
+            className={cn(TEXT.lead, 'text-gray-900 font-semibold', MARGIN.md, 'break-words leading-relaxed')}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+          >
             {description}
-          </p>
+          </motion.p>
 
           {subDescription && (
-            <p className={cn(TEXT.body, 'text-gray-600', MARGIN.xl, 'leading-relaxed break-words')}>
+            <motion.p
+              className={cn(TEXT.body, 'text-gray-600', MARGIN.xl, 'leading-relaxed break-words')}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+            >
               {subDescription}
-            </p>
+            </motion.p>
           )}
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <motion.div
+            className="flex flex-col sm:flex-row gap-4 justify-center"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+          >
             <Link href={ctaHref}>
-              <button className="px-8 sm:px-10 md:px-12 py-3 sm:py-4 md:py-5 bg-gray-900 text-white text-base sm:text-lg md:text-xl font-medium hover:bg-gray-800 transition-colors">
+              <motion.button
+                className="px-8 sm:px-10 md:px-12 py-3 sm:py-4 md:py-5 bg-gradient-to-r from-blue-600 to-purple-600 text-white text-base sm:text-lg md:text-xl font-medium rounded-lg shadow-xl hover:shadow-2xl transition-all duration-300"
+                whileHover={{ scale: 1.05, y: -2 }}
+                whileTap={{ scale: 0.95 }}
+              >
                 {ctaText}
-              </button>
+              </motion.button>
             </Link>
             {secondaryCtaText && secondaryCtaHref && (
               <Link href={secondaryCtaHref}>
-                <button className="px-8 sm:px-10 md:px-12 py-3 sm:py-4 md:py-5 bg-white text-gray-900 text-base sm:text-lg md:text-xl font-medium border-2 border-gray-900 hover:bg-gray-50 transition-colors">
+                <motion.button
+                  className="px-8 sm:px-10 md:px-12 py-3 sm:py-4 md:py-5 bg-white text-gray-900 text-base sm:text-lg md:text-xl font-medium border-2 border-gray-300 hover:border-gray-400 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300"
+                  whileHover={{ scale: 1.05, y: -2 }}
+                  whileTap={{ scale: 0.95 }}
+                >
                   {secondaryCtaText}
-                </button>
+                </motion.button>
               </Link>
             )}
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>
