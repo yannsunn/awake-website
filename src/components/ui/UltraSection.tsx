@@ -36,16 +36,16 @@ export default function UltraSection({
       <div className={pattern.content}>
         {title && (
           <div className="text-center mb-8 sm:mb-12 lg:mb-16">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-black mb-4 px-4 sm:px-0 leading-relaxed" style={{...TEXT_SHADOW.heading, wordBreak: 'keep-all', overflowWrap: 'anywhere', textWrap: 'balance'}}>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 px-4 sm:px-0 leading-relaxed" style={{...TEXT_SHADOW.heading, wordBreak: 'keep-all', overflowWrap: 'anywhere', textWrap: 'balance'}}>
               {title}
             </h2>
             {subtitle && (
-              <p className="text-lg sm:text-xl md:text-2xl text-black mb-4 px-4 sm:px-0 font-bold leading-relaxed" style={{...TEXT_SHADOW.body, wordBreak: 'keep-all', overflowWrap: 'anywhere', textWrap: 'balance'}}>
+              <p className="text-lg sm:text-xl md:text-2xl text-gray-900 mb-4 px-4 sm:px-0 font-bold leading-relaxed" style={{...TEXT_SHADOW.body, wordBreak: 'keep-all', overflowWrap: 'anywhere', textWrap: 'balance'}}>
                 {subtitle}
               </p>
             )}
             {description && (
-              <p className="text-base sm:text-lg md:text-xl text-black px-4 sm:px-0 leading-relaxed" style={{...TEXT_SHADOW.small, wordBreak: 'keep-all', overflowWrap: 'anywhere', textWrap: 'pretty'}}>
+              <p className="text-base sm:text-lg md:text-xl text-gray-900 px-4 sm:px-0 leading-relaxed" style={{...TEXT_SHADOW.small, wordBreak: 'keep-all', overflowWrap: 'anywhere', textWrap: 'pretty'}}>
                 {description}
               </p>
             )}
@@ -99,7 +99,7 @@ export function UltraHero({
       )}>
         <h1
           className={cn(
-            "font-bold mb-4 sm:mb-6 text-black",
+            "font-bold mb-4 sm:mb-6 text-gray-900",
             RESPONSIVE_TYPOGRAPHY.lineHeight.relaxed
           )}
           style={{
@@ -116,7 +116,7 @@ export function UltraHero({
         {subtitle && (
           <p
             className={cn(
-              "text-black font-medium mb-4 sm:mb-6",
+              "text-gray-900 font-medium mb-4 sm:mb-6",
               RESPONSIVE_TYPOGRAPHY.lineHeight.relaxed
             )}
             style={{
@@ -134,7 +134,7 @@ export function UltraHero({
         {description && (
           <p
             className={cn(
-              "text-black mt-4",
+              "text-gray-900 mt-4",
               RESPONSIVE_TYPOGRAPHY.lineHeight.relaxed
             )}
             style={{
@@ -176,16 +176,16 @@ export function UltraCTA({
   return (
     <UltraSection variant="medium" className={className}>
       <div className="text-center max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-black mb-6 leading-relaxed" style={{...TEXT_SHADOW.heading, wordBreak: 'keep-all', overflowWrap: 'anywhere', textWrap: 'balance', letterSpacing: '0.02em'}}>
+        <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-relaxed" style={{...TEXT_SHADOW.heading, wordBreak: 'keep-all', overflowWrap: 'anywhere', textWrap: 'balance', letterSpacing: '0.02em'}}>
           {title}
         </h2>
         {subtitle && (
-          <p className={`text-lg sm:text-xl md:text-2xl text-black mb-6 leading-relaxed ${TEXT_BG_STYLES.default}`} style={{...TEXT_SHADOW.body, wordBreak: 'keep-all', overflowWrap: 'anywhere', textWrap: 'balance', letterSpacing: '0.02em'}}>
+          <p className={`text-lg sm:text-xl md:text-2xl text-gray-900 mb-6 leading-relaxed ${TEXT_BG_STYLES.default}`} style={{...TEXT_SHADOW.body, wordBreak: 'keep-all', overflowWrap: 'anywhere', textWrap: 'balance', letterSpacing: '0.02em'}}>
             {subtitle}
           </p>
         )}
         {description && (
-          <p className={`text-base sm:text-lg md:text-xl text-black mb-8 leading-relaxed ${TEXT_BG_STYLES.default}`} style={{...TEXT_SHADOW.body, wordBreak: 'keep-all', overflowWrap: 'anywhere', textWrap: 'pretty', letterSpacing: '0.02em'}}>
+          <p className={`text-base sm:text-lg md:text-xl text-gray-900 mb-8 leading-relaxed ${TEXT_BG_STYLES.default}`} style={{...TEXT_SHADOW.body, wordBreak: 'keep-all', overflowWrap: 'anywhere', textWrap: 'pretty', letterSpacing: '0.02em'}}>
             {description}
           </p>
         )}

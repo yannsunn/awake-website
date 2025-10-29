@@ -209,10 +209,10 @@ export default function PartnersPage() {
       <section className="relative py-12 md:py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-black">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-gray-900">
               なぜ、パートナーシップが必要なのか。
             </h2>
-            <p className="text-lg sm:text-xl md:text-2xl text-black">
+            <p className="text-lg sm:text-xl md:text-2xl text-gray-900">
               お客様の「本当の成功」は、1つのサービスだけでは実現できない。
             </p>
           </div>
@@ -237,10 +237,10 @@ export default function PartnersPage() {
           ].map((item, index) => (
             <div key={index} className="text-center">
               <div className="text-4xl mb-4">{item.icon}</div>
-              <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-black mb-3">
+              <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-3">
                 {item.title}
               </h3>
-              <p className="text-base sm:text-lg text-black">
+              <p className="text-base sm:text-lg text-gray-900">
                 {item.description}
               </p>
             </div>
@@ -248,7 +248,7 @@ export default function PartnersPage() {
         </div>
         
         <div className="text-center">
-          <p className="text-lg sm:text-xl md:text-2xl text-black">
+          <p className="text-lg sm:text-xl md:text-2xl text-gray-900">
             だから、ワンストップで解決できる体制を整えました。
           </p>
         </div>
@@ -259,10 +259,10 @@ export default function PartnersPage() {
       <section className="relative py-12 md:py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-black">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-gray-900">
               パートナーシップがもたらす4つの価値。
             </h2>
-            <p className="text-lg sm:text-xl md:text-2xl text-black">
+            <p className="text-lg sm:text-xl md:text-2xl text-gray-900">
               お客様にとっての、本当のメリット。
             </p>
           </div>
@@ -296,11 +296,11 @@ export default function PartnersPage() {
           ].map((value, index) => (
             <div key={index} className="bg-white rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 border border-gray-100 text-center">
               <div className="text-3xl mb-2">{value.emoji}</div>
-              <div className="text-2xl font-bold text-black mb-3">{value.number}</div>
-              <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-black mb-3">
+              <div className="text-2xl font-bold text-gray-900 mb-3">{value.number}</div>
+              <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-3">
                 {value.title}
               </h3>
-              <p className="text-sm sm:text-base text-black">
+              <p className="text-sm sm:text-base text-gray-900">
                 {value.description}
               </p>
             </div>
@@ -316,10 +316,10 @@ export default function PartnersPage() {
           {partners.map((category, categoryIndex) => (
             <div key={categoryIndex}>
               <div className="text-center mb-12">
-                <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-black mb-4">
+                <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4">
                   {category.category}
                 </h2>
-                <p className="text-lg sm:text-xl md:text-2xl text-black">
+                <p className="text-lg sm:text-xl md:text-2xl text-gray-900">
                   {category.description}
                 </p>
               </div>
@@ -330,14 +330,14 @@ export default function PartnersPage() {
                     <div className="text-3xl mb-4 text-center">
                       {company.icon}
                     </div>
-                    <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-black mb-4 text-center">
+                    <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4 text-center">
                       {company.name}
                     </h3>
                     <ul className="space-y-2">
                       {company.services.map((service, serviceIndex) => (
                         <li key={serviceIndex} className="flex items-start">
                           <span className="text-gray-600 mr-2">•</span>
-                          <span className="text-sm sm:text-base text-black">
+                          <span className="text-sm sm:text-base text-gray-900">
                             {service}
                           </span>
                         </li>
@@ -356,7 +356,7 @@ export default function PartnersPage() {
       <section className="relative py-12 md:py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-black">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-gray-900">
               よくあるご質問。
             </h2>
           </div>
@@ -377,10 +377,10 @@ export default function PartnersPage() {
             }
           ].map((faq, index) => (
             <div key={index} className="bg-white rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 border border-gray-100">
-              <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-black mb-3">
+              <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-3">
                 Q: {faq.q}
               </h3>
-              <p className="text-base sm:text-lg text-black">
+              <p className="text-base sm:text-lg text-gray-900">
                 A: {faq.a}
               </p>
             </div>
@@ -393,19 +393,19 @@ export default function PartnersPage() {
       <section className="relative py-12 md:py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-black">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-gray-900">
               新しいパートナーも募集中
             </h2>
-            <p className="text-lg sm:text-xl md:text-2xl text-black">
+            <p className="text-lg sm:text-xl md:text-2xl text-gray-900">
               一緒に、お客様の成功を支援しませんか？
             </p>
-            <p className="text-lg text-black">
+            <p className="text-lg text-gray-900">
               私たちは、お客様により大きな価値を提供できるパートナー企業を常に探しています。
             </p>
           </div>
         
         <div className="bg-white rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 border border-gray-100 mb-12 p-8">
-          <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-black mb-6 text-center">
+          <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-6 text-center">
             こんな企業様を求めています：
           </h3>
           <ul className="space-y-4">
@@ -416,7 +416,7 @@ export default function PartnersPage() {
             ].map((item, index) => (
               <li key={index} className="flex items-center justify-center">
                 <span className="text-blue-600 mr-3">✓</span>
-                <span className="text-base sm:text-lg text-black">{item}</span>
+                <span className="text-base sm:text-lg text-gray-900">{item}</span>
               </li>
             ))}
           </ul>
@@ -434,13 +434,13 @@ export default function PartnersPage() {
       <section className="relative py-12 md:py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-black">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-gray-900">
               次のステップ
             </h2>
-            <p className="text-lg sm:text-xl md:text-2xl text-black mb-4">
+            <p className="text-lg sm:text-xl md:text-2xl text-gray-900 mb-4">
               まずは、あなたの課題をお聞かせください
             </p>
-            <p className="text-lg text-black mb-8">
+            <p className="text-lg text-gray-900 mb-8">
               どんなサービスの組み合わせが最適か。無料相談で、ベストな解決策をご提案します。
             </p>
           </div>

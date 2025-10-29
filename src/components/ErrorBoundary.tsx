@@ -132,10 +132,10 @@ class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundaryState> {
               </div>
 
               {/* エラーメッセージ */}
-              <h2 className="text-2xl font-bold text-black mb-4">
+              <h2 className="text-2xl font-bold text-gray-900 mb-4">
                 申し訳ございません
               </h2>
-              <p className="text-black mb-6 leading-relaxed">
+              <p className="text-gray-900 mb-6 leading-relaxed">
                 システムエラーが発生しました。<br />
                 ページを再読み込みしても問題が解決しない場合は、
                 お手数ですがお問い合わせください。
@@ -144,10 +144,10 @@ class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundaryState> {
               {/* エラー詳細（開発環境のみ） */}
               {this.props.showDetails && process.env.NODE_ENV === 'development' && this.state.error && (
                 <details className="text-left mb-6 p-4 bg-gray-50 rounded-lg border border-gray-300">
-                  <summary className="font-medium text-black cursor-pointer">
+                  <summary className="font-medium text-gray-900 cursor-pointer">
                     技術的な詳細
                   </summary>
-                  <div className="mt-3 text-sm text-black">
+                  <div className="mt-3 text-sm text-gray-900">
                     <p><strong>エラーID:</strong> {this.state.errorId}</p>
                     <p><strong>エラー:</strong> {this.state.error.message}</p>
                     {this.state.error.stack && (
@@ -217,7 +217,7 @@ export const SuspenseWrapper = ({
     <div className="flex items-center justify-center min-h-screen">
       <div className="text-center">
         <div className="rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto mb-4"></div>
-        <p className="text-black">読み込み中...</p>
+        <p className="text-gray-900">読み込み中...</p>
       </div>
     </div>
   )

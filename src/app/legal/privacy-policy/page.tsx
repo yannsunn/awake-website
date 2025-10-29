@@ -181,12 +181,12 @@ export default function PrivacyPolicyPage() {
                   本プライバシーポリシーに関するお問い合わせは、下記の連絡先までお願いいたします。
                 </p>
                 <div className="bg-blue-50 p-6 rounded border border-blue-200">
-                  <p className="text-base sm:text-lg text-black font-bold mb-3">{COMPANY_DATA.basic.name}</p>
-                  <p className="text-base sm:text-lg text-black">個人情報保護責任者: {COMPANY_DATA.basic.ceo}</p>
-                  <p className="text-base sm:text-lg text-black">{COMPANY_DATA.contact.address.postal} {COMPANY_DATA.contact.address.full}</p>
-                  <p className="text-base sm:text-lg text-black">TEL: {COMPANY_DATA.contact.phone}</p>
-                  <p className="text-base sm:text-lg text-black">Email: {COMPANY_DATA.contact.email}</p>
-                  <p className="text-sm sm:text-base text-black mt-2">営業時間: {COMPANY_DATA.contact.businessHours.weekdays}（土日祝日除く）</p>
+                  <p className="text-base sm:text-lg text-gray-900 font-bold mb-3">{COMPANY_DATA.basic.name}</p>
+                  <p className="text-base sm:text-lg text-gray-900">個人情報保護責任者: {COMPANY_DATA.basic.ceo}</p>
+                  <p className="text-base sm:text-lg text-gray-900">{COMPANY_DATA.contact.address.postal} {COMPANY_DATA.contact.address.full}</p>
+                  <p className="text-base sm:text-lg text-gray-900">TEL: {COMPANY_DATA.contact.phone}</p>
+                  <p className="text-base sm:text-lg text-gray-900">Email: {COMPANY_DATA.contact.email}</p>
+                  <p className="text-sm sm:text-base text-gray-900 mt-2">営業時間: {COMPANY_DATA.contact.businessHours.weekdays}（土日祝日除く）</p>
                 </div>
               </section>
             </div>

@@ -16,7 +16,7 @@ const ContactInfo = memo(function ContactInfo() {
       viewport={{ once: true }}
       transition={{ duration: 0.6, delay: 0.1 }}
     >
-      <h3 className="text-2xl font-medium text-black mb-8">会社情報</h3>
+      <h3 className="text-2xl font-medium text-gray-900 mb-8">会社情報</h3>
       
       
       {/* 🎯 統合された連絡先情報 */}
@@ -37,12 +37,12 @@ const ContactInfo = memo(function ContactInfo() {
       {/* 🎯 会社情報 */}
       <div className="mt-8 pt-8 border-t border-gray-200">
         <div className="mb-4">
-          <h4 className="font-bold text-black">{COMPANY_DATA.basic.name}</h4>
-          <p className="text-sm text-black mt-1">{COMPANY_DATA.basic.mission}</p>
+          <h4 className="font-bold text-gray-900">{COMPANY_DATA.basic.name}</h4>
+          <p className="text-sm text-gray-900 mt-1">{COMPANY_DATA.basic.mission}</p>
         </div>
 
         <div className="bg-blue-50 rounded-lg p-6 mt-6 border border-gray-200">
-          <ul className="text-sm text-black space-y-2">
+          <ul className="text-sm text-gray-900 space-y-2">
             {COMPANY_DATA.consultation.features.map((feature, index) => (
               <li key={index}>• {feature}</li>
             ))}

@@ -45,7 +45,7 @@ export const BUTTON_CLASSES = {
   line: {
     filled: `
       inline-flex items-center justify-center
-      px-8 py-4 ${COLORS.success[600]} text-black 
+      px-8 py-4 ${COLORS.success[600]} text-gray-900 
       font-medium rounded-lg hover:bg-green-700
       transition-all duration-200 shadow-lg
       focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2
@@ -62,7 +62,7 @@ export const BUTTON_CLASSES = {
   standard: {
     primary: `
       inline-flex items-center justify-center
-      px-8 py-4 bg-gray-900 text-black
+      px-8 py-4 bg-gray-900 text-gray-900
       font-medium rounded-lg hover:bg-gray-800
       transition-all duration-200 shadow-lg
       focus:outline-none focus:ring-2 focus:ring-gray-800 focus:ring-offset-2

@@ -34,10 +34,10 @@ export const ServiceCard = memo(function ServiceCard({
           </span>
         </div>
       )}
-      <h3 className="text-2xl font-medium text-black mb-4">
+      <h3 className="text-2xl font-medium text-gray-900 mb-4">
         {service.title}
       </h3>
-      <p className="text-black mb-8 leading-relaxed">
+      <p className="text-gray-900 mb-8 leading-relaxed">
         {service.description}
       </p>
       <UltraButton href={service.href} variant={featured ? 'primary' : 'secondary'}>
@@ -64,7 +64,7 @@ export const ContactMethod = memo(function ContactMethod({
   highlighted?: boolean
 }) {
   const ContentWrapper = link ? 'a' : 'div'
-  const wrapperProps = link ? { href: link, className: 'hover:text-black' } : {}
+  const wrapperProps = link ? { href: link, className: 'hover:text-gray-900' } : {}
 
   return (
     <div className={`flex items-start ${highlighted ? 'p-6 bg-green-50 border border-green-200 rounded-lg' : ''}`}>
@@ -74,10 +74,10 @@ export const ContactMethod = memo(function ContactMethod({
         {icon}
       </div>
       <div>
-        <h4 className={`font-medium mb-1 ${highlighted ? 'text-green-900' : 'text-black'}`}>
+        <h4 className={`font-medium mb-1 ${highlighted ? 'text-green-900' : 'text-gray-900'}`}>
           {title}
         </h4>
-        <p className={`${highlighted ? 'text-green-800' : 'text-black'} mb-2 whitespace-pre-line`}>
+        <p className={`${highlighted ? 'text-green-800' : 'text-gray-900'} mb-2 whitespace-pre-line`}>
           {content}
         </p>
         {link && linkText && (
@@ -113,8 +113,8 @@ export const CompanyInfoGrid = memo(function CompanyInfoGrid({
             {item.icon}
           </div>
           <div>
-            <h4 className="font-medium text-black mb-1">{item.label}</h4>
-            <div className="text-black">{item.value}</div>
+            <h4 className="font-medium text-gray-900 mb-1">{item.label}</h4>
+            <div className="text-gray-900">{item.value}</div>
           </div>
         </div>
       ))}
@@ -140,10 +140,10 @@ export const FeatureHighlight = memo(function FeatureHighlight({
         {icon}
       </div>
       {metric && (
-        <div className="text-3xl font-medium text-black mb-2">{metric}</div>
+        <div className="text-3xl font-medium text-gray-900 mb-2">{metric}</div>
       )}
-      <h3 className="text-lg font-medium text-black mb-3">{title}</h3>
-      <p className="text-black text-sm">{description}</p>
+      <h3 className="text-lg font-medium text-gray-900 mb-3">{title}</h3>
+      <p className="text-gray-900 text-sm">{description}</p>
     </div>
   )
 })
@@ -173,14 +173,14 @@ export const PricingCard = memo(function PricingCard({
           </span>
         </div>
       )}
-      <h3 className="text-xl font-medium text-black mb-2">{plan.name}</h3>
-      <div className="text-3xl font-medium text-black mb-6">{plan.price}</div>
+      <h3 className="text-xl font-medium text-gray-900 mb-2">{plan.name}</h3>
+      <div className="text-3xl font-medium text-gray-900 mb-6">{plan.price}</div>
       {plan.duration && (
-        <div className="text-sm text-black mb-6">期間: {plan.duration}</div>
+        <div className="text-sm text-gray-900 mb-6">期間: {plan.duration}</div>
       )}
       <ul className="space-y-3 mb-8">
         {plan.features.map((feature, index) => (
-          <li key={index} className="text-black text-sm flex items-center">
+          <li key={index} className="text-gray-900 text-sm flex items-center">
             <span className="w-2 h-2 bg-blue-600 rounded-full mr-3"></span>
             {feature}
           </li>
