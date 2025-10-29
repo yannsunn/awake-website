@@ -64,7 +64,7 @@ export default function HomeHero() {
   }
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden -mt-16 md:-mt-20 pt-16 md:pt-20 z-20 bg-gradient-to-b from-slate-50 via-white to-slate-50">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden -mt-16 md:-mt-20 pt-16 md:pt-20 z-20 bg-gradient-to-br from-blue-50 via-white to-purple-50">
       {/* 背景動画 - 半透明オーバーレイ */}
       <div className="absolute inset-0 z-10">
         <video
