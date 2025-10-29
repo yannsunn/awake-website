@@ -1,27 +1,52 @@
 'use client'
 
+/**
+ * UnifiedCard - 統一カードコンポーネント（unified.ts準拠）
+ *
+ * すべてのカードをこのコンポーネントで統一し、
+ * CARD_VARIANT、CARD_PADDINGを使用してスタイルを管理
+ */
+
 import { memo, ReactNode } from 'react'
 import { LucideIcon } from 'lucide-react'
-import { COMPONENT_STYLES, TYPOGRAPHY } from '@/lib/design-system'
+import {
+  cn,
+  card,
+  CARD_PADDING,
+  HEADING,
+  TEXT,
+  MARGIN
+} from '@/lib/design-system/unified'
 
-// 後方互換性のため、headingとtextを含む統合スタイル
-const STYLES = {
-  ...COMPONENT_STYLES,
-  heading: TYPOGRAPHY.heading,
-  text: TYPOGRAPHY.text
-}
-
-interface UnifiedCardProps {
+export interface UnifiedCardProps {
+  /** アイコン（Lucideアイコンまたは絵文字） */
   icon?: LucideIcon | string
+
+  /** カードタイトル */
   title: string
+
+  /** 説明文 */
   description?: string
+
+  /** 特徴リスト */
   features?: string[]
+
+  /** 子要素 */
   children?: ReactNode
-  variant?: 'default' | 'featured' | 'compact'
+
+  /** カードバリアント */
+  variant?: 'default' | 'elevated' | 'outline' | 'gradient' | 'flat'
+
+  /** パディングサイズ */
+  padding?: 'sm' | 'md' | 'lg'
+
+  /** カスタムクラス名 */
   className?: string
+
+  /** ホバー効果を無効化 */
+  noHover?: boolean
 }
 
-// 🚀 統一されたカードコンポーネント
 const UnifiedCard = memo(function UnifiedCard({
   icon,
   title,
@@ -29,52 +54,55 @@ const UnifiedCard = memo(function UnifiedCard({
   features,
   children,
   variant = 'default',
-  className = ''
+  padding = 'md',
+  className,
+  noHover = false,
 }: UnifiedCardProps) {
-  const cardStyles = {
-    default: 'bg-white rounded-2xl p-8 shadow-sm border border-gray-100/50 interactive-focus transition-all duration-300 hover:shadow-lg hover:border-gray-200',
-    featured: 'bg-gradient-to-br from-blue-900/40 to-blue-900/40 backdrop-blur-md rounded-2xl p-8 border-2 border-blue-600/40 shadow-2xl shadow-blue-600/20 interactive-focus transition-all duration-300 hover:shadow-2xl hover:border-blue-500/60',
-    compact: 'bg-white rounded-xl p-6 shadow-sm border border-gray-100/50 interactive-focus transition-all duration-300 hover:shadow-md hover:border-gray-200'
-  }
-  
   return (
-    <div className={`${cardStyles[variant]} ${className}`}>
+    <div
+      className={cn(
+        card({ variant }),
+        CARD_PADDING[padding],
+        !noHover && 'hover:-translate-y-1',
+        className
+      )}
+    >
       {icon && (
-        <div className="mb-4">
+        <div className={MARGIN.sm}>
           {typeof icon === 'string' ? (
-            <div className="text-3xl">{icon}</div>
+            <div className="text-4xl">{icon}</div>
           ) : (
-            <div className="w-12 h-12 bg-blue-100/80 backdrop-blur-sm rounded-lg flex items-center justify-center">
+            <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
               {(() => {
-                const IconComponent = icon as LucideIcon;
-                return <IconComponent className="w-6 h-6 text-black" />;
+                const IconComponent = icon as LucideIcon
+                return <IconComponent className="w-6 h-6 text-blue-600" />
               })()}
             </div>
           )}
         </div>
       )}
-      
-      <h3 className={`${STYLES.heading.h3.card} mb-3`}>
+
+      <h3 className={cn(HEADING.h3, 'text-gray-900', MARGIN.sm)}>
         {title}
       </h3>
-      
+
       {description && (
-        <p className={`${STYLES.text.description.medium} mb-4`}>
+        <p className={cn(TEXT.body, 'text-gray-700', features ? MARGIN.sm : '')}>
           {description}
         </p>
       )}
-      
+
       {features && features.length > 0 && (
         <ul className="space-y-2 mb-4">
           {features.map((feature, idx) => (
             <li key={idx} className="flex items-start">
-              <span className="text-green-600 mr-2">✓</span>
-              <span className={STYLES.text.description.small}>{feature}</span>
+              <span className="text-green-600 mr-2 mt-1">✓</span>
+              <span className={cn(TEXT.small, 'text-gray-700')}>{feature}</span>
             </li>
           ))}
         </ul>
       )}
-      
+
       {children}
     </div>
   )

@@ -2,8 +2,8 @@
 
 import { memo } from 'react'
 import Image from 'next/image'
-import { cn } from '@/lib/utils'
-import { SECTION_SPACING, CONTAINER, HEADING, TEXT, MARGIN } from '@/lib/design-system/unified'
+import StandardSection from '@/components/layout/StandardSection'
+import { cn, HEADING, TEXT, MARGIN, GRID, card, CARD_PADDING } from '@/lib/design-system/unified'
 import { Target, Lightbulb, Handshake } from 'lucide-react'
 
 const ValueProposition = memo(function ValueProposition() {
@@ -32,48 +32,51 @@ const ValueProposition = memo(function ValueProposition() {
   ]
 
   return (
-    <section className={cn(SECTION_SPACING.large, 'relative bg-white')}>
-      {/* 見出しセクション */}
-      <div className={CONTAINER.default.full}>
-        <div className={cn('text-center', MARGIN['2xl'])}>
-          <h2 className={cn(HEADING.h2, 'text-gray-900', MARGIN.md)}>
-            私たちが選ばれる理由
-          </h2>
-          <p className={cn(TEXT.lead, 'text-gray-700')}>
-            投資を「コスト」から「成長エンジン」に変える
-          </p>
-        </div>
-
-        {/* コンテンツグリッド */}
-        <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {reasons.map((reason, index) => (
-              <div key={index} className="bg-white rounded-xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-200">
-                {/* 画像 */}
-                <div className="relative w-full h-48 mb-6 rounded-lg overflow-hidden">
-                  <Image
-                    src={reason.image}
-                    alt={reason.title}
-                    fill
-                    className="object-cover"
-                    sizes="(max-width: 768px) 100vw, 33vw"
-                  />
-                </div>
-                <div className={cn('mb-6 flex h-20 w-20 items-center justify-center rounded-2xl shadow-lg bg-gradient-to-br', reason.gradient)}>
-                  <reason.icon className="h-10 w-10 text-white" />
-                </div>
-                <h3 className={cn(HEADING.h4, 'text-gray-900', MARGIN.sm)}>
-                  {reason.title}
-                </h3>
-                <p className={cn(TEXT.body, 'text-gray-600 leading-relaxed')}>
-                  {reason.description}
-                </p>
+    <StandardSection
+      spacing="large"
+      container="default"
+      background="white"
+      title="私たちが選ばれる理由"
+      subtitle="投資を「コスト」から「成長エンジン」に変える"
+    >
+      <div className="max-w-6xl mx-auto">
+        <div className={GRID.three}>
+          {reasons.map((reason, index) => (
+            <div
+              key={index}
+              className={cn(
+                card({ variant: 'elevated' }),
+                CARD_PADDING.lg,
+                'hover:-translate-y-2'
+              )}
+            >
+              <div className="relative w-full h-48 mb-6 rounded-lg overflow-hidden">
+                <Image
+                  src={reason.image}
+                  alt={reason.title}
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, 33vw"
+                />
               </div>
-            ))}
-          </div>
+              <div className={cn(
+                MARGIN.md,
+                'flex h-20 w-20 items-center justify-center rounded-2xl shadow-lg bg-gradient-to-br',
+                reason.gradient
+              )}>
+                <reason.icon className="h-10 w-10 text-white" />
+              </div>
+              <h3 className={cn(HEADING.h4, 'text-gray-900', MARGIN.sm)}>
+                {reason.title}
+              </h3>
+              <p className={cn(TEXT.body, 'text-gray-600')}>
+                {reason.description}
+              </p>
+            </div>
+          ))}
         </div>
       </div>
-    </section>
+    </StandardSection>
   )
 })
 
