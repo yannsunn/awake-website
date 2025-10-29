@@ -20,7 +20,7 @@ const WhyAmazon = memo(function WhyAmazon() {
     },
     {
       icon: Rocket,
-      gradient: 'from-purple-500 to-pink-500',
+      gradient: 'from-blue-500 to-blue-700',
       title: '中小企業でも大手と対等に戦える',
       description: '商品力があれば、企業規模は関係ない'
     }

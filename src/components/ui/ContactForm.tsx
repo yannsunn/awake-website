@@ -19,7 +19,7 @@ const ContactForm = memo(function ContactForm() {
     >
       <div className="text-center">
         <motion.div
-          className="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br from-blue-500 to-purple-500 rounded-full mb-6 shadow-lg"
+          className="inline-flex items-center justify-center w-20 h-20 bg-blue-600 rounded-full mb-6 shadow-lg shadow-blue-500/30"
           initial={{ scale: 0 }}
           whileInView={{ scale: 1 }}
           viewport={{ once: true }}

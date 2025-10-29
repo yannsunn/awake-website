@@ -161,7 +161,7 @@ export default function ChatWidget() {
       {/* チャットボタン */}
       <motion.button
         onClick={() => setIsOpen(!isOpen)}
-        className="fixed bottom-6 right-6 z-50 bg-gradient-to-br from-blue-600 via-violet-600 to-purple-600 text-white p-5 rounded-2xl shadow-2xl hover:shadow-blue-500/50 transition-all duration-300 border-2 border-white/20"
+        className="fixed bottom-6 right-6 z-50 bg-blue-600 hover:bg-blue-700 text-white p-5 rounded-2xl shadow-2xl hover:shadow-blue-500/50 transition-all duration-300 border-2 border-white/20"
         whileHover={{ scale: 1.15, rotate: 5 }}
         whileTap={{ scale: 0.9 }}
         animate={{

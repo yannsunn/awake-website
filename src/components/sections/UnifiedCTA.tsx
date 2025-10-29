@@ -28,7 +28,7 @@ const UnifiedCTA = memo(function UnifiedCTA({
   return (
     <section className={`py-16 md:py-24 ${bgClass} ${className}`}>
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="relative p-[3px] bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-2xl shadow-xl">
+        <div className="relative border-2 border-blue-600 rounded-2xl shadow-xl">
           <div className="bg-white rounded-2xl p-8 md:p-12">
             <motion.div
               className="text-center"

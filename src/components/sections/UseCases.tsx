@@ -18,7 +18,7 @@ const UseCases = memo(function UseCases() {
     },
     {
       icon: Factory,
-      gradient: 'from-purple-500 to-pink-500',
+      gradient: 'from-blue-500 to-blue-700',
       title: '製造・品質管理',
       items: [
         '検品作業の自動化',
@@ -49,7 +49,7 @@ const UseCases = memo(function UseCases() {
   ]
 
   return (
-    <section className="py-16 md:py-24 bg-gradient-to-br from-blue-50 via-white to-purple-50 relative overflow-hidden">
+    <section className="py-16 md:py-24 bg-gradient-to-b from-gray-50 to-white relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h2 className="corp-heading-2 mb-4">

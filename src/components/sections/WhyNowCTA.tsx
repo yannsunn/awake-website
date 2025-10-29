@@ -46,7 +46,7 @@ const WhyNowCTA = memo(function WhyNowCTA() {
           ))}
         </div>
         
-        <div className="relative p-[3px] bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-2xl shadow-xl">
+        <div className="relative border-2 border-blue-600 rounded-2xl shadow-xl">
           <div className="bg-white text-black rounded-2xl p-12 text-center">
             <h3 className="corp-heading-2 text-black mb-4">
               次のステップ
