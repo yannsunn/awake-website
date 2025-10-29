@@ -1,6 +1,7 @@
 'use client'
 
 import { memo } from 'react'
+import { motion } from 'framer-motion'
 import { MapPin, Clock } from 'lucide-react'
 import { COMPANY_DATA } from '@/lib/company-data'
 import { ContactMethod } from '@/lib/unified-components'
@@ -8,7 +9,13 @@ import { ContactMethod } from '@/lib/unified-components'
 // 🚀 Ultra-Optimized Contact Info - Unified Data Source
 const ContactInfo = memo(function ContactInfo() {
   return (
-    <div className="bg-white rounded-2xl p-8 shadow-lg border border-gray-200 relative overflow-hidden">
+    <motion.div
+      className="bg-white rounded-2xl p-8 shadow-xl border border-gray-200 hover:shadow-2xl transition-all duration-300 relative overflow-hidden"
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.6, delay: 0.1 }}
+    >
       <h3 className="text-2xl font-medium text-black mb-8">会社情報</h3>
       
       
@@ -42,7 +49,7 @@ const ContactInfo = memo(function ContactInfo() {
           </ul>
         </div>
       </div>
-    </div>
+    </motion.div>
   )
 })
 

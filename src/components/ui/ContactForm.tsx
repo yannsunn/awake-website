@@ -1,6 +1,7 @@
 'use client'
 
 import { memo } from 'react'
+import { motion } from 'framer-motion'
 import { MessageCircle } from 'lucide-react'
 import LineButton from '@/components/ui/LineButton'
 import '@/app/corporate.css'
@@ -9,11 +10,23 @@ import '@/app/corporate.css'
 const ContactForm = memo(function ContactForm() {
 
   return (
-    <div className="bg-white rounded-2xl p-8 sm:p-12 shadow-lg border border-gray-200 hover:shadow-xl transition-all duration-300">
+    <motion.div
+      className="bg-white rounded-2xl p-8 sm:p-12 shadow-xl border border-gray-200 hover:shadow-2xl transition-all duration-300"
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.6 }}
+    >
       <div className="text-center">
-        <div className="inline-flex items-center justify-center w-20 h-20 bg-blue-50 rounded-full mb-6 shadow-md border border-blue-100">
-          <MessageCircle className="w-10 h-10 text-blue-600" />
-        </div>
+        <motion.div
+          className="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br from-blue-500 to-purple-500 rounded-full mb-6 shadow-lg"
+          initial={{ scale: 0 }}
+          whileInView={{ scale: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+        >
+          <MessageCircle className="w-10 h-10 text-white" />
+        </motion.div>
 
         <h3 className="corp-heading-2 text-black mb-4">
           LINEでお気軽にご相談
@@ -52,7 +65,7 @@ const ContactForm = memo(function ContactForm() {
           </ul>
         </div>
       </div>
-    </div>
+    </motion.div>
   )
 })
 
