@@ -199,6 +199,32 @@ export const GRID = {
     `grid grid-cols-1 md:grid-cols-${cols} ${gap}`,
 } as const
 
+/**
+ * Flexレイアウトパターン
+ */
+export const FLEX = {
+  // 横並び
+  row: 'flex flex-row gap-4',
+
+  // 縦並び
+  col: 'flex flex-col gap-4',
+
+  // 中央揃え（レスポンシブ対応）
+  centerRow: 'flex flex-col md:flex-row gap-4 justify-center items-center',
+
+  // 両端揃え
+  between: 'flex flex-row justify-between items-center',
+
+  // 中央寄せ
+  center: 'flex items-center justify-center',
+
+  // 開始位置揃え
+  start: 'flex items-start justify-start',
+
+  // 終端位置揃え
+  end: 'flex items-end justify-end',
+} as const
+
 // ============================================
 // 6. アニメーション/トランジション
 // ============================================
@@ -279,6 +305,37 @@ export const CARD_VARIANT = {
 
   // フラット（影なし）
   flat: `${CARD_BASE} bg-gray-50`,
+} as const
+
+/**
+ * カードパディング統一定数
+ */
+export const CARD_PADDING = {
+  // 小（コンパクトカード）
+  sm: 'p-4 sm:p-5 md:p-6',
+
+  // 中（標準カード）
+  md: 'p-6 sm:p-7 md:p-8',
+
+  // 大（広々としたカード）
+  lg: 'p-8 sm:p-10 md:p-12',
+} as const
+
+/**
+ * プロセスステップ視覚要素の定数
+ */
+export const PROCESS = {
+  // ステップ番号サークルのサイズ
+  stepSize: 'h-8 w-8 sm:h-10 sm:w-10 lg:h-12 lg:w-12',
+
+  // 接続線の左位置
+  connectorLeft: 'left-4 sm:left-5 lg:left-6',
+
+  // 接続線の上位置
+  connectorTop: 'top-8 sm:top-10 lg:top-12',
+
+  // ステップコンテナ余白
+  stepGap: 'space-y-6 md:space-y-8',
 } as const
 
 // ============================================
@@ -365,11 +422,14 @@ export const UNIFIED = {
   BG_COLOR,
   SECTION_LAYOUT,
   GRID,
+  FLEX,
   TRANSITION,
   HOVER,
   BUTTON_SIZE,
   BUTTON_VARIANT,
   CARD_VARIANT,
+  CARD_PADDING,
+  PROCESS,
   // ヘルパー関数
   cn,
   section,
