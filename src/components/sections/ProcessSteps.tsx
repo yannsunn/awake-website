@@ -22,7 +22,7 @@ export function ProcessSteps({ title, steps, className }: ProcessStepsProps) {
       container="narrow"
       background="gray"
       title={title}
-      className={className}
+      {...(className && { className })}
     >
       <ol className={cn('relative', PROCESS.stepGap)}>
         {steps.map((stepData, index) => (
