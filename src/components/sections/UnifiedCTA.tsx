@@ -28,13 +28,15 @@ const UnifiedCTA = memo(function UnifiedCTA({
   return (
     <section className={`py-16 md:py-24 ${bgClass} ${className}`}>
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div
-          className="text-center"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-        >
+        <div className="relative p-[3px] bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-2xl shadow-xl">
+          <div className="bg-white rounded-2xl p-8 md:p-12">
+            <motion.div
+              className="text-center"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+            >
           <motion.h2
             className="corp-heading-2 text-black mb-4"
             initial={{ opacity: 0, y: 20 }}
@@ -89,6 +91,8 @@ const UnifiedCTA = memo(function UnifiedCTA({
             )}
           </motion.div>
         </motion.div>
+          </div>
+        </div>
       </div>
     </section>
   )
