@@ -79,7 +79,8 @@
       "Bash(tasklist:*)",
       "Bash(find:*)",
       "Bash(grep:*)",
-      "Bash({} ;)"
+      "Bash({} ;)",
+      "Bash(node -e:*)"
     ],
     "deny": [],
     "ask": [],

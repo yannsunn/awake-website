@@ -68,10 +68,10 @@ export default function RootLayout({
       <body className={`${notoSansJP.variable} ${inter.variable} font-sans antialiased`} suppressHydrationWarning>
         {/* WCAG 2.1 AAA準拠 スキップナビゲーション強化 */}
         <div className="sr-only focus-within:not-sr-only focus-within:fixed focus-within:top-0 focus-within:left-0 focus-within:z-50 focus-within:bg-black focus-within:p-4">
-          <a href="#main-content" className="inline-block bg-white text-black font-bold px-6 py-3 rounded-lg border-2 border-black focus:outline-none focus:ring-4 focus:ring-blue-500 focus:ring-offset-2">
+          <a href="#main-content" className="inline-block bg-white text-gray-900 font-bold px-6 py-3 rounded-lg border-2 border-black focus:outline-none focus:ring-4 focus:ring-blue-500 focus:ring-offset-2">
             メインコンテンツへスキップ
           </a>
-          <a href="#navigation" className="ml-2 inline-block bg-white text-black font-bold px-6 py-3 rounded-lg border-2 border-black focus:outline-none focus:ring-4 focus:ring-blue-500 focus:ring-offset-2">
+          <a href="#navigation" className="ml-2 inline-block bg-white text-gray-900 font-bold px-6 py-3 rounded-lg border-2 border-black focus:outline-none focus:ring-4 focus:ring-blue-500 focus:ring-offset-2">
             ナビゲーションへスキップ
           </a>
         </div>

@@ -22,11 +22,11 @@ const FAQItem = memo(function FAQItem({ question, answer, index }: FAQItemProps)
         </h3>
         <div className="flex-shrink-0">
           <Plus
-            className="h-6 w-6 text-black group-open:hidden transition-all duration-300"
+            className="h-6 w-6 text-gray-900 group-open:hidden transition-all duration-300"
             aria-hidden="true"
           />
           <Minus
-            className="h-6 w-6 text-black hidden group-open:block transition-all duration-300"
+            className="h-6 w-6 text-gray-900 hidden group-open:block transition-all duration-300"
             aria-hidden="true"
           />
         </div>
@@ -34,7 +34,7 @@ const FAQItem = memo(function FAQItem({ question, answer, index }: FAQItemProps)
 
       <div className="px-4 sm:px-6 pb-4 sm:pb-6">
         <div className="pt-4 border-t border-gray-100">
-          <p className="text-base sm:text-lg text-black">
+          <p className="text-base sm:text-lg text-gray-900">
             {answer}
           </p>
         </div>

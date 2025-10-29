@@ -406,10 +406,10 @@ export default async function ServicePage(
         <section className="py-16 md:py-24 relative bg-blue-50">
           <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-black mb-6">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-6">
                 CLEMIRA製品の日本唯一のメーカー直販店
               </h2>
-              <p className="text-xl text-black max-w-3xl mx-auto">
+              <p className="text-xl text-gray-900 max-w-3xl mx-auto">
                 身体機能向上をサポートする革新的な技術製品CLEMIRAを、<br />
                 日本で唯一のメーカー直販店として販売しています
               </p>
@@ -418,7 +418,7 @@ export default async function ServicePage(
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
               {/* 製品ラインナップ */}
               <div className="bg-white rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 border border-gray-100">
-                <h3 className="text-2xl font-bold text-black mb-4">製品ラインナップ</h3>
+                <h3 className="text-2xl font-bold text-gray-900 mb-4">製品ラインナップ</h3>
                 <div className="relative rounded-xl overflow-hidden">
                   <Image
                     src="/assets/images/clemira-products.webp"
@@ -430,26 +430,26 @@ export default async function ServicePage(
                   />
                 </div>
                 <div className="mt-4 space-y-2">
-                  <p className="text-black">
+                  <p className="text-gray-900">
                     • <a href="https://amzn.to/46S4RMV" target="_blank" rel="noopener noreferrer" className="text-yellow-400 hover:text-yellow-300 underline">CLEMIRA PHOENIX</a> - ¥165,000（税込）
                   </p>
-                  <p className="text-black">
+                  <p className="text-gray-900">
                     • <a href="https://amzn.to/471iglX" target="_blank" rel="noopener noreferrer" className="text-yellow-400 hover:text-yellow-300 underline">CLEMIRA athlete</a> - ¥55,000（税込）
                   </p>
-                  <p className="text-black">
+                  <p className="text-gray-900">
                     • <a href="https://amzn.to/3JfiUlV" target="_blank" rel="noopener noreferrer" className="text-yellow-400 hover:text-yellow-300 underline">CLEMIRA blackcard</a> - ¥27,500（税込）
                   </p>
                 </div>
                 <div className="mt-6 pt-4 border-t border-blue-200">
-                  <h4 className="text-lg font-semibold text-black mb-3">お得なセット商品</h4>
+                  <h4 className="text-lg font-semibold text-gray-900 mb-3">お得なセット商品</h4>
                   <div className="space-y-2">
-                    <p className="text-black">
+                    <p className="text-gray-900">
                       • <a href="https://amzn.to/46X1swq" target="_blank" rel="noopener noreferrer" className="text-yellow-400 hover:text-yellow-300 underline">全セット</a> - 全製品をお得な価格で
                     </p>
-                    <p className="text-black">
+                    <p className="text-gray-900">
                       • <a href="https://amzn.to/47vxhMN" target="_blank" rel="noopener noreferrer" className="text-yellow-400 hover:text-yellow-300 underline">アスリートカードセット</a> - athleteとblackcardのセット
                     </p>
-                    <p className="text-black">
+                    <p className="text-gray-900">
                       • <a href="https://amzn.to/4mB1SwQ" target="_blank" rel="noopener noreferrer" className="text-yellow-400 hover:text-yellow-300 underline">アスリート2個セット</a> - athlete 2個のお得なセット
                     </p>
                   </div>
@@ -458,7 +458,7 @@ export default async function ServicePage(
 
               {/* メディア実績 */}
               <div className="bg-white rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 border border-gray-100">
-                <h3 className="text-2xl font-bold text-black mb-4">メディア掲載実績</h3>
+                <h3 className="text-2xl font-bold text-gray-900 mb-4">メディア掲載実績</h3>
                 <div className="relative rounded-xl overflow-hidden bg-white">
                   <Image
                     src="/assets/images/clemira-youtube.webp"
@@ -470,15 +470,15 @@ export default async function ServicePage(
                   />
                 </div>
                 <div className="mt-4 space-y-2">
-                  <p className="text-black">YouTubeチャンネル「令和の虎」に定期出演</p>
-                  <p className="text-black">記憶力向上と身体機能向上の革新的技術として紹介</p>
+                  <p className="text-gray-900">YouTubeチャンネル「令和の虎」に定期出演</p>
+                  <p className="text-gray-900">記憶力向上と身体機能向上の革新的技術として紹介</p>
                 </div>
               </div>
             </div>
 
             {/* 販売実績 */}
             <div className="bg-white rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 border border-gray-100">
-              <h3 className="text-2xl font-bold text-black mb-6 text-center">驚異的な販売実績</h3>
+              <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">驚異的な販売実績</h3>
               <div className="relative rounded-xl overflow-hidden bg-white p-4">
                 <Image
                   src="/assets/images/clemira-sales.webp"
@@ -492,25 +492,25 @@ export default async function ServicePage(
               <div className="mt-6 grid grid-cols-3 gap-4 text-center">
                 <div>
                   <p className="text-3xl font-bold text-yellow-400">49件</p>
-                  <p className="text-black">注文数</p>
+                  <p className="text-gray-900">注文数</p>
                 </div>
                 <div>
                   <p className="text-3xl font-bold text-yellow-400">53点</p>
-                  <p className="text-black">販売数</p>
+                  <p className="text-gray-900">販売数</p>
                 </div>
                 <div>
                   <p className="text-3xl font-bold text-yellow-400">¥2,992,895</p>
-                  <p className="text-black">売上実績</p>
+                  <p className="text-gray-900">売上実績</p>
                 </div>
               </div>
-              <p className="text-center text-xl text-black mt-6 font-semibold">
+              <p className="text-center text-xl text-gray-900 mt-6 font-semibold">
                 日本唯一のメーカー直販店として、確実な商品提供をお約束します
               </p>
             </div>
 
             {/* アスリート採用実績 */}
             <div className="bg-white rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 border border-gray-100 mt-8">
-              <h3 className="text-2xl font-bold text-black mb-6 text-center">プロアスリートサポート実績</h3>
+              <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">プロアスリートサポート実績</h3>
               <div className="relative rounded-xl overflow-hidden mb-6">
                 <Image
                   src="/assets/images/clemira-athletes.jpg"
@@ -527,8 +527,8 @@ export default async function ServicePage(
                   <h4 className="text-lg font-bold text-blue-600 mb-3">アドバイザリー契約</h4>
                   <div className="space-y-3">
                     <div>
-                      <p className="text-black font-semibold">◆ 広島東洋カープ</p>
-                      <p className="text-black text-sm ml-4">
+                      <p className="text-gray-900 font-semibold">◆ 広島東洋カープ</p>
+                      <p className="text-gray-900 text-sm ml-4">
                         末包昇大、矢野雅哉、羽月隆太郎、<br />
                         田村俊介、小園海人（予定）
                       </p>
@@ -540,24 +540,24 @@ export default async function ServicePage(
                   <h4 className="text-lg font-bold text-blue-600 mb-3">スポンサー契約</h4>
                   <div className="space-y-2">
                     <div>
-                      <p className="text-black font-semibold text-sm">◆ フットサル</p>
-                      <p className="text-black text-sm ml-4">ボルクバレット北九州（Fリーグ）</p>
+                      <p className="text-gray-900 font-semibold text-sm">◆ フットサル</p>
+                      <p className="text-gray-900 text-sm ml-4">ボルクバレット北九州（Fリーグ）</p>
                     </div>
                     <div>
-                      <p className="text-black font-semibold text-sm">◆ バレーボール</p>
-                      <p className="text-black text-sm ml-4">福岡ギラソール（Vリーグ）</p>
+                      <p className="text-gray-900 font-semibold text-sm">◆ バレーボール</p>
+                      <p className="text-gray-900 text-sm ml-4">福岡ギラソール（Vリーグ）</p>
                     </div>
                     <div>
-                      <p className="text-black font-semibold text-sm">◆ ボクシング</p>
-                      <p className="text-black text-sm ml-4">宮澤蓮斗選手（U24日本一）</p>
+                      <p className="text-gray-900 font-semibold text-sm">◆ ボクシング</p>
+                      <p className="text-gray-900 text-sm ml-4">宮澤蓮斗選手（U24日本一）</p>
                     </div>
                     <div>
-                      <p className="text-black font-semibold text-sm">◆ キックボクシング</p>
-                      <p className="text-black text-sm ml-4">寺山遼冴（那須川天心の弟子）</p>
+                      <p className="text-gray-900 font-semibold text-sm">◆ キックボクシング</p>
+                      <p className="text-gray-900 text-sm ml-4">寺山遼冴（那須川天心の弟子）</p>
                     </div>
                     <div>
-                      <p className="text-black font-semibold text-sm">◆ 高校サッカー</p>
-                      <p className="text-black text-sm ml-4">昌平高校エース鄭君（インター杯優勝）</p>
+                      <p className="text-gray-900 font-semibold text-sm">◆ 高校サッカー</p>
+                      <p className="text-gray-900 text-sm ml-4">昌平高校エース鄭君（インター杯優勝）</p>
                     </div>
                   </div>
                 </div>
@@ -578,7 +578,7 @@ export default async function ServicePage(
                       </svg>
                       ムエタイ世界王者 梅野源治選手の体感ワーク
                     </a>
-                    <p className="text-black text-sm ml-7">RIZIN選手による実演動画</p>
+                    <p className="text-gray-900 text-sm ml-7">RIZIN選手による実演動画</p>
                   </div>
                   <div>
                     <a 
@@ -592,7 +592,7 @@ export default async function ServicePage(
                       </svg>
                       メーカー公認クルミラガール
                     </a>
-                    <p className="text-black text-sm ml-7">公式プロモーション動画</p>
+                    <p className="text-gray-900 text-sm ml-7">公式プロモーション動画</p>
                   </div>
                 </div>
               </div>
@@ -600,7 +600,7 @@ export default async function ServicePage(
 
             {/* CLEMIRAインソール */}
             <div className="bg-white rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 border border-gray-100 mt-8">
-              <h3 className="text-2xl font-bold text-black mb-6 text-center">完全オーダーメイドインソール</h3>
+              <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">完全オーダーメイドインソール</h3>
               <div className="relative rounded-xl overflow-hidden">
                 <Image
                   src="/assets/images/clemira-insole.jpg"
@@ -612,7 +612,7 @@ export default async function ServicePage(
                 />
               </div>
               <div className="mt-6 text-center">
-                <p className="text-xl text-black mb-4">
+                <p className="text-xl text-gray-900 mb-4">
                   量子効果技術を搭載した完全オーダーメイドインソール
                 </p>
                 <div className="bg-gradient-to-r from-green-500 to-green-600 rounded-xl p-6 inline-block">
@@ -716,15 +716,15 @@ export default async function ServicePage(
 
       <section className="py-16 md:py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-black mb-8">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-8">
             まずはお気軽にご相談ください
           </h2>
-          <p className="text-lg sm:text-xl md:text-2xl text-black mb-8">
+          <p className="text-lg sm:text-xl md:text-2xl text-gray-900 mb-8">
             お客様のビジネスに最適なソリューションをご提案いたします
           </p>
           <Link
             href="/#contact"
-            className="inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-blue-600 to-blue-700 text-black hover:from-blue-600 hover:to-blue-700 shadow-xl font-bold rounded-lg transition-all"
+            className="inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-blue-600 to-blue-700 text-gray-900 hover:from-blue-600 hover:to-blue-700 shadow-xl font-bold rounded-lg transition-all"
           >
             お問い合わせはこちら
           </Link>

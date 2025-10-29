@@ -193,7 +193,7 @@ export default function FAQPage() {
           <div className="space-y-8 sm:space-y-12">
           {faqCategories.map((category, categoryIndex) => (
             <div key={categoryIndex}>
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-black mb-6 sm:mb-8 pb-2 border-b border-blue-200">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-6 sm:mb-8 pb-2 border-b border-blue-200">
                 {category.category}
               </h2>
 
@@ -204,7 +204,7 @@ export default function FAQPage() {
                     className="group bg-white border border-blue-200 rounded-lg overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300"
                   >
                     <summary className="flex items-center justify-between p-4 sm:p-6 cursor-pointer hover:bg-blue-50 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2">
-                      <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-black pr-4">
+                      <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 pr-4">
                         {faq.question}
                       </h3>
                       <div className="flex-shrink-0">
@@ -221,7 +221,7 @@ export default function FAQPage() {
 
                     <div className="px-4 sm:px-6 pb-4 sm:pb-6">
                       <div className="pt-4 border-t border-blue-100">
-                        <p className="text-base sm:text-lg text-black whitespace-pre-line">
+                        <p className="text-base sm:text-lg text-gray-900 whitespace-pre-line">
                           {faq.answer.replace(/<br\s*\/?>/gi, '\n')}
                         </p>
                       </div>
@@ -239,17 +239,17 @@ export default function FAQPage() {
       <section className="relative py-16 md:py-24 overflow-hidden bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-black">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-gray-900">
               まだ疑問が解決しませんか？
             </h2>
-            <p className="text-lg sm:text-xl md:text-2xl text-black">
+            <p className="text-lg sm:text-xl md:text-2xl text-gray-900">
               お気軽にお問い合わせください。専門スタッフが丁寧にお答えいたします。
             </p>
           </div>
           <div className="text-center">
             <div className="bg-white border border-blue-200 p-6 sm:p-8 rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300">
-              <h3 className="text-3xl sm:text-4xl md:text-5xl font-bold text-black mb-4 text-center">💬 公式LINEでお気軽に</h3>
-              <p className="text-base sm:text-lg text-black text-center mb-6">最速迓信！まずはLINEでお話をお聞かせください</p>
+              <h3 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4 text-center">💬 公式LINEでお気軽に</h3>
+              <p className="text-base sm:text-lg text-gray-900 text-center mb-6">最速迓信！まずはLINEでお話をお聞かせください</p>
               <LineButton className="w-full" size="large" />
             </div>
           </div>
