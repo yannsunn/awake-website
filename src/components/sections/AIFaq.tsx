@@ -2,11 +2,12 @@
 
 import { memo, useState } from 'react'
 import { ChevronDown } from 'lucide-react'
-import '@/app/corporate.css'
+import StandardSection from '@/components/layout/StandardSection'
+import { cn, HEADING, TEXT } from '@/lib/design-system/unified'
 
 const AIFaq = memo(function AIFaq() {
   const [openIndex, setOpenIndex] = useState<number | null>(null)
-  
+
   const faqs = [
     {
       question: 'AIの知識がなくても大丈夫ですか？',
@@ -27,38 +28,42 @@ const AIFaq = memo(function AIFaq() {
   ]
 
   return (
-    <section className="py-16 md:py-24 bg-gradient-to-b from-gray-50 to-white">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12">
-          <h2 className="corp-heading-2 mb-4">
-            よくあるご質問
-          </h2>
-        </div>
-
-        <div className="space-y-4">
-          {faqs.map((faq, index) => (
-            <div key={index} className="bg-white border border-gray-200 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300">
-              <button
-                className="w-full px-6 py-4 text-left flex items-center justify-between hover:bg-gray-overlay transition-colors"
-                onClick={() => setOpenIndex(openIndex === index ? null : index)}
-              >
-                <span className="font-medium text-black">Q: {faq.question}</span>
-                <ChevronDown 
-                  className={`h-5 w-5 text-black transition-transform ${
-                    openIndex === index ? 'rotate-180' : ''
-                  }`}
-                />
-              </button>
-              {openIndex === index && (
-                <div className="px-6 py-4 border-t border-gray-200">
-                  <p className="text-black">A: {faq.answer}</p>
-                </div>
-              )}
-            </div>
-          ))}
-        </div>
+    <StandardSection
+      spacing="default"
+      container="narrow"
+      background="transparent"
+      className="bg-gradient-to-b from-gray-50 to-white"
+    >
+      <div className="text-center mb-12">
+        <h2 className={cn(HEADING.h2, 'text-gray-900 mb-4')}>
+          よくあるご質問
+        </h2>
       </div>
-    </section>
+
+      <div className="space-y-4">
+        {faqs.map((faq, index) => (
+          <div key={index} className="bg-white border border-gray-200 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300">
+            <button
+              className="w-full px-6 py-4 text-left flex items-center justify-between hover:bg-gray-50 transition-colors"
+              onClick={() => setOpenIndex(openIndex === index ? null : index)}
+            >
+              <span className={cn(TEXT.body, 'font-medium text-gray-900')}>Q: {faq.question}</span>
+              <ChevronDown
+                className={cn(
+                  'h-5 w-5 text-gray-600 transition-transform flex-shrink-0 ml-4',
+                  openIndex === index && 'rotate-180'
+                )}
+              />
+            </button>
+            {openIndex === index && (
+              <div className="px-6 py-4 border-t border-gray-200">
+                <p className={cn(TEXT.body, 'text-gray-700')}>A: {faq.answer}</p>
+              </div>
+            )}
+          </div>
+        ))}
+      </div>
+    </StandardSection>
   )
 })
 
