@@ -34,8 +34,8 @@ export function FeatureGrid({
       spacing="default"
       container="default"
       background="white"
-      title={title || undefined}
-      className={className}
+      {...(title && { title })}
+      {...(className && { className })}
     >
       <div className={gridClass}>
         {features.map((feature, index) => (

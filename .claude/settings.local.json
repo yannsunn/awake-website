@@ -77,7 +77,8 @@
       "Bash(node scripts/google-ads-verify-all-keywords.js:*)",
       "Bash(node scripts/gsc-check-portfolio-site.js:*)",
       "Bash(tasklist:*)",
-      "Bash(find:*)"
+      "Bash(find:*)",
+      "Bash(grep:*)"
     ],
     "deny": [],
     "ask": [],
