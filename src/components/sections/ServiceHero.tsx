@@ -108,7 +108,7 @@ export function ServiceHero({
           >
             <Link href={ctaHref}>
               <motion.button
-                className="px-8 sm:px-10 md:px-12 py-3 sm:py-4 md:py-5 bg-gradient-to-r from-blue-600 to-purple-600 text-white text-base sm:text-lg md:text-xl font-medium rounded-lg shadow-xl hover:shadow-2xl transition-all duration-300"
+                className="px-8 sm:px-10 md:px-12 py-3 sm:py-4 md:py-5 bg-blue-600 hover:bg-blue-700 text-white text-base sm:text-lg md:text-xl font-medium rounded-lg shadow-xl hover:shadow-2xl transition-all duration-300"
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.95 }}
               >

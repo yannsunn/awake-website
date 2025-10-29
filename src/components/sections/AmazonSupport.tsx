@@ -30,7 +30,7 @@ const AmazonSupport = memo(function AmazonSupport() {
     },
     {
       icon: BarChart3,
-      gradient: 'from-purple-500 to-pink-500',
+      gradient: 'from-blue-500 to-blue-700',
       title: '売上分析・改善提案',
       items: [
         '週次・月次の詳細レポート',

@@ -33,8 +33,8 @@ const ProblemSection = memo(function ProblemSection() {
             ))}
           </ul>
 
-          <div className="relative mt-8 p-[2px] bg-gradient-to-r from-blue-500 to-purple-500 rounded-xl">
-            <div className="p-6 bg-gradient-to-r from-blue-50 to-purple-50 rounded-xl text-center">
+          <div className="relative mt-8 border-2 border-blue-600 rounded-xl">
+            <div className="p-6 bg-blue-50 rounded-xl text-center">
               <p className="corp-heading-3 text-blue-900">
                 これらすべて、AIが解決します。
               </p>

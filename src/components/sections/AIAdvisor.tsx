@@ -110,7 +110,7 @@ const AIAdvisor = memo(function AIAdvisor() {
                 key={index}
                 className="bg-white rounded-2xl p-5 sm:p-6 shadow-xl hover:shadow-2xl transition-all duration-300 border border-gray-100 hover:border-gray-300 hover:-translate-y-2"
               >
-                <div className="w-12 h-12 sm:w-14 sm:h-14 bg-gradient-to-br from-blue-500 to-purple-500 rounded-xl flex items-center justify-center mb-3 sm:mb-4 shadow-lg">
+                <div className="w-12 h-12 sm:w-14 sm:h-14 bg-blue-600 rounded-xl flex items-center justify-center mb-3 sm:mb-4 shadow-lg shadow-blue-500/30">
                   <Icon className="w-6 h-6 sm:w-7 sm:h-7 text-white" />
                 </div>
                 <h3 className="text-base sm:text-lg font-bold text-gray-900 mb-2">{feature.title}</h3>
@@ -135,9 +135,9 @@ const AIAdvisor = memo(function AIAdvisor() {
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-7 md:gap-8 max-w-6xl mx-auto">
             {plans.map((plan, index) => (
               plan.popular ? (
-                <div key={index} className="relative p-[3px] bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-2xl shadow-xl">
+                <div key={index} className="relative border-2 border-blue-600 rounded-2xl shadow-xl">
                   <div className="relative rounded-2xl p-8 bg-white transition-all duration-300">
-                    <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-gradient-to-r from-blue-600 to-purple-600 text-white px-4 py-1 rounded-full text-sm font-bold">
+                    <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-blue-600 text-white px-4 py-1 rounded-full text-sm font-bold">
                       人気No.1
                     </div>
 
@@ -219,7 +219,7 @@ const AIAdvisor = memo(function AIAdvisor() {
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.6 }}
         >
-          <div className="relative p-[3px] bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-3xl shadow-xl">
+          <div className="relative border-2 border-blue-600 rounded-3xl shadow-xl">
             <div className="text-center bg-white rounded-3xl p-8 sm:p-10 md:p-12">
               <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 sm:mb-4 text-gray-900">
                 まずは初回無料面談から

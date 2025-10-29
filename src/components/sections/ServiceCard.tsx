@@ -64,7 +64,7 @@ export default function ServiceCard({ service, index }: ServiceCardProps) {
             <div className={index % 2 === 0 ? 'lg:order-1' : 'lg:order-2'}>
               <div className="flex items-center gap-4 sm:gap-5 md:gap-6 mb-4 sm:mb-5 md:mb-6">
                 <motion.div
-                  className="w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 rounded-xl bg-gradient-to-br from-blue-500 to-purple-500 flex items-center justify-center flex-shrink-0 shadow-lg"
+                  className="w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 rounded-xl bg-blue-600 flex items-center justify-center flex-shrink-0 shadow-lg shadow-blue-500/30"
                   whileHover={{ scale: 1.1 }}
                   transition={{ duration: 0.3 }}
                 >

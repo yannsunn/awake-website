@@ -46,7 +46,7 @@ const SuccessStories = memo(function SuccessStories() {
       description: '2024-2029年の市場成長予測',
       source: 'グローバル市場調査',
       icon: Bot,
-      gradient: 'from-blue-500 to-purple-500'
+      gradient: 'from-blue-500 to-blue-700'
     },
     {
       title: '中小企業のAI導入',
@@ -103,7 +103,7 @@ const SuccessStories = memo(function SuccessStories() {
 
               {/* カウントアップアニメーション */}
               <div className="my-6">
-                <p className="text-5xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                <p className="text-5xl font-bold text-blue-600">
                   <CountUp end={stat.countUpValue} suffix={stat.countUpSuffix} duration={2.5} />
                 </p>
                 <p className="text-sm font-medium text-gray-600 mt-2">{stat.countUpLabel}</p>

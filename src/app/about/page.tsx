@@ -406,7 +406,7 @@ export default function AboutPage() {
             {/* CEO */}
             <div className="bg-white rounded-2xl p-8 border border-gray-200 shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
               <div className="text-center mb-6">
-                <div className="w-32 h-32 mx-auto mb-4 bg-gradient-to-br from-blue-500 to-purple-500 rounded-full flex items-center justify-center shadow-lg">
+                <div className="w-32 h-32 mx-auto mb-4 bg-blue-600 rounded-full flex items-center justify-center shadow-lg shadow-blue-500/30">
                   <User className="w-16 h-16 text-white" />
                 </div>
                 <h3 className="corp-heading-3 text-black mb-2">{COMPANY_DATA.basic.ceo}</h3>
@@ -435,7 +435,7 @@ export default function AboutPage() {
             {/* Technical Director */}
             <div className="bg-white rounded-2xl p-8 border border-gray-200 shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
               <div className="text-center mb-6">
-                <div className="w-32 h-32 mx-auto mb-4 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full flex items-center justify-center shadow-lg">
+                <div className="w-32 h-32 mx-auto mb-4 bg-blue-600 rounded-full flex items-center justify-center shadow-lg shadow-blue-500/30">
                   <Zap className="w-16 h-16 text-white" />
                 </div>
                 <h3 className="corp-heading-3 text-black mb-2">テクニカルディレクター</h3>
@@ -579,8 +579,8 @@ export default function AboutPage() {
           </div>
 
           <div className="mt-12 text-center">
-            <div className="relative inline-block p-[3px] bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-2xl shadow-xl">
-              <div className="bg-gradient-to-r from-blue-50 to-purple-50 rounded-2xl p-8">
+            <div className="relative inline-block border-2 border-blue-600 rounded-2xl shadow-xl">
+              <div className="bg-blue-50 rounded-2xl p-8">
               <h3 className="corp-heading-3 text-black mb-6">チーム体制の強み</h3>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 text-left">
                 <div>
