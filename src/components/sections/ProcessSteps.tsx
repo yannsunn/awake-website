@@ -17,7 +17,7 @@ interface ProcessStepsProps {
 
 export function ProcessSteps({ title, steps, className }: ProcessStepsProps) {
   return (
-    <section className={cn('py-12 sm:py-16 md:py-20 lg:py-24 xl:py-28', className)}>
+    <section className={cn('py-16 sm:py-20 lg:py-24', className)}>
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 xl:px-12">
         <h2 className="corp-heading-2 mb-8 sm:mb-12 lg:mb-16 text-center leading-tight jp-wrap no-orphan">
           {title}
