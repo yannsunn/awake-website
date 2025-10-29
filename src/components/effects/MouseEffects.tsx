@@ -164,7 +164,7 @@ export default function MouseEffects() {
                 ease: "easeOut"
               }}
             >
-              <div className="w-full h-full bg-gradient-to-r from-purple-400 to-blue-400 rounded-full blur-sm" />
+              <div className="w-full h-full bg-gradient-to-r from-blue-400 to-blue-600 rounded-full blur-sm" />
             </motion.div>
           ))}
         </AnimatePresence>
