@@ -68,7 +68,7 @@ const AIAdvisor = memo(function AIAdvisor() {
   ]
 
   return (
-    <section className="relative py-16 sm:py-24 md:py-32 lg:py-36 bg-white">
+    <section className="relative py-16 sm:py-20 lg:py-24 bg-white">
       <div className="container mx-auto px-4">
         {/* ヘッダー */}
         <motion.div

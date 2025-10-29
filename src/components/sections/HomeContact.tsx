@@ -9,7 +9,7 @@ export default function HomeContact() {
   const contactSection = useScrollAnimation<HTMLDivElement>({ threshold: 0.2 })
 
   return (
-    <section id="contact" className="relative py-20 sm:py-28 md:py-36 lg:py-40 bg-white">
+    <section id="contact" className="relative py-16 sm:py-20 lg:py-24 bg-white">
       <div className="container mx-auto px-4 relative z-10">
         <div
           ref={contactSection.ref}
