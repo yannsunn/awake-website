@@ -7,7 +7,7 @@ import { usePathname } from 'next/navigation'
 import { Menu, X, ChevronDown, MessageCircle } from 'lucide-react'
 import { COMPANY_DATA } from '@/lib/company-data'
 import LineButton from '@/components/ui/LineButton'
-import '@/app/corporate.css'
+
 
 // 🚀 最適化されたナビゲーションヘッダー
 const Header = memo(function Header() {
@@ -113,8 +113,8 @@ const Header = memo(function Header() {
       <header
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           isScrolled
-            ? 'corp-header-scrolled'
-            : 'corp-header'
+            ? 'bg-white shadow-lg'
+            : 'bg-transparent'
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -269,7 +269,7 @@ const Header = memo(function Header() {
                     sizes="32px"
                   />
                 </div>
-                <span className="corp-heading-3 text-gray-900">メニュー</span>
+                <span className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900">メニュー</span>
               </div>
               <button
                 onClick={toggleMenu}
@@ -287,7 +287,7 @@ const Header = memo(function Header() {
                 if (item.type === 'dropdown') {
                   return (
                     <div key={index} className="px-4 py-2">
-                      <div className="corp-text-body text-gray-900 mb-2 font-semibold">
+                      <div className="text-base sm:text-lg text-gray-900 mb-2 font-semibold">
                         {item.title}
                       </div>
                       <div className="space-y-1">
@@ -303,10 +303,10 @@ const Header = memo(function Header() {
                               'aria-label': `${service.title} - 新しいウィンドウで開きます`
                             })}
                           >
-                            <div className="corp-text-body text-gray-900">
+                            <div className="text-base sm:text-lg text-gray-900">
                               {service.title}
                             </div>
-                            <div className="corp-text-small text-gray-600 mt-1">
+                            <div className="text-sm sm:text-base text-gray-600 mt-1">
                               {service.description}
                             </div>
                           </Link>
@@ -320,7 +320,7 @@ const Header = memo(function Header() {
                   <Link
                     key={index}
                     href={item.href || '#'}
-                    className="block px-8 py-3 min-h-[56px] corp-text-body text-gray-900 hover:bg-blue-50 transition-all duration-300 ease-out focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-blue-500 focus-visible:ring-offset-3"
+                    className="block px-8 py-3 min-h-[56px] text-base sm:text-lg text-gray-900 hover:bg-blue-50 transition-all duration-300 ease-out focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-blue-500 focus-visible:ring-offset-3"
                     onClick={toggleMenu}
                   >
                     {item.title}

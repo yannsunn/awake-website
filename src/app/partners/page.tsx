@@ -6,7 +6,7 @@ import { Handshake, Award, Globe, Shield } from 'lucide-react'
 import LineButton from '@/components/ui/LineButton'
 import { UltraHero } from '@/components/ui/UltraSection'
 import { createBreadcrumbSchema } from '@/lib/enhanced-schema'
-import '@/app/corporate.css'
+
 
 export const metadata: Metadata = {
   title: `パートナー企業 | ${COMPANY_DATA.basic.name}`,
@@ -209,10 +209,10 @@ export default function PartnersPage() {
       <section className="relative py-12 md:py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-12">
-            <h2 className="corp-heading-2 mb-4 text-black">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-black">
               なぜ、パートナーシップが必要なのか。
             </h2>
-            <p className="corp-text-lead text-black">
+            <p className="text-lg sm:text-xl md:text-2xl text-black">
               お客様の「本当の成功」は、1つのサービスだけでは実現できない。
             </p>
           </div>
@@ -237,10 +237,10 @@ export default function PartnersPage() {
           ].map((item, index) => (
             <div key={index} className="text-center">
               <div className="text-4xl mb-4">{item.icon}</div>
-              <h3 className="corp-heading-3 text-black mb-3">
+              <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-black mb-3">
                 {item.title}
               </h3>
-              <p className="corp-text-body text-black">
+              <p className="text-base sm:text-lg text-black">
                 {item.description}
               </p>
             </div>
@@ -248,7 +248,7 @@ export default function PartnersPage() {
         </div>
         
         <div className="text-center">
-          <p className="corp-text-lead text-black">
+          <p className="text-lg sm:text-xl md:text-2xl text-black">
             だから、ワンストップで解決できる体制を整えました。
           </p>
         </div>
@@ -259,10 +259,10 @@ export default function PartnersPage() {
       <section className="relative py-12 md:py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="corp-heading-2 mb-4 text-black">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-black">
               パートナーシップがもたらす4つの価値。
             </h2>
-            <p className="corp-text-lead text-black">
+            <p className="text-lg sm:text-xl md:text-2xl text-black">
               お客様にとっての、本当のメリット。
             </p>
           </div>
@@ -294,13 +294,13 @@ export default function PartnersPage() {
               description: "各サービスが連携し、1+1が3になる成果を実現。"
             }
           ].map((value, index) => (
-            <div key={index} className="corp-card text-center">
+            <div key={index} className="bg-white rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 border border-gray-100 text-center">
               <div className="text-3xl mb-2">{value.emoji}</div>
               <div className="text-2xl font-bold text-black mb-3">{value.number}</div>
-              <h3 className="corp-heading-3 text-black mb-3">
+              <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-black mb-3">
                 {value.title}
               </h3>
-              <p className="corp-text-small text-black">
+              <p className="text-sm sm:text-base text-black">
                 {value.description}
               </p>
             </div>
@@ -316,28 +316,28 @@ export default function PartnersPage() {
           {partners.map((category, categoryIndex) => (
             <div key={categoryIndex}>
               <div className="text-center mb-12">
-                <h2 className="corp-heading-2 text-black mb-4">
+                <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-black mb-4">
                   {category.category}
                 </h2>
-                <p className="corp-text-lead text-black">
+                <p className="text-lg sm:text-xl md:text-2xl text-black">
                   {category.description}
                 </p>
               </div>
               
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                 {category.companies.map((company, companyIndex) => (
-                  <div key={companyIndex} className="corp-card">
+                  <div key={companyIndex} className="bg-white rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 border border-gray-100">
                     <div className="text-3xl mb-4 text-center">
                       {company.icon}
                     </div>
-                    <h3 className="corp-heading-3 text-black mb-4 text-center">
+                    <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-black mb-4 text-center">
                       {company.name}
                     </h3>
                     <ul className="space-y-2">
                       {company.services.map((service, serviceIndex) => (
                         <li key={serviceIndex} className="flex items-start">
                           <span className="text-gray-600 mr-2">•</span>
-                          <span className="corp-text-small text-black">
+                          <span className="text-sm sm:text-base text-black">
                             {service}
                           </span>
                         </li>
@@ -356,7 +356,7 @@ export default function PartnersPage() {
       <section className="relative py-12 md:py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="corp-heading-2 mb-4 text-black">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-black">
               よくあるご質問。
             </h2>
           </div>
@@ -376,11 +376,11 @@ export default function PartnersPage() {
               a: "基本的に私たちが窓口となり、全体をコーディネートします。"
             }
           ].map((faq, index) => (
-            <div key={index} className="corp-card">
-              <h3 className="corp-heading-3 text-black mb-3">
+            <div key={index} className="bg-white rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 border border-gray-100">
+              <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-black mb-3">
                 Q: {faq.q}
               </h3>
-              <p className="corp-text-body text-black">
+              <p className="text-base sm:text-lg text-black">
                 A: {faq.a}
               </p>
             </div>
@@ -393,10 +393,10 @@ export default function PartnersPage() {
       <section className="relative py-12 md:py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="corp-heading-2 mb-4 text-black">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-black">
               新しいパートナーも募集中
             </h2>
-            <p className="corp-text-lead text-black">
+            <p className="text-lg sm:text-xl md:text-2xl text-black">
               一緒に、お客様の成功を支援しませんか？
             </p>
             <p className="text-lg text-black">
@@ -404,8 +404,8 @@ export default function PartnersPage() {
             </p>
           </div>
         
-        <div className="corp-card mb-12 p-8">
-          <h3 className="corp-heading-3 text-black mb-6 text-center">
+        <div className="bg-white rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 border border-gray-100 mb-12 p-8">
+          <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-black mb-6 text-center">
             こんな企業様を求めています：
           </h3>
           <ul className="space-y-4">
@@ -416,7 +416,7 @@ export default function PartnersPage() {
             ].map((item, index) => (
               <li key={index} className="flex items-center justify-center">
                 <span className="text-blue-600 mr-3">✓</span>
-                <span className="corp-text-body text-black">{item}</span>
+                <span className="text-base sm:text-lg text-black">{item}</span>
               </li>
             ))}
           </ul>
@@ -434,10 +434,10 @@ export default function PartnersPage() {
       <section className="relative py-12 md:py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="corp-heading-2 mb-4 text-black">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-black">
               次のステップ
             </h2>
-            <p className="corp-text-lead text-black mb-4">
+            <p className="text-lg sm:text-xl md:text-2xl text-black mb-4">
               まずは、あなたの課題をお聞かせください
             </p>
             <p className="text-lg text-black mb-8">

@@ -78,7 +78,8 @@
       "Bash(node scripts/gsc-check-portfolio-site.js:*)",
       "Bash(tasklist:*)",
       "Bash(find:*)",
-      "Bash(grep:*)"
+      "Bash(grep:*)",
+      "Bash({} ;)"
     ],
     "deny": [],
     "ask": [],

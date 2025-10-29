@@ -19,7 +19,7 @@ import RiskFree from '@/components/sections/RiskFree'
 import AmazonSupport from '@/components/sections/AmazonSupport'
 import AmazonFAQ from '@/components/sections/AmazonFAQ'
 import AmazonCTA from '@/components/sections/AmazonCTA'
-import '@/app/corporate.css'
+
 
 // 動的ルートのパラメータ型
 type Params = Promise<{ slug: string }>
@@ -406,7 +406,7 @@ export default async function ServicePage(
         <section className="py-16 md:py-24 relative bg-blue-50">
           <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
-              <h2 className="corp-heading-2 text-black mb-6">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-black mb-6">
                 CLEMIRA製品の日本唯一のメーカー直販店
               </h2>
               <p className="text-xl text-black max-w-3xl mx-auto">
@@ -417,7 +417,7 @@ export default async function ServicePage(
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
               {/* 製品ラインナップ */}
-              <div className="corp-card">
+              <div className="bg-white rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 border border-gray-100">
                 <h3 className="text-2xl font-bold text-black mb-4">製品ラインナップ</h3>
                 <div className="relative rounded-xl overflow-hidden">
                   <Image
@@ -457,7 +457,7 @@ export default async function ServicePage(
               </div>
 
               {/* メディア実績 */}
-              <div className="corp-card">
+              <div className="bg-white rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 border border-gray-100">
                 <h3 className="text-2xl font-bold text-black mb-4">メディア掲載実績</h3>
                 <div className="relative rounded-xl overflow-hidden bg-white">
                   <Image
@@ -477,7 +477,7 @@ export default async function ServicePage(
             </div>
 
             {/* 販売実績 */}
-            <div className="corp-card">
+            <div className="bg-white rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 border border-gray-100">
               <h3 className="text-2xl font-bold text-black mb-6 text-center">驚異的な販売実績</h3>
               <div className="relative rounded-xl overflow-hidden bg-white p-4">
                 <Image
@@ -509,7 +509,7 @@ export default async function ServicePage(
             </div>
 
             {/* アスリート採用実績 */}
-            <div className="corp-card mt-8">
+            <div className="bg-white rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 border border-gray-100 mt-8">
               <h3 className="text-2xl font-bold text-black mb-6 text-center">プロアスリートサポート実績</h3>
               <div className="relative rounded-xl overflow-hidden mb-6">
                 <Image
@@ -599,7 +599,7 @@ export default async function ServicePage(
             </div>
 
             {/* CLEMIRAインソール */}
-            <div className="corp-card mt-8">
+            <div className="bg-white rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 border border-gray-100 mt-8">
               <h3 className="text-2xl font-bold text-black mb-6 text-center">完全オーダーメイドインソール</h3>
               <div className="relative rounded-xl overflow-hidden">
                 <Image
@@ -716,10 +716,10 @@ export default async function ServicePage(
 
       <section className="py-16 md:py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="corp-heading-2 text-black mb-8">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-black mb-8">
             まずはお気軽にご相談ください
           </h2>
-          <p className="corp-text-lead text-black mb-8">
+          <p className="text-lg sm:text-xl md:text-2xl text-black mb-8">
             お客様のビジネスに最適なソリューションをご提案いたします
           </p>
           <Link
