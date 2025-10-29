@@ -1,13 +1,11 @@
 'use client'
 
 import { memo, useEffect, useRef, useState } from 'react'
-import { cn } from '@/lib/utils'
-import { SECTION_SPACING, CONTAINER, HEADING, TEXT, MARGIN } from '@/lib/design-system/unified'
+import StandardSection from '@/components/layout/StandardSection'
+import { GRID, HEADING, TEXT, cn, MARGIN } from '@/lib/design-system/unified'
 import { Bot, TrendingUp, ShoppingCart } from 'lucide-react'
 import { motion, useInView } from 'framer-motion'
-import '@/app/corporate.css'
 
-// カウントアップアニメーションコンポーネント
 function CountUp({ end, suffix = '', duration = 2 }: { end: number; suffix?: string; duration?: number }) {
   const [count, setCount] = useState(0)
   const ref = useRef(null)
@@ -20,12 +18,8 @@ function CountUp({ end, suffix = '', duration = 2 }: { end: number; suffix?: str
     const animate = (timestamp: number) => {
       if (!startTime) startTime = timestamp
       const progress = Math.min((timestamp - startTime) / (duration * 1000), 1)
-
       setCount(Math.floor(progress * end))
-
-      if (progress < 1) {
-        requestAnimationFrame(animate)
-      }
+      if (progress < 1) requestAnimationFrame(animate)
     }
 
     requestAnimationFrame(animate)
@@ -35,7 +29,6 @@ function CountUp({ end, suffix = '', duration = 2 }: { end: number; suffix?: str
 }
 
 const SuccessStories = memo(function SuccessStories() {
-  // グローバル業界統計データ（信頼できる公開データ）
   const industryStats = [
     {
       title: 'AIチャットボット市場',
@@ -73,56 +66,50 @@ const SuccessStories = memo(function SuccessStories() {
   ]
 
   return (
-    <section className={cn(SECTION_SPACING.default, 'bg-white')}>
-      <div className={CONTAINER.default.full}>
-        <div className={cn('text-center', MARGIN.xl)}>
-          <h2 className={cn(HEADING.h2, MARGIN.sm)}>
-            業界の成長トレンド
-          </h2>
-          <p className={TEXT.lead}>
-            信頼できるグローバル市場データ
-          </p>
-        </div>
+    <StandardSection
+      spacing="default"
+      container="default"
+      background="white"
+      title="業界の成長トレンド"
+      subtitle="信頼できるグローバル市場データ"
+    >
+      <div className={GRID.three}>
+        {industryStats.map((stat, index) => (
+          <motion.div
+            key={index}
+            className="bg-white rounded-xl p-8 text-center shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-200"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: index * 0.1 }}
+          >
+            <div className={cn('mx-auto mb-6 flex h-20 w-20 items-center justify-center rounded-2xl shadow-lg bg-gradient-to-br', stat.gradient)}>
+              <stat.icon className="h-10 w-10 text-white" />
+            </div>
+            <h3 className={cn(HEADING.h4, 'text-gray-900', MARGIN.xs)}>
+              {stat.title}
+            </h3>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {industryStats.map((stat, index) => (
-            <motion.div
-              key={index}
-              className="bg-white rounded-xl p-8 text-center shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-200"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-            >
-              <div className={cn('mx-auto mb-6 flex h-20 w-20 items-center justify-center rounded-2xl shadow-lg bg-gradient-to-br', stat.gradient)}>
-                <stat.icon className="h-10 w-10 text-white" />
-              </div>
-              <h3 className={cn(HEADING.h4, MARGIN.xs)}>
-                {stat.title}
-              </h3>
+            <div className="my-6">
+              <p className="text-5xl font-bold text-blue-600">
+                <CountUp end={stat.countUpValue} suffix={stat.countUpSuffix} duration={2.5} />
+              </p>
+              <p className="text-sm font-medium text-gray-600 mt-2">{stat.countUpLabel}</p>
+            </div>
 
-              {/* カウントアップアニメーション */}
-              <div className="my-6">
-                <p className="text-5xl font-bold text-blue-600">
-                  <CountUp end={stat.countUpValue} suffix={stat.countUpSuffix} duration={2.5} />
-                </p>
-                <p className="text-sm font-medium text-gray-600 mt-2">{stat.countUpLabel}</p>
-              </div>
-
-              <p className={cn('text-lg font-semibold text-gray-700', MARGIN.xs)}>
-                {stat.stat}
-              </p>
-              <p className={cn(TEXT.body, 'text-black', MARGIN.xs)}>
-                {stat.description}
-              </p>
-              <p className={cn(TEXT.small, 'text-gray-600')}>
-                出典: {stat.source}
-              </p>
-            </motion.div>
-          ))}
-        </div>
+            <p className={cn('text-lg font-semibold text-gray-700', MARGIN.xs)}>
+              {stat.stat}
+            </p>
+            <p className={cn(TEXT.body, 'text-gray-900', MARGIN.xs)}>
+              {stat.description}
+            </p>
+            <p className={cn(TEXT.small, 'text-gray-600')}>
+              出典: {stat.source}
+            </p>
+          </motion.div>
+        ))}
       </div>
-    </section>
+    </StandardSection>
   )
 })
 
