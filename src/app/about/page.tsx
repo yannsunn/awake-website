@@ -174,17 +174,6 @@ export default function AboutPage() {
           </div>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 items-start">
           <div className="order-1 lg:order-2">
-            <div className="bg-gradient-to-br from-gray-50 to-gray-50 rounded-2xl p-4 sm:p-6 mb-6 border border-blue-200 shadow-lg">
-              <div>
-                <h3 className="corp-heading-3 text-black text-lg sm:text-xl mb-1">代表挨拶</h3>
-                <p className="corp-text-small text-gray-600">Message from CEO</p>
-              </div>
-            </div>
-
-            <h2 className="corp-heading-2 text-black mb-6">
-              代表メッセージ
-            </h2>
-            
             <div className="space-y-6 text-black leading-relaxed">
               <div className="mb-6">
                 <h3 className="corp-text-body font-semibold text-black text-xl mb-2">挫折から這い上がり、学んだこと</h3>
