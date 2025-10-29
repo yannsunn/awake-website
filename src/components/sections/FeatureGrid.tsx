@@ -1,7 +1,8 @@
 'use client'
 
 import React from 'react'
-import { cn } from '@/lib/utils'
+import StandardSection from '@/components/layout/StandardSection'
+import { cn, GRID, HEADING, TEXT, MARGIN } from '@/lib/design-system/unified'
 import { motion } from 'framer-motion'
 
 interface Feature {
@@ -17,55 +18,51 @@ interface FeatureGridProps {
   className?: string
 }
 
-export function FeatureGrid({ 
-  title, 
-  features, 
+export function FeatureGrid({
+  title,
+  features,
   columns = 3,
-  className 
+  className
 }: FeatureGridProps) {
-  const gridColumns = {
-    2: 'grid-cols-1 sm:grid-cols-2',
-    3: 'grid-cols-1 sm:grid-cols-2 lg:grid-cols-3',
-    4: 'grid-cols-1 sm:grid-cols-2 lg:grid-cols-4'
-  }
+  const gridClass =
+    columns === 2 ? GRID.two :
+    columns === 3 ? GRID.three :
+    GRID.four
 
   return (
-    <section className={cn('py-16 sm:py-20 lg:py-24', className)}>
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 xl:px-12">
-        {title && (
-          <motion.h2
-            className="corp-heading-2 mb-8 sm:mb-12 lg:mb-16 text-center text-black"
-            initial={{ opacity: 0, y: 20 }}
+    <StandardSection
+      spacing="default"
+      container="default"
+      background="white"
+      title={title}
+      className={className}
+    >
+      <div className={gridClass}>
+        {features.map((feature, index) => (
+          <motion.div
+            key={index}
+            className="text-center bg-white backdrop-blur-sm rounded-lg sm:rounded-xl p-6 sm:p-8 lg:p-10 shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 hover:scale-[1.02] hover:border-blue-300 border-2 border-blue-100"
+            initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.5, delay: index * 0.1 }}
           >
-            {title}
-          </motion.h2>
-        )}
-        <div className={cn('grid gap-6 sm:gap-8 lg:gap-10', gridColumns[columns])}>
-          {features.map((feature, index) => (
-            <motion.div
-              key={index}
-              className="text-center bg-white backdrop-blur-sm rounded-lg sm:rounded-xl p-6 sm:p-8 lg:p-10 shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 hover:scale-[1.02] hover:border-blue-300 border-2 border-blue-100"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-            >
-              <div className="mx-auto mb-4 sm:mb-6 flex h-16 w-16 sm:h-20 sm:w-20 items-center justify-center rounded-2xl bg-blue-600 text-white shadow-lg shadow-blue-500/30">
-                {feature.icon}
-              </div>
-              <h3 className="mb-3 sm:mb-4 text-lg sm:text-xl lg:text-2xl font-semibold text-black leading-tight">
-                {feature.title}
-              </h3>
-              <p className="text-sm sm:text-base lg:text-lg text-black leading-relaxed">
-                {feature.description}
-              </p>
-            </motion.div>
-          ))}
-        </div>
+            <div className={cn(
+              'mx-auto flex items-center justify-center rounded-2xl bg-blue-600 text-white shadow-lg shadow-blue-500/30',
+              'h-16 w-16 sm:h-20 sm:w-20',
+              MARGIN.sm
+            )}>
+              {feature.icon}
+            </div>
+            <h3 className={cn(HEADING.h4, 'text-gray-900', MARGIN.sm)}>
+              {feature.title}
+            </h3>
+            <p className={cn(TEXT.body, 'text-gray-700')}>
+              {feature.description}
+            </p>
+          </motion.div>
+        ))}
       </div>
-    </section>
+    </StandardSection>
   )
 }
