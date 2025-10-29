@@ -9,24 +9,24 @@
 export const EFFECTS = {
   // グラデーション
   gradient: {
-    // ネオングラデーション
+    // ネオングラデーション（プロフェッショナル版）
     neon: {
-      purple: 'bg-gradient-to-r from-purple-400 via-pink-500 to-indigo-500',
+      blue: 'bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600',
       cyan: 'bg-gradient-to-r from-cyan-400 via-blue-500 to-indigo-600',
-      sunset: 'bg-gradient-to-r from-orange-400 via-pink-500 to-purple-600'
+      ocean: 'bg-gradient-to-r from-blue-400 via-cyan-500 to-blue-600'
     },
-    // ホログラフィック効果
-    holographic: 'bg-gradient-to-br from-purple-400/20 via-pink-500/20 to-cyan-400/20 animate-gradient-shift',
-    // 既存のグラデーション
-    primary: 'bg-gradient-to-r from-indigo-600 to-purple-600',
+    // ホログラフィック効果（青系統のみ）
+    holographic: 'bg-gradient-to-br from-blue-400/20 via-cyan-500/20 to-blue-600/20 animate-gradient-shift',
+    // 既存のグラデーション（プロフェッショナル版）
+    primary: 'bg-gradient-to-r from-blue-600 to-blue-800',
     glass: 'bg-gradient-to-br from-white/10 to-white/5'
   },
 
-  // ネオングロウ効果 - 上品で控えめ
+  // ネオングロウ効果 - 上品で控えめ（プロフェッショナル版）
   glow: {
-    purple: 'shadow-[0_0_15px_rgba(147,51,234,0.3)]',
+    blue: 'shadow-[0_0_15px_rgba(37,99,235,0.3)]',
     cyan: 'shadow-[0_0_15px_rgba(34,211,238,0.3)]',
-    pink: 'shadow-[0_0_15px_rgba(236,72,153,0.3)]'
+    indigo: 'shadow-[0_0_15px_rgba(67,56,202,0.3)]'
   },
 
   // アニメーション

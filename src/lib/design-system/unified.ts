@@ -274,8 +274,8 @@ export const CARD_VARIANT = {
   // アウトラインカード
   outline: `${CARD_BASE} bg-white border-2 border-gray-300 hover:border-indigo-500`,
 
-  // グラデーションカード
-  gradient: `${CARD_BASE} bg-gradient-to-br from-indigo-500 to-purple-600 text-white`,
+  // グラデーションカード（プロフェッショナル版）
+  gradient: `${CARD_BASE} bg-gradient-to-br from-blue-600 to-blue-800 text-white`,
 
   // フラット（影なし）
   flat: `${CARD_BASE} bg-gray-50`,
