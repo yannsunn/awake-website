@@ -108,10 +108,10 @@ const AIAdvisor = memo(function AIAdvisor() {
             return (
               <div
                 key={index}
-                className="bg-white rounded-2xl p-5 sm:p-6 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 hover:border-gray-300"
+                className="bg-white rounded-2xl p-5 sm:p-6 shadow-xl hover:shadow-2xl transition-all duration-300 border border-gray-100 hover:border-gray-300 hover:-translate-y-2"
               >
-                <div className="w-12 h-12 sm:w-14 sm:h-14 bg-gray-100 rounded-xl flex items-center justify-center mb-3 sm:mb-4">
-                  <Icon className="w-6 h-6 sm:w-7 sm:h-7 text-gray-700" />
+                <div className="w-12 h-12 sm:w-14 sm:h-14 bg-gradient-to-br from-blue-500 to-purple-500 rounded-xl flex items-center justify-center mb-3 sm:mb-4 shadow-lg">
+                  <Icon className="w-6 h-6 sm:w-7 sm:h-7 text-white" />
                 </div>
                 <h3 className="text-base sm:text-lg font-bold text-gray-900 mb-2">{feature.title}</h3>
                 <p className="text-gray-600 text-sm">{feature.description}</p>
@@ -134,78 +134,111 @@ const AIAdvisor = memo(function AIAdvisor() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-7 md:gap-8 max-w-6xl mx-auto">
             {plans.map((plan, index) => (
-              <div
-                key={index}
-                className={`relative rounded-2xl p-8 ${
-                  plan.popular
-                    ? 'bg-white border-2 border-gray-300 shadow-xl'
-                    : 'bg-white border-2 border-gray-200 hover:border-gray-300 shadow-lg'
-                } transition-all duration-300`}
-              >
-                {plan.popular && (
-                  <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-gray-800 text-white px-4 py-1 rounded-full text-sm font-bold">
-                    人気No.1
-                  </div>
-                )}
+              plan.popular ? (
+                <div key={index} className="relative p-[3px] bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-2xl shadow-xl">
+                  <div className="relative rounded-2xl p-8 bg-white transition-all duration-300">
+                    <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-gradient-to-r from-blue-600 to-purple-600 text-white px-4 py-1 rounded-full text-sm font-bold">
+                      人気No.1
+                    </div>
 
-                <div className="text-center mb-6">
-                  <h4 className="text-xl sm:text-2xl font-bold mb-2 text-gray-900">
-                    {plan.name}
-                  </h4>
-                  <div className="flex items-baseline justify-center gap-1">
-                    <span className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900">
-                      ¥{plan.price}
-                    </span>
-                    <span className="text-base sm:text-lg text-gray-600">
-                      /月
-                    </span>
+                    <div className="text-center mb-6">
+                      <h4 className="text-xl sm:text-2xl font-bold mb-2 text-gray-900">
+                        {plan.name}
+                      </h4>
+                      <div className="flex items-baseline justify-center gap-1">
+                        <span className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900">
+                          ¥{plan.price}
+                        </span>
+                        <span className="text-base sm:text-lg text-gray-600">
+                          /月
+                        </span>
+                      </div>
+                    </div>
+
+                    <ul className="space-y-3 mb-8">
+                      {plan.features.map((feature, i) => (
+                        <li key={i} className="flex items-start gap-2">
+                          <CheckCircle2 className="w-5 h-5 flex-shrink-0 mt-0.5 text-blue-500" />
+                          <span className="text-sm text-gray-700">
+                            {feature}
+                          </span>
+                        </li>
+                      ))}
+                    </ul>
+
+                    <LineButton
+                      size="medium"
+                      className="w-full"
+                    />
                   </div>
                 </div>
-
-                <ul className="space-y-3 mb-8">
-                  {plan.features.map((feature, i) => (
-                    <li key={i} className="flex items-start gap-2">
-                      <CheckCircle2 className="w-5 h-5 flex-shrink-0 mt-0.5 text-gray-400" />
-                      <span className="text-sm text-gray-700">
-                        {feature}
+              ) : (
+                <div
+                  key={index}
+                  className="relative rounded-2xl p-8 bg-white border-2 border-gray-200 hover:border-gray-300 shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2"
+                >
+                  <div className="text-center mb-6">
+                    <h4 className="text-xl sm:text-2xl font-bold mb-2 text-gray-900">
+                      {plan.name}
+                    </h4>
+                    <div className="flex items-baseline justify-center gap-1">
+                      <span className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900">
+                        ¥{plan.price}
                       </span>
-                    </li>
-                  ))}
-                </ul>
+                      <span className="text-base sm:text-lg text-gray-600">
+                        /月
+                      </span>
+                    </div>
+                  </div>
 
-                <LineButton
-                  size="medium"
-                  className="w-full"
-                />
-              </div>
+                  <ul className="space-y-3 mb-8">
+                    {plan.features.map((feature, i) => (
+                      <li key={i} className="flex items-start gap-2">
+                        <CheckCircle2 className="w-5 h-5 flex-shrink-0 mt-0.5 text-gray-400" />
+                        <span className="text-sm text-gray-700">
+                          {feature}
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
+
+                  <LineButton
+                    size="medium"
+                    className="w-full"
+                  />
+                </div>
+              )
             ))}
           </div>
         </motion.div>
 
         {/* CTA */}
         <motion.div
-          className="text-center bg-gray-50 rounded-3xl p-8 sm:p-10 md:p-12 border border-gray-200"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.6 }}
         >
-          <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 sm:mb-4 text-gray-900">
-            まずは初回無料面談から
-          </h3>
-          <p className="text-lg sm:text-xl text-gray-600 mb-6 sm:mb-7 md:mb-8 max-w-2xl mx-auto">
-            お客様のビジネス課題をヒアリングし、最適なプランをご提案します。
-            <br />
-            オンライン・お電話・LINEで対応可能。
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <LineButton size="large" />
-            <a
-              href="tel:050-7115-4948"
-              className="px-8 py-4 bg-white border-2 border-gray-300 hover:border-gray-400 text-gray-900 rounded-xl font-bold transition-all duration-300 inline-flex items-center gap-2"
-            >
-              📞 電話で相談する
-            </a>
+          <div className="relative p-[3px] bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-3xl shadow-xl">
+            <div className="text-center bg-white rounded-3xl p-8 sm:p-10 md:p-12">
+              <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 sm:mb-4 text-gray-900">
+                まずは初回無料面談から
+              </h3>
+              <p className="text-lg sm:text-xl text-gray-600 mb-6 sm:mb-7 md:mb-8 max-w-2xl mx-auto">
+                お客様のビジネス課題をヒアリングし、最適なプランをご提案します。
+                <br />
+                オンライン・お電話・LINEで対応可能。
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <LineButton size="large" />
+                <a
+                  href="tel:050-7115-4948"
+                  className="px-8 py-4 bg-gray-50 border-2 border-gray-300 hover:border-gray-400 hover:bg-gray-100 text-gray-900 rounded-xl font-bold transition-all duration-300 inline-flex items-center gap-2 shadow-lg hover:shadow-xl hover:-translate-y-1"
+                >
+                  📞 電話で相談する
+                </a>
+              </div>
+            </div>
           </div>
         </motion.div>
       </div>
