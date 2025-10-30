@@ -269,7 +269,7 @@ const Header = memo(function Header() {
                     sizes="32px"
                   />
                 </div>
-                <span className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900">メニュー</span>
+                <span className="text-xl font-bold text-gray-900">メニュー</span>
               </div>
               <button
                 onClick={toggleMenu}

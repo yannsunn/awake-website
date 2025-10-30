@@ -82,7 +82,8 @@
       "Bash({} ;)",
       "Bash(node -e:*)",
       "Bash(sort:*)",
-      "Bash(npx next lint)"
+      "Bash(npx next lint)",
+      "Bash(node scripts/check-all-pages.js:*)"
     ],
     "deny": [],
     "ask": [],

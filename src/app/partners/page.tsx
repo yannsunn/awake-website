@@ -209,7 +209,7 @@ export default function PartnersPage() {
       <section className="py-16 md:py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-12">
-            <h2 className="text-xl sm:text-2xl md:text-3xl font-bold mb-6 text-gray-900">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6 text-gray-900">
               なぜ、パートナーシップが必要なのか。
             </h2>
             <p className="text-base sm:text-lg md:text-xl text-gray-900">
@@ -259,7 +259,7 @@ export default function PartnersPage() {
       <section className="py-16 md:py-24 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-xl sm:text-2xl md:text-3xl font-bold mb-6 text-gray-900">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6 text-gray-900">
               パートナーシップがもたらす4つの価値。
             </h2>
             <p className="text-base sm:text-lg md:text-xl text-gray-900">
@@ -316,7 +316,7 @@ export default function PartnersPage() {
           {partners.map((category, categoryIndex) => (
             <div key={categoryIndex}>
               <div className="text-center mb-12">
-                <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-4">
+                <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4">
                   {category.category}
                 </h2>
                 <p className="text-base sm:text-lg md:text-xl text-gray-900">
@@ -356,7 +356,7 @@ export default function PartnersPage() {
       <section className="py-16 md:py-24 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-xl sm:text-2xl md:text-3xl font-bold mb-6 text-gray-900">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6 text-gray-900">
               よくあるご質問。
             </h2>
           </div>
@@ -393,7 +393,7 @@ export default function PartnersPage() {
       <section className="py-16 md:py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-xl sm:text-2xl md:text-3xl font-bold mb-6 text-gray-900">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6 text-gray-900">
               新しいパートナーも募集中
             </h2>
             <p className="text-base sm:text-lg md:text-xl text-gray-900">
@@ -434,7 +434,7 @@ export default function PartnersPage() {
       <section className="relative py-12 md:py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-xl sm:text-2xl md:text-3xl font-bold mb-4 text-gray-900">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 text-gray-900">
               次のステップ
             </h2>
             <p className="text-base sm:text-lg md:text-xl text-gray-900 mb-4">
