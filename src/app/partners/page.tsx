@@ -206,10 +206,10 @@ export default function PartnersPage() {
       </UltraHero>
 
       {/* Why Partnership Section */}
-      <section className="relative py-12 md:py-16 bg-white">
+      <section className="py-16 md:py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-gray-900">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 text-gray-900">
               なぜ、パートナーシップが必要なのか。
             </h2>
             <p className="text-lg sm:text-xl md:text-2xl text-gray-900">
@@ -256,10 +256,10 @@ export default function PartnersPage() {
       </section>
 
       {/* Partnership Value Section */}
-      <section className="relative py-12 md:py-16 bg-gray-50">
+      <section className="py-16 md:py-24 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-gray-900">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 text-gray-900">
               パートナーシップがもたらす4つの価値。
             </h2>
             <p className="text-lg sm:text-xl md:text-2xl text-gray-900">
@@ -310,7 +310,7 @@ export default function PartnersPage() {
       </section>
 
       {/* Partner Services Section */}
-      <section className="py-12 md:py-16 bg-white" id="services">
+      <section className="py-16 md:py-24 bg-white" id="services">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="space-y-20">
           {partners.map((category, categoryIndex) => (
@@ -353,10 +353,10 @@ export default function PartnersPage() {
       </section>
 
       {/* FAQ Section */}
-      <section className="relative py-12 md:py-16 bg-gray-50">
+      <section className="py-16 md:py-24 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-gray-900">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 text-gray-900">
               よくあるご質問。
             </h2>
           </div>
@@ -390,10 +390,10 @@ export default function PartnersPage() {
       </section>
 
       {/* Partner Recruitment Section */}
-      <section className="relative py-12 md:py-16 bg-white">
+      <section className="py-16 md:py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-gray-900">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 text-gray-900">
               新しいパートナーも募集中
             </h2>
             <p className="text-lg sm:text-xl md:text-2xl text-gray-900">

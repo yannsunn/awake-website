@@ -239,7 +239,7 @@ export default function FAQPage() {
       <section className="relative py-16 md:py-24 overflow-hidden bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-gray-900">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 text-gray-900">
               まだ疑問が解決しませんか？
             </h2>
             <p className="text-lg sm:text-xl md:text-2xl text-gray-900">
