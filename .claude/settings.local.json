@@ -86,7 +86,8 @@
       "Bash(node scripts/check-all-pages.js:*)",
       "Bash(for file in HomeHero AIAdvisor HomeServices ValueProposition HomeMission HomeFAQ HomeContact)",
       "Bash(do echo \"=== $file ===\")",
-      "Bash(done)"
+      "Bash(done)",
+      "Bash(node scripts/capture-production-screenshots.js:*)"
     ],
     "deny": [],
     "ask": [],
