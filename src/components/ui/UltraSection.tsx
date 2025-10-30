@@ -40,12 +40,12 @@ export default function UltraSection({
               {title}
             </h2>
             {subtitle && (
-              <p className="text-base md:text-xl text-gray-900 mb-4 px-4 sm:px-0 font-bold leading-relaxed" style={{...TEXT_SHADOW.body, wordBreak: 'keep-all', overflowWrap: 'anywhere', textWrap: 'balance'}}>
+              <p className="text-base sm:text-lg md:text-xl text-gray-900 mb-4 px-4 sm:px-0 font-bold leading-relaxed" style={{...TEXT_SHADOW.body, wordBreak: 'keep-all', overflowWrap: 'anywhere', textWrap: 'balance'}}>
                 {subtitle}
               </p>
             )}
             {description && (
-              <p className="text-base md:text-xl text-gray-900 px-4 sm:px-0 leading-relaxed" style={{...TEXT_SHADOW.small, wordBreak: 'keep-all', overflowWrap: 'anywhere', textWrap: 'pretty'}}>
+              <p className="text-base sm:text-lg md:text-xl text-gray-900 px-4 sm:px-0 leading-relaxed" style={{...TEXT_SHADOW.small, wordBreak: 'keep-all', overflowWrap: 'anywhere', textWrap: 'pretty'}}>
                 {description}
               </p>
             )}
@@ -180,12 +180,12 @@ export function UltraCTA({
           {title}
         </h2>
         {subtitle && (
-          <p className={`text-base md:text-xl text-gray-900 mb-6 leading-relaxed ${TEXT_BG_STYLES.default}`} style={{...TEXT_SHADOW.body, wordBreak: 'keep-all', overflowWrap: 'anywhere', textWrap: 'balance', letterSpacing: '0.02em'}}>
+          <p className={`text-base sm:text-lg md:text-xl text-gray-900 mb-6 leading-relaxed ${TEXT_BG_STYLES.default}`} style={{...TEXT_SHADOW.body, wordBreak: 'keep-all', overflowWrap: 'anywhere', textWrap: 'balance', letterSpacing: '0.02em'}}>
             {subtitle}
           </p>
         )}
         {description && (
-          <p className={`text-base md:text-xl text-gray-900 mb-8 leading-relaxed ${TEXT_BG_STYLES.default}`} style={{...TEXT_SHADOW.body, wordBreak: 'keep-all', overflowWrap: 'anywhere', textWrap: 'pretty', letterSpacing: '0.02em'}}>
+          <p className={`text-base sm:text-lg md:text-xl text-gray-900 mb-8 leading-relaxed ${TEXT_BG_STYLES.default}`} style={{...TEXT_SHADOW.body, wordBreak: 'keep-all', overflowWrap: 'anywhere', textWrap: 'pretty', letterSpacing: '0.02em'}}>
             {description}
           </p>
         )}

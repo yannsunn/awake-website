@@ -70,7 +70,7 @@ export default function PrivacyPolicyPage() {
         <div className="container mx-auto px-4 max-w-6xl">
           <div className="prose prose-lg max-w-none">
             <div className="mb-12">
-              <p className="text-base md:text-xl">
+              <p className="text-base sm:text-lg md:text-xl">
                 株式会社Awake（以下「当社」）は、当社が提供するサービスをご利用いただくお客様の個人情報を適切に保護することを社会的責務と考え、個人情報の保護に関する法律、その他関係法令等を遵守し、お客様の個人情報を適切に取り扱います。
               </p>
             </div>
@@ -200,7 +200,7 @@ export default function PrivacyPolicyPage() {
           <h2 className="text-xl sm:text-2xl md:text-3xl font-bold mb-4">
             プライバシーに関するご質問
           </h2>
-          <p className="text-base md:text-xl mb-8">
+          <p className="text-base sm:text-lg md:text-xl mb-8">
             個人情報の取扱いについてご不明な点がございましたら、お気軽にお問い合わせください。
           </p>
           <Link href="/#contact" className="px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white rounded-xl font-bold transition-all duration-300 shadow-lg hover:shadow-xl inline-block">
