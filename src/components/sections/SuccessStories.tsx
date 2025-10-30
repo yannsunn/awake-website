@@ -91,7 +91,7 @@ const SuccessStories = memo(function SuccessStories() {
             </h3>
 
             <div className="my-6">
-              <p className="text-5xl font-bold text-blue-600">
+              <p className="text-3xl sm:text-4xl font-bold text-blue-600">
                 <CountUp end={stat.countUpValue} suffix={stat.countUpSuffix} duration={2.5} />
               </p>
               <p className="text-sm font-medium text-gray-600 mt-2">{stat.countUpLabel}</p>

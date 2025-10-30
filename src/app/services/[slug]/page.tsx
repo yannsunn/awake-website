@@ -719,7 +719,7 @@ export default async function ServicePage(
           <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-8">
             まずはお気軽にご相談ください
           </h2>
-          <p className="text-base md:text-xl text-gray-900 mb-8">
+          <p className="text-base sm:text-lg md:text-xl text-gray-900 mb-8">
             お客様のビジネスに最適なソリューションをご提案いたします
           </p>
           <Link

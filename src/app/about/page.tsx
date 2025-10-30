@@ -176,7 +176,7 @@ export default function AboutPage() {
           <div className="order-1 lg:order-2">
             <div className="space-y-6 text-gray-900 leading-relaxed">
               <div className="mb-6">
-                <h3 className="text-base font-semibold text-gray-900 text-xl mb-2">挫折から這い上がり、学んだこと</h3>
+                <h3 className="text-lg font-semibold text-gray-900 mb-2">挫折から這い上がり、学んだこと</h3>
                 <p className="text-base font-medium text-gray-900 mb-4">代表取締役CEO　{COMPANY_DATA.basic.ceo}</p>
 
                 <p className="text-base mb-4 break-words">
@@ -202,7 +202,7 @@ export default function AboutPage() {
 
               <div>
                 <div className="bg-gradient-to-br from-blue-50 to-white rounded-lg p-6 mb-4 border border-blue-200 shadow-lg">
-                  <p className="text-base font-semibold text-gray-900 text-lg text-center mb-2">「つながるすべての人に、感謝と繁栄を」</p>
+                  <p className="text-base font-semibold text-gray-900 text-center mb-2">「つながるすべての人に、感謝と繁栄を」</p>
                 </div>
 
                 <p className="text-base mb-4">
@@ -219,7 +219,7 @@ export default function AboutPage() {
           <div className="lg:pl-8">
             <div className="bg-white rounded-2xl pt-8 pb-6 px-6 sm:pt-10 sm:px-8 text-center border border-blue-200 shadow-lg">
               <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-2">{COMPANY_DATA.basic.ceo}</h3>
-              <p className="text-base font-medium text-gray-900 text-lg mb-4">代表取締役CEO</p>
+              <p className="text-base font-medium text-gray-900 mb-4">代表取締役CEO</p>
               <div className="space-y-4">
                 <div>
                   <h4 className="text-base font-medium text-gray-900 mb-2">略歴</h4>
@@ -383,7 +383,7 @@ export default function AboutPage() {
             <h2 className="text-xl sm:text-2xl md:text-3xl font-bold mb-4 text-gray-900">
               チーム紹介
             </h2>
-            <p className="text-base md:text-xl text-gray-900">
+            <p className="text-base sm:text-lg md:text-xl text-gray-900">
               業務委託・パートナーを含む10名体制の専門チーム
             </p>
             <p className="text-base text-gray-600 mt-4 max-w-3xl mx-auto">
@@ -618,7 +618,7 @@ export default function AboutPage() {
             <h2 className="text-xl sm:text-2xl md:text-3xl font-bold mb-4 text-gray-900">
               次のステップへ
             </h2>
-            <p className="text-base md:text-xl text-gray-900 mb-4">
+            <p className="text-base sm:text-lg md:text-xl text-gray-900 mb-4">
               まずは、お話を聞かせてください
             </p>
             <p className="text-lg text-gray-900 mb-8">

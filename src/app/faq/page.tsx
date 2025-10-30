@@ -242,7 +242,7 @@ export default function FAQPage() {
             <h2 className="text-xl sm:text-2xl md:text-3xl font-bold mb-6 text-gray-900">
               まだ疑問が解決しませんか？
             </h2>
-            <p className="text-base md:text-xl text-gray-900">
+            <p className="text-base sm:text-lg md:text-xl text-gray-900">
               お気軽にお問い合わせください。専門スタッフが丁寧にお答えいたします。
             </p>
           </div>
