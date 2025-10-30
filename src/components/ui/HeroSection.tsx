@@ -71,11 +71,11 @@ const HeroSection = memo(function HeroSection() {
             {COMPANY_DATA.basic.tagline}
           </h1>
           
-          <p className="text-lg md:text-xl text-gray-900 mb-4 font-semibold leading-relaxed break-words">
+          <p className="text-base sm:text-lg md:text-xl text-gray-900 mb-4 font-semibold leading-relaxed break-words">
             {COMPANY_DATA.basic.description}
           </p>
 
-          <p className="text-base md:text-lg text-gray-900 mb-8 font-medium leading-relaxed break-words">
+          <p className="text-base text-gray-900 mb-8 font-medium leading-relaxed break-words">
             {COMPANY_DATA.basic.subMessage}
           </p>
           
