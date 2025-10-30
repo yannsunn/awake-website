@@ -83,7 +83,7 @@ const AIAdvisor = memo(function AIAdvisor() {
             <span>新サービス</span>
           </div>
 
-          <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-4 sm:mb-5 md:mb-6">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4 sm:mb-5 md:mb-6">
             AI顧問サービス
             <span className="block text-gray-700 mt-2">月額制で経営をサポート</span>
           </h2>

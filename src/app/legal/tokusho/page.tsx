@@ -76,7 +76,7 @@ export default function TokushoPage() {
 
               <div className="space-y-8">
                 <section>
-                  <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-4">販売業者</h2>
+                  <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4">販売業者</h2>
                   <div className="bg-white rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 border border-gray-100 p-6">
                     <dl className="grid grid-cols-1 gap-4">
                       <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
@@ -108,7 +108,7 @@ export default function TokushoPage() {
                 </section>
 
                 <section>
-                  <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-4">販売商品・サービス</h2>
+                  <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4">販売商品・サービス</h2>
                   <ul className="list-disc list-inside text-base text-gray-900 leading-relaxed space-y-2">
                     {COMPANY_DATA.services.list.map((service, index) => (
                       <li key={index}>{service}</li>
@@ -117,7 +117,7 @@ export default function TokushoPage() {
                 </section>
 
                 <section>
-                  <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-4">商品代金・サービス料金</h2>
+                  <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4">商品代金・サービス料金</h2>
                   <div className="text-base text-gray-900 leading-relaxed space-y-4">
                     <p>
                       各サービスの料金は、弊社ウェブサイトの各サービスページに記載された金額となります。
@@ -137,7 +137,7 @@ export default function TokushoPage() {
                 </section>
 
                 <section>
-                  <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-4">代金の支払時期・方法</h2>
+                  <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4">代金の支払時期・方法</h2>
                   <div className="text-base text-gray-900 leading-relaxed space-y-4">
                     <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900">支払時期</h3>
                     <ul className="list-disc list-inside space-y-2">
@@ -159,7 +159,7 @@ export default function TokushoPage() {
                 </section>
 
                 <section>
-                  <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-4">商品・サービスの引渡時期</h2>
+                  <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4">商品・サービスの引渡時期</h2>
                   <div className="text-base text-gray-900 leading-relaxed space-y-4">
                     <ul className="list-disc list-inside space-y-2">
                       <li>チャットボット搭載ホームページ制作: 契約締結後3〜8週間（プランにより異なります）</li>
@@ -173,7 +173,7 @@ export default function TokushoPage() {
                 </section>
 
                 <section>
-                  <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-4">返品・交換・キャンセルについて</h2>
+                  <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4">返品・交換・キャンセルについて</h2>
                   <div className="text-base text-gray-900 leading-relaxed space-y-4">
                     <div className="bg-white rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 border border-gray-100 p-6">
                       <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-3">重要事項</h3>
@@ -198,7 +198,7 @@ export default function TokushoPage() {
                 </section>
 
                 <section>
-                  <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-4">その他の条件</h2>
+                  <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4">その他の条件</h2>
                   <div className="text-base text-gray-900 leading-relaxed space-y-4">
                     <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900">契約の成立</h3>
                     <p>
@@ -220,7 +220,7 @@ export default function TokushoPage() {
                 </section>
 
                 <section>
-                  <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-4">お問い合わせ</h2>
+                  <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4">お問い合わせ</h2>
                   <p className="text-base text-gray-900 leading-relaxed">
                     特定商取引法に基づく表記に関するお問い合わせは、下記の連絡先までお願いいたします。
                   </p>
