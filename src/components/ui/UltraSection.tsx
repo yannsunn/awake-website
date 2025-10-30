@@ -121,7 +121,7 @@ export function UltraHero({
             )}
             style={{
               ...TEXT_SHADOW.body,
-              fontSize: RESPONSIVE_FONT.h2.clamp,
+              fontSize: RESPONSIVE_FONT.body.clamp,
               wordBreak: 'keep-all',
               overflowWrap: 'anywhere',
               textWrap: 'balance',

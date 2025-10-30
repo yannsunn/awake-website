@@ -40,7 +40,7 @@ const ProblemSection = memo(function ProblemSection() {
 
         <div className="relative mt-8 border-2 border-blue-600 rounded-xl">
           <div className="p-6 bg-blue-50 rounded-xl text-center">
-            <p className={cn(HEADING.h3, 'text-blue-900')}>
+            <p className={cn(TEXT.lead, 'font-semibold text-blue-900')}>
               これらすべて、AIが解決します。
             </p>
           </div>

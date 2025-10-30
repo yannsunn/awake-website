@@ -25,7 +25,7 @@ export const RESPONSIVE_FONT = {
     lg: 'text-5xl',      // 48px
     xl: 'text-6xl',      // 60px
     '2xl': 'text-7xl',   // 72px
-    clamp: clampSize('1.5rem', '4vw + 1rem', '4.5rem')
+    clamp: clampSize('1.875rem', '3vw + 0.5rem', '3rem') // 30px-48px
   },
   // 大見出し
   h1: {
