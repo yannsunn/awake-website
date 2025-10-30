@@ -403,8 +403,8 @@ export default async function ServicePage(
         <RiskFree />
         
         {/* CLEMIRA独占販売セクション */}
-        <section className="py-16 md:py-24 relative bg-blue-50">
-          <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <section className="py-16 md:py-24 bg-blue-50">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
               <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-6">
                 CLEMIRA製品の日本唯一のメーカー直販店

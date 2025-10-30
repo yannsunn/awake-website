@@ -80,7 +80,9 @@
       "Bash(find:*)",
       "Bash(grep:*)",
       "Bash({} ;)",
-      "Bash(node -e:*)"
+      "Bash(node -e:*)",
+      "Bash(sort:*)",
+      "Bash(npx next lint)"
     ],
     "deny": [],
     "ask": [],
