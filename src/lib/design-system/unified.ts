@@ -104,31 +104,33 @@ export const CONTAINER = {
 
 /**
  * 見出しサイズ（レスポンシブ対応）
+ * 標準的なWebサイトに最適化されたサイズ
  */
 export const HEADING = {
-  h1: 'text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold',
-  h2: 'text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold',
-  h3: 'text-2xl sm:text-3xl md:text-4xl font-bold',
-  h4: 'text-xl sm:text-2xl md:text-3xl font-semibold',
-  h5: 'text-lg sm:text-xl md:text-2xl font-semibold',
-  h6: 'text-base sm:text-lg md:text-xl font-semibold',
+  h1: 'text-3xl sm:text-4xl md:text-5xl font-bold',
+  h2: 'text-2xl sm:text-3xl md:text-4xl font-bold',
+  h3: 'text-xl sm:text-2xl md:text-3xl font-bold',
+  h4: 'text-lg sm:text-xl md:text-2xl font-semibold',
+  h5: 'text-base sm:text-lg md:text-xl font-semibold',
+  h6: 'text-sm sm:text-base md:text-lg font-semibold',
 } as const
 
 /**
  * 本文テキストサイズ
+ * 読みやすさを重視した標準サイズ
  */
 export const TEXT = {
   // リード文（導入文）
-  lead: 'text-lg sm:text-xl md:text-2xl',
+  lead: 'text-base sm:text-lg md:text-xl',
 
   // 通常の本文
-  body: 'text-base sm:text-lg',
+  body: 'text-base',
 
   // 小さいテキスト
-  small: 'text-sm sm:text-base',
+  small: 'text-sm',
 
   // 最小テキスト（注釈など）
-  xs: 'text-xs sm:text-sm',
+  xs: 'text-xs',
 } as const
 
 // ============================================
