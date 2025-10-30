@@ -88,7 +88,7 @@ const AIAdvisor = memo(function AIAdvisor() {
             <span className="block text-gray-700 mt-2">月額制で経営をサポート</span>
           </h2>
 
-          <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
             高額なコンサルタント費用は不要。AI技術とビジネス専門知識を組み合わせた、
             <br className="hidden md:inline" />
             <strong className="text-gray-900">中小企業に最適化された顧問サービス</strong>
@@ -113,7 +113,7 @@ const AIAdvisor = memo(function AIAdvisor() {
                 <div className="w-12 h-12 sm:w-14 sm:h-14 bg-blue-600 rounded-xl flex items-center justify-center mb-3 sm:mb-4 shadow-lg shadow-blue-500/30">
                   <Icon className="w-6 h-6 sm:w-7 sm:h-7 text-white" />
                 </div>
-                <h3 className="text-base font-bold text-gray-900 mb-2">{feature.title}</h3>
+                <h3 className="text-lg font-bold text-gray-900 mb-2">{feature.title}</h3>
                 <p className="text-gray-600 text-sm">{feature.description}</p>
               </div>
             )
@@ -128,7 +128,7 @@ const AIAdvisor = memo(function AIAdvisor() {
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.4 }}
         >
-          <h3 className="text-2xl sm:text-3xl font-bold text-center text-gray-900 mb-8 sm:mb-10 md:mb-12">
+          <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-center text-gray-900 mb-8 sm:mb-10 md:mb-12">
             シンプルな料金プラン
           </h3>
 
@@ -224,7 +224,7 @@ const AIAdvisor = memo(function AIAdvisor() {
               <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-3 sm:mb-4 text-gray-900">
                 まずは初回無料面談から
               </h3>
-              <p className="text-lg sm:text-xl text-gray-600 mb-6 sm:mb-7 md:mb-8 max-w-2xl mx-auto">
+              <p className="text-base sm:text-lg md:text-xl text-gray-600 mb-6 sm:mb-7 md:mb-8 max-w-2xl mx-auto">
                 お客様のビジネス課題をヒアリングし、最適なプランをご提案します。
                 <br />
                 オンライン・お電話・LINEで対応可能。
