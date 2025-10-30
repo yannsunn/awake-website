@@ -406,7 +406,7 @@ export default async function ServicePage(
         <section className="py-16 md:py-24 bg-blue-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+              <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-6">
                 CLEMIRA製品の日本唯一のメーカー直販店
               </h2>
               <p className="text-xl text-gray-900 max-w-3xl mx-auto">
@@ -716,10 +716,10 @@ export default async function ServicePage(
 
       <section className="py-16 md:py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-8">
+          <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-8">
             まずはお気軽にご相談ください
           </h2>
-          <p className="text-lg sm:text-xl md:text-2xl text-gray-900 mb-8">
+          <p className="text-base md:text-xl text-gray-900 mb-8">
             お客様のビジネスに最適なソリューションをご提案いたします
           </p>
           <Link

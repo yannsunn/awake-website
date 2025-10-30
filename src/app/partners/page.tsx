@@ -212,7 +212,7 @@ export default function PartnersPage() {
             <h2 className="text-xl sm:text-2xl md:text-3xl font-bold mb-6 text-gray-900">
               なぜ、パートナーシップが必要なのか。
             </h2>
-            <p className="text-base sm:text-lg md:text-xl text-gray-900">
+            <p className="text-base md:text-xl text-gray-900">
               お客様の「本当の成功」は、1つのサービスだけでは実現できない。
             </p>
           </div>
@@ -248,7 +248,7 @@ export default function PartnersPage() {
         </div>
         
         <div className="text-center">
-          <p className="text-base sm:text-lg md:text-xl text-gray-900">
+          <p className="text-base md:text-xl text-gray-900">
             だから、ワンストップで解決できる体制を整えました。
           </p>
         </div>
@@ -262,7 +262,7 @@ export default function PartnersPage() {
             <h2 className="text-xl sm:text-2xl md:text-3xl font-bold mb-6 text-gray-900">
               パートナーシップがもたらす4つの価値。
             </h2>
-            <p className="text-base sm:text-lg md:text-xl text-gray-900">
+            <p className="text-base md:text-xl text-gray-900">
               お客様にとっての、本当のメリット。
             </p>
           </div>
@@ -319,7 +319,7 @@ export default function PartnersPage() {
                 <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-4">
                   {category.category}
                 </h2>
-                <p className="text-base sm:text-lg md:text-xl text-gray-900">
+                <p className="text-base md:text-xl text-gray-900">
                   {category.description}
                 </p>
               </div>
@@ -396,7 +396,7 @@ export default function PartnersPage() {
             <h2 className="text-xl sm:text-2xl md:text-3xl font-bold mb-6 text-gray-900">
               新しいパートナーも募集中
             </h2>
-            <p className="text-base sm:text-lg md:text-xl text-gray-900">
+            <p className="text-base md:text-xl text-gray-900">
               一緒に、お客様の成功を支援しませんか？
             </p>
             <p className="text-lg text-gray-900">
@@ -437,7 +437,7 @@ export default function PartnersPage() {
             <h2 className="text-xl sm:text-2xl md:text-3xl font-bold mb-4 text-gray-900">
               次のステップ
             </h2>
-            <p className="text-base sm:text-lg md:text-xl text-gray-900 mb-4">
+            <p className="text-base md:text-xl text-gray-900 mb-4">
               まずは、あなたの課題をお聞かせください
             </p>
             <p className="text-lg text-gray-900 mb-8">

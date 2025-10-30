@@ -71,14 +71,14 @@ export default function ServiceCard({ service, index }: ServiceCardProps) {
                   <service.icon className="w-7 h-7 sm:w-8 sm:h-8 md:w-10 md:h-10 text-white" strokeWidth={1.5} />
                 </motion.div>
                 <motion.h3
-                  className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 break-words"
+                  className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 break-words"
                   whileHover={{ x: 8 }}
                   transition={{ duration: 0.3 }}
                 >
                   {service.title}
                 </motion.h3>
               </div>
-              <p className="text-base sm:text-lg md:text-xl mb-4 sm:mb-5 md:mb-6 text-gray-700 break-words leading-relaxed">
+              <p className="text-base md:text-xl mb-4 sm:mb-5 md:mb-6 text-gray-700 break-words leading-relaxed">
                 {service.description}
               </p>
               <motion.div
@@ -127,7 +127,7 @@ export default function ServiceCard({ service, index }: ServiceCardProps) {
                   whileHover={{ scale: 1.05, backgroundColor: '#f9fafb' }}
                   transition={{ duration: 0.3 }}
                 >
-                  <div className="text-base sm:text-lg md:text-xl font-medium text-gray-900 break-words leading-relaxed">
+                  <div className="text-base md:text-xl font-medium text-gray-900 break-words leading-relaxed">
                     {feature}
                   </div>
                 </motion.li>
@@ -137,7 +137,7 @@ export default function ServiceCard({ service, index }: ServiceCardProps) {
               {service.buttons.map((button) => (
                 <Link key={button.href} href={button.href}>
                   <motion.button
-                    className="px-8 sm:px-10 md:px-12 py-3 sm:py-4 md:py-5 bg-gray-900 text-white text-base sm:text-lg md:text-xl font-medium rounded-lg"
+                    className="px-8 sm:px-10 md:px-12 py-3 sm:py-4 md:py-5 bg-gray-900 text-white text-base md:text-xl font-medium rounded-lg"
                     whileHover={{
                       scale: 1.05,
                       backgroundColor: '#1f2937',

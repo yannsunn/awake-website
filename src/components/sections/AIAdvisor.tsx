@@ -83,7 +83,7 @@ const AIAdvisor = memo(function AIAdvisor() {
             <span>新サービス</span>
           </div>
 
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4 sm:mb-5 md:mb-6">
+          <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-4 sm:mb-5 md:mb-6">
             AI顧問サービス
             <span className="block text-gray-700 mt-2">月額制で経営をサポート</span>
           </h2>
@@ -113,7 +113,7 @@ const AIAdvisor = memo(function AIAdvisor() {
                 <div className="w-12 h-12 sm:w-14 sm:h-14 bg-blue-600 rounded-xl flex items-center justify-center mb-3 sm:mb-4 shadow-lg shadow-blue-500/30">
                   <Icon className="w-6 h-6 sm:w-7 sm:h-7 text-white" />
                 </div>
-                <h3 className="text-base sm:text-lg font-bold text-gray-900 mb-2">{feature.title}</h3>
+                <h3 className="text-base font-bold text-gray-900 mb-2">{feature.title}</h3>
                 <p className="text-gray-600 text-sm">{feature.description}</p>
               </div>
             )
@@ -146,10 +146,10 @@ const AIAdvisor = memo(function AIAdvisor() {
                         {plan.name}
                       </h4>
                       <div className="flex items-baseline justify-center gap-1">
-                        <span className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900">
+                        <span className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900">
                           ¥{plan.price}
                         </span>
-                        <span className="text-base sm:text-lg text-gray-600">
+                        <span className="text-base text-gray-600">
                           /月
                         </span>
                       </div>
@@ -182,10 +182,10 @@ const AIAdvisor = memo(function AIAdvisor() {
                       {plan.name}
                     </h4>
                     <div className="flex items-baseline justify-center gap-1">
-                      <span className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900">
+                      <span className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900">
                         ¥{plan.price}
                       </span>
-                      <span className="text-base sm:text-lg text-gray-600">
+                      <span className="text-base text-gray-600">
                         /月
                       </span>
                     </div>
@@ -221,7 +221,7 @@ const AIAdvisor = memo(function AIAdvisor() {
         >
           <div className="relative border-2 border-blue-600 rounded-3xl shadow-xl">
             <div className="text-center bg-white rounded-3xl p-8 sm:p-10 md:p-12">
-              <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 sm:mb-4 text-gray-900">
+              <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-3 sm:mb-4 text-gray-900">
                 まずは初回無料面談から
               </h3>
               <p className="text-lg sm:text-xl text-gray-600 mb-6 sm:mb-7 md:mb-8 max-w-2xl mx-auto">

@@ -28,11 +28,11 @@ const ContactForm = memo(function ContactForm() {
           <MessageCircle className="w-10 h-10 text-white" />
         </motion.div>
 
-        <h3 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+        <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-4">
           LINEでお気軽にご相談
         </h3>
 
-        <p className="text-base sm:text-lg text-gray-900 mb-8">
+        <p className="text-base text-gray-900 mb-8">
           最速で返信！まずはLINEでお話をお聞かせください
         </p>
         
@@ -42,7 +42,7 @@ const ContactForm = memo(function ContactForm() {
         </div>
         
         <div className="mt-8 p-6 bg-blue-50 rounded-xl border border-gray-200">
-          <h4 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-3">
+          <h4 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-3">
             こんなご相談ができます
           </h4>
           <ul className="space-y-2 text-left max-w-sm mx-auto">
