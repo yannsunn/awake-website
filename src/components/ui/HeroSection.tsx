@@ -67,7 +67,7 @@ const HeroSection = memo(function HeroSection() {
         <div className="max-w-4xl mx-auto">
           
           {/* 🚀 限界突破 - 感情的訴求 + ストーリーテリング */}
-          <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-6 tracking-tight break-words">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-6 tracking-tight break-words">
             {COMPANY_DATA.basic.tagline}
           </h1>
           

@@ -269,7 +269,7 @@ const Header = memo(function Header() {
                     sizes="32px"
                   />
                 </div>
-                <span className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900">メニュー</span>
+                <span className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900">メニュー</span>
               </div>
               <button
                 onClick={toggleMenu}
@@ -287,7 +287,7 @@ const Header = memo(function Header() {
                 if (item.type === 'dropdown') {
                   return (
                     <div key={index} className="px-4 py-2">
-                      <div className="text-base sm:text-lg text-gray-900 mb-2 font-semibold">
+                      <div className="text-base text-gray-900 mb-2 font-semibold">
                         {item.title}
                       </div>
                       <div className="space-y-1">
@@ -303,7 +303,7 @@ const Header = memo(function Header() {
                               'aria-label': `${service.title} - 新しいウィンドウで開きます`
                             })}
                           >
-                            <div className="text-base sm:text-lg text-gray-900">
+                            <div className="text-base text-gray-900">
                               {service.title}
                             </div>
                             <div className="text-sm sm:text-base text-gray-600 mt-1">
@@ -320,7 +320,7 @@ const Header = memo(function Header() {
                   <Link
                     key={index}
                     href={item.href || '#'}
-                    className="block px-8 py-3 min-h-[56px] text-base sm:text-lg text-gray-900 hover:bg-blue-50 transition-all duration-300 ease-out focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-blue-500 focus-visible:ring-offset-3"
+                    className="block px-8 py-3 min-h-[56px] text-base text-gray-900 hover:bg-blue-50 transition-all duration-300 ease-out focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-blue-500 focus-visible:ring-offset-3"
                     onClick={toggleMenu}
                   >
                     {item.title}

@@ -168,7 +168,7 @@ export default function AboutPage() {
       <section className="relative py-8 md:py-12 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-gray-900">
+            <h2 className="text-xl sm:text-2xl md:text-3xl font-bold mb-4 text-gray-900">
               代表メッセージ
             </h2>
           </div>
@@ -176,40 +176,40 @@ export default function AboutPage() {
           <div className="order-1 lg:order-2">
             <div className="space-y-6 text-gray-900 leading-relaxed">
               <div className="mb-6">
-                <h3 className="text-base sm:text-lg font-semibold text-gray-900 text-xl mb-2">挫折から這い上がり、学んだこと</h3>
-                <p className="text-base sm:text-lg font-medium text-gray-900 mb-4">代表取締役CEO　{COMPANY_DATA.basic.ceo}</p>
+                <h3 className="text-base font-semibold text-gray-900 text-xl mb-2">挫折から這い上がり、学んだこと</h3>
+                <p className="text-base font-medium text-gray-900 mb-4">代表取締役CEO　{COMPANY_DATA.basic.ceo}</p>
 
-                <p className="text-base sm:text-lg mb-4 break-words">
+                <p className="text-base mb-4 break-words">
                   株式会社Awakeの田形でございます。この事業を立ち上げたきっかけは、「100万円以上投資してホームページを制作したが、期待した成果が得られない」という経営者様のお悩みでした。その資金があれば、より直接的に事業成長へ投資できたはず。この経営資源の非効率な配分を解決したい。その想いが、現在の事業の原点です。
                 </p>
               </div>
 
               <div>
-                <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4">不登校から、全国代表へ</h3>
+                <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-4">不登校から、全国代表へ</h3>
 
-                <p className="text-base sm:text-lg mb-4">
+                <p className="text-base mb-4">
                   静岡県清水区で育った私は、幼稚園から中学まで不登校でした。しかし高校で生徒会長に。トヨタの自動車専門学校では実技の歴代記録を更新し、2年間全国の学年代表を務めました。地元ディーラーで新人賞も受賞しましたが、そこで気づいたのです。「技術だけでは、お客様の本当の課題は解決できない」と。
                 </p>
               </div>
 
               <div>
-                <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4">なぜ、Awakeを立ち上げたのか</h3>
+                <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-4">なぜ、Awakeを立ち上げたのか</h3>
 
-                <p className="text-base sm:text-lg mb-4">
+                <p className="text-base mb-4">
                   高額なIT投資で失敗し、本業に投資できない経営者。技術はあるのに活用できていない現状。これは、能力はあったのに不登校で活かせなかった私の過去と重なりました。でも、環境と機会があれば人は変われる。だから決めました。「適正なコストで最大の価値を提供し、お客様の可能性を引き出す会社を作ろう」と。
                 </p>
               </div>
 
               <div>
                 <div className="bg-gradient-to-br from-blue-50 to-white rounded-lg p-6 mb-4 border border-blue-200 shadow-lg">
-                  <p className="text-base sm:text-lg font-semibold text-gray-900 text-lg text-center mb-2">「つながるすべての人に、感謝と繁栄を」</p>
+                  <p className="text-base font-semibold text-gray-900 text-lg text-center mb-2">「つながるすべての人に、感謝と繁栄を」</p>
                 </div>
 
-                <p className="text-base sm:text-lg mb-4">
+                <p className="text-base mb-4">
                   不登校だった私が生徒会長になれたのは、信じてくれる人がいたから。今度は私たちが、お客様の可能性を信じる番です。高額な投資は必要ありません。必要なのは、一歩踏み出す勇気だけ。
                 </p>
 
-                <p className="text-base sm:text-lg">
+                <p className="text-base">
                   IT投資でお悩みなら、ぜひお話をお聞かせください。あなたのビジネスの本当の可能性を、一緒に見つけましょう。
                 </p>
               </div>
@@ -218,11 +218,11 @@ export default function AboutPage() {
           
           <div className="lg:pl-8">
             <div className="bg-white rounded-2xl pt-8 pb-6 px-6 sm:pt-10 sm:px-8 text-center border border-blue-200 shadow-lg">
-              <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-2">{COMPANY_DATA.basic.ceo}</h3>
-              <p className="text-base sm:text-lg font-medium text-gray-900 text-lg mb-4">代表取締役CEO</p>
+              <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-2">{COMPANY_DATA.basic.ceo}</h3>
+              <p className="text-base font-medium text-gray-900 text-lg mb-4">代表取締役CEO</p>
               <div className="space-y-4">
                 <div>
-                  <h4 className="text-base sm:text-lg font-medium text-gray-900 mb-2">略歴</h4>
+                  <h4 className="text-base font-medium text-gray-900 mb-2">略歴</h4>
                   <ul className="text-sm sm:text-base text-gray-900 space-y-1">
                     <li>静岡県清水区出身</li>
                     <li>幼稚園〜中学：不登校</li>
@@ -233,7 +233,7 @@ export default function AboutPage() {
                   </ul>
                 </div>
                 <div>
-                  <h4 className="text-base sm:text-lg font-medium text-gray-900 mb-2">経営理念</h4>
+                  <h4 className="text-base font-medium text-gray-900 mb-2">経営理念</h4>
                   <p className="text-sm sm:text-base text-gray-900">
                     「つながるすべての人に、感謝と繁栄を」
                   </p>
@@ -249,26 +249,26 @@ export default function AboutPage() {
       <section className="relative py-8 md:py-12 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-gray-900">
+            <h2 className="text-xl sm:text-2xl md:text-3xl font-bold mb-4 text-gray-900">
               ミッション・ビジョン
             </h2>
           </div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 md:gap-10 lg:gap-12">
           <div className="bg-white rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 border border-gray-100">
-            <h3 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+            <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-4">
               ミッション
             </h3>
-            <p className="text-base sm:text-lg text-gray-900">
+            <p className="text-base text-gray-900">
               お客様の経営資源を最適配分し、真の成果を生み出すパートナーとして、適正なコストで最大の価値を提供し続けます。
             </p>
           </div>
 
           <div className="bg-white rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 border border-gray-100">
-            <h3 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+            <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-4">
               ビジョン
             </h3>
-            <p className="text-base sm:text-lg text-gray-900">
+            <p className="text-base text-gray-900">
               適正なコストで最大の価値を得られる経営環境の実現。そして、関わるすべての人々が相互に繁栄できる社会を創造します。
             </p>
           </div>
@@ -281,7 +281,7 @@ export default function AboutPage() {
         <div className="bg-gray-50 py-12 md:py-16">
           <div className="container mx-auto px-4 mb-12">
             <div className="max-w-3xl mx-auto text-center">
-              <h2 className="text-3xl md:text-4xl font-bold mb-6 break-words text-gray-900">
+              <h2 className="text-2xl md:text-3xl font-bold mb-6 break-words text-gray-900">
                 なぜAwakeなのか
               </h2>
               <p className="text-xl md:text-2xl text-gray-600 break-words leading-relaxed">
@@ -310,7 +310,7 @@ export default function AboutPage() {
         <div className="bg-gray-50 py-12 md:py-16">
           <div className="container mx-auto px-4 mb-12">
             <div className="max-w-3xl mx-auto text-center">
-              <h2 className="text-3xl md:text-4xl font-bold mb-6 break-words text-gray-900">
+              <h2 className="text-2xl md:text-3xl font-bold mb-6 break-words text-gray-900">
                 サービスの特徴
               </h2>
               <p className="text-xl md:text-2xl text-gray-600 break-words leading-relaxed">
@@ -345,7 +345,7 @@ export default function AboutPage() {
         <div className="bg-gray-50 py-12 md:py-16">
           <div className="container mx-auto px-4 mb-12">
             <div className="max-w-3xl mx-auto text-center">
-              <h2 className="text-3xl md:text-4xl font-bold mb-6 break-words text-gray-900">
+              <h2 className="text-2xl md:text-3xl font-bold mb-6 break-words text-gray-900">
                 私たちの価値観
               </h2>
               <p className="text-xl md:text-2xl text-gray-600 break-words leading-relaxed">
@@ -380,13 +380,13 @@ export default function AboutPage() {
       <section className="relative py-12 md:py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-gray-900">
+            <h2 className="text-xl sm:text-2xl md:text-3xl font-bold mb-4 text-gray-900">
               チーム紹介
             </h2>
-            <p className="text-lg sm:text-xl md:text-2xl text-gray-900">
+            <p className="text-base md:text-xl text-gray-900">
               業務委託・パートナーを含む10名体制の専門チーム
             </p>
-            <p className="text-base sm:text-lg text-gray-600 mt-4 max-w-3xl mx-auto">
+            <p className="text-base text-gray-600 mt-4 max-w-3xl mx-auto">
               正社員、業務委託、パートナー企業を含む約10名体制で運営。各分野の専門家が連携し、お客様のビジネスを多角的にサポートします。
             </p>
           </div>
@@ -398,12 +398,12 @@ export default function AboutPage() {
                 <div className="w-32 h-32 mx-auto mb-4 bg-blue-600 rounded-full flex items-center justify-center shadow-lg shadow-blue-500/30">
                   <User className="w-16 h-16 text-white" />
                 </div>
-                <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-2">{COMPANY_DATA.basic.ceo}</h3>
-                <p className="text-base sm:text-lg text-gray-600 font-medium mb-4">代表取締役CEO</p>
+                <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-2">{COMPANY_DATA.basic.ceo}</h3>
+                <p className="text-base text-gray-600 font-medium mb-4">代表取締役CEO</p>
               </div>
               <div className="space-y-3">
                 <div>
-                  <h4 className="text-base sm:text-lg font-semibold text-gray-900 mb-2">専門領域</h4>
+                  <h4 className="text-base font-semibold text-gray-900 mb-2">専門領域</h4>
                   <ul className="text-sm sm:text-base text-gray-600 space-y-1">
                     <li>• 経営戦略立案</li>
                     <li>• IT投資最適化</li>
@@ -411,7 +411,7 @@ export default function AboutPage() {
                   </ul>
                 </div>
                 <div>
-                  <h4 className="text-base sm:text-lg font-semibold text-gray-900 mb-2">主な実績</h4>
+                  <h4 className="text-base font-semibold text-gray-900 mb-2">主な実績</h4>
                   <ul className="text-sm sm:text-base text-gray-600 space-y-1">
                     <li>• 50社以上の企業支援</li>
                     <li>• 平均30%のコスト削減実績</li>
@@ -427,12 +427,12 @@ export default function AboutPage() {
                 <div className="w-32 h-32 mx-auto mb-4 bg-blue-600 rounded-full flex items-center justify-center shadow-lg shadow-blue-500/30">
                   <Zap className="w-16 h-16 text-white" />
                 </div>
-                <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-2">テクニカルディレクター</h3>
-                <p className="text-base sm:text-lg text-gray-600 font-medium mb-4">技術統括責任者</p>
+                <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-2">テクニカルディレクター</h3>
+                <p className="text-base text-gray-600 font-medium mb-4">技術統括責任者</p>
               </div>
               <div className="space-y-3">
                 <div>
-                  <h4 className="text-base sm:text-lg font-semibold text-gray-900 mb-2">専門領域</h4>
+                  <h4 className="text-base font-semibold text-gray-900 mb-2">専門領域</h4>
                   <ul className="text-sm sm:text-base text-gray-600 space-y-1">
                     <li>• Web開発（10年以上）</li>
                     <li>• AI/機械学習実装</li>
@@ -440,7 +440,7 @@ export default function AboutPage() {
                   </ul>
                 </div>
                 <div>
-                  <h4 className="text-base sm:text-lg font-semibold text-gray-900 mb-2">主な実績</h4>
+                  <h4 className="text-base font-semibold text-gray-900 mb-2">主な実績</h4>
                   <ul className="text-sm sm:text-base text-gray-600 space-y-1">
                     <li>• 100以上のWebサイト構築</li>
                     <li>• AIチャットボット30件導入</li>
@@ -456,12 +456,12 @@ export default function AboutPage() {
                 <div className="w-32 h-32 mx-auto mb-4 bg-gradient-to-br from-pink-500 to-rose-500 rounded-full flex items-center justify-center shadow-lg">
                   <Award className="w-16 h-16 text-white" />
                 </div>
-                <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-2">デザインディレクター</h3>
-                <p className="text-base sm:text-lg text-gray-600 font-medium mb-4">デザイン統括責任者</p>
+                <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-2">デザインディレクター</h3>
+                <p className="text-base text-gray-600 font-medium mb-4">デザイン統括責任者</p>
               </div>
               <div className="space-y-3">
                 <div>
-                  <h4 className="text-base sm:text-lg font-semibold text-gray-900 mb-2">専門領域</h4>
+                  <h4 className="text-base font-semibold text-gray-900 mb-2">専門領域</h4>
                   <ul className="text-sm sm:text-base text-gray-600 space-y-1">
                     <li>• UI/UXデザイン（8年以上）</li>
                     <li>• ブランディング戦略</li>
@@ -469,7 +469,7 @@ export default function AboutPage() {
                   </ul>
                 </div>
                 <div>
-                  <h4 className="text-base sm:text-lg font-semibold text-gray-900 mb-2">主な実績</h4>
+                  <h4 className="text-base font-semibold text-gray-900 mb-2">主な実績</h4>
                   <ul className="text-sm sm:text-base text-gray-600 space-y-1">
                     <li>• デザインアワード受賞歴</li>
                     <li>• CVR平均200%改善実績</li>
@@ -485,12 +485,12 @@ export default function AboutPage() {
                 <div className="w-32 h-32 mx-auto mb-4 bg-gradient-to-br from-green-500 to-emerald-500 rounded-full flex items-center justify-center shadow-lg">
                   <Target className="w-16 h-16 text-white" />
                 </div>
-                <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-2">マーケティングディレクター</h3>
-                <p className="text-base sm:text-lg text-gray-600 font-medium mb-4">マーケティング統括責任者</p>
+                <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-2">マーケティングディレクター</h3>
+                <p className="text-base text-gray-600 font-medium mb-4">マーケティング統括責任者</p>
               </div>
               <div className="space-y-3">
                 <div>
-                  <h4 className="text-base sm:text-lg font-semibold text-gray-900 mb-2">専門領域</h4>
+                  <h4 className="text-base font-semibold text-gray-900 mb-2">専門領域</h4>
                   <ul className="text-sm sm:text-base text-gray-600 space-y-1">
                     <li>• SEO/SEM戦略（7年以上）</li>
                     <li>• コンテンツマーケティング</li>
@@ -498,7 +498,7 @@ export default function AboutPage() {
                   </ul>
                 </div>
                 <div>
-                  <h4 className="text-base sm:text-lg font-semibold text-gray-900 mb-2">主な実績</h4>
+                  <h4 className="text-base font-semibold text-gray-900 mb-2">主な実績</h4>
                   <ul className="text-sm sm:text-base text-gray-600 space-y-1">
                     <li>• 検索順位1位獲得多数</li>
                     <li>• 月間流入10倍達成事例</li>
@@ -514,12 +514,12 @@ export default function AboutPage() {
                 <div className="w-32 h-32 mx-auto mb-4 bg-gradient-to-br from-orange-500 to-amber-500 rounded-full flex items-center justify-center shadow-lg">
                   <Users className="w-16 h-16 text-white" />
                 </div>
-                <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-2">ECコンサルタント</h3>
-                <p className="text-base sm:text-lg text-gray-600 font-medium mb-4">EC事業統括責任者</p>
+                <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-2">ECコンサルタント</h3>
+                <p className="text-base text-gray-600 font-medium mb-4">EC事業統括責任者</p>
               </div>
               <div className="space-y-3">
                 <div>
-                  <h4 className="text-base sm:text-lg font-semibold text-gray-900 mb-2">専門領域</h4>
+                  <h4 className="text-base font-semibold text-gray-900 mb-2">専門領域</h4>
                   <ul className="text-sm sm:text-base text-gray-600 space-y-1">
                     <li>• Amazon販売戦略（5年以上）</li>
                     <li>• 在庫管理・物流最適化</li>
@@ -527,7 +527,7 @@ export default function AboutPage() {
                   </ul>
                 </div>
                 <div>
-                  <h4 className="text-base sm:text-lg font-semibold text-gray-900 mb-2">主な実績</h4>
+                  <h4 className="text-base font-semibold text-gray-900 mb-2">主な実績</h4>
                   <ul className="text-sm sm:text-base text-gray-600 space-y-1">
                     <li>• 20社以上のEC支援経験</li>
                     <li>• 平均売上300%増加実績</li>
@@ -543,12 +543,12 @@ export default function AboutPage() {
                 <div className="w-32 h-32 mx-auto mb-4 bg-gradient-to-br from-cyan-500 to-blue-500 rounded-full flex items-center justify-center shadow-lg">
                   <Heart className="w-16 h-16 text-white" />
                 </div>
-                <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-2">カスタマーサクセス</h3>
-                <p className="text-base sm:text-lg text-gray-600 font-medium mb-4">顧客支援責任者</p>
+                <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-2">カスタマーサクセス</h3>
+                <p className="text-base text-gray-600 font-medium mb-4">顧客支援責任者</p>
               </div>
               <div className="space-y-3">
                 <div>
-                  <h4 className="text-base sm:text-lg font-semibold text-gray-900 mb-2">専門領域</h4>
+                  <h4 className="text-base font-semibold text-gray-900 mb-2">専門領域</h4>
                   <ul className="text-sm sm:text-base text-gray-600 space-y-1">
                     <li>• 顧客対応・サポート</li>
                     <li>• 導入研修・トレーニング</li>
@@ -556,7 +556,7 @@ export default function AboutPage() {
                   </ul>
                 </div>
                 <div>
-                  <h4 className="text-base sm:text-lg font-semibold text-gray-900 mb-2">主な実績</h4>
+                  <h4 className="text-base font-semibold text-gray-900 mb-2">主な実績</h4>
                   <ul className="text-sm sm:text-base text-gray-600 space-y-1">
                     <li>• 顧客継続率98%以上</li>
                     <li>• 平均対応時間24時間以内</li>
@@ -570,35 +570,35 @@ export default function AboutPage() {
           <div className="mt-12 text-center">
             <div className="relative inline-block border-2 border-blue-600 rounded-2xl shadow-xl">
               <div className="bg-blue-50 rounded-2xl p-8">
-              <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-6">チーム体制の強み</h3>
+              <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-6">チーム体制の強み</h3>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 text-left">
                 <div>
-                  <p className="text-base sm:text-lg font-semibold text-gray-900 mb-2">🎯 柔軟な体制</p>
+                  <p className="text-base font-semibold text-gray-900 mb-2">🎯 柔軟な体制</p>
                   <p className="text-sm sm:text-base text-gray-600">
                     正社員・業務委託・パートナー企業の最適な組み合わせで、プロジェクトごとに最高のチームを編成
                   </p>
                 </div>
                 <div>
-                  <p className="text-base sm:text-lg font-semibold text-gray-900 mb-2">💡 多様な専門性</p>
+                  <p className="text-base font-semibold text-gray-900 mb-2">💡 多様な専門性</p>
                   <p className="text-sm sm:text-base text-gray-600">
                     技術、デザイン、マーケティング、EC運営など、各分野のエキスパートが連携
                   </p>
                 </div>
                 <div>
-                  <p className="text-base sm:text-lg font-semibold text-gray-900 mb-2">📈 実績重視</p>
+                  <p className="text-base font-semibold text-gray-900 mb-2">📈 実績重視</p>
                   <p className="text-sm sm:text-base text-gray-600">
                     大手企業からスタートアップまで50社以上の支援実績。平均顧客満足度4.9/5.0
                   </p>
                 </div>
                 <div>
-                  <p className="text-base sm:text-lg font-semibold text-gray-900 mb-2">🤝 長期パートナー</p>
+                  <p className="text-base font-semibold text-gray-900 mb-2">🤝 長期パートナー</p>
                   <p className="text-sm sm:text-base text-gray-600">
                     単なる受託ではなく、お客様の成功を第一に考えた継続的なサポート体制
                   </p>
                 </div>
               </div>
               <div className="mt-8 pt-6 border-t border-blue-200">
-                <p className="text-base sm:text-lg text-gray-900">
+                <p className="text-base text-gray-900">
                   <span className="font-semibold">会社データ:</span>
                   設立2021年（現在5期目） | 法人番号 8012801020829 |
                   本社: 東京都東大和市向原5-1129-61 渡辺ビル1F |
@@ -615,10 +615,10 @@ export default function AboutPage() {
       <section className="relative py-12 md:py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-gray-900">
+            <h2 className="text-xl sm:text-2xl md:text-3xl font-bold mb-4 text-gray-900">
               次のステップへ
             </h2>
-            <p className="text-lg sm:text-xl md:text-2xl text-gray-900 mb-4">
+            <p className="text-base md:text-xl text-gray-900 mb-4">
               まずは、お話を聞かせてください
             </p>
             <p className="text-lg text-gray-900 mb-8">

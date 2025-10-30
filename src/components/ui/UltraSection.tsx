@@ -36,16 +36,16 @@ export default function UltraSection({
       <div className={pattern.content}>
         {title && (
           <div className="text-center mb-8 sm:mb-12 lg:mb-16">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 px-4 sm:px-0 leading-relaxed" style={{...TEXT_SHADOW.heading, wordBreak: 'keep-all', overflowWrap: 'anywhere', textWrap: 'balance'}}>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4 px-4 sm:px-0 leading-relaxed" style={{...TEXT_SHADOW.heading, wordBreak: 'keep-all', overflowWrap: 'anywhere', textWrap: 'balance'}}>
               {title}
             </h2>
             {subtitle && (
-              <p className="text-lg sm:text-xl md:text-2xl text-gray-900 mb-4 px-4 sm:px-0 font-bold leading-relaxed" style={{...TEXT_SHADOW.body, wordBreak: 'keep-all', overflowWrap: 'anywhere', textWrap: 'balance'}}>
+              <p className="text-base md:text-xl text-gray-900 mb-4 px-4 sm:px-0 font-bold leading-relaxed" style={{...TEXT_SHADOW.body, wordBreak: 'keep-all', overflowWrap: 'anywhere', textWrap: 'balance'}}>
                 {subtitle}
               </p>
             )}
             {description && (
-              <p className="text-base sm:text-lg md:text-xl text-gray-900 px-4 sm:px-0 leading-relaxed" style={{...TEXT_SHADOW.small, wordBreak: 'keep-all', overflowWrap: 'anywhere', textWrap: 'pretty'}}>
+              <p className="text-base md:text-xl text-gray-900 px-4 sm:px-0 leading-relaxed" style={{...TEXT_SHADOW.small, wordBreak: 'keep-all', overflowWrap: 'anywhere', textWrap: 'pretty'}}>
                 {description}
               </p>
             )}
@@ -176,16 +176,16 @@ export function UltraCTA({
   return (
     <UltraSection variant="medium" className={className}>
       <div className="text-center max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-relaxed" style={{...TEXT_SHADOW.heading, wordBreak: 'keep-all', overflowWrap: 'anywhere', textWrap: 'balance', letterSpacing: '0.02em'}}>
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-6 leading-relaxed" style={{...TEXT_SHADOW.heading, wordBreak: 'keep-all', overflowWrap: 'anywhere', textWrap: 'balance', letterSpacing: '0.02em'}}>
           {title}
         </h2>
         {subtitle && (
-          <p className={`text-lg sm:text-xl md:text-2xl text-gray-900 mb-6 leading-relaxed ${TEXT_BG_STYLES.default}`} style={{...TEXT_SHADOW.body, wordBreak: 'keep-all', overflowWrap: 'anywhere', textWrap: 'balance', letterSpacing: '0.02em'}}>
+          <p className={`text-base md:text-xl text-gray-900 mb-6 leading-relaxed ${TEXT_BG_STYLES.default}`} style={{...TEXT_SHADOW.body, wordBreak: 'keep-all', overflowWrap: 'anywhere', textWrap: 'balance', letterSpacing: '0.02em'}}>
             {subtitle}
           </p>
         )}
         {description && (
-          <p className={`text-base sm:text-lg md:text-xl text-gray-900 mb-8 leading-relaxed ${TEXT_BG_STYLES.default}`} style={{...TEXT_SHADOW.body, wordBreak: 'keep-all', overflowWrap: 'anywhere', textWrap: 'pretty', letterSpacing: '0.02em'}}>
+          <p className={`text-base md:text-xl text-gray-900 mb-8 leading-relaxed ${TEXT_BG_STYLES.default}`} style={{...TEXT_SHADOW.body, wordBreak: 'keep-all', overflowWrap: 'anywhere', textWrap: 'pretty', letterSpacing: '0.02em'}}>
             {description}
           </p>
         )}
@@ -195,7 +195,7 @@ export function UltraCTA({
               <a
                 key={index}
                 href={button.href}
-                className={`inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-bold rounded-lg transition-all shadow-xl hover:shadow-2xl transform hover:scale-105 w-full sm:w-auto ${
+                className={`inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 text-base font-bold rounded-lg transition-all shadow-xl hover:shadow-2xl transform hover:scale-105 w-full sm:w-auto ${
                   button.variant === 'primary'
                     ? 'bg-gradient-to-r from-blue-600 to-sky-600 text-white hover:from-blue-700 hover:to-sky-700'
                     : 'bg-white text-blue-900 hover:bg-blue-50 border-2 border-blue-200'
