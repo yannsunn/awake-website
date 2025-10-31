@@ -59,11 +59,11 @@ export function ServiceHero({
             src={backgroundImage}
             alt="サービス背景"
             fill
-            className="object-cover opacity-[0.08]"
+            className="object-cover opacity-30"
             priority
             sizes="100vw"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-white/90 via-white/80 to-white/90" />
+          <div className="absolute inset-0 bg-gradient-to-b from-white/75 via-white/65 to-white/85" />
         </motion.div>
       )}
 
