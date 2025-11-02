@@ -13,9 +13,9 @@ interface UltraButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 }
 
 const sizeClasses = {
-  sm: 'px-6 py-2 text-sm min-w-[180px]',
-  md: 'px-8 py-3 text-base min-w-[220px]',
-  lg: 'px-10 py-4 text-lg min-w-[260px]'
+  sm: 'px-6 py-2 text-sm min-w-[180px] min-h-[48px]',
+  md: 'px-8 py-3 text-base min-w-[220px] min-h-[48px]',
+  lg: 'px-10 py-4 text-lg min-w-[260px] min-h-[52px]'
 }
 
 // 🚀 統一されたボタンコンポーネント - デザインシステム統合

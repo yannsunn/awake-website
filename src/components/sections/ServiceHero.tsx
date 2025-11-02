@@ -108,7 +108,7 @@ export function ServiceHero({
           >
             <Link href={ctaHref}>
               <motion.button
-                className="px-8 sm:px-10 md:px-12 py-3 sm:py-4 md:py-5 bg-blue-600 hover:bg-blue-700 text-white text-base font-medium rounded-lg shadow-xl hover:shadow-2xl transition-all duration-300"
+                className="px-8 sm:px-10 md:px-12 py-3 sm:py-4 md:py-5 min-h-[48px] bg-blue-600 hover:bg-blue-700 text-white text-base font-medium rounded-lg shadow-xl hover:shadow-2xl transition-all duration-300"
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -118,7 +118,7 @@ export function ServiceHero({
             {secondaryCtaText && secondaryCtaHref && (
               <Link href={secondaryCtaHref}>
                 <motion.button
-                  className="px-8 sm:px-10 md:px-12 py-3 sm:py-4 md:py-5 bg-white text-gray-900 text-base font-medium border-2 border-gray-300 hover:border-gray-400 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300"
+                  className="px-8 sm:px-10 md:px-12 py-3 sm:py-4 md:py-5 min-h-[48px] bg-white text-gray-900 text-base font-medium border-2 border-gray-300 hover:border-gray-400 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300"
                   whileHover={{ scale: 1.05, y: -2 }}
                   whileTap={{ scale: 0.95 }}
                 >
