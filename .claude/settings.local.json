@@ -87,7 +87,17 @@
       "Bash(for file in HomeHero AIAdvisor HomeServices ValueProposition HomeMission HomeFAQ HomeContact)",
       "Bash(do echo \"=== $file ===\")",
       "Bash(done)",
-      "Bash(node scripts/capture-production-screenshots.js:*)"
+      "Bash(node scripts/capture-production-screenshots.js:*)",
+      "Bash(node scripts/gsc-analytics-report.js:*)",
+      "Bash(node scripts/site-status-report.js:*)",
+      "Bash(npm run status:*)",
+      "Bash(node scripts/seo-diagnosis.js:*)",
+      "Bash(npm view:*)",
+      "Bash(npm search:*)",
+      "Bash(codex --version:*)",
+      "Bash(codex:*)",
+      "Bash(git log:*)",
+      "Bash(npm run type-check:*)"
     ],
     "deny": [],
     "ask": [],

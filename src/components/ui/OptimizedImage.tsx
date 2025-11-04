@@ -118,9 +118,15 @@ const OptimizedImage = memo(function OptimizedImage({
   }, [onImageClick])
   
   // アクセシビリティ向上のためのaria属性計算
-  const getAriaProps = useCallback(() => {
-    const props: Record<string, any> = {}
-    
+  type AriaProps = {
+    role?: 'img' | 'button'
+    tabIndex?: 0
+    'aria-label'?: string
+  }
+
+  const getAriaProps = useCallback((): AriaProps => {
+    const props: AriaProps = {}
+
     if (preset === 'gallery' && onImageClick) {
       props.role = 'button'
       props.tabIndex = 0
@@ -129,7 +135,7 @@ const OptimizedImage = memo(function OptimizedImage({
       props.role = 'img'
       props['aria-label'] = alt || '装飾用画像'
     }
-    
+
     return props
   }, [preset, onImageClick, alt])
 

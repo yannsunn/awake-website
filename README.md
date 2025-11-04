@@ -114,6 +114,63 @@ npm run type-check
 ANALYZE=true npm run build
 ```
 
+## 📊 アクセス解析・運用スクリプト
+
+### サイトステータス確認 (認証不要)
+
+全ページの稼働状況とSEO状態を確認:
+
+```bash
+node scripts/site-status-report.js
+```
+
+**確認内容:**
+- 各ページの応答時間
+- HTTPステータスコード
+- SEOメタタグの有無
+- 構造化データの確認
+
+### Google Search Console レポート (要認証)
+
+検索パフォーマンスの詳細レポート:
+
+```bash
+# 初回または期限切れ時: 認証
+node scripts/gsc-refresh-token.js
+
+# レポート取得
+node scripts/gsc-analytics-report.js
+```
+
+**取得データ:**
+- 検索キーワード TOP 30
+- クリック数・表示回数・CTR・掲載順位
+- ページ別パフォーマンス
+- デバイス別・国別データ
+
+### レスポンシブデザインチェック
+
+全ページのレスポンシブ対応を3デバイスでテスト:
+
+```bash
+node scripts/check-responsive.js
+```
+
+**テストデバイス:**
+- Mobile: 390x844 (iPhone 14 Pro)
+- Tablet: 768x1024 (iPad)
+- Desktop: 1920x1080
+
+### 本番サイトスクリーンショット
+
+実際の本番サイトをキャプチャして目視確認:
+
+```bash
+node scripts/capture-production-screenshots.js
+```
+
+詳細は [ANALYTICS_GUIDE.md](./ANALYTICS_GUIDE.md) を参照してください。
+
 ## 🔐 環境変数
 
 ```env

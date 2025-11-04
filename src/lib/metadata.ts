@@ -74,7 +74,7 @@ export function generateServiceMetadata(service: {
   description: string
   longDescription: string
   href: string
-  pricing: any
+  pricing: ServiceDetail['pricing']
 }): Metadata {
   const keywords = [
     service.title,

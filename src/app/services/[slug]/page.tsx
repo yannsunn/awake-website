@@ -22,7 +22,7 @@ import AmazonCTA from '@/components/sections/AmazonCTA'
 
 
 // 動的ルートのパラメータ型
-type Params = Promise<{ slug: string }>
+type Params = { slug: string }
 
 // サービス詳細データ
 const serviceData = {
@@ -194,7 +194,7 @@ export async function generateStaticParams() {
 export async function generateMetadata(
   props: { params: Params }
 ): Promise<Metadata> {
-  const { slug } = await props.params
+  const { slug } = props.params
 
   const service = serviceData[slug as keyof typeof serviceData]
   if (!service) {
@@ -265,7 +265,7 @@ export async function generateMetadata(
 export default async function ServicePage(
   props: { params: Params }
 ) {
-  const { slug } = await props.params
+  const { slug } = props.params
   
   const service = serviceData[slug as keyof typeof serviceData]
   
