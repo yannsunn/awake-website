@@ -1,44 +1,63 @@
 import { NextResponse } from 'next/server';
-import { createChatMessages } from '@/lib/chatbot-prompt';
+import { z } from 'zod';
+import { createChatMessages, type UserMessage } from '@/lib/chatbot-prompt';
 import { MAX_IMAGE_DIMENSION } from '@/lib/imageOptimization';
 
-// 型定義
-interface ImageSource {
-  type: 'base64';
-  data: string;
-  media_type?: string;
-}
+// Zodスキーマ定義
+const imageSourceSchema = z.object({
+  type: z.literal('base64'),
+  data: z.string().min(1, 'Image data cannot be empty'),
+  media_type: z.string().optional(),
+});
 
-interface TextContent {
-  type: 'text';
-  text: string;
-}
+const textContentSchema = z.object({
+  type: z.literal('text'),
+  text: z.string().min(1, 'Text content cannot be empty').max(10000, 'Text too long'),
+});
 
-interface ImageContent {
-  type: 'image';
-  source: ImageSource;
-}
+const imageContentSchema = z.object({
+  type: z.literal('image'),
+  source: imageSourceSchema,
+});
 
-type ContentBlock = TextContent | ImageContent;
+const contentBlockSchema = z.union([textContentSchema, imageContentSchema]);
 
-interface ChatMessage {
-  role: 'user' | 'assistant';
-  content: string | ContentBlock[];
-}
+const chatMessageSchema = z.object({
+  role: z.enum(['user', 'assistant']),
+  content: z.union([
+    z.string().min(1, 'Message cannot be empty').max(10000, 'Message too long'),
+    z.array(contentBlockSchema).min(1, 'Content array cannot be empty')
+  ]),
+});
+
+const requestSchema = z.object({
+  messages: z.array(chatMessageSchema).min(1, 'At least one message required').max(50, 'Too many messages'),
+});
 
 export async function POST(request: Request) {
   try {
-    const { messages } = await request.json();
+    const body = await request.json();
 
-    if (!messages || !Array.isArray(messages)) {
+    // Zodバリデーション
+    const validationResult = requestSchema.safeParse(body);
+
+    if (!validationResult.success) {
       return NextResponse.json(
-        { error: 'Invalid request format' },
+        {
+          error: 'Validation failed',
+          details: validationResult.error.issues.map(err => ({
+            field: err.path.join('.'),
+            message: err.message,
+          }))
+        },
         { status: 400 }
       );
     }
 
+    const { messages } = validationResult.data;
+
     // 画像サイズチェック（API制限対応）
-    const validateImageMessages = (messages: ChatMessage[]) => {
+    const validateImageMessages = (messages: UserMessage[]) => {
       for (const message of messages) {
         if (message.content && Array.isArray(message.content)) {
           for (const content of message.content) {
