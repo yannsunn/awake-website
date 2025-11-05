@@ -1,13 +1,8 @@
-'use client'
-
 import { ReactNode } from 'react'
-import Image from 'next/image'
 import Header from '@/components/layout/Header'
 import Footer from '@/components/layout/Footer'
-import { useScrollRevealGlobal } from '@/hooks/useScrollReveal'
+import ScrollRevealProvider from '@/components/layout/ScrollRevealProvider'
 import type { Breadcrumb } from '@/lib/types'
-
-// エフェクトを削除してシンプルに
 
 interface PageLayoutProps {
   children: ReactNode
@@ -17,17 +12,23 @@ interface PageLayoutProps {
   breadcrumbs?: Breadcrumb[]
 }
 
-export default function PageLayout({ 
-  children, 
-  showEffects = true, 
-  title, 
-  description, 
-  breadcrumbs 
+/**
+ * ページ全体のレイアウトコンポーネント（Server Component）
+ *
+ * パフォーマンス最適化:
+ * - Server Componentとして実装し、バンドルサイズを削減
+ * - スクロール効果は小さなScrollRevealProviderに分離
+ */
+export default function PageLayout({
+  children,
+  showEffects = true,
+  title,
+  description,
+  breadcrumbs
 }: PageLayoutProps) {
-  useScrollRevealGlobal()
-  
   return (
     <div className="min-h-screen flex flex-col overflow-x-hidden">
+      <ScrollRevealProvider />
       <Header />
 
       <main role="main" id="main-content" className="flex-grow pt-16 md:pt-20">
