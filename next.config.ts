@@ -2,12 +2,12 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   // Stable configuration for Vercel
-  
+
   // Enhanced type safety - enable proper TypeScript checking during builds
   eslint: {
     ignoreDuringBuilds: false,
   },
-  
+
   typescript: {
     ignoreBuildErrors: false,
   },
@@ -48,7 +48,8 @@ const nextConfig: NextConfig = {
   compress: true,
   
   // バンドルサイズ最適化
-  webpack: (config: any, { dev, isServer }: any) => {
+  // Type: (config: Configuration, options: BuildOptions) => Configuration
+  webpack: (config: any, { dev, isServer }: { dev: boolean; isServer: boolean }): any => {
     // プロダクションビルドの最適化
     if (!dev && !isServer) {
       config.optimization = {
@@ -68,13 +69,13 @@ const nextConfig: NextConfig = {
             },
             // ライブラリチャンク
             lib: {
-              test(module: any) {
+              test(module: any): boolean {
                 return (
                   module.size() > 160000 &&
                   /node_modules[\\/]/.test(module.identifier())
                 )
               },
-              name(module: any) {
+              name(module: any): string {
                 const hash = require('crypto')
                   .createHash('sha1')
                   .update(module.identifier())
@@ -99,7 +100,7 @@ const nextConfig: NextConfig = {
         },
       }
     }
-    
+
     return config
   },
   

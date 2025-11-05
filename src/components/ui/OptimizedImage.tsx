@@ -119,22 +119,26 @@ const OptimizedImage = memo(function OptimizedImage({
   
   // アクセシビリティ向上のためのaria属性計算
   type AriaProps = {
-    role?: 'img' | 'button'
+    role?: 'button'
     tabIndex?: 0
     'aria-label'?: string
+    'aria-hidden'?: 'true'
   }
 
   const getAriaProps = useCallback((): AriaProps => {
     const props: AriaProps = {}
 
+    // ギャラリー画像：クリック可能なボタンとして機能
     if (preset === 'gallery' && onImageClick) {
       props.role = 'button'
       props.tabIndex = 0
       props['aria-label'] = alt ? `${alt} - クリックで拡大` : '画像をクリックで拡大'
-    } else {
-      props.role = 'img'
-      props['aria-label'] = alt || '装飾用画像'
     }
+    // 装飾画像：altがない場合はスクリーンリーダーから非表示
+    else if (!alt) {
+      props['aria-hidden'] = 'true'
+    }
+    // 通常の画像：divにroleを付けない（imgタグのaltに任せる）
 
     return props
   }, [preset, onImageClick, alt])
