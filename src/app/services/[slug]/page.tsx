@@ -1,6 +1,7 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
 import Image from 'next/image'
+import dynamic from 'next/dynamic'
 import { notFound } from 'next/navigation'
 import { ServiceHero } from '@/components/sections/ServiceHero'
 import { ProcessSteps } from '@/components/sections/ProcessSteps'
@@ -13,12 +14,17 @@ import UseCases from '@/components/sections/UseCases'
 import AIFaq from '@/components/sections/AIFaq'
 import WhyNowCTA from '@/components/sections/WhyNowCTA'
 import AIPricingTable from '@/components/sections/AIPricingTable'
-import SuccessStories from '@/components/sections/SuccessStories'
 import WhyAmazon from '@/components/sections/WhyAmazon'
 import RiskFree from '@/components/sections/RiskFree'
 import AmazonSupport from '@/components/sections/AmazonSupport'
 import AmazonFAQ from '@/components/sections/AmazonFAQ'
 import AmazonCTA from '@/components/sections/AmazonCTA'
+
+// 重いセクションを動的インポート（パフォーマンス最適化）
+const SuccessStories = dynamic(
+  () => import('@/components/sections/SuccessStories'),
+  { ssr: true }
+)
 
 
 // 動的ルートのパラメータ型

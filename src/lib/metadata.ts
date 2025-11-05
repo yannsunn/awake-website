@@ -68,6 +68,9 @@ export function generateMetadata(options: GenerateMetadataOptions): Metadata {
   }
 }
 
+/**
+ * サービスページ用メタデータ生成
+ */
 export function generateServiceMetadata(service: {
   id: string
   title: string
@@ -79,8 +82,9 @@ export function generateServiceMetadata(service: {
   const keywords = [
     service.title,
     'ホームページ制作',
-    '岡山',
     'Web制作',
+    '東大和市',
+    '東京都',
     ...COMPANY_DATA.metadata.keywords
   ]
 
@@ -89,5 +93,36 @@ export function generateServiceMetadata(service: {
     description: service.longDescription,
     path: service.href,
     keywords
+  })
+}
+
+/**
+ * 簡易版ページメタデータ生成（後方互換性のため）
+ * meta-utils.tsからの移行用
+ */
+export function generatePageMetadata(
+  title: string,
+  description: string,
+  path?: string
+): Metadata {
+  return generateMetadata({
+    title,
+    description,
+    ...(path && { path })
+  })
+}
+
+/**
+ * 法務ページ用メタデータ生成
+ */
+export function generateLegalMetadata(
+  pageName: string,
+  pageDescription: string,
+  slug: string
+): Metadata {
+  return generateMetadata({
+    title: pageName,
+    description: pageDescription,
+    path: `/legal/${slug}`
   })
 }
