@@ -218,6 +218,20 @@ export default function AboutPage() {
           
           <div className="lg:pl-8">
             <div className="bg-white rounded-2xl pt-8 pb-6 px-6 sm:pt-10 sm:px-8 text-center border border-blue-200 shadow-lg">
+              {/* 代表写真 */}
+              <div className="mb-6 flex justify-center">
+                <div className="relative w-48 h-48 sm:w-56 sm:h-56 rounded-full overflow-hidden border-4 border-blue-100 shadow-lg">
+                  <Image
+                    src="/assets/images/ceo-profile-optimized.webp"
+                    alt="代表取締役CEO 田形康貴"
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 640px) 192px, 224px"
+                    priority
+                  />
+                </div>
+              </div>
+
               <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-2">{COMPANY_DATA.basic.ceo}</h3>
               <p className="text-base font-medium text-gray-900 mb-4">代表取締役CEO</p>
               <div className="space-y-4">

@@ -204,7 +204,7 @@ export default function FAQPage() {
                     className="group bg-white border border-blue-200 rounded-lg overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300"
                   >
                     <summary className="flex items-center justify-between p-4 sm:p-6 cursor-pointer hover:bg-blue-50 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2">
-                      <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 pr-4">
+                      <h3 className="text-base sm:text-lg font-bold text-gray-900 pr-4">
                         {faq.question}
                       </h3>
                       <div className="flex-shrink-0">
@@ -248,8 +248,8 @@ export default function FAQPage() {
           </div>
           <div className="text-center">
             <div className="bg-white border border-blue-200 p-6 sm:p-8 rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300">
-              <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-4 text-center">💬 公式LINEでお気軽に</h3>
-              <p className="text-base text-gray-900 text-center mb-6">最速迓信！まずはLINEでお話をお聞かせください</p>
+              <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4 text-center">💬 公式LINEでお気軽に</h3>
+              <p className="text-base text-gray-900 text-center mb-6">最速返信！まずはLINEでお話をお聞かせください</p>
               <LineButton className="w-full" size="large" />
             </div>
           </div>

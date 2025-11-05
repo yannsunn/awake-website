@@ -237,7 +237,7 @@ export default function PartnersPage() {
           ].map((item, index) => (
             <div key={index} className="text-center">
               <div className="text-4xl mb-4">{item.icon}</div>
-              <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-3">
+              <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-3">
                 {item.title}
               </h3>
               <p className="text-base text-gray-900">
@@ -297,7 +297,7 @@ export default function PartnersPage() {
             <div key={index} className="bg-white rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 border border-gray-100 text-center">
               <div className="text-3xl mb-2">{value.emoji}</div>
               <div className="text-2xl font-bold text-gray-900 mb-3">{value.number}</div>
-              <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-3">
+              <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-3">
                 {value.title}
               </h3>
               <p className="text-sm sm:text-base text-gray-900">
@@ -330,7 +330,7 @@ export default function PartnersPage() {
                     <div className="text-3xl mb-4 text-center">
                       {company.icon}
                     </div>
-                    <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-4 text-center">
+                    <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-4 text-center">
                       {company.name}
                     </h3>
                     <ul className="space-y-2">
@@ -377,7 +377,7 @@ export default function PartnersPage() {
             }
           ].map((faq, index) => (
             <div key={index} className="bg-white rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 border border-gray-100">
-              <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-3">
+              <h3 className="text-base sm:text-lg font-bold text-gray-900 mb-3">
                 Q: {faq.q}
               </h3>
               <p className="text-base text-gray-900">
@@ -405,7 +405,7 @@ export default function PartnersPage() {
           </div>
         
         <div className="bg-white rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 border border-gray-100 mb-12 p-8">
-          <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-6 text-center">
+          <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-6 text-center">
             こんな企業様を求めています：
           </h3>
           <ul className="space-y-4">
