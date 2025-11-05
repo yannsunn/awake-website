@@ -225,7 +225,7 @@ export default function AboutPage() {
                     src="/assets/images/ceo-profile-optimized.webp"
                     alt="代表取締役CEO 田形康貴"
                     fill
-                    className="object-cover"
+                    className="object-cover object-[center_20%]"
                     sizes="(max-width: 640px) 192px, 224px"
                     priority
                   />
